@@ -186,3 +186,17 @@ Route121_Text_SafariZoneSign:
 	.string "“Filled with rare POKéMON!”\n"
 	.string "SAFARI ZONE$"
 
+
+
+Route121_EventScript_FW::
+	msgbox Route121_Text_FW, MSGBOX_NPC
+	end
+
+Route121_Text_FW:
+	.string "The Safari zone is awesome\n"
+	.string "but it comes with a cost\p"
+	.string "Many pokemon are imported\n"
+	.string "From regions like Galar,\p"
+	.string "Alola, and Hisui\n"
+	.string "So this route is chocked\p"
+	.string "With those strange Pokemon$"

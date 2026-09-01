@@ -222,7 +222,7 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROUTE101_ZIGZAGOON
-	setobjectxy LOCALID_PLAYER, 6, 13
+	setobjectxy LOCALID_PLAYER, 9, 15
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	special ChooseStarter
@@ -253,7 +253,7 @@ Route101_EventScript_HideBrendanInBedroom::
 	return
 
 Route101_Movement_BirchApproachPlayer:
-	walk_right
+	face_right
 	step_end
 
 Route101_Text_HelpMe:
@@ -296,3 +296,10 @@ Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
+Route101_EventScript_StarterCave::
+	msgbox Route101_Text_StarterCave, MSGBOX_SIGN
+	end
+
+Route101_Text_StarterCave:
+	.string "ROUTE 101\n"
+	.string "{UP_ARROW} Starter Cave$"

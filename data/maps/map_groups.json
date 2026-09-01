@@ -74,7 +74,8 @@
     "gMapGroup_IndoorFiveIslandRoute_Frlg",
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
-    "gMapGroup_IndoorSevenIslandRoute_Frlg"
+    "gMapGroup_IndoorSevenIslandRoute_Frlg",
+    "gMapGroup_IndoorRoute135"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -127,6 +128,7 @@
     "Route132",
     "Route133",
     "Route134",
+    "Route135",
     "Underwater_Route124",
     "Underwater_Route126",
     "Underwater_Route127",
@@ -470,7 +472,10 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "EvolutionCave",
+    "MeteorFalls_URSHIFU",
+    "TerraCave_Tera"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -1160,5 +1165,8 @@
   ],
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
+  ],
+  "gMapGroup_IndoorRoute135": [
+    "Route135_Archives"
   ]
 }

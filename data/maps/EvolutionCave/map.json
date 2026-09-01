@@ -1,0 +1,30 @@
+{
+  "id": "MAP_EVOLUTION_CAVE",
+  "name": "EvolutionCave",
+  "layout": "LAYOUT_EVOLUTION_CAVE",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_ROUTE_101",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "Evocavewarp",
+      "x": 37,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE101",
+      "dest_warp_id": "evocaveexit"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "region": "REGION_HOENN"
+}

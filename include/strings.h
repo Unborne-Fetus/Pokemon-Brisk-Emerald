@@ -193,6 +193,17 @@ extern const u8 gText_SavingTime[];
 // Battle pyramid menu texts
 extern const u8 gText_BattlePyramidConfirmRest[];
 extern const u8 gText_BattlePyramidConfirmRetire[];
+extern const u8 gText_BattleSpeed1x[];
+extern const u8 gText_BattleSpeed2x[];
+extern const u8 gText_BattleSpeed3x[];
+extern const u8 gText_BattleSpeed4x[];
+extern const u8 gText_SmallDot[];
+extern const u8 gText_LargeDot[];
+extern const u8 gText_PageNav[];
+extern const u8 gText_BattleSpeed[];
+
+
+
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

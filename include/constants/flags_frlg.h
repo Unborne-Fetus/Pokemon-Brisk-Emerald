@@ -1188,8 +1188,8 @@
 #define FLAG_HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE                       (FLAG_HIDDEN_ITEMS_START + 190)
 
 // Unused hidden item flags
-#define FLAG_UNUSED_0x4A7               0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8               0x4A8 // Unused Flag
+#define FLAG_UNUSED_0x4A7               0x4A7 // Used for fast Travel, but not used in the game. It is set when the player uses the fast travel feature, but it is never checked for anything.
+#define FLAG_UNUSED_0x4A8               0x4A8 // Used for smarter ai in battle, but not used in the game. It is set when the player uses the smarter ai feature, but it is never checked for anything.
 #define FLAG_UNUSED_0x4A9               0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA               0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB               0x4AB // Unused Flag

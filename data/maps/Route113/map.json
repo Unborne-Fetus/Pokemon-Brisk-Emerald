@@ -3,7 +3,6 @@
   "name": "Route113",
   "layout": "LAYOUT_ROUTE113",
   "music": "MUS_ROUTE113",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_113",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -410,7 +409,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route113_EventScript_RouteSignFallarbor"
@@ -462,5 +461,6 @@
       "item": "ITEM_NUGGET",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

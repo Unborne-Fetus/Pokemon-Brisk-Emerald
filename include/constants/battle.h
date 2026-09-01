@@ -714,6 +714,7 @@ enum BattleEnvironments
 #define B_WIN_MOVE_DESCRIPTION   24
 #define B_WIN_OAK_OLD_MAN        25
 
+
 // The following are duplicate id values for windows that Battle Arena uses differently.
 #define ARENA_WIN_PLAYER_NAME      15
 #define ARENA_WIN_VS               16

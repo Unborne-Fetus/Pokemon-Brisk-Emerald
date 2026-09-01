@@ -898,6 +898,8 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	message LittlerootTown_Text_SwitchShoesWithRunningShoes
 	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	giveitem ITEM_MEGA_RING, 1
+	giveitem ITEM_Z_POWER_RING, 1
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
@@ -927,8 +929,8 @@ LittlerootTown_Text_WearTheseRunningShoes:
 	.string "You're your father's child, all right.\n"
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
-	.string "adventure, wear these RUNNING SHOES.\p"
-	.string "They'll put a zip in your step!$"
+	.string "adventure, take these items.\p"
+	.string "They're from your fathers journey!$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
 	.string "{PLAYER} switched shoes with the\n"
@@ -1013,4 +1015,13 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
+
+
+LittlerootTown_EventScript_BRISK::
+	msgbox LittlerootTown_Text_BRISK, MSGBOX_SIGN
+	end
+
+LittlerootTown_Text_BRISK:
+	.string "Pokemon Brisk Emerald\n"
+	.string "“Enjoy yourself, and keep going!.”$"
 

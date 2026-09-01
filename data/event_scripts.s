@@ -1738,3 +1738,14 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+
+	.include "data/maps/EvolutionCave/scripts.inc"
+
+	.include "data/maps/MeteorFalls_URSHIFU/scripts.inc"
+
+	.include "data/maps/TerraCave_Tera/scripts.inc"
+
+	.include "data/maps/Route135/scripts.inc"
+
+
+	.include "data/maps/Route135_Archives/scripts.inc"

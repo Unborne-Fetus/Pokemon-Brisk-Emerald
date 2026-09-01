@@ -987,3 +987,10 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"
 
+	Route110_EventScript_POKEHIGHWAY::
+	msgbox Route110_Text_POKE, MSGBOX_SIGN
+	end
+	Route110_Text_POKE:
+	.string "WOW! The highway sure is amazing\p"
+	.string "The Tauros and Bouffalant\n"
+	.string "are sick dude!.$"

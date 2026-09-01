@@ -1979,6 +1979,7 @@ static void HandleChooseActionAfterDma3(enum BattlerId battler)
     {
         gBattle_BG0_X = 0;
         gBattle_BG0_Y = DISPLAY_HEIGHT;
+
         if (gBattleStruct->aiDelayTimer != 0)
         {
             if (DEBUG_AI_DELAY_TIMER)
@@ -1988,7 +1989,6 @@ static void HandleChooseActionAfterDma3(enum BattlerId battler)
                 ConvertIntToDecimalStringN(gDisplayedStringBattle, gBattleStruct->aiDelayFrames, STR_CONV_MODE_RIGHT_ALIGN, 3);
                 u8* end = StringAppend(gDisplayedStringBattle, sFramesText);
                 ConvertIntToDecimalStringN(end, gBattleStruct->aiDelayCycles, STR_CONV_MODE_RIGHT_ALIGN, 8);
-                // Clear old result once read out
                 gBattleStruct->aiDelayCycles = 0;
                 StringAppend(gDisplayedStringBattle, sCyclesText);
                 BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
@@ -1996,6 +1996,8 @@ static void HandleChooseActionAfterDma3(enum BattlerId battler)
             gBattleStruct->aiDelayTimer = 0;
             gBattleStruct->aiDelayFrames = 0;
         }
+
+        
         gBattlerControllerFuncs[battler] = HandleInputChooseAction;
     }
 }
@@ -2010,8 +2012,10 @@ static void PlayerHandleChooseAction(enum BattlerId battler)
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);
-
+    
     TryRestoreLastUsedBall();
+
+
     ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
     PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);

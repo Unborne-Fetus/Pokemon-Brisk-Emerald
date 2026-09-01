@@ -18,3 +18,12 @@ Pokemart_DefaultItemList::
 	.2byte ITEM_REVIVE
 	.2byte ITEM_MAX_REPEL
 	pokemartlistend
+
+
+gText_CaptionEVO::
+	.string "Hey THARR!\p"
+	.string "My name be captian evo\p"
+	.string "Here be my wares$"
+
+gText_seeya::
+	.string "I'll be seein' ya!$"

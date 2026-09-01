@@ -460,6 +460,7 @@ void LinkOpponentBufferExecCompleted(enum BattlerId battler);
 
 // link partner
 void SetControllerToLinkPartner(enum BattlerId battler);
+u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 void LinkPartnerBufferExecCompleted(enum BattlerId battler);
 
 void TrySetBattlerShadowSpriteCallback(enum BattlerId battler);

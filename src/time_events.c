@@ -41,14 +41,7 @@ void UpdateMirageRnd(u16 days)
 
 bool8 IsMirageIslandPresent(void)
 {
-    u16 rnd = GetMirageRnd() >> 16;
-    int i;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) && (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
             return TRUE;
-
-    return FALSE;
 }
 
 void UpdateShoalTideFlag(void)

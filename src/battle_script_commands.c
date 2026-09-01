@@ -75,6 +75,7 @@
 #include "follower_npc.h"
 #include "load_save.h"
 
+
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
 // For example accuracycheck is defined as:
@@ -3967,9 +3968,7 @@ static void Cmd_getexp(void)
             else
             {
                 *exp = calculatedExp;
-                gBattleStruct->expShareExpValue = calculatedExp / 2;
-                if (gBattleStruct->expShareExpValue == 0)
-                    gBattleStruct->expShareExpValue = 1;
+                gBattleStruct->expShareExpValue = calculatedExp;
             }
 
             gBattleScripting.getexpState++;
