@@ -4,7 +4,7 @@
 
 <!-- If you want to re-record or change these gifs, here are some notes that I used: https://files.catbox.moe/05001g.md -->
 
-**`pokeemerald-expansion`** is a GBA ROM hack base that equips developers with a comprehensive toolkit for creating Pokémon ROM hacks. **`pokeemerald-expansion`** is built on top of [pret's `pokeemerald`](https://github.com/pret/pokeemerald) decompilation project. **It is not a playable Pokémon game on its own.**
+**`Pokemon Brisk Emerald`** is a fork of the  GBA ROM hack base: Pokeemerald-Expansion. Pokemon Brisk Emerald is 
 
 # [Features](FEATURES.md)
 
