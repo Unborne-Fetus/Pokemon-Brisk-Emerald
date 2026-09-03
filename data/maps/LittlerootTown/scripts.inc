@@ -900,6 +900,7 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	giveitem ITEM_MEGA_RING, 1
 	giveitem ITEM_Z_POWER_RING, 1
+	giveitem ITEM_DYNAMAX_BAND, 1
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage

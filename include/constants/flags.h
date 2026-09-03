@@ -1662,6 +1662,8 @@
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
 
+#define FLAG_PREVENT_OVERWORLD_SPEEDUP                     0
+
 // FRLG flags
 
 #define FLAG_HIDE_BULBASAUR_BALL                           0

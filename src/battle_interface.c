@@ -2061,10 +2061,10 @@ s32 MoveBattleBar(enum BattlerId battler, u8 healthboxSpriteId, u8 whichBar, u8 
     {
             if (whichBar == HEALTH_BAR) // health bar
         {
-            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[BattlerId].maxValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].oldValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].receivedValue,
-                        &gBattleSpritesDataPtr->battleBars[BattlerId].currValue,
+            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battler].maxValue,
+                        gBattleSpritesDataPtr->battleBars[battler].oldValue,
+                        gBattleSpritesDataPtr->battleBars[battler].receivedValue,
+                        &gBattleSpritesDataPtr->battleBars[battler].currValue,
                         B_HEALTHBAR_PIXELS / 8, 1);
         }
         else // exp bar
@@ -2082,22 +2082,22 @@ s32 MoveBattleBar(enum BattlerId battler, u8 healthboxSpriteId, u8 whichBar, u8 
             */
 
             // Gradual EXP animation
-            u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[BattlerId].oldValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].receivedValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].maxValue, 8);
+            u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battler].oldValue,
+                        gBattleSpritesDataPtr->battleBars[battler].receivedValue,
+                        gBattleSpritesDataPtr->battleBars[battler].maxValue, 8);
 
             if (expFraction == 0)
                 expFraction = 1;
 
-            expFraction = abs(gBattleSpritesDataPtr->battleBars[BattlerId].receivedValue / expFraction);
+            expFraction = abs(gBattleSpritesDataPtr->battleBars[battler].receivedValue / expFraction);
 
             // Optional: make EXP bar faster
             // expFraction = 100;
 
-            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[BattlerId].maxValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].oldValue,
-                        gBattleSpritesDataPtr->battleBars[BattlerId].receivedValue,
-                        &gBattleSpritesDataPtr->battleBars[BattlerId].currValue,
+            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battler].maxValue,
+                        gBattleSpritesDataPtr->battleBars[battler].oldValue,
+                        gBattleSpritesDataPtr->battleBars[battler].receivedValue,
+                        &gBattleSpritesDataPtr->battleBars[battler].currValue,
                         B_EXPBAR_PIXELS / 8, expFraction);
         }
 

@@ -1666,12 +1666,12 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Lairon
-Level: 45
+Salamence
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Manectric
-Level: 45
+Aggron @ Aggronite
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BROOKE_1 ===
@@ -1684,16 +1684,16 @@ Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
-Level: 17
+Corvisquire  
+Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Numel
-Level: 17
+Pawniard 
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Roselia
-Level: 17
+Sableye @ Sablenite
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JENNIFER ===
@@ -1706,9 +1706,9 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
-Level: 30
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Lucario @ Lucarionite
+Level: 40
+
 
 === TRAINER_HOPE ===
 Name: HOPE
@@ -1720,9 +1720,9 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Roselia
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kingambit
+Level: 58
+
 
 === TRAINER_SHANNON ===
 Name: SHANNON
@@ -1734,9 +1734,9 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Claydol
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gengar @ Gengarite
+Level: 56
+
 
 === TRAINER_MICHELLE ===
 Name: MICHELLE
@@ -1748,17 +1748,17 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Torkoal
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Krookodile 
+Level: 47
 
-Medicham
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ludicolo
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gardevoir @ Gardevoirite
+Level: 47
+
+
+Aegislash 
+Level: 50
+
 
 === TRAINER_CAROLINE ===
 Name: CAROLINE
@@ -1770,13 +1770,13 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Skarmory
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nidoking 
+Level: 50
 
-Sableye
-Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Nidoqueen
+Level: 50
+
 
 === TRAINER_JULIE ===
 Name: JULIE
@@ -1788,17 +1788,19 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sandslash
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Flygon
+Level: 51
 
-Ninetales
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Tropius
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Hippowdon
+Level: 47
+
+
+Sandaconda
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 47
+
 
 === TRAINER_BROOKE_2 ===
 Name: BROOKE
@@ -1810,17 +1812,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
-Level: 26
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Hitmonchan
+Level: 38
 
-Numel
-Level: 26
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Hitmonlee
+Level: 36
 
-Roselia
-Level: 26
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+
+Hitmontop
+Level: 37
+
 
 === TRAINER_BROOKE_3 ===
 Name: BROOKE
@@ -1832,17 +1833,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Charizard
+Level: 40
 
-Numel
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Venusaur
+Level: 36
 
-Roselia
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Blastoise
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 37
 
 === TRAINER_BROOKE_4 ===
 Name: BROOKE
@@ -1854,17 +1854,14 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Dragonair
+Level: 40
 
-Numel
-Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Pupitar
+Level: 40
 
-Roselia
-Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Metang
+Level: 40
 
 === TRAINER_BROOKE_5 ===
 Name: BROOKE
@@ -1876,17 +1873,16 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 34
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Dragonite
+Level: 55
 
-Camerupt
-Level: 34
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Tyranitar
+Level: 55
 
-Roselia
-Level: 34
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+
+Metagross @ Metagrossite
+Level: 55
+
 
 === TRAINER_PATRICIA ===
 Name: PATRICIA

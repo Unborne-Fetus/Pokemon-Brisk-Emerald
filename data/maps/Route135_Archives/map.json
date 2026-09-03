@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
       "x": 30,
       "y": 9,
       "elevation": 3,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
+      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
       "x": 45,
       "y": 9,
       "elevation": 3,
@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
       "x": 15,
       "y": 9,
       "elevation": 3,
