@@ -1893,13 +1893,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Banette
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Chandelure @ Chandelurite
+Level: 49
 
-Lunatone
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Froslass 
+Level: 50
+
 
 === TRAINER_KINDRA ===
 Name: KINDRA
@@ -1910,13 +1910,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mismagius
+Level: 40
 
-Shuppet
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mimikyu
+Level: 40
+
 
 === TRAINER_TAMMY ===
 Name: TAMMY
@@ -1927,13 +1927,14 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drakloak
+Level: 35
 
-Shuppet
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Gengar 
+Gigantamax: Yes
+Level: 35
+
 
 === TRAINER_VALERIE_1 ===
 Name: VALERIE
@@ -1944,9 +1945,9 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Sableye
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Malamar @ Malamarite
+Level: 37
+
 
 === TRAINER_TASHA ===
 Name: TASHA
@@ -1957,9 +1958,9 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Shuppet
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Banette @ Banettite
+Level: 37
+
 
 === TRAINER_VALERIE_2 ===
 Name: VALERIE
@@ -1970,13 +1971,15 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Sableye
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Houndoom @ Houndoominite
+Level: 37
 
-Spoink
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Grimmsnarl
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 42
+
 
 === TRAINER_VALERIE_3 ===
 Name: VALERIE
@@ -1987,13 +1990,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Spoink
-Level: 35
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Gothitelle
+Level: 45
 
-Sableye
-Level: 35
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Cofagrigus
+Level: 45
+
 
 === TRAINER_VALERIE_4 ===
 Name: VALERIE
@@ -2004,13 +2007,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Spoink
-Level: 40
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gothitelle
+Level: 50
 
-Sableye
-Level: 40
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Chandelure @ Chandelurite
+Level: 50
+
 
 === TRAINER_VALERIE_5 ===
 Name: VALERIE
@@ -2021,17 +2024,19 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Duskull
-Level: 42
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Overqwil
+Level: 54
 
-Sableye
-Level: 42
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Grumpig
-Level: 42
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Toxtricity
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 50
+
+
+Dragapult
+Level: 60
+
 
 === TRAINER_CINDY_1 ===
 Name: CINDY
