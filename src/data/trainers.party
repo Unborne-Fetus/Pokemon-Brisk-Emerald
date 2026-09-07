@@ -2048,9 +2048,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Munchlax	 @ Nugget
+Level: 19
+
 
 === TRAINER_DAPHNE ===
 Name: DAPHNE
@@ -2064,12 +2064,12 @@ AI: Check Bad Move
 
 Wishiwashi @ Nugget
 Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 
 Wishiwashi @ Nugget
 Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 
 === TRAINER_GRUNT_SPACE_CENTER_2 ===
@@ -2081,17 +2081,18 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Mightyena
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cinderace
+Ability: Libero
+Level: 37
 
-Mightyena
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Numel
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Typhlosion Hisui
+Level: 38
+
+
+Blaziken @ Blazikenite
+Level: 39
+
 
 === TRAINER_CINDY_2 ===
 Name: CINDY
@@ -2103,11 +2104,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Tail Whip
+Snorlax @ Nugget
+Level: 21
+
 
 === TRAINER_BRIANNA ===
 Name: BRIANNA
@@ -2119,9 +2118,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Crawdaunt @ Nugget
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Roaring Moon @ Nugget
+Level: 52
+
 
 === TRAINER_NAOMI ===
 Name: NAOMI
@@ -2133,9 +2132,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Roselia @ Nugget
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Slither Wing @ Nugget
+Level: 60
+
 
 === TRAINER_CINDY_3 ===
 Name: CINDY
@@ -2147,9 +2146,12 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Snorlax @ Nugget
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 39
+
+
 
 === TRAINER_CINDY_4 ===
 Name: CINDY
@@ -2161,9 +2163,10 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 30
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Snorlax @ Nugget
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 45
 
 === TRAINER_CINDY_5 ===
 Name: CINDY
@@ -2175,9 +2178,10 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 33
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Snorlax @ Nugget
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 48
 
 === TRAINER_CINDY_6 ===
 Name: CINDY
@@ -2189,13 +2193,10 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Fury Swipes
-- Mud Sport
-- Odor Sleuth
-- Sand Attack
+Snorlax @ Nugget
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 50
 
 === TRAINER_MELISSA ===
 Name: MELISSA
@@ -2206,9 +2207,9 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toedscruel
+Level: 33
+
 
 === TRAINER_SHEILA ===
 Name: SHEILA
@@ -2219,9 +2220,9 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wugtrio
+Level: 33
+
 
 === TRAINER_SHIRLEY ===
 Name: SHIRLEY
@@ -2232,9 +2233,9 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sinistcha
+Level: 33
+
 
 === TRAINER_JESSICA_1 ===
 Name: JESSICA
@@ -2242,24 +2243,17 @@ Class: Beauty
 Pic: Beauty
 Gender: Female
 Music: Female
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Kecleon
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bind
-- Lick
-- Fury Swipes
-- Feint Attack
+Ceruledge
+Level: 40
 
-Seviper
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Tail
-- Screech
-- Glare
-- Crunch
+
+
+Armarouge
+Level: 43
+
 
 === TRAINER_CONNIE ===
 Name: CONNIE
@@ -2270,9 +2264,9 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Seadra
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Iron Moth
+Level: 50
+
 
 === TRAINER_BRIDGET ===
 Name: BRIDGET
@@ -2284,8 +2278,8 @@ Double Battle: No
 AI: Check Bad Move
 
 Quaquaval
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 53
+
 
 === TRAINER_OLIVIA ===
 Name: OLIVIA
@@ -2298,16 +2292,16 @@ AI: Check Bad Move
 
 Basculegion
 Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 Crawdaunt
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 
 Floatzel
 Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 
 === TRAINER_TIFFANY ===
@@ -2321,11 +2315,10 @@ AI: Check Bad Move
 
 Clawitzer
 Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 Sharpedo
 Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JESSICA_2 ===
 Name: JESSICA
@@ -2336,21 +2329,13 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
-Level: 35
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-- Bind
-- Lick
-- Fury Swipes
-- Feint Attack
+Ceruledge
+Level: 47
 
-Seviper
-Level: 35
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-- Poison Tail
-- Screech
-- Glare
-- Crunch
+
+
+Armarouge
+Level: 48
 
 === TRAINER_JESSICA_3 ===
 Name: JESSICA
@@ -2361,21 +2346,13 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
-Level: 38
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Bind
-- Lick
-- Fury Swipes
-- Feint Attack
+Ceruledge
+Level: 52
 
-Seviper
-Level: 38
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Tail
-- Screech
-- Glare
-- Crunch
+
+
+Armarouge
+Level: 54
 
 === TRAINER_JESSICA_4 ===
 Name: JESSICA
@@ -2386,21 +2363,13 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Bind
-- Lick
-- Fury Swipes
-- Feint Attack
+Ceruledge
+Level: 53
 
-Seviper
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Tail
-- Screech
-- Glare
-- Crunch
+
+
+Armarouge
+Level: 55
 
 === TRAINER_JESSICA_5 ===
 Name: JESSICA
@@ -2411,21 +2380,14 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
-Level: 44
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Bind
-- Lick
-- Fury Swipes
-- Feint Attack
+Ceruledge
+Level: 53
 
-Seviper
-Level: 44
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Tail
-- Screech
-- Glare
-- Crunch
+
+
+Armarouge
+Tera Type: Ghost
+Level: 55
 
 === TRAINER_WINSTON_1 ===
 Name: WINSTON
@@ -2437,9 +2399,8 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 10
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Farfetchd Galar @ Nugget
+Level: 20
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE

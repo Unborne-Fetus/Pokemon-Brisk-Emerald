@@ -901,6 +901,7 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	giveitem ITEM_MEGA_RING, 1
 	giveitem ITEM_Z_POWER_RING, 1
 	giveitem ITEM_DYNAMAX_BAND, 1
+	giveitem ITEM_TERA_ORB, 1
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
