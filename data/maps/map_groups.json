@@ -462,7 +462,6 @@
     "MirageTower_1F",
     "MirageTower_2F",
     "MirageTower_3F",
-    "MirageTower_4F",
     "DesertUnderpass",
     "ArtisanCave_B1F",
     "ArtisanCave_1F",
@@ -471,11 +470,13 @@
     "MarineCave_End",
     "TerraCave_Entrance",
     "TerraCave_End",
+    "MirageTower_4F",
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "EvolutionCave",
     "MeteorFalls_URSHIFU",
-    "TerraCave_Tera"
+    "TerraCave_Tera",
+    "EvolutionCave_2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -9378,6 +9378,17 @@
       "border_filepath": "data/layouts/Route135_Archives/border.bin",
       "blockdata_filepath": "data/layouts/Route135_Archives/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_EVOLUTION_CAVE_2",
+      "name": "EvolutionCave_2_Layout",
+      "width": 20,
+      "height": 29,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/EvolutionCave_2/border.bin",
+      "blockdata_filepath": "data/layouts/EvolutionCave_2/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

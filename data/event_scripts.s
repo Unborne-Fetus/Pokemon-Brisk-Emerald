@@ -1749,3 +1749,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 
 	.include "data/maps/Route135_Archives/scripts.inc"
+
+	.include "data/maps/EvolutionCave_2/scripts.inc"

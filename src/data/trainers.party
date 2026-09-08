@@ -2411,13 +2411,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Whiscash
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gallade
+Level: 40
 
-Meditite
-Level: 33
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Gardevoir @ Gardevoirite
+Level: 41
+
 
 === TRAINER_GARRET ===
 Name: GARRET
@@ -2429,9 +2429,12 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Azumarill @ Nugget
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Duraludon @ Nugget
+Shiny: Yes
+Gigantamax: Yes
+Dynamax Level: 10 
+Level: 53
+
 
 === TRAINER_WINSTON_2 ===
 Name: WINSTON
@@ -2443,9 +2446,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sirfetchd
+Level: 37
+
 
 === TRAINER_WINSTON_3 ===
 Name: WINSTON
@@ -2457,9 +2460,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sirfetchd @ Leek
+Level: 43
+
 
 === TRAINER_WINSTON_4 ===
 Name: WINSTON
@@ -2471,9 +2474,9 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sirfetchd @ Leek
+Level: 46
+
 
 === TRAINER_WINSTON_5 ===
 Name: WINSTON
@@ -2485,13 +2488,10 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Swipes
-- Mud Sport
-- Odor Sleuth
-- Sand Attack
+Sirfetchd @ Leek
+Level: 50
+
+
 
 === TRAINER_STEVE_1 ===
 Name: STEVE

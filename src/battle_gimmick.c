@@ -22,13 +22,46 @@ void AssignUsableGimmicks(void)
     for (enum BattlerId battler = 0; battler < gBattlersCount; ++battler)
     {
         gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_NONE;
+
+        // Check gimmicks in their normal priority first.
         for (enum Gimmick gimmick = 0; gimmick < GIMMICKS_COUNT; ++gimmick)
         {
+            // Tera is checked before ordinary Dynamax.
+            if (gimmick == GIMMICK_DYNAMAX || gimmick == GIMMICK_TERA)
+                continue;
+
             if (CanActivateGimmick(battler, gimmick))
             {
                 gBattleStruct->gimmick.usableGimmick[battler] = gimmick;
                 break;
             }
+        }
+
+        // G-Max takes priority over Tera.
+        if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
+         && CanActivateGimmick(battler, GIMMICK_DYNAMAX))
+        {
+            struct Pokemon *mon = GetBattlerMon(battler);
+
+            if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
+             && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE)
+            {
+                gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
+            }
+        }
+
+        // If G-Max wasn't selected, allow Tera.
+        if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
+         && CanActivateGimmick(battler, GIMMICK_TERA))
+        {
+            gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_TERA;
+        }
+
+        // Finally, ordinary Dynamax.
+        if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
+         && CanActivateGimmick(battler, GIMMICK_DYNAMAX))
+        {
+            gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
         }
     }
 }

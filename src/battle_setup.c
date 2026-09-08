@@ -1116,6 +1116,8 @@ void SetMapVarsToTrainerB(void)
 // expects parameters have been loaded correctly with TrainerBattleLoadArgs
 const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
 {
+    FlagSet(B_FLAG_DYNAMAX_BATTLE);
+    
     switch (TRAINER_BATTLE_PARAM.mode)
     {
     case TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT:
