@@ -2918,9 +2918,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Sealeo
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slowbro @ Slowbronite
+Level: 50
+
 
 === TRAINER_KEVIN ===
 Name: KEVIN
@@ -2931,9 +2931,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Spheal
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barbaracle @ Barbaracite
+Level: 50
+
 
 === TRAINER_JACK ===
 Name: JACK
@@ -2944,9 +2944,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Sharpedonite
+Level: 50
+
 
 === TRAINER_DUDLEY ===
 Name: DUDLEY
@@ -2957,17 +2957,17 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Relicanth
+Level: 45
 
-Wingull
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Empoleon
+Level: 47
+
+
+Samurott Hisui
+Level: 42
+
 
 === TRAINER_CHAD ===
 Name: CHAD
@@ -2978,13 +2978,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Seismitoad
+Level: 47
 
-Wailmer
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Swanna
+Level: 44
+
 
 === TRAINER_TONY_2 ===
 Name: TONY
@@ -2995,9 +2995,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Sharpedo
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Jellicent
+Level: 43
+
 
 === TRAINER_TONY_3 ===
 Name: TONY
@@ -3008,9 +3008,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Sharpedo
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Jellicent
+Level: 47
 
 === TRAINER_TONY_4 ===
 Name: TONY
@@ -3021,13 +3020,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Swampert @ Swampertite
+Level: 55
+
 
 Sharpedo
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Level: 55
+
 
 === TRAINER_TONY_5 ===
 Name: TONY
@@ -3038,13 +3037,12 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Swampert @ Swampertite
+Level: 70
+
 
 Sharpedo
-Level: 39
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Level: 70
 
 === TRAINER_TAKAO ===
 Name: TAKAO
@@ -3055,9 +3053,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mankey
-Level: 13
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Lucario
+Level: 36
+
 
 === TRAINER_HITOSHI ===
 Name: HITOSHI
@@ -3068,13 +3066,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Hawlucha @ Hawluchite
+Level: 50
 
-Machoke
-Level: 32
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Machamp
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 50
+
 
 === TRAINER_KIYO ===
 Name: KIYO
@@ -3085,9 +3085,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Hariyama
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Conkeldurr
+Level: 50
+
 
 === TRAINER_KOICHI ===
 Name: KOICHI
@@ -3098,13 +3098,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Sirfetchd @ Leek
+Level: 50
 
-Machoke
-Level: 28
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Falinks @ Falinksite
+Level: 46
+
 
 === TRAINER_NOB_1 ===
 Name: NOB
@@ -3115,9 +3115,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 19
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kubfu
+Level: 40
+
 
 === TRAINER_NOB_2 ===
 Name: NOB
@@ -3128,9 +3128,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
-Level: 27
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Kubfu
+Level: 50
+
 
 === TRAINER_NOB_3 ===
 Name: NOB
@@ -3141,13 +3141,12 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Kubfu
+Level: 50
 
-Machoke
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Kubfu
+Level: 50
+
 
 === TRAINER_NOB_4 ===
 Name: NOB
@@ -3158,17 +3157,17 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 31
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Urshifu Rapid Strike
+Level: 60
 
-Machoke
-Level: 31
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Machoke
-Level: 31
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Urshifu Single Strike
+Level: 60
+
+
+Iron Hands
+Level: 60
+
 
 === TRAINER_NOB_5 ===
 Name: NOB
@@ -3179,21 +3178,23 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 33
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Urshifu Rapid Strike
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 60
 
-Machoke
-Level: 33
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Machoke
-Level: 33
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Urshifu Single Strike
+Level: 60
+
+
+Iron Hands
+Level: 60
 
 Machamp @ Black Belt
-Level: 33
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Tera Type: Fighting
+Level: 60
+
 
 === TRAINER_YUJI ===
 Name: YUJI
@@ -3204,13 +3205,16 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Makuhita
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mahoraga (Shedinja) (M) @ Ability Shield
+Tera Type: Electric
+Level: 50
 
-Machoke
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Sukuna (Machamp) (M) @ Assault Vest
+Dynamax Level: 10
+Gigantamax: True
+Level: 50
+
 
 === TRAINER_DAISUKE ===
 Name: DAISUKE
@@ -3221,9 +3225,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 19
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Blaziken @ Blazikenite
+Level: 40
+
 
 === TRAINER_ATSUSHI ===
 Name: ATSUSHI
@@ -3234,9 +3238,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Hariyama
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Infernape
+Level: 60
+
 
 === TRAINER_KIRK ===
 Name: KIRK
@@ -3247,13 +3251,12 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Luxio
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Charlie (Marowak Alola) (M) @ Assault Vest
+Level: 40
 
-Voltorb Hisui
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Splaxema (Delphox) (F) @ Delphoxite
+Level: 40
+
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
 Name: GRUNT
@@ -3264,13 +3267,13 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wailord
+Level: 55
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pyukumuku
+Level: 60
+IVs: 31 HP / 31 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+EVs: 252 HP / 252 Spe / 6 Atk
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
 Name: GRUNT
@@ -3281,9 +3284,9 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dondozo
+Level: 60
+
 
 === TRAINER_SHAWN ===
 Name: SHAWN
@@ -3294,13 +3297,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Rotom
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Rotom Heat
+Level: 30
 
-Blitzle
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Manectric @ Manectite
+Level: 30
+
 
 === TRAINER_FERNANDO_1 ===
 Name: FERNANDO
@@ -3311,13 +3314,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Electrike
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Electivire
+Level: 57
 
-Loudred
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ampharos @ Ampharosite
+Level: 60
 
 === TRAINER_DALTON_1 ===
 Name: DALTON
@@ -16902,4 +16903,3 @@ Giratina Origin
 - Dragon Claw
 - Shadow Force
 - Earth Power
-
