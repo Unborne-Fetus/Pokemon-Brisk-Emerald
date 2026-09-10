@@ -3961,10 +3961,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sMisdreavusLevelUpLearnset,
         .teachableLearnset = sMisdreavusTeachableLearnset,
         .eggMoveLearnset = sMisdreavusEggMoveLearnset,
-    #if P_GEN_4_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_MISMAGIUS}),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_FLUTTER_MANE}),
-    #endif
+        #if P_GEN_4_CROSS_EVOS
+            .evolutions = EVOLUTION(
+                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_MISMAGIUS},
+                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_FLUTTER_MANE}
+            ),
+        #endif
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -7699,8 +7701,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sDonphanLevelUpLearnset,
         .teachableLearnset = sDonphanTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_TREADS}),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_GREAT_TUSK}),
+        .evolutions = EVOLUTION(
+            {EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_TREADS},
+            {EVO_ITEM, ITEM_SUN_STONE, SPECIES_GREAT_TUSK}
+        ),
     },
 #endif //P_FAMILY_PHANPY
 

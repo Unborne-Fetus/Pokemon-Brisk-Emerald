@@ -2502,9 +2502,9 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Aron
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rotom Heat
+Level: 30
+
 
 === TRAINER_THALIA_1 ===
 Name: THALIA
@@ -2515,13 +2515,13 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Raichu Alola
+Level: 40
 
-Horsea
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Alakazam @ Alakazite
+Level: 40
+
 
 === TRAINER_MARK ===
 Name: MARK
@@ -2532,9 +2532,9 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Rhyhorn
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Spinda
+Level: 43
+
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
 Name: GRUNT
@@ -2545,9 +2545,9 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Charizard @ Charizardite Y
+Level: 37
+
 
 === TRAINER_STEVE_2 ===
 Name: STEVE
@@ -2558,9 +2558,9 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Lairon
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Golem Alola
+Level: 40
+
 
 === TRAINER_STEVE_3 ===
 Name: STEVE
@@ -2571,13 +2571,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Lairon
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Rotom Heat
+Level: 43
 
-Rhyhorn
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Golem Alola
+Level: 42
 
 === TRAINER_STEVE_4 ===
 Name: STEVE
@@ -2588,13 +2586,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Lairon
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Rotom Heat
+Level: 47
 
-Rhyhorn
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Golem Alola
+Level: 46
 
 === TRAINER_STEVE_5 ===
 Name: STEVE
@@ -2605,13 +2601,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Aggron
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Rotom Heat
+Level: 50
 
-Rhydon
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Golem Alola
+Level: 50
 
 === TRAINER_LUIS ===
 Name: LUIS
@@ -2622,9 +2616,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise @ Blastoisinite
+Level: 39
+
 
 === TRAINER_DOMINIK ===
 Name: DOMINIK
@@ -2635,9 +2629,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados @ Gyaradosite
+Level: 38
+
 
 === TRAINER_DOUGLAS ===
 Name: DOUGLAS
@@ -2648,13 +2642,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Politoed
+Level: 35
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Poliwrath
+Level: 36
+
 
 === TRAINER_DARRIN ===
 Name: DARRIN
@@ -2665,17 +2659,20 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Azumarill
+Tera Type: Water
+Level: 34
 
-Wingull
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Feraligatr @ Feraligite
+Level: 36
+
+
+Lapras
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 35
+
 
 === TRAINER_TONY_1 ===
 Name: TONY
@@ -2686,9 +2683,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swampert @ Swampertite
+Level: 38
+
 
 === TRAINER_JEROME ===
 Name: JEROME
@@ -2699,9 +2696,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo
+Level: 40
+
 
 === TRAINER_MATTHEW ===
 Name: MATTHEW
@@ -2712,9 +2709,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Whiscash
+Level: 36
+
 
 === TRAINER_DAVID ===
 Name: DAVID
@@ -2725,13 +2722,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crawdaunt
+Level: 36
 
-Carvanha
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sharpedo @ Sharpedonite
+Level: 37
+
 
 === TRAINER_SPENCER ===
 Name: SPENCER
@@ -2742,13 +2739,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda
+Level: 45
 
-Wingull
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Inteleon
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 43
+
 
 === TRAINER_ROLAND ===
 Name: ROLAND
@@ -2759,9 +2758,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drednaw
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 45
 
 === TRAINER_NOLEN ===
 Name: NOLEN
@@ -2772,9 +2772,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval
+Tera Type: Fighting
+Level: 46
+
 
 === TRAINER_STAN ===
 Name: STAN
@@ -2785,9 +2786,14 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Horsea
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Palafin
+Level: 43
+-U Turn
+
+Palafin
+Level: 47
+-U Turn
+
 
 === TRAINER_BARRY ===
 Name: BARRY
@@ -2798,9 +2804,12 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingler
+Shiny: Yes
+Dynamax Level: 10
+Gigantamax
+Level: 46
+
 
 === TRAINER_DEAN ===
 Name: DEAN
@@ -2811,17 +2820,20 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval
+Tera Type: Yes
+Level: 43
 
-Wingull
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tatsugiri @ Tatsugirinite
+Level: 42
+
+
+Blastoise
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 44
+
 
 === TRAINER_RODNEY ===
 Name: RODNEY
@@ -2832,9 +2844,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golisopod @ Golisopite
+Level: 46
+
 
 === TRAINER_RICHARD ===
 Name: RICHARD
@@ -2845,9 +2857,9 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Pelipper
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starmie @ Starmie
+Level: 46
+
 
 === TRAINER_HERMAN ===
 Name: HERMAN
@@ -2858,13 +2870,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barbaracle
+Level: 45
 
-Tentacruel
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Greninja @ Greninjite
+Level: 44
+
 
 === TRAINER_SANTIAGO ===
 Name: SANTIAGO
@@ -2875,13 +2887,13 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda
+Level: 43
 
-Wailmer
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Barbaracle @ Barbaracite
+Level: 46
+
 
 === TRAINER_GILBERT ===
 Name: GILBERT
@@ -2892,9 +2904,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Sharpedo
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dragalge @ Dragalgite
+Shiny: Yes
+Level: 50
+
 
 === TRAINER_FRANKLIN ===
 Name: FRANKLIN

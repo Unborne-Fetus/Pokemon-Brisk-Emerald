@@ -12565,8 +12565,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sVolcaronaLevelUpLearnset,
         .teachableLearnset = sVolcaronaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_MOTH}),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_SLITHER_WING}),
+        .evolutions = EVOLUTION(
+            {EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_MOTH},
+            {EVO_ITEM, ITEM_SUN_STONE, SPECIES_SLITHER_WING}
+        ),
     },
 #endif //P_FAMILY_LARVESTA
 
