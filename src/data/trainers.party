@@ -4075,13 +4075,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slowbro Galar
+Level: 61
 
-Solrock
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Liepard
+Level: 61
+
 
 === TRAINER_CAMERON_1 ===
 Name: CAMERON
@@ -4092,9 +4092,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Solrock
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Zoroark Hisui
+Level: 52
+
 
 === TRAINER_CAMERON_2 ===
 Name: CAMERON
@@ -4105,13 +4105,14 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 33
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Thievul
+Level: 50
 
-Solrock
-Level: 33
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Mabosstiff
+Tera Type: Psychic
+Level: 50
+
 
 === TRAINER_CAMERON_3 ===
 Name: CAMERON
@@ -4122,13 +4123,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 38
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Grimmsnarl
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 67
 
-Solrock
-Level: 38
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Mawile @ Mawilite
+Level: 60
+
 
 === TRAINER_CAMERON_4 ===
 Name: CAMERON
@@ -4139,13 +4142,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Grimmsnarl
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 67
 
-Solrock
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Mawile @ Mawilite
+Level: 60
+
 
 === TRAINER_CAMERON_5 ===
 Name: CAMERON
@@ -4156,13 +4161,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Solrock
-Level: 45
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Grimmsnarl
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 67
 
-Alakazam
-Level: 45
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+
+Mawile @ Mawilite
+Level: 60
+
 
 === TRAINER_JACLYN ===
 Name: JACLYN
@@ -4173,10 +4180,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Abra
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hidden Power
+Toxtricity Amped
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 36
+
 
 === TRAINER_HANNAH ===
 Name: HANNAH
@@ -4187,9 +4195,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kirlia
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Medicham @ Medichamite
+Level: 55
+
+
+Venusaur
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 57
+
 
 === TRAINER_SAMANTHA ===
 Name: SAMANTHA
@@ -4200,9 +4214,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Xatu
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gothitelle
+Level: 59
+
 
 === TRAINER_MAURA ===
 Name: MAURA
@@ -4213,9 +4227,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Reuniclus
+Level: 54
+
 
 === TRAINER_KAYLA ===
 Name: KAYLA
@@ -4226,17 +4240,17 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Wobbuffet
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Meowstic @ Meowsticite
+Level: 45
 
-Natu
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kadabra
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Runerigus
+Level: 47
+
+
+Indeedee
+Level: 43
+
 
 === TRAINER_ALEXIS ===
 Name: ALEXIS
@@ -4247,13 +4261,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kirlia
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Farigiraf
+Level: 60
 
-Xatu
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wyrdeer
+Level: 60
+
 
 === TRAINER_JACKI_1 ===
 Name: JACKI
