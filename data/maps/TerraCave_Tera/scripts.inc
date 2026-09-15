@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 TerraCave_Tera_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, TerraCave_Tera_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, TerraCave_Tera_OnTransition
