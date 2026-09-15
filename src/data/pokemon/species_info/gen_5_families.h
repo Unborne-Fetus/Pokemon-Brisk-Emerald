@@ -11780,9 +11780,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_BRAVIARY] =
     {
         .baseHP        = 100,
-        .baseAttack    = 123,
+        .baseAttack    = 145,
         .baseDefense   = 75,
-        .baseSpeed     = 80,
+        .baseSpeed     = 120,
         .baseSpAttack  = 57,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),

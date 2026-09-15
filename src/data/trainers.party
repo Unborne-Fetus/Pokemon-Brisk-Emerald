@@ -2807,7 +2807,7 @@ AI: Check Bad Move
 Kingler
 Shiny: Yes
 Dynamax Level: 10
-Gigantamax
+Gigantamax: Yes
 Level: 46
 
 
@@ -2821,7 +2821,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Quaquaval
-Tera Type: Yes
+Tera Type: Water
 Level: 43
 
 
@@ -2857,7 +2857,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie @ Starmie
+Starmie @ Starminite
 Level: 46
 
 
@@ -3066,7 +3066,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Hawlucha @ Hawluchite
+Hawlucha @ Hawluchanite
 Level: 50
 
 
@@ -3212,7 +3212,7 @@ Level: 50
 
 Sukuna (Machamp) (M) @ Assault Vest
 Dynamax Level: 10
-Gigantamax: True
+Gigantamax: Yes
 Level: 50
 
 
@@ -3321,7 +3321,7 @@ Ampharos @ Ampharosite
 Level: 60
 
 === TRAINER_DALTON_1 ===
-Name: DALTON
+Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
@@ -3329,16 +3329,16 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Guitarist (Toxtricity Low Key) (M) 
+Level: 45
 
-Whismur
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Drums (Rillaboom) (M)
+Level: 43
+
 
 === TRAINER_DALTON_2 ===
-Name: DALTON
+Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
@@ -3346,20 +3346,19 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Guitarist (Toxtricity Low Key) (M) 
+Level: 55
 
-Whismur
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Magnemite
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Drums (Rillaboom) (M)
+Level: 54
+
+Vocals (Toxtricity Amped) (M)
+Level: 56
+
 
 === TRAINER_DALTON_3 ===
-Name: DALTON
+Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
@@ -3367,20 +3366,21 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Guitarist (Toxtricity Low Key) (M) 
+Level: 65
 
-Loudred
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Magnemite
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Drums (Rillaboom) (M)
+Level: 63
+
+Vocals (Toxtricity Amped) (M)
+Level: 64
+
+Bass (Obstagoon) (M)
+Level:64
 
 === TRAINER_DALTON_4 ===
-Name: DALTON
+Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
@@ -3388,20 +3388,23 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Brian (Toxtricity Low Key) (M) 
+Level: 87
 
-Loudred
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Magneton
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Roger (Rillaboom) (M)
+Level: 80
+
+Freddie (Toxtricity Amped) (M)
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 90
+
+John (Obstagoon) (M)
+Level: 80
 
 === TRAINER_DALTON_5 ===
-Name: DALTON
+Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
@@ -3409,17 +3412,20 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Brian (Toxtricity Low Key) (M) 
+Level: 100
 
-Exploud
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Magneton
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Roger (Rillaboom) (M)
+Level: 100
+
+Freddie (Toxtricity Amped) (M)
+Gigantamax: Yes
+Dynamax Level: 10
+Level: 100
+
+John (Obstagoon) (M)
+Level: 100
 
 === TRAINER_COLE ===
 Name: COLE
@@ -3431,8 +3437,8 @@ Double Battle: No
 AI: Check Bad Move
 
 Arcanine Hisui
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 35
+
 
 === TRAINER_JEFF ===
 Name: JEFF
@@ -3443,13 +3449,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Raboot
-Level: 22
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Cinderace
+Level: 36
+Dynamax Level: 10
+Gigantamax: Yes
 
-Crocalor
-Level: 22
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Feraligatr @ Feraligite
+Level: 37
+
 
 === TRAINER_AXLE ===
 Name: AXLE
@@ -3460,9 +3468,9 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Charmeleon
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Charizard @ Charizardite Y
+Level: 40
+
 
 === TRAINER_JACE ===
 Name: JACE
@@ -3475,7 +3483,7 @@ AI: Check Bad Move
 
 Heatmor
 Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 
 === TRAINER_KEEGAN ===
 Name: KEEGAN
@@ -3486,12 +3494,12 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Torracat
-Level: 23
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Incineroar 
+Level: 40
+
 
 === TRAINER_BERNIE_1 ===
-Name: BERNIE
+Name: Sugimori
 Class: Kindler
 Pic: Kindler
 Gender: Male
@@ -3499,16 +3507,17 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Charizard @ Charizardite Y
+Level: 40
 
-Wingull
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Charizard
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 40
 
 === TRAINER_BERNIE_2 ===
-Name: BERNIE
+Name: Sugimori
 Class: Kindler
 Pic: Kindler
 Gender: Male
@@ -3516,16 +3525,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Charizard @ Charizardite Y
+Level: 50
 
-Wingull
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Charizard
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 50
+
 
 === TRAINER_BERNIE_3 ===
-Name: BERNIE
+Name: Sugimori
 Class: Kindler
 Pic: Kindler
 Gender: Male
@@ -3533,16 +3544,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Charizard @ Charizardite Y
+Level: 60
 
-Pelipper
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Charizard
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 60
+
 
 === TRAINER_BERNIE_4 ===
-Name: BERNIE
+Name: Sugimori
 Class: Kindler
 Pic: Kindler
 Gender: Male
@@ -3550,16 +3563,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Charizard @ Charizardite Y
+Level: 70
 
-Pelipper
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Charizard
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 70
+
 
 === TRAINER_BERNIE_5 ===
-Name: BERNIE
+Name: Sugimori
 Class: Kindler
 Pic: Kindler
 Gender: Male
@@ -3567,16 +3582,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magcargo
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Charizard @ Charizardite Y
+Level: 100
 
-Pelipper
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+
+Charizard
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
+
 
 === TRAINER_DREW ===
-Name: DREW
+Name: Manolete
 Class: Camper
 Pic: Camper
 Gender: Male
@@ -3584,13 +3601,14 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
-- Sand Attack
-- Poison Sting
-- Slash
+Tauros Paldea Combat
+Level: 42
+
+Tauros Paldea Blaze
+Level: 42
+
+Tauros Paldea Aqua
+Level: 42
 
 === TRAINER_BEAU ===
 Name: BEAU
@@ -3601,29 +3619,17 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rapid Spin
-- Mud Slap
-- Psybeam
-- Rock Tomb
+Tsareena
+Level: 45
 
-Sandshrew
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Sting
-- Sand Attack
-- Scratch
-- Dig
+Pinsir @ Pinsirite
+Level: 47
 
-Baltoy
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rapid Spin
-- Mud Slap
-- Psybeam
-- Rock Tomb
+
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level:43
 
 === TRAINER_LARRY ===
 Name: LARRY
@@ -3634,9 +3640,9 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Nuzleaf
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross @ Heracronite
+Level: 40
+
 
 === TRAINER_SHANE ===
 Name: SHANE
@@ -3647,13 +3653,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Will (Revavroom)
+Level: 54
 
-Nuzleaf
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Cal (Cyclizar)
+Level: 47
+
 
 === TRAINER_JUSTIN ===
 Name: JUSTIN
@@ -3664,9 +3670,9 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Kecleon
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gumshoos
+Level: 57
+
 
 === TRAINER_ETHAN_1 ===
 Name: ETHAN

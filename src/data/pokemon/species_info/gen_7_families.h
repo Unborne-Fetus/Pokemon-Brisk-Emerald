@@ -3635,9 +3635,9 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     [SPECIES_BEWEAR] =
     {
         .baseHP        = 120,
-        .baseAttack    = 125,
-        .baseDefense   = 80,
-        .baseSpeed     = 60,
+        .baseAttack    = 130,
+        .baseDefense   = 120,
+        .baseSpeed     = 110,
         .baseSpAttack  = 55,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FIGHTING),

@@ -3946,9 +3946,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_GRAPPLOCT] =
     {
         .baseHP        = 80,
-        .baseAttack    = 118,
+        .baseAttack    = 158,
         .baseDefense   = 90,
-        .baseSpeed     = 42,
+        .baseSpeed     = 130,
         .baseSpAttack  = 70,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_FIGHTING),
@@ -4069,7 +4069,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sSinisteaLevelUpLearnset,
         .teachableLearnset = sSinisteaTeachableLearnset,
         .formSpeciesIdTable = sSinisteaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CRACKED_POT, SPECIES_POLTEAGEIST_PHONY}),
+        .evolutions = EVOLUTION(
+        {EVO_ITEM, ITEM_MASTERPIECE_TEACUP, SPECIES_SINISTCHA_UNREMARKABLE},
+        {EVO_ITEM, ITEM_CHIPPED_POT, SPECIES_POLTEAGEIST_PHONY}
+        ),
     },
 
     [SPECIES_SINISTEA_ANTIQUE] =
@@ -4135,7 +4138,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sSinisteaLevelUpLearnset,
         .teachableLearnset = sSinisteaTeachableLearnset,
         .formSpeciesIdTable = sSinisteaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHIPPED_POT, SPECIES_POLTEAGEIST_ANTIQUE}),
+        .evolutions = EVOLUTION(
+        {EVO_ITEM, ITEM_MASTERPIECE_TEACUP, SPECIES_SINISTCHA_MASTERPIECE},
+        {EVO_ITEM, ITEM_CHIPPED_POT, SPECIES_POLTEAGEIST_ANTIQUE}
+        ),
     },
 
     [SPECIES_POLTEAGEIST_PHONY] =
@@ -6056,9 +6062,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .baseHP        = 122,
         .baseAttack    = 130,
         .baseDefense   = 69,
-        .baseSpeed     = 30,
+        .baseSpeed     = 90,
         .baseSpAttack  = 80,
-        .baseSpDefense = 69,
+        .baseSpDefense = 109,
         .types = MON_TYPES(TYPE_STEEL),
         .catchRate = 90,
         .expYield = 175,

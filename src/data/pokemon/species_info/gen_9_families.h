@@ -3120,7 +3120,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sToedscoolLevelUpLearnset,
         .teachableLearnset = sToedscoolTeachableLearnset,
         .eggMoveLearnset = sToedscoolEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_TOEDSCRUEL}),
+        .evolutions = EVOLUTION(
+        {EVO_LEVEL, 30, SPECIES_TOEDSCRUEL},
+        {EVO_ITEM, ITEM_WATER_STONE, SPECIES_TENTACRUEL}
+        ),
     },
 
     [SPECIES_TOEDSCRUEL] =
@@ -3961,7 +3964,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sWiglettLevelUpLearnset,
         .teachableLearnset = sWiglettTeachableLearnset,
         .eggMoveLearnset = sWiglettEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_WUGTRIO}),
+        .evolutions = EVOLUTION(
+        {EVO_LEVEL, 26, SPECIES_WUGTRIO},
+        {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_DUGTRIO},
+        {EVO_ITEM, ITEM_METAL_COAT, SPECIES_DUGTRIO_ALOLA}
+        ),
     },
 
     [SPECIES_WUGTRIO] =
@@ -7563,7 +7570,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_UNREMARKABLE_TEACUP, SPECIES_SINISTCHA_UNREMARKABLE}),
+        .evolutions = EVOLUTION(
+        {EVO_ITEM, ITEM_UNREMARKABLE_TEACUP, SPECIES_SINISTCHA_UNREMARKABLE},
+        {EVO_ITEM, ITEM_CRACKED_POT, SPECIES_POLTEAGEIST_PHONY}
+        ),
         .formSpeciesIdTable = sPoltchageistFormSpeciesIdTable,
     },
 
@@ -7629,7 +7639,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MASTERPIECE_TEACUP, SPECIES_SINISTCHA_MASTERPIECE}),
+        .evolutions = EVOLUTION(
+        {EVO_ITEM, ITEM_MASTERPIECE_TEACUP, SPECIES_SINISTCHA_MASTERPIECE},
+        {EVO_ITEM, ITEM_CHIPPED_POT, SPECIES_POLTEAGEIST_ANTIQUE}
+        ),
         .formSpeciesIdTable = sPoltchageistFormSpeciesIdTable,
     },
 

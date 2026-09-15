@@ -6866,7 +6866,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sDiglettTeachableLearnset,
         .eggMoveLearnset = sDiglettEggMoveLearnset,
         .formSpeciesIdTable = sDiglettFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_DUGTRIO}),
+        .evolutions = EVOLUTION(
+            {EVO_LEVEL, 26, SPECIES_DUGTRIO},
+            {EVO_ITEM, ITEM_WATER_STONE, SPECIES_WUGTRIO},
+            {EVO_ITEM, ITEM_METAL_COAT, SPECIES_DUGTRIO_ALOLA}
+        ),
     },
 
     [SPECIES_DUGTRIO] =
@@ -7025,7 +7029,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sDiglettAlolaTeachableLearnset,
         .eggMoveLearnset = sDiglettAlolaEggMoveLearnset,
         .formSpeciesIdTable = sDiglettFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_DUGTRIO_ALOLA}),
+        .evolutions = EVOLUTION(
+            {EVO_LEVEL, 26, SPECIES_DUGTRIO_ALOLA},
+            {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_DUGTRIO},
+            {EVO_ITEM, ITEM_WATER_STONE, SPECIES_WUGTRIO}
+        ),
     },
 
     [SPECIES_DUGTRIO_ALOLA] =
@@ -9081,10 +9089,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_MACHAMP] =
     {
-        .baseHP        = 90,
-        .baseAttack    = 130,
-        .baseDefense   = 80,
-        .baseSpeed     = 55,
+        .baseHP        = 120,
+        .baseAttack    = 150,
+        .baseDefense   = 100,
+        .baseSpeed     = 105,
         .baseSpAttack  = 65,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 85 : 65,
         .types = MON_TYPES(TYPE_FIGHTING),
@@ -9587,7 +9595,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sTentacoolLevelUpLearnset,
         .teachableLearnset = sTentacoolTeachableLearnset,
         .eggMoveLearnset = sTentacoolEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_TENTACRUEL}),
+        .evolutions = EVOLUTION(
+        {EVO_LEVEL, 30, SPECIES_TENTACRUEL},
+        {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_TOEDSCRUEL}
+        ),
     },
 
     [SPECIES_TENTACRUEL] =
@@ -12491,10 +12502,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_ONIX
     [SPECIES_ONIX] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 45,
+        .baseHP        = 75,
+        .baseAttack    = 105,
         .baseDefense   = 160,
-        .baseSpeed     = 70,
+        .baseSpeed     = 85,
         .baseSpAttack  = 30,
         .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 45 : 30,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GROUND),
@@ -12562,10 +12573,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_STEELIX] =
     {
-        .baseHP        = 75,
-        .baseAttack    = 85,
+        .baseHP        = 120,
+        .baseAttack    = 105,
         .baseDefense   = 200,
-        .baseSpeed     = 30,
+        .baseSpeed     = 55,
         .baseSpAttack  = 55,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_STEEL, TYPE_GROUND),

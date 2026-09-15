@@ -1669,9 +1669,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_RAMPARDOS] =
     {
         .baseHP        = 97,
-        .baseAttack    = 165,
+        .baseAttack    = 195,
         .baseDefense   = 60,
-        .baseSpeed     = 58,
+        .baseSpeed     = 108,
         .baseSpAttack  = 65,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_ROCK),
@@ -1808,8 +1808,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
     [SPECIES_BASTIODON] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 52,
+        .baseHP        = 95,
+        .baseAttack    = 92,
         .baseDefense   = 168,
         .baseSpeed     = 30,
         .baseSpAttack  = 47,
