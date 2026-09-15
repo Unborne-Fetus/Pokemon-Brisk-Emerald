@@ -12,23 +12,6 @@
   - [Overworld improvements](#overworld-improvements)
   - [Developer tools](#developer-tools)
 
-## Configuration files
-A lot of features listed below can be turned off as desired. Check which ones in these files
-- [AI config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/ai.h)
-- [Battle config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/battle.h)
-- [Caps config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/caps.h)
-- [Debug config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/debug.h)
-- [DexNav config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/dexnav.h)
-- [General config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/general.h)
-- [HGSS Pokédex config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/pokedex_plus_hgss.h)
-- [Item config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/item.h)
-- [NPC Follower config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/follower_npc.h)
-- [Overworld config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/overworld.h)
-- [Pokémon config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/pokemon.h)
-- [Save config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/save.h)
-- [Species enabled](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/species_enabled.h)
-- [Summary screen config](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/summary_screen.h)
-
 ## Upgraded Battle Engine
 - ***Battle gimmicks:*** Mega Evolution, Primal Reversion, Ultra Burst, Z-Moves, Dynamax, Gigantamax and Terastallization.
 - ***Newer game battle types:*** Double Wild Battles, custom Multi Battles, Inverse Battles, 1v2/2v1 battles, Sky Battles.
@@ -61,10 +44,8 @@ A lot of features listed below can be turned off as desired. Check which ones in
 - ***Form Change System.*** Most form changes can be added without additional coding. This includes support for: Holding/using an item, HP thresholds being met, weather change in and/or out of battle, Fusions, and more.
 
 ## Interface improvements
-- ***Pokémon Summary:*** Move relearner, EV/IV checks, Nature colors ([feature branch](https://github.com/DizzyEggg/pokeemerald/tree/nature_color) by @DizzyEggg).
-- ***Party Menu:*** "Move Item" option.
-- ***Pokémon Storage System:*** Move option as default, access from Box Link item.
-- ***HGSS-style Pokédex*** ([original feature branch](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss) by @TheXaman): Detailed in-game information accessible to players.
+Box 
+- ***HGSS-style Pokédex*** 
 
 ## Engine improvements
 - ***All base pokeemerald bugfixes implemented by default:*** Anything under the `BUGFIX` define.
@@ -86,10 +67,6 @@ A lot of features listed below can be turned off as desired. Check which ones in
 - ***Obtained Item descriptions*** (feature branch by @ghoulslash).
 
 ## Developer tools
-- ***Integrated Testing:*** Pinpoint if your custom mechanics have broken something else in the game or not.
-- ***Pokémon Sprite Visualizer:*** Test every Pokémon sprite and animation.
-- ***Overworld debug menu** ([original feature branch](https://github.com/TheXaman/pokeemerald/tree/tx_debug_system) by @TheXaman)*: Support menu with an assortment of features to facilitate debugging, including warping, flag and var toggling, Pokémon and item generation and more.
-- ***Battle Debug Menu:*** Modify data on the fly in the middle of a battle.
-- ***Learnset Helper:*** Autogenerate movesets from your custom TM and Tutor data based on official compatibility data.
-- ***Configurable script flags:*** Disabling Wild encounters, Disabling Trainer battles, Forcing/Disabling Shinies.
-- ***Saveblock Cleansing*** ([feature branch](https://github.com/ghoulslash/pokeemerald/tree/saveblock) by @ghoulslash)
+SPECIES_NONE is now ignored instead of added as an encounter called ????? when placed in the encounter table.
+Expanded encounter system. Now allows for 12 pokemon in the water, and a large 25 on land.
+Items like Metal Coat and Leaders Crest can be used on a pokemon, rather than just given.
