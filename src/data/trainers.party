@@ -3683,13 +3683,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Forretress
+Level: 40
+- Explosion
 
-Taillow
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Accelgor
+Level: 40
+
 
 === TRAINER_AUTUMN ===
 Name: AUTUMN
@@ -3700,9 +3700,9 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sawsbuck Autumn 
+Level: 45
+
 
 === TRAINER_TRAVIS ===
 Name: TRAVIS
@@ -3713,9 +3713,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flapple
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 40
+
 
 === TRAINER_ETHAN_2 ===
 Name: ETHAN
@@ -3723,16 +3725,16 @@ Class: Camper
 Pic: Camper
 Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Zigzagoon
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Escavalier
+Level: 50
 
-Taillow
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Accelgor
+Level: 47
+
 
 === TRAINER_ETHAN_3 ===
 Name: ETHAN
@@ -3740,16 +3742,16 @@ Class: Camper
 Pic: Camper
 Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Linoone
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Escavalier
+Level: 55
 
-Swellow
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Accelgor
+Level: 57
+
 
 === TRAINER_ETHAN_4 ===
 Name: ETHAN
@@ -3757,20 +3759,20 @@ Class: Camper
 Pic: Camper
 Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Sandshrew
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Escavalier
+Level: 63
 
-Swellow
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Linoone
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Accelgor
+Level: 62
+
+
+Golem Alola
+Level: 60
+
 
 === TRAINER_ETHAN_5 ===
 Name: ETHAN
@@ -3781,17 +3783,19 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Escavalier
+Level: 78
 
-Sandslash
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Linoone
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Accelgor
+Level: 75
+
+
+Golem Alola @ Choice Band
+Ability: Galvanize
+Tera Type: Electric
+Level: 100
+- Explosion
 
 === TRAINER_BRENT ===
 Name: BRENT
@@ -3802,9 +3806,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 56
+
 
 === TRAINER_DONALD ===
 Name: DONALD
@@ -3815,17 +3821,19 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
-Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Centiskorch
+Level: 35
 
-Silcoon
-Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Beautifly
-Level: 24
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Orbeetle
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 40
+
+
+Beedrill @ Beedrillite
+Level: 43
+
 
 === TRAINER_TAYLOR ===
 Name: TAYLOR
@@ -3836,17 +3844,19 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Golisopod
+Level: 45
 
-Cascoon
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Dustox
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Scolipede @ Scolipite
+Level: 45
+
+
+Centiskorch
+Level: 45
+Dynamax Level: 10
+Gigantamax: Yes
+
 
 === TRAINER_JEFFREY_1 ===
 Name: JEFFREY
@@ -3857,17 +3867,17 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
+Weedle
 Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Surskit
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Surskit
+Caterpie
 Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+Grubbin 
+Level: 27
+
 
 === TRAINER_DEREK ===
 Name: DEREK
@@ -3878,13 +3888,13 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Dustox
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Parasect
+Level: 36
 
-Beautifly
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Crustle
+Level: 36
+
 
 === TRAINER_JEFFREY_2 ===
 Name: JEFFREY
@@ -3895,17 +3905,17 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Kakuna
+Level: 35
 
-Surskit
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Surskit
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Metapod
+Level: 35
+
+
+Charjabug 
+Level: 35
+
 
 === TRAINER_JEFFREY_3 ===
 Name: JEFFREY
@@ -3916,17 +3926,20 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
-Level: 34
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Beedrill @ Beedrillite
+Level: 50
 
-Surskit
-Level: 34
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Masquerain
-Level: 34
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 50
+
+
+Vikavolt 
+Tera Type: Electric
+Level: 50
+
 
 === TRAINER_JEFFREY_4 ===
 Name: JEFFREY
@@ -3937,21 +3950,20 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Beedrill @ Beedrillite
+Level: 60
 
-Wurmple
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Surskit
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 60
 
-Masquerain
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Vikavolt 
+Tera Type: Electric
+Level: 60
+
 
 === TRAINER_JEFFREY_5 ===
 Name: JEFFREY
@@ -3962,25 +3974,20 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Surskit
-Level: 38
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Beedrill @ Beedrillite
+Level: 80
 
-Dustox
-Level: 38
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Surskit
-Level: 38
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 80
 
-Masquerain @ Silver Powder
-Level: 38
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Beautifly
-Level: 38
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Vikavolt 
+Tera Type: Electric
+Level: 90
+
 
 === TRAINER_EDWARD ===
 Name: EDWARD
@@ -3991,10 +3998,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Abra
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hidden Power
+Alakazam @ Alakazite
+Level: 37
+
 
 === TRAINER_PRESTON ===
 Name: PRESTON
@@ -4005,9 +4011,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kirlia
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Espathra
+Level: 48
+
 
 === TRAINER_VIRGIL ===
 Name: VIRGIL
@@ -4018,9 +4024,9 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Ralts
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gallade @ Galladite
+Level: 56
+
 
 === TRAINER_BLAKE ===
 Name: BLAKE
@@ -4031,9 +4037,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Girafarig
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Hatterene
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 56
+
 
 === TRAINER_WILLIAM ===
 Name: WILLIAM
@@ -4044,17 +4052,19 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Ralts
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Exeggutor
+Level: 36
 
-Ralts
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kirlia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slowbro @ Slowbronite
+Level: 46
+
+
+Alcremie
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 56
+
 
 === TRAINER_JOSHUA ===
 Name: JOSHUA
