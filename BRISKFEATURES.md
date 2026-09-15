@@ -1,9 +1,5 @@
 
-# What features are included?
 ## Table of Contents
-- [What features are included?](#what-features-are-included)
-  - [Table of Contents](#table-of-contents)
-  - [Configuration files](#configuration-files)
   - [Upgraded Battle Engine](#upgraded-battle-engine)
   - [Full Trainer customization](#full-trainer-customization)
   - [Pokémon data](#pokémon-data)
