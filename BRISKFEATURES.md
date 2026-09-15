@@ -8,9 +8,8 @@
   - [Full Trainer customization](#full-trainer-customization)
   - [Pokémon data](#pokémon-data)
   - [Interface improvements](#interface-improvements)
-  - [Engine improvements](#engine-improvements)
   - [Overworld improvements](#overworld-improvements)
-  - [Developer tools](#developer-tools)
+  - [Dev Tools](#developer-tools)
 
 ## Upgraded Battle Engine
 - ***Battle gimmicks:*** Mega Evolution, Primal Reversion, Ultra Burst, Z-Moves, Dynamax, Gigantamax and Terastallization.
@@ -44,29 +43,28 @@
 - ***Form Change System.*** Most form changes can be added without additional coding. This includes support for: Holding/using an item, HP thresholds being met, weather change in and/or out of battle, Fusions, and more.
 
 ## Interface improvements
-Box 
-- ***HGSS-style Pokédex*** 
 
-## Engine improvements
-- ***All base pokeemerald bugfixes implemented by default:*** Anything under the `BUGFIX` define.
-- ***Improved sprite and palette compression:*** Assets use less space than vanilla compression.
-- ***Modern compiler support:*** Detect potential errors in your code more easily.
-- ***Dynamic Multichoice*** ([original branch](https://github.com/SBird1337/pokeemerald/tree/feature/dynmulti) by @SBird1337): Easier way to add multiple-choice menus for scripting.
-- ***High-Quality RNG:*** No more broken vanilla RNG.
+Box Link added
+
+Second page added in option menu
+
+Overworld and Battle speed up options
+
+Text speed increased
+
+HGSS Pokedex
+
 
 ## Overworld improvements
-- ***Modern Mechanics***: Defog field move, B2W2+ Repel system, Running indoors, Removed field poison, Chain fishing, VS. Seeker, FRLG+ whiteout message.
-- ***Overworld and Follower Pokémon*** ([feature branch](https://github.com/aarant/pokeemerald/tree/followers-expanded-id) by @aarant)
-    - *Includes Dynamic overworld palettes (DOWP) and Overworld Expansion for event IDs beyond 255.*
-    - *Includes Pokémon sprites up to Generation IX.*
-- ***Day/Night System:*** ([feature branch](https://github.com/aarant/pokeemerald/tree/lighting-expanded-id) by @aarant)
-    - *Includes support for non-real time clock*.
-- ***NPC Followers***: ([feature branch](https://github.com/ghoulslash/pokeemerald/tree/follow_me) by @ghoulslash)
-- ***BW Map Pop-ups*** ([feature branch](https://github.com/ravepossum/pokeemerald/tree/bsbob_map_popups) by @BSBob)
-- ***XY Berry Mechanics:*** Mutations, moisture, weeds, pests.
-- ***Obtained Item descriptions*** (feature branch by @ghoulslash).
+
+Overworld encounters.
+
+Map changes
 
 ## Developer tools
+
 SPECIES_NONE is now ignored instead of added as an encounter called ????? when placed in the encounter table.
+
 Expanded encounter system. Now allows for 12 pokemon in the water, and a large 25 on land.
+
 Items like Metal Coat and Leaders Crest can be used on a pokemon, rather than just given.
