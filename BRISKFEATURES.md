@@ -1,13 +1,13 @@
 
 ## Table of Contents
-  - [Upgraded Battle Engine](#upgraded-battle-engine)
+  - [Missing Pokemon](#missing-pokemon)
   - [Full Trainer customization](#full-trainer-customization)
   - [Pokémon data](#pokémon-data)
   - [Interface improvements](#interface-improvements)
   - [Overworld improvements](#overworld-improvements)
   - [Dev Tools](#developer-tools)
 
-## Upgraded Battle Engine
+## Missing Pokemon
 - ***Battle gimmicks:*** Mega Evolution, Primal Reversion, Ultra Burst, Z-Moves, Dynamax, Gigantamax and Terastallization.
 - ***Newer game battle types:*** Double Wild Battles, custom Multi Battles, Inverse Battles, 1v2/2v1 battles, Sky Battles.
 - ***Updated battle mechanics:*** Critical capture, Frostbite support, Poké Ball quick menu, Move description menu, no badge boosts, Gen 4 Fog, obedience, Affection, Party swap upon catch, move effectiveness in battle, FRLG/Gen4+ whiteout money calculation, Gen 4-style shadows.
