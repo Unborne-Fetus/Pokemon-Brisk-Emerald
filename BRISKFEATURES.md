@@ -8,17 +8,107 @@
   - [Dev Tools](#developer-tools)
 
 ## Missing Pokemon
-- ***Battle gimmicks:*** Mega Evolution, Primal Reversion, Ultra Burst, Z-Moves, Dynamax, Gigantamax and Terastallization.
-- ***Newer game battle types:*** Double Wild Battles, custom Multi Battles, Inverse Battles, 1v2/2v1 battles, Sky Battles.
-- ***Updated battle mechanics:*** Critical capture, Frostbite support, Poké Ball quick menu, Move description menu, no badge boosts, Gen 4 Fog, obedience, Affection, Party swap upon catch, move effectiveness in battle, FRLG/Gen4+ whiteout money calculation, Gen 4-style shadows.
-- ***Updated move data***: Fairy/Stellar types, Physical/Special split, flags.
-- ***Updated calculations:*** Damage, experience, mid-turn speed, end-battle stats and EVs, Level 100 EVs.
-- ***Every item, ability and move effect up to Gen IX:*** Includes contest data up to SwSh ([source](https://pokemonurpg.com/info/contests/rse-move-list/)).
-- ***Initial battle conditions:*** Stat stages, battle terrain, Wild AI flags.
-- ***Faster battles:*** Simultaneous HP reduction, shortcut to "Run" option, faster battle intro, faster HP drain, faster AI calculations.
-- ***Easier customization:*** Cleaner codebase to implement custom moves and effects.
-- ***Improved AI:*** Faster and considers new effects added by Expansion.
-- ***Popular features:*** Level/EV Caps, Sleep Clause, Type Indicators.
+Uxie
+Mespirit
+Azelf
+Dialga
+Palkia
+Heatran
+Regigigas
+Giratina
+Cresselia
+Darkrai
+Arceus
+Shaymin
+Articuno
+Zapdos
+Moltres
+Mewtwo
+Raikou
+Entei
+Suicune
+Lugia
+Ho-Oh
+Celebi
+Jirachi
+Deoxys
+Mew
+Victini
+cobalion
+terrakion
+virizion
+tornadus
+thundurus
+reshiram
+zekrom
+landorus
+kyurem
+keldeo
+meloetta
+genesect
+Xerneas
+Yveltal
+Zygarde
+Diancie
+Hoopa
+Volcanion
+Type: Null
+Silvally
+Tapu Koko
+Tapu Lele
+Tapu Bulu
+Tapu Fini
+Cosmog
+Cosmoem
+Solgaleo
+Lunala
+Nihilego
+Buzzwhole
+Pheromosa
+Xurkitree
+Celesteela
+Kartana
+Guzzlord
+Necrozma
+Magearna
+Marshadow
+Poipole
+Naganadel
+Stakataka
+Blacephalon
+Zeraora
+Meltan
+Melmetal
+zarude
+
+
+
+
+zacian
+zamazenta
+eternatus
+
+
+regieleki
+regidrago
+glastrier
+spectrier
+carylex
+enamorus
+Wo Chien
+Ting Lu
+Chien Pao
+Chi-yu
+okidogi
+Munkidori
+Fezandipiti
+Ogerpon
+
+pecharunt
+Miriadon
+Koraidon
+galar bird trio
+blood moon ursaluna
 
 ## Full Trainer customization
 - ***Compatible with Pokémon Showdown's team syntax:*** Create your trainer teams in the [teambuilder](https://play.pokemonshowdown.com/teambuilder) and paste the results!
