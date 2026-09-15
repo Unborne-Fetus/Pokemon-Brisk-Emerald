@@ -5,6 +5,7 @@
 
 
 
+
 TerraCave_Tera_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, TerraCave_Tera_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, TerraCave_Tera_OnTransition
@@ -31,10 +32,6 @@ TerraCave_Tera_EventScript_ShowTerapagos::
 
 TerraCave_Tera_EventScript_Terapagos::
 	lockall
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-	waitmovement 0
-	applymovement LOCALID_TERRA_CAVE_TERAPAGOS, TerraCave_Tera_Movement_TerapagosApproach
-	waitmovement 0
 	waitse
 	playmoncry SPECIES_TERAPAGOS, CRY_MODE_ENCOUNTER
 	delay 40
@@ -49,13 +46,11 @@ TerraCave_Tera_EventScript_Terapagos::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TerraCave_Tera_EventScript_DefeatedTerapagos
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, TerraCave_Tera_EventScript_RanFromTerapagos
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, TerraCave_Tera_EventScript_RanFromTerapagos
-	setvar VAR_SHOULD_Tera_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_TERAPAGOS
 	releaseall
 	end
 
 TerraCave_Tera_EventScript_DefeatedTerapagos::
-	setvar VAR_SHOULD_Tera_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_TERAPAGOS
 	goto Common_EventScript_RemoveStaticPokemon
 	end
@@ -65,16 +60,6 @@ TerraCave_Tera_EventScript_RanFromTerapagos::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
-TerraCave_Tera_Movement_TerapagosApproach:
-	init_affine_anim
-	walk_down_start_affine
-	delay_16
-	delay_16
-	walk_down_affine
-	delay_16
-	delay_16
-	walk_down_affine
-	step_end
 
 
 
