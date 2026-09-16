@@ -5991,7 +5991,7 @@ AI: OMNISCIENT
 Mugshot: Yellow
 
 Garchomp @ Life Orb
-Level: 70
+Level: 100
 Ability: Rough Skin
 Shiny: No
 Nature: Naive
@@ -6003,7 +6003,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 
 Greninja @ Choice Scarf
-Level: 70
+Level: 100
 Ability: Protean
 Shiny: Yes
 Nature: Naive
@@ -6015,7 +6015,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Gunk Shot
 
 Corviknight @ Leftovers
-Level: 70
+Level: 100
+Dynamax Level: 10
+Gigantamax: Yes
 Ability: Mirror Armor
 Shiny: Yes
 Nature: Impish
@@ -6027,8 +6029,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Roost
 
 Skeledirge @ Clear Amulet
-Level: 70
+Level: 100
 Ability: Unaware
+Tera Type: Fire
 Shiny: No
 Nature: Bold
 EVs: 26 HP / 0 Atk / 124 Def / 248 SpA / 124 SpD / 0 Spe
@@ -6039,7 +6042,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 
 Sylveon @ Fairy Feather
-Level: 70
+Level: 100
 Ability: Pixilate
 Shiny: Yes
 Nature: Modest
@@ -6051,7 +6054,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 
 Metagross @ Metagrossite
-Level: 80
+Level: 100
 Ability: Clear Body
 Shiny: Yes
 Nature: Jolly
