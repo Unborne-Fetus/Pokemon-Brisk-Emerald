@@ -1164,6 +1164,24 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     }
 }
 
+#define PUSH(script) ScriptStackPush(scrStack, script);
+
+#define PUSH_IF_SET(script, cond) \
+if (cond)           \
+{                   \
+    PUSH(script)    \
+}
+
+#define PUSH_IF_ELSE(script, alt, cond) \
+if (cond)           \
+{                   \
+    PUSH(script)    \
+}                   \
+else                \
+{                   \
+    PUSH(alt)       \
+}                   \
+
 const u8* BattleSetup_ConfigureFacilityTrainerBattle(u8 facility, const u8* scriptEndPtr)
 {
     sTrainerBattleEndScript = (u8*)scriptEndPtr;
