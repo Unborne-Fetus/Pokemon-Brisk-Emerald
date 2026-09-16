@@ -200,19 +200,19 @@
 #define B_REDIRECT_ABILITY_IMMUNITY     GEN_LATEST // In Gen5+, Pokémon with Lightning Rod/Storm Drain are immune to Electric-/Water-type moves and raises their Sp. Atk by 1 stage ontop of the redirecting effect.
 #define B_REDIRECT_ABILITY_ALLIES       GEN_LATEST // In Gen4+, Lightning Rod and Storm Drain also redirect ally's moves.
 #define B_LEAF_GUARD_PREVENTS_REST      GEN_LATEST // In Gen5+, Leaf Guard prevents the use of Rest in the sun.
-#define B_TRANSISTOR_BOOST              GEN_LATEST // In Gen9+, Transistor increases the power of Electric-type moves by 1.3x instead of 1.5x.
-#define B_ILLUMINATE_EFFECT             GEN_LATEST // In Gen9+, Illuminate prevents accuracy from being lowered and ignores the target's evasion. Previously, it had no in-battle effect.
-#define B_WEAK_ARMOR_SPEED              GEN_LATEST // In Gen7+, when hit by a physical move, Weak Armor raises Speed by 2 stages instead of 1.
-#define B_PROTEAN_LIBERO                GEN_LATEST // In Gen9+, Protean and Libero trigger only once per Battle.
+#define B_TRANSISTOR_BOOST              GEN_8 // In Gen9+, Transistor increases the power of Electric-type moves by 1.3x instead of 1.5x.
+#define B_ILLUMINATE_EFFECT             GEN_8 // In Gen9+, Illuminate prevents accuracy from being lowered and ignores the target's evasion. Previously, it had no in-battle effect.
+#define B_WEAK_ARMOR_SPEED              GEN_6 // In Gen7+, when hit by a physical move, Weak Armor raises Speed by 2 stages instead of 1.
+#define B_PROTEAN_LIBERO                GEN_8 // In Gen9+, Protean and Libero trigger only once per Battle.
 #define B_INTREPID_SWORD                GEN_LATEST // In Gen9+, Intrepid Sword triggers only once per battle.
 #define B_DAUNTLESS_SHIELD              GEN_LATEST // In Gen9+, Dauntless Shield triggers only once per battle.
-#define B_DISGUISE_HP_LOSS              GEN_LATEST // In Gen8+, when a disguised Mimikyu's Disguise is busted, upon changing to its Busted Form, it loses 1/8 of its max HP.
-#define B_ABILITY_TRIGGER_CHANCE        GEN_LATEST // In Gen4+, Shed Skin, Cute Charm, Flame Body, Static, and Poison Point have a 30% chance to trigger. Previously, it was 1/3.
+#define B_DISGUISE_HP_LOSS              GEN_7 // In Gen8+, when a disguised Mimikyu's Disguise is busted, upon changing to its Busted Form, it loses 1/8 of its max HP.
+#define B_ABILITY_TRIGGER_CHANCE        GEN_3// In Gen4+, Shed Skin, Cute Charm, Flame Body, Static, and Poison Point have a 30% chance to trigger. Previously, it was 1/3.
                                                    // In Gen5+, Effect Spore has an 11% chance to sleep, a 9% chance to poison and a 10% chance to paralyze. In Gen4, Effect Spore has a 30% chance to sleep, poison, or paralyze, each with an equal chance. In Gen3, it's 10%.
 #define B_PICKUP_WILD                   GEN_LATEST // In Gen9+, Pickup allows its user to pick up its own used item at the end of the turn in wild battles.
 #define B_MAGIC_GUARD                   GEN_LATEST // In Gen4 only, Magic Guard ignores immobilization caused by paralysis.
-#define B_BATTLE_BOND                   GEN_LATEST // In Gen9+, Battle Bond raises Attack, Sp. Atk, and Speed by 1 stage, once per battle. Previously, the Pokémon would change into Ash-Greninja.
-#define B_ATE_MULTIPLIER                GEN_LATEST // In Gen7+, -ate Abilities (Aerilate, Galvanize, Normalize, Pixilate, Refrigerate) increase damage by 1.2x. In Gen6 and earlier, it was 1.3x, except Normalize, which had no multiplier.
+#define B_BATTLE_BOND                   GEN_8 // In Gen9+, Battle Bond raises Attack, Sp. Atk, and Speed by 1 stage, once per battle. Previously, the Pokémon would change into Ash-Greninja.
+#define B_ATE_MULTIPLIER                GEN_6 // In Gen7+, -ate Abilities (Aerilate, Galvanize, Normalize, Pixilate, Refrigerate) increase damage by 1.2x. In Gen6 and earlier, it was 1.3x, except Normalize, which had no multiplier.
 #define B_DEFIANT_STICKY_WEB            GEN_LATEST // In Gen9+, Defiant triggers on Sticky Web regardless of who set it up. In Gen8, it does not trigger on a Sticky Web set up by an ally after Court Change swaps its side.
 #define B_MIRROR_ARMOR_STICKY_WEB       GEN_LATEST // In Gen9+, Mirror Armor does not reflect the Sticky Web stat change even if the original Sticky Web user is still on the field
 #define B_POWDER_OVERCOAT               GEN_LATEST // In Gen6+, Overcoat blocks powder and spore moves.
@@ -222,7 +222,7 @@
                                                    // In Champions, Unseen Fist/Piercing Drill nerfs damage dealt against protected targets to 25%. It also no longer bypasses the contact effects of protect moves.
 
 // Various volatile timers
-#define B_CONFUSION_TURNS    5
+#define B_CONFUSION_TURNS    6
 #define B_UPROAR_TURN_COUNT  5
 #define B_RAMPAGE_TURNS      3
 #define B_DISABLE_TIMER      4
@@ -237,7 +237,7 @@
 #define B_LASER_FOCUS_TIMER  2
 #define B_THROAT_CHOP_TIMER  2
 #define B_WRAP_TURNS         7 // Max number of turns with a Grip Claw.
-#define B_SYRUP_BOMB_TIMER   3
+#define B_SYRUP_BOMB_TIMER   5
 #define B_TORMENT_TIMER      3
 
 // Item settings
