@@ -10,7 +10,7 @@ TerraCave_Tera_OnResume:
 TerraCave_Tera_EventScript_TryRemoveTerapagos::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
-	removeobject LOCALID_TERRA_CAVE_TERAPAGOS
+	removeobject 1
 	return
 
 TerraCave_Tera_OnTransition:
@@ -22,13 +22,13 @@ TerraCave_Tera_EventScript_ShowTerapagos::
 	setvar VAR_TEMP_1, 1
 	return
 
-TerraCave_Tera_EventScript_Terapagos::
+TerraCave_Tera_EventScript_TERAPAGOS::
 	lockall
 	waitse
 	playmoncry SPECIES_TERAPAGOS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setvar VAR_LAST_TALKED, LOCALID_TERRA_CAVE_TERAPAGOS
+	setvar VAR_LAST_TALKED, 1
 	setwildbattle SPECIES_TERAPAGOS, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle

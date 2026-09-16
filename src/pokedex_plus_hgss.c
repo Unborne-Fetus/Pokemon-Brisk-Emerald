@@ -24,6 +24,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokedex_common.h"
+extern EWRAM_DATA struct PokedexView *sPokedexView;
 #include "pokedex_plus_hgss.h"
 #include "pokedex_area_screen.h"
 #include "pokedex_cry_screen.h"
@@ -200,6 +201,8 @@ static const u32 sPokedexPlusHGSS_ScreenSearchNational_Tilemap[] = INCGFX_U32("g
 #define STATS_PAGE_SPECIES_MAX_WIDTH 55
 
 extern EWRAM_DATA struct PokedexView *sPokedexView;
+extern const struct BgTemplate sSearchMenu_BgTemplate[];
+extern const struct WindowTemplate sSearchMenu_WindowTemplate[];
 extern EWRAM_DATA struct PokedexListItem *sPokedexListItem;
 //Pokedex Plus HGSS_Ui
 
@@ -4805,3 +4808,4 @@ static void FillCryMeterWindowTilemapWithBg(void)
         windowLocal.window.height,
         windowLocal.window.paletteNum);
 }
+
