@@ -5406,16 +5406,13 @@ Double Battle: No
 AI: Check Bad Move
 
 Araquanid @ Oran Berry
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 55
 
 Gyarados @ Oran Berry
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 55
 
 Azumarill @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 55
 
 === TRAINER_ISABEL_1 ===
 Name: ISABEL
@@ -5426,13 +5423,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tauros @ Oran Berry
+Level: 35
 
-Minun @ Oran Berry
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bouffalant @ Oran Berry
+Level: 35
 
 === TRAINER_ISABEL_2 ===
 Name: ISABEL
@@ -5443,13 +5438,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Tauros @ Oran Berry
+Level: 45
 
-Minun @ Oran Berry
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Bouffalant @ Oran Berry
+Level: 45
 
 === TRAINER_ISABEL_3 ===
 Name: ISABEL
@@ -5460,13 +5453,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Tauros @ Oran Berry
+Level: 60
 
-Minun @ Oran Berry
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Bouffalant @ Oran Berry
+Level: 60
 
 === TRAINER_ISABEL_4 ===
 Name: ISABEL
@@ -5477,13 +5468,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Tauros @ Oran Berry
+Level: 70
 
-Minun @ Oran Berry
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Bouffalant @ Oran Berry
+Level: 70
 
 === TRAINER_ISABEL_5 ===
 Name: ISABEL
@@ -5494,13 +5483,13 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Sitrus Berry
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Tauros @ Oran Berry
+Tera Type: Fighting
+Level: 90
+- Close Combat
 
-Minun @ Sitrus Berry
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Bouffalant @ Oran Berry
+Level: 90
 
 === TRAINER_TIMOTHY_1 ===
 Name: TIMOTHY
@@ -5511,9 +5500,8 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Hariyama
-Level: 27
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Absol
+Level: 50
 
 === TRAINER_TIMOTHY_2 ===
 Name: TIMOTHY
@@ -5524,13 +5512,8 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Hariyama
-Level: 33
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Arm Thrust
-- Knock Off
-- Sand Attack
-- Dig
+Absol
+Level: 60
 
 === TRAINER_TIMOTHY_3 ===
 Name: TIMOTHY
@@ -5541,13 +5524,8 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Hariyama
-Level: 36
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Arm Thrust
-- Knock Off
-- Sand Attack
-- Dig
+Absol
+Level: 60
 
 === TRAINER_TIMOTHY_4 ===
 Name: TIMOTHY
@@ -5558,13 +5536,8 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Hariyama
-Level: 39
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
-- Arm Thrust
-- Belly Drum
-- Sand Attack
-- Dig
+Absol
+Level: 70
 
 === TRAINER_TIMOTHY_5 ===
 Name: TIMOTHY
@@ -5575,13 +5548,8 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Hariyama
-Level: 42
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-- Arm Thrust
-- Belly Drum
-- Sand Attack
-- Dig
+Absol @ Absolite
+Level: 100
 
 === TRAINER_VICKY ===
 Name: VICKY
@@ -5592,13 +5560,10 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Meditite
-Level: 18
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- High Jump Kick
-- Meditate
-- Confusion
-- Detect
+Hippowdon
+Tera Type: Grass
+Level: 47
+
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
@@ -5609,13 +5574,11 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Meditite
-Level: 21
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Darmanitan Galar
+Level: 45
 
-Makuhita
-Level: 21
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Avalugg Hisui
+Level: 45
 
 === TRAINER_SHELBY_2 ===
 Name: SHELBY
@@ -5626,13 +5589,11 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Meditite
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Darmanitan Galar
+Level: 55
 
-Makuhita
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Avalugg Hisui
+Level: 55
 
 === TRAINER_SHELBY_3 ===
 Name: SHELBY
@@ -5643,13 +5604,11 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Medicham
-Level: 33
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+Darmanitan Galar
+Level: 65
 
-Hariyama
-Level: 33
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+Avalugg Hisui
+Level: 65
 
 === TRAINER_SHELBY_4 ===
 Name: SHELBY
@@ -5660,13 +5619,11 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Medicham
-Level: 36
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+Darmanitan Galar
+Level: 80
 
-Hariyama
-Level: 36
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+Avalugg Hisui
+Level: 80
 
 === TRAINER_SHELBY_5 ===
 Name: SHELBY
@@ -5677,13 +5634,13 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Medicham
-Level: 39
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+Darmanitan Galar
+Dynamax Level: 10
+Level: 100
 
-Hariyama
-Level: 39
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+Avalugg Hisui
+Tera Type: Fairy
+Level: 100
 
 === TRAINER_CALVIN_1 ===
 Name: CALVIN
