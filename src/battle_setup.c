@@ -16,6 +16,7 @@
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "battle_partner.h"
+static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum);
 static void DoTrainerBattle(void);
 #include "random.h"
 #include "starter_choose.h"
@@ -488,6 +489,10 @@ static void DoBattlePikeWildBattle(void)
 
 static void DoTrainerBattle(void)
 {
+    CreateNPCTrainerParty(&gParties[B_TRAINER_OPPONENT_A][0], TRAINER_BATTLE_PARAM.opponentA);
+    if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && !BATTLE_TWO_VS_ONE_OPPONENT)
+        CreateNPCTrainerParty(&gParties[B_TRAINER_OPPONENT_B][0], TRAINER_BATTLE_PARAM.opponentB);
+
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
@@ -1311,6 +1316,27 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
         GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
     }
     Free(trainerGen);
+}
+
+static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
+{
+    if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
+    {
+        CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));
+        return;
+    }
+
+    struct Trainer tempTrainer;
+    memcpy(&tempTrainer, GetTrainerStructFromId(trainerNum), sizeof(struct Trainer));
+    const struct Trainer *origTrainer = GetTrainerStructFromId(tempTrainer.overrideTrainer);
+
+    tempTrainer.party = origTrainer->party;
+
+    tempTrainer.poolSize = origTrainer->poolSize;
+    if (tempTrainer.partySize == 0)
+        tempTrainer.partySize = origTrainer->partySize;
+
+    CreateNPCTrainerPartyFromTrainer(party, (const struct Trainer *)(&tempTrainer));
 }
 
 void ConfigureTrainerBattle(struct ScriptContext *ctx)
