@@ -5653,7 +5653,6 @@ AI: Check Bad Move
 
 Poochyena
 Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -5666,11 +5665,9 @@ AI: Check Bad Move
 
 Sandshrew
 Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Seedot
 Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
 Name: JOSH
@@ -5683,7 +5680,6 @@ AI: Check Bad Move
 
 Growlithe Hisui
 Level: 10
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 
 === TRAINER_TOMMY ===
@@ -5697,11 +5693,9 @@ AI: Check Bad Move
 
 Shieldon
 Level: 8
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Amaura
 Level: 8
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_JOEY ===
 Name: JOEY
@@ -5714,7 +5708,6 @@ AI: Check Bad Move
 
 Machop
 Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BEN ===
 Name: BEN
@@ -5727,12 +5720,10 @@ AI: Check Bad Move
 
 Heliolisk
 Level: 17
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 
 Oricorio Pom Pom
 Level: 17
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 
 === TRAINER_QUINCY ===
@@ -5747,19 +5738,10 @@ AI: Basic Trainer
 
 Slaking
 Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Attract
-- Ice Beam
-- Thunderbolt
-- Flamethrower
+
 
 Dusclops
 Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Skill Swap
-- Protect
-- Will O Wisp
-- Toxic
 
 === TRAINER_KATELYNN ===
 Name: KATELYNN
@@ -5773,19 +5755,11 @@ AI: Basic Trainer
 
 Gardevoir
 Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Skill Swap
-- Psychic
-- Thunderbolt
-- Calm Mind
+
 
 Slaking
 Level: 43
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Earthquake
-- Shadow Ball
-- Aerial Ace
-- Brick Break
+
 
 === TRAINER_JAYLEN ===
 Name: JAYLEN
@@ -5798,7 +5772,6 @@ AI: Check Bad Move
 
 Trapinch
 Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DILLON ===
 Name: DILLON
@@ -5811,7 +5784,6 @@ AI: Check Bad Move
 
 Aron
 Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CALVIN_2 ===
 Name: CALVIN
@@ -5824,7 +5796,6 @@ AI: Check Bad Move
 
 Mightyena
 Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_CALVIN_3 ===
 Name: CALVIN
@@ -5837,11 +5808,9 @@ AI: Check Bad Move
 
 Swellow
 Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 Mightyena
 Level: 30
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_CALVIN_4 ===
 Name: CALVIN
@@ -5854,15 +5823,12 @@ AI: Check Bad Move
 
 Swellow
 Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Linoone
 Level: 29
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Mightyena
 Level: 33
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_CALVIN_5 ===
 Name: CALVIN
@@ -5875,15 +5841,12 @@ AI: Check Bad Move
 
 Swellow
 Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 Linoone
 Level: 32
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 Mightyena
 Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_EDDIE ===
 Name: EDDIE
@@ -5896,11 +5859,9 @@ AI: Check Bad Move
 
 Zigzagoon
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zigzagoon
 Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLEN ===
 Name: ALLEN
@@ -5913,11 +5874,9 @@ AI: Check Bad Move
 
 Zigzagoon
 Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Taillow
 Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TIMMY ===
 Name: TIMMY
@@ -5930,11 +5889,9 @@ AI: Check Bad Move
 
 Aron
 Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Electrike
 Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WALLACE ===
 Name: WALLACE
