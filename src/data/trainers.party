@@ -3205,7 +3205,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Mahoraga (Shedinja) (M) @ Ability Shield
+Gojo (Shedinja) (M) @ Ability Shield
 Tera Type: Electric
 Level: 50
 
@@ -5651,8 +5651,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 7
+Persian Alola
+Level: 28
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -5663,11 +5663,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 9
+Maschiff
+Level: 28
 
-Seedot
-Level: 8
+Raticate Alola
+Level: 26
 
 === TRAINER_JOSH ===
 Name: JOSH
@@ -5679,7 +5679,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Growlithe Hisui
-Level: 10
+Level: 29
 
 
 === TRAINER_TOMMY ===
@@ -5691,11 +5691,11 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Shieldon
-Level: 8
+Bastiodon
+Level: 30
 
 Amaura
-Level: 8
+Level: 30
 
 === TRAINER_JOEY ===
 Name: JOEY
@@ -5706,8 +5706,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 9
+Gurdurr
+Level: 30
 
 === TRAINER_BEN ===
 Name: BEN
@@ -5719,11 +5719,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Heliolisk
-Level: 17
+Level: 39
 
 
 Oricorio Pom Pom
-Level: 17
+Level: 45
 
 
 === TRAINER_QUINCY ===
@@ -5737,11 +5737,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Slaking
-Level: 43
+Level: 60
 
 
-Dusclops
-Level: 43
+Dusknoir
+Level: 60
 
 === TRAINER_KATELYNN ===
 Name: KATELYNN
@@ -5753,12 +5753,14 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Gardevoir
-Level: 43
+Gardevoir @ Gardevoirite
+Level: 650
 
 
-Slaking
-Level: 43
+Garbodor
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 60
 
 
 === TRAINER_JAYLEN ===
@@ -5770,8 +5772,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Trapinch
-Level: 19
+Crobat
+Level: 40
 
 === TRAINER_DILLON ===
 Name: DILLON
@@ -5782,8 +5784,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Aron
-Level: 19
+Muk Alola
+Level: 40
 
 === TRAINER_CALVIN_2 ===
 Name: CALVIN
@@ -5794,8 +5796,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Mightyena
-Level: 27
+Persian Alola
+Level: 50
 
 === TRAINER_CALVIN_3 ===
 Name: CALVIN
@@ -5806,11 +5808,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 28
+Persian Alola
+Level: 50
 
-Mightyena
-Level: 30
+Perrserker
+Level: 55
 
 === TRAINER_CALVIN_4 ===
 Name: CALVIN
@@ -5821,14 +5823,16 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 31
+Persian Alola
+Level: 50
 
-Linoone
-Level: 29
+Perrserker
+Level: 55
 
-Mightyena
-Level: 33
+Meowth
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 60
 
 === TRAINER_CALVIN_5 ===
 Name: CALVIN
@@ -5839,14 +5843,16 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 34
+Persian Alola
+Level: 100
 
-Linoone
-Level: 32
+Perrserker
+Level: 100
 
-Mightyena
-Level: 36
+Meowth
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 
 === TRAINER_EDDIE ===
 Name: EDDIE
@@ -5857,11 +5863,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 14
+Quagsire
+Level: 40
 
-Zigzagoon
-Level: 16
+Clodsire
+Level: 40
 
 === TRAINER_ALLEN ===
 Name: ALLEN
@@ -5872,11 +5878,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 7
+Slowking Galar
+Level: 38
 
-Taillow
-Level: 6
+Slowbro Galar
+Level: 36
 
 === TRAINER_TIMMY ===
 Name: TIMMY
@@ -5887,11 +5893,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Aron
-Level: 15
+Klawf
+Level: 35
 
-Electrike
-Level: 13
+Garganacl
+Level: 38
 
 === TRAINER_WALLACE ===
 Name: WALLACE
@@ -5990,17 +5996,14 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Seaking
+Level: 25
 
-Tentacool
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cloyster
+Level: 30
 
-Magikarp
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados @ Gyaradosite
+Level: 35
 
 === TRAINER_IVAN ===
 Name: IVAN
@@ -6011,17 +6014,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados @ Gyaradosite
+Level: 30
 
-Azurill
-Level: 9
-IVs: 0 HP / 10 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingler
+Gigantamax: Yes 
+Dynamax Level: 10
+Level: 35
 
-SPECIES_BASCULIN_WHITE_STRIPED
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Basculegion
+Level: 28
 
 === TRAINER_CLAUDE ===
 Name: CLAUDE
@@ -6032,17 +6034,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sealeo
+Level: 34
 
-Goldeen
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kabutops
+Level: 37
 
-Barboach
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Veluza
+Tera Type: Bug
+Level: 39
 
 === TRAINER_ELLIOT_1 ===
 Name: ELLIOT
@@ -6055,15 +6055,12 @@ AI: Check Bad Move
 
 Magikarp
 Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tentacool
 Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Magikarp
 Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NED ===
 Name: NED
@@ -6076,7 +6073,6 @@ AI: Check Bad Move
 
 Tentacool
 Level: 11
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_DALE ===
 Name: DALE
@@ -6089,19 +6085,15 @@ AI: Check Bad Move
 
 Tentacool
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wailmer
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tentacool
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wailmer
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NOLAN ===
 Name: NOLAN
@@ -6114,7 +6106,6 @@ AI: Check Bad Move
 
 Barboach
 Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BARNY ===
 Name: BARNY
@@ -6127,11 +6118,9 @@ AI: Check Bad Move
 
 Tentacool
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Carvanha
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WADE ===
 Name: WADE
@@ -6144,7 +6133,6 @@ AI: Check Bad Move
 
 Tentacool
 Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CARTER ===
 Name: CARTER
@@ -6157,11 +6145,9 @@ AI: Check Bad Move
 
 Wailmer
 Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Tentacruel
 Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_ELLIOT_2 ===
 Name: ELLIOT
@@ -6174,15 +6160,12 @@ AI: Check Bad Move
 
 Tentacool
 Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Gyarados
 Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Gyarados
 Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_ELLIOT_3 ===
 Name: ELLIOT
