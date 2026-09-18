@@ -6948,14 +6948,16 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
-Level: 31
+Flamigo
+Level: 51
 
-Skarmory
-Level: 27
+Bombirdier
+Level: 47
 
-Tropius
-Level: 27
+Butterfree
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 57
 
 === TRAINER_HUMBERTO ===
 Name: HUMBERTO
@@ -6966,11 +6968,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Noctowl
-Level: 30
+Pidgeot @ Pidgeotite
+Level: 60
 
 === TRAINER_PRESLEY ===
-Name: PRESLEY
+Name: Elvis
 Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
@@ -6978,11 +6980,17 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Tropius
-Level: 33
+Squakabilly
+Level: 53
 
-Xatu
-Level: 33
+Jigglypuff
+Level: 53
+
+Houndoom @ Houndoominite
+Level: 80
+
+Luvdisc
+Level: 50
 
 === TRAINER_EDWARDO ===
 Name: EDWARDO
