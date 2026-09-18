@@ -992,6 +992,7 @@ Route104_EventScript_Mia::
 Route104_EventScript_Darian::
 	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
+	givepokemon SPECIES_POIPOLE, 10
 	end
 
 Route104_Text_BrineyLivesInSeasideCottage:
