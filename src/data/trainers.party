@@ -6053,14 +6053,14 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 10
+Wailmer
+Level: 29
 
-Tentacool
-Level: 7
+Octillery
+Level: 27
 
-Magikarp
-Level: 10
+Huntail
+Level: 30
 
 === TRAINER_NED ===
 Name: NED
@@ -6071,8 +6071,8 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 11
+Luvdisc
+Level: 39
 
 === TRAINER_DALE ===
 Name: DALE
@@ -6083,17 +6083,17 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 11
+Lumineon
+Level: 35
 
 Wailmer
-Level: 14
+Level: 34
 
-Tentacool
-Level: 11
+Clawitzer
+Level: 37
 
-Wailmer
-Level: 14
+Wailord
+Level: 40
 
 === TRAINER_NOLAN ===
 Name: NOLAN
@@ -6104,8 +6104,8 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Barboach
-Level: 19
+Wishiwashi
+Level: 40
 
 === TRAINER_BARNY ===
 Name: BARNY
@@ -6116,11 +6116,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 25
+Dondozo
+Level: 50
 
-Carvanha
-Level: 25
+Palafin
+Level: 55
 
 === TRAINER_WADE ===
 Name: WADE
@@ -6131,8 +6131,8 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 16
+Lanturn
+Level: 40
 
 === TRAINER_CARTER ===
 Name: CARTER
@@ -6143,11 +6143,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 25
+Overqwil
+Level: 50
 
 Tentacruel
-Level: 25
+Level: 55
 
 === TRAINER_ELLIOT_2 ===
 Name: ELLIOT
@@ -6158,14 +6158,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 24
+Wailord
+Dynamax Level: 10
+Level: 55
 
-Gyarados
-Level: 27
+Octillery
+Level: 47
 
-Gyarados
-Level: 27
+Huntail
+Level: 50
 
 === TRAINER_ELLIOT_3 ===
 Name: ELLIOT
@@ -6176,21 +6177,19 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Carvanha
-Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Wailord
+Dynamax Level: 10
+Level: 55
 
-Tentacool
-Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Octillery
+Level: 47
 
-Gyarados
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Huntail
+Level: 50
+
+Gyarados @ Gyaradosite
+Level: 60
 
 === TRAINER_ELLIOT_4 ===
 Name: ELLIOT
@@ -6201,21 +6200,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Wailord
+Dynamax Level: 10
+Level: 60
 
-Carvanha
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Octillery
+Level: 56
 
-Tentacruel
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Huntail
+Level: 59
 
-Gyarados
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gyarados @ Gyaradosite
+Level: 68
 
 === TRAINER_ELLIOT_5 ===
 Name: ELLIOT
@@ -6226,21 +6222,18 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Gyarados
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Wailord
+Dynamax Level: 10
+Level: 70
 
-Sharpedo
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Octillery
+Level: 607
 
-Gyarados
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Huntail
+Level: 75
 
-Tentacruel
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gyarados @ Gyaradosite
+Level: 78
 
 === TRAINER_RONALD ===
 Name: RONALD
@@ -6251,29 +6244,26 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise
+Dynamax Level: 10
+Gigantamax: Yes   
+Level: 40
 
-Gyarados
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swampert
+Level: 45
 
-Gyarados
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Samurott Hisui
+Level: 45
 
-Gyarados
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Empoleon
+Level: 50
 
-Gyarados
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval
+Tera Type: Water
+Level: 50
 
-Gyarados
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Greninja @ Greninjite
+Level: 60
 
 === TRAINER_JACOB ===
 Name: JACOB
@@ -6286,15 +6276,12 @@ AI: Check Bad Move
 
 Voltorb
 Level: 6
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 Voltorb
 Level: 6
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 Magnemite
 Level: 14
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_ANTHONY ===
 Name: ANTHONY
@@ -6307,11 +6294,9 @@ AI: Check Bad Move
 
 Magnemite
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Magnemite
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BENJAMIN_1 ===
 Name: BENJAMIN
@@ -6324,7 +6309,6 @@ AI: Check Bad Move
 
 Magnemite
 Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BENJAMIN_2 ===
 Name: BENJAMIN
@@ -6337,7 +6321,6 @@ AI: Check Bad Move
 
 Magnemite
 Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_BENJAMIN_3 ===
 Name: BENJAMIN
@@ -6350,7 +6333,6 @@ AI: Check Bad Move
 
 Magnemite
 Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_BENJAMIN_4 ===
 Name: BENJAMIN
@@ -6363,7 +6345,6 @@ AI: Check Bad Move
 
 Magneton
 Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_BENJAMIN_5 ===
 Name: BENJAMIN
@@ -6376,7 +6357,6 @@ AI: Check Bad Move
 
 Magneton
 Level: 39
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_ABIGAIL_1 ===
 Name: ABIGAIL
@@ -6389,7 +6369,6 @@ AI: Check Bad Move
 
 Magnemite
 Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JASMINE ===
 Name: JASMINE
