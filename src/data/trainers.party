@@ -7001,11 +7001,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Jumpluff
-Level: 29
+Minior
+Level: 49
 
 Gligar
-Level: 29
+Level: 59
 
 === TRAINER_COLIN ===
 Name: COLIN
@@ -7016,11 +7016,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 28
+Oricorio Sensu
+Level: 53
 
-Natu
-Level: 28
+Oricorio Baile
+Level: 48
 
 === TRAINER_ROBERT_1 ===
 Name: ROBERT
@@ -7031,8 +7031,8 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Swablu
-Level: 29
+Toucannon
+Level: 49
 
 === TRAINER_BENNY ===
 Name: BENNY
@@ -7043,14 +7043,14 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 36
+Decidueye
+Level: 56
 
 Pelipper
-Level: 36
+Level: 60
 
-Xatu
-Level: 36
+Hawlucha @ Hawluchanite
+Level: 65
 
 === TRAINER_CHESTER ===
 Name: CHESTER
@@ -7061,11 +7061,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Taillow
-Level: 25
+Crobat
+Level: 55
 
-Swellow
-Level: 25
+Ledian
+Level: 45
 
 === TRAINER_ROBERT_2 ===
 Name: ROBERT
@@ -7076,11 +7076,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Natu
-Level: 32
+Toucannon
+Level: 60
 
-Swablu
-Level: 32
+Dragonite
+Level: 60
 
 === TRAINER_ROBERT_3 ===
 Name: ROBERT
@@ -7091,11 +7091,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Natu
-Level: 35
+Toucannon
+Level: 70
 
-Altaria
-Level: 35
+Dragonite @ Dragoninite
+Level: 70
 
 === TRAINER_ROBERT_4 ===
 Name: ROBERT
@@ -7106,13 +7106,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Natu
-Level: 38
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Toucannon
+Level: 80
 
-Altaria
-Level: 38
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Dragonite @ Dragoninite
+Level: 80
 
 === TRAINER_ROBERT_5 ===
 Name: ROBERT
@@ -7123,13 +7121,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Altaria
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Toucannon
+Level: 100
 
-Xatu
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Dragonite @ Dragoninite
+Level: 100
 
 === TRAINER_ALEX ===
 Name: ALEX
