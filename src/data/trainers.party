@@ -6274,14 +6274,14 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Voltorb
-Level: 6
+Cramorant
+Level: 26
 
-Voltorb
-Level: 6
+Fearow
+Level: 25
 
-Magnemite
-Level: 14
+Pidgeot @ Pidgeotite
+Level: 36
 
 === TRAINER_ANTHONY ===
 Name: ANTHONY
@@ -6292,11 +6292,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 14
+Dodrio
+Level: 34
 
-Magnemite
-Level: 14
+Clefable @ Clefablite
+Level: 40
 
 === TRAINER_BENJAMIN_1 ===
 Name: BENJAMIN
@@ -6307,8 +6307,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 16
+Scyther
+Level: 36
 
 === TRAINER_BENJAMIN_2 ===
 Name: BENJAMIN
@@ -6319,8 +6319,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 30
+Scizor
+Level: 50
 
 === TRAINER_BENJAMIN_3 ===
 Name: BENJAMIN
@@ -6331,8 +6331,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 33
+Scizor @ Scizorite
+Level: 60
 
 === TRAINER_BENJAMIN_4 ===
 Name: BENJAMIN
@@ -6343,8 +6343,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 36
+Scizor @ Scizorite
+Level: 70
 
 === TRAINER_BENJAMIN_5 ===
 Name: BENJAMIN
@@ -6355,8 +6355,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 39
+Scizor @ Scizorite
+Level: 100
 
 === TRAINER_ABIGAIL_1 ===
 Name: ABIGAIL
@@ -6367,8 +6367,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 16
+Pinsir
+Level: 36
 
 === TRAINER_JASMINE ===
 Name: JASMINE
@@ -6379,17 +6379,14 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 14
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Honchkrow
+Level: 34
 
-Magnemite
-Level: 14
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Noctowl
+Level: 29
 
-Voltorb
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aerodactyl @ Aerodactylite
+Level: 40
 
 === TRAINER_ABIGAIL_2 ===
 Name: ABIGAIL
@@ -6400,9 +6397,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Pinsir @ Pinsirite
+Level: 50
 
 === TRAINER_ABIGAIL_3 ===
 Name: ABIGAIL
@@ -6413,9 +6409,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Pinsir @ Pinsirite
+Level: 60
 
 === TRAINER_ABIGAIL_4 ===
 Name: ABIGAIL
@@ -6426,9 +6421,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Pinsir @ Pinsirite
+Level: 70
 
 === TRAINER_ABIGAIL_5 ===
 Name: ABIGAIL
@@ -6439,9 +6433,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Pinsir @ Pinsirite
+Level: 100
 
 === TRAINER_DYLAN_1 ===
 Name: DYLAN
@@ -6452,9 +6445,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross
+Level: 37
 
 === TRAINER_DYLAN_2 ===
 Name: DYLAN
@@ -6465,9 +6457,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Heracross @ Heracronite
+Level: 50
 
 === TRAINER_DYLAN_3 ===
 Name: DYLAN
@@ -6478,9 +6469,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Heracross @ Heracronite
+Level: 60
 
 === TRAINER_DYLAN_4 ===
 Name: DYLAN
@@ -6491,9 +6481,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Heracross @ Heracronite
+Level: 70
 
 === TRAINER_DYLAN_5 ===
 Name: DYLAN
@@ -6504,9 +6493,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Heracross @ Heracronite
+Level: 100
 
 === TRAINER_MARIA_1 ===
 Name: MARIA
@@ -6517,9 +6505,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom
+Level: 47
 
 === TRAINER_MARIA_2 ===
 Name: MARIA
@@ -6530,9 +6517,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Houndoom @ Houndoominite
+Level: 60
 
 === TRAINER_MARIA_3 ===
 Name: MARIA
@@ -6543,9 +6529,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Houndoom @ Houndoominite
+Level: 70
 
 === TRAINER_MARIA_4 ===
 Name: MARIA
@@ -6556,9 +6541,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Houndoom @ Houndoominite
+Level: 80
 
 === TRAINER_MARIA_5 ===
 Name: MARIA
@@ -6569,9 +6553,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Houndoom @ Houndoominite
+Level: 100
 
 === TRAINER_CAMDEN ===
 Name: CAMDEN
@@ -6582,13 +6565,12 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Iron Valiant
+Tera Type: Dragon
+Level: 58
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Chimecho @ Chimechite
+Level: 60
 
 === TRAINER_DEMETRIUS ===
 Name: DEMETRIUS
@@ -6599,13 +6581,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Scovillain
+Level: 46
 
-Electrike
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crabominable @ Crabominite
+Level: 50
 
 === TRAINER_ISAIAH_1 ===
 Name: ISAIAH
@@ -6616,9 +6596,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golisopod
+Level: 55
 
 === TRAINER_PABLO_1 ===
 Name: PABLO
@@ -6629,13 +6608,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise @ Blastoisinite
+Level: 50
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra
+Level: 46
 
 === TRAINER_CHASE ===
 Name: CHASE
@@ -6646,13 +6623,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Poliwrath
+Level: 46
 
-Staryu
-Level: 34
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Starmie @ Starminite
+Level: 50
 
 === TRAINER_ISAIAH_2 ===
 Name: ISAIAH
@@ -6663,9 +6638,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 39
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Golisopod @ Golisopite
+Level: 68
 
 === TRAINER_ISAIAH_3 ===
 Name: ISAIAH
@@ -6676,9 +6650,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 42
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Golisopod @ Golisopite
+Level: 75
 
 === TRAINER_ISAIAH_4 ===
 Name: ISAIAH
@@ -6689,9 +6662,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie
-Level: 45
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Golisopod @ Golisopite
+Level: 87
 
 === TRAINER_ISAIAH_5 ===
 Name: ISAIAH
@@ -6702,9 +6674,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie
-Level: 48
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Golisopod @ Golisopite
+Level: 100
 
 === TRAINER_ISOBEL ===
 Name: ISOBEL
@@ -6715,9 +6686,8 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quagsire
+Level: 54
 
 === TRAINER_DONNY ===
 Name: DONNY
@@ -6728,13 +6698,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cursola
+Level: 49
 
-Staryu
-Level: 34
-IVs: 19 HP / 19 Atk / 19 Def / 19 SpA / 19 SpD / 19 Spe
+Mantine
+Level: 54
 
 === TRAINER_TALIA ===
 Name: TALIA
@@ -6745,9 +6713,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pikachu
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 50
 
 === TRAINER_KATELYN_1 ===
 Name: KATELYN
@@ -6760,7 +6729,6 @@ AI: Check Bad Move
 
 Staryu
 Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLISON ===
 Name: ALLISON
@@ -6773,11 +6741,9 @@ AI: Check Bad Move
 
 Wingull
 Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Staryu
 Level: 33
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_KATELYN_2 ===
 Name: KATELYN
@@ -6790,7 +6756,6 @@ AI: Check Bad Move
 
 Staryu
 Level: 39
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_KATELYN_3 ===
 Name: KATELYN
@@ -6803,7 +6768,6 @@ AI: Check Bad Move
 
 Staryu
 Level: 42
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_KATELYN_4 ===
 Name: KATELYN
@@ -6816,7 +6780,6 @@ AI: Check Bad Move
 
 Starmie
 Level: 45
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_KATELYN_5 ===
 Name: KATELYN
@@ -6829,7 +6792,6 @@ AI: Check Bad Move
 
 Starmie
 Level: 48
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
@@ -6842,11 +6804,9 @@ AI: Check Bad Move
 
 Altaria
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Altaria
 Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NICOLAS_2 ===
 Name: NICOLAS
@@ -6859,11 +6819,9 @@ AI: Check Bad Move
 
 Altaria
 Level: 41
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Altaria
 Level: 41
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_NICOLAS_3 ===
 Name: NICOLAS
@@ -6876,11 +6834,9 @@ AI: Check Bad Move
 
 Altaria
 Level: 44
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Altaria
 Level: 44
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_NICOLAS_4 ===
 Name: NICOLAS
@@ -6893,15 +6849,12 @@ AI: Check Bad Move
 
 Bagon
 Level: 46
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Altaria
 Level: 46
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Altaria
 Level: 46
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_NICOLAS_5 ===
 Name: NICOLAS
@@ -7048,7 +7001,7 @@ Jumpluff
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-gligar
+Gligar
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
