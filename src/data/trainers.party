@@ -6741,11 +6741,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 27
+Relicanth
+Level: 48
 
-Staryu
-Level: 33
+Whiscash
+Level: 58
 
 === TRAINER_KATELYN_2 ===
 Name: KATELYN
@@ -6756,8 +6756,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 39
+Lapras 
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 68
 
 === TRAINER_KATELYN_3 ===
 Name: KATELYN
@@ -6768,8 +6770,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 42
+Lapras 
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 70
 
 === TRAINER_KATELYN_4 ===
 Name: KATELYN
@@ -6780,8 +6784,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie
-Level: 45
+Lapras 
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 80
 
 === TRAINER_KATELYN_5 ===
 Name: KATELYN
@@ -6792,8 +6798,10 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Starmie
-Level: 48
+Lapras 
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
@@ -6804,11 +6812,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Altaria
-Level: 37
+Druddigon
+Level: 60
 
-Altaria
-Level: 37
+Goodra Hisui
+Level: 59
 
 === TRAINER_NICOLAS_2 ===
 Name: NICOLAS
@@ -6819,11 +6827,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Altaria
-Level: 41
+Druddigon
+Level: 70
 
-Altaria
-Level: 41
+Goodra Hisui
+Level: 69
 
 === TRAINER_NICOLAS_3 ===
 Name: NICOLAS
@@ -6834,11 +6842,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Altaria
-Level: 44
+Druddigon
+Level: 87
 
-Altaria
-Level: 44
+Goodra Hisui
+Level: 85
 
 === TRAINER_NICOLAS_4 ===
 Name: NICOLAS
@@ -6849,14 +6857,14 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Bagon
-Level: 46
+Salamence @ Salamence
+Level: 80
 
-Altaria
-Level: 46
+Druddigon
+Level: 90
 
-Altaria
-Level: 46
+Goodra Hisui
+Level: 90
 
 === TRAINER_NICOLAS_5 ===
 Name: NICOLAS
@@ -6867,17 +6875,14 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Altaria
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Druddigon
+Level: 100
 
-Altaria
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Goodra Hisui
+Level: 100
 
-Shelgon @ Dragon Fang
-Level: 49
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Salamence @ Salamencite
+Level: 100
 
 === TRAINER_AARON ===
 Name: AARON
@@ -6888,13 +6893,10 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Bagon
-Level: 34
+Aggron @ Aggronite
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Breath
-- Headbutt
-- Focus Energy
-- Ember
+
 
 === TRAINER_PERRY ===
 Name: PERRY
@@ -6905,9 +6907,8 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Noivern
+Level: 50
 
 === TRAINER_HUGH ===
 Name: HUGH
