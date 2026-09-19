@@ -7136,13 +7136,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Natu
-Level: 33
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Xatu
+Level: 53
 
-Swellow
-Level: 33
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Beautifly
+Level: 49
 
 === TRAINER_BECK ===
 Name: BECK
@@ -7153,9 +7151,8 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Tropius
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swellow
+Level: 52
 
 === TRAINER_YASU ===
 Name: YASU
@@ -7166,9 +7163,8 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Ninjask
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Masquerain
+Level: 46
 
 === TRAINER_TAKASHI ===
 Name: TAKASHI
@@ -7179,13 +7175,11 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Ninjask
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mothim
+Level: 45
 
-Koffing
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Weezing Galar
+Level: 45
 
 === TRAINER_DIANNE ===
 Name: DIANNE
@@ -7197,14 +7191,12 @@ Items: Full Restore
 Double Battle: No
 
 Claydol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 63
 - Skill Swap
 - Earthquake
 
 Lanturn
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 63
 - Thunderbolt
 - Earthquake
 
@@ -7216,9 +7208,8 @@ Gender: Female
 Music: Girl
 Double Battle: No
 
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golduck
+Level: 46
 
 === TRAINER_LAO_1 ===
 Name: LAO
