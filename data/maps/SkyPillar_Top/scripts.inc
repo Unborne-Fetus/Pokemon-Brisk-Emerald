@@ -61,7 +61,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 	end
 
 SkyPillar_Top_EventScript_CaughtRayquaza::
-	giveitem ITEM_MYSTICTICKET
+	giveitem ITEM_MYSTIC_TICKET
 	setflag FLAG_DEFEATED_RAYQUAZA
 	releaseall
 	end
