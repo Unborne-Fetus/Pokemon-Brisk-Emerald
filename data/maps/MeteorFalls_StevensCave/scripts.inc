@@ -23,6 +23,7 @@ MeteorFalls_StevensCave_EventScript_Defeated::
 	applymovement LOCALID_METEOR_FALLS_STEVEN, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
+	givemon SPECIES_MARSHADOW, 40
 	release
 	end
 
