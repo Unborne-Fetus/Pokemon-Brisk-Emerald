@@ -124,7 +124,7 @@ Route135_Archives_EventScript_Nemona::
 
 Route135_Archives_EventScript_NemonaDefeated::
 	msgbox Route135_Archives_Text_NemonaPostBattleSpeech, MSGBOX_DEFAULT
-	givemon SPECIES_MIRIADON, 50
+	givemon SPECIES_MIRAIDON, 50
 	release
 	end
 
