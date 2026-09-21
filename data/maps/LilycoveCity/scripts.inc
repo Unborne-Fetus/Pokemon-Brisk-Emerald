@@ -320,6 +320,7 @@ LilycoveCity_EventScript_BattleBrendanMudkip::
 
 LilycoveCity_EventScript_DefeatedMay::
 	msgbox LilycoveCity_Text_MayGoingBackToLittleroot, MSGBOX_DEFAULT
+	givemon SPECIES_ZARUDE, 30
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
 	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_MayCollectBadges
@@ -352,6 +353,7 @@ LilycoveCity_EventScript_MayBattleFrontier::
 
 LilycoveCity_EventScript_DefeatedBrendan::
 	msgbox LilycoveCity_Text_BrendanGoingBackToLittleroot, MSGBOX_DEFAULT
+	givemon SPECIES_ZARUDE, 30
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
 	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_BrendanCollectBadges
