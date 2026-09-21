@@ -9,13 +9,9 @@ Route135_Archives_EventScript_Blue::
 	goto Route135_Archives_EventScript_BlueDefeated
 	end
 
-Route135_Archives_EventScript_BluePostBattleSpeech::
-	msgbox Route135_Archives_Text_BluePostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
-
 Route135_Archives_EventScript_BlueDefeated::
 	msgbox Route135_Archives_Text_BluePostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_JIRACHI, 50
 	release
 	end
 
@@ -27,13 +23,10 @@ Route135_Archives_EventScript_Red::
 	goto Route135_Archives_EventScript_RedDefeated
 	end
 
-Route135_Archives_EventScript_RedPostBattleSpeech::
-	msgbox Route135_Archives_Text_RedPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
 
 Route135_Archives_EventScript_RedDefeated::
 	msgbox Route135_Archives_Text_RedPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_MEWTWO, 50
 	release
 	end
 
@@ -46,13 +39,9 @@ Route135_Archives_EventScript_Wallace::
 	goto Route135_Archives_EventScript_WallaceDefeated
 	end
 
-Route135_Archives_EventScript_WallacePostBattleSpeech::
-	msgbox Route135_Archives_Text_WallacePostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
-
 Route135_Archives_EventScript_WallaceDefeated::
 	msgbox Route135_Archives_Text_WallacePostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_TYPE_NULL, 50
 	release
 	end
 
@@ -65,13 +54,10 @@ Route135_Archives_EventScript_Cynthia::
 	goto Route135_Archives_EventScript_CynthiaDefeated
 	end
 
-Route135_Archives_EventScript_CynthiaPostBattleSpeech::
-	msgbox Route135_Archives_Text_CynthiaPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
 
 Route135_Archives_EventScript_CynthiaDefeated::
 	msgbox Route135_Archives_Text_CynthiaPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_ARCEUS, 50
 	release
 	end
 
@@ -84,13 +70,11 @@ Route135_Archives_EventScript_Iris::
 	goto Route135_Archives_EventScript_IrisDefeated
 	end
 
-Route135_Archives_EventScript_IrisPostBattleSpeech::
-	msgbox Route135_Archives_Text_IrisPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
+
 
 Route135_Archives_EventScript_IrisDefeated::
 	msgbox Route135_Archives_Text_IrisPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_KORAIDON, 50
 	release
 	end
 
@@ -103,13 +87,11 @@ Route135_Archives_EventScript_Diantha::
 	goto Route135_Archives_EventScript_DianthaDefeated
 	end
 
-Route135_Archives_EventScript_DianthaPostBattleSpeech::
-	msgbox Route135_Archives_Text_DianthaPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
+
 
 Route135_Archives_EventScript_DianthaDefeated::
 	msgbox Route135_Archives_Text_DianthaPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_DIANCIE, 50
 	release
 	end
 
@@ -122,13 +104,11 @@ Route135_Archives_EventScript_Leon::
 	goto Route135_Archives_EventScript_LeonDefeated
 	end
 
-Route135_Archives_EventScript_LeonPostBattleSpeech::
-	msgbox Route135_Archives_Text_LeonPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
+
 
 Route135_Archives_EventScript_LeonDefeated::
 	msgbox Route135_Archives_Text_LeonPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_ETERNATUS, 50
 	release
 	end
 
@@ -141,13 +121,10 @@ Route135_Archives_EventScript_Nemona::
 	goto Route135_Archives_EventScript_NemonaDefeated
 	end
 
-Route135_Archives_EventScript_NemonaPostBattleSpeech::
-	msgbox Route135_Archives_Text_NemonaPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
 
 Route135_Archives_EventScript_NemonaDefeated::
 	msgbox Route135_Archives_Text_NemonaPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_MIRIADON, 50
 	release
 	end
 
@@ -160,13 +137,10 @@ Route135_Archives_EventScript_Volo::
 	goto Route135_Archives_EventScript_VoloDefeated
 	end
 
-Route135_Archives_EventScript_VoloPostBattleSpeech::
-	msgbox Route135_Archives_Text_VoloPostBattleSpeech, MSGBOX_DEFAULT
-	release
-	end
 
 Route135_Archives_EventScript_VoloDefeated::
 	msgbox Route135_Archives_Text_VoloPostBattleSpeech, MSGBOX_DEFAULT
+	givemon SPECIES_GIRATINA, 50
 	release
 	end
 
