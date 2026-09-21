@@ -8,107 +8,60 @@
   - [Dev Tools](#developer-tools)
 
 ## Missing Pokemon
-Uxie
-Mespirit
-Azelf
-Dialga
-Palkia
-Heatran
-Regigigas
-Giratina
-Cresselia
-Darkrai
-Arceus
-Shaymin
-Articuno
-Zapdos
-Moltres
-Mewtwo
-Raikou
-Entei
-Suicune
-Lugia
-Ho-Oh
-Celebi
-Jirachi
-Deoxys
-Mew
-Victini
-cobalion
-terrakion
-virizion
-tornadus
-thundurus
-reshiram
-zekrom
-landorus
-kyurem
-keldeo
-meloetta
-genesect
-Xerneas
-Yveltal
-Zygarde
-Diancie
-Hoopa
-Volcanion
-Type: Null
-Silvally
-Tapu Koko
-Tapu Lele
-Tapu Bulu
-Tapu Fini
-Cosmog
-Cosmoem
-Solgaleo
-Lunala
-Nihilego
-Buzzwhole
-Pheromosa
-Xurkitree
-Celesteela
-Kartana
-Guzzlord
+Uxie	
+Articuno	
+cobalion	
 Necrozma
-Magearna
-Marshadow
-Poipole
-Naganadel
-Stakataka
-Blacephalon
+Mespirit
+Xurkitree
+Kartana
+Nihilego
+Azelf	
+moltres
+Guzzlord	
 Zeraora
-Meltan
-Melmetal
-zarude
-
-
-
-
-zacian
-zamazenta
-eternatus
-
-
-regieleki
-regidrago
-glastrier
-spectrier
-carylex
-enamorus
+Dialga	
 Wo Chien
-Ting Lu
-Chien Pao
-Chi-yu
-okidogi
-Munkidori
-Fezandipiti
-Ogerpon
-
-pecharunt
-Miriadon
-Koraidon
+Buzzwhole
+Celesteela
+Palkia
+Raikou
+thundurus	
 galar bird trio
+Heatran	
+Entei	
+reshiram	
 blood moon ursaluna
+Pheromosa
+Suicune
+zekrom	
+Tapu Koko
+regieleki
+Munkidori
+landorus
+Tapu Lele
+Cresselia
+Fezandipiti	
+glastrier
+Tapu Bulu
+pecharunt
+Celebi	
+regidrago
+Tapu Fini
+carylex	
+Ting Lu	
+okidogi	
+spectrier
+Stakataka
+Chien Pao	
+genesect	
+Magearna
+Blacephalon
+Chi-yu	
+Xerneas	
+Shaymin
+Victini
+Yveltal	
 
 ## Full Trainer customization
 - ***Compatible with Pokémon Showdown's team syntax:*** Create your trainer teams in the [teambuilder](https://play.pokemonshowdown.com/teambuilder) and paste the results!
