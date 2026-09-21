@@ -1348,11 +1348,11 @@ Route111_Text_IrenePostBattle:
 	.string "here is very nice, too.$"
 
 Route111_Text_DaisukeIntro:
-	.string "To train myself, I challenge all\n"
-	.string "whom I meet!$"
+	.string "I learned Jiu Jitsu, and I\n"
+	.string "I challenge you!$"
 
 Route111_Text_DaisukeDefeat:
-	.string "Uncle! I give up!$"
+	.string "I loved this battle!$"
 
 Route111_Text_DaisukePostBattle:
 	.string "All I can do is keep training until\n"

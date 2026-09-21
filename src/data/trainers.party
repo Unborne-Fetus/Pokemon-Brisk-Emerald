@@ -3217,7 +3217,7 @@ Level: 50
 
 
 === TRAINER_DAISUKE ===
-Name: DAISUKE
+Name: Spro
 Class: Black Belt
 Pic: Black Belt
 Gender: Male
@@ -3225,8 +3225,42 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Blaziken @ Blazikenite
-Level: 40
+ANNIHILAPE(M) @ Shell Bell
+Level: 50
+Ability: Inner Focus
+EVs: 252 Atk / 48 Spe / 128 Def
+Ball: Dusk 
+Nature: Adamant
+Shiny: Yes
+Tera Type: ghost
+- Belly Drum
+- drain punch
+- rage fist
+- shadow punch
+
+Hitmonchan (M) @ Punching Glove
+Level: 49
+Ability: Guts
+EVs: 128 Atk / 252 Spe / 128 Def
+Ball: Poke 
+Nature: Adamant
+Tera Type: Psychic
+- comet punch
+- ice punch
+- fire punch
+- thunder
+
+Hariyama (M) @ life Orb
+Level: 50
+Ability: Neutralizing Gas
+EVs: 252 Atk / 48 Spe / 128 Def
+Ball: Love 
+Nature: Adamant
+Tera Type: Dark
+- Belly Drum
+- drain punch
+- bullet punch
+- thunder punch
 
 
 === TRAINER_ATSUSHI ===
