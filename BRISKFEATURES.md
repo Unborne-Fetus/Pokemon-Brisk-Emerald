@@ -9,30 +9,55 @@
 
 ## Missing Pokemon
 Uxie	
+
 Articuno	
-cobalion	
+
+cobalion
+
 Necrozma
+
 Mespirit
+
 Xurkitree
+
 Kartana
+
 Nihilego
+
 Azelf	
+
 moltres
+
 Guzzlord	
+
 Zeraora
+
 Dialga	
+
 Wo Chien
+
 Buzzwhole
+
 Celesteela
+
 Palkia
+
 Raikou
+
 thundurus	
+
 galar bird trio
+
 Heatran	
+
 Entei	
+
 reshiram	
+
 blood moon ursaluna
+
 Pheromosa
+
 Suicune
 zekrom	
 Tapu Koko
