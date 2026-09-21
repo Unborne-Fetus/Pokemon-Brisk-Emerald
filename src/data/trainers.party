@@ -4417,7 +4417,7 @@ Level: 65
 
 
 === TRAINER_THOMAS ===
-Name: THOMAS
+Name: Flo
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
@@ -4425,8 +4425,79 @@ Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Skarmory
-Level: 70
+Weavile @ Focus Sash
+Level: 50
+Ability: Pickpocket
+EVs: 6 HP / 252 Atk / 252 Spe
+Ball: Great
+Nature: Adamant
+Tera Type: Ghost
+-Fake Out
+-Knock off
+-Ice Spinner
+-Low Kick
+
+Dragapult @ Life Orb
+Level: 50
+Ability: Clear Body
+EVs: 6 HP / 252 Atk / 252 Spe
+Ball: Dusk
+Nature: Adamant
+Shiny: Yes
+Tery Type: Steel
+-Dragon Darts
+-Sucker Punch
+-Phantom Force
+-U Turn
+
+Glimmora @ Glimmoranite
+Level: 50
+Ability: Toxic Debris
+EVs: 6 HP / 252 Spa / 252 Spe
+Ball: Dusk
+Nature: Modest
+Tera Type: Grass
+-Power Gem
+-Earth Power
+-Sludge Wave
+-Spiky Shield
+
+Empoleon @ Assault Vest
+Level: 50
+Ability: Competitive
+EVs: 252 HP / 252 Spa/ 6 Spd
+Ball: Pokeball
+Nature: Modest
+Tera Type: Grass
+-Scald
+-Grass Knot
+-Vacuum Wave
+-Flash Cannon
+
+Arcanine @ Leftovers
+Level:50
+Ability: Intimidate
+EVs: 6 HP / 252 Atk / 252 Spe
+Ball: Great
+Nature: Jolly
+Tera Type: Grass
+-Flare Blitz
+-Wild Charge
+-Extreme Speed
+-Play Rough
+
+Sir'fetched @ Leek
+Level: 50
+Ability: Scrappy
+EVs: 252 HP / 252 Atk / 6 Spe
+Ball: Great
+Nature: Adamant
+Shiny: Yes
+Tera Type: Poison
+-First Impression
+-Meteor Assault
+-Close Combat
+-Brave Bird
 
 
 === TRAINER_WALTER_2 ===

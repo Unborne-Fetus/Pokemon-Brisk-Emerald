@@ -91,15 +91,14 @@ SSTidalRooms_Text_MicahPostBattle:
 
 SSTidalRooms_Text_ThomasIntro:
 	.string "Child…\n"
-	.string "Did you knock on the door?$"
+	.string "Do you know who I am?$"
 
 SSTidalRooms_Text_ThomasDefeat:
-	.string "A loss is to be accepted without haste\n"
-	.string "or panic.$"
+	.string "I used to be a legendary\n"
+	.string "champion!$"
 
 SSTidalRooms_Text_ThomasPostBattle:
-	.string "To be never ruffled in any situation is\n"
-	.string "the GENTLEMAN's code of conduct.$"
+	.string "Power-Creep Amiright?$"
 
 SSTidalRooms_Text_JedIntro:
 	.string "JED: I feel a little shy about this, but…\n"
