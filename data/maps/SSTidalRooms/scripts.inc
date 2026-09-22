@@ -40,6 +40,7 @@ SSTidalRooms_EventScript_Micah::
 SSTidalRooms_EventScript_Thomas::
 	trainerbattle_single TRAINER_THOMAS, SSTidalRooms_Text_ThomasIntro, SSTidalRooms_Text_ThomasDefeat
 	msgbox SSTidalRooms_Text_ThomasPostBattle, MSGBOX_AUTOCLOSE
+	givemon SPECIES_STAKATAKA, 30
 	end
 
 SSTidalRooms_EventScript_Jed::
@@ -98,7 +99,7 @@ SSTidalRooms_Text_ThomasDefeat:
 	.string "champion!$"
 
 SSTidalRooms_Text_ThomasPostBattle:
-	.string "Power-Creep Amiright?$"
+	.string "Power-Creep Amiright? Take this Pokemon$"
 
 SSTidalRooms_Text_JedIntro:
 	.string "JED: I feel a little shy about this, but…\n"
