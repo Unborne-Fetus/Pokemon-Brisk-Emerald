@@ -3303,15 +3303,15 @@ Route121_Text_CalePostBattle:
 	.string "I wish I had a BAG like yours.$"
 
 Route121_Text_MylesIntro:
-	.string "There's nothing I love more than\n"
-	.string "checking out other people's POKéMON!$"
+	.string "1 Pokemon vs 6\n"
+	.string "Mine is perfect.$"
 
 Route121_Text_MylesDefeat:
-	.string "Super awesome!$"
+	.string "Blue!$"
 
 Route121_Text_MylesPostBattle:
-	.string "They're great, your POKéMON!\n"
-	.string "How do you raise them?$"
+	.string "You must have 6 perfect Pokemon!\n"
+	.string "Have this imperfect one!$"
 
 Route121_Text_PatIntro:
 	.string "I want everybody to see the POKéMON\n"
