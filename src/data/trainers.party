@@ -9552,7 +9552,7 @@ Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MITCHELL ===
-Name: MITCHELL
+Name: Neo
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
@@ -9560,21 +9560,39 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Lunatone
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Explosion
-- Reflect
-- Light Screen
-- Psychic
+Buizel @ Mystic Water  
+Level: 60
+Ability: Swift Swim  
+EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 16 SpD / 232 Spe
+Ball: Quick
+Nature: Adamant
+- Chilling Water
+- Quick Attack  
+- Crunch
+- Bulk Up  
 
-Solrock
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Explosion
-- Reflect
-- Light Screen
-- Shadow Ball
+Skiddo @ Miracle Seed
+Level: 60
+Ability: Sap Sipper
+EVs: 4 HP / 12 Atk / 0 Def / 0 SpA / 244 SpD  / 0 Spe
+Ball: Quick
+Nature: Careful
+- Bullet Seed  
+- Growth
+- Milk Drink  
+- Tackle  
+
+Charcadet @ Charcoal  
+Level: 60
+Ability: Flash Fire  
+EVs: 4 HP / 20 Atk / 4 Def / 0 SpA / 240 SpD / 232 Spe
+Ball: Quick
+Nature: Jolly
+Tera Type: Fire
+- Flame Charge  
+- Protect  
+- Will-O-Wisp  
+- Astonish  
 
 === TRAINER_ISAAC_2 ===
 Name: ISAAC
