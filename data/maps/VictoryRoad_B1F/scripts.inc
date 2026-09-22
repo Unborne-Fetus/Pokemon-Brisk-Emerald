@@ -19,6 +19,7 @@ VictoryRoad_B1F_EventScript_Michelle::
 VictoryRoad_B1F_EventScript_Mitchell::
 	trainerbattle_single TRAINER_MITCHELL, VictoryRoad_B1F_Text_MitchellIntro, VictoryRoad_B1F_Text_MitchellDefeat
 	msgbox VictoryRoad_B1F_Text_MitchellPostBattle, MSGBOX_AUTOCLOSE
+	givemon SPECIES_KARTANA, 30
 	end
 
 VictoryRoad_B1F_EventScript_Halle::
@@ -63,16 +64,16 @@ VictoryRoad_B1F_Text_MichellePostBattle:
 	.string "Your POKéMON are all eager to go!$"
 
 VictoryRoad_B1F_Text_MitchellIntro:
-	.string "My POKéMON are cosmically\n"
-	.string "awe inspiring!$"
+	.string "My POKéMON are legal\n"
+	.string "I SWEAR!!!!!!!!!$"
 
 VictoryRoad_B1F_Text_MitchellDefeat:
-	.string "I've never met anyone like you before.$"
+	.string "Are your Pokemon legal?.$"
 
 VictoryRoad_B1F_Text_MitchellPostBattle:
-	.string "Even outside of battle, I sense\n"
-	.string "incredible power emanating from you\l"
-	.string "and your POKéMON.$"
+	.string "It's an egg move, crunch.\n"
+	.string "So is milk drink.\l"
+	.string "Take this LEGAL Pokemon!$"
 
 VictoryRoad_B1F_Text_HalleIntro:
 	.string "Okay, no need to get your back up!\n"
