@@ -13753,7 +13753,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MYLES ===
-Name: MYLES
+Name: Scotty
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
 Gender: Male
@@ -13761,29 +13761,18 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Makuhita
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Wingull
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Tropius
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Zigzagoon
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Electrike
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Numel
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Blue (Sceptile) (M) @ Leftovers
+Level: 42
+Ability: Overgrow
+EVs: 252 HP / 0 ATK / 0 Def / 128 SpA / 128 SpD / 4 Spe
+Ball: Poke
+Nature: Timid
+Shiny: Yes
+Tera Type: Electric
+- Overgrow
+- Endure
+- Cross Poison
+- Aerial Ace
 
 === TRAINER_PAT ===
 Name: PAT
