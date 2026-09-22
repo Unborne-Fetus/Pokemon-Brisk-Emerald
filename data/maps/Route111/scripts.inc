@@ -478,6 +478,7 @@ Route111_EventScript_Irene::
 Route111_EventScript_Daisuke::
 	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
 	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
+	givemon SPECIES_BUZZWOLE, 30
 	end
 
 Route111_EventScript_Wilton::
