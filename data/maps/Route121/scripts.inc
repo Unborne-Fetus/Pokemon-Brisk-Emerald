@@ -135,6 +135,7 @@ Route121_EventScript_Cale::
 Route121_EventScript_Myles::
 	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
 	msgbox Route121_Text_MylesPostBattle, MSGBOX_AUTOCLOSE
+	givemon SPECIES_PHEROMOSA, 30
 	end
 
 Route121_EventScript_Pat::
