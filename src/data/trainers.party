@@ -5757,7 +5757,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Persian Alola
-Level: 28
+Level: 25
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -5984,10 +5984,10 @@ Double Battle: No
 AI: Check Bad Move
 
 Slowking Galar
-Level: 38
+Level: 23
 
 Slowbro Galar
-Level: 36
+Level: 26
 
 === TRAINER_TIMMY ===
 Name: TIMMY
@@ -10396,17 +10396,53 @@ Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KATHLEEN ===
-Name: KATHLEEN
+Name: Sam
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
+Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Haunter (M)
+Level: 25
+Ability: Cursed Body
+Ball: Poke
+Nature: Serious
+- Shadow Punch
+- Sucker Punch
+- Spite
+- Curse
+
+Wartortle (M)
+Level: 27
+Ability: Torrent
+Ball: Poke
+Nature: Rash
+- Water Pulse
+- Bite
+- Tackle
+- Leer
+
+Pikachu (F)
+Level: 25
+Ability: Static
+Ball: Great
+Nature: Modest
+- Spark
+- Sweet Kiss
+- Thunderbolt
+- Nasty Plot
+
+Zangoose (M)
+Level: 24
+Ability: Immunity
+Ball: Poke
+Nature: Adamant
+- Slash
+- Night Slash
+- Hone Claws
+- Fury Cutter
 
 === TRAINER_CLIFFORD ===
 Name: CLIFFORD
@@ -10727,13 +10763,11 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone
+Level: 17
 
-Geodude
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Graveler
+Level: 23
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -10932,12 +10966,10 @@ Double Battle: No
 AI: Check Bad Move
 
 Wurmple
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 18
 
 Cascoon
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 21
 
 === TRAINER_LYLE ===
 Name: LYLE
