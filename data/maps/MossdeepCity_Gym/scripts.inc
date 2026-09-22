@@ -267,6 +267,7 @@ MossdeepCity_Gym_EventScript_Nicholas::
 MossdeepCity_Gym_EventScript_Kathleen::
 	trainerbattle_single TRAINER_KATHLEEN, MossdeepCity_Gym_Text_KathleenIntro, MossdeepCity_Gym_Text_KathleenDefeat
 	msgbox MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE
+	givemon SPECIES_BLACEPHALON, 30
 	end
 
 MossdeepCity_Gym_EventScript_GymGuide::
@@ -504,15 +505,14 @@ MossdeepCity_Gym_Text_NatePostBattle:
 	.string "however b-badly.$"
 
 MossdeepCity_Gym_Text_KathleenIntro:
-	.string "Let me show you a perfectly awful,\n"
-	.string "horrifying time!$"
+	.string "...........\n"
+	.string "....!$"
 
 MossdeepCity_Gym_Text_KathleenDefeat:
-	.string "N-nooooo!$"
+	.string "!!!!$"
 
 MossdeepCity_Gym_Text_KathleenPostBattle:
-	.string "Your vitality is contagious!\n"
-	.string "Get away from me quickly!$"
+	.string "..take....gift......clown...$"
 
 MossdeepCity_Gym_Text_CliffordIntro:
 	.string "I may be past my prime, but I suggest\n"
