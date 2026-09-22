@@ -1357,7 +1357,7 @@ Route111_Text_DaisukeDefeat:
 Route111_Text_DaisukePostBattle:
 	.string "All I can do is keep training until\n"
 	.string "I can defeat strong TRAINERS such\l"
-	.string "as yourself.$"
+	.string "as yourself. Take this as a gift$"
 
 Route111_Text_WiltonIntro:
 	.string "Show me how much you've toughened\n"
