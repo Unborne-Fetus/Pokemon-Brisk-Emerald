@@ -7324,29 +7324,16 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Smog
-- Self Destruct
+Zoroark
+Level: 34
 
-Koffing
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Smog
-- Self Destruct
 
-Koffing
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Zoroark Hisui
+Level: 34
+ 
+
+Cacturne
+Level: 45
 
 === TRAINER_LUNG ===
 Name: LUNG
@@ -7356,13 +7343,12 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skuntank
+Level: 45
 
-Ninjask
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shedinja
+Tera Type: Electric
+Level: 53
 
 === TRAINER_LAO_2 ===
 Name: LAO
@@ -7372,34 +7358,37 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Greninja @ Focus Sash
+Shiny: Yes
+Level: 60
+Ability: Battle Bond
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
+ 
+Hisuian Zoroark @ Life Orb
+Level: 60
+Ability: Illusion
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Shadow Ball
+- Hyper Voice
+- Flamethrower
+- U-turn
 
-Koffing
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Sludge
-
-Koffing
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
-
-Koffing
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Sludge
+Cacturne @ Choice Scarf
+Level: 60
+Tera Type: Steel
+Ability: Water Absorb
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Iron Head 
+- Sucker Punch 
+- Seed Bomb 
+- Drain Punch 
 
 === TRAINER_LAO_3 ===
 Name: LAO
@@ -7409,34 +7398,47 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Greninja @ Focus Sash
+Shiny: Yes
+Level: 70
+Ability: Battle Bond
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
+ 
+Hisuian Zoroark @ Life Orb
+Level: 70
+Ability: Illusion
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Shadow Ball
+- Hyper Voice
+- Flamethrower
+- U-turn
 
-Koffing
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Cacturne @ Choice Scarf
+Level: 70
+Tera Type: Steel
+Ability: Water Absorb
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Iron Head 
+- Sucker Punch 
+- Seed Bomb 
+- Drain Punch 
 
-Koffing
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
-- Tackle
-- Sludge
-
-Koffing
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Tackle
-- Sludge
+Accelgor @ Focus Sash
+Level: 70
+Ability: Unburden
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Bug Buzz
+- Focus Blast
+- Energy Ball
+- U-turn
 
 === TRAINER_LAO_4 ===
 Name: LAO
@@ -7446,32 +7448,47 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
-- Tackle
-- Sludge
+Greninja @ Focus Sash
+Shiny: Yes
+Level: 80
+Ability: Battle Bond
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
+ 
+Hisuian Zoroark @ Life Orb
+Level: 80
+Ability: Illusion
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Shadow Ball
+- Hyper Voice
+- Flamethrower
+- U-turn
 
-Koffing
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
-- Tackle
-- Sludge
+Cacturne @ Choice Scarf
+Level: 80
+Tera Type: Steel
+Ability: Water Absorb
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Iron Head 
+- Sucker Punch 
+- Seed Bomb 
+- Drain Punch 
 
-Koffing
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
-- Tackle
-- Sludge
-
-Koffing
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Tackle
-- Sludge
+Accelgor @ Focus Sash
+Level: 80
+Ability: Unburden
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Bug Buzz
+- Focus Blast
+- Energy Ball
+- U-turn
 
 === TRAINER_LAO_5 ===
 Name: LAO
@@ -7481,34 +7498,70 @@ Gender: Male
 Music: Suspicious
 Double Battle: No
 
-Koffing
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
-- Tackle
-- Sludge
+Greninja @ Focus Sash
+Shiny: Yes
+Level: 100
+Ability: Battle Bond
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
+ 
+Hisuian Zoroark @ Life Orb
+Level: 100
+Ability: Illusion
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Shadow Ball
+- Hyper Voice
+- Flamethrower
+- U-turn
 
-Koffing
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Cacturne @ Choice Scarf
+Level: 100
+Tera Type: Steel
+Ability: Water Absorb
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Iron Head 
+- Sucker Punch 
+- Seed Bomb 
+- Drain Punch 
 
-Koffing
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
-- Tackle
-- Sludge
-- Self Destruct
+Accelgor @ Focus Sash
+Level: 100
+Ability: Unburden
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Bug Buzz
+- Focus Blast
+- Energy Ball
+- U-turn
 
-Weezing @ Smoke Ball
-Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Tackle
-- Sludge
+Kingler @ Leftovers
+Ability: Sheer Force
+Level: 100
+Dynamax Level: 10
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+Gigantamax: Yes
+- Crabhammer
+- Knock Off
+- X-Scissor
+- Swords Dance
+
+Scizor @ Scizorite
+Tera Type: Steel
+Level: 100
+Ability: Technician
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Bullet Punch
+- U-turn
+- X-Scissor
+- Swords Dance
 
 === TRAINER_JOCELYN ===
 Name: JOCELYN
@@ -7519,9 +7572,16 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Lucario
-Level: 13
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Lucario @ Life Orb
+Tera Type: Steel
+Level: 30
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Swords Dance
 
 === TRAINER_LAURA ===
 Name: LAURA
@@ -7532,9 +7592,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 13
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Hawlucha @ Hawluchanite
+Ability: Unburden
+level: 40
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Acrobatics
+- Close Combat
+- Swords Dance
+- Roost
 
 === TRAINER_CYNDY_1 ===
 Name: CYNDY
@@ -7545,13 +7611,27 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mienshao @ Choice Scarf
+Tera Type: Fighting
+Level: 40
+Ability: Regenerator
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- U-turn
+- Knock Off
+- Stone Edge
 
-Makuhita
-Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Hitmontop @ Assault Vest
+Tera Type: Fighting
+Level: 40
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Close Combat
+- Rapid Spin
+- Mach Punch
+- Sucker Punch
 
 === TRAINER_CORA ===
 Name: CORA
@@ -7562,9 +7642,16 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kommo-o @ Leftovers
+Tera Type: Dragon
+Level: 60
+Ability: Bulletproof
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Drain Punch
+- Dragon Claw
+- Earthquake
+- Dragon Dance
 
 === TRAINER_PAULA ===
 Name: PAULA
@@ -7575,9 +7662,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Breloom
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Medicham @ Medichamite
+Level: 55
+Ability: Pure Power
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- Zen Headbutt
+- Ice Punch
+- Fake Out
 
 === TRAINER_CYNDY_2 ===
 Name: CYNDY
@@ -7588,13 +7681,27 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 26
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Mienshao @ Choice Scarf
+Tera Type: Fighting
+Level: 55
+Ability: Regenerator
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- U-turn
+- Knock Off
+- Stone Edge
 
-Makuhita
-Level: 26
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Hitmontop @ Assault Vest
+Tera Type: Fighting
+Level: 55
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Close Combat
+- Rapid Spin
+- Mach Punch
+- Sucker Punch
 
 === TRAINER_CYNDY_3 ===
 Name: CYNDY
@@ -7605,13 +7712,27 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Mienshao @ Choice Scarf
+Tera Type: Fighting
+Level: 65
+Ability: Regenerator
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- U-turn
+- Knock Off
+- Stone Edge
 
-Makuhita
-Level: 29
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Hitmontop @ Assault Vest
+Tera Type: Fighting
+Level: 65
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Close Combat
+- Rapid Spin
+- Mach Punch
+- Sucker Punch
 
 === TRAINER_CYNDY_4 ===
 Name: CYNDY
@@ -7622,13 +7743,27 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Medicham
-Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Mienshao @ Choice Scarf
+Tera Type: Fighting
+Level: 80
+Ability: Regenerator
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- U-turn
+- Knock Off
+- Stone Edge
 
-Hariyama
-Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Hitmontop @ Assault Vest
+Tera Type: Fighting
+Level: 80
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Close Combat
+- Rapid Spin
+- Mach Punch
+- Sucker Punch
 
 === TRAINER_CYNDY_5 ===
 Name: CYNDY
@@ -7639,13 +7774,37 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Medicham
-Level: 35
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Mienshao @ Choice Scarf
+Tera Type: Fighting
+Level: 100
+Ability: Regenerator
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- High Jump Kick
+- U-turn
+- Knock Off
+- Stone Edge
 
-Hariyama
-Level: 35
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Hitmontop @ Assault Vest
+Tera Type: Fighting
+Level: 100
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Close Combat
+- Rapid Spin
+- Mach Punch
+- Sucker Punch
+
+Machamp @ Assault Vest
+Ability: No Guard
+Level: 100
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Dynamic Punch
+- Knock Off
+- Stone Edge
+- Bullet Punch
 
 === TRAINER_MADELINE_1 ===
 Name: MADELINE
@@ -7656,13 +7815,16 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ember
-- Tackle
-- Magnitude
-- Sunny Day
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 40
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
 === TRAINER_CLARISSA ===
 Name: CLARISSA
@@ -7673,13 +7835,27 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 50
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
-Wailmer
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+Tera Type: Fairy
+Level: 50
+Ability: Competitive
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpA
+- Scald
+- Ice Beam
+- Recover
+- Haze
 
 === TRAINER_ANGELICA ===
 Name: ANGELICA
@@ -7690,13 +7866,16 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Castform
-Level: 30
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Rain Dance
-- Weather Ball
-- Thunder
-- Water Pulse
+Bellossom @ Leftovers
+Tera Type: Grass
+Level: 50
+Ability: Chlorophyll
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Giga Drain
+- Quiver Dance
+- Sleep Powder
+- Sunny Day
 
 === TRAINER_MADELINE_2 ===
 Name: MADELINE
@@ -7707,13 +7886,16 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 29
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-- Ember
-- Tackle
-- Magnitude
-- Sunny Day
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 55
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
 === TRAINER_MADELINE_3 ===
 Name: MADELINE
@@ -7724,13 +7906,16 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 32
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Ember
-- Take Down
-- Magnitude
-- Sunny Day
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 60
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
 === TRAINER_MADELINE_4 ===
 Name: MADELINE
@@ -7741,21 +7926,27 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Leech Seed
-- Mega Drain
-- Grass Whistle
-- Sunny Day
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 70
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
-Numel
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Flamethrower
-- Take Down
-- Magnitude
-- Sunny Day
+Oricorio Pom Pom @ Heavy-Duty Boots
+Tera Type: Electric
+Level: 70
+Ability: Dancer
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Revelation Dance
+- Air Slash
+- Quiver Dance
+- Roost
 
 === TRAINER_MADELINE_5 ===
 Name: MADELINE
@@ -7766,21 +7957,27 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Leech Seed
+Ludicolo @ Leftovers
+Tera Type: Water
+Level: 100
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
 - Giga Drain
-- Solar Beam
-- Sunny Day
+- Ice Beam
+- Rain Dance
 
-Camerupt
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Flamethrower
-- Take Down
-- Earthquake
-- Sunny Day
+Oricorio Pom Pom @ Heavy-Duty Boots
+Tera Type: Electric
+Level: 100
+Ability: Dancer
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Revelation Dance
+- Air Slash
+- Quiver Dance
+- Roost
 
 === TRAINER_BEVERLY ===
 Name: BEVERLY
@@ -7791,13 +7988,27 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starmie @ Life Orb
+Tera Type: Psychic
+Level: 50
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Surf
+- Psychic
+- Ice Beam
+- Thunderbolt
 
-Wailmer
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Sitrus Berry
+Tera Type: Water
+Level: 50
+Ability: Huge Power
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Aqua Jet
+- Play Rough
+- Liquidation
+- Belly Drum
 
 === TRAINER_IMANI ===
 Name: IMANI
@@ -7808,9 +8019,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Leftovers
+Tera Type: Fairy
+Level: 50
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Calm Mind
 
 === TRAINER_KYLA ===
 Name: KYLA
@@ -7821,9 +8039,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda @ Choice Band
+Tera Type: Water
+level: 50
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Flip Turn
 
 === TRAINER_DENISE ===
 Name: DENISE
@@ -7834,13 +8059,27 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Assault Vest
+Tera Type: Water
+Level: 45
+Ability: Water Absorb
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Surf
+- Ice Beam
+- Thunderbolt
+- Psychic
 
-Goldeen
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Floatzel @ Life Orb
+Tera Type: Water
+Level: 55
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Wave Crash
+- Aqua Jet
+- Ice Spinner
+- Crunch
 
 === TRAINER_BETH ===
 Name: BETH
@@ -7851,9 +8090,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vaporeon @ Leftovers
+Level: 50
+Ability: Water Absorb
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpA
+- Scald
+- Ice Beam
+- Wish
+- Protect
 
 === TRAINER_TARA ===
 Name: TARA
@@ -7864,13 +8109,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Horsea
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lanturn @ Assault Vest
+Level: 50
+Ability: Volt Absorb
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+- Surf
+- Thunderbolt
+- Ice Beam
+- Volt Switch
 
-Marill
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tentacruel @ Black Sludge
+Level: 50
+Ability: Liquid Ooze
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Scald
+- Sludge Bomb
+- Rapid Spin
+- Toxic Spikes
 
 === TRAINER_MISSY ===
 Name: MISSY
