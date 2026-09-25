@@ -4855,7 +4855,7 @@ Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
-Ampharos
+Ampharos @ Ampharosite
 Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Shock Wave
@@ -7369,7 +7369,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Ice Beam
 - U-turn
  
-Hisuian Zoroark @ Life Orb
+Zoroark Hisui @ Life Orb
 Level: 60
 Ability: Illusion
 Nature: Timid
@@ -8641,7 +8641,7 @@ EVs: 252 HP / 4 SpA / 252 SpD
 - Ice Beam
 - Thunder Wave
 
-Mega Swampert @ Swampertite
+Swampert @ Swampertite
 Level: 100
 Ability: Swift Swim
 Nature: Adamant
@@ -8670,7 +8670,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Wish
 - Protect
 
-Mega Audino @ Audinite
+Audino @ Audinite
 Level: 45 
 Ability: Healer
 Nature: Calm
@@ -8689,21 +8689,27 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Attack
-- Poison Sting
-- Slash
-- Dig
+Appletun @ Leftovers
+Level: 40  
+Ability: Thick Fat
+Gigantamax: Yes
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+- Apple Acid
+- Draco Meteor
+- Recover
+- Leech Seed
 
-Marill
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rollout
-- Bubble Beam
-- Tail Whip
-- Defense Curl
+
+Greedent @ Sitrus Berry
+Level: 40
+Ability: Cheek Pouch
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Body Slam
+- Bullet Seed
+- Crunch
+- Stuff Cheeks
 
 === TRAINER_CAROL ===
 Name: CAROL
@@ -8714,13 +8720,25 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Taillow
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ribombee @ Focus Sash
+Level: 34
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Pollen Puff
+- Dazzling Gleam
+- Quiver Dance
+- U-turn
 
-Lombre
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Leafeon @ Miracle Seed
+Level: 36  
+Ability: Chlorophyll
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Leaf Blade
+- X-Scissor
+- Dig
+- Swords Dance
 
 === TRAINER_NANCY ===
 Name: NANCY
@@ -8731,13 +8749,28 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Eevee @ Eviolite
+Level: 32 
+Ability: Adaptability
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+Tera Type: Grass
+- Double-Edge
+- Bite
+- Trailblaze
+- Quick Attack
 
-Lombre
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pikachu @ Light Ball
+Level: 34 
+Ability: Static
+Nature: Jolly
+Gigantamax: Yes
+EVs: 252 Atk / 252 Spe / 4 HP
+- Volt Tackle
+- Brick Break
+- Iron Tail
+- Fake Out
+
 
 === TRAINER_MARTHA ===
 Name: MARTHA
@@ -8748,13 +8781,25 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Skitty
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Comfey @ Leftovers
+Level: 39  
+Ability: Triage
+Nature: Calm
+EVs: 252 HP / 4 Def / 252 SpD
+- Draining Kiss
+- Giga Drain
+- Aromatherapy
+- Synthesis
 
-Swablu
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Altarianite
+Level: 45 
+Ability: Pixilate
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Return
+- Dragon Dance
+- Roost
+- Earthquake
 
 === TRAINER_DIANA_1 ===
 Name: DIANA
@@ -14222,7 +14267,7 @@ Ball: Poke
 Nature: Timid
 Shiny: Yes
 Tera Type: Electric
-- Overgrow
+- Leaf Blade
 - Endure
 - Cross Poison
 - Aerial Ace
@@ -14323,7 +14368,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Golem
-Level: 32
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Rollout
@@ -14331,7 +14376,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Explosion
 
 Sudowoodo
-Level: 32
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulldoze
 - Brick Break
@@ -14339,15 +14384,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earth Power
 
 Kabuto @ Sitrus Berry
-Level: 35
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 - Ice Beam
 - Surf
 - Rock Slide
 
-Steelix
-Level: 35
+Steelix @ Steelixite
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
 - Explosion
@@ -14355,7 +14400,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Probopass @ Sitrus Berry
-Level: 37
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 - Explosion
@@ -14373,7 +14418,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Omanyte
-Level: 37
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Ice Beam
@@ -14381,7 +14426,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 
 Golem
-Level: 37
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Rollout
@@ -14389,15 +14434,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Explosion
 
 Kabutops @ Sitrus Berry
-Level: 40
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 - Ice Beam
 - Surf
 - Rock Slide
 
-Steelix
-Level: 40
+Steelix @ Steelixite
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
 - Explosion
@@ -14405,7 +14450,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Probopass @ Sitrus Berry
-Level: 42
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 - Explosion
@@ -14413,7 +14458,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Sudowoodo
-Level: 41
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulldoze
 - Brick Break
@@ -14431,7 +14476,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Omastar
-Level: 42
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Ice Beam
@@ -14439,7 +14484,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 
 Golem
-Level: 42
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Rollout
@@ -14447,15 +14492,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Explosion
 
 Kabutops @ Sitrus Berry
-Level: 45
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 - Ice Beam
 - Surf
 - Rock Slide
 
-Steelix
-Level: 45
+Steelix @ Steelixite
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
 - Explosion
@@ -14463,7 +14508,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Probopass @ Sitrus Berry
-Level: 47
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 - Explosion
@@ -14471,7 +14516,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Sudowoodo
-Level: 32
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulldoze
 - Brick Break
@@ -14489,7 +14534,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Aerodactyl
-Level: 47
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Hyper Beam
@@ -14497,7 +14542,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 
 Golem
-Level: 47
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Rollout
@@ -14505,7 +14550,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Explosion
 
 Omastar
-Level: 47
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 - Ice Beam
@@ -14513,15 +14558,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 
 Kabutops @ Sitrus Berry
-Level: 50
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
 - Ice Beam
 - Surf
 - Rock Slide
 
-Steelix
-Level: 50
+Steelix @ Steelixite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Tail
 - Explosion
@@ -14529,7 +14574,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 
 Probopass @ Sitrus Berry
-Level: 52
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 - Explosion
@@ -14555,23 +14600,23 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Machamp @ Sitrus Berry
-Level: 33
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
 - Rock Slide
 - Focus Punch
 - Bulk Up
 
-Meditite
-Level: 33
+Medicham @ Medichamite
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 - Light Screen
 - Reflect
 - Focus Punch
 
-Hitmontop
-Level: 35
+Hitmonchan
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pursuit
 - Counter
@@ -14579,7 +14624,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
 
 Hariyama @ Sitrus Berry
-Level: 37
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Focus Punch
@@ -14597,23 +14642,23 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Machamp @ Sitrus Berry
-Level: 38
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
 - Rock Slide
 - Focus Punch
 - Bulk Up
 
-Medicham
-Level: 38
+Medicham @ Medichamite
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 - Light Screen
 - Reflect
 - Focus Punch
 
-Hitmontop
-Level: 40
+Hitmonchan
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pursuit
 - Counter
@@ -14621,7 +14666,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
 
 Hariyama @ Sitrus Berry
-Level: 42
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Focus Punch
@@ -14639,7 +14684,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Hitmonchan
-Level: 40
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sky Uppercut
 - Protect
@@ -14647,15 +14692,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Punch
 
 Machamp @ Sitrus Berry
-Level: 43
+Level: 80
+Dynamax Level: 10
+Gigantamax: Yes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
 - Rock Slide
 - Focus Punch
 - Bulk Up
 
-Medicham
-Level: 43
+Medicham @ Medichamite
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Light Screen
@@ -14663,7 +14710,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 
 Hitmontop
-Level: 45
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pursuit
 - Counter
@@ -14671,7 +14718,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
 
 Hariyama @ Sitrus Berry
-Level: 47
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Focus Punch
@@ -14689,7 +14736,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Hitmonlee
-Level: 46
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mega Kick
 - Focus Punch
@@ -14697,7 +14744,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulk Up
 
 Hitmonchan
-Level: 46
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sky Uppercut
 - Protect
@@ -14705,15 +14752,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Punch
 
 Machamp @ Sitrus Berry
-Level: 48
+Level: 100
+Dynamax Level: 10
+Gigantamax: Yes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Cross Chop
 - Rock Slide
 - Focus Punch
 - Bulk Up
 
-Medicham
-Level: 48
+Medicham @ Medichamite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Light Screen
@@ -14721,20 +14770,20 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 
 Hitmontop
-Level: 50
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pursuit
 - Counter
 - Protect
 - Triple Kick
 
-Hariyama @ Sitrus Berry
-Level: 52
+Iron Hands @ Sitrus Berry
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Focus Punch
+- Thunder Punch
+- Drain Punch
 - Belly Drum
-- Earthquake
+- Close Combat
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
@@ -14746,34 +14795,30 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Ampharos
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
-
 Bellibolt
-Level: 36
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 70
 
 
-Magneton @ Sitrus Berry
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ampharos @ Ampharosite
+Level: 70
+- Shock Wave
+- Leer
+- Quick Attack
+- Howl
+
+Magnezone
+Level: 70
 - Supersonic
-- Protect
-- Thunder
-- Rain Dance
-
-Manectric @ Sitrus Berry
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
+- Shock Wave
 - Thunder Wave
-- Thunder
-- Protect
+- Sonic Boom
+
+Manectric @ Manectite
+Level: 80
+- Quick Attack
+- Thunder Wave
+- Shock Wave
+- Howl
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
@@ -14787,13 +14832,15 @@ AI: Basic Trainer
 
 Pikachu
 Level: 39
+Dynamax Level: 10
+Gigantamax: Yes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
 - Slam
 - Rain Dance
 - Shock Wave
 
-Ampharos
+Ampharos @ Ampharosite
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
@@ -14814,7 +14861,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
 - Rain Dance
 
-Manectric @ Sitrus Berry
+Manectric @ Manectite
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
