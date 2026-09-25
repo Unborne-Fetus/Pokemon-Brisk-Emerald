@@ -7594,7 +7594,7 @@ AI: Check Bad Move
 
 Hawlucha @ Hawluchanite
 Ability: Unburden
-level: 40
+Level: 40
 Nature: Adamant
 EVs: 252 Atk / 252 Spe / 4 HP
 - Acrobatics
@@ -8041,7 +8041,7 @@ AI: Check Bad Move
 
 Barraskewda @ Choice Band
 Tera Type: Water
-level: 50
+Level: 50
 Ability: Swift Swim
 Nature: Jolly
 EVs: 252 Atk / 252 Spe / 4 HP
