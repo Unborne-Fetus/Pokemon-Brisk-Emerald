@@ -8138,9 +8138,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+Level: 40
+Ability: Marvel Scale
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpD
+- Scald
+- Recover
+- Ice Beam
+- Haze
+
 
 === TRAINER_ALICE ===
 Name: ALICE
@@ -8151,17 +8158,35 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starmie @ Life Orb
+Level: 34
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Surf
+- Psychic
+- Ice Beam
+- Thunderbolt
 
-Wingull
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Floatzel @ Mystic Water
+Level: 38
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Aqua Jet
+- Ice Spinner
+- Crunch
 
-Goldeen
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Sitrus Berry
+Level: 35
+Ability: Huge Power
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Liquidation
+- Play Rough
+- Aqua Jet
+- Belly Drum
 
 === TRAINER_JENNY_1 ===
 Name: JENNY
@@ -8172,9 +8197,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Throat Spray
+Level: 50
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Psychic
 
 === TRAINER_GRACE ===
 Name: GRACE
@@ -8185,9 +8216,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Assault Vest
+Level: 47 
+Ability: Water Absorb
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+- Surf
+- Freeze-Dry
+- Thunderbolt
+- Psychic
 
 === TRAINER_TANYA ===
 Name: TANYA
@@ -8198,9 +8235,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vaporeon @ Leftovers
+Level: 49 
+Ability: Water Absorb
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpA
+- Scald
+- Ice Beam
+- Wish
+- Protect
 
 === TRAINER_SHARON ===
 Name: SHARON
@@ -8211,9 +8254,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Greninja @ Expert Belt
+Level: 47 
+Ability: Protean
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
+- U-turn
 
 === TRAINER_NIKKI ===
 Name: NIKKI
@@ -8224,13 +8273,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jellicent @ Leftovers
+Level: 50
+Ability: Water Absorb
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpD
+- Surf
+- Shadow Ball
+- Will-O-Wisp
+- Recover
 
-Spheal
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Life Orb
+Level: 47
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
 === TRAINER_BRENDA ===
 Name: BRENDA
@@ -8241,9 +8302,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cloyster @ White Herb
+Level: 50
+Ability: Skill Link
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Liquidation
 
 === TRAINER_KATIE ===
 Name: KATIE
@@ -8254,13 +8321,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mantine @ Heavy-Duty Boots
+Level: 47
+Ability: Water Absorb
+Nature: Calm
+EVs: 252 HP / 4 Def / 252 SpD
+- Scald
+- Air Slash
+- Roost
+- Haze
 
-Spheal
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Life Orb
+Level: 58 
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Rain Dance
 
 === TRAINER_SUSIE ===
 Name: SUSIE
@@ -8271,9 +8350,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Life Orb
+Level: 48  
+Ability: Speed Boost
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Crunch
+- Psychic Fangs
+- Protect
 
 === TRAINER_KARA ===
 Name: KARA
@@ -8284,9 +8369,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Walrein @ Leftovers
+Level: 58 
+Ability: Thick Fat
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpA
+- Surf
+- Ice Beam
+- Rest
+- Roar
 
 === TRAINER_DANA ===
 Name: DANA
@@ -8297,9 +8388,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Azumarill
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda @ Choice Band
+Level: 47 
+Ability: Swift Swim
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Aqua Jet
 
 === TRAINER_SIENNA ===
 Name: SIENNA
@@ -8310,13 +8407,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dhelmise @ Assault Vest
+Level: 50 
+Ability: Steelworker
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Power Whip
+- Anchor Shot
+- Shadow Claw
+- Rapid Spin
 
-Luvdisc
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wugtrio @ Focus Sash
+Level: 48 
+Ability: Gooey
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Triple Dive
+- Stomping Tantrum
+- Sucker Punch
+- Memento
 
 === TRAINER_DEBRA ===
 Name: DEBRA
@@ -8327,9 +8436,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bruxish @ Mystic Water
+Level: 56
+Ability: Strong Jaw
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Psychic Fangs
+- Crunch
+- Aqua Jet
 
 === TRAINER_LINDA ===
 Name: LINDA
@@ -8340,13 +8455,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Horsea
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Overqwil @ Black Sludge
+Level: 54
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Barb Barrage
+- Crunch
+- Liquidation
+- Swords Dance
 
-Seadra
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Seaking @ Mystic Water
+Level: 51 
+Ability: Lightning Rod
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Waterfall
+- Megahorn
+- Drill Run
+- Aqua Jet
 
 === TRAINER_KAYLEE ===
 Name: KAYLEE
@@ -8357,13 +8484,18 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Lanturn
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golduck @ Wise Glasses
+Level: 50 
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Surf
+- Psychic
+- Ice Beam
+- Focus Blast 
 
 Pelipper
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 48
 
 === TRAINER_LAUREL ===
 Name: LAUREL
@@ -8374,13 +8506,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dewgong @ Leftovers
+Level: 45 
+Ability: Thick Fat
+Nature: Calm
+EVs: 252 HP / 4 Def / 252 SpD
+- Surf
+- Ice Beam
+- Encore
+- Aqua Ring
 
-Luvdisc
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Corsola Galar @ Eviolite
+Level: 50
+Ability: Cursed Body
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpD
+- Strength Sap
+- Shadow Ball
+- Will-O-Wisp
+- Stealth Rock
 
 === TRAINER_CARLEE ===
 Name: CARLEE
@@ -8391,9 +8535,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Relicanth @ Assault Vest
+Level: 55  
+Ability: Rock Head
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Head Smash
+- Waterfall
+- Earthquake
+- Double-Edge
 
 === TRAINER_JENNY_2 ===
 Name: JENNY
@@ -8404,9 +8554,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Throat Spray
+Level: 60
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Psychic
 
 === TRAINER_JENNY_3 ===
 Name: JENNY
@@ -8417,9 +8573,15 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Wailmer
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Throat Spray
+Level: 70
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Psychic
 
 === TRAINER_JENNY_4 ===
 Name: JENNY
@@ -8430,13 +8592,25 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Throat Spray
+Level: 80
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Psychic
 
-Wailmer
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lanturn @ Leftovers
+Level: 80  
+Ability: Volt Absorb
+Nature: Calm
+EVs: 252 HP / 4 SpA / 252 SpD
+- Scald
+- Volt Switch
+- Ice Beam
+- Thunder Wave
 
 === TRAINER_JENNY_5 ===
 Name: JENNY
@@ -8447,17 +8621,35 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Throat Spray
+Level: 100
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 SpD
+- Sparkling Aria
+- Moonblast
+- Ice Beam
+- Psychic
 
-Wailmer
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lanturn @ Leftovers
+Level: 100  
+Ability: Volt Absorb
+Nature: Calm
+EVs: 252 HP / 4 SpA / 252 SpD
+- Scald
+- Volt Switch
+- Ice Beam
+- Thunder Wave
 
-Starmie
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mega Swampert @ Swampertite
+Level: 100
+Ability: Swift Swim
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Waterfall
+- Earthquake
+- Ice Punch
+- Stealth Rock
 
 === TRAINER_HEIDI ===
 Name: HEIDI
@@ -8468,21 +8660,25 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
-- Sand Attack
-- Poison Sting
-- Slash
+Dachsbun @ Leftovers
+Level: 40 
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
-Baltoy
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rapid Spin
-- Mud Slap
-- Psybeam
-- Rock Tomb
+Mega Audino @ Audinite
+Level: 45 
+Ability: Healer
+Nature: Calm
+EVs: 252 HP / 4 Def / 252 SpD
+- Dazzling Gleam
+- Hyper Voice
+- Heal Pulse
+- Protect
 
 === TRAINER_BECKY ===
 Name: BECKY
