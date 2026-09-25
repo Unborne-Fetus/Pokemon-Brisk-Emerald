@@ -4965,7 +4965,7 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Gyarados
+Gyarados @ Gyaradosite
 Level: 80
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
@@ -15157,25 +15157,29 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Cyclizar
-Level: 42
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Ursaluna
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ursaluna @ Flame Orb
+Level: 80
+Ability: Guts
+Shiny: Yes
+- Facade
+- Earthquake
+- High Horsepower
 
 
 Grafaiai
-Level: 43
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Arboliva
-Level: 43
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Slaking @ Sitrus Berry
-Level: 45
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Beam
 - Flamethrower
@@ -15192,30 +15196,34 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Ursaluna
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ursaluna @ Flame Orb
+Level: 90
+Ability: Guts
+Shiny: Yes
+- Facade
+- Earthquake
+- High Horsepower
 
 
 Arboliva
-Level: 47
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Cyclizar
-Level: 45
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Grafaiai
-Level: 48
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Obstagoon
-Level: 48
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Slaking @ Sitrus Berry
-Level: 50
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Beam
 - Flamethrower
@@ -15232,32 +15240,36 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Ursaluna
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ursaluna @ Flame Orb
+Level: 100
+Ability: Guts
+Shiny: Yes
+- Facade
+- Earthquake
+- High Horsepower
 
 
 Cyclizar
-Level: 52
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Arboliva
-Level: 50
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Grafaiai
-Level: 53
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Obstagoon
-Level: 53
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Slaking @ Sitrus Berry
-Level: 55
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Beam
 - Flamethrower
@@ -15274,33 +15286,37 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Ursaluna
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ursaluna @ Flame Orb
+Level: 100
+Ability: Guts
+Shiny: Yes
+- Facade
+- Earthquake
+- High Horsepower
 
 
 Obstagoon
-Level: 57
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Grafaiai
-Level: 55
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Cyclizar
-Level: 57
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Arboliva
-Level: 58
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Slaking @ Sitrus Berry
-Level: 60
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Beam
 - Flamethrower
@@ -15317,21 +15333,21 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Dragonair @ Sitrus Berry
-Level: 40
+Dragonite @ Dragoninite
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
 - Thunderbolt
 - Protect
 - Ice Beam
 
-Gyarados
-Level: 39
+Gyarados @ Gyaradosite
+Level: 90
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 
 Tropius
-Level: 42
+Level: 90
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Sunny Day
 - Aerial Ace
@@ -15339,17 +15355,17 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Synthesis
 
 Rotom Fan
-Level: 41
+Level: 90
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 
 Gliscor
-Level: 40
+Level: 90
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 
-Altaria @ Oran Berry
-Level: 43
+Altaria @ Altarianite
+Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Dragon Breath
@@ -15367,20 +15383,20 @@ Double Battle: Yes
 AI: Basic Trainer / Risky
 
 Gliscor
-Level: 43
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Tropius
-Level: 43
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Aerial Ace
 - Solar Beam
 - Earthquake
 
-Dragonair @ Sitrus Berry
-Level: 45
+Dragonite @ Dragoninite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
 - Thunderbolt
@@ -15388,17 +15404,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 
 Rotom Fan
-Level: 46
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Gyarados
-Level: 48
+Gyarados @ Gyaradosite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Altaria @ Chesto Berry
-Level: 50
+Altaria @ Altarianite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 - Rest
@@ -15415,21 +15431,21 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Gyarados
-Level: 48
+Gyarados @ Gyaradosite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Tropius
-Level: 49
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Aerial Ace
 - Solar Beam
 - Earthquake
 
-Dragonite @ Sitrus Berry
-Level: 55
+Dragonite @ Dragoninite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
 - Thunderbolt
@@ -15437,17 +15453,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 
 Gliscor
-Level: 51
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Rotom Fan
-Level: 53
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Altaria @ Chesto Berry
-Level: 55
+Altaria @ Altarianite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 - Rest
@@ -15465,25 +15481,25 @@ Double Battle: Yes
 AI: Basic Trainer / Risky
 
 Gliscor
-Level: 53
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Tropius
-Level: 54
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Aerial Ace
 - Solar Beam
 - Earthquake
 
-Gyarados
-Level: 55
+Gyarados @ Gyaradosite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Dragonite @ Sitrus Berry
-Level: 55
+Dragonite @ Dragoninite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Beam
 - Thunderbolt
@@ -15491,12 +15507,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 
 Rotom Fan
-Level: 58
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Altaria @ Chesto Berry
-Level: 60
+Altaria @ Altarianite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sky Attack
 - Rest
@@ -15514,31 +15530,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Alakazam
-Level: 48
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Scream Tail
-Level: 49
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Hatterene @ Chesto Berry
-Level: 49
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Delphox @ Chesto Berry
-Level: 50
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Gallade @ Sitrus Berry
-Level: 50
+Iron Valiant @ Sitrus Berry
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Metagross
-Level: 50
+Metagross @ Metagrossite
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
 
 === TRAINER_TATE_AND_LIZA_3 ===
@@ -15552,31 +15570,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Alakazam
-Level: 53
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Scream Tail
-Level: 52
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Hatterene @ Chesto Berry
-Level: 51
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Delphox @ Chesto Berry
-Level: 50
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Gallade @ Sitrus Berry
-Level: 54
+Iron Valiant @ Sitrus Berry
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Metagross
-Level: 52
+Metagross @ Metagrossite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
 
 
@@ -15591,31 +15611,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Alakazam
-Level: 59
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Scream Tail
-Level: 60
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Hatterene @ Chesto Berry
-Level: 61
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Delphox @ Chesto Berry
-Level: 62
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Gallade @ Sitrus Berry
-Level: 60
+Iron Valiant @ Sitrus Berry
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Metagross
-Level: 59
+Metagross @ Metagrossite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
 
 
@@ -15630,31 +15652,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Alakazam
-Level: 63
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Scream Tail
-Level: 61
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Hatterene @ Chesto Berry
-Level: 62
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
 Delphox @ Chesto Berry
-Level: 64
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 
-Gallade @ Sitrus Berry
-Level: 63
+Iron Valiant @ Sitrus Berry
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Metagross
-Level: 65
+Metagross @ Metagrossite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
 
 === TRAINER_JUAN_2 ===
@@ -15668,29 +15692,32 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Blastoise
-Level: 46
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Politoed
-Level: 48
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Slowking
-Level: 48
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Swampert
-Level: 46
+Swampert @ Swampertite
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Kingdra
-Level: 52
+Level: 100
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Seismitoad @ Chesto Berry
-Level: 49
+Tera Type: Flying
+Level: 100
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_JUAN_3 ===
@@ -15704,29 +15731,32 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Blastoise
-Level: 51
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Politoed
-Level: 50
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Slowking
-Level: 54
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Swampert
-Level: 52
+Swampert @ Swampertite
+Level: 100
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Kingdra
-Level: 53
+Level: 100
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Seismitoad @ Chesto Berry
-Level: 54
+Tera Type: Flying
+Level: 100
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_JUAN_4 ===
@@ -15740,30 +15770,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Blastoise
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Politoed
-Level: 59
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Slowking
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Swampert
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Swampert @ Swampertite
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Kingdra
-Level: 59
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Seismitoad @ Chesto Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Flying
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 
 === TRAINER_JUAN_5 ===
@@ -15777,30 +15810,33 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Blastoise
-Level: 62
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Dynamax Level: 10
+Gigantamax: Yes
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Politoed
-Level: 62
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 Slowking
-Level: 61
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Swampert
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Swampert @ Swampertite
+Level: 100
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Kingdra
-Level: 62
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Seismitoad @ Chesto Berry
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Flying
+Level: 100
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 
 
@@ -15850,53 +15886,68 @@ Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Skarmory
-Level: 77
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Aerial Ace
-- Spikes
-- Steel Wing
-
-Claydol
-Level: 75
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Light Screen
-- Ancient Power
-- Earthquake
-
-Aggron
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Earthquake
-- Solar Beam
-- Dragon Claw
-
-Cradily
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Confuse Ray
-
-Armaldo
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Ancient Power
-- Aerial Ace
-- Slash
-
-Metagross @ Sitrus Berry
-Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Psychic
-- Meteor Mash
+Gholdengo @ Choice Scarf
+Level: 100 
+Ability: Good as Gold
+Nature: Timid
+EVs: 4 Def / 252 SpA / 252 Spe
+Tera Type: Steel
+- Make It Rain
 - Shadow Ball
+- Focus Blast
+- Trick
+
+Kingambit @ Black Glasses
+Level: 100  
+Ability: Supreme Overlord
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Scizor @ Heavy-Duty Boots
+Level: 100  
+Ability: Technician
+Nature: Adamant
+EVs: 248 HP / 252 Atk / 8 SpD
+- Bullet Punch
+- U-turn
+- Close Combat
+- Swords Dance
+
+Excadrill @ Air Balloon
+Level: 100  
+Ability: Mold Breaker
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Earthquake
+- Iron Head
+- Rock Slide
+- Rapid Spin
+
+Corviknight @ Leftovers
+Level: 100 
+Ability: Mirror Armor
+Dynamax Level: 10
+Gigantamax: Yes
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Brave Bird
+- Body Press
+- Roost
+- U-turn
+
+Metagross @ Metagrossite
+Level: 100
+Ability: Clear Body
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Ice Punch
 
 === TRAINER_ANABEL ===
 Name: ANABEL
