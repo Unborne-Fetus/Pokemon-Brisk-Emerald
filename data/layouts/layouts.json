@@ -9389,6 +9389,50 @@
       "border_filepath": "data/layouts/EvolutionCave_2/border.bin",
       "blockdata_filepath": "data/layouts/EvolutionCave_2/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE136",
+      "name": "Route136_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route136/border.bin",
+      "blockdata_filepath": "data/layouts/Route136/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE137",
+      "name": "Route137_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route137/border.bin",
+      "blockdata_filepath": "data/layouts/Route137/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE138",
+      "name": "Route138_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route138/border.bin",
+      "blockdata_filepath": "data/layouts/Route138/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_UNBORNE_ROOM",
+      "name": "UnborneRoom_Layout",
+      "width": 32,
+      "height": 45,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/UnborneRoom/border.bin",
+      "blockdata_filepath": "data/layouts/UnborneRoom/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
