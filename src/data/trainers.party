@@ -17294,13 +17294,64 @@ Ability: Blaze
 
 
 
-=== TRAINER_VOLO===
+=== TRAINER_VOLO ===
 Name: Volo
 Class: Champion
 Pic: champion_rival_frlg
 Gender: Male
 Music: Male
 Double Battle: No
+AI: OMNISCIENT
+
+Spiritomb
+- Hypnosis
+- Extrasensory
+- Dark Pulse
+- Shadow Ball
+
+Roserade
+- Poison Jab
+- Petal Dance
+- Spikes
+
+Togekiss 
+- Calm Mind
+- Extrasensory
+- Moonblast
+- Air Slash
+
+Arcanine Hisui
+- Raging Fury
+- Crunch
+- Rock Slide
+
+Lucario 
+- Crunch
+- Bulk Up
+- Close Combat
+- Bullet Punch
+
+Giratina Origin
+- Aura Sphere
+- Dragon Claw
+- Shadow Force
+- Earth Power
+
+
+
+
+
+
+
+
+
+=== TRAINER_UNBORNE ===
+Name: Unborne
+Class: Champion
+Pic: elite_four_bruno_frlg
+Gender: Male
+Music: Male
+Double Battle: Yes
 AI: OMNISCIENT
 
 Spiritomb
