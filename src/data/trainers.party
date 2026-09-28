@@ -8809,17 +8809,35 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ribombee @ Focus Sash
+Level: 33
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Moonblast
+- Pollen Puff
+- Stun Spore
+- U-turn
 
-Oddish
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lilligant Hisui @ Life Orb
+Level: 30
+Ability: Hustle
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Victory Dance
+- Close Combat
+- Leaf Blade
+- Ice Spinner
 
-Swablu
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dachsbun @ Leftovers
+Level: 38
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
 === TRAINER_CEDRIC ===
 Name: CEDRIC
@@ -8830,13 +8848,16 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Wobbuffet
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Destiny Bond
-- Safeguard
-- Counter
-- Mirror Coat
+Espeon @ Choice Specs
+Level: 37
+Ability: Magic Bounce
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Trick
+
 
 === TRAINER_IRENE ===
 Name: IRENE
@@ -8847,13 +8868,25 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Appletun @ Leftovers
+Level: 35
+Ability: Thick Fat
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+- Apple Acid
+- Draco Meteor
+- Recover
+- Earth Power
 
-Marill
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Greedent @ Sitrus Berry
+Level: 40
+Ability: Cheek Pouch
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Belly Drum
+- Body Slam
+- Seed Bomb
+- Earthquake
 
 === TRAINER_DIANA_2 ===
 Name: DIANA
@@ -8864,17 +8897,35 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Ribombee @ Focus Sash
+Level: 43
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Moonblast
+- Pollen Puff
+- Stun Spore
+- U-turn
 
-Gloom
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Lilligant Hisui @ Life Orb
+Level: 40
+Ability: Hustle
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Victory Dance
+- Close Combat
+- Leaf Blade
+- Ice Spinner
 
-Swablu
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Dachsbun @ Leftovers
+Level: 45
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
 === TRAINER_DIANA_3 ===
 Name: DIANA
@@ -8885,17 +8936,35 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Breloom
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Ribombee @ Focus Sash
+Level: 59
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Moonblast
+- Pollen Puff
+- Stun Spore
+- U-turn
 
-Gloom
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Lilligant Hisui @ Life Orb
+Level: 55
+Ability: Hustle
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Victory Dance
+- Close Combat
+- Leaf Blade
+- Ice Spinner
 
-Swablu
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Dachsbun @ Leftovers
+Level: 50
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
 === TRAINER_DIANA_4 ===
 Name: DIANA
@@ -8906,17 +8975,35 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Breloom
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ribombee @ Focus Sash
+Level: 70
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Moonblast
+- Pollen Puff
+- Stun Spore
+- U-turn
 
-Gloom
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Lilligant Hisui @ Life Orb
+Level: 70
+Ability: Hustle
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Victory Dance
+- Close Combat
+- Leaf Blade
+- Ice Spinner
 
-Swablu
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Dachsbun @ Leftovers
+Level: 70
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
 === TRAINER_DIANA_5 ===
 Name: DIANA
@@ -8927,17 +9014,35 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Breloom
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Ribombee @ Focus Sash
+Level: 100
+Ability: Shield Dust
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Moonblast
+- Pollen Puff
+- Stun Spore
+- U-turn
 
-Vileplume
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lilligant Hisui @ Life Orb
+Level: 100
+Ability: Hustle
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Victory Dance
+- Close Combat
+- Leaf Blade
+- Ice Spinner
 
-Altaria
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Dachsbun @ Leftovers
+Level: 100
+Ability: Well-Baked Body
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+- Play Rough
+- Body Press
+- Wish
+- Protect
 
 === TRAINER_AMY_AND_LIV_1 ===
 Name: AMY & LIV
@@ -8948,13 +9053,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Plusle @ Magnet
+Level: 35
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
+- Helping Hand
 
-Minun
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Minun @ Sitrus Berry
+Level: 33
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Charm
+- Helping Hand
 
 === TRAINER_AMY_AND_LIV_2 ===
 Name: AMY & LIV
@@ -8965,13 +9082,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Plusle @ Magnet
+Level: 50
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
+- Helping Hand
 
-Minun
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Minun @ Sitrus Berry
+Level: 45
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Charm
+- Helping Hand
 
 === TRAINER_GINA_AND_MIA_1 ===
 Name: GINA & MIA
@@ -8982,13 +9111,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Indeedee Female @ Psychic Seed
+Level: 30
+Ability: Psychic Surge
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Expanding Force
+- Dazzling Gleam
+- Helping Hand
+- Protect
 
-Minun
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Indeedee Male @ Choice Scarf
+Level: 28
+Ability: Psychic Surge
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Expanding Force
+- Psychic
+- Dazzling Gleam
+- Trick
 
 === TRAINER_MIU_AND_YUKI ===
 Name: MIU & YUKI
@@ -8999,13 +9140,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Beautifly
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Maushold @ Wide Lens
+Level: 35
+Ability: Technician
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Population Bomb
+- Beat Up
+- Helping Hand
+- Protect
 
-Dustox
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Maushold @ Sitrus Berry
+Level: 35
+Ability: Friend Guard
+Nature: Jolly
+EVs: 252 HP / 252 Spe / 4 Def
+- Follow Me
+- Super Fang
+- Helping Hand
+- Protect
 
 === TRAINER_AMY_AND_LIV_3 ===
 Name: AMY & LIV
@@ -9016,13 +9169,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Plusle @ Magnet
+Level: 70
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
+- Helping Hand
 
-Minun
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Minun @ Sitrus Berry
+Level: 70
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Charm
+- Helping Hand
 
 === TRAINER_GINA_AND_MIA_2 ===
 Name: GINA & MIA
@@ -9033,17 +9198,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Duskull
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Night Shade
-- Disable
+Indeedee Female @ Psychic Seed
+Level: 38
+Ability: Psychic Surge
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Expanding Force
+- Dazzling Gleam
+- Helping Hand
+- Protect
 
-Shroomish
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Absorb
-- Leech Seed
+Indeedee Male @ Choice Scarf
+Level: 37
+Ability: Psychic Surge
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Expanding Force
+- Psychic
+- Dazzling Gleam
+- Trick
 
 === TRAINER_AMY_AND_LIV_4 ===
 Name: AMY & LIV
@@ -9054,13 +9227,25 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 30
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Plusle @ Magnet
+Level: 80
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
+- Helping Hand
 
-Minun
-Level: 30
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Minun @ Sitrus Berry
+Level: 80
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Charm
+- Helping Hand
 
 === TRAINER_AMY_AND_LIV_5 ===
 Name: AMY & LIV
@@ -9071,19 +9256,23 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 33
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Spark
-- Charge
-- Fake Tears
+Plusle @ Magnet
+Level: 90
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
 - Helping Hand
 
-Minun
-Level: 33
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Spark
-- Charge
+Minun @ Sitrus Berry
+Level: 90
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
 - Charm
 - Helping Hand
 
@@ -9096,19 +9285,23 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Plusle
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Thunder
-- Charge
-- Fake Tears
+Plusle @ Magnet
+Level: 100
+Ability: Plus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
+- Encore
 - Helping Hand
 
-Minun
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Thunder
-- Charge
+Minun @ Sitrus Berry
+Level: 100
+Ability: Minus
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Discharge
+- Volt Switch
 - Charm
 - Helping Hand
 
@@ -9138,9 +9331,15 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pelipper @ Damp Rock
+Level: 33
+Ability: Drizzle
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hurricane
+- Hydro Pump
+- U-turn
+- Roost
 
 === TRAINER_ERNEST_1 ===
 Name: ERNEST
@@ -9151,13 +9350,25 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clawitzer @ Life Orb
+Level: 55
+Ability: Mega Launcher
+Nature: Modest
+EVs: 252 SpA / 252 HP / 4 Spe
+- Water Pulse
+- Aura Sphere
+- Dark Pulse
+- Ice Beam
 
-Machoke
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dhelmise @ Assault Vest
+Level: 56
+Ability: Steelworker
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Power Whip
+- Anchor Shot
+- Poltergeist
+- Rapid Spin
 
 === TRAINER_DWAYNE ===
 Name: DWAYNE
@@ -9168,17 +9379,35 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda @ Choice Band
+Level: 34
+Ability: Swift Swim
+Nature: Adamant
+EVs: 252 Atk / 252 Spe / 4 HP
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Aqua Jet
 
-Machop
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados @ Gyaradosite
+Level: 38
+Ability: Moxie
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Dragon Dance
+- Waterfall
+- Ice Fang
+- Earthquake
 
-Tentacool
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Floatzel @ Life Orb
+Level: 35
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Wave Crash
+- Aqua Jet
+- Ice Spinner
+- Crunch
 
 === TRAINER_PHILLIP ===
 Name: PHILLIP
@@ -9189,13 +9418,25 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Life Orb
+Level: 66
+Ability: Speed Boost
+Nature: Jolly
+EVs: 252 Atk / 252 Spe / 4 HP
+- Protect
+- Crunch
+- Liquidation
+- Psychic Fangs
 
-Machoke
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crawdaunt @ Choice Band
+Level: 64
+Ability: Adaptability
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Crabhammer
+- Knock Off
+- Aqua Jet
+- Close Combat
 
 === TRAINER_LEONARD ===
 Name: LEONARD
@@ -9206,17 +9447,35 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Sitrus Berry
+Level: 66
+Ability: Huge Power
+Nature: Adamant
+EVs: 252 Atk / 252 HP / 4 SpD
+- Belly Drum
+- Aqua Jet
+- Play Rough
+- Knock Off
 
-Pelipper
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wailord @ Leftovers
+Level: 65
+Ability: Water Veil
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+- Water Spout
+- Ice Beam
+- Hydro Pump
+- Protect
 
-Machoke
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tentacruel @ Black Sludge
+Level: 64
+Ability: Liquid Ooze
+Nature: Timid
+EVs: 252 HP / 4 SpA / 252 Spe
+- Rapid Spin
+- Scald
+- Sludge Bomb
+- Toxic Spikes
 
 === TRAINER_DUNCAN ===
 Name: DUNCAN
@@ -9227,13 +9486,25 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Spheal
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starmie @ Life Orb
+Level: 43
+Ability: Analytic
+Nature: Timid
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Psychic
+- Ice Beam
+- Thunderbolt
 
-Machoke
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Life Orb
+Level: 45 
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
 === TRAINER_ERNEST_2 ===
 Name: ERNEST
