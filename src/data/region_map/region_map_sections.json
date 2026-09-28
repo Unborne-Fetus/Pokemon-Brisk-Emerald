@@ -1646,6 +1646,18 @@
     {
       "id": "MAPSEC_UNBORNE",
       "name": "Unborne's Cave"
+    },
+    {
+      "id": "MAPSEC_ROUTE_139",
+      "name": "Route 139"
+    },
+    {
+      "id": "MAPSEC_ROUTE_140",
+      "name": "Route 140"
+    },
+    {
+      "id": "MAPSEC_ROUTE_141",
+      "name": "Route 141"
     }
   ]
 }

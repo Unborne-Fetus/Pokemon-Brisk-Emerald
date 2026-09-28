@@ -9433,6 +9433,39 @@
       "border_filepath": "data/layouts/UnborneRoom/border.bin",
       "blockdata_filepath": "data/layouts/UnborneRoom/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE139",
+      "name": "Route139_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route139/border.bin",
+      "blockdata_filepath": "data/layouts/Route139/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE140",
+      "name": "Route140_Layout",
+      "width": 42,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route140/border.bin",
+      "blockdata_filepath": "data/layouts/Route140/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE141",
+      "name": "Route141_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route141/border.bin",
+      "blockdata_filepath": "data/layouts/Route141/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

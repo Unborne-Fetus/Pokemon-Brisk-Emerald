@@ -867,7 +867,7 @@
 #define TRAINER_LEON                        861
 #define TRAINER_VOLO                        862
 #define TRAINER_NEMONA                      863
-#define TRAINER_UNBORNE                     865
+#define TRAINER_UNBORNE                     864
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

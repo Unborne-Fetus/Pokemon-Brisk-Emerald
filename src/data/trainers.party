@@ -17348,36 +17348,76 @@ Music: Male
 Double Battle: Yes
 AI: OMNISCIENT
 
-Spiritomb
-- Hypnosis
-- Extrasensory
-- Dark Pulse
-- Shadow Ball
-
-Roserade
-- Poison Jab
-- Petal Dance
-- Spikes
-
-Togekiss 
-- Calm Mind
-- Extrasensory
-- Moonblast
-- Air Slash
-
-Arcanine Hisui
-- Raging Fury
-- Crunch
+Clodsire @ Ground Gem
+Level: 100
+Ability: Water Absorb
+EVs: 248 HP / 252 Atk / 8 SpA  
+Ball: Master
+Happiness: 255
+Nature: Brave
+- Earthquake  
+- Sludge Wave  
+- Surf  
 - Rock Slide
 
-Lucario 
-- Crunch
-- Bulk Up
-- Close Combat
-- Bullet Punch
+Corviknight @ Flyinium Z
+Level: 100
+Ability: Mirror Armor
+EVs: 248 HP / 252 Atk / 8 SpA  
+Ball: Master
+Happiness: 255
+Nature: Brave
+- Brave Bird  
+- Body Press  
+- Air Slash  
+- Iron Head
 
-Giratina Origin
-- Aura Sphere
-- Dragon Claw
-- Shadow Force
+Scizor @ Scizorite 
+Level: 100
+Ability: Technician
+EVs: 248 HP / 252 Atk / 8 SpD  
+Ball: Master
+Happiness: 255
+Nature: Adamant
+- Aerial Ace  
+- Bullet Punch  
+- Fury Cutter  
+- Swords Dance
+
+Necrozma Dusk Mane @ Life Orb
+Level: 100
+Ability: Prism Armor
+EVs: 252 HP / 4 Atk / 252 SpA  
+Ball: Master
+Happiness: 255
+Nature: Quiet
+- Iron Head  
+- Dragon Pulse  
+- Photon Geyser  
 - Earth Power
+
+Iron Valiant @ Expert Belt
+Level: 100
+Ability: Quark Drive
+EVs: 252 Atk / 4 SpA / 252 Spe  
+Ball: Master
+Happiness: 255
+Shiny: Yes
+Nature: Naive
+- Psycho Cut  
+- Drain Punch  
+- Moonblast  
+- Shadow Claw
+
+Rayquaza
+Level: 100
+Ability: Air Lock
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master
+Happiness: 255
+Nature: Jolly
+Shiny: Yes
+- Dragon Ascent  
+- Extreme Speed  
+- Earthquake  
+- Dragon Claw
