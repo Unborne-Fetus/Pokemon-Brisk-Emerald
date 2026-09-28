@@ -27,7 +27,7 @@ void AssignUsableGimmicks(void)
         for (enum Gimmick gimmick = 0; gimmick < GIMMICKS_COUNT; ++gimmick)
         {
             // Tera is checked before ordinary Dynamax.
-            if (gimmick == GIMMICK_DYNAMAX || gimmick == GIMMICK_TERA)
+            if (gimmick == GIMMICK_DYNAMAX)
                 continue;
 
             if (CanActivateGimmick(battler, gimmick))
