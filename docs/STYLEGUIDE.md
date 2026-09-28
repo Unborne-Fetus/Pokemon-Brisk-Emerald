@@ -360,11 +360,12 @@ enum Gimmick
 {
     GIMMICK_NONE,
     GIMMICK_MEGA,
+    GIMMICK_GIGANTAMAX,
     GIMMICK_ULTRA_BURST,
     GIMMICK_Z_MOVE,
-    GIMMICK_DYNAMAX,
     GIMMICK_TERA,
     GIMMICKS_COUNT,
+    GIMMICK_DYNAMAX,
 };
 
         if (gimmick == GIMMICK_TERA && mon->teraType != TYPE_NONE)
