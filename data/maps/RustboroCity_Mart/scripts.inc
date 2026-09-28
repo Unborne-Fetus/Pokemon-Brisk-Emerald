@@ -28,6 +28,8 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_S
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
