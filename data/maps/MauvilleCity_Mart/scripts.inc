@@ -25,6 +25,10 @@ MauvilleCity_Mart_Pokemart:
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_REVIVE
 	pokemartlistend
 
 MauvilleCity_Mart_EventScript_ExpertM::
