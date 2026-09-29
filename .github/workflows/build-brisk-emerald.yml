@@ -1,0 +1,31 @@
+name: Build Brisk Emerald
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libpng-dev
+
+      - name: Build Emerald
+        run: make -j$(nproc)
+
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: Brisk-Emerald-ROM
+          path: |
+            *.gba
+            build/*.gba
