@@ -22,6 +22,11 @@ MossdeepCity_Mart_Pokemart:
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_REVIVE
 	pokemartlistend
 
 MossdeepCity_Mart_EventScript_Woman::
