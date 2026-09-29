@@ -9314,13 +9314,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 12
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Clauncher @ Eviolite
+Level: 22
+Ability: Mega Launcher
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Water Pulse
+- Ice Beam
+- U-turn
+- Aura Sphere
 
-Machop
-Level: 12
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Crabrawler @ Eviolite
+Level: 22
+Ability: Hyper Cutter
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Drain Punch
+- Ice Punch
+- Rock Tomb
+- Bullet Punch
 
 === TRAINER_EDMOND ===
 Name: EDMOND
@@ -9331,13 +9345,14 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper @ Damp Rock
-Level: 33
-Ability: Drizzle
-Nature: Timid
+Mantine @ Expert Belt
+Level: 48
+Ability: Water Absorb
 EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
 - Hurricane
-- Hydro Pump
+- Surf
 - U-turn
 - Roost
 
@@ -9350,25 +9365,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Clawitzer @ Life Orb
-Level: 55
-Ability: Mega Launcher
-Nature: Modest
-EVs: 252 SpA / 252 HP / 4 Spe
-- Water Pulse
-- Aura Sphere
-- Dark Pulse
-- Ice Beam
-
-Dhelmise @ Assault Vest
-Level: 56
-Ability: Steelworker
+Wailmer @ Eviolite
+Level: 70
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
-EVs: 252 Atk / 252 HP / 4 SpD
-- Power Whip
-- Anchor Shot
-- Poltergeist
-- Rapid Spin
+- Water Spout
+- Hydro Pump
+- Ice Beam
+- Protect
+
+Kingdra @ Expert Belt
+Level: 71
+Ability: Swift Swim
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Hydro Pump
+- Dragon Pulse
+- Ice Beam
+- Rain Dance
 
 === TRAINER_DWAYNE ===
 Name: DWAYNE
@@ -9379,35 +9396,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Barraskewda @ Choice Band
-Level: 34
-Ability: Swift Swim
-Nature: Adamant
+Poliwrath @ Expert Belt
+Level: 49
+Ability: Water Absorb
 EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Hydro Pump
+- Ice Beam
+- Encore
+- Rain Dance
+
+Golisopod @ Life Orb
+Level: 53
+Ability: Tough Claws
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- First Impression
+- Liquidation
+- Leech Life
+- Sucker Punch
+
+Barraskewda @ Life Orb
+Level: 50
+Ability: Swift Swim
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
 - Liquidation
 - Close Combat
 - Psychic Fangs
 - Aqua Jet
-
-Gyarados @ Gyaradosite
-Level: 38
-Ability: Moxie
-Nature: Jolly
-EVs: 252 Atk / 252 Spe / 4 HP
-- Dragon Dance
-- Waterfall
-- Ice Fang
-- Earthquake
-
-Floatzel @ Life Orb
-Level: 35
-Ability: Swift Swim
-Nature: Jolly
-EVs: 252 Atk / 252 Spe / 4 HP
-- Wave Crash
-- Aqua Jet
-- Ice Spinner
-- Crunch
 
 === TRAINER_PHILLIP ===
 Name: PHILLIP
@@ -9418,25 +9438,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Sharpedo @ Life Orb
-Level: 66
-Ability: Speed Boost
-Nature: Jolly
+Feraligatr @ Life Orb
+Level: 81
+Ability: Dragonize
 EVs: 252 Atk / 252 Spe / 4 HP
-- Protect
-- Crunch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Dragon Dance
 - Liquidation
-- Psychic Fangs
+- Ice Punch
+- Crunch
 
-Crawdaunt @ Choice Band
-Level: 64
-Ability: Adaptability
-Nature: Adamant
-EVs: 252 Atk / 252 HP / 4 SpD
-- Crabhammer
-- Knock Off
-- Aqua Jet
+Grapploct @ Life Orb
+Level: 79
+Ability: Technician
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
 - Close Combat
+- Liquidation
+- Sucker Punch
+- Bulk Up
 
 === TRAINER_LEONARD ===
 Name: LEONARD
@@ -9447,34 +9469,37 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Azumarill @ Sitrus Berry
-Level: 66
-Ability: Huge Power
+Dondozo @ Life Orb
+Level: 81
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
-EVs: 252 Atk / 252 HP / 4 SpD
-- Belly Drum
-- Aqua Jet
-- Play Rough
-- Knock Off
+- Wave Crash
+- Body Press
+- Rest
+- Sleep Talk
 
-Wailord @ Leftovers
-Level: 65
-Ability: Water Veil
-Nature: Modest
-EVs: 252 HP / 252 SpA / 4 SpD
-- Water Spout
-- Ice Beam
-- Hydro Pump
-- Protect
-
-Tentacruel @ Black Sludge
-Level: 64
-Ability: Liquid Ooze
+Milotic @ Life Orb
+Level: 80
+Ability: Competitive
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Timid
-EVs: 252 HP / 4 SpA / 252 Spe
-- Rapid Spin
 - Scald
+- Ice Beam
+- Recover
+- Haze
+
+Dragalge @ Life Orb
+Level: 79
+Ability: Regenerator
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Dragon Pulse
 - Sludge Bomb
+- Hydro Pump
 - Toxic Spikes
 
 === TRAINER_DUNCAN ===
@@ -9486,22 +9511,24 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Starmie @ Life Orb
-Level: 43
-Ability: Analytic
-Nature: Timid
-EVs: 252 SpA / 252 Spe / 4 HP
+Slowbro @ Life Orb
+Level: 58
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
 - Hydro Pump
 - Psychic
 - Ice Beam
 - Thunderbolt
 
-Ludicolo @ Life Orb
-Level: 45 
-Ability: Swift Swim
+Gastrodon @ Leftovers
+Level: 60
+Ability: Storm Drain
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Modest
-EVs: 252 SpA / 252 Spe / 4 HP
-- Hydro Pump
+- Surf
 - Giga Drain
 - Ice Beam
 - Rain Dance
@@ -9515,17 +9542,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 36
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Wailmer @ Eviolite
+Level: 51
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
-Tentacool
-Level: 36
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Horsea @ Eviolite
+Level: 51
+Ability: Swift Swim
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Surf
+- Ice Beam
+- Rain Dance
 
-Machoke
-Level: 36
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Krabby @ Eviolite
+Level: 51
+Ability: Hyper Cutter
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_ERNEST_3 ===
 Name: ERNEST
@@ -9536,17 +9584,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Wailmer @ Eviolite
+Level: 54
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
-Tentacool
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Horsea @ Eviolite
+Level: 54
+Ability: Swift Swim
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Surf
+- Ice Beam
+- Rain Dance
 
-Machoke
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Krabby @ Eviolite
+Level: 54
+Ability: Hyper Cutter
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_ERNEST_4 ===
 Name: ERNEST
@@ -9557,17 +9626,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 42
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Wailmer @ Eviolite
+Level: 57
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
-Tentacool
-Level: 42
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Horsea @ Eviolite
+Level: 57
+Ability: Swift Swim
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Surf
+- Ice Beam
+- Rain Dance
 
-Machoke
-Level: 42
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Krabby @ Eviolite
+Level: 57
+Ability: Hyper Cutter
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_ERNEST_5 ===
 Name: ERNEST
@@ -9578,17 +9668,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 45
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Wailord @ Expert Belt
+Level: 100
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
-Machoke
-Level: 45
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Kingdra @ Expert Belt
+Level: 100
+Ability: Swift Swim
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Liquidation
+- Dragon Claw
+- Aqua Jet
+- Rain Dance
 
-Tentacruel
-Level: 45
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Kingler @ Life Orb
+Level: 100
+Ability: Hyper Cutter
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_ELI ===
 Name: ELI
@@ -9599,9 +9710,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Pignite
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gigalith @ Life Orb
+Level: 38
+Ability: Sand Stream
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stone Edge
+- Rock Slide
+- Rock Tomb
+- Stealth Rock
 
 === TRAINER_ANNIKA ===
 Name: ANNIKA
@@ -9612,14 +9730,28 @@ Music: Twins
 Double Battle: Yes
 AI: Check Viability
 
-Mantine @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Pikachu @ Expert Belt
+Level: 54
+Ability: Lightning Rod
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
 
-Remoraid @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Clefairy @ Eviolite
+Level: 54
+Ability: Magic Guard
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Moonblast
+- Dazzling Gleam
+- Play Rough
+- Calm Mind
 
 
 === TRAINER_JAZMYN ===
@@ -9632,9 +9764,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Absol
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tinkaton @ Expert Belt
+Level: 42
+Ability: Mold Breaker
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Play Rough
+- Iron Head
+- Knock Off
+- Swords Dance
 
 === TRAINER_JONAS ===
 Name: JONAS
@@ -9645,12 +9784,15 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Koffing
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxtricity @ Life Orb
+Level: 46
+Ability: Punk Rock
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
 - Toxic
 - Thunder
-- Self Destruct
+- Boomburst
 - Sludge Bomb
 
 === TRAINER_KAYLEY ===
@@ -9662,9 +9804,12 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Castform
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lilligant @ Life Orb
+Level: 46
+Ability: Chlorophyll
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
 - Sunny Day
 - Weather Ball
 - Flamethrower
@@ -9679,13 +9824,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Manectric
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Electivire @ Life Orb
+Level: 48
+Ability: Motor Drive
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Machamp
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Conkeldurr @ Life Orb
+Level: 48
+Ability: Guts
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
 === TRAINER_KELVIN ===
 Name: KELVIN
@@ -9696,13 +9855,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Machoke
-Level: 33
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Jellicent @ Expert Belt
+Level: 48
+Ability: Water Absorb
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Shadow Ball
+- Surf
+- Rain Dance
 
-Spheal
-Level: 33
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Walrein @ Expert Belt
+Level: 48
+Ability: Thick Fat
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Ice Beam
+- Hydro Pump
+- Blizzard
+- Protect
 
 === TRAINER_MARLEY ===
 Name: MARLEY
@@ -9714,13 +9887,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 34
+Luxray @ Life Orb
+Level: 49
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
+Nature: Jolly
+- Crunch
 - Roar
 - Thunder Wave
-- Thunderbolt
+- Thunder Fang
 
 === TRAINER_REYNA ===
 Name: REYNA
@@ -9731,13 +9907,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 33
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Hawlucha @ Life Orb
+Level: 48
+Ability: No Guard
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Brave Bird
+- Drain Punch
+- Bulk Up
 
-Hariyama
-Level: 33
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Mienshao @ Life Orb
+Level: 48
+Ability: Regenerator
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
 === TRAINER_HUDSON ===
 Name: HUDSON
@@ -9748,9 +9938,16 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Expert Belt
+Level: 49
+Ability: Water Absorb
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Surf
+- Rain Dance
 
 === TRAINER_CONOR ===
 Name: CONOR
@@ -9761,13 +9958,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Chinchou
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnezone @ Life Orb
+Level: 48
+Ability: Analytic
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
 
-Hariyama
-Level: 33
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Pangoro @ Life Orb
+Level: 48
+Ability: Iron Fist
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Close Combat
+- Crunch
+- Drain Punch
+- Bulk Up
 
 === TRAINER_EDWIN_1 ===
 Name: EDWIN
@@ -9778,13 +9989,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dwebble @ Eviolite
+Level: 29
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Stone Edge
+- U-turn
+- Swords Dance
 
-Nuzleaf
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sewaddle @ Eviolite
+Level: 29
+Ability: Overcoat
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Seed Bomb
+- U-turn
+- Swords Dance
 
 === TRAINER_HECTOR ===
 Name: HECTOR
@@ -9795,13 +10020,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Zangoose
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shuckle @ Leftovers
+Level: 33
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stealth Rock
+- Toxic
+- Knock Off
+- Rock Slide
 
-Seviper
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mawile @ Life Orb
+Level: 33
+Ability: Huge Power
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Play Rough
+- Bullet Punch
+- Protect
 
 === TRAINER_TABITHA_MOSSDEEP ===
 Name: TABITHA
@@ -9834,13 +10073,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dwebble @ Eviolite
+Level: 41
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Stone Edge
+- U-turn
+- Swords Dance
 
-Nuzleaf
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sewaddle @ Eviolite
+Level: 41
+Ability: Overcoat
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Seed Bomb
+- U-turn
+- Swords Dance
 
 === TRAINER_EDWIN_3 ===
 Name: EDWIN
@@ -9851,13 +10104,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dwebble @ Eviolite
+Level: 44
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Stone Edge
+- U-turn
+- Swords Dance
 
-Nuzleaf
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sewaddle @ Eviolite
+Level: 44
+Ability: Overcoat
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Seed Bomb
+- U-turn
+- Swords Dance
 
 === TRAINER_EDWIN_4 ===
 Name: EDWIN
@@ -9868,13 +10135,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dwebble @ Eviolite
+Level: 47
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Stone Edge
+- U-turn
+- Swords Dance
 
-Nuzleaf
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sewaddle @ Eviolite
+Level: 47
+Ability: Overcoat
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Seed Bomb
+- U-turn
+- Swords Dance
 
 === TRAINER_EDWIN_5 ===
 Name: EDWIN
@@ -9885,13 +10166,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Ludicolo
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crustle @ Life Orb
+Level: 100
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- X-Scissor
+- Stone Edge
+- U-turn
+- Swords Dance
 
-Shiftry
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Leavanny @ Life Orb
+Level: 100
+Ability: Overcoat
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- X-Scissor
+- Seed Bomb
+- U-turn
+- Swords Dance
 
 === TRAINER_WALLY_VR_1 ===
 Name: WALLY
@@ -10282,29 +10577,71 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Whismur
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mankey @ Eviolite
+Level: 26
+Ability: Defiant
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
-Zigzagoon
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shinx @ Eviolite
+Level: 26
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Aron
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rhyhorn @ Eviolite
+Level: 26
+Ability: Lightning Rod
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Rock Slide
+- Stealth Rock
 
-Poochyena
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bounsweet @ Eviolite
+Level: 26
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Taillow
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Darumaka @ Eviolite
+Level: 26
+Ability: Hustle
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Spinner
+- Ice Punch
+- Blizzard
+- Protect
 
-Makuhita
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cufant @ Eviolite
+Level: 26
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Bullet Punch
+- Flash Cannon
+- Protect
 
 === TRAINER_DAVIS ===
 Name: DAVIS
@@ -10315,9 +10652,16 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pinsir
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Centiskorch @ Life Orb
+Level: 42
+Ability: Flash Fire
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Flare Blitz
+- X-Scissor
+- Fire Punch
+- Sunny Day
 
 === TRAINER_MITCHELL ===
 Name: Neo
@@ -10328,39 +10672,42 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Floatzel @ Mystic Water  
-Level: 60
-Ability: Swift Swim  
-EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 16 SpD / 232 Spe
+Ludicolo @ Expert Belt
+Level: 75
+Ability: Swift Swim
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
 Ball: Quick
-Nature: Adamant
-- Chilling Water
-- Quick Attack  
-- Crunch
-- Bulk Up  
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Rain Dance
 
-Gogoat  @ Miracle Seed
-Level: 60
+Sawsbuck @ Life Orb
+Level: 75
 Ability: Sap Sipper
-EVs: 4 HP / 12 Atk / 0 Def / 0 SpA / 244 SpD  / 0 Spe
-Ball: Quick
-Nature: Careful
-- Bullet Seed  
-- Growth
-- Milk Drink  
-- Tackle  
-
-Ceruledge @ Charcoal  
-Level: 60
-Ability: Flash Fire  
-EVs: 4 HP / 20 Atk / 4 Def / 0 SpA / 240 SpD / 232 Spe
-Ball: Quick
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Jolly
+Ball: Quick
+- Horn Leech
+- Swords Dance
+- Synthesis
+- Jump Kick
+
+Armarouge @ Life Orb
+Level: 75
+Ability: Flash Fire
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+Ball: Quick
 Tera Type: Fire
-- Flame Charge  
-- Protect  
-- Will-O-Wisp  
-- Astonish  
+- Armor Cannon
+- Psychic
+- Will-O-Wisp
+- Protect
 
 === TRAINER_ISAAC_2 ===
 Name: ISAAC
@@ -10371,29 +10718,71 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Loudred
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Mankey @ Eviolite
+Level: 37
+Ability: Defiant
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
-Linoone
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Shinx @ Eviolite
+Level: 37
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Aron
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Rhyhorn @ Eviolite
+Level: 37
+Ability: Lightning Rod
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Rock Slide
+- Stealth Rock
 
-Mightyena
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Bounsweet @ Eviolite
+Level: 37
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Swellow
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Darumaka @ Eviolite
+Level: 37
+Ability: Hustle
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Spinner
+- Ice Punch
+- Blizzard
+- Protect
 
-Makuhita
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Cufant @ Eviolite
+Level: 37
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Bullet Punch
+- Flash Cannon
+- Protect
 
 === TRAINER_ISAAC_3 ===
 Name: ISAAC
@@ -10404,29 +10793,71 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Loudred
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Mankey @ Eviolite
+Level: 40
+Ability: Defiant
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
-Linoone
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Shinx @ Eviolite
+Level: 40
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Aron
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Rhyhorn @ Eviolite
+Level: 40
+Ability: Lightning Rod
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Rock Slide
+- Stealth Rock
 
-Mightyena
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Bounsweet @ Eviolite
+Level: 40
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Swellow
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Darumaka @ Eviolite
+Level: 40
+Ability: Hustle
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Spinner
+- Ice Punch
+- Blizzard
+- Protect
 
-Hariyama
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Cufant @ Eviolite
+Level: 40
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Bullet Punch
+- Flash Cannon
+- Protect
 
 === TRAINER_ISAAC_4 ===
 Name: ISAAC
@@ -10437,29 +10868,71 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Loudred
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Mankey @ Eviolite
+Level: 43
+Ability: Defiant
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Drain Punch
+- Knock Off
+- Bulk Up
 
-Linoone
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Shinx @ Eviolite
+Level: 43
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Aron
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Rhyhorn @ Eviolite
+Level: 43
+Ability: Lightning Rod
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Rock Slide
+- Stealth Rock
 
-Mightyena
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Bounsweet @ Eviolite
+Level: 43
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Swellow
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Darumaka @ Eviolite
+Level: 43
+Ability: Hustle
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Spinner
+- Ice Punch
+- Blizzard
+- Protect
 
-Hariyama
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Cufant @ Eviolite
+Level: 43
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Bullet Punch
+- Flash Cannon
+- Protect
 
 === TRAINER_ISAAC_5 ===
 Name: ISAAC
@@ -10470,29 +10943,71 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Loudred
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Annihilape @ Life Orb
+Level: 100
+Ability: Defiant
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Close Combat
+- Shadow Claw
+- Drain Punch
+- Bulk Up
 
-Linoone
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Luxray @ Life Orb
+Level: 100
+Ability: Intimidate
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Thunder Fang
+- Volt Switch
+- Thunderbolt
+- Thunder Wave
 
-Lairon
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Rhyperior @ Life Orb
+Level: 100
+Ability: Solid Rock
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Rock Slide
+- Stealth Rock
 
-Mightyena
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Tsareena @ Life Orb
+Level: 100
+Ability: Queenly Majesty
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Swellow
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Darmanitan @ Life Orb
+Level: 100
+Ability: Gorilla Tactics
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Ice Spinner
+- Flare Blitz
+- Ice Punch
+- Protect
 
-Hariyama
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Copperajah @ Life Orb
+Level: 100
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Iron Head
+- Earthquake
+- Bullet Punch
+- Protect
 
 === TRAINER_LYDIA_1 ===
 Name: LYDIA
@@ -10503,29 +11018,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hoothoot @ Eviolite
+Level: 26
+Ability: Tinted Lens
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hyper Voice
+- Hurricane
+- Tri Attack
+- Protect
 
-Shroomish
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hatenna @ Eviolite
+Level: 26
+Ability: Magic Bounce
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psychic
+- Psyshock
+- Future Sight
+- Calm Mind
 
-Marill
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wooper @ Eviolite
+Level: 26
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Earthquake
+- Sludge Bomb
+- Toxic
 
-Roselia
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rookidee @ Eviolite
+Level: 26
+Ability: Keen Eye
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Brave Bird
+- Aerial Ace
+- U-turn
+- Roost
 
-Skitty
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Fidough @ Eviolite
+Level: 26
+Ability: Own Tempo
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Play Rough
+- Dazzling Gleam
+- Moonblast
+- Calm Mind
 
-Goldeen
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shellder @ Eviolite
+Level: 26
+Ability: Skill Link
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_HALLE ===
 Name: HALLE
@@ -10537,13 +11094,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Sableye
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kommo-o @ Life Orb
+Level: 58
+Ability: Overcoat
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Dragon Claw
+- Close Combat
+- Outrage
+- Dragon Dance
 
-Absol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Froslass @ Life Orb
+Level: 58
+Ability: Snow Warning
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Ice Beam
+- Shadow Ball
+- Blizzard
+- Protect
 
 === TRAINER_GARRISON ===
 Name: GARRISON
@@ -10554,9 +11125,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Sandslash
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gigalith @ Life Orb
+Level: 41
+Ability: Sand Stream
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stone Edge
+- Rock Slide
+- Rock Tomb
+- Stealth Rock
 
 === TRAINER_LYDIA_2 ===
 Name: LYDIA
@@ -10567,29 +11145,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Hoothoot @ Eviolite
+Level: 37
+Ability: Tinted Lens
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hyper Voice
+- Hurricane
+- Tri Attack
+- Protect
 
-Shroomish
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Hatenna @ Eviolite
+Level: 37
+Ability: Magic Bounce
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psychic
+- Psyshock
+- Future Sight
+- Calm Mind
 
-Marill
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Wooper @ Eviolite
+Level: 37
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Earthquake
+- Sludge Bomb
+- Toxic
 
-Roselia
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Rookidee @ Eviolite
+Level: 37
+Ability: Keen Eye
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Brave Bird
+- Aerial Ace
+- U-turn
+- Roost
 
-Skitty
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Fidough @ Eviolite
+Level: 37
+Ability: Own Tempo
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Play Rough
+- Dazzling Gleam
+- Moonblast
+- Calm Mind
 
-Goldeen
-Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Shellder @ Eviolite
+Level: 37
+Ability: Skill Link
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_LYDIA_3 ===
 Name: LYDIA
@@ -10600,29 +11220,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Hoothoot @ Eviolite
+Level: 40
+Ability: Tinted Lens
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hyper Voice
+- Hurricane
+- Tri Attack
+- Protect
 
-Breloom
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Hatenna @ Eviolite
+Level: 40
+Ability: Magic Bounce
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psychic
+- Psyshock
+- Future Sight
+- Calm Mind
 
-Marill
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Wooper @ Eviolite
+Level: 40
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Earthquake
+- Sludge Bomb
+- Toxic
 
-Roselia
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Rookidee @ Eviolite
+Level: 40
+Ability: Keen Eye
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Brave Bird
+- Aerial Ace
+- U-turn
+- Roost
 
-Delcatty
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Fidough @ Eviolite
+Level: 40
+Ability: Own Tempo
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Play Rough
+- Dazzling Gleam
+- Moonblast
+- Calm Mind
 
-Goldeen
-Level: 25
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Shellder @ Eviolite
+Level: 40
+Ability: Skill Link
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_LYDIA_4 ===
 Name: LYDIA
@@ -10633,29 +11295,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Hoothoot @ Eviolite
+Level: 43
+Ability: Tinted Lens
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hyper Voice
+- Hurricane
+- Tri Attack
+- Protect
 
-Breloom
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Hatenna @ Eviolite
+Level: 43
+Ability: Magic Bounce
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psychic
+- Psyshock
+- Future Sight
+- Calm Mind
 
-Marill
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Wooper @ Eviolite
+Level: 43
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Earthquake
+- Sludge Bomb
+- Toxic
 
-Roselia
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Rookidee @ Eviolite
+Level: 43
+Ability: Keen Eye
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Brave Bird
+- Aerial Ace
+- U-turn
+- Roost
 
-Delcatty
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Fidough @ Eviolite
+Level: 43
+Ability: Own Tempo
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Play Rough
+- Dazzling Gleam
+- Moonblast
+- Calm Mind
 
-Goldeen
-Level: 28
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Shellder @ Eviolite
+Level: 43
+Ability: Skill Link
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_LYDIA_5 ===
 Name: LYDIA
@@ -10666,29 +11370,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Noctowl @ Expert Belt
+Level: 100
+Ability: Tinted Lens
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Hyper Voice
+- Hurricane
+- Tri Attack
+- Protect
 
-Breloom
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Hatterene @ Life Orb
+Level: 100
+Ability: Magic Bounce
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psychic
+- Moonblast
+- Psyshock
+- Calm Mind
 
-Azumarill
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Clodsire @ Leftovers
+Level: 100
+Ability: Unaware
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Earthquake
+- Sludge Bomb
+- Toxic
 
-Roselia
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Corviknight @ Expert Belt
+Level: 100
+Ability: Mirror Armor
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Brave Bird
+- Iron Head
+- Aerial Ace
+- Roost
 
-Delcatty
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Dachsbun @ Expert Belt
+Level: 100
+Ability: Well-Baked Body
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Play Rough
+- Dazzling Gleam
+- Moonblast
+- Calm Mind
 
-Seaking
-Level: 31
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Cloyster @ Expert Belt
+Level: 100
+Ability: Skill Link
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Liquidation
+- Ice Spinner
+- Aqua Jet
+- Rain Dance
 
 === TRAINER_JACKSON_1 ===
 Name: JACKSON
@@ -10700,9 +11446,16 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Breloom
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Trevenant @ Life Orb
+Level: 42
+Ability: Harvest
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Claw
+- Seed Bomb
+- Shadow Ball
+- Will-O-Wisp
 
 === TRAINER_LORENZO ===
 Name: LORENZO
@@ -10714,17 +11467,38 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Seedot
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Leafeon @ Life Orb
+Level: 43
+Ability: Chlorophyll
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Nuzleaf
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Appletun @ Life Orb
+Level: 43
+Ability: Thick Fat
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Giga Drain
+- Dragon Pulse
+- Solar Beam
+- Synthesis
 
-Lombre
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Scovillain @ Life Orb
+Level: 43
+Ability: Spicy Spray
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Flare Blitz
+- Power Whip
+- Synthesis
 
 === TRAINER_SEBASTIAN ===
 Name: SEBASTIAN
@@ -10736,9 +11510,16 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Cacturne
-Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Decidueye @ Life Orb
+Level: 54
+Ability: Overgrow
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Close Combat
+- Power Whip
+- Synthesis
 
 === TRAINER_JACKSON_2 ===
 Name: JACKSON
@@ -10750,9 +11531,16 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Breloom
-Level: 31
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+Trevenant @ Life Orb
+Level: 46
+Ability: Harvest
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Claw
+- Seed Bomb
+- Shadow Ball
+- Will-O-Wisp
 
 === TRAINER_JACKSON_3 ===
 Name: JACKSON
@@ -10764,9 +11552,16 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Breloom
-Level: 34
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Trevenant @ Life Orb
+Level: 49
+Ability: Harvest
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Claw
+- Seed Bomb
+- Shadow Ball
+- Will-O-Wisp
 
 === TRAINER_JACKSON_4 ===
 Name: JACKSON
@@ -10778,9 +11573,16 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Breloom
-Level: 37
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Trevenant @ Life Orb
+Level: 52
+Ability: Harvest
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Claw
+- Seed Bomb
+- Shadow Ball
+- Will-O-Wisp
 
 === TRAINER_JACKSON_5 ===
 Name: JACKSON
@@ -10792,13 +11594,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Kecleon
-Level: 39
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Trevenant @ Life Orb
+Level: 100
+Ability: Harvest
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Shadow Claw
+- Seed Bomb
+- Shadow Ball
+- Will-O-Wisp
 
-Breloom
-Level: 39
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Frosmoth @ Life Orb
+Level: 100
+Ability: Ice Scales
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Ice Beam
+- Bug Buzz
+- Blizzard
+- Protect
 
 === TRAINER_CATHERINE_1 ===
 Name: CATHERINE
@@ -10810,13 +11626,27 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Gloom
-Level: 26
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lurantis @ Life Orb
+Level: 41
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Roselia
-Level: 26
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Mareanie @ Eviolite
+Level: 41
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_JENNA ===
 Name: JENNA
@@ -10828,17 +11658,38 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Lotad
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Torterra @ Life Orb
+Level: 43
+Ability: Shell Armor
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Earthquake
+- Power Whip
+- Synthesis
 
-Lombre
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Flapple @ Life Orb
+Level: 43
+Ability: Ripen
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Dragon Claw
+- Power Whip
+- Synthesis
 
-Nuzleaf
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Scovillain @ Life Orb
+Level: 43
+Ability: Spicy Spray
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Flare Blitz
+- Power Whip
+- Synthesis
 
 === TRAINER_SOPHIA ===
 Name: SOPHIA
@@ -10850,13 +11701,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Swablu
-Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Altaria @ Life Orb
+Level: 53
+Ability: Pixilate
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Dragon Claw
+- Play Rough
+- Outrage
+- Dragon Dance
 
-Roselia
-Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lilligant @ Life Orb
+Level: 53
+Ability: Chlorophyll
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Seed Bomb
+- Close Combat
+- Power Whip
+- Synthesis
 
 === TRAINER_CATHERINE_2 ===
 Name: CATHERINE
@@ -10868,13 +11733,27 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Gloom
-Level: 30
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+Lurantis @ Life Orb
+Level: 45
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Roselia
-Level: 30
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+Mareanie @ Eviolite
+Level: 45
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_CATHERINE_3 ===
 Name: CATHERINE
@@ -10886,13 +11765,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Gloom
-Level: 33
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Lurantis @ Life Orb
+Level: 48
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Roselia
-Level: 33
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Mareanie @ Eviolite
+Level: 48
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_CATHERINE_4 ===
 Name: CATHERINE
@@ -10904,13 +11797,27 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Gloom
-Level: 36
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Lurantis @ Life Orb
+Level: 51
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Roselia
-Level: 36
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Mareanie @ Eviolite
+Level: 51
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_CATHERINE_5 ===
 Name: CATHERINE
@@ -10922,13 +11829,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Bellossom
-Level: 39
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Lurantis @ Life Orb
+Level: 100
+Ability: Leaf Guard
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Seed Bomb
+- Power Whip
+- Bullet Seed
+- Synthesis
 
-Roselia
-Level: 39
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Toxapex @ Leftovers
+Level: 100
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_JULIO ===
 Name: JULIO
@@ -10939,9 +11860,16 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Magnemite
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Electrode @ Expert Belt
+Level: 36
+Ability: Static
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Thunderbolt
+- Giga Drain
+- Volt Switch
+- Thunder Wave
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_5 ===
 Name: GRUNT
@@ -10952,13 +11880,27 @@ Music: Aqua
 Double Battle: No
 AI: Check Viability
 
-Mightyena
-Level: 35
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Crawdaunt @ Life Orb
+Level: 100
+Ability: Adaptability
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Crunch
+- Aqua Jet
+- Rain Dance
 
-Golbat
-Level: 35
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Crobat @ Expert Belt
+Level: 100
+Ability: Infiltrator
+EVs: 252 Atk / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Poison Jab
+- Brave Bird
+- Sludge Bomb
+- Toxic
 
 === TRAINER_GRUNT_UNUSED ===
 Name: GRUNT
@@ -10969,13 +11911,27 @@ Music: Aqua
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndour @ Eviolite
+Level: 46
+Ability: Flash Fire
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Dark Pulse
+- Flamethrower
+- Snarl
+- Swords Dance
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rolycoly @ Eviolite
+Level: 46
+Ability: Steam Engine
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stone Edge
+- Rock Slide
+- Rock Tomb
+- Stealth Rock
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
@@ -10986,13 +11942,27 @@ Music: Aqua
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lanturn @ Expert Belt
+Level: 45
+Ability: Volt Absorb
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hydro Pump
+- Thunderbolt
+- Surf
+- Rain Dance
 
-Zubat
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Leftovers
+Level: 45
+Ability: Regenerator
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Poison Jab
+- Liquidation
+- Sludge Bomb
+- Toxic
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -11003,13 +11973,27 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Poochyena
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Houndoom @ Life Orb
+Level: 37
+Ability: Solar Power
+EVs: 252 SpA / 252 Spe / 4 HP
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Dark Pulse
+- Flamethrower
+- Snarl
+- Swords Dance
 
-Numel
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Torkoal @ Leftovers
+Level: 37
+Ability: Drought
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Flare Blitz
+- Fire Punch
+- Fire Blast
+- Sunny Day
 
 === TRAINER_MARC ===
 Name: MARC
@@ -11020,13 +12004,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 8
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Golem @ Life Orb
+Level: 23
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stone Edge
+- Thunder Fang
+- Rock Slide
+- Stealth Rock
 
-Geodude Alola
-Level: 8
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Coalossal @ Leftovers
+Level: 23
+Ability: Steam Engine
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Stone Edge
+- Flare Blitz
+- Rock Slide
+- Stealth Rock
 
 === TRAINER_BRENDEN ===
 Name: BRENDEN
@@ -11037,9 +12035,16 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-SPECIES_TAUROS_PALDEA_AQUA
-Level: 13
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Wailord @ Expert Belt
+Level: 28
+Ability: Water Veil
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Liquidation
+- Aqua Jet
+- Waterfall
+- Rain Dance
 
 === TRAINER_LILITH ===
 Name: LILITH
