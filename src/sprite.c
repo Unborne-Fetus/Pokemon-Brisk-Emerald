@@ -434,7 +434,20 @@ static void SortSprites(u32 *spritePriorities, s32 n)
 u32 CreateSprite(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority)
 {
     u32 spriteId = CreateSpriteUnchecked(template, x, y, subpriority);
-    fatal_assertf(spriteId < MAX_SPRITES, "Out of sprite slots");
+
+    if (spriteId >= MAX_SPRITES)
+    {
+        u32 used = 0;
+
+        for (u32 i = 0; i < MAX_SPRITES; i++)
+        {
+            if (gSprites[i].inUse)
+                used++;
+        }
+
+        fatal_assertf(FALSE, "Out of sprite slots: %u/64 used", used);
+    }
+
     return spriteId;
 }
 
