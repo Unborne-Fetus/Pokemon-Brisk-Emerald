@@ -3359,7 +3359,7 @@ Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
-Music: Intense
+Music: Queen
 Double Battle: No
 AI: Check Viability
 
@@ -3376,7 +3376,7 @@ Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
-Music: Intense
+Music: Queen
 Double Battle: No
 AI: Check Viability
 
@@ -3396,7 +3396,7 @@ Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
-Music: Intense
+Music: Queen
 Double Battle: No
 AI: Check Viability
 
@@ -3418,7 +3418,7 @@ Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
-Music: Intense
+Music: Queen
 Double Battle: No
 AI: Check Viability
 
@@ -3442,7 +3442,7 @@ Name: Queen
 Class: Guitarist
 Pic: Guitarist
 Gender: Male
-Music: Intense
+Music: Queen
 Double Battle: No
 AI: Check Viability
 
@@ -6008,7 +6008,7 @@ Name: WALLACE
 Class: Champion
 Pic: Champion Wallace
 Gender: Male
-Music: Male
+Music: Wallace
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: OMNISCIENT
@@ -7080,7 +7080,7 @@ Name: Elvis
 Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
-Music: Cool
+Music: Elvis
 Double Battle: No
 AI: Check Viability
 
