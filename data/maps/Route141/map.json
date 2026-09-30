@@ -17,18 +17,15 @@
       "map": "MAP_ROUTE140",
       "offset": -20,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE142",
+      "offset": 13,
+      "direction": "up"
     }
   ],
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 11,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_UNBORNE_ROOM",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": [],
   "region": "REGION_HOENN"

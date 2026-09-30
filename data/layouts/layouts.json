@@ -9459,12 +9459,23 @@
     {
       "id": "LAYOUT_ROUTE141",
       "name": "Route141_Layout",
-      "width": 32,
+      "width": 44,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_EverGrande",
       "border_filepath": "data/layouts/Route141/border.bin",
       "blockdata_filepath": "data/layouts/Route141/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE142",
+      "name": "Route142_Layout",
+      "width": 29,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route142/border.bin",
+      "blockdata_filepath": "data/layouts/Route142/map.bin",
       "layout_version": "emerald"
     }
   ]

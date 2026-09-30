@@ -141,7 +141,8 @@
     "Route138",
     "Route139",
     "Route140",
-    "Route141"
+    "Route141",
+    "Route142"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -416,7 +417,6 @@
     "CaveOfOrigin_B1F",
     "VictoryRoad_1F",
     "VictoryRoad_B1F",
-    "VictoryRoad_B2F",
     "ShoalCave_LowTideEntranceRoom",
     "ShoalCave_LowTideInnerRoom",
     "ShoalCave_LowTideStairsRoom",
@@ -426,6 +426,7 @@
     "NewMauville_Entrance",
     "NewMauville_Inside",
     "AbandonedShip_Deck",
+    "VictoryRoad_B2F",
     "AbandonedShip_Corridors_1F",
     "AbandonedShip_Rooms_1F",
     "AbandonedShip_Corridors_B1F",
@@ -434,8 +435,8 @@
     "AbandonedShip_Underwater1",
     "AbandonedShip_Room_B1F",
     "AbandonedShip_Rooms2_1F",
-    "AbandonedShip_CaptainsOffice",
     "AbandonedShip_Underwater2",
+    "AbandonedShip_CaptainsOffice",
     "AbandonedShip_HiddenFloorCorridors",
     "AbandonedShip_HiddenFloorRooms",
     "IslandCave",
