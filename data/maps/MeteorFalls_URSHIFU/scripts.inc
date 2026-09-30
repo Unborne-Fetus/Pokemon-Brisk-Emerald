@@ -12,35 +12,17 @@ MeteorFalls_URSHIFU_EventScript_URSHIFU::
 	special BattleSetup_StartLegendaryBattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MeteorFalls_URSHIFU_EventScript_DefeatedKubfu
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MeteorFalls_URSHIFU_EventScript_RanFromKubfu
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MeteorFalls_URSHIFU_EventScript_RanFromKubfu
-	setflag FLAG_DEFEATED_KUBFU
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MeteorFalls_URSHIFU_EventScript_CaughtKubfu
 	releaseall
 	end
 
-MeteorFalls_URSHIFU_EventScript_DefeatedKubfu::
-	setflag FLAG_DEFEATED_KUBFU
-	goto MeteorFalls_URSHIFU_EventScript_DefeatedKubfu2
-	end
-
-MeteorFalls_URSHIFU_EventScript_RanFromKubfu::
-	setvar VAR_0x8004, SPECIES_KUBFU
-	goto MeteorFalls_URSHIFU_EventScript_RanFromKubfu2
-	end
-
-MeteorFalls_URSHIFU_EventScript_DefeatedKubfu2::
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
+MeteorFalls_URSHIFU_EventScript_CaughtKubfu::
+	goto_if_set FLAG_CAUGHT_KUBFU_ONCE, MeteorFalls_URSHIFU_EventScript_CaughtKubfuTwice
+	setflag FLAG_CAUGHT_KUBFU_ONCE
 	releaseall
 	end
 
-MeteorFalls_URSHIFU_EventScript_RanFromKubfu2::
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
-	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
+MeteorFalls_URSHIFU_EventScript_CaughtKubfuTwice::
+	setflag FLAG_DEFEATED_KUBFU
 	releaseall
 	end
