@@ -31,7 +31,7 @@
       "trainer_type": "TRAINER_TYPE_OW_WILD_ENCOUNTER",
       "trainer_sight_or_berry_tree_id": "70",
       "script": "Route142_EventScript_URSALUNA",
-      "flag": "FLAG_DEFEATED_URALUNA"
+      "flag": "FLAG_DEFEATED_URSALUNA"
     }
   ],
   "warp_events": [],
