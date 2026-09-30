@@ -1,47 +1,16 @@
-name: Build Pokemon Brisk Emerald
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        timeout-minutes: 30
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            build-essential \
-            libpng-dev \
-            gcc-arm-none-eabi \
-            binutils-arm-none-eabi
-
-      - name: Build Emerald
-        run: make -j$(nproc)
-
       - name: Rename ROM
         run: |
-          ROM=$(find . -maxdepth 3 -type f -name "*.gba" ! -name "baserom.gba" | head -n 1)
-
-          if [ -z "$ROM" ]; then
-            echo "ERROR: Could not find the compiled GBA ROM."
+          if [ ! -f "pokeemerald.gba" ]; then
+            echo "ERROR: pokeemerald.gba was not created."
+            echo "GBA files found:"
+            find . -type f -name "*.gba" -ls
             exit 1
           fi
 
-          echo "Found compiled ROM: $ROM"
-          cp "$ROM" "Pokemon Brisk Emerald.gba"
+          echo "Built ROM:"
+          ls -lh pokeemerald.gba
 
-      - name: Upload GBA
-        uses: actions/upload-artifact@v4
-        with:
-          name: Pokemon-Brisk-Emerald
-          path: Pokemon Brisk Emerald.gba
-          if-no-files-found: error
+          cp pokeemerald.gba "Pokemon Brisk Emerald.gba"
+
+          echo "Final ROM:"
+          ls -lh "Pokemon Brisk Emerald.gba"
