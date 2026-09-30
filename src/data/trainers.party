@@ -12055,9 +12055,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Heracross
-Level: 13
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Breloom @ Sitrus Berry
+Level: 25
+Ability: Effect Spore
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mach Punch
+- Counter
+- Headbutt
+- Spore
 
 === TRAINER_CRISTIAN ===
 Name: CRISTIAN
@@ -12068,9 +12075,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Combusken
-Level: 17
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Hariyama @ Expert Belt
+Level: 30
+Ability: Thick Fat
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Force Palm
+- Arm Thrust
+- Fake Out
+- Bulk Up
 
 === TRAINER_SYLVIA ===
 Name: SYLVIA
@@ -12081,9 +12095,17 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Reuniclus @ Life Orb
+Level: 53
+Tera Type: Psychic
+Ability: Overcoat
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psyshock
+- Psybeam
+- Recover
 
 === TRAINER_LEONARDO ===
 Name: LEONARDO
@@ -12094,9 +12116,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Carvanha
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Waterium Z
+Level: 50
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Jab
+- Poison Sting
+- Recover
 
 === TRAINER_ATHENA ===
 Name: ATHENA
@@ -12108,18 +12137,27 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder
-- Thunder Wave
-- Quick Attack
+Metagross @ Leftovers
+Level: 48
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
-Linoone
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Surf
-- Thief
+Toxicroak @ Expert Belt
+Level: 48
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
 === TRAINER_HARRISON ===
 Name: HARRISON
@@ -12130,9 +12168,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Tentacruel
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Barraskewda @ Life Orb
+Level: 51
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Jet
+- Crunch
+- Agility
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
 Name: GRUNT
@@ -12143,9 +12188,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 34
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Curse
 
 === TRAINER_CLARENCE ===
 Name: CLARENCE
@@ -12156,9 +12208,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Sharpedo
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Life Orb
+Level: 50
+Ability: Water Absorb
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Body Slam
+- Brine
+- Rain Dance
 
 === TRAINER_TERRY ===
 Name: TERRY
@@ -12169,9 +12228,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Girafarig
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Farigiraf @ Life Orb
+Level: 54
+Ability: Cud Chew
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Nasty Plot
 
 === TRAINER_NATE ===
 Name: NATE
@@ -12182,9 +12248,16 @@ Music: Rich
 Double Battle: No
 AI: Check Viability
 
-Spoink
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Roserade @ Life Orb
+Level: 53
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
 === TRAINER_KATHLEEN ===
 Name: Sam
@@ -12244,9 +12317,16 @@ Music: Rich
 Double Battle: No
 AI: Check Viability
 
-Girafarig
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir @ Gardevoirite
+Level: 53
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
 === TRAINER_NICHOLAS ===
 Name: NICHOLAS
@@ -12257,9 +12337,18 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Wobbuffet
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gengar @ Life Orb
+Level: 53
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Night Shade
+- Dark Pulse
+- Curse
 
 === TRAINER_GRUNT_SPACE_CENTER_3 ===
 Name: GRUNT
@@ -12270,13 +12359,28 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drapion @ Expert Belt
+Level: 47
+Tera Type: Poison
+Ability: Battle Armor
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Night Slash
+- Poison Fang
+- Toxic
 
-Poochyena
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Muk @ Expert Belt
+Level: 47
+Ability: Stench
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gunk Shot
+- Pound
+- Sludge Wave
+- Toxic
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
 Name: GRUNT
@@ -12287,9 +12391,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Salazzle @ Poisonium Z
+Level: 48
+Ability: Corrosion
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Ember
+- Poison Fang
+- Nasty Plot
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
 Name: GRUNT
@@ -12300,9 +12411,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 48
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
 Name: GRUNT
@@ -12313,9 +12431,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Mightyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat @ Expert Belt
+Level: 48
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
 Name: GRUNT
@@ -12326,9 +12451,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 48
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
 === TRAINER_MACEY ===
 Name: MACEY
@@ -12339,9 +12471,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Natu
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Reuniclus @ Life Orb
+Level: 53
+Ability: Overcoat
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psyshock
+- Psybeam
+- Recover
 
 === TRAINER_BRENDAN_RUSTBORO_TREECKO ===
 Name: BRENDAN
@@ -12386,13 +12525,27 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Swellow
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flygon @ Expert Belt
+Level: 49
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Breloom
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metagross @ Leftovers
+Level: 49
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
 === TRAINER_ISABELLA ===
 Name: ISABELLA
@@ -12403,9 +12556,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Staryu
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Life Orb
+Level: 50
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
 Name: GRUNT
@@ -12416,13 +12576,27 @@ Music: Aqua
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Sharpedonite
+Level: 42
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Night Slash
+- Aqua Jet
+- Agility
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wailord @ Expert Belt
+Level: 42
+Ability: Water Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bounce
+- Astonish
+- Rest
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
@@ -12459,13 +12633,29 @@ Items: Hyper Potion
 Double Battle: No
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Kecleon
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Corviknight @ Expert Belt
+Level: 49
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Pressure
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drill Peck
+- Steel Wing
+- Pluck
+- Swagger
 
-Loudred
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Expert Belt
+Level: 49
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
 Name: BRENDAN
@@ -12554,11 +12744,28 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Linoone
-Level: 17
+Ursaring @ Expert Belt
+Level: 30
+Tera Type: Normal
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Scratch
+- Fury Swipes
+- Play Nice
 
-Graveler
-Level: 23
+Zangoose @ Expert Belt
+Level: 37
+Ability: Immunity
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crush Claw
+- Slash
+- False Swipe
+- Detect
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -12569,13 +12776,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Lotad
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Girafarig @ Sitrus Berry
+Level: 21
+Ability: Inner Focus
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Stomp
+- Growl
 
-Shroomish
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vigoroth @ Sitrus Berry
+Level: 21
+Ability: Vital Spirit
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scratch
+- Fury Swipes
+- Endure
+- Focus Energy
 
 === TRAINER_JANICE ===
 Name: JANICE
@@ -12586,9 +12807,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Marill
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mightyena @ Sitrus Berry
+Level: 21
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Fire Fang
+- Ice Fang
+- Swagger
 
 === TRAINER_VIVI ===
 Name: VIVI
@@ -12620,13 +12848,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Tauros @ Expert Belt
+Level: 41
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Double Kick
+- Raging Bull
+- Rest
 
-Shroomish
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Bouffalant @ Expert Belt
+Level: 41
+Ability: Reckless
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Charge
+- Horn Attack
+- Tackle
+- Scary Face
 
 === TRAINER_HALEY_3 ===
 Name: HALEY
@@ -12637,13 +12879,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Tauros @ Expert Belt
+Level: 44
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Double Kick
+- Raging Bull
+- Rest
 
-Breloom
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Bouffalant @ Expert Belt
+Level: 44
+Ability: Reckless
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Charge
+- Horn Attack
+- Tackle
+- Scary Face
 
 === TRAINER_HALEY_4 ===
 Name: HALEY
@@ -12654,13 +12910,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Dudunsparce @ Expert Belt
+Level: 48
+Ability: Serene Grace
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Rush
+- Drill Run
+- Rollout
+- Roost
 
-Breloom
-Level: 32
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ursaring @ Expert Belt
+Level: 48
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Scratch
+- Fury Swipes
+- Rest
 
 === TRAINER_HALEY_5 ===
 Name: HALEY
@@ -12671,17 +12941,38 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Swellow
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Farigiraf @ Life Orb
+Level: 50
+Ability: Cud Chew
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Nasty Plot
 
-Lombre
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Bouffalant @ Life Orb
+Level: 50
+Ability: Reckless
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Charge
+- Horn Attack
+- Tackle
+- Swords Dance
 
-Breloom
-Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Kangaskhan @ Life Orb
+Level: 50
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Stomp
+- Bite
+- Endure
 
 === TRAINER_SALLY ===
 Name: SALLY
@@ -12692,9 +12983,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Oddish
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone @ Sitrus Berry
+Level: 29
+Ability: Pickup
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Take Down
+- Headbutt
+- Night Slash
+- Rest
 
 === TRAINER_ROBIN ===
 Name: ROBIN
@@ -12705,17 +13003,38 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Skitty
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mightyena @ Sitrus Berry
+Level: 27
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Fire Fang
+- Ice Fang
+- Swagger
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Loudred @ Sitrus Berry
+Level: 27
+Ability: Soundproof
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomp
+- Bite
+- Pound
+- Rest
 
-Marill
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Girafarig @ Sitrus Berry
+Level: 27
+Ability: Inner Focus
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Stomp
+- Agility
 
 === TRAINER_ANDREA ===
 Name: ANDREA
@@ -12726,9 +13045,17 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Milotic
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Tauros @ Life Orb
+Level: 57
+Tera Type: Fighting
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aqua Jet
+- Double Kick
+- Raging Bull
+- Rest
 
 === TRAINER_CRISSY ===
 Name: CRISSY
@@ -12739,13 +13066,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Eelektross
-Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Zangoose @ Buginium Z
+Level: 60
+Ability: Immunity
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Crush Claw
+- Slash
+- Swords Dance
 
-Wailord
-Level: 41
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Snorlax @ Life Orb
+Level: 58
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Impact
+- Body Slam
+- Bite
+- Rest
 
 === TRAINER_RICK ===
 Name: RICK
@@ -12756,11 +13097,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wurmple
-Level: 18
+Armaldo @ Expert Belt
+Level: 31
+Ability: Battle Armor
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Smack Down
+- Fury Cutter
+- Harden
 
-Cascoon
-Level: 21
+Scolipede @ Expert Belt
+Level: 35
+Ability: Poison Point
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Bug Bite
+- Poison Tail
+- Protect
 
 === TRAINER_LYLE ===
 Name: LYLE
@@ -12771,21 +13128,49 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Silcoon
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dustox @ Sitrus Berry
+Level: 21
+Ability: Shield Dust
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Poison Sting
+- Tackle
+- Moonlight
 
-Wurmple
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ledian @ Sitrus Berry
+Level: 19
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swift
+- Mach Punch
+- Tackle
+- Light Screen
 
-Cascoon
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Beautifly @ Sitrus Berry
+Level: 21
+Ability: Swarm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Tackle
+- Poison Sting
+- Morning Sun
 
-Wurmple
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Masquerain @ Sitrus Berry
+Level: 18
+Ability: Intimidate
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quick Attack
+- Water Gun
+- Gust
+- Whirlwind
 
 === TRAINER_JOSE ===
 Name: JOSE
@@ -12796,13 +13181,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wurmple
-Level: 8
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Beautifly @ Sitrus Berry
+Level: 19
+Ability: Swarm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Tackle
+- Poison Sting
+- Morning Sun
 
-Nincada
-Level: 8
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Masquerain @ Sitrus Berry
+Level: 19
+Ability: Intimidate
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quick Attack
+- Water Gun
+- Gust
+- Whirlwind
 
 === TRAINER_DOUG ===
 Name: DOUG
@@ -12813,13 +13212,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Nincada
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Scyther @ Expert Belt
+Level: 43
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Fury Cutter
+- Slash
+- Agility
 
-Ninjask
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pinsir @ Expert Belt
+Level: 43
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Bug Bite
+- Strength
+- Swords Dance
 
 === TRAINER_GREG ===
 Name: GREG
@@ -12830,13 +13243,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Volbeat
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross @ Expert Belt
+Level: 40
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Arm Thrust
+- Counter
+- Endure
 
-Illumise
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Armaldo @ Expert Belt
+Level: 40
+Ability: Battle Armor
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Smack Down
+- Fury Cutter
+- Harden
 
 === TRAINER_KENT ===
 Name: KENT
@@ -12847,9 +13274,16 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Ninjask
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross @ Expert Belt
+Level: 40
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Arm Thrust
+- Counter
+- Endure
 
 === TRAINER_JAMES_1 ===
 Name: JAMES
@@ -12860,13 +13294,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Nincada
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Butterfree @ Sitrus Berry
+Level: 23
+Ability: Compound Eyes
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Gust
+- Sleep Powder
 
-Nincada
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dustox @ Sitrus Berry
+Level: 21
+Ability: Shield Dust
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Poison Sting
+- Tackle
+- Moonlight
 
 === TRAINER_JAMES_2 ===
 Name: JAMES
@@ -12877,13 +13325,29 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Ninjask
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Butterfree @ Expert Belt
+Level: 42
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Compound Eyes
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Air Slash
+- Psybeam
+- Tailwind
 
-Shedinja
-Level: 27
-IVs: 0 HP / 5 Atk / 0 Def / 6 SpA / 0 SpD / 15 Spe
+Heracross @ Expert Belt
+Level: 42
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Arm Thrust
+- Counter
+- Endure
 
 === TRAINER_JAMES_3 ===
 Name: JAMES
@@ -12894,13 +13358,28 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Dustox
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Heracross @ Expert Belt
+Level: 44
+Tera Type: Bug
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Arm Thrust
+- Counter
+- Endure
 
-Ninjask
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Armaldo @ Expert Belt
+Level: 44
+Ability: Battle Armor
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Smack Down
+- Fury Cutter
+- Protect
 
 === TRAINER_JAMES_4 ===
 Name: JAMES
@@ -12911,17 +13390,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Surskit
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Frosmoth @ Buginium Z
+Level: 47
+Ability: Shield Dust
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Aurora Beam
+- Icy Wind
+- Tailwind
 
-Dustox
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Vikavolt @ Expert Belt
+Level: 47
+Ability: Levitate
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Discharge
+- Mud-Slap
+- Sticky Web
 
-Ninjask
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Orbeetle @ Leftovers
+Level: 47
+Ability: Swarm
+Nature: Careful
+EVs: 252 HP / 252 SpD / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Bug Buzz
+- Psybeam
+- Calm Mind
 
 === TRAINER_JAMES_5 ===
 Name: JAMES
@@ -12932,21 +13432,49 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Surskit
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lokix @ Expert Belt
+Level: 49
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Throat Chop
+- Lunge
+- Bug Bite
+- Agility
 
-Ninjask
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Golisopod @ Leftovers
+Level: 49
+Ability: Emergency Exit
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Razor Shell
+- Bug Bite
+- Swords Dance
 
-Dustox
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Volcarona @ Expert Belt
+Level: 49
+Ability: Flame Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Fiery Dance
+- Ember
+- Screech
 
-Ninjask
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Escavalier @ Expert Belt
+Level: 49
+Ability: Swarm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- X-Scissor
+- Fury Cutter
+- Swords Dance
 
 === TRAINER_BRICE ===
 Name: BRICE
@@ -12957,13 +13485,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 30
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Curse
 
-Machop
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flygon @ Expert Belt
+Level: 30
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
 === TRAINER_TRENT_1 ===
 Name: TRENT
@@ -12974,17 +13516,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gliscor @ Leftovers
+Level: 29
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Poison Jab
+- Night Slash
+- Sand Attack
 
-Geodude
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Claydol @ Leftovers
+Level: 30
+Ability: Levitate
+Nature: Careful
+EVs: 252 HP / 252 SpD / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Extrasensory
+- Psybeam
+- Cosmic Power
 
-Geodude
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Sitrus Berry
+Level: 29
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Curse
 
 === TRAINER_LENNY ===
 Name: LENNY
@@ -12995,13 +13558,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Krookodile @ Expert Belt
+Level: 31
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Dig
+- Power Trip
+- Swagger
 
-Machop
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 31
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Tackle
+- Endure
 
 === TRAINER_LUCAS_1 ===
 Name: LUCAS
@@ -13012,13 +13589,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 31
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Tackle
+- Endure
 
-Numel
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gliscor @ Leftovers
+Level: 31
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Poison Jab
+- U-turn
+- Sand Attack
 
 === TRAINER_ALAN ===
 Name: ALAN
@@ -13029,17 +13620,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 36
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Tackle
+- Endure
 
-Nosepass
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gliscor @ Leftovers
+Level: 36
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Poison Jab
+- U-turn
+- Screech
 
-Graveler
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Claydol @ Leftovers
+Level: 36
+Ability: Levitate
+Nature: Careful
+EVs: 252 HP / 252 SpD / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Extrasensory
+- Psybeam
+- Cosmic Power
 
 === TRAINER_CLARK ===
 Name: CLARK
@@ -13050,9 +13662,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nosepass @ Sitrus Berry
+Level: 19
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Throw
+- Spark
+- Tackle
+- Harden
 
 === TRAINER_ERIC ===
 Name: ERIC
@@ -13063,13 +13682,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Donphan @ Leftovers
+Level: 34
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomping Tantrum
+- Bulldoze
+- Slam
+- Growl
 
-Baltoy
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Claydol @ Leftovers
+Level: 34
+Ability: Levitate
+Nature: Careful
+EVs: 252 HP / 252 SpD / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Extrasensory
+- Psybeam
+- Cosmic Power
 
 === TRAINER_LUCAS_2 ===
 Name: LUCAS
@@ -13080,11 +13713,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Splash
-- Water Gun
+Donphan @ Leftovers
+Level: 21
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Horn Attack
+- Thunder Fang
+- Growl
 
 === TRAINER_MIKE_1 ===
 Name: MIKE
@@ -13095,17 +13733,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
+Donphan @ Leftovers
+Level: 22
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Horn Attack
+- Thunder Fang
 - Growl
 
-Poochyena
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Scary Face
+Graveler @ Sitrus Berry
+Level: 22
+Ability: Rock Head
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Smack Down
+- Rock Throw
+- Defense Curl
 
 === TRAINER_MIKE_2 ===
 Name: MIKE
@@ -13116,17 +13764,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aggron @ Leftovers
+Level: 29
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Geodude
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gigalith @ Leftovers
+Level: 29
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Headbutt
+- Tackle
+- Stealth Rock
 
-Machop
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Krookodile @ Sitrus Berry
+Level: 29
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Dig
+- Power Trip
+- Swagger
 
 === TRAINER_TRENT_2 ===
 Name: TRENT
@@ -13137,21 +13806,49 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Aggron @ Leftovers
+Level: 38
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Geodude
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gigalith @ Leftovers
+Level: 38
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Smack Down
+- Rock Blast
+- Stealth Rock
 
-Geodude
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Krookodile @ Expert Belt
+Level: 38
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Foul Play
+- Crunch
+- Dig
+- Sandstorm
 
-Graveler
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Mamoswine @ Expert Belt
+Level: 38
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Tackle
+- Amnesia
 
 === TRAINER_TRENT_3 ===
 Name: TRENT
@@ -13162,21 +13859,49 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Aggron @ Leftovers
+Level: 42
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Geodude
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Gigalith @ Leftovers
+Level: 42
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Smack Down
+- Rock Blast
+- Stealth Rock
 
-Graveler
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Krookodile @ Expert Belt
+Level: 42
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Foul Play
+- Crunch
+- Dig
+- Sandstorm
 
-Graveler
-Level: 27
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Mamoswine @ Expert Belt
+Level: 42
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Tackle
+- Amnesia
 
 === TRAINER_TRENT_4 ===
 Name: TRENT
@@ -13187,21 +13912,49 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Flygon @ Expert Belt
+Level: 45
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Graveler
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Aggron @ Leftovers
+Level: 45
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Graveler
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gigalith @ Leftovers
+Level: 45
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Smack Down
+- Rock Blast
+- Stealth Rock
 
-Graveler
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Krookodile @ Expert Belt
+Level: 45
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Foul Play
+- Crunch
+- Sandstorm
 
 === TRAINER_TRENT_5 ===
 Name: TRENT
@@ -13212,21 +13965,49 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Graveler
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gliscor @ Leftovers
+Level: 49
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- X-Scissor
+- Poison Jab
+- Screech
 
-Graveler
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Garganacl @ Leftovers
+Level: 49
+Ability: Purifying Salt
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Rock Throw
+- Salt Cure
+- Stealth Rock
 
-Graveler
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Mudsdale @ Expert Belt
+Level: 49
+Ability: Own Tempo
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- High Horsepower
+- Bulldoze
+- Iron Defense
 
-Golem
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Mamoswine @ Expert Belt
+Level: 49
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
 === TRAINER_DEZ_AND_LUKE ===
 Name: DEZ & LUKE
@@ -13237,13 +14018,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Delcatty
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 47
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
-Manectric
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Roserade @ Expert Belt
+Level: 47
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
 === TRAINER_LEA_AND_JED ===
 Name: LEA & JED
@@ -13254,13 +14049,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Luvdisc
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir @ Gardevoirite
+Level: 63
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Future Sight
+- Dream Eater
+- Psychic
+- Calm Mind
 
-Luvdisc
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Life Orb
+Level: 63
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Close Combat
+- Swords Dance
 
 === TRAINER_KIRA_AND_DAN_1 ===
 Name: KIRA & DAN
@@ -13271,13 +14080,29 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Volbeat
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Expert Belt
+Level: 40
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Water Absorb
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Body Slam
+- Brine
+- Confuse Ray
 
-Illumise
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flygon @ Expert Belt
+Level: 40
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
 === TRAINER_KIRA_AND_DAN_2 ===
 Name: KIRA & DAN
@@ -13288,13 +14113,28 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Volbeat
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gardevoir @ Expert Belt
+Level: 45
+Tera Type: Psychic
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
-Illumise
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Altaria @ Expert Belt
+Level: 45
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Take Down
+- Cotton Guard
 
 === TRAINER_KIRA_AND_DAN_3 ===
 Name: KIRA & DAN
@@ -13305,13 +14145,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Volbeat
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Toxicroak @ Poisonium Z
+Level: 49
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
-Illumise
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Lucario @ Expert Belt
+Level: 49
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_KIRA_AND_DAN_4 ===
 Name: KIRA & DAN
@@ -13322,13 +14176,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Volbeat
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Haxorus @ Life Orb
+Level: 53
+Ability: Rivalry
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Breaking Swipe
+- Crunch
+- Swords Dance
 
-Illumise
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gallade @ Life Orb
+Level: 53
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
 === TRAINER_KIRA_AND_DAN_5 ===
 Name: KIRA & DAN
@@ -13339,13 +14207,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Volbeat
-Level: 39
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Toxicroak @ Life Orb
+Level: 56
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
-Illumise
-Level: 39
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lucario @ Life Orb
+Level: 56
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_JOHANNA ===
 Name: JOHANNA
@@ -13356,9 +14238,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Goldeen
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Growlithe @ Sitrus Berry
+Level: 25
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Fang
+- Flame Wheel
+- Bite
+- Helping Hand
 
 === TRAINER_GERALD ===
 Name: GERALD
@@ -13370,10 +14259,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Houndoom
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
+Flygon @ Expert Belt
+Level: 41
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
 === TRAINER_VIVIAN ===
 Name: VIVIAN
@@ -13384,14 +14279,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Jolteon
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Machamp @ Expert Belt
+Level: 30
+Ability: Guts
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vital Throw
+- Revenge
+- Scary Face
+- Wide Guard
 
-Pikachu
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
+Lucario @ Expert Belt
+Level: 30
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Calm Mind
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
@@ -13402,10 +14310,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Rotom Heat
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
+Conkeldurr @ Expert Belt
+Level: 37
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Slam
+- Rock Slide
+- Bulk Up
 
 === TRAINER_HIDEO ===
 Name: HIDEO
@@ -13416,21 +14330,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability / Try To Faint
 
-Koffing
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Self Destruct
-- Sludge
-- Smokescreen
+Crobat @ Expert Belt
+Level: 40
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
-Koffing
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Poison Gas
-- Sludge
-- Smokescreen
+Toxicroak @ Expert Belt
+Level: 40
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Toxic
 
 === TRAINER_KEIGO ===
 Name: KEIGO
@@ -13441,21 +14361,29 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability / Try To Faint
 
-Koffing
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
-- Self Destruct
-- Sludge
-- Smokescreen
+Machamp @ Expert Belt
+Level: 43
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Guts
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vital Throw
+- Revenge
+- Strength
+- Bulk Up
 
-Ninjask
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Attack
-- Double Team
-- Fury Cutter
-- Swords Dance
+Crobat @ Expert Belt
+Level: 43
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_RILEY ===
 Name: RILEY
@@ -13466,21 +14394,28 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability / Try To Faint
 
-Nincada
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Leech Life
-- Fury Swipes
-- Mind Reader
-- Dig
+Accelgor @ Expert Belt
+Level: 43
+Tera Type: Bug
+Ability: Hydration
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swift
+- Mega Drain
+- Acid
+- Recover
 
-Koffing
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Self Destruct
-- Sludge
-- Smokescreen
+Weavile @ Expert Belt
+Level: 43
+Ability: Pressure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Fling
+- Slash
+- Agility
 
 === TRAINER_FLINT ===
 Name: FLINT
@@ -13491,13 +14426,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Scyther
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Breloom @ Fightinium Z
+Level: 44
+Ability: Effect Spore
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Seed Bomb
+- Force Palm
+- Spore
 
-Xatu
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Roserade @ Expert Belt
+Level: 44
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
 === TRAINER_ASHLEY ===
 Name: ASHLEY
@@ -13508,17 +14457,38 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Ninjask
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Azumarill @ Expert Belt
+Level: 42
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Rain Dance
 
-Golbat
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Altaria @ Expert Belt
+Level: 42
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Take Down
+- Cotton Guard
 
-Ledian
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Roserade @ Expert Belt
+Level: 42
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
 === TRAINER_WALLY_MAUVILLE ===
 Name: WALLY
@@ -13892,17 +14862,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Expert Belt
+Level: 45
+Ability: Swift Swim
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Water Pulse
+- Dragon Breath
+- Agility
 
-Tentacool
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval @ Expert Belt
+Level: 47
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Step
+- Aqua Cutter
+- Focus Energy
 
-Sharpedo
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Black Sludge
+Level: 48
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Sting
+- Bite
+- Recover
 
 === TRAINER_HENRY ===
 Name: HENRY
@@ -13913,13 +14904,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval @ Expert Belt
+Level: 47
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Step
+- Aqua Cutter
+- Focus Energy
 
-Tentacruel
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Black Sludge
+Level: 50
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Jab
+- Poison Sting
+- Recover
 
 === TRAINER_ROGER ===
 Name: ROGER
@@ -13930,17 +14935,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Magikarp
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golisopod @ Leftovers
+Level: 28
+Ability: Emergency Exit
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Fury Cutter
+- Slash
+- Iron Defense
 
-Magikarp
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lapras @ Expert Belt
+Level: 40
+Ability: Water Absorb
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Body Slam
+- Brine
+- Confuse Ray
 
-Gyarados
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+Level: 51
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
 === TRAINER_ALEXA ===
 Name: ALEXA
@@ -13952,13 +14978,27 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Gloom
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mamoswine @ Life Orb
+Level: 50
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
-Azumarill
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Roserade @ Life Orb
+Level: 50
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
 === TRAINER_RUBEN ===
 Name: RUBEN
@@ -13970,13 +15010,27 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Shiftry
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gallade @ Life Orb
+Level: 50
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
-Nosepass
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gengar @ Life Orb
+Level: 50
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Night Shade
+- Dark Pulse
+- Curse
 
 === TRAINER_KOJI_1 ===
 Name: KOJI
@@ -13987,9 +15041,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Machoke
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Conkeldurr @ Life Orb
+Level: 50
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Dynamic Punch
+- Stone Edge
+- Bulk Up
 
 === TRAINER_WAYNE ===
 Name: WAYNE
@@ -14000,17 +15061,40 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Tentacool
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drednaw @ Expert Belt
+Level: 47
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Strong Jaw
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Shell
+- Jaw Lock
+- Crunch
+- Protect
 
-Tentacool
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Black Sludge
+Level: 47
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Sting
+- Bite
+- Recover
 
-Wailmer
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Life Orb
+Level: 53
+Ability: Swift Swim
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Water Pulse
+- Dragon Breath
+- Agility
 
 === TRAINER_AIDAN ===
 Name: AIDAN
@@ -14021,13 +15105,28 @@ Music: Cool
 Double Battle: No
 AI: Check Viability
 
-Swellow
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Staraptor @ Expert Belt
+Level: 48
+Tera Type: Normal
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Take Down
+- Aerial Ace
+- Tackle
+- Agility
 
-Skarmory
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kilowattrel @ Expert Belt
+Level: 48
+Ability: Wind Power
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Volt Switch
+- Thunder Shock
+- Agility
 
 === TRAINER_REED ===
 Name: REED
@@ -14038,13 +15137,27 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Spheal
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quaquaval @ Normalium Z
+Level: 49
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Kick
+- Liquidation
+- Aqua Step
+- Focus Energy
 
-Sharpedo
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Black Sludge
+Level: 49
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Jab
+- Poison Sting
+- Recover
 
 === TRAINER_TISHA ===
 Name: TISHA
@@ -14055,9 +15168,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Chinchou
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxapex @ Black Sludge
+Level: 50
+Ability: Merciless
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Poison Jab
+- Poison Sting
+- Recover
 
 === TRAINER_TORI_AND_TIA ===
 Name: TORI & TIA
@@ -14068,13 +15188,27 @@ Music: Twins
 Double Battle: Yes
 AI: Check Viability
 
-Spinda
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnezone @ Expert Belt
+Level: 32
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Shock
+- Electro Ball
+- Tri Attack
+- Thunder Wave
 
-Spinda
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Eelektross @ Expert Belt
+Level: 32
+Ability: Levitate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Crunch
+- Crush Claw
+- Gastro Acid
 
 === TRAINER_KIM_AND_IRIS ===
 Name: KIM & IRIS
@@ -14085,21 +15219,27 @@ Music: Twins
 Double Battle: Yes
 AI: Check Viability
 
-Swablu
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sing
-- Fury Attack
-- Safeguard
-- Aerial Ace
+Milotic @ Leftovers
+Level: 48
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Numel
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Flamethrower
-- Take Down
-- Rest
-- Earthquake
+Sylveon @ Leftovers
+Level: 51
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Draining Kiss
+- Disarming Voice
+- Psych Up
 
 === TRAINER_TYRA_AND_IVY ===
 Name: TYRA & IVY
@@ -14110,21 +15250,27 @@ Music: Twins
 Double Battle: Yes
 AI: Check Viability
 
-Roselia
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growth
-- Stun Spore
-- Mega Drain
-- Leech Seed
+Delcatty @ Expert Belt
+Level: 31
+Ability: Cute Charm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Facade
+- Fake Out
+- Sing
 
-Graveler
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Defense Curl
-- Rollout
-- Mud Sport
-- Rock Throw
+Togekiss @ Expert Belt
+Level: 34
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_MEL_AND_PAUL ===
 Name: MEL & PAUL
@@ -14135,21 +15281,27 @@ Music: Girl
 Double Battle: Yes
 AI: Check Viability
 
-Dustox
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
-- Psybeam
-- Toxic
-- Protect
+Flygon @ Expert Belt
+Level: 42
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Beautifly
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
-- Mega Drain
-- Attract
-- Stun Spore
+Gardevoir @ Expert Belt
+Level: 42
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
 === TRAINER_JOHN_AND_JAY_1 ===
 Name: JOHN & JAY
@@ -14160,21 +15312,27 @@ Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 39
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psychic
-- Fire Punch
-- Psych Up
-- Protect
+Milotic @ Leftovers
+Level: 56
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Hariyama
-Level: 39
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Focus Punch
-- Rock Tomb
-- Rest
-- Belly Drum
+Arcanine @ Life Orb
+Level: 56
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
 === TRAINER_JOHN_AND_JAY_2 ===
 Name: JOHN & JAY
@@ -14185,21 +15343,27 @@ Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 43
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
-- Fire Punch
-- Psych Up
-- Protect
+Altaria @ Altarianite
+Level: 61
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sky Attack
+- Pluck
+- Peck
+- Perish Song
 
-Hariyama
-Level: 43
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Focus Punch
-- Rock Tomb
-- Rest
-- Belly Drum
+Primarina @ Life Orb
+Level: 61
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Sparkling Aria
+- Bubble Beam
+- Misty Terrain
 
 === TRAINER_JOHN_AND_JAY_3 ===
 Name: JOHN & JAY
@@ -14210,21 +15374,29 @@ Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 46
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Psychic
-- Fire Punch
-- Psych Up
-- Protect
-
-Hariyama
-Level: 46
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Focus Punch
-- Rock Tomb
+Snorlax @ Life Orb
+Level: 64
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Impact
+- Body Slam
+- Bite
 - Rest
-- Belly Drum
+
+Togekiss @ Life Orb
+Level: 64
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_JOHN_AND_JAY_4 ===
 Name: JOHN & JAY
@@ -14235,21 +15407,28 @@ Music: Intense
 Double Battle: Yes
 AI: Check Viability / Try To Faint / Force Setup First Turn
 
-Medicham
-Level: 49
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+Espeon @ Life Orb
+Level: 68
+Tera Type: Psychic
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Future Sight
 - Psychic
-- Fire Punch
-- Psych Up
-- Protect
+- Psybeam
+- Morning Sun
 
-Hariyama
-Level: 49
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
-- Focus Punch
-- Rock Tomb
-- Rest
-- Belly Drum
+Sylveon @ Leftovers
+Level: 68
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Draining Kiss
+- Disarming Voice
+- Psych Up
 
 === TRAINER_JOHN_AND_JAY_5 ===
 Name: JOHN & JAY
@@ -14260,21 +15439,27 @@ Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 52
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-- Psychic
-- Fire Punch
-- Psych Up
-- Protect
+Arcanine @ Rockium Z
+Level: 71
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Flare Blitz
+- Fire Fang
+- Agility
 
-Hariyama
-Level: 52
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-- Focus Punch
-- Rock Tomb
-- Rest
-- Belly Drum
+Togekiss @ Life Orb
+Level: 71
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_RELI_AND_IAN ===
 Name: RELI & IAN
@@ -14285,13 +15470,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Azumarill
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnezone @ Life Orb
+Level: 51
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Flash Cannon
+- Thunder Shock
+- Thunder Wave
 
-Wingull
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 49
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
 === TRAINER_LILA_AND_ROY_1 ===
 Name: LILA & ROY
@@ -14302,13 +15501,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Chinchou
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metagross @ Leftovers
+Level: 50
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
-Carvanha
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxicroak @ Expert Belt
+Level: 49
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
 === TRAINER_LILA_AND_ROY_2 ===
 Name: LILA & ROY
@@ -14319,13 +15532,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Chinchou
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Haxorus @ Life Orb
+Level: 60
+Ability: Rivalry
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Breaking Swipe
+- Giga Impact
+- Swords Dance
 
-Carvanha
-Level: 40
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gallade @ Life Orb
+Level: 57
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
 === TRAINER_LILA_AND_ROY_3 ===
 Name: LILA & ROY
@@ -14336,13 +15563,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Lanturn
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gallade @ Life Orb
+Level: 63
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Sacred Sword
+- Psycho Cut
+- Swords Dance
 
-Carvanha
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gengar @ Life Orb
+Level: 61
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Night Shade
+- Dream Eater
+- Destiny Bond
 
 === TRAINER_LILA_AND_ROY_4 ===
 Name: LILA & ROY
@@ -14353,13 +15594,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Lanturn
-Level: 48
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxicroak @ Life Orb
+Level: 67
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
-Sharpedo
-Level: 46
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Life Orb
+Level: 64
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Close Combat
+- Swords Dance
 
 === TRAINER_LILA_AND_ROY_5 ===
 Name: LILA & ROY
@@ -14370,13 +15625,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Lanturn
-Level: 51
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flygon @ Life Orb
+Level: 70
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Rush
+- Dragon Claw
+- Dragon Tail
+- Dragon Dance
 
-Sharpedo
-Level: 49
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metagross @ Leftovers
+Level: 68
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Iron Defense
 
 === TRAINER_LISA_AND_RAY ===
 Name: LISA & RAY
@@ -14387,13 +15656,27 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Viability
 
-Goldeen
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Expert Belt
+Level: 42
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
-Tentacool
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Feraligatr @ Expert Belt
+Level: 40
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Slash
+- Ice Fang
+- Agility
 
 === TRAINER_CHRIS ===
 Name: CHRIS
@@ -14404,21 +15687,51 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Magikarp
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drednaw @ Expert Belt
+Level: 44
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Strong Jaw
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Shell
+- Jaw Lock
+- Crunch
+- Protect
 
-Tentacool
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wailord @ Expert Belt
+Level: 34
+Ability: Water Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bounce
+- Astonish
+- Heavy Slam
+- Mist
 
-Feebas
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Expert Belt
+Level: 41
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Night Slash
+- Aqua Jet
+- Agility
 
-Carvanha
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Expert Belt
+Level: 37
+Ability: Swift Swim
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Water Pulse
+- Dragon Breath
+- Agility
 
 === TRAINER_DAWSON ===
 Name: DAWSON
@@ -14429,13 +15742,27 @@ Music: Rich
 Double Battle: No
 AI: Check Viability
 
-Zigzagoon @ Nugget
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ninetales @ Sitrus Berry
+Level: 19
+Ability: Flash Fire
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quick Attack
+- Inferno
+- Ember
+- Will-O-Wisp
 
-Poochyena
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Arcanine @ Sitrus Berry
+Level: 19
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
 === TRAINER_SARAH ===
 Name: SARAH
@@ -14447,13 +15774,27 @@ Items: Full Restore
 Double Battle: No
 AI: Check Viability
 
-Lotad
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Roserade @ Sitrus Berry
+Level: 19
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
-Zigzagoon @ Nugget
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir @ Sitrus Berry
+Level: 19
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Dazzling Gleam
+- Teleport
 
 === TRAINER_DARIAN ===
 Name: DARIAN
@@ -14464,10 +15805,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Magikarp
-Shiny: Yes
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crawdaunt @ Expert Belt
+Level: 42
+Ability: Hyper Cutter
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Shell
+- Night Slash
+- Double Hit
+- Swords Dance
 
 === TRAINER_HAILEY ===
 Name: HAILEY
@@ -14478,9 +15825,16 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Marill
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Quagsire @ Sitrus Berry
+Level: 25
+Ability: Damp
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slam
+- Mud Shot
+- Water Gun
+- Yawn
 
 === TRAINER_CHANDLER ===
 Name: CHANDLER
@@ -14491,13 +15845,27 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Tentacool
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados @ Sitrus Berry
+Level: 24
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Crunch
+- Ice Fang
+- Scary Face
 
-Tentacool
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Sitrus Berry
+Level: 24
+Ability: Swift Swim
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Water Gun
+- Mega Drain
+- Growl
 
 === TRAINER_KALEB ===
 Name: KALEB
@@ -14508,13 +15876,27 @@ Music: Twins
 Double Battle: No
 AI: Check Viability
 
-Minun @ Oran Berry
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skitty @ Sitrus Berry
+Level: 27
+Ability: Cute Charm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Payback
+- Tackle
+- Fake Out
+- Charm
 
-Plusle @ Oran Berry
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Marill @ Sitrus Berry
+Level: 27
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Rain Dance
 
 === TRAINER_JOSEPH ===
 Name: JOSEPH
@@ -14525,13 +15907,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Electrike
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Raichu @ Sitrus Berry
+Level: 27
+Ability: No Guard
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Thunder Shock
+- Electro Ball
+- Nasty Plot
 
-Voltorb
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magneton @ Sitrus Berry
+Level: 27
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Shock
+- Electro Ball
+- Tri Attack
+- Thunder Wave
 
 === TRAINER_ALYSSA ===
 Name: ALYSSA
@@ -14542,9 +15938,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Magnemite
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Sitrus Berry
+Level: 28
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Fury Attack
+- Sing
 
 === TRAINER_MARCOS ===
 Name: MARCOS
@@ -14555,9 +15958,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Voltorb
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Manectric @ Sitrus Berry
+Level: 28
+Ability: Static
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shock Wave
+- Thunder Fang
+- Fire Fang
+- Thunder Wave
 
 === TRAINER_RHETT ===
 Name: RHETT
@@ -14568,9 +15978,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Makuhita
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Hariyama @ Sitrus Berry
+Level: 28
+Ability: Thick Fat
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Force Palm
+- Arm Thrust
+- Fake Out
+- Bulk Up
 
 === TRAINER_TYRON ===
 Name: TYRON
@@ -14581,9 +15998,17 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Sandshrew
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shiftry @ Expert Belt
+Level: 32
+Tera Type: Grass
+Ability: Chlorophyll
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Payback
+- Tackle
+- Synthesis
 
 === TRAINER_CELINA ===
 Name: CELINA
@@ -14594,9 +16019,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Roselia
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cacturne @ Expert Belt
+Level: 31
+Ability: Sand Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Payback
+- Power Trip
+- Poison Sting
+- Spikes
 
 === TRAINER_BIANCA ===
 Name: BIANCA
@@ -14607,9 +16039,16 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Shroomish
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Leafeon @ Leftovers
+Level: 31
+Ability: Leaf Guard
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Take Down
+- Bite
+- Synthesis
 
 === TRAINER_HAYDEN ===
 Name: HAYDEN
@@ -14620,9 +16059,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Coalossal @ Leftovers
+Level: 31
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Tackle
+- Rock Polish
 
 === TRAINER_SOPHIE ===
 Name: SOPHIE
@@ -14633,13 +16079,27 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Marill
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Expert Belt
+Level: 30
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Aqua Ring
 
-Lombre
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Expert Belt
+Level: 32
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Fury Attack
+- Cotton Guard
 
 === TRAINER_COBY ===
 Name: COBY
@@ -14650,13 +16110,27 @@ Music: Cool
 Double Battle: No
 AI: Check Viability
 
-Skarmory
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Expert Belt
+Level: 30
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Fury Attack
+- Sing
 
-Swellow
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat @ Expert Belt
+Level: 32
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Astonish
+- Tailwind
 
 === TRAINER_LAWRENCE ===
 Name: LAWRENCE
@@ -14667,13 +16141,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tsareena @ Expert Belt
+Level: 31
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Sweet Scent
 
-Sandshrew
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Whimsicott @ Expert Belt
+Level: 31
+Ability: Prankster
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Solar Beam
+- Mega Drain
+- Absorb
+- Tailwind
 
 === TRAINER_WYATT ===
 Name: WYATT
@@ -14684,13 +16172,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Aron
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ursaring @ Expert Belt
+Level: 31
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Scratch
+- Fury Swipes
+- Play Nice
 
-Aron
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Snorlax @ Expert Belt
+Level: 31
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bite
+- Tackle
+- Rest
 
 === TRAINER_ANGELINA ===
 Name: ANGELINA
@@ -14701,13 +16203,27 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Lombre
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Expert Belt
+Level: 31
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Aqua Ring
 
-Marill
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Expert Belt
+Level: 31
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Fury Attack
+- Sing
 
 === TRAINER_KAI ===
 Name: KAI
@@ -14718,9 +16234,16 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Barboach
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Expert Belt
+Level: 32
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Aqua Jet
+- Slash
+- Swagger
 
 === TRAINER_CHARLOTTE ===
 Name: CHARLOTTE
@@ -14731,9 +16254,17 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Nuzleaf
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ninetales @ Expert Belt
+Level: 32
+Tera Type: Fire
+Ability: Flash Fire
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quick Attack
+- Inferno
+- Ember
+- Will-O-Wisp
 
 === TRAINER_DEANDRE ===
 Name: DEANDRE
@@ -14744,17 +16275,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Zigzagoon
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Girafarig @ Sitrus Berry
+Level: 27
+Ability: Inner Focus
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Stomp
+- Agility
 
-Aron
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vigoroth @ Sitrus Berry
+Level: 27
+Ability: Vital Spirit
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Scratch
+- Fury Swipes
+- Endure
 
-Electrike
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Delcatty @ Sitrus Berry
+Level: 27
+Ability: Cute Charm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Facade
+- Fake Out
+- Sing
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_1 ===
 Name: GRUNT
@@ -14765,9 +16317,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_2 ===
 Name: GRUNT
@@ -14778,9 +16337,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Poochyena
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_3 ===
 Name: GRUNT
@@ -14791,9 +16357,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
 Name: GRUNT
@@ -14804,13 +16377,27 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 43
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
-Zubat
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat @ Expert Belt
+Level: 43
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
 Name: GRUNT
@@ -14821,13 +16408,27 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drapion @ Expert Belt
+Level: 43
+Ability: Battle Armor
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Night Slash
+- Poison Fang
+- Toxic
 
-Numel
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Weezing @ Black Sludge
+Level: 43
+Ability: Levitate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Double Hit
+- Sludge Bomb
+- Toxic
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
 Name: GRUNT
@@ -14838,9 +16439,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Mightyena
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
 Name: GRUNT
@@ -14851,9 +16459,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Cameruptite
+Level: 44
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
 Name: GRUNT
@@ -14864,9 +16479,18 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Poochyena
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Centiskorch @ Expert Belt
+Level: 44
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Flash Fire
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Flame Wheel
+- Slam
+- Coil
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
 Name: GRUNT
@@ -14877,9 +16501,17 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Tera Type: Dark
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
 Name: GRUNT
@@ -14890,9 +16522,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Mightyena
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Groundium Z
+Level: 44
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Eruption
+- Lava Plume
+- Yawn
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
 Name: GRUNT
@@ -14903,9 +16542,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Muk @ Expert Belt
+Level: 44
+Ability: Stench
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gunk Shot
+- Pound
+- Sludge Wave
+- Toxic
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
 Name: GRUNT
@@ -14916,9 +16562,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Weezing @ Black Sludge
+Level: 44
+Ability: Levitate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Double Hit
+- Belch
+- Toxic
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
 Name: GRUNT
@@ -14929,9 +16582,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Zubat
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 44
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
 Name: GRUNT
@@ -14942,9 +16602,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Mightyena
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat @ Expert Belt
+Level: 44
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
 Name: GRUNT
@@ -14955,9 +16622,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Krookodile @ Expert Belt
+Level: 44
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Foul Play
+- Crunch
+- Sandstorm
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
 Name: GRUNT
@@ -14968,9 +16642,16 @@ Music: Magma
 Double Battle: No
 AI: Check Viability
 
-Baltoy
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndoom @ Expert Belt
+Level: 44
+Ability: Early Bird
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Fire Fang
+- Comeuppance
+- Nasty Plot
 
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
 Name: TABITHA
@@ -15007,13 +16688,27 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metagross @ Metagrossite
+Level: 49
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
-Camerupt
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+Level: 49
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
 === TRAINER_MAXIE_MOSSDEEP ===
 Name: MAXIE
@@ -15046,9 +16741,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Tentacool
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Sitrus Berry
+Level: 28
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Charm
 
 === TRAINER_ISABELLE ===
 Name: ISABELLE
@@ -15059,9 +16761,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Marill
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo @ Sitrus Berry
+Level: 28
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Aqua Jet
+- Slash
+- Swagger
 
 === TRAINER_ANDRES_1 ===
 Name: ANDRES
@@ -15072,13 +16781,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Sandshrew
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Gliscor @ Darkinium Z
+Level: 40
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Acrobatics
+- X-Scissor
+- Screech
 
-Sandshrew
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Claydol @ Leftovers
+Level: 40
+Ability: Levitate
+Nature: Careful
+EVs: 252 HP / 252 SpD / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Extrasensory
+- Psybeam
+- Guard Split
 
 === TRAINER_JOSUE ===
 Name: JOSUE
@@ -15089,13 +16812,27 @@ Music: Cool
 Double Battle: No
 AI: Check Viability
 
-Taillow
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Altaria @ Expert Belt
+Level: 40
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Take Down
+- Cotton Guard
 
-Wingull
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Crobat @ Expert Belt
+Level: 40
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_CAMRON ===
 Name: CAMRON
@@ -15106,9 +16843,16 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Staryu
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Arcanine @ Expert Belt
+Level: 41
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
 === TRAINER_CORY_1 ===
 Name: CORY
@@ -15119,17 +16863,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Walrein @ Expert Belt
+Level: 38
+Ability: Thick Fat
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aurora Beam
+- Brine
+- Powder Snow
+- Rest
 
-Machop
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crawdaunt @ Expert Belt
+Level: 38
+Ability: Hyper Cutter
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Shell
+- Night Slash
+- Double Hit
+- Protect
 
-Tentacool
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Milotic @ Leftovers
+Level: 38
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
 === TRAINER_CAROLINA ===
 Name: CAROLINA
@@ -15141,17 +16906,38 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Roserade @ Expert Belt
+Level: 38
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
-Swellow
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Flygon @ Expert Belt
+Level: 38
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Manectric
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lucario @ Expert Belt
+Level: 38
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Calm Mind
 
 === TRAINER_ELIJAH ===
 Name: ELIJAH
@@ -15162,13 +16948,27 @@ Music: Cool
 Double Battle: No
 AI: Check Viability
 
-Skarmory
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Honchkrow @ Expert Belt
+Level: 40
+Ability: Insomnia
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Astonish
+- Nasty Plot
+- Swagger
 
-Skarmory
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Togekiss @ Expert Belt
+Level: 40
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_CELIA ===
 Name: CELIA
@@ -15179,13 +16979,27 @@ Music: Girl
 Double Battle: No
 AI: Check Viability
 
-Marill
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Expert Belt
+Level: 36
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Rain Dance
 
-Lombre
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Expert Belt
+Level: 36
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Fury Attack
+- Cotton Guard
 
 === TRAINER_BRYAN ===
 Name: BRYAN
@@ -15196,13 +17010,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Sandshrew
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Steelix @ Steelixite
+Level: 36
+Ability: Rock Head
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slam
+- Crunch
+- Rock Slide
+- Stealth Rock
 
-Sandslash
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aggron @ Leftovers
+Level: 36
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
 === TRAINER_BRANDEN ===
 Name: BRANDEN
@@ -15213,13 +17041,29 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Taillow
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Venusaur @ Expert Belt
+Level: 36
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Overgrow
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Petal Blizzard
+- Seed Bomb
+- Sleep Powder
 
-Nuzleaf
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cacturne @ Expert Belt
+Level: 36
+Ability: Sand Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Payback
+- Power Trip
+- Poison Sting
+- Spikes
 
 === TRAINER_BRYANT ===
 Name: BRYANT
@@ -15230,13 +17074,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Numel
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Coalossal @ Leftovers
+Level: 31
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Tackle
+- Rock Polish
 
-Slugma
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Salazzle @ Expert Belt
+Level: 31
+Ability: Corrosion
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Poison Fang
+- Scratch
+- Nasty Plot
 
 === TRAINER_SHAYLA ===
 Name: SHAYLA
@@ -15247,13 +17105,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Shroomish
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tsareena @ Expert Belt
+Level: 31
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Sweet Scent
 
-Roselia
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Whimsicott @ Expert Belt
+Level: 31
+Ability: Prankster
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Solar Beam
+- Mega Drain
+- Absorb
+- Tailwind
 
 === TRAINER_KYRA ===
 Name: KYRA
@@ -15264,13 +17136,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Doduo
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hariyama @ Expert Belt
+Level: 41
+Ability: Thick Fat
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Focus Punch
+- Force Palm
+- Arm Thrust
+- Bulk Up
 
-Dodrio
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Arcanine @ Expert Belt
+Level: 41
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
 === TRAINER_JAIDEN ===
 Name: JAIDEN
@@ -15281,13 +17167,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Ninjask
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxicroak @ Expert Belt
+Level: 41
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Toxic
 
-Gulpin
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drapion @ Expert Belt
+Level: 41
+Ability: Battle Armor
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Night Slash
+- Poison Fang
+- Toxic
 
 === TRAINER_ALIX ===
 Name: ALIX
@@ -15298,13 +17198,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Kadabra
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dusclops @ Leftovers
+Level: 41
+Ability: Pressure
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Punch
+- Shadow Sneak
+- Astonish
+- Will-O-Wisp
 
-Kirlia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gallade @ Expert Belt
+Level: 41
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Night Slash
+- Aqua Cutter
+- Swords Dance
 
 === TRAINER_HELENE ===
 Name: HELENE
@@ -15315,13 +17229,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machamp @ Expert Belt
+Level: 41
+Ability: Guts
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vital Throw
+- Revenge
+- Strength
+- Scary Face
 
-Makuhita
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Expert Belt
+Level: 41
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_MARLENE ===
 Name: MARLENE
@@ -15332,13 +17260,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Reuniclus @ Expert Belt
+Level: 31
+Ability: Overcoat
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Psybeam
+- Confusion
+- Recover
 
-Spoink
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Metagross @ Leftovers
+Level: 31
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Magnet Rise
 
 === TRAINER_DEVAN ===
 Name: DEVAN
@@ -15349,13 +17291,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Geodude
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sandslash @ Sitrus Berry
+Level: 19
+Ability: Sand Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Crush Claw
+- Fury Cutter
+- Sand Attack
 
-Geodude
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Donphan @ Leftovers
+Level: 19
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Horn Attack
+- Thunder Fang
+- Growl
 
 === TRAINER_JOHNSON ===
 Name: JOHNSON
@@ -15366,13 +17322,27 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Shroomish
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vigoroth @ Sitrus Berry
+Level: 19
+Ability: Vital Spirit
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scratch
+- Fury Swipes
+- Endure
+- Focus Energy
 
-Lotad
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Loudred @ Sitrus Berry
+Level: 19
+Ability: Soundproof
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Pound
+- Astonish
+- Rest
 
 === TRAINER_MELINA ===
 Name: MELINA
@@ -15383,9 +17353,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Doduo
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ampharos @ Expert Belt
+Level: 30
+Ability: Static
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Shock
+- Electro Ball
+- Thunder Punch
+- Thunder Wave
 
 === TRAINER_BRANDI ===
 Name: BRANDI
@@ -15396,9 +17373,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Ralts
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alakazam @ Expert Belt
+Level: 30
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Psybeam
+- Confusion
+- Recover
 
 === TRAINER_AISHA ===
 Name: AISHA
@@ -15409,9 +17393,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Conkeldurr @ Expert Belt
+Level: 30
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slam
+- Rock Slide
+- Rock Throw
+- Bulk Up
 
 === TRAINER_MAKAYLA ===
 Name: MAKAYLA
@@ -15423,13 +17414,27 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Roselia
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnezone @ Expert Belt
+Level: 49
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Flash Cannon
+- Thunder Shock
+- Thunder Wave
 
-Medicham
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Expert Belt
+Level: 49
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
 === TRAINER_FABIAN ===
 Name: FABIAN
@@ -15440,9 +17445,16 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Manectric
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Eelektross @ Expert Belt
+Level: 41
+Ability: Levitate
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Crunch
+- Crush Claw
+- Gastro Acid
 
 === TRAINER_DAYTON ===
 Name: DAYTON
@@ -15453,13 +17465,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Slugma
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Expert Belt
+Level: 40
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
-Numel
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Centiskorch @ Expert Belt
+Level: 40
+Ability: Flash Fire
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Flame Wheel
+- Slam
+- Coil
 
 === TRAINER_RACHEL ===
 Name: RACHEL
@@ -15470,9 +17496,16 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Goldeen
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir @ Expert Belt
+Level: 41
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Confusion
+- Dazzling Gleam
+- Calm Mind
 
 === TRAINER_LEONEL ===
 Name: LEONEL
@@ -15484,12 +17517,16 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder
-- Quick Attack
-- Thunder Wave
+Crobat @ Expert Belt
+Level: 45
+Ability: Inner Focus
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Poison Fang
+- Bite
+- Tailwind
 
 === TRAINER_CALLIE ===
 Name: CALLIE
@@ -15500,13 +17537,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Meditite
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machamp @ Expert Belt
+Level: 43
+Ability: Guts
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vital Throw
+- Revenge
+- Strength
+- Bulk Up
 
-Makuhita
-Level: 28
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Expert Belt
+Level: 43
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_CALE ===
 Name: CALE
@@ -15517,13 +17568,27 @@ Music: Suspicious
 Double Battle: No
 AI: Check Viability
 
-Dustox
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Beedrill @ Beedrillite
+Level: 44
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Bug Bite
+- Fury Cutter
+- Agility
 
-Beautifly
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Scyther @ Expert Belt
+Level: 44
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- X-Scissor
+- Fury Cutter
+- Slash
+- Swords Dance
 
 === TRAINER_MYLES ===
 Name: Scotty
@@ -15556,29 +17621,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Poochyena
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Azumarill @ Expert Belt
+Level: 40
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Rain Dance
 
-Shroomish
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Leafeon @ Leftovers
+Level: 40
+Ability: Leaf Guard
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Take Down
+- Bite
+- Synthesis
 
-Electrike
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Lopunny @ Expert Belt
+Level: 40
+Ability: Cute Charm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Quick Attack
+- Pound
+- Agility
 
-Marill
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Altaria @ Expert Belt
+Level: 40
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Take Down
+- Cotton Guard
 
-Sandshrew
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Delcatty @ Expert Belt
+Level: 40
+Ability: Cute Charm
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Facade
+- Fake Out
+- Sing
 
-Gulpin
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Togekiss @ Expert Belt
+Level: 40
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_CRISTIN_1 ===
 Name: CRISTIN
@@ -15590,13 +17697,28 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Loudred
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Gardevoir @ Expert Belt
+Level: 44
+Tera Type: Psychic
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
-Vigoroth
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Altaria @ Expert Belt
+Level: 44
+Ability: Natural Cure
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Peck
+- Take Down
+- Cotton Guard
 
 === TRAINER_MAY_RUSTBORO_TREECKO ===
 Name: MAY
@@ -17125,19 +19247,27 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Illumise
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shock Wave
-- Quick Attack
-- Charm
+Scyther @ Expert Belt
+Level: 30
+Ability: Swarm
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fury Cutter
+- Slash
+- False Swipe
+- Focus Energy
 
-Volbeat
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shock Wave
-- Quick Attack
-- Confuse Ray
+Pinsir @ Expert Belt
+Level: 30
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Vital Throw
+- Vise Grip
+- Focus Energy
 
 === TRAINER_DARIUS ===
 Name: DARIUS
@@ -17148,9 +19278,16 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Masquerain
-Level: 30
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Togekiss @ Expert Belt
+Level: 45
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_STEVEN ===
 Name: STEVEN
@@ -17325,13 +19462,27 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Sandshrew
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Mudsdale @ Expert Belt
+Level: 47
+Ability: Own Tempo
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- High Horsepower
+- Bulldoze
+- Iron Defense
 
-Sandshrew
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Mamoswine @ Expert Belt
+Level: 47
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
 === TRAINER_ANDRES_3 ===
 Name: ANDRES
@@ -17342,17 +19493,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Nosepass
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Mamoswine @ Expert Belt
+Level: 49
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
-Sandshrew
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Coalossal @ Leftovers
+Level: 49
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Heat Crash
+- Stealth Rock
 
-Sandshrew
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Rhyperior @ Leftovers
+Level: 49
+Ability: Lightning Rod
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Drill Run
+- Bulldoze
+- Scary Face
 
 === TRAINER_ANDRES_4 ===
 Name: ANDRES
@@ -17363,17 +19535,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Nosepass
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Mudsdale @ Life Orb
+Level: 51
+Ability: Own Tempo
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- High Horsepower
+- Bulldoze
+- Iron Defense
 
-Sandshrew
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Mamoswine @ Life Orb
+Level: 51
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Ice Fang
+- Ice Shard
+- Amnesia
 
-Sandshrew
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Coalossal @ Leftovers
+Level: 51
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Heat Crash
+- Stealth Rock
 
 === TRAINER_ANDRES_5 ===
 Name: ANDRES
@@ -17384,17 +19577,38 @@ Music: Hiker
 Double Battle: No
 AI: Check Viability
 
-Nosepass
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Mudsdale @ Life Orb
+Level: 54
+Ability: Own Tempo
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- High Horsepower
+- Bulldoze
+- Iron Defense
 
-Sandslash
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Mamoswine @ Life Orb
+Level: 54
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Ice Fang
+- Ice Shard
+- Amnesia
 
-Sandslash
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Coalossal @ Leftovers
+Level: 54
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Rock Blast
+- Stealth Rock
 
 === TRAINER_CORY_2 ===
 Name: CORY
@@ -17405,17 +19619,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Whiscash @ Expert Belt
+Level: 45
+Ability: Oblivious
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Aqua Tail
+- Zen Headbutt
+- Rest
 
-Machop
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Wailord @ Expert Belt
+Level: 45
+Ability: Water Veil
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bounce
+- Astonish
+- Rest
 
-Tentacool
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Sharpedo @ Expert Belt
+Level: 45
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Night Slash
+- Aqua Jet
+- Agility
 
 === TRAINER_CORY_3 ===
 Name: CORY
@@ -17426,17 +19661,38 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 32
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Sharpedo @ Sharpedonite
+Level: 48
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Crunch
+- Night Slash
+- Agility
 
-Machop
-Level: 32
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Sharpedo @ Expert Belt
+Level: 48
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Crunch
+- Night Slash
+- Agility
 
-Tentacool
-Level: 32
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Quaquaval @ Expert Belt
+Level: 48
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Step
+- Aqua Cutter
+- Focus Energy
 
 === TRAINER_CORY_4 ===
 Name: CORY
@@ -17447,17 +19703,40 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Lapras @ Life Orb
+Level: 50
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Water Absorb
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Shard
+- Body Slam
+- Brine
+- Rain Dance
 
-Machop
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Sharpedo @ Life Orb
+Level: 50
+Ability: Rough Skin
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Crunch
+- Night Slash
+- Agility
 
-Tentacruel
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Quaquaval @ Life Orb
+Level: 50
+Ability: Torrent
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Step
+- Aqua Cutter
+- Focus Energy
 
 === TRAINER_CORY_5 ===
 Name: CORY
@@ -17468,17 +19747,39 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Milotic @ Leftovers
+Level: 53
+Tera Type: Water
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Machoke
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Basculegion @ Life Orb
+Level: 53
+Ability: Swift Swim
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Water Gun
+- Phantom Force
+- Soak
 
-Tentacruel
-Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Barraskewda @ Life Orb
+Level: 53
+Ability: Swift Swim
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Aqua Jet
+- Crunch
+- Agility
 
 === TRAINER_PABLO_2 ===
 Name: PABLO
@@ -17489,13 +19790,27 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Staryu
-Level: 37
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gengar @ Darkinium Z
+Level: 54
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Shadow Ball
+- Night Shade
+- Destiny Bond
 
-Staryu
-Level: 37
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Milotic @ Leftovers
+Level: 54
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
 === TRAINER_PABLO_3 ===
 Name: PABLO
@@ -17506,17 +19821,38 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Wingull
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Flygon @ Life Orb
+Level: 56
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Staryu
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Metagross @ Leftovers
+Level: 56
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
-Staryu
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Toxicroak @ Life Orb
+Level: 56
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
 === TRAINER_PABLO_4 ===
 Name: PABLO
@@ -17527,17 +19863,38 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Togekiss @ Life Orb
+Level: 58
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
-Staryu
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Flygon @ Life Orb
+Level: 58
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
-Staryu
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Metagross @ Leftovers
+Level: 58
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Zen Headbutt
+- Metal Claw
+- Bullet Punch
+- Scary Face
 
 === TRAINER_PABLO_5 ===
 Name: PABLO
@@ -17548,17 +19905,38 @@ Music: Swimmer
 Double Battle: No
 AI: Check Viability
 
-Pelipper
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lucario @ Life Orb
+Level: 61
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Close Combat
+- Swords Dance
 
-Starmie
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Haxorus @ Life Orb
+Level: 61
+Ability: Rivalry
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Breaking Swipe
+- Giga Impact
+- Swords Dance
 
-Starmie
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gallade @ Life Orb
+Level: 61
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
 === TRAINER_KOJI_2 ===
 Name: KOJI
@@ -17569,13 +19947,27 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Machoke
-Level: 37
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Lucario @ Life Orb
+Level: 54
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
-Machoke
-Level: 37
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gallade @ Life Orb
+Level: 54
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
 === TRAINER_KOJI_3 ===
 Name: KOJI
@@ -17586,17 +19978,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Makuhita
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Pawmot @ Life Orb
+Level: 56
+Ability: Volt Absorb
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Wild Charge
+- Spark
+- Agility
 
-Machoke
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Falinks @ Life Orb
+Level: 56
+Ability: Battle Armor
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Reversal
+- Megahorn
+- Bulk Up
 
-Machoke
-Level: 39
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Lucario @ Life Orb
+Level: 56
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_KOJI_4 ===
 Name: KOJI
@@ -17607,17 +20020,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Hariyama
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Falinks @ Life Orb
+Level: 58
+Ability: Battle Armor
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Reversal
+- Megahorn
+- Bulk Up
 
-Machoke
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Lucario @ Life Orb
+Level: 58
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
-Machoke
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gallade @ Life Orb
+Level: 58
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
 === TRAINER_KOJI_5 ===
 Name: KOJI
@@ -17628,17 +20062,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Hariyama
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gallade @ Life Orb
+Level: 61
+Ability: Steadfast
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Sword
+- Psycho Cut
+- Night Slash
+- Swords Dance
 
-Machamp
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Conkeldurr @ Life Orb
+Level: 61
+Ability: Guts
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Focus Punch
+- Superpower
+- Hammer Arm
+- Bulk Up
 
-Machamp
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Hawlucha @ Life Orb
+Level: 61
+Ability: Limber
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sky Attack
+- High Jump Kick
+- Bounce
+- Swords Dance
 
 === TRAINER_CRISTIN_2 ===
 Name: CRISTIN
@@ -17650,13 +20105,29 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Loudred
-Level: 35
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Corviknight @ Life Orb
+Level: 51
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Pressure
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Drill Peck
+- Steel Wing
+- Swagger
 
-Vigoroth
-Level: 35
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Flygon @ Life Orb
+Level: 51
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
 === TRAINER_CRISTIN_3 ===
 Name: CRISTIN
@@ -17668,17 +20139,39 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Gengar @ Life Orb
+Level: 54
+Tera Type: Ghost
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Night Shade
+- Dark Pulse
+- Destiny Bond
 
-Loudred
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Milotic @ Leftovers
+Level: 54
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Vigoroth
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Magnezone @ Life Orb
+Level: 54
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Flash Cannon
+- Thunder Shock
+- Thunder Wave
 
 === TRAINER_CRISTIN_4 ===
 Name: CRISTIN
@@ -17690,17 +20183,38 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
-Level: 39
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Metagross @ Normalium Z
+Level: 56
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Take Down
+- Zen Headbutt
+- Metal Claw
+- Scary Face
 
-Loudred
-Level: 39
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Toxicroak @ Life Orb
+Level: 56
+Ability: Anticipation
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Poison Sting
+- Astonish
+- Nasty Plot
 
-Vigoroth
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Lucario @ Life Orb
+Level: 56
+Ability: Steadfast
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Vacuum Wave
+- Final Gambit
+- Force Palm
+- Swords Dance
 
 === TRAINER_CRISTIN_5 ===
 Name: CRISTIN
@@ -17712,17 +20226,38 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
-Level: 41
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Mamoswine @ Life Orb
+Level: 58
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Ice Fang
+- Ice Shard
+- Amnesia
 
-Exploud
-Level: 41
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Roserade @ Life Orb
+Level: 58
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
-Slaking
-Level: 41
-IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+Togekiss @ Life Orb
+Level: 58
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_FERNANDO_2 ===
 Name: FERNANDO
@@ -17733,17 +20268,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Electrike
-Level: 35
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Rotom @ Life Orb
+Level: 51
+Ability: Levitate
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Shock Wave
+- Thunder Shock
+- Substitute
 
-Electrike
-Level: 35
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Manectric @ Life Orb
+Level: 51
+Ability: Static
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Shock Wave
+- Wild Charge
+- Thunder Wave
 
-Loudred
-Level: 35
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Vikavolt @ Life Orb
+Level: 51
+Ability: Levitate
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Discharge
+- Mud-Slap
+- Sticky Web
 
 === TRAINER_FERNANDO_3 ===
 Name: FERNANDO
@@ -17754,17 +20310,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Electrike
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Magnezone @ Life Orb
+Level: 54
+Ability: Magnet Pull
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Flash Cannon
+- Thunder Shock
+- Thunder Wave
 
-Manectric
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Ampharos @ Life Orb
+Level: 54
+Ability: Static
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Thunder Shock
+- Electro Ball
+- Thunder Wave
 
-Loudred
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Pawmot @ Life Orb
+Level: 54
+Ability: Volt Absorb
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Wild Charge
+- Spark
+- Agility
 
 === TRAINER_FERNANDO_4 ===
 Name: FERNANDO
@@ -17775,17 +20352,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Manectric
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Luxray @ Life Orb
+Level: 56
+Ability: Rivalry
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spark
+- Crunch
+- Bite
+- Thunder Wave
 
-Manectric
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Bellibolt @ Life Orb
+Level: 56
+Ability: Electromorphosis
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Thunder Shock
+- Mud Shot
+- Electric Terrain
 
-Loudred
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Toxtricity @ Life Orb
+Level: 56
+Ability: Punk Rock
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Belch
+- Overdrive
+- Discharge
+- Toxic
 
 === TRAINER_FERNANDO_5 ===
 Name: FERNANDO
@@ -17796,17 +20394,38 @@ Music: Intense
 Double Battle: No
 AI: Check Viability
 
-Manectric
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Rotom @ Life Orb
+Level: 58
+Ability: Levitate
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Shock Wave
+- Thunder Shock
+- Substitute
 
-Manectric
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Ampharos @ Life Orb
+Level: 58
+Ability: Static
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Thunder Shock
+- Electro Ball
+- Thunder Wave
 
-Exploud
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Vikavolt @ Life Orb
+Level: 58
+Ability: Levitate
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Discharge
+- Mud-Slap
+- Agility
 
 === TRAINER_SAWYER_2 ===
 Name: SAWYER
@@ -17817,13 +20436,27 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Geodude
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Camerupt @ Expert Belt
+Level: 41
+Ability: Magma Armor
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Eruption
+- Earth Power
+- Lava Plume
+- Yawn
 
-Numel
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Flygon @ Expert Belt
+Level: 41
+Ability: Levitate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Claw
+- Dragon Tail
+- Superpower
+- Dragon Dance
 
 === TRAINER_SAWYER_3 ===
 Name: SAWYER
@@ -17834,17 +20467,38 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Machop
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Aggron @ Aggronite
+Level: 43
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Numel
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Aggron @ Leftovers
+Level: 43
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Rock Slide
+- Metal Claw
+- Protect
 
-Graveler
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Gigalith @ Leftovers
+Level: 43
+Ability: Sturdy
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Smack Down
+- Rock Blast
+- Stealth Rock
 
 === TRAINER_SAWYER_4 ===
 Name: SAWYER
@@ -17855,17 +20509,40 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Machop
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Coalossal @ Leftovers
+Level: 45
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Steam Engine
+Nature: Impish
+EVs: 252 HP / 252 Def / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Smack Down
+- Flame Charge
+- Heat Crash
+- Stealth Rock
 
-Numel
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Mamoswine @ Expert Belt
+Level: 45
+Ability: Oblivious
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Ice Shard
+- Take Down
+- Amnesia
 
-Graveler
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Gliscor @ Leftovers
+Level: 45
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- X-Scissor
+- Poison Jab
+- Screech
 
 === TRAINER_SAWYER_5 ===
 Name: SAWYER
@@ -17876,17 +20553,39 @@ Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Machoke
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Golurk @ Expert Belt
+Level: 49
+Tera Type: Ground
+Ability: Iron Fist
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Horsepower
+- Phantom Force
+- Stomping Tantrum
+- Iron Defense
 
-Camerupt
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gliscor @ Leftovers
+Level: 49
+Ability: Hyper Cutter
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- X-Scissor
+- Poison Jab
+- Screech
 
-Golem
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Garganacl @ Leftovers
+Level: 49
+Ability: Purifying Salt
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Rock Throw
+- Salt Cure
+- Stealth Rock
 
 === TRAINER_GABRIELLE_2 ===
 Name: GABRIELLE
@@ -17897,29 +20596,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Skitty
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Milotic @ Waterium Z
+Level: 47
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Mightyena
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Sylveon @ Leftovers
+Level: 47
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Disarming Voice
+- Swift
+- Psych Up
 
-Zigzagoon
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Snorlax @ Expert Belt
+Level: 47
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bite
+- Tackle
+- Rest
 
-Lotad
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Leafeon @ Leftovers
+Level: 47
+Ability: Leaf Guard
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Take Down
+- Bite
+- Swords Dance
 
-Seedot
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gardevoir @ Expert Belt
+Level: 47
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
-Taillow
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Togekiss @ Expert Belt
+Level: 47
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
 === TRAINER_GABRIELLE_3 ===
 Name: GABRIELLE
@@ -17930,29 +20671,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Skitty
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Azumarill @ Expert Belt
+Level: 49
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Bounce
+- Rain Dance
 
-Mightyena
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Tsareena @ Expert Belt
+Level: 49
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Aromatic Mist
 
-Linoone
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Milotic @ Leftovers
+Level: 49
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Lombre
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Sylveon @ Leftovers
+Level: 49
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Disarming Voice
+- Swift
+- Psych Up
 
-Nuzleaf
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Snorlax @ Expert Belt
+Level: 49
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bite
+- Tackle
+- Rest
 
-Taillow
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Leafeon @ Leftovers
+Level: 49
+Ability: Leaf Guard
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Take Down
+- Bite
+- Swords Dance
 
 === TRAINER_GABRIELLE_4 ===
 Name: GABRIELLE
@@ -17963,29 +20746,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Delcatty
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Togekiss @ Life Orb
+Level: 51
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
-Mightyena
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Arcanine @ Life Orb
+Level: 51
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
-Linoone
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Azumarill @ Life Orb
+Level: 51
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Superpower
+- Rain Dance
 
-Lombre
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Tsareena @ Life Orb
+Level: 51
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Aromatic Mist
 
-Nuzleaf
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Milotic @ Leftovers
+Level: 51
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Swellow
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Sylveon @ Leftovers
+Level: 51
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Draining Kiss
+- Disarming Voice
+- Psych Up
 
 === TRAINER_GABRIELLE_5 ===
 Name: GABRIELLE
@@ -17996,29 +20821,71 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Delcatty
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Snorlax @ Life Orb
+Level: 54
+Ability: Immunity
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Bite
+- Tackle
+- Rest
 
-Mightyena
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Leafeon @ Leftovers
+Level: 54
+Ability: Leaf Guard
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Take Down
+- Bite
+- Swords Dance
 
-Linoone
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gardevoir @ Life Orb
+Level: 54
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
-Ludicolo
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Togekiss @ Life Orb
+Level: 54
+Ability: Hustle
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Tri Attack
+- Ancient Power
+- Charm
 
-Shiftry
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Arcanine @ Life Orb
+Level: 54
+Ability: Intimidate
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Rock Slide
+- Fire Fang
+- Agility
 
-Swellow
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Azumarill @ Life Orb
+Level: 54
+Ability: Thick Fat
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Aqua Tail
+- Superpower
+- Rain Dance
 
 === TRAINER_THALIA_2 ===
 Name: THALIA
@@ -18029,13 +20896,27 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Wailmer
-Level: 34
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Gardevoir @ Life Orb
+Level: 50
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Calm Mind
 
-Horsea
-Level: 34
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Primarina @ Life Orb
+Level: 50
+Ability: Torrent
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sparkling Aria
+- Bubble Beam
+- Water Gun
+- Misty Terrain
 
 === TRAINER_THALIA_3 ===
 Name: THALIA
@@ -18046,17 +20927,38 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Luvdisc
-Level: 36
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Roserade @ Life Orb
+Level: 53
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
-Wailmer
-Level: 36
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Milotic @ Leftovers
+Level: 53
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Seadra
-Level: 36
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Tsareena @ Life Orb
+Level: 53
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Aromatic Mist
 
 === TRAINER_THALIA_4 ===
 Name: THALIA
@@ -18067,17 +20969,38 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Luvdisc
-Level: 38
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Roserade @ Life Orb
+Level: 55
+Ability: Natural Cure
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Magical Leaf
+- Mega Drain
+- Leech Seed
 
-Wailmer
-Level: 38
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Milotic @ Leftovers
+Level: 55
+Ability: Marvel Scale
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Water Gun
+- Twister
+- Recover
 
-Seadra
-Level: 38
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Tsareena @ Life Orb
+Level: 55
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Aromatic Mist
 
 === TRAINER_THALIA_5 ===
 Name: THALIA
@@ -18088,17 +21011,38 @@ Music: Female
 Double Battle: No
 AI: Check Viability
 
-Luvdisc
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Gardevoir @ Gardevoirite
+Level: 57
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dream Eater
+- Psychic
+- Psybeam
+- Calm Mind
 
-Wailord
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Tsareena @ Life Orb
+Level: 57
+Ability: Leaf Guard
+Nature: Adamant
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Razor Leaf
+- Stomp
+- Aromatic Mist
 
-Kingdra
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Sylveon @ Leftovers
+Level: 57
+Ability: Cute Charm
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Draining Kiss
+- Disarming Voice
+- Psych Up
 
 === TRAINER_MARIELA ===
 Name: MARIELA
@@ -18108,9 +21052,18 @@ Gender: Female
 Music: Intense
 Double Battle: No
 
-Chimecho
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gengar @ Life Orb
+Level: 58
+Dynamax Level: 10
+Gigantamax: Yes
+Ability: Cursed Body
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Night Shade
+- Dark Pulse
+- Destiny Bond
 
 === TRAINER_ALVARO ===
 Name: ALVARO
@@ -18120,13 +21073,28 @@ Gender: Male
 Music: Intense
 Double Battle: No
 
-Banette
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Farigiraf @ Life Orb
+Level: 58
+Tera Type: Normal
+Ability: Cud Chew
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Psybeam
+- Confusion
+- Nasty Plot
 
-Kadabra
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Reuniclus @ Life Orb
+Level: 58
+Ability: Overcoat
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Future Sight
+- Psychic
+- Psyshock
+- Recover
 
 === TRAINER_EVERETT ===
 Name: EVERETT
@@ -18136,9 +21104,16 @@ Gender: Male
 Music: Rich
 Double Battle: No
 
-Wobbuffet
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir @ Psychium Z
+Level: 58
+Ability: Synchronize
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dream Eater
+- Psychic
+- Psybeam
+- Calm Mind
 
 === TRAINER_RED ===
 Name: RED

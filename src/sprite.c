@@ -7,6 +7,9 @@
 #include "text.h"
 #include "battle_anim.h"
 #include "test/test.h"
+#if !RELEASE && !TESTING
+#include "mini_printf.h"
+#endif
 
 #define MAX_SPRITE_COPY_REQUESTS 64
 
@@ -30,6 +33,53 @@
 }
 
 #define SPRITE_TILE_IS_ALLOCATED(n) ((sSpriteTileAllocBitmap[(n) / 8] >> ((n) % 8)) & 1)
+
+#if !RELEASE && !TESTING
+// The crash screen can show only 18 rows, so pause between small batches.
+// Press START once per page; after the final page the fatal crash screen appears.
+static s32 SpriteDiagnosticSnprintf(char *buffer, u32 bufferSize, const char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    s32 length = mini_vsnprintf(buffer, bufferSize, format, args);
+    va_end(args);
+    return length;
+}
+
+static void ShowSpriteSlotDiagnostics(void)
+{
+    enum { ROWS_PER_PAGE = 6, BUFFER_SIZE = 240 };
+    char page[BUFFER_SIZE];
+    u32 pageCount = (MAX_SPRITES + ROWS_PER_PAGE - 1) / ROWS_PER_PAGE;
+
+    for (u32 pageNum = 0; pageNum < pageCount; pageNum++)
+    {
+        u32 first = pageNum * ROWS_PER_PAGE;
+        u32 end = first + ROWS_PER_PAGE;
+        if (end > MAX_SPRITES)
+            end = MAX_SPRITES;
+
+        u32 length = 0;
+        page[0] = '\0';
+        for (u32 i = first; i < end; i++)
+        {
+            struct Sprite *sprite = &gSprites[i];
+            if (!sprite->inUse)
+                continue;
+
+            length += SpriteDiagnosticSnprintf(page + length, sizeof(page) - length,
+                                               "%d %08X %08X %d\n", i,
+                                               (u32)(uintptr_t)sprite->template,
+                                               (u32)(uintptr_t)sprite->callback,
+                                               sprite->data[3]);
+        }
+        page[sizeof(page) - 1] = '\0';
+
+        assertf(FALSE, "Sprite slots %d-%d of 64\nindex template callback d3\n%s\nSTART: next page",
+                first, end - 1, page);
+    }
+}
+#endif
 
 #if TESTING
 EWRAM_DATA bool32 gLoadFail = FALSE;
@@ -445,7 +495,10 @@ u32 CreateSprite(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpri
                 used++;
         }
 
-        fatal_assertf(FALSE, "Out of sprite slots: %u/64 used", used);
+#if !RELEASE && !TESTING
+        ShowSpriteSlotDiagnostics();
+#endif
+        fatal_assertf(FALSE, "Out of sprite slots: %d/64 used", used);
     }
 
     return spriteId;

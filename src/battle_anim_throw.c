@@ -1774,7 +1774,7 @@ static void FanOutBallOpenParticles_Step1(struct Sprite *sprite)
     sprite->data[0] = (sprite->data[0] + sprite->data[4]) & 0xFF;
     sprite->data[1] += sprite->data[5];
     sprite->data[2] += sprite->data[6];
-    if (++sprite->data[3] == 51)
+    if (++sprite->data[3] >= 50)
         DestroyBallOpenAnimationParticle(sprite);
 }
 
@@ -1816,7 +1816,7 @@ static void RepeatBallOpenParticleAnimation_Step1(struct Sprite *sprite)
     sprite->data[0] = (sprite->data[0] + 6) & 0xFF;
     sprite->data[1]++;
     sprite->data[2]++;
-    if (++sprite->data[3] == 51)
+    if (++sprite->data[3] >= 50)
         DestroyBallOpenAnimationParticle(sprite);
 }
 
@@ -1904,7 +1904,7 @@ static void PremierBallOpenParticleAnimation_Step1(struct Sprite *sprite)
     sprite->data[0] = (sprite->data[0] + 10) & 0xFF;
     sprite->data[1]++;
     sprite->data[2]++;
-    if (++sprite->data[3] == 51)
+    if (++sprite->data[3] >= 50)
         DestroyBallOpenAnimationParticle(sprite);
 }
 
