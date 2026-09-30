@@ -565,6 +565,11 @@ gSongTable::
 	song mus_rg_trainer_tower, MUSIC_PLAYER_BGM, 0
 	song mus_rg_slow_pallet, MUSIC_PLAYER_BGM, 0
 	song mus_rg_teachy_tv_menu, MUSIC_PLAYER_BGM, 0
+	song mus_encounter_queen, MUSIC_PLAYER_BGM, 0
+	song mus_encounter_wallace, MUSIC_PLAYER_BGM, 0
+	song mus_encounter_elvis, MUSIC_PLAYER_BGM, 0
+	song mus_encounter_unborn, MUSIC_PLAYER_BGM, 0
+	song mus_championsarchives, MUSIC_PLAYER_BGM, 0
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2
 	song ph_trap_solo, MUSIC_PLAYER_SE2, 2
