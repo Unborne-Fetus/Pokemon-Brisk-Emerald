@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE135_ARCHIVES",
   "name": "Route135_Archives",
   "layout": "LAYOUT_ROUTE135_ARCHIVES",
-  "music": "MUS_SEALED_CHAMBER",
+  "music": "MUS_CHAMPIONSARCHIVES",
   "region_map_section": "MAPSEC_ROUTE_135",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
