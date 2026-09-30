@@ -15,17 +15,65 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
+        timeout-minutes: 15
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             build-essential \
             libpng-dev \
             gcc-arm-none-eabi \
-            binutils-arm-none-eabi
+            binutils-arm-none-eabi \
+            zip
 
       - name: Build Emerald
         run: make -j$(nproc)
 
       - name: Rename ROM
         run: |
-          find . -maxdepth 3 -type f -name "*.gba" -print
+          ROM=$(find . -maxdepth 3 -type f -name "*.gba" ! -name "baserom.gba" | head -n 1)
+
+          if [ -z "$ROM" ]; then
+            echo "ERROR: Could not find the compiled GBA ROM."
+            exit 1
+          fi
+
+          echo "Found compiled ROM: $ROM"
+          cp "$ROM" "Pokemon Brisk Emerald.gba"
+
+      - name: Build flips
+        run: |
+          git clone --depth 1 https://github.com/Alcaro/Flips.git /tmp/flips
+          make -C /tmp/flips
+          sudo cp /tmp/flips/flips /usr/local/bin/flips
+
+      - name: Create BPS patch
+        run: |
+          if [ -f "baserom.gba" ]; then
+            flips --create --bps \
+              "baserom.gba" \
+              "Pokemon Brisk Emerald.gba" \
+              "Pokemon Brisk Emerald.bps"
+          else
+            echo "baserom.gba was not found."
+            echo "Skipping BPS creation."
+          fi
+
+      - name: Create release ZIP
+        run: |
+          mkdir -p release
+
+          cp "Pokemon Brisk Emerald.gba" release/
+
+          if [ -f "Pokemon Brisk Emerald.bps" ]; then
+            cp "Pokemon Brisk Emerald.bps" release/
+          fi
+
+          cd release
+          zip "../Pokemon Brisk Emerald.zip" ./*
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pokemon-Brisk-Emerald
+          path: Pokemon Brisk Emerald.zip
+          if-no-files-found: error
