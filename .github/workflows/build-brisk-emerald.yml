@@ -22,8 +22,7 @@ jobs:
             build-essential \
             libpng-dev \
             gcc-arm-none-eabi \
-            binutils-arm-none-eabi \
-            zip
+            binutils-arm-none-eabi
 
       - name: Build Emerald
         run: make -j$(nproc)
@@ -40,40 +39,9 @@ jobs:
           echo "Found compiled ROM: $ROM"
           cp "$ROM" "Pokemon Brisk Emerald.gba"
 
-      - name: Build flips
-        run: |
-          git clone --depth 1 https://github.com/Alcaro/Flips.git /tmp/flips
-          make -C /tmp/flips
-          sudo cp /tmp/flips/flips /usr/local/bin/flips
-
-      - name: Create BPS patch
-        run: |
-          if [ -f "baserom.gba" ]; then
-            flips --create --bps \
-              "baserom.gba" \
-              "Pokemon Brisk Emerald.gba" \
-              "Pokemon Brisk Emerald.bps"
-          else
-            echo "baserom.gba was not found."
-            echo "Skipping BPS creation."
-          fi
-
-      - name: Create release ZIP
-        run: |
-          mkdir -p release
-
-          cp "Pokemon Brisk Emerald.gba" release/
-
-          if [ -f "Pokemon Brisk Emerald.bps" ]; then
-            cp "Pokemon Brisk Emerald.bps" release/
-          fi
-
-          cd release
-          zip "../Pokemon Brisk Emerald.zip" ./*
-
-      - name: Upload build artifact
+      - name: Upload GBA
         uses: actions/upload-artifact@v4
         with:
           name: Pokemon-Brisk-Emerald
-          path: Pokemon Brisk Emerald.zip
+          path: Pokemon Brisk Emerald.gba
           if-no-files-found: error
