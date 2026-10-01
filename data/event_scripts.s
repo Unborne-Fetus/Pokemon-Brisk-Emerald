@@ -1769,3 +1769,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route142/scripts.inc"
 
 	.include "data/maps/Route143/scripts.inc"
+
+	.include "data/maps/NewMauville_Inside_2/scripts.inc"

@@ -9488,6 +9488,17 @@
       "border_filepath": "data/layouts/Route143/border.bin",
       "blockdata_filepath": "data/layouts/Route143/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NEW_MAUVILLE_INSIDE_2",
+      "name": "NewMauville_Inside_2_Layout",
+      "width": 41,
+      "height": 41,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/NewMauville_Inside_2/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_Inside_2/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

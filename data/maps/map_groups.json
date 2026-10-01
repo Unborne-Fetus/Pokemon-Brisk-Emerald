@@ -485,7 +485,8 @@
     "MeteorFalls_URSHIFU",
     "TerraCave_Tera",
     "EvolutionCave_2",
-    "UnborneRoom"
+    "UnborneRoom",
+    "NewMauville_Inside_2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
