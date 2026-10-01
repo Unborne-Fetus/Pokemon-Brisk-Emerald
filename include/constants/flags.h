@@ -529,7 +529,7 @@
 #define FLAG_DEFEATED_TERAPAGOS              0x1DF // Unused Flag
 #define FLAG_CAUGHT_KUBFU_ONCE               0x1E0
 #define FLAG_DEFEATED_URSALUNA               0x1E1
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
+#define FLAG_HIDE_NEWMAUVILLE_REGIELEKI      0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
@@ -1336,6 +1336,7 @@
 #define FLAG_DEFEATED_ELITE_4_DRAKE                                 0x4FE
 
 #define FLAG_HIDE_TERRA_CAVE_TERAPAGOS                         0x4FF
+                       
 
 // Trainer Flags
 // Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused

@@ -9477,6 +9477,17 @@
       "border_filepath": "data/layouts/Route142/border.bin",
       "blockdata_filepath": "data/layouts/Route142/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE143",
+      "name": "Route143_Layout",
+      "width": 29,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_EverGrande",
+      "border_filepath": "data/layouts/Route143/border.bin",
+      "blockdata_filepath": "data/layouts/Route143/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

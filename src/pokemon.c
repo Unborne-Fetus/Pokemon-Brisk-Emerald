@@ -5102,6 +5102,30 @@ u16 GetBattleBGM(void)
     {
         enum TrainerClassID trainerClass;
 
+    // Pokémon Brisk Emerald custom trainer battle themes
+        // Pokémon Brisk Emerald custom trainer battle themes
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL)))
+        {
+            switch (TRAINER_BATTLE_PARAM.opponentA)
+            {
+            case TRAINER_UNBORNE:
+                return MUS_ENCOUNTER_UNBORN;
+
+            case TRAINER_WALLACE:
+                return MUS_ENCOUNTER_WALLACE;
+
+            case TRAINER_PRESLEY:
+                return MUS_ENCOUNTER_ELVIS;
+
+            case TRAINER_DALTON_1:
+            case TRAINER_DALTON_2:
+            case TRAINER_DALTON_3:
+            case TRAINER_DALTON_4:
+            case TRAINER_DALTON_5:
+                return MUS_ENCOUNTER_QUEEN;
+            }
+        }
+
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             trainerClass = GetFrontierOpponentClass(TRAINER_BATTLE_PARAM.opponentA);
         else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)

@@ -261,3 +261,24 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped:
 	.string "… … … … … … … …\p"
 	.string "The generator appears to have\n"
 	.string "stopped…$"
+
+NewMauville_Inside_EventScript_REGIELEKI::
+    lockall
+    waitse
+    playmoncry SPECIES_REGIELEKI, CRY_MODE_ENCOUNTER
+    delay 40
+    waitmoncry
+    setwildbattle SPECIES_REGIELEKI, 70
+    special BattleSetup_StartLegendaryBattle
+
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauville_Inside_EventScript_CaughtREGIELEKI
+
+    releaseall
+    end
+
+NewMauville_Inside_EventScript_CaughtREGIELEKI::
+    setflag FLAG_HIDE_NEWMAUVILLE_REGIELEKI
+    removeobject VAR_LAST_TALKED
+    releaseall
+    end
