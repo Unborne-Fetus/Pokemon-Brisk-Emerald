@@ -9499,6 +9499,17 @@
       "border_filepath": "data/layouts/NewMauville_Inside_2/border.bin",
       "blockdata_filepath": "data/layouts/NewMauville_Inside_2/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_SHOAL_CAVE_LOW_TIDE_ICE_ROOM_2",
+      "name": "ShoalCave_LowTideIceRoom_2_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ShoalCave_LowTideIceRoom_2/border.bin",
+      "blockdata_filepath": "data/layouts/ShoalCave_LowTideIceRoom_2/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

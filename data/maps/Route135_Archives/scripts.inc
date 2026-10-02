@@ -57,7 +57,7 @@ Route135_Archives_EventScript_Cynthia::
 
 Route135_Archives_EventScript_CynthiaDefeated::
 	msgbox Route135_Archives_Text_CynthiaPostBattleSpeech, MSGBOX_DEFAULT
-	givemon SPECIES_ARCEUS, 50
+	givemon SPECIES_GENESECT, 50
 	release
 	end
 

@@ -11,13 +11,13 @@
     "gMapGroup_IndoorPetalburg",
     "gMapGroup_IndoorSlateport",
     "gMapGroup_IndoorMauville",
-    "gMapGroup_IndoorRustboro",
     "gMapGroup_IndoorFortree",
     "gMapGroup_IndoorLilycove",
     "gMapGroup_IndoorMossdeep",
     "gMapGroup_IndoorSootopolis",
     "gMapGroup_IndoorEverGrande",
     "gMapGroup_IndoorRoute104",
+    "gMapGroup_IndoorRustboro",
     "gMapGroup_IndoorRoute111",
     "gMapGroup_IndoorRoute112",
     "gMapGroup_IndoorRoute114",
@@ -241,25 +241,6 @@
     "MauvilleCity_PokemonCenter_2F",
     "MauvilleCity_Mart"
   ],
-  "gMapGroup_IndoorRustboro": [
-    "RustboroCity_DevonCorp_1F",
-    "RustboroCity_DevonCorp_2F",
-    "RustboroCity_DevonCorp_3F",
-    "RustboroCity_Gym",
-    "RustboroCity_PokemonSchool",
-    "RustboroCity_PokemonCenter_1F",
-    "RustboroCity_PokemonCenter_2F",
-    "RustboroCity_Mart",
-    "RustboroCity_Flat1_1F",
-    "RustboroCity_Flat1_2F",
-    "RustboroCity_House1",
-    "RustboroCity_CuttersHouse",
-    "RustboroCity_House2",
-    "RustboroCity_Flat2_1F",
-    "RustboroCity_Flat2_2F",
-    "RustboroCity_Flat2_3F",
-    "RustboroCity_House3"
-  ],
   "gMapGroup_IndoorFortree": [
     "FortreeCity_House1",
     "FortreeCity_Gym",
@@ -349,6 +330,25 @@
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
     "Route104_PrettyPetalFlowerShop"
+  ],
+  "gMapGroup_IndoorRustboro": [
+    "RustboroCity_DevonCorp_1F",
+    "RustboroCity_DevonCorp_2F",
+    "RustboroCity_DevonCorp_3F",
+    "RustboroCity_Gym",
+    "RustboroCity_PokemonSchool",
+    "RustboroCity_PokemonCenter_1F",
+    "RustboroCity_PokemonCenter_2F",
+    "RustboroCity_Mart",
+    "RustboroCity_Flat1_1F",
+    "RustboroCity_Flat1_2F",
+    "RustboroCity_House1",
+    "RustboroCity_CuttersHouse",
+    "RustboroCity_House2",
+    "RustboroCity_Flat2_1F",
+    "RustboroCity_Flat2_2F",
+    "RustboroCity_Flat2_3F",
+    "RustboroCity_House3"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",
@@ -486,7 +486,8 @@
     "TerraCave_Tera",
     "EvolutionCave_2",
     "UnborneRoom",
-    "NewMauville_Inside_2"
+    "NewMauville_Inside_2",
+    "ShoalCave_LowTideIceRoom_2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
