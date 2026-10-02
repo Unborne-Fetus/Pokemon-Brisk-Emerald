@@ -34,91 +34,7 @@
 #include "constants/songs.h"
 #include "config/pokedex_plus_hgss.h"
 
-enum
-{
-    PAGE_MAIN,
-    PAGE_INFO,
-    PAGE_SEARCH,
-    PAGE_SEARCH_RESULTS,
-    PAGE_UNK,
-    PAGE_AREA,
-    PAGE_CRY,
-    PAGE_SIZE
-};
 
-enum
-{
-    AREA_SCREEN,
-    CRY_SCREEN,
-    SIZE_SCREEN,
-    CANCEL_SCREEN,
-    SCREEN_COUNT
-};
-
-enum
-{
-    SEARCH_NAME,
-    SEARCH_COLOR,
-    SEARCH_TYPE_LEFT,
-    SEARCH_TYPE_RIGHT,
-    SEARCH_ORDER,
-    SEARCH_MODE,
-    SEARCH_OK,
-    SEARCH_COUNT
-};
-
-enum
-{
-    SEARCH_TOPBAR_SEARCH,
-    SEARCH_TOPBAR_SHIFT,
-    SEARCH_TOPBAR_CANCEL,
-    SEARCH_TOPBAR_COUNT
-};
-
-enum
-{
-   ORDER_NUMERICAL,
-   ORDER_ALPHABETICAL,
-   ORDER_HEAVIEST,
-   ORDER_LIGHTEST,
-   ORDER_TALLEST,
-   ORDER_SMALLEST
-};
-
-enum
-{
-    NAME_ABC = 1,
-    NAME_DEF,
-    NAME_GHI,
-    NAME_JKL,
-    NAME_MNO,
-    NAME_PQR,
-    NAME_STU,
-    NAME_VWX,
-    NAME_YZ,
-};
-
-enum {
-    WIN_INFO,
-    WIN_FOOTPRINT,
-    WIN_CRY_WAVE,
-    WIN_VU_METER,
-};
-
-// For scrolling search parameter
-#define MAX_SEARCH_PARAM_ON_SCREEN   6
-#define MAX_SEARCH_PARAM_CURSOR_POS  (MAX_SEARCH_PARAM_ON_SCREEN - 1)
-
-#define MAX_MONS_ON_SCREEN 4
-
-#define LIST_SCROLL_STEP         16
-
-#define POKEBALL_ROTATION_TOP    64
-#define POKEBALL_ROTATION_BOTTOM (POKEBALL_ROTATION_TOP - 16)
-
-// Coordinates of the PokÃ©mon sprite on its page (info/cry screens)
-#define MON_PAGE_X 48
-#define MON_PAGE_Y 56
 
 EWRAM_DATA struct PokedexView *sPokedexView = NULL;
 static EWRAM_DATA u16 sLastSelectedPokemon = 0;
@@ -162,12 +78,6 @@ struct SearchMenuItem
     u8 selectionBgWidth;
 };
 
-struct PokedexListItem
-{
-    u16 dexNum;
-    u16 seen:1;
-    u16 owned:1;
-};
 
 
 
@@ -712,7 +622,7 @@ const struct SpriteTemplate sHoennNationalTextSpriteTemplate =
     .callback = SpriteCB_SeenOwnInfo,
 };
 
-static const struct SpriteTemplate sHoennDexSeenOwnNumberSpriteTemplate =
+const struct SpriteTemplate sHoennDexSeenOwnNumberSpriteTemplate =
 {
     .tileTag = TAG_DEX_INTERFACE,
     .paletteTag = TAG_DEX_INTERFACE,
@@ -752,8 +662,8 @@ static const struct SpritePalette sInterfaceSpritePalette[] =
 };
 
 // By scroll speed. Last element of each unused
-static const u8 sScrollMonIncrements[] = {4, 8, 16, 32, 32};
-static const u8 sScrollTimers[] = {8, 4, 2, 1, 1};
+const u8 sScrollMonIncrements[] = {4, 8, 16, 32, 32};
+const u8 sScrollTimers[] = {8, 4, 2, 1, 1};
 
 const struct BgTemplate sPokedex_BgTemplate[] =
 {
@@ -818,7 +728,7 @@ ALIGNED(4) static const u8 sExpandedPlaceholder_PokedexDescription[] = _("");
 
 static const u16 sSizeScreenSilhouette_Pal[] = INCGFX_U16("graphics/pokedex/size_silhouette.pal", ".gbapal");
 
-static const struct BgTemplate sInfoScreen_BgTemplate[] =
+const struct BgTemplate sInfoScreen_BgTemplate[] =
 {
     {
         .bg = 0,
