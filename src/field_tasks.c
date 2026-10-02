@@ -74,7 +74,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
-    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback
+    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback,
     [STEP_CB_TIMED_RIPPLE]      = TimedRipplePerStepCallback
 };
 

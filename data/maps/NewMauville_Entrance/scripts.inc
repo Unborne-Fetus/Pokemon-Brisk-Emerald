@@ -56,3 +56,26 @@ NewMauville_Entrance_Text_UsedBasementKey:
 	.string "{PLAYER} used the BASEMENT KEY.\p"
 	.string "The door opened!$"
 
+
+
+
+NewMauville_Entrance_EventScript_ZERAORA::
+    lockall
+    waitse
+    playmoncry SPECIES_ZERAORA, CRY_MODE_ENCOUNTER
+    delay 40
+    waitmoncry
+    setwildbattle SPECIES_ZERAORA, 70
+    special BattleSetup_StartLegendaryBattle
+
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauville_Entrance_EventScript_CaughtZERAORA
+
+    releaseall
+    end
+
+NewMauville_Entrance_EventScript_CaughtZERAORA::
+    setflag FLAG_HIDE_NEWMAUVILLE_ZERAORA
+    removeobject VAR_LAST_TALKED
+    releaseall
+    end

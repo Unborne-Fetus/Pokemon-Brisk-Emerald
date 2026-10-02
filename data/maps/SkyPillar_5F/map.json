@@ -16,15 +16,15 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 3,
-      "y": 1,
+      "x": 4,
+      "y": 2,
       "elevation": 3,
       "dest_map": "MAP_SKY_PILLAR_4F",
       "dest_warp_id": "2"
     },
     {
-      "x": 10,
-      "y": 1,
+      "x": 11,
+      "y": 2,
       "elevation": 3,
       "dest_map": "MAP_SKY_PILLAR_TOP",
       "dest_warp_id": "0"

@@ -181,13 +181,15 @@ void FreezeForApproachingTrainers(void)
     else
     {
         FreezeObjectEventsExceptOne(trainerObjectId1);
+
+        // Stop the trainer's autonomous movement immediately so the
+        // trainer-approach sequence can take control.
+        ObjectEventClearHeldMovementIfActive(&gObjectEvents[trainerObjectId1]);
+        FreezeObjectEvent(&gObjectEvents[trainerObjectId1]);
+
         taskId = CreateTask(Task_FreezeObjectAndPlayer, 80);
         gTasks[taskId].tObjectId = trainerObjectId1;
-        if (!gObjectEvents[trainerObjectId1].singleMovementActive)
-        {
-            FreezeObjectEvent(&gObjectEvents[trainerObjectId1]);
-            gTasks[taskId].tObjectFrozen = TRUE;
-        }
+        gTasks[taskId].tObjectFrozen = TRUE;
     }
     if (followerObj) // Unfreeze follower so it can move behind player
         UnfreezeObjectEvent(followerObj);
