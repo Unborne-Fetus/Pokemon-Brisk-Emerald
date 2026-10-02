@@ -2388,7 +2388,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon - 1);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x60, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0xAB, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = -32;
     }
@@ -2397,7 +2397,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x60, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0xAB, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = 0;
     }
@@ -2406,7 +2406,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon + 1);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x60, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0xAB, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = 32;
     }
