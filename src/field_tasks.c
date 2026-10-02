@@ -1,6 +1,10 @@
 #include "global.h"
 #include "bike.h"
 #include "clock.h"
+#include "event_object_movement.h"
+#include "field_effect.h"
+#include "field_weather.h"
+#include "random.h"
 #include "event_data.h"
 #include "field_camera.h"
 #include "field_effect_helpers.h"
@@ -20,6 +24,8 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
+#include "constants/field_effects.h"
+#include "constants/weather.h"
 
 /*  This file handles some persistent tasks that run in the overworld.
  *  - Task_RunTimeBasedEvents: Periodically updates local time and RTC events. Also triggers ambient cries.
@@ -55,6 +61,7 @@ static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void IcefallCaveIcePerStepCallback(u8);
+static void TimedRipplePerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -68,6 +75,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
     [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback
+    [STEP_CB_TIMED_RIPPLE]      = TimedRipplePerStepCallback
 };
 
 // The positions of each map space with crackable ice in Icefall Cave.
@@ -461,6 +469,67 @@ static void PacifidlogBridgePerStepCallback(u8 taskId)
 #undef tToRaiseX
 #undef tToRaiseY
 #undef tDelay
+
+#define tState data[1]
+
+#define FREQ_RIPPLE 20
+#define WEATHER_MULTIPLIER 10
+
+static void TimedRipplePerStepCallback(u8 taskId)
+{
+    s16 x, y, rippleIncrement, xTarget, yTarget;
+    s16 *data = gTasks[taskId].data;
+
+    // Increase ripple frequency during rain.
+    rippleIncrement = 1;
+
+    if (GetCurrentWeather() == WEATHER_RAIN
+     || GetCurrentWeather() == WEATHER_DOWNPOUR
+     || GetCurrentWeather() == WEATHER_RAIN_THUNDERSTORM)
+    {
+        rippleIncrement *= WEATHER_MULTIPLIER;
+    }
+
+    tState += rippleIncrement;
+
+    if (tState >= FREQ_RIPPLE)
+    {
+        tState = 0;
+
+        // Pick a random tile around the player.
+        PlayerGetDestCoords(&x, &y);
+
+        xTarget = x + RandomUniform(RNG_NONE, -7, 7);
+        yTarget = y + RandomUniform(RNG_NONE, -5, 5);
+
+        // Only create ripples on compatible water tiles.
+        if (MetatileBehavior_HasRipples(
+                MapGridGetMetatileBehaviorAt(xTarget, yTarget)))
+        {
+            gFieldEffectArguments[0] = xTarget;
+            gFieldEffectArguments[1] = yTarget;
+            gFieldEffectArguments[2] = 151;
+            gFieldEffectArguments[3] = 3;
+
+            // Convert map coordinates to screen coordinates.
+            SetSpritePosToOffsetMapCoords(
+                (s16 *)&gFieldEffectArguments[0],
+                (s16 *)&gFieldEffectArguments[1],
+                8,
+                8);
+
+            // Randomize the ripple position slightly.
+            gFieldEffectArguments[0] += RandomUniform(RNG_NONE, -4, 4);
+            gFieldEffectArguments[1] += RandomUniform(RNG_NONE, -4, 4);
+
+            FieldEffectStart(FLDEFF_RIPPLE);
+        }
+    }
+}
+
+#undef tState
+#undef FREQ_RIPPLE
+#undef WEATHER_MULTIPLIER
 
 static void TryLowerFortreeBridge(s16 x, s16 y)
 {

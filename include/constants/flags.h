@@ -530,7 +530,7 @@
 #define FLAG_DEFEATED_KUBFUT               0x1E0
 #define FLAG_DEFEATED_URSALUNA               0x1E1
 #define FLAG_HIDE_NEWMAUVILLE_REGIELEKI      0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_HIDE_NEWMAUVILLE_REGIELEKI                   0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
