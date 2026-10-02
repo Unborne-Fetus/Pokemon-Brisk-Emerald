@@ -3160,6 +3160,7 @@ static void CursorCb_StatEdit(u8 taskId)
 
 static void CB2_ReturnToPartyMenuFromStatEditor(void)
 {
+    gLastViewedMonIndex = gPartyMenu.slotId;
     StatEditor_Init(CB2_ReturnToPartyMenuFromSummaryScreen);
 }
 
