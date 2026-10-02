@@ -2472,7 +2472,7 @@ static void CreateScrollingPokemonSprite(u8 direction, u16 selectedMon)
         dexNum = GetPokemonSpriteToDisplay(selectedMon - 1);
         if (dexNum != 0xFFFF)
         {
-            spriteId = CreatePokedexMonSprite(dexNum, 0x60, 0x50);
+            spriteId = CreatePokedexMonSprite(dexNum, 0xAB, 0x50);
             gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
             gSprites[spriteId].data[5] = -64;
         }
@@ -2485,7 +2485,7 @@ static void CreateScrollingPokemonSprite(u8 direction, u16 selectedMon)
         dexNum = GetPokemonSpriteToDisplay(selectedMon + 1);
         if (dexNum != 0xFFFF)
         {
-            spriteId = CreatePokedexMonSprite(dexNum, 0x60, 0x50);
+            spriteId = CreatePokedexMonSprite(dexNum, 0xAB, 0x50);
             gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
             gSprites[spriteId].data[5] = 64;
         }
