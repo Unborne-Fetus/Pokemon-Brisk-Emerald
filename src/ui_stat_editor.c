@@ -184,12 +184,7 @@ static const u8 sMenuWindowFontColors[][3] =
 
 #define TAG_SELECTOR 30004
 
-static const u16 sSelector_Pal[] = INCBIN_U16("graphics/ui_menu/selector.gbapal");
-static const u32 sSelector_Gfx[] = INCBIN_U32("graphics/ui_menu/selector.4bpp.lz");
-static const u8 sA_ButtonGfx[]         = INCBIN_U8("graphics/ui_menu/a_button.4bpp");
-static const u8 sB_ButtonGfx[]         = INCBIN_U8("graphics/ui_menu/b_button.4bpp");
-static const u8 sR_ButtonGfx[]         = INCBIN_U8("graphics/ui_menu/r_button.4bpp");
-static const u8 sDPad_ButtonGfx[]         = INCBIN_U8("graphics/ui_menu/dpad_button.4bpp");
+
 
 static const struct OamData sOamData_Selector =
 {
@@ -638,7 +633,7 @@ static void PrintTitleToWindowEditState()
     
     AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
 
-    BlitBitmapToWindow(WINDOW_1, sDPad_ButtonGfx, 75, (BUTTON_Y), 24, 8);
+    BlitBitmapToWindow(WINDOW_1, sDpadButtonGfx, 75, (BUTTON_Y), 24, 8);
     AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 102, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuDPadButtonTextMain);
 
     BlitBitmapToWindow(WINDOW_1, sB_ButtonGfx, 160, (BUTTON_Y), 8, 8);
@@ -719,11 +714,7 @@ static void PrintMonStats()
 
     // Print ability / nature / name / level / gender
 
-#ifdef POKEMON_EXPANSION
-    StringCopy(gStringVar2, GetSpeciesName(sStatEditorDataPtr->speciesID));
-#else
-    StringCopy(gStringVar2, gSpeciesNames[sStatEditorDataPtr->speciesID]);
-#endif
+StringCopy(gStringVar2, GetSpeciesName(sStatEditorDataPtr->speciesID));
 
     AddTextPrinterParameterized4(WINDOW_3, FONT_NARROW, 4, 2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
@@ -839,10 +830,18 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         gTasks[taskId].func = Task_MenuEditingStat;
         if(sStatEditorDataPtr->editingStat == 0)
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
-        if((sStatEditorDataPtr->editingStat == 255 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
-            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
-        if((sStatEditorDataPtr->editingStat == 31) && (sStatEditorDataPtr->selector_x == 1))
-            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
+        if ((sStatEditorDataPtr->editingStat == MAX_PER_STAT_EVS
+            || sStatEditorDataPtr->evTotal == MAX_TOTAL_EVS)
+            && sStatEditorDataPtr->selector_x == EDITING_EVS)
+            {
+                StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
+            }
+
+         if (sStatEditorDataPtr->editingStat == MAX_PER_STAT_IVS
+            && sStatEditorDataPtr->selector_x == EDITING_IVS)
+            {
+                  StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
+            }
         return;
     }
     if (JOY_NEW(L_BUTTON))
