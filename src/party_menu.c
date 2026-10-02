@@ -7,6 +7,7 @@
 #include "battle_interface.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "ui_stat_editor.h"
 #include "battle_pyramid_bag.h"
 #include "bg.h"
 #include "contest.h"
@@ -83,6 +84,7 @@
 
 enum {
     MENU_SUMMARY,
+    MENU_STAT_EDIT,
     MENU_SWITCH,
     MENU_CANCEL1,
     MENU_ITEM,
@@ -455,6 +457,7 @@ static void ShiftMoveSlot(struct BoxPokemon *, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, bool8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, bool8);
 static void CursorCb_Summary(u8);
+static void CursorCb_StatEdit(u8);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
