@@ -2388,7 +2388,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon - 1);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x98, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0x95, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = -32;
     }
@@ -2397,7 +2397,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x98, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0x95, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = 0;
     }
@@ -2406,7 +2406,7 @@ void CreateMonSpritesAtPos(u16 selectedMon, u16 ignored)
     dexNum = GetPokemonSpriteToDisplay(selectedMon + 1);
     if (dexNum != 0xFFFF)
     {
-        spriteId = CreatePokedexMonSprite(dexNum, 0x98, 0x50);
+        spriteId = CreatePokedexMonSprite(dexNum, 0x95, 0x50);
         gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
         gSprites[spriteId].data[5] = 32;
     }
@@ -2472,7 +2472,7 @@ static void CreateScrollingPokemonSprite(u8 direction, u16 selectedMon)
         dexNum = GetPokemonSpriteToDisplay(selectedMon - 1);
         if (dexNum != 0xFFFF)
         {
-            spriteId = CreatePokedexMonSprite(dexNum, 0x98, 0x50);
+            spriteId = CreatePokedexMonSprite(dexNum, 0x95, 0x50);
             gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
             gSprites[spriteId].data[5] = -64;
         }
@@ -2485,7 +2485,7 @@ static void CreateScrollingPokemonSprite(u8 direction, u16 selectedMon)
         dexNum = GetPokemonSpriteToDisplay(selectedMon + 1);
         if (dexNum != 0xFFFF)
         {
-            spriteId = CreatePokedexMonSprite(dexNum, 0x98, 0x50);
+            spriteId = CreatePokedexMonSprite(dexNum, 0x95, 0x50);
             gSprites[spriteId].callback = SpriteCB_PokedexListMonSprite;
             gSprites[spriteId].data[5] = 64;
         }
