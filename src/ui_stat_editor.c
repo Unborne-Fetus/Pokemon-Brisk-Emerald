@@ -156,11 +156,11 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
 };
 
 static const u32 sStatEditorBgTiles[] = INCGFX_U32("graphics/ui_menu/background_tileset.png", ".4bpp.smol");
-static const u32 sStatEditorBgTilemap[] = INCGFX_U32("graphics/ui_menu/background_tileset.bin", ".smolTM");
+static const u32 sStatEditorBgTilemap[] = INCGFX_U32("graphics/ui_menu/background_tileset.bin", ".lz");
 static const u16 sStatEditorBgPalette[] = INCGFX_U16("graphics/ui_menu/background_tileset.png", ".gbapal");
 
 static const u16 sSelector_Pal[] = INCGFX_U16("graphics/ui_menu/selector.png", ".gbapal");
-static const u32 sSelector_Gfx[] = INCGFX_U32("graphics/ui_menu/selector.png", ".4bpp.smol");
+static const u32 sSelector_Gfx[] = INCGFX_U32("graphics/ui_menu/selector.png", ".4bpp.lz");
 
 static const u8 sA_ButtonGfx[] = INCGFX_U8("graphics/ui_menu/a_button.png", ".4bpp");
 static const u8 sB_ButtonGfx[] = INCGFX_U8("graphics/ui_menu/b_button.png", ".4bpp");
@@ -255,15 +255,7 @@ static const struct SpriteTemplate sSpriteTemplate_Selector =
 };
 
 // Begin Generic UI Initialization Code
-void Task_OpenStatEditorFromStartMenu(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        CleanupOverworldWindowsAndTilemaps();
-        StatEditor_Init(CB2_ReturnToFieldWithOpenMenu);
-        DestroyTask(taskId);
-    }
-}
+
 
 // This is our main initialization function if you want to call the menu from elsewhere
 void StatEditor_Init(MainCallback callback)
@@ -648,7 +640,7 @@ static void PrintMonStats()
     u8 i;
     u16 currentStat;
     u16 nature;
-    u8 text[2];
+    u8 text[8];
     u16 level = GetMonData(ReturnPartyMon(), MON_DATA_LEVEL);
     u16 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
     u16 gender = GetGenderFromSpeciesAndPersonality(sStatEditorDataPtr->speciesID, personality);
