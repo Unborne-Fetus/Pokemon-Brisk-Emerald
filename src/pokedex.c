@@ -2595,6 +2595,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
     u8 i;
     u16 startingPos;
     u8 scrollDir = 0;
+    u16 originalSelectedMon = selectedMon;
 
     if (JOY_HELD(DPAD_UP) && (selectedMon > 0))
     {
@@ -2633,6 +2634,9 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         CreateMonSpritesAtPos(selectedMon, 0xE);
         PlaySE(SE_DEX_PAGE);
     }
+    
+    if (selectedMon != originalSelectedMon)
+        sPokedexView->justScrolled = TRUE;
 
     if (scrollDir == 0)
     {
