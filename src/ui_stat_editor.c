@@ -155,9 +155,17 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
-static const u32 sStatEditorBgTiles[] = INCBIN_U32("graphics/ui_menu/background_tileset.4bpp.lz");
-static const u32 sStatEditorBgTilemap[] = INCBIN_U32("graphics/ui_menu/background_tileset.bin.lz");
-static const u16 sStatEditorBgPalette[] = INCBIN_U16("graphics/ui_menu/background_pal.gbapal");
+static const u32 sStatEditorBgTiles[] = INCGFX_U32("graphics/ui_menu/background_tileset.png", ".4bpp.smol");
+static const u32 sStatEditorBgTilemap[] = INCGFX_U32("graphics/ui_menu/background_tileset.bin", ".smolTM");
+static const u16 sStatEditorBgPalette[] = INCGFX_U16("graphics/ui_menu/background_tileset.png", ".gbapal");
+
+static const u16 sSelector_Pal[] = INCGFX_U16("graphics/ui_menu/selector.png", ".gbapal");
+static const u32 sSelector_Gfx[] = INCGFX_U32("graphics/ui_menu/selector.png", ".4bpp.smol");
+
+static const u8 sA_ButtonGfx[] = INCGFX_U8("graphics/ui_menu/a_button.png", ".4bpp");
+static const u8 sB_ButtonGfx[] = INCGFX_U8("graphics/ui_menu/b_button.png", ".4bpp");
+static const u8 sDpadButtonGfx[] = INCGFX_U8("graphics/ui_menu/dpad_button.png", ".4bpp");
+static const u8 sR_ButtonGfx[] = INCGFX_U8("graphics/ui_menu/r_button.png", ".4bpp");
 
 enum Colors
 {
