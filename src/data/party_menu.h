@@ -827,7 +827,6 @@ struct
 static const u8 sPartyMenuAction_SummarySwitchCancel[] =
 {
     MENU_SUMMARY,
-    MENU_STAT_EDIT,
     MENU_SWITCH,
     MENU_CANCEL1
 };
