@@ -1,4 +1,5 @@
 #include "global.h"
+#include "data.h"
 #include "main.h"
 #include "bike.h"
 #include "event_data.h"
@@ -1568,9 +1569,65 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
         return sRivalAvatarGfxIds[state][gender];
 }
 
+static u16 GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(u8 outfit, u8 state, u8 gender, bool32 isAnim)
+{
+    if (outfit >= OUTFIT_COUNT)
+        outfit = DEFAULT_OUTFIT;
+
+    if (gender >= GENDER_COUNT)
+        gender = MALE;
+
+    if (isAnim)
+    {
+        if (state >= PLAYER_AVATAR_GFX_COUNT)
+            state = PLAYER_AVATAR_GFX_FIELD_MOVE;
+
+        return gOutfits[outfit].animGfxIds[gender][state];
+    }
+
+    switch (state)
+    {
+    case PLAYER_AVATAR_STATE_NORMAL:
+    case PLAYER_AVATAR_STATE_MACH_BIKE:
+    case PLAYER_AVATAR_STATE_ACRO_BIKE:
+    case PLAYER_AVATAR_STATE_SURFING:
+    case PLAYER_AVATAR_STATE_UNDERWATER:
+        return gOutfits[outfit].avatarGfxIds[gender][state];
+
+    case PLAYER_AVATAR_STATE_FIELD_MOVE:
+        return gOutfits[outfit].animGfxIds[gender][PLAYER_AVATAR_GFX_FIELD_MOVE];
+
+    case PLAYER_AVATAR_STATE_FISHING:
+        return gOutfits[outfit].animGfxIds[gender][PLAYER_AVATAR_GFX_FISHING];
+
+    case PLAYER_AVATAR_STATE_WATERING:
+        return gOutfits[outfit].animGfxIds[gender][PLAYER_AVATAR_GFX_WATERING];
+
+    case PLAYER_AVATAR_STATE_VSSEEKER:
+        return gOutfits[outfit].animGfxIds[gender][PLAYER_AVATAR_GFX_VSSEEKER];
+
+    default:
+        return gOutfits[outfit].avatarGfxIds[gender][PLAYER_AVATAR_STATE_NORMAL];
+    }
+}
+
+u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender)
+{
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, gender, FALSE);
+}
+
+u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender)
+{
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, gender, TRUE);
+}
+
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
 {
-    return sPlayerAvatarGfxIds[state][gender];
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(
+        gSaveBlock2Ptr->currOutfitId,
+        state,
+        gender
+    );
 }
 
 u16 GetFRLGAvatarGraphicsIdByGender(enum Gender gender)

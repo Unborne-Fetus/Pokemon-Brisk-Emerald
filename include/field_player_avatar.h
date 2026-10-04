@@ -41,6 +41,8 @@ void SetSpinStartFacingDir(enum Direction direction);
 void GetXYCoordsOneStepInFrontOfPlayer(s16 *xPtr, s16 *yPtr);
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender);
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender);
+u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender);
+u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender);
 void SetPlayerAvatarFieldMove(void);
 u16 GetPlayerAvatarGraphicsIdByCurrentState(void);
 void SetPlayerAvatarStateMask(u8 flags);

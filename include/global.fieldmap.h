@@ -345,6 +345,22 @@ enum {
     PLAYER_AVATAR_STATE_VSSEEKER,
 };
 
+/*
+ * Outfit system uses four persistent avatar states.
+ * Keep Brisk's existing avatar-state enum above intact.
+ */
+#define PLAYER_AVATAR_STATE_BIKE PLAYER_AVATAR_STATE_ACRO_BIKE
+#define PLAYER_AVATAR_STATE_COUNT 5
+
+enum {
+    PLAYER_AVATAR_GFX_FIELD_MOVE,
+    PLAYER_AVATAR_GFX_FISHING,
+    PLAYER_AVATAR_GFX_WATERING,
+    PLAYER_AVATAR_GFX_DECORATING,
+    PLAYER_AVATAR_GFX_VSSEEKER,
+    PLAYER_AVATAR_GFX_COUNT,
+};
+
 #define PLAYER_AVATAR_FLAG_ON_FOOT      (1 << 0)
 #define PLAYER_AVATAR_FLAG_MACH_BIKE    (1 << 1)
 #define PLAYER_AVATAR_FLAG_ACRO_BIKE    (1 << 2)

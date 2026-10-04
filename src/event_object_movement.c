@@ -12113,3 +12113,13 @@ bool8 MovementType_OverworldWildEncounter_Despawn_Step11(struct ObjectEvent *obj
 }
 
 #undef sDespawnTimer
+
+const struct SpritePalette *GetObjectEventPaletteFromTag(u16 tag)
+{
+    u32 i = FindObjectEventPaletteIndexByTag(tag);
+    if (i == 0xFF)
+        i = 0; 
+
+    return &sObjectEventSpritePalettes[i];
+}
+

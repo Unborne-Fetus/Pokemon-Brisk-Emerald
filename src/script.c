@@ -5,6 +5,8 @@
 #include "mystery_gift.h"
 #include "random.h"
 #include "task.h"
+#include "ui_birch_case.h"
+#include "field_weather.h"
 #include "trainer_see.h"
 #include "util.h"
 #include "constants/event_objects.h"
@@ -745,4 +747,11 @@ void SetWalkingIntoSignVars(void)
 {
     // gWalkAwayFromSignInhibitTimer = 6;
     // sMsgBoxIsCancelable = TRUE;
+}
+
+
+void StartNewPokeballCaseUI(void)
+{
+    FadeScreen(FADE_TO_BLACK, 0);
+    CreateTask(Task_OpenBirchCase, 0);
 }
