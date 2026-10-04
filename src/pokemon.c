@@ -3413,16 +3413,16 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     memset(&dst->volatiles, 0, sizeof(struct Volatiles));
 }
 
-bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex)
+bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, u8 modifyStats, u16 itemCount)
 {
-    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE);
+    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE, modifyStats, itemCount);
 }
 
 #define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                   \
 {                                                                                                       \
     if ((!retVal || friendshipOnly) && !ShouldSkipFriendshipChange() && friendshipChange == 0)      \
     {                                                                                                   \
-        friendshipChange = itemEffect[itemEffectParam];                                                 \
+        friendshipChange = itemEffect[itemEffectParam] * itemCount;                                                 \
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);                                        \
         friendship += CalculateFriendshipBonuses(mon,friendshipChange,holdEffect);                      \
         if (friendship < 0)                                                                             \
@@ -3444,7 +3444,7 @@ const u32 sExpCandyExperienceTable[] = {
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
-bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
+bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, bool8 usedByAI, u8 modifyStats, u16 itemCount)
 {
     u32 dataUnsigned;
     s32 dataSigned, evCap;
@@ -3533,8 +3533,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
 
                 if (dataUnsigned != 0) // Failsafe
                 {
-                    SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
-                    CalculateMonStats(mon);
+                    if (modifyStats)
+                    {
+                        SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
+                        CalculateMonStats(mon);
+                    }
                     if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
                         didLevelUp = TRUE;
                     retVal = FALSE;
@@ -3645,8 +3648,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         itemEffectParam++;
                         retVal = FALSE;
                         break;
@@ -3839,8 +3845,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         retVal = FALSE;
                         itemEffectParam++;
                         break;

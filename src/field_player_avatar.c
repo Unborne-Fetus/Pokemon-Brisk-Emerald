@@ -1623,6 +1623,12 @@ u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gend
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
 {
+    // Use Brisk's original graphics lookup for bike states.
+    // This keeps the outfit system from interfering with bike graphics.
+    if (state == PLAYER_AVATAR_STATE_MACH_BIKE
+     || state == PLAYER_AVATAR_STATE_ACRO_BIKE)
+        return sPlayerAvatarGfxIds[state][gender];
+
     return GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(
         gSaveBlock2Ptr->currOutfitId,
         state,
