@@ -1,6 +1,8 @@
 #ifndef GUARD_OUTFIT_MENU_H
 #define GUARD_OUTFIT_MENU_H
 
+#include "main.h"
+
 void OpenOutfitMenu(MainCallback retCB);
 void Task_OpenOutfitMenu(u8 taskId);
 

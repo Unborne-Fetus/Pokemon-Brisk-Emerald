@@ -606,10 +606,11 @@ struct SaveBlock2
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
              u16 optionsBattleSpeed:2; // OPTIONS_BATTLE_SPEED_[1x/2x/3x/4x]
-             u16 currOutfitId:4;
+             u16 padding1:2;
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u16 outfits[NUM_OUTFIT_OWNED_BYTES];
-             u8 filler_92[0x6];
+    /*0x90*/ u16 currOutfitId;
+    /*0x92*/ u16 outfits[NUM_OUTFIT_OWNED_BYTES];
+    /*0x94*/ u8 filler_94[0x4];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD

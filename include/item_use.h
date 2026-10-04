@@ -69,4 +69,5 @@ enum ItemTMHMOrEvolutionStone
     ITEM_IS_EVOLUTION_STONE,
 };
 
+void ItemUseOutOfBattle_OutfitBox(u8 taskId);
 #endif // GUARD_ITEM_USE_H

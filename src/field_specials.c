@@ -79,6 +79,7 @@
 #include "battle_util.h"
 #include "naming_screen.h"
 #include "chooseboxmon.h"
+#include "outfit_menu.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -5761,4 +5762,10 @@ bool8 CheckAddCoins(void)
         return FALSE;
     else
         return TRUE;
+}
+
+
+void UnlockWallaceOutfit(void)
+{
+    UnlockOutfit(OUTFIT_UNUSUAL_RED);
 }

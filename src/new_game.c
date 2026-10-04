@@ -1,4 +1,5 @@
 #include "global.h"
+#include "outfit_menu.h"
 #include "clock.h"
 #include "new_game.h"
 #include "random.h"
@@ -159,6 +160,13 @@ void ResetMenuAndMonGlobals(void)
     ResetPokeblockScrollPositions();
 }
 
+static void ResetOutfitData(void)
+{
+    memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
+    UnlockOutfit(DEFAULT_OUTFIT);
+    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+}
+
 void NewGameInitData(void)
 {
 #if IS_FRLG
@@ -185,6 +193,7 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    ResetOutfitData();
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

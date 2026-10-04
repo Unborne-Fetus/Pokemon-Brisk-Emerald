@@ -1586,6 +1586,8 @@ extern const u32 gItemIcon_TMCase[];
 extern const u16 gItemIconPalette_TMCase[];
 extern const u32 gItemIcon_BerryPouch[];
 extern const u16 gItemIconPalette_BerryPouch[];
+extern const u32 gItemIcon_OutfitBox[];
+extern const u16 gItemIconPalette_OutfitBox[];
 extern const u32 gItemIcon_PokemonBoxLink[];
 extern const u16 gItemIconPalette_PokemonBoxLink[];
 extern const u32 gItemIcon_CoinCase[];
