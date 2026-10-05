@@ -49,6 +49,7 @@ struct RandomItemGeneratorOptions
 
 static enum Species GetSpeciesCandidateForm(enum Species species, const struct RandomSpeciesGeneratorOptions *options, const struct FilterFuncArgs *filterFuncArgs);
 static bool32 UNUSED IsInBstRangeFilterFunc(enum Species species, const struct FilterFuncArgs *filterFuncArgs);
+static bool32 IsWonderTradeLevelFilterFunc(enum Species species, const struct FilterFuncArgs *filterFuncArgs);
 static enum Species GetRandomSpeciesAtIndex(const struct RandomSpeciesGeneratorOptions *options, u32 index);
 static enum Species SlowPickRandomSpecies(const struct RandomSpeciesGeneratorOptions *options, u32 poolSize, const struct FilterFuncArgs *filterFuncArgs);
 static enum Species FastPickRandomSpecies(const struct RandomSpeciesGeneratorOptions *options, u32 poolSize, const struct FilterFuncArgs *filterFuncArgs);
@@ -116,6 +117,54 @@ static bool32 UNUSED IsInBstRangeFilterFunc(enum Species species, const struct F
     maxBst = bstStandard + bstLeniency;
 
     return bst >= minBst && bst <= maxBst;
+}
+
+static u8 GetWonderTradeMinimumLevel(enum Species species)
+{
+    u8 minimumLevel = 1;
+
+    // Match Brisk Dex: follow the evolution chain and only level-gate
+    // evolutions whose method explicitly requires a level.
+    for (u32 depth = 0; depth < 10; depth++)
+    {
+        enum Species preEvolution = GetSpeciesPreEvolution(species);
+        const struct Evolution *evolutions;
+
+        if (preEvolution == SPECIES_NONE)
+            break;
+
+        evolutions = GetSpeciesEvolutions(preEvolution);
+        if (evolutions != NULL)
+        {
+            for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+            {
+                if (SanitizeSpeciesId(evolutions[i].targetSpecies) != species)
+                    continue;
+
+                if ((evolutions[i].method == EVO_LEVEL || evolutions[i].method == EVO_LEVEL_BATTLE_ONLY)
+                 && evolutions[i].param > minimumLevel)
+                    minimumLevel = min(evolutions[i].param, MAX_LEVEL);
+                break;
+            }
+        }
+
+        species = preEvolution;
+    }
+
+    return minimumLevel;
+}
+
+static bool32 IsWonderTradeLevelFilterFunc(enum Species species, const struct FilterFuncArgs *filterFuncArgs)
+{
+    if (!IsSpeciesEnabled(species))
+        return FALSE;
+    if (filterFuncArgs == NULL)
+        return TRUE;
+    if (filterFuncArgs->arg2 != FILTER_FUNC_ARG_NONE && species == filterFuncArgs->arg2)
+        return FALSE;
+
+    return filterFuncArgs->arg1 == FILTER_FUNC_ARG_NONE
+        || GetWonderTradeMinimumLevel(species) <= filterFuncArgs->arg1;
 }
 
 static enum Species GetRandomSpeciesAtIndex(const struct RandomSpeciesGeneratorOptions *options, u32 index)
