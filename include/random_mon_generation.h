@@ -4,6 +4,7 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/pokeball.h"
+#include "constants/random_mon_generation.h"
 #include "constants/species.h"
 
 #define FILTER_FUNC_ARG_NONE 0xFFFF
