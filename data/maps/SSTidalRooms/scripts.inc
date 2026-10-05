@@ -40,7 +40,9 @@ SSTidalRooms_EventScript_Micah::
 SSTidalRooms_EventScript_Thomas::
 	trainerbattle_single TRAINER_THOMAS, SSTidalRooms_Text_ThomasIntro, SSTidalRooms_Text_ThomasDefeat
 	msgbox SSTidalRooms_Text_ThomasPostBattle, MSGBOX_AUTOCLOSE
+	bufferspeciesname STR_VAR_1, SPECIES_STAKATAKA
 	givemon SPECIES_STAKATAKA, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	end
 
 SSTidalRooms_EventScript_Jed::
