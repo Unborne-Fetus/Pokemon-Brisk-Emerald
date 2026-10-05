@@ -51,7 +51,9 @@ EverGrandeCity_ChampionsRoom_EventScript_Defeated::
 	setmetatile 6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE
 	special DrawWholeMapView
 	msgbox EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_MELTAN
 	givemon SPECIES_MELTAN, 10
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	closemessage
 	playse SE_DOOR
 	checkplayergender
