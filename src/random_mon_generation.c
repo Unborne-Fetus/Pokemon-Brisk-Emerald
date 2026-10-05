@@ -52,7 +52,9 @@ struct RandomItemGeneratorOptions
 
 static enum Species GetSpeciesCandidateForm(enum Species species, const struct RandomSpeciesGeneratorOptions *options, const struct FilterFuncArgs *filterFuncArgs);
 static bool32 UNUSED IsInBstRangeFilterFunc(enum Species species, const struct FilterFuncArgs *filterFuncArgs);
+#if !TESTING
 static bool32 IsWonderTradeLevelFilterFunc(enum Species species, const struct FilterFuncArgs *filterFuncArgs);
+#endif
 static enum Species GetRandomSpeciesAtIndex(const struct RandomSpeciesGeneratorOptions *options, u32 index);
 static enum Species SlowPickRandomSpecies(const struct RandomSpeciesGeneratorOptions *options, u32 poolSize, const struct FilterFuncArgs *filterFuncArgs);
 static enum Species FastPickRandomSpecies(const struct RandomSpeciesGeneratorOptions *options, u32 poolSize, const struct FilterFuncArgs *filterFuncArgs);
@@ -122,6 +124,7 @@ static bool32 UNUSED IsInBstRangeFilterFunc(enum Species species, const struct F
     return bst >= minBst && bst <= maxBst;
 }
 
+#if !TESTING
 static u8 GetWonderTradeMinimumLevel(enum Species species)
 {
     u8 minimumLevel = 1;
@@ -169,6 +172,8 @@ static bool32 IsWonderTradeLevelFilterFunc(enum Species species, const struct Fi
     return filterFuncArgs->arg1 == FILTER_FUNC_ARG_NONE
         || GetWonderTradeMinimumLevel(species) <= filterFuncArgs->arg1;
 }
+
+#endif
 
 static enum Species GetRandomSpeciesAtIndex(const struct RandomSpeciesGeneratorOptions *options, u32 index)
 {
