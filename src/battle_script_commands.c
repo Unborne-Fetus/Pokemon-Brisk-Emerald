@@ -7829,10 +7829,10 @@ struct BallData
 
 #define CAPTURE_GUARANTEED -1
 
-static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallData *ball)
+static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, enum Item ballItem, struct BallData *ball)
 {
     u32 i;
-    enum PokeBall ballId = ItemIdToBallId(gLastUsedItem);
+    enum PokeBall ballId = ItemIdToBallId(ballItem);
     struct BattlePokemon *battleMon = &gBattleMons[wildMonBattler];
 
     ball->multiplier = 100;
@@ -8044,10 +8044,10 @@ static u32 GetBattleMonCatchRate(struct BattlePokemon *battleMon)
     return gSpeciesInfo[species].catchRate;
 }
 
-static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler)
+static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler, enum Item ballItem)
 {
     struct BallData ball;
-    ComputeBallData(wildMonBattler, playerBattler, &ball);
+    ComputeBallData(wildMonBattler, playerBattler, ballItem, &ball);
 
     if (ball.guaranteedCapture)
         return CAPTURE_GUARANTEED;
@@ -8099,14 +8099,14 @@ static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler)
     return odds;
 }
 
-static bool32 CriticalCapture(u32 odds)
+static u32 GetCriticalCaptureOdds(u32 odds)
 {
     u32 numCaught;
     u32 totalDexCount;
     u32 charmBoost = 1;
 
     if (B_CRITICAL_CAPTURE == FALSE)
-        return FALSE;
+        return 0;
 
     if (B_CRITICAL_CAPTURE_LOCAL_DEX == TRUE)
         totalDexCount = REGIONAL_DEX_COUNT;
@@ -8128,16 +8128,22 @@ static bool32 CriticalCapture(u32 odds)
     else if (numCaught > (totalDexCount * 30) / 650)
         odds = (odds * (50 * charmBoost)) / 100;
     else
-        return FALSE;
+        return 0;
 
     if (odds > 255)
         odds = 255;
 
-    odds /= 6;
-    if (RandomUniform(RNG_BALLTHROW_CRITICAL, 0, MAX_u8) < odds)
-        return TRUE;
+    return odds / 6;
+}
 
-    return FALSE;
+static bool32 CriticalCapture(u32 odds)
+{
+    u32 criticalOdds = GetCriticalCaptureOdds(odds);
+
+    if (criticalOdds == 0)
+        return FALSE;
+
+    return RandomUniform(RNG_BALLTHROW_CRITICAL, 0, MAX_u8) < criticalOdds;
 }
 
 static u32 ComputeBallShakeOdds(u32 odds)
@@ -8147,11 +8153,38 @@ static u32 ComputeBallShakeOdds(u32 odds)
     return odds;
 }
 
+u32 GetCatchChancePercent(enum Item ballItem, enum BattlerId playerBattler)
+{
+    u32 wildMonBattler = GetCatchingBattler();
+    u32 odds = ComputeCaptureOdds(wildMonBattler, playerBattler, ballItem);
+    u32 criticalOdds;
+    u32 shakeOdds;
+    u64 normalChance = 10000;
+    u64 criticalChance = 10000;
+    u64 totalChance;
+    u32 i;
+
+    if (odds == CAPTURE_GUARANTEED || odds > 254)
+        return 100;
+    if (odds == 0)
+        return 0;
+
+    shakeOdds = ComputeBallShakeOdds(odds);
+    for (i = 0; i < 4; i++)
+        normalChance = normalChance * shakeOdds / 65536;
+    criticalChance = criticalChance * shakeOdds / 65536;
+
+    criticalOdds = GetCriticalCaptureOdds(odds);
+    totalChance = ((256 - criticalOdds) * normalChance + criticalOdds * criticalChance) / 256;
+
+    return min(100, (u32)((totalChance + 50) / 100));
+}
+
 static void SetBallThrowShakes(void)
 {
     gBallToDisplay = gLastThrownBall = gLastUsedItem;
 
-    u32 odds = ComputeCaptureOdds(gBattlerTarget, gBattlerAttacker);
+    u32 odds = ComputeCaptureOdds(gBattlerTarget, gBattlerAttacker, gLastUsedItem);
     if (gTestRunnerEnabled)
         TestRunner_Battle_RecordCatchChance(odds);
 
