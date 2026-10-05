@@ -363,7 +363,9 @@ PetalburgCity_Gym_EventScript_DontGiveEnigmaBerry::
 
 PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 	giveitem ITEM_ENIGMA_BERRY_E_READER
+	bufferspeciesname STR_VAR_1, SPECIES_REGIGIGAS
 	givemon SPECIES_REGIGIGAS, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setvar VAR_ENIGMA_BERRY_AVAILABLE, 0
 	release
