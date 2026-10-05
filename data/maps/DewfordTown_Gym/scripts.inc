@@ -169,7 +169,9 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
 	giveitem ITEM_TM_BULK_UP
+	bufferspeciesname STR_VAR_1, SPECIES_VIRIZION
 	givemon SPECIES_VIRIZION, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
