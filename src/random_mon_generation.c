@@ -11,6 +11,9 @@
 #include "constants/pokedex.h"
 #include "constants/pokeball.h"
 #include "constants/species.h"
+#if !TESTING
+#include "constants/random_mon_generation.h"
+#endif
 
 #define EXHAUSTIVE_SEARCH_POOL_MAX_SIZE 20
 #define INVALID_RANDOM_SPECIES SPECIES_NONE
