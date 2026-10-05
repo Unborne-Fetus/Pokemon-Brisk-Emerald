@@ -5,6 +5,17 @@
 
 static const struct RandomSpeciesGeneratorOptions sRandomSpeciesGeneratorOptions[RANDOM_SPECIES_OPTIONS_COUNT] =
 {
+    [SPECIES_GENERATOR_WONDER_TRADE] =
+    {
+        .filterFunc = IsWonderTradeLevelFilterFunc,
+        .banLegendary = TRUE,
+        .banMythical = TRUE,
+        .banSubLegendary = TRUE,
+        .banUltraBeast = TRUE,
+        .banParadox = TRUE,
+        .randomizeForms = TRUE,
+        .dexMode = RANDOM_MON_DEX_NATIONAL,
+    },
 };
 
 static const struct RandomItemGeneratorOptions sRandomItemGeneratorOptions[RANDOM_ITEM_OPTIONS_COUNT] =
