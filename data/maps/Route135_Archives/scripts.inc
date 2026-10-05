@@ -11,7 +11,9 @@ Route135_Archives_EventScript_Blue::
 
 Route135_Archives_EventScript_BlueDefeated::
 	msgbox Route135_Archives_Text_BluePostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_JIRACHI
 	givemon SPECIES_JIRACHI, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -26,7 +28,9 @@ Route135_Archives_EventScript_Red::
 
 Route135_Archives_EventScript_RedDefeated::
 	msgbox Route135_Archives_Text_RedPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_MEWTWO
 	givemon SPECIES_MEWTWO, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -41,7 +45,9 @@ Route135_Archives_EventScript_Wallace::
 
 Route135_Archives_EventScript_WallaceDefeated::
 	msgbox Route135_Archives_Text_WallacePostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_TYPE_NULL
 	givemon SPECIES_TYPE_NULL, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -57,7 +63,9 @@ Route135_Archives_EventScript_Cynthia::
 
 Route135_Archives_EventScript_CynthiaDefeated::
 	msgbox Route135_Archives_Text_CynthiaPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_GENESECT
 	givemon SPECIES_GENESECT, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -74,7 +82,9 @@ Route135_Archives_EventScript_Iris::
 
 Route135_Archives_EventScript_IrisDefeated::
 	msgbox Route135_Archives_Text_IrisPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_KORAIDON
 	givemon SPECIES_KORAIDON, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -91,7 +101,9 @@ Route135_Archives_EventScript_Diantha::
 
 Route135_Archives_EventScript_DianthaDefeated::
 	msgbox Route135_Archives_Text_DianthaPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_DIANCIE
 	givemon SPECIES_DIANCIE, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -108,7 +120,9 @@ Route135_Archives_EventScript_Leon::
 
 Route135_Archives_EventScript_LeonDefeated::
 	msgbox Route135_Archives_Text_LeonPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_ETERNATUS
 	givemon SPECIES_ETERNATUS, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -124,7 +138,9 @@ Route135_Archives_EventScript_Nemona::
 
 Route135_Archives_EventScript_NemonaDefeated::
 	msgbox Route135_Archives_Text_NemonaPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_MIRAIDON
 	givemon SPECIES_MIRAIDON, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
@@ -140,7 +156,9 @@ Route135_Archives_EventScript_Volo::
 
 Route135_Archives_EventScript_VoloDefeated::
 	msgbox Route135_Archives_Text_VoloPostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_GIRATINA
 	givemon SPECIES_GIRATINA, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
