@@ -478,7 +478,9 @@ Route111_EventScript_Irene::
 Route111_EventScript_Daisuke::
 	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
 	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
+	bufferspeciesname STR_VAR_1, SPECIES_BUZZWOLE
 	givemon SPECIES_BUZZWOLE, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	end
 
 Route111_EventScript_Wilton::
