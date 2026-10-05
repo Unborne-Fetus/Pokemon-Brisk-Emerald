@@ -135,7 +135,9 @@ Route121_EventScript_Cale::
 Route121_EventScript_Myles::
 	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
 	msgbox Route121_Text_MylesPostBattle, MSGBOX_AUTOCLOSE
+	bufferspeciesname STR_VAR_1, SPECIES_PHEROMOSA
 	givemon SPECIES_PHEROMOSA, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	end
 
 Route121_EventScript_Pat::
