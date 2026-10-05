@@ -44,6 +44,7 @@
 #include "task.h"
 #include "text.h"
 #include "vs_seeker.h"
+#include "wild_encounter.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
@@ -83,6 +84,7 @@ static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Honey(u8 taskId);
+static void ItemUseOnFieldCB_OverworldBall(u8 taskId);
 static bool32 IsValidLocationForVsSeeker(void);
 
 static const u8 sText_CantDismountBike[] = _("You can't dismount your BIKE here.{PAUSE_UNTIL_PRESS}");
@@ -99,6 +101,10 @@ static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} used the\n{STR_VAR_2}
 static const u8 sText_PlayedPokeFluteCatchy[] = _("Played the POKé FLUTE.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_PlayedPokeFlute[] = _("Played the POKé FLUTE.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleeping\nPOKéMON.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_OverworldBallNothing[] = _("There's nothing to catch.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_OverworldBallMiss[] = _("Nothing was caught.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_OverworldBallCaught[] = _("Gotcha! {STR_VAR_1} was caught!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_OverworldBallNoRoom[] = _("There's no room for another POKéMON.{PAUSE_UNTIL_PRESS}");
 
 // EWRAM variables
 EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;
@@ -1446,6 +1452,125 @@ void ItemUseOutOfBattle_Honey(u8 taskId)
     gFieldCallback = FieldCB_UseItemOnField;
     gBagMenu->newScreenCallback = CB2_ReturnToField;
     Task_FadeAndCloseBagMenu(taskId);
+}
+
+
+static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+    const struct WildPokemonInfo *landMonsInfo = NULL;
+    const struct WildPokemonInfo *waterMonsInfo = NULL;
+    const struct WildPokemonInfo *wildMonInfo;
+    enum WildPokemonArea area;
+    u32 wildMonIndex;
+
+    if (headerId == HEADER_NONE)
+        return FALSE;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
+    landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
+    waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+
+    if (landMonsInfo == NULL && waterMonsInfo == NULL)
+        return FALSE;
+
+    if (landMonsInfo != NULL && waterMonsInfo != NULL)
+    {
+        if (Random() % 100 < 80)
+        {
+            wildMonInfo = landMonsInfo;
+            area = WILD_AREA_LAND;
+        }
+        else
+        {
+            wildMonInfo = waterMonsInfo;
+            area = WILD_AREA_WATER;
+        }
+    }
+    else if (landMonsInfo != NULL)
+    {
+        wildMonInfo = landMonsInfo;
+        area = WILD_AREA_LAND;
+    }
+    else
+    {
+        wildMonInfo = waterMonsInfo;
+        area = WILD_AREA_WATER;
+    }
+
+    if (area == WILD_AREA_LAND)
+        wildMonIndex = ChooseWildMonIndex_Land(wildMonInfo->wildPokemon);
+    else
+        wildMonIndex = ChooseWildMonIndex_Water(wildMonInfo->wildPokemon);
+
+    *species = wildMonInfo->wildPokemon[wildMonIndex].species;
+    if (*species == SPECIES_NONE)
+        return FALSE;
+
+    *level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    return TRUE;
+}
+
+static void ItemUseOnFieldCB_OverworldBall(u8 taskId)
+{
+    enum Species species;
+    u8 level;
+    u8 catchChance;
+    u8 ball;
+
+    if (!GetOverworldBallEncounter(&species, &level))
+    {
+        DisplayItemMessageOnField(taskId, sText_OverworldBallNothing, Task_CloseCantUseKeyItemMessage);
+        return;
+    }
+
+    if (IsPlayerPartyAndPokemonStorageFull())
+    {
+        DisplayItemMessageOnField(taskId, sText_OverworldBallNoRoom, Task_CloseCantUseKeyItemMessage);
+        return;
+    }
+
+    switch (gSpecialVar_ItemId)
+    {
+    case ITEM_POKE_BALL:
+        catchChance = 10;
+        break;
+    case ITEM_GREAT_BALL:
+        catchChance = 25;
+        break;
+    case ITEM_ULTRA_BALL:
+        catchChance = 50;
+        break;
+    default:
+        catchChance = 0;
+        break;
+    }
+
+    RemoveBagItem(gSpecialVar_ItemId, 1);
+
+    if (Random() % 100 >= catchChance)
+    {
+        DisplayItemMessageOnField(taskId, sText_OverworldBallMiss, Task_CloseCantUseKeyItemMessage);
+        return;
+    }
+
+    CreateWildMon(species, level);
+    ball = GetItemSecondaryId(gSpecialVar_ItemId);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_POKEBALL, &ball);
+    GiveScriptedMonToPlayer(&gParties[B_TRAINER_OPPONENT_A][0], PARTY_SIZE);
+
+    StringCopy(gStringVar1, GetSpeciesName(species));
+    StringExpandPlaceholders(gStringVar4, sText_OverworldBallCaught);
+    DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
+}
+
+void ItemUseOutOfBattle_OverworldBall(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_OverworldBall;
+    SetUpItemUseOnFieldCallback(taskId);
 }
 
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
