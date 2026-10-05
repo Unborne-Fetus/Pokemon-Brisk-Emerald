@@ -3010,11 +3010,16 @@ static void Task_WonderTrade(u8 taskId)
                 sStorage->state = 3;
                 break;
             }
-            if (heldItem != ITEM_NONE && !AddBagItem(heldItem, 1))
+            if (heldItem != ITEM_NONE)
             {
-                PrintMessage(MSG_BAG_FULL);
-                sStorage->state = 3;
-                break;
+                if (!AddBagItem(heldItem, 1))
+                {
+                    PrintMessage(MSG_BAG_FULL);
+                    sStorage->state = 3;
+                    break;
+                }
+                heldItem = ITEM_NONE;
+                SetBoxMonData(GetCursorBoxMon(), MON_DATA_HELD_ITEM, &heldItem);
             }
 
             ClearBottomWindow();
