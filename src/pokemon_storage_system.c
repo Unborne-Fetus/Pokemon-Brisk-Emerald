@@ -28,6 +28,9 @@
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
+#include "pokedex.h"
+#include "random.h"
+#include "random_mon_generation.h"
 #include "script.h"
 #include "sound.h"
 #include "string_util.h"
@@ -44,6 +47,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/pokemon_icon.h"
+#include "constants/random_mon_generation.h"
 #include "chooseboxmon.h"
 #include "party_menu.h"
 
@@ -71,6 +75,7 @@ enum {
     OPTION_WITHDRAW,
 #endif
     OPTION_MOVE_ITEMS,
+    OPTION_WONDER_TRADE,
     OPTION_EXIT,
     OPTIONS_COUNT,
     OPTION_SELECT_MON
@@ -109,6 +114,8 @@ enum {
     MSG_ITEM_IS_HELD,
     MSG_CHANGED_TO_ITEM,
     MSG_CANT_STORE_MAIL,
+    MSG_WONDER_TRADE_CONFIRM,
+    MSG_WONDER_TRADE_RECEIVED,
 };
 
 // IDs for how to resolve variables in the above messages
@@ -165,6 +172,7 @@ enum {
     MENU_MACHINE,
     MENU_SIMPLE,
     MENU_SELECT,
+    MENU_WONDER_TRADE,
 };
 #define MENU_WALLPAPER_SETS_START MENU_SCENERY_1
 #define MENU_WALLPAPERS_START MENU_FOREST
@@ -583,6 +591,7 @@ static void Task_TakeItemForMoving(u8);
 static void Task_ShowMarkMenu(u8);
 static void Task_ShowMonSummary(u8);
 static void Task_ReleaseMon(u8);
+static void Task_WonderTrade(u8);
 static void Task_ReshowPokeStorage(u8);
 static void Task_PokeStorageMain(u8);
 static void Task_JumpBox(u8);
@@ -871,6 +880,7 @@ struct {
     [OPTION_DEPOSIT]    = {COMPOUND_STRING("DEPOSIT POKéMON"),  COMPOUND_STRING("Store POKéMON in your party in BOXES.")},
     [OPTION_MOVE_MONS]  = {COMPOUND_STRING("MOVE POKéMON"),     COMPOUND_STRING("Organize the POKéMON in BOXES and\nin your party.")},
     [OPTION_MOVE_ITEMS] = {COMPOUND_STRING("MOVE ITEMS"),       COMPOUND_STRING("Move items held by any POKéMON\nin a BOX or your party.")},
+    [OPTION_WONDER_TRADE] = {COMPOUND_STRING("WONDER TRADE"),    COMPOUND_STRING("Trade a POKéMON for a random\nnon-special POKéMON.")},
     [OPTION_EXIT]       = {COMPOUND_STRING("SEE YA!"),          COMPOUND_STRING("Return to the previous menu.")}
 };
 
@@ -880,7 +890,7 @@ static const struct WindowTemplate sWindowTemplate_MainMenu =
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 17,
-    .height = 10,
+    .height = 12,
     .paletteNum = 15,
     .baseBlock = 0x1,
 };
@@ -1079,6 +1089,8 @@ static const struct StorageMessage sMessages[] =
     [MSG_ITEM_IS_HELD]         = {COMPOUND_STRING("{DYNAMIC 0} is now held."),   MSG_VAR_ITEM_NAME},
     [MSG_CHANGED_TO_ITEM]      = {COMPOUND_STRING("Changed to {DYNAMIC 0}."),    MSG_VAR_ITEM_NAME},
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("MAIL can't be stored!"),      MSG_VAR_NONE},
+    [MSG_WONDER_TRADE_CONFIRM] = {COMPOUND_STRING("Wonder Trade this POKéMON?"),     MSG_VAR_NONE},
+    [MSG_WONDER_TRADE_RECEIVED] = {COMPOUND_STRING("You received {DYNAMIC 0}!"),      MSG_VAR_MON_NAME_1},
 };
 
 static const struct WindowTemplate sYesNoWindowTemplate =
@@ -2683,6 +2695,10 @@ static void Task_OnSelectedMon(u8 taskId)
         case MENU_INFO:
             SetPokeStorageTask(Task_ShowItemInfo);
             break;
+        case MENU_WONDER_TRADE:
+            PlaySE(SE_SELECT);
+            SetPokeStorageTask(Task_WonderTrade);
+            break;
         case MENU_SELECT:
             PlaySE(SE_SELECT);
             struct BoxPokemon *boxmon = GetCursorBoxMon();
@@ -2900,6 +2916,128 @@ static void Task_DepositMenu(u8 taskId)
         {
             PrintMessage(MSG_DEPOSIT_IN_WHICH_BOX);
             sStorage->state = 1;
+        }
+        break;
+    }
+}
+
+static bool32 DoWonderTrade(void)
+{
+    struct BoxPokemon *offered = GetCursorBoxMon();
+    struct Pokemon received;
+    enum Species offeredSpecies = GetBoxMonData(offered, MON_DATA_SPECIES);
+    u8 offeredLevel = GetLevelFromBoxMonExp(offered);
+    bool32 offeredShiny = GetBoxMonData(offered, MON_DATA_IS_SHINY);
+    struct FilterFuncArgs filterArgs = { .arg1 = offeredLevel, .arg2 = offeredSpecies };
+    enum Species receivedSpecies = GetRandomSpecies(SPECIES_GENERATOR_WONDER_TRADE, &filterArgs);
+    s32 levelOffset;
+    u8 receivedLevel;
+    bool32 receivedShiny;
+    struct PokemonTemplate monTemplate = {0};
+    static const u8 sWonderTradeOtName[] = _("WONDER");
+
+    if (receivedSpecies == SPECIES_NONE)
+        return FALSE;
+
+    levelOffset = (s32)RandomUniform(RNG_NONE, 0, 10) - 5;
+    receivedLevel = clamp((s32)offeredLevel + levelOffset, 1, MAX_LEVEL);
+    receivedShiny = offeredShiny || RandomUniform(RNG_NONE, 0, 511) == 0;
+
+    monTemplate.species = receivedSpecies;
+    monTemplate.level = receivedLevel;
+    monTemplate.nature = NATURE_RANDOM;
+    monTemplate.gender = MON_GENDER_RANDOM;
+    monTemplate.origin = GIFTMON_ORIGIN;
+    monTemplate.isShiny = receivedShiny ? SHINY_MODE_ALWAYS : SHINY_MODE_NEVER;
+    monTemplate.doNotUseDefaultShinyness = TRUE;
+    for (u32 i = 0; i < NUM_STATS; i++)
+        monTemplate.ivs[i] = USE_RANDOM_IVS;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+        monTemplate.moves[i] = MOVE_RANDOM_TEACHABLE;
+
+    CreateMonFromTemplate(&received, &monTemplate);
+
+    u32 otId = Random32();
+    SetMonData(&received, MON_DATA_OT_ID, &otId);
+    SetMonData(&received, MON_DATA_OT_NAME, sWonderTradeOtName);
+
+    if (sInPartyMenu)
+    {
+        gParties[B_TRAINER_PLAYER][sCursorPosition] = received;
+        DestroyPartyMonIcon(sCursorPosition);
+        CreatePartyMonSprite(sCursorPosition, TRUE);
+        if (&gParties[B_TRAINER_PLAYER][sCursorPosition] == GetFirstLiveMon())
+            gFollowerSteps = 0;
+    }
+    else
+    {
+        SetBoxMonAt(StorageGetCurrentBox(), sCursorPosition, &received.box);
+        DestroyBoxMonIconAtPosition(sCursorPosition);
+        CreateBoxMonIconAtPos(sCursorPosition);
+    }
+
+    HandleSetPokedexFlagFromMon(&received, FLAG_SET_SEEN);
+    HandleSetPokedexFlagFromMon(&received, FLAG_SET_CAUGHT);
+    TryRefreshDisplayMon();
+    StartDisplayMonMosaicEffect();
+    return TRUE;
+}
+
+static void Task_WonderTrade(u8 taskId)
+{
+    switch (sStorage->state)
+    {
+    case 0:
+        PrintMessage(MSG_WONDER_TRADE_CONFIRM);
+        ShowYesNoWindow(1);
+        sStorage->state++;
+        break;
+    case 1:
+        switch (Menu_ProcessInputNoWrapClearOnChoose())
+        {
+        case MENU_B_PRESSED:
+        case 1:
+            ClearBottomWindow();
+            SetPokeStorageTask(Task_PokeStorageMain);
+            break;
+        case 0:
+        {
+            enum Item heldItem = GetBoxMonData(GetCursorBoxMon(), MON_DATA_HELD_ITEM);
+
+            if (ItemIsMail(heldItem))
+            {
+                PrintMessage(MSG_PLEASE_REMOVE_MAIL);
+                sStorage->state = 3;
+                break;
+            }
+            if (heldItem != ITEM_NONE && !AddBagItem(heldItem, 1))
+            {
+                PrintMessage(MSG_BAG_FULL);
+                sStorage->state = 3;
+                break;
+            }
+
+            ClearBottomWindow();
+            if (DoWonderTrade())
+            {
+                PrintMessage(MSG_WONDER_TRADE_RECEIVED);
+                sStorage->state = 2;
+            }
+            else
+            {
+                PlaySE(SE_FAILURE);
+                SetPokeStorageTask(Task_PokeStorageMain);
+            }
+            break;
+        }
+        }
+        break;
+    case 2:
+    case 3:
+        if (JOY_NEW(A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            ClearBottomWindow();
+            SetPokeStorageTask(Task_PokeStorageMain);
         }
         break;
     }
@@ -7795,6 +7933,12 @@ static bool8 SetMenuTexts_Mon(void)
         else
             return FALSE;
         break;
+    case OPTION_WONDER_TRADE:
+        if (species != SPECIES_NONE && !sStorage->displayMonIsEgg)
+            SetMenuText(MENU_WONDER_TRADE);
+        else
+            return FALSE;
+        break;
     case OPTION_MOVE_ITEMS:
     default:
         return FALSE;
@@ -7810,7 +7954,7 @@ static bool8 SetMenuTexts_Mon(void)
     }
 
     SetMenuText(MENU_MARK);
-    if (sStorage->boxOption != OPTION_SELECT_MON)
+    if (sStorage->boxOption != OPTION_SELECT_MON && sStorage->boxOption != OPTION_WONDER_TRADE)
         SetMenuText(MENU_RELEASE);
     SetMenuText(MENU_CANCEL);
     return TRUE;
@@ -8107,6 +8251,7 @@ static const u8 *const sMenuTexts[] =
     [MENU_MACHINE]    = COMPOUND_STRING("MACHINE"),
     [MENU_SIMPLE]     = COMPOUND_STRING("SIMPLE"),
     [MENU_SELECT]     = COMPOUND_STRING("SELECT"),
+    [MENU_WONDER_TRADE] = COMPOUND_STRING("WONDER TRADE"),
 };
 
 static void SetMenuText(u8 textId)
