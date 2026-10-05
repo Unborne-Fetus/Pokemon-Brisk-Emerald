@@ -19,7 +19,9 @@ VictoryRoad_B1F_EventScript_Michelle::
 VictoryRoad_B1F_EventScript_Mitchell::
 	trainerbattle_single TRAINER_MITCHELL, VictoryRoad_B1F_Text_MitchellIntro, VictoryRoad_B1F_Text_MitchellDefeat
 	msgbox VictoryRoad_B1F_Text_MitchellPostBattle, MSGBOX_AUTOCLOSE
+	bufferspeciesname STR_VAR_1, SPECIES_KARTANA
 	givemon SPECIES_KARTANA, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	end
 
 VictoryRoad_B1F_EventScript_Halle::
