@@ -58,7 +58,9 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_ZYGARDE_50
 	givemon SPECIES_ZYGARDE_50, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
