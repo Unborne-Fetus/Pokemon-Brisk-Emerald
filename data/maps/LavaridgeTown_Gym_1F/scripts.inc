@@ -80,7 +80,9 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	giveitem ITEM_TM_OVERHEAT
+	bufferspeciesname STR_VAR_1, SPECIES_VOLCANION
 	givemon SPECIES_VOLCANION, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_OVERHEAT
