@@ -3872,7 +3872,6 @@ u8 OverworldSpeedup_AdditionalIterations(u16 speed, bool32 overworld)
     if (overworld
         && VAR_OVERWORLD_SPEEDUP != 0
         && (JOY_HELD(R_BUTTON)
-        || (FlagGet(FLAG_PREVENT_OVERWORLD_SPEEDUP) && FLAG_PREVENT_OVERWORLD_SPEEDUP != 0)
         // || FlagGet(FLAG_SYS_DEXNAV_SEARCH)        Other conditions when no speedup is wanted.
         ))
     {
