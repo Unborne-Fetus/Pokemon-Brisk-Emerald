@@ -23,6 +23,10 @@ void AssignUsableGimmicks(void)
     {
         gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_NONE;
 
+        // Wild battles do not allow battle gimmicks.
+        if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+            continue;
+
         // Check gimmicks in their normal priority first.
         for (enum Gimmick gimmick = 0; gimmick < GIMMICKS_COUNT; ++gimmick)
         {
@@ -57,12 +61,6 @@ void AssignUsableGimmicks(void)
             gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_TERA;
         }
 
-        // Finally, ordinary Dynamax.
-        if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
-         && CanActivateGimmick(battler, GIMMICK_DYNAMAX))
-        {
-            gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
-        }
     }
 }
 
