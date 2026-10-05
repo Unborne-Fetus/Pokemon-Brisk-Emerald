@@ -3,6 +3,7 @@
 #include "battle.h"
 #include "pokemon.h"
 #include "battle_controllers.h"
+#include "battle_script_commands.h"
 #include "battle_interface.h"
 #include "battle_z_move.h"
 #include "graphics.h"
@@ -3072,8 +3073,9 @@ void TryAddLastUsedBallItemSprites(void)
     }
     if (B_LAST_USED_BALL_CYCLE == TRUE)
         ArrowsChangeColorLastBallCycle(0); //Default the arrows to be invisible
-}
 
+    UpdateCatchChanceWindow();
+}
 
 
 static void DestroyLastUsedBallWinGfx(struct Sprite *sprite)
@@ -3092,10 +3094,30 @@ static void DestroyLastUsedBallGfx(struct Sprite *sprite)
     DestroySprite(sprite);
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
 }
-#define CATCH_CHANCE_WIN_WIDTH 6
-#define CATCH_CHANCE_WIN_HEIGHT 2
-#define CATCH_CHANCE_WIN_X 1
-#define CATCH_CHANCE_WIN_Y 3
+static const u8 sText_CatchChance[] = _("Catch: {STR_VAR_1}%");
+
+static void HideCatchChanceWindow(void)
+{
+    FillWindowPixelBuffer(B_CATCH_OR_NOT, PIXEL_FILL(0xE));
+    ClearWindowTilemap(B_CATCH_OR_NOT);
+    CopyWindowToVram(B_CATCH_OR_NOT, COPYWIN_FULL);
+}
+
+static void UpdateCatchChanceWindow(void)
+{
+    u32 chance;
+
+    if (!CanThrowLastUsedBall())
+    {
+        HideCatchChanceWindow();
+        return;
+    }
+
+    chance = GetCatchChancePercent(gBallToDisplay, gBattlerAttacker);
+    ConvertIntToDecimalStringN(gStringVar1, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar4, sText_CatchChance);
+    BattlePutTextOnWindow(gStringVar4, B_CATCH_OR_NOT);
+}
 
 void TryToAddMoveInfoWindow(void)
 {
@@ -3198,6 +3220,7 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
             gSprites[gBattleStruct->ballSpriteIds[0]].sHide = TRUE;
         if (gBattleStruct->ballSpriteIds[1] != MAX_SPRITES)
             gSprites[gBattleStruct->ballSpriteIds[1]].sHide = TRUE;
+        HideCatchChanceWindow();
         gLastUsedBallMenuPresent = FALSE;
         break;
     case 1: // restore
@@ -3205,6 +3228,7 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
             gSprites[gBattleStruct->ballSpriteIds[0]].sHide = FALSE;
         if (gBattleStruct->ballSpriteIds[1] != MAX_SPRITES)
             gSprites[gBattleStruct->ballSpriteIds[1]].sHide = FALSE;
+        UpdateCatchChanceWindow();
         gLastUsedBallMenuPresent = TRUE;
         break;
     }
@@ -3316,6 +3340,7 @@ void SwapBallToDisplay(bool32 sameBall)
     u8 taskId;
     taskId = CreateTask(Task_BounceBall, 10);
     gTasks[taskId].sSameBall = sameBall;
+    UpdateCatchChanceWindow();
 }
 
 void ArrowsChangeColorLastBallCycle(bool32 showArrows)
