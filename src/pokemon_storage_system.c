@@ -2921,6 +2921,10 @@ static void Task_DepositMenu(u8 taskId)
     }
 }
 
+static void CreateBoxMonIconAtPos(u8 boxPosition);
+static void DestroyBoxMonIconAtPosition(u8 boxPosition);
+static void DestroyPartyMonIcon(u8 partyId);
+
 static bool32 DoWonderTrade(void)
 {
     struct BoxPokemon *offered = GetCursorBoxMon();
@@ -2940,7 +2944,11 @@ static bool32 DoWonderTrade(void)
         return FALSE;
 
     levelOffset = (s32)RandomUniform(RNG_NONE, 0, 10) - 5;
-    receivedLevel = clamp((s32)offeredLevel + levelOffset, 1, MAX_LEVEL);
+    receivedLevel = (s32)offeredLevel + levelOffset;
+    if (receivedLevel < 1)
+        receivedLevel = 1;
+    else if (receivedLevel > MAX_LEVEL)
+        receivedLevel = MAX_LEVEL;
     receivedShiny = offeredShiny || RandomUniform(RNG_NONE, 0, 511) == 0;
 
     monTemplate.species = receivedSpecies;
