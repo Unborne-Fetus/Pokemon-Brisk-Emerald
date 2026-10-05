@@ -253,7 +253,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
 
 MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_ZAMAZENTA
 	givemon SPECIES_ZAMAZENTA, 40
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	closemessage
 	delay 20
 	applymovement LOCALID_SPACE_CENTER_MAXIE, Common_Movement_WalkInPlaceFasterLeft
