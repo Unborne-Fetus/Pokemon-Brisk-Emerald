@@ -96,7 +96,9 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 
 MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	giveitem ITEM_TM_CALM_MIND
+	bufferspeciesname STR_VAR_1, SPECIES_HOOPA_CONFINED
 	givemon SPECIES_HOOPA_CONFINED, 60
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
@@ -267,7 +269,9 @@ MossdeepCity_Gym_EventScript_Nicholas::
 MossdeepCity_Gym_EventScript_Kathleen::
 	trainerbattle_single TRAINER_KATHLEEN, MossdeepCity_Gym_Text_KathleenIntro, MossdeepCity_Gym_Text_KathleenDefeat
 	msgbox MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE
+	bufferspeciesname STR_VAR_1, SPECIES_BLACEPHALON
 	givemon SPECIES_BLACEPHALON, 30
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	end
 
 MossdeepCity_Gym_EventScript_GymGuide::
