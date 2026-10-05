@@ -61,7 +61,9 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_DARKRAI
 	givemon SPECIES_DARKRAI, 50
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	release
 	end
 
