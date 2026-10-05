@@ -208,6 +208,7 @@ static void Task_FreeAbilityPopUpGfx(u8);
 static void SpriteCB_LastUsedBall(struct Sprite *);
 static void SpriteCB_LastUsedBallWin(struct Sprite *);
 static void SpriteCB_MoveInfoWin(struct Sprite *sprite);
+static void UpdateCatchChanceWindow(void);
 
 static const struct OamData sOamData_64x32 =
 {
