@@ -21272,7 +21272,7 @@ Ability: Rain Dish
 === TRAINER_CYNTHIA ===
 Name: Cynthia
 Class: Champion
-Pic: champion_rival_frlg
+Pic: cynthia
 Gender: Female
 Music: Female
 Double Battle: No
@@ -21324,7 +21324,7 @@ Ability: Rough Skin
 === TRAINER_IRIS===
 Name: Iris
 Class: Champion
-Pic: champion_rival_frlg
+Pic: iris
 Gender: Female
 Music: Female
 Double Battle: No
@@ -21383,7 +21383,7 @@ Ability: Mold Breaker
 === TRAINER_DIANTHA===
 Name: Diantha
 Class: Champion
-Pic: champion_rival_frlg
+Pic: diantha
 Gender: Female
 Music: Female
 Double Battle: No
@@ -21438,7 +21438,7 @@ Ability: Trace
 === TRAINER_LEON===
 Name: Leon
 Class: Champion
-Pic: champion_rival_frlg
+Pic: leon
 Gender: Male
 Music: Male
 Double Battle: No
@@ -21494,7 +21494,7 @@ Ability: Blaze
 === TRAINER_NEMONA===
 Name: Nemona
 Class: Champion
-Pic: champion_rival_frlg
+Pic: nemona
 Gender: Female
 Music: Female
 Double Battle: No
@@ -21548,7 +21548,7 @@ Ability: Blaze
 === TRAINER_VOLO ===
 Name: Volo
 Class: Champion
-Pic: champion_rival_frlg
+Pic: volo
 Gender: Male
 Music: Male
 Double Battle: No

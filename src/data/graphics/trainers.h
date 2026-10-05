@@ -4,6 +4,24 @@
 const u32 gTrainerFrontPic_None[] = INCGFX_U32("graphics/trainers/front_pics/none.png", ".4bpp.smol");
 const u16 gTrainerPalette_None[] = INCGFX_U16("graphics/trainers/palettes/none.pal", ".gbapal");
 
+const u32 gTrainerFrontPic_Cynthia[] = INCGFX_U32("graphics/trainers/front_pics/cynthia.png", ".4bpp.smol");
+const u16 gTrainerPalette_Cynthia[] = INCGFX_U16("graphics/trainers/front_pics/cynthia.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Iris[] = INCGFX_U32("graphics/trainers/front_pics/iris_bw2.png", ".4bpp.smol");
+const u16 gTrainerPalette_Iris[] = INCGFX_U16("graphics/trainers/front_pics/iris_bw2.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Volo[] = INCGFX_U32("graphics/trainers/front_pics/volo.png", ".4bpp.smol");
+const u16 gTrainerPalette_Volo[] = INCGFX_U16("graphics/trainers/front_pics/volo.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Nemona[] = INCGFX_U32("graphics/trainers/front_pics/nemona.png", ".4bpp.smol");
+const u16 gTrainerPalette_Nemona[] = INCGFX_U16("graphics/trainers/front_pics/nemona.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Diantha[] = INCGFX_U32("graphics/trainers/front_pics/diantha.png", ".4bpp.smol");
+const u16 gTrainerPalette_Diantha[] = INCGFX_U16("graphics/trainers/front_pics/diantha.png", ".gbapal");
+
+const u32 gTrainerFrontPic_Leon[] = INCGFX_U32("graphics/trainers/front_pics/leon.png", ".4bpp.smol");
+const u16 gTrainerPalette_Leon[] = INCGFX_U16("graphics/trainers/front_pics/leon.png", ".gbapal");
+
 const u32 gTrainerFrontPic_Hiker[] = INCGFX_U32("graphics/trainers/front_pics/hiker.png", ".4bpp.smol");
 const u16 gTrainerPalette_Hiker[] = INCGFX_U16("graphics/trainers/front_pics/hiker.png", ".gbapal");
 
@@ -637,6 +655,30 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_OLD_MAN] =
     {
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_OldMan, gTrainerBackPicPalette_OldMan, sBackAnims_OldManPokedude),
+    },
+    [TRAINER_PIC_CYNTHIA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),
+    },
+    [TRAINER_PIC_IRIS] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Iris, gTrainerPalette_Iris),
+    },
+    [TRAINER_PIC_VOLO] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Volo, gTrainerPalette_Volo),
+    },
+    [TRAINER_PIC_NEMONA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Nemona, gTrainerPalette_Nemona),
+    },
+    [TRAINER_PIC_DIANTHA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Diantha, gTrainerPalette_Diantha),
+    },
+    [TRAINER_PIC_LEON] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Leon, gTrainerPalette_Leon),
     },
     [TRAINER_PIC_HIKER] =
     {
