@@ -113,7 +113,9 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
 	giveitem ITEM_TM_SHOCK_WAVE
+	bufferspeciesname STR_VAR_1, SPECIES_ZAPDOS
 	givemon SPECIES_ZAPDOS, 40
+	call_if_ne VAR_RESULT, MON_CANT_GIVE, Common_EventScript_ReceivedGiftPokemon
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
