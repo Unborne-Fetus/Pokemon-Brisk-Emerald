@@ -5,7 +5,7 @@
 #include "pokemon.h"
 
 
-u32 GetCurrentLevelCap(void)
+u32 GetProgressionLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
@@ -20,20 +20,21 @@ u32 GetCurrentLevelCap(void)
         {FLAG_IS_CHAMPION, 58},
     };
 
-    u32 i;
+    for (u32 i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
+    {
+        if (!FlagGet(sLevelCapFlagMap[i][0]))
+            return sLevelCapFlagMap[i][1];
+    }
 
+    return MAX_LEVEL;
+}
+
+u32 GetCurrentLevelCap(void)
+{
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
-    {
-        for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
-        {
-            if (!FlagGet(sLevelCapFlagMap[i][0]))
-                return sLevelCapFlagMap[i][1];
-        }
-    }
+        return GetProgressionLevelCap();
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
-    {
         return VarGet(B_LEVEL_CAP_VARIABLE);
-    }
 
     return MAX_LEVEL;
 }
