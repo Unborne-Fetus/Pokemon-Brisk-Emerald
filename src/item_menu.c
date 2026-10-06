@@ -1057,12 +1057,17 @@ static void PrintCatchChance(int itemIndex)
         enum Item itemId = GetBagItemId(gBagPosition.pocket, itemIndex);
         u32 chance = GetCatchChancePercent(itemId, gBattlerInMenuId);
 
+        PutWindowTilemap(WIN_CATCH_CHANCE);
         ConvertIntToDecimalStringN(gStringVar1, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, sText_BagCatchChance);
         BagMenu_Print(WIN_CATCH_CHANCE, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
     }
+    else
+    {
+        ClearWindowTilemap(WIN_CATCH_CHANCE);
+    }
 
-    CopyWindowToVram(WIN_CATCH_CHANCE, COPYWIN_GFX);
+    CopyWindowToVram(WIN_CATCH_CHANCE, COPYWIN_FULL);
 }
 
 static void PrintItemDescription(int itemIndex)
@@ -2635,11 +2640,13 @@ static void LoadBagMenuTextWindows(void)
     LoadMessageBoxGfx(0, 10, BG_PLTT_ID(13));
     ListMenuLoadStdPalAt(BG_PLTT_ID(12), 1);
     LoadPalette(&gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    for (i = 0; i <= WIN_CATCH_CHANCE; i++)
+    for (i = 0; i <= WIN_POCKET_NAME; i++)
     {
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
         PutWindowTilemap(i);
     }
+    FillWindowPixelBuffer(WIN_CATCH_CHANCE, PIXEL_FILL(0));
+    ClearWindowTilemap(WIN_CATCH_CHANCE);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
 }
