@@ -2965,8 +2965,9 @@ static bool32 DoWonderTrade(void)
 
     CreateMonFromTemplate(&received, &monTemplate);
 
-    u32 otId = Random32();
-    SetMonData(&received, MON_DATA_OT_ID, &otId);
+    // OT ID is part of the encryption key for BoxPokemon data. Changing it
+    // after creation invalidates the checksum and turns the result into a Bad Egg.
+    // Keep the creation-time OT ID and only brand the received Pokémon's OT name.
     SetMonData(&received, MON_DATA_OT_NAME, sWonderTradeOtName);
 
     if (sInPartyMenu)
@@ -4120,7 +4121,8 @@ static void CreateDisplayMonSprite(void)
     do
     {
         tileStart = LoadSpriteSheet(&sheet);
-        if (tileStart == 0)
+        // Tile 0 is a valid OBJ VRAM allocation. 0xFFFF is the failure value.
+        if (tileStart == 0xFFFF)
             break;
 
         palSlot = LoadSpritePalette(&palette);
