@@ -10,6 +10,7 @@
 #include "berry_powder.h"
 #include "bike.h"
 #include "coins.h"
+#include "caps.h"
 #include "data.h"
 #include "event_data.h"
 #include "event_object_lock.h"
@@ -102,6 +103,7 @@ static const u8 sText_PlayedPokeFluteCatchy[] = _("Played the POKé FLUTE.\pNow,
 static const u8 sText_PlayedPokeFlute[] = _("Played the POKé FLUTE.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleeping\nPOKéMON.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_OverworldBallNothing[] = _("There's nothing to catch.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_OverworldBallTooHigh[] = _("This Route is too high\nlevel for you.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_OverworldBallMiss[] = _("Nothing was caught.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_OverworldBallCaught[] = _("Gotcha! {STR_VAR_1} was caught!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_OverworldBallNoRoom[] = _("There's no room for another POKéMON.{PAUSE_UNTIL_PRESS}");
@@ -1455,7 +1457,31 @@ void ItemUseOutOfBattle_Honey(u8 taskId)
 }
 
 
-static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
+enum OverworldBallEncounterResult
+{
+    OVERWORLD_BALL_NO_ENCOUNTERS,
+    OVERWORLD_BALL_ENCOUNTER_OK,
+    OVERWORLD_BALL_ROUTE_TOO_HIGH,
+};
+
+static bool32 HasOverworldBallEncounterAtOrBelowCap(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u32 levelCap)
+{
+    u32 count = (area == WILD_AREA_LAND) ? NUM_LAND_MONS_ENCOUNTER_SLOTS : NUM_WATER_MONS_ENCOUNTER_SLOTS;
+
+    if (wildMonInfo == NULL)
+        return FALSE;
+
+    for (u32 i = 0; i < count; i++)
+    {
+        if (wildMonInfo->wildPokemon[i].species != SPECIES_NONE
+         && wildMonInfo->wildPokemon[i].minLevel <= levelCap)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+static enum OverworldBallEncounterResult GetOverworldBallEncounter(enum Species *species, u8 *level)
 {
     u32 headerId = GetCurrentMapWildMonHeaderId();
     enum TimeOfDay timeOfDay;
@@ -1464,9 +1490,12 @@ static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
     const struct WildPokemonInfo *wildMonInfo;
     enum WildPokemonArea area;
     u32 wildMonIndex;
+    u32 levelCap = GetProgressionLevelCap();
+    bool32 landEligible;
+    bool32 waterEligible;
 
     if (headerId == HEADER_NONE)
-        return FALSE;
+        return OVERWORLD_BALL_NO_ENCOUNTERS;
 
     timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
     landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
@@ -1475,9 +1504,17 @@ static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
     waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
 
     if (landMonsInfo == NULL && waterMonsInfo == NULL)
-        return FALSE;
+        return OVERWORLD_BALL_NO_ENCOUNTERS;
 
-    if (landMonsInfo != NULL && waterMonsInfo != NULL)
+    landEligible = HasOverworldBallEncounterAtOrBelowCap(landMonsInfo, WILD_AREA_LAND, levelCap);
+    waterEligible = HasOverworldBallEncounterAtOrBelowCap(waterMonsInfo, WILD_AREA_WATER, levelCap);
+
+    // If every available encounter on the route starts above the player's
+    // current progression cap, block overworld catching entirely.
+    if (!landEligible && !waterEligible)
+        return OVERWORLD_BALL_ROUTE_TOO_HIGH;
+
+    if (landEligible && waterEligible)
     {
         if (Random() % 100 < 80)
         {
@@ -1490,7 +1527,7 @@ static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
             area = WILD_AREA_WATER;
         }
     }
-    else if (landMonsInfo != NULL)
+    else if (landEligible)
     {
         wildMonInfo = landMonsInfo;
         area = WILD_AREA_LAND;
@@ -1508,10 +1545,12 @@ static bool32 GetOverworldBallEncounter(enum Species *species, u8 *level)
 
     *species = wildMonInfo->wildPokemon[wildMonIndex].species;
     if (*species == SPECIES_NONE)
-        return FALSE;
+        return OVERWORLD_BALL_NO_ENCOUNTERS;
 
-    *level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
-    return TRUE;
+    // Preserve the route's normal level roll, but never let this shortcut
+    // generate a Pokémon above the current progression cap.
+    *level = min(ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area), levelCap);
+    return OVERWORLD_BALL_ENCOUNTER_OK;
 }
 
 static void ItemUseOnFieldCB_OverworldBall(u8 taskId)
@@ -1520,10 +1559,16 @@ static void ItemUseOnFieldCB_OverworldBall(u8 taskId)
     u8 level;
     u8 catchChance;
     u8 ball;
+    enum OverworldBallEncounterResult encounterResult = GetOverworldBallEncounter(&species, &level);
 
-    if (!GetOverworldBallEncounter(&species, &level))
+    if (encounterResult == OVERWORLD_BALL_NO_ENCOUNTERS)
     {
         DisplayItemMessageOnField(taskId, sText_OverworldBallNothing, Task_CloseCantUseKeyItemMessage);
+        return;
+    }
+    if (encounterResult == OVERWORLD_BALL_ROUTE_TOO_HIGH)
+    {
+        DisplayItemMessageOnField(taskId, sText_OverworldBallTooHigh, Task_CloseCantUseKeyItemMessage);
         return;
     }
 
