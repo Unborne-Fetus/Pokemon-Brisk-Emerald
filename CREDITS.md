@@ -138,3 +138,12 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - [Data Files](https://www.pokecommunity.com/showthread.php?t=417909)
 - [Complete FireRed Upgrade](https://github.com/Skeli789/Complete-Fire-Red-Upgrade)
 - [pokeemerald](https://github.com/pret/pokeemerald/)
+
+
+### Brisk Emerald visiting Champion overworld sprites
+
+Imported from [Team Aqua’s Asset Repo](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo):
+
+- Blue: Horo; commissioned by Paccy.
+- Champion Iris (B2W2): Kasen.
+- Cynthia: spilledpizza, TheWiggliestJiggliest, RichardPT, robloxmaster376, The Spriters Resource, and The Radiant Quartz/Prismatic Platinum team, as credited by the source pack.

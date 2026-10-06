@@ -1925,9 +1925,6 @@ static const struct SpriteFrameImage sPicTable_Lance[] = {
     overworld_frame(gObjectEventPic_Lance, 2, 4, 2),
 };
 
-static const struct SpriteFrameImage sPicTable_Blue[] = {
-    overworld_ascending_frames(gObjectEventPic_Blue, 2, 4),
-};
 
 static const struct SpriteFrameImage sPicTable_TownMap[] = {
     overworld_frame(gObjectEventPic_TownMap, 2, 4, 0),
@@ -2494,3 +2491,15 @@ static const struct SpriteFrameImage sPicTable_MomFrlg[] = {
 };
 
 #endif // IS_FRLG
+
+static const struct SpriteFrameImage sPicTable_Blue[] = {
+    overworld_ascending_frames(gObjectEventPic_Blue, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Cynthia[] = {
+    overworld_ascending_frames(gObjectEventPic_Cynthia, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Iris[] = {
+    overworld_ascending_frames(gObjectEventPic_Iris, 2, 4),
+};
