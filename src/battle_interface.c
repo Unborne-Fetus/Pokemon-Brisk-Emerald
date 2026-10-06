@@ -3114,7 +3114,9 @@ static void UpdateCatchChanceWindow(void)
         return;
     }
 
-    chance = GetCatchChancePercent(gBallToDisplay, gBattlerAttacker);
+    // The action-menu battler is the one actually throwing the Ball.
+    // gBattlerAttacker can still refer to the previous move when this UI opens.
+    chance = GetCatchChancePercent(gBallToDisplay, gBattlerInMenuId);
     ConvertIntToDecimalStringN(gStringVar1, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, sText_CatchChance);
     BattlePutTextOnWindow(gStringVar4, B_CATCH_OR_NOT);
