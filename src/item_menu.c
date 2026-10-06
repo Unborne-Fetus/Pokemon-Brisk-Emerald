@@ -1742,8 +1742,16 @@ static void OpenContextMenu(u8 taskId)
                 }
                 break;
             case POCKET_POKE_BALLS:
-                gBagMenu->contextMenuItemsPtr = sContextMenuItems_BallsPocket;
+                gBagMenu->contextMenuItemsPtr = gBagMenu->contextMenuItemsBuffer;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BallsPocket);
+                memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_BallsPocket, sizeof(sContextMenuItems_BallsPocket));
+                // Only Balls that explicitly support field use get the new USE
+                // option. All other Balls keep the original Give/Toss behavior.
+                if (GetItemFieldFunc(gSpecialVar_ItemId) == NULL)
+                {
+                    gBagMenu->contextMenuItemsBuffer[0] = ACTION_GIVE;
+                    gBagMenu->contextMenuItemsBuffer[1] = ACTION_DUMMY;
+                }
                 break;
             case POCKET_TM_HM:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_TmHmPocket;
