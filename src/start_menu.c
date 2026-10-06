@@ -4,6 +4,7 @@
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "bg.h"
+#include "caps.h"
 #include "debug.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -84,6 +85,7 @@ enum
 COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 
 // EWRAM
+EWRAM_DATA static u8 sLevelCapWindowId = WINDOW_NONE;
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
@@ -144,6 +146,25 @@ static void SaveGameTask(u8 taskId);
 static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
+
+static const struct WindowTemplate sWindowTemplate_LevelCap = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 17,
+    .height = 6,
+    .paletteNum = 15,
+    .baseBlock = 0x8
+};
+
+static const u8 sText_LevelCap[] = _("Level cap: {STR_VAR_1}");
+static const u8 sText_NextCap[] = _("Next: {STR_VAR_1}");
+static const u8 sText_MaxLevelUnlocked[] = _("Max level unlocked!");
+static const u8 *const sNextCapMilestones[] = {
+    _("Roxanne"), _("Brawly"), _("Wattson"), _("Flannery"),
+    _("Norman"), _("Winona"), _("Tate & Liza"), _("Juan"),
+    _("Become Champion"),
+};
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .bg = 0,
@@ -465,8 +486,41 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+static void ShowLevelCapWindow(void)
+{
+    u32 milestone;
+
+    sLevelCapWindowId = AddWindow(&sWindowTemplate_LevelCap);
+    PutWindowTilemap(sLevelCapWindowId);
+    DrawStdWindowFrame(sLevelCapWindowId, FALSE);
+    ConvertIntToDecimalStringN(gStringVar1, GetProgressionLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar4, sText_LevelCap);
+    AddTextPrinterParameterized(sLevelCapWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    for (milestone = 0; milestone < 8; milestone++)
+    {
+        if (!FlagGet(FLAG_BADGE01_GET + milestone))
+            break;
+    }
+    if (milestone == 8 && FlagGet(FLAG_IS_CHAMPION))
+        StringCopy(gStringVar4, sText_MaxLevelUnlocked);
+    else
+    {
+        StringCopy(gStringVar1, sNextCapMilestones[milestone]);
+        StringExpandPlaceholders(gStringVar4, sText_NextCap);
+    }
+    AddTextPrinterParameterized(sLevelCapWindowId, FONT_NORMAL, gStringVar4, 0, 17, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sLevelCapWindowId, COPYWIN_GFX);
+}
+
 static void RemoveExtraStartMenuWindows(void)
 {
+    if (sLevelCapWindowId != WINDOW_NONE)
+    {
+        ClearStdWindowAndFrameToTransparent(sLevelCapWindowId, FALSE);
+        CopyWindowToVram(sLevelCapWindowId, COPYWIN_GFX);
+        RemoveWindow(sLevelCapWindowId);
+        sLevelCapWindowId = WINDOW_NONE;
+    }
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariBallsWindowId, FALSE);
@@ -535,6 +589,8 @@ static bool32 InitStartMenuStep(void)
             ShowSafariBallsWindow();
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             ShowPyramidFloorWindow();
+        if (!GetSafariZoneFlag() && CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
+            ShowLevelCapWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
@@ -1480,6 +1536,7 @@ void SaveForBattleTowerLink(void)
 
 static void HideStartMenuWindow(void)
 {
+    RemoveExtraStartMenuWindows();
     ClearStdWindowAndFrame(GetStartMenuWindowId(), TRUE);
     RemoveStartMenuWindow();
     ScriptUnfreezeObjectEvents();
