@@ -1,6 +1,7 @@
 #include "global.h"
 #include "item_menu.h"
 #include "battle.h"
+#include "battle_script_commands.h"
 #include "battle_controllers.h"
 #include "battle_pyramid.h"
 #include "frontier_util.h"
@@ -99,6 +100,7 @@ enum {
     WIN_ITEM_LIST,
     WIN_DESCRIPTION,
     WIN_POCKET_NAME,
+    WIN_CATCH_CHANCE,
     WIN_TMHM_INFO_ICONS,
     WIN_TMHM_INFO,
     WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
@@ -143,6 +145,7 @@ static void Task_WallyTutorialBagMenu(u8);
 static void Task_BagMenu_HandleInput(u8);
 static void GetItemNameFromPocket(u8 *dest, enum Item itemId);
 static void PrintItemDescription(int);
+static void PrintCatchChance(int itemIndex);
 static void BagMenu_PrintCursorAtPos(u8, u8);
 static void BagMenu_Print(u8, u8, const u8 *, u8, u8, u8, u8, u8, u8);
 static void Task_CloseBagMenu(u8);
@@ -451,6 +454,15 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .height = 2,
         .paletteNum = 1,
         .baseBlock = 0x1A1,
+    },
+    [WIN_CATCH_CHANCE] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 10,
+        .width = 12,
+        .height = 2,
+        .paletteNum = 1,
+        .baseBlock = 0x289,
     },
     [WIN_TMHM_INFO_ICONS] = {
         .bg = 0,
@@ -989,6 +1001,7 @@ static void BagMenu_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListM
         gBagMenu->itemIconSlot ^= 1;
         if (!gBagMenu->inhibitItemDescriptionPrint)
             PrintItemDescription(itemIndex);
+        PrintCatchChance(itemIndex);
     }
 }
 
@@ -1028,6 +1041,28 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
                 BlitBitmapToWindow(windowId, sRegisteredSelect_Gfx, 96, y - 1, 24, 16);
         }
     }
+}
+
+static const u8 sText_BagCatchChance[] = _("Catch: {STR_VAR_1}%");
+
+static void PrintCatchChance(int itemIndex)
+{
+    FillWindowPixelBuffer(WIN_CATCH_CHANCE, PIXEL_FILL(0));
+
+    if (gBagPosition.location == ITEMMENULOCATION_BATTLE
+     && gBagPosition.pocket == POCKET_POKE_BALLS
+     && itemIndex != LIST_CANCEL
+     && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER)))
+    {
+        enum Item itemId = GetBagItemId(gBagPosition.pocket, itemIndex);
+        u32 chance = GetCatchChancePercent(itemId, gBattlerInMenuId);
+
+        ConvertIntToDecimalStringN(gStringVar1, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, sText_BagCatchChance);
+        BagMenu_Print(WIN_CATCH_CHANCE, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
+    }
+
+    CopyWindowToVram(WIN_CATCH_CHANCE, COPYWIN_GFX);
 }
 
 static void PrintItemDescription(int itemIndex)
@@ -2600,7 +2635,7 @@ static void LoadBagMenuTextWindows(void)
     LoadMessageBoxGfx(0, 10, BG_PLTT_ID(13));
     ListMenuLoadStdPalAt(BG_PLTT_ID(12), 1);
     LoadPalette(&gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    for (i = 0; i <= WIN_POCKET_NAME; i++)
+    for (i = 0; i <= WIN_CATCH_CHANCE; i++)
     {
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
         PutWindowTilemap(i);
