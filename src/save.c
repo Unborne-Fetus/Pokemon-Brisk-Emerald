@@ -9,6 +9,7 @@
 #include "overworld.h"
 #include "hall_of_fame.h"
 #include "pokemon_storage_system.h"
+#include "string_util.h"
 #include "trainer_hill.h"
 #include "link.h"
 #include "constants/game_stat.h"
@@ -25,6 +26,7 @@ static void CopyFromSaveBlock3(u32, struct SaveSector *);
 static void SavePokemonStorageExtension(void);
 static bool8 LoadPokemonStorageExtension(void);
 static void MigrateLegacyPokemonStorage(void);
+static void RepairExpandedPokemonStorageMetadata(void);
 
 // Divide save blocks into individual chunks to be written to flash sectors
 
@@ -69,6 +71,27 @@ struct LegacyPokemonStorage
     u8 boxWallpapers[LEGACY_TOTAL_BOXES_COUNT];
     struct Pokemon fusions[MAX_FUSION_STORAGE];
 };
+
+static u16 GetLegacyPokemonStorageSectorSize(u16 sectorId)
+{
+    u32 chunk;
+    u32 offset;
+
+    if (sectorId < SECTOR_ID_PKMN_STORAGE_START || sectorId > SECTOR_ID_PKMN_STORAGE_END)
+        return 0;
+
+    chunk = sectorId - SECTOR_ID_PKMN_STORAGE_START;
+    offset = chunk * SECTOR_DATA_SIZE;
+    if (offset >= sizeof(struct LegacyPokemonStorage))
+        return 0;
+
+    return min(sizeof(struct LegacyPokemonStorage) - offset, SECTOR_DATA_SIZE);
+}
+
+static bool32 IsSaveSectorChecksumValidForSize(const struct SaveSector *sector, u16 size)
+{
+    return size != 0 && sector->checksum == CalculateChecksum((void *)sector->data, size);
+}
 
 struct
 {
@@ -509,26 +532,42 @@ static u8 TryLoadSaveSlot(u16 sectorId, struct SaveSectorLocation *locations)
 static u8 CopySaveSlotData(u16 sectorId, struct SaveSectorLocation *locations)
 {
     u16 i;
-    u16 checksum;
     u16 slotOffset = NUM_SECTORS_PER_SLOT * (gSaveCounter % NUM_SAVE_SLOTS);
     u16 id;
 
     for (i = 0; i < NUM_SECTORS_PER_SLOT; i++)
     {
+        u16 copySize;
+        bool32 checksumValid;
+
         ReadFlashSector(i + slotOffset, gReadWriteSector);
 
         id = gReadWriteSector->id;
+        if (id >= NUM_SECTORS_PER_SLOT)
+            continue;
         if (id == 0)
             gLastWrittenSector = i;
 
-        checksum = CalculateChecksum(gReadWriteSector->data, locations[id].size);
+        copySize = locations[id].size;
+        checksumValid = IsSaveSectorChecksumValidForSize(gReadWriteSector, copySize);
 
-        // Only copy data for sectors whose signature and checksum fields are correct
-        if (gReadWriteSector->signature == SECTOR_SIGNATURE && gReadWriteSector->checksum == checksum)
+        // The final PC sector in a 14-box save was shorter than it is now.
+        // Accept its legacy checksum/size so all old box metadata survives the
+        // one-time migration to the expanded 20-box layout.
+        if (!checksumValid && id >= SECTOR_ID_PKMN_STORAGE_START && id <= SECTOR_ID_PKMN_STORAGE_END)
         {
-            u16 j;
-            for (j = 0; j < locations[id].size; j++)
-                ((u8 *)locations[id].data)[j] = gReadWriteSector->data[j];
+            u16 legacySize = GetLegacyPokemonStorageSectorSize(id);
+            if (IsSaveSectorChecksumValidForSize(gReadWriteSector, legacySize))
+            {
+                checksumValid = TRUE;
+                copySize = legacySize;
+            }
+        }
+
+        if (gReadWriteSector->signature == SECTOR_SIGNATURE && checksumValid)
+        {
+            memset(locations[id].data, 0, locations[id].size);
+            memcpy(locations[id].data, gReadWriteSector->data, copySize);
             CopyToSaveBlock3(id, gReadWriteSector);
         }
     }
@@ -539,7 +578,6 @@ static u8 CopySaveSlotData(u16 sectorId, struct SaveSectorLocation *locations)
 static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
 {
     u16 i;
-    u16 checksum;
     u32 saveSlot1Counter = 0;
     u32 saveSlot2Counter = 0;
     u32 validSectorFlags = 0;
@@ -554,11 +592,20 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
         if (gReadWriteSector->signature == SECTOR_SIGNATURE)
         {
             signatureValid = TRUE;
-            checksum = CalculateChecksum(gReadWriteSector->data, locations[gReadWriteSector->id].size);
-            if (gReadWriteSector->checksum == checksum)
+            u16 id = gReadWriteSector->id;
+            bool32 checksumValid = FALSE;
+
+            if (id < NUM_SECTORS_PER_SLOT)
+            {
+                checksumValid = IsSaveSectorChecksumValidForSize(gReadWriteSector, locations[id].size);
+                if (!checksumValid && id >= SECTOR_ID_PKMN_STORAGE_START && id <= SECTOR_ID_PKMN_STORAGE_END)
+                    checksumValid = IsSaveSectorChecksumValidForSize(gReadWriteSector, GetLegacyPokemonStorageSectorSize(id));
+            }
+
+            if (checksumValid)
             {
                 saveSlot1Counter = gReadWriteSector->counter;
-                validSectorFlags |= 1 << gReadWriteSector->id;
+                validSectorFlags |= 1 << id;
             }
         }
     }
@@ -586,11 +633,20 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
         if (gReadWriteSector->signature == SECTOR_SIGNATURE)
         {
             signatureValid = TRUE;
-            checksum = CalculateChecksum(gReadWriteSector->data, locations[gReadWriteSector->id].size);
-            if (gReadWriteSector->checksum == checksum)
+            u16 id = gReadWriteSector->id;
+            bool32 checksumValid = FALSE;
+
+            if (id < NUM_SECTORS_PER_SLOT)
+            {
+                checksumValid = IsSaveSectorChecksumValidForSize(gReadWriteSector, locations[id].size);
+                if (!checksumValid && id >= SECTOR_ID_PKMN_STORAGE_START && id <= SECTOR_ID_PKMN_STORAGE_END)
+                    checksumValid = IsSaveSectorChecksumValidForSize(gReadWriteSector, GetLegacyPokemonStorageSectorSize(id));
+            }
+
+            if (checksumValid)
             {
                 saveSlot2Counter = gReadWriteSector->counter;
-                validSectorFlags |= 1 << gReadWriteSector->id;
+                validSectorFlags |= 1 << id;
             }
         }
     }
@@ -792,6 +848,39 @@ static bool8 LoadPokemonStorageExtension(void)
     return TRUE;
 }
 
+static void RepairExpandedPokemonStorageMetadata(void)
+{
+    static const u8 sText_Box[] = _("BOX");
+    u32 boxId;
+
+    for (boxId = LEGACY_TOTAL_BOXES_COUNT; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        bool32 emptyName = TRUE;
+        u32 i;
+
+        // Earlier 20-box builds zero-filled these names. In the game's text
+        // encoding that is not an empty, terminated string, so it rendered as
+        // garbage. Repair only all-zero names so custom names remain untouched.
+        for (i = 0; i < BOX_NAME_LENGTH + 1; i++)
+        {
+            if (gPokemonStoragePtr->boxNames[boxId][i] != 0)
+            {
+                emptyName = FALSE;
+                break;
+            }
+        }
+
+        if (emptyName)
+        {
+            u8 *dest = StringCopy(gPokemonStoragePtr->boxNames[boxId], sText_Box);
+            ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        }
+    }
+
+    if (gPokemonStoragePtr->currentBox >= TOTAL_BOXES_COUNT)
+        gPokemonStoragePtr->currentBox = 0;
+}
+
 static void MigrateLegacyPokemonStorage(void)
 {
     struct LegacyPokemonStorage *legacy = (struct LegacyPokemonStorage *)gPokemonStoragePtr;
@@ -808,8 +897,7 @@ static void MigrateLegacyPokemonStorage(void)
     memset(&gPokemonStoragePtr->boxWallpapers[LEGACY_TOTAL_BOXES_COUNT], 0,
            sizeof(gPokemonStoragePtr->boxWallpapers[0]) * (TOTAL_BOXES_COUNT - LEGACY_TOTAL_BOXES_COUNT));
 
-    if (gPokemonStoragePtr->currentBox >= TOTAL_BOXES_COUNT)
-        gPokemonStoragePtr->currentBox = 0;
+    RepairExpandedPokemonStorageMetadata();
 }
 
 static void UpdateSaveAddresses(void)
@@ -1010,8 +1098,13 @@ u8 LoadGameSave(u8 saveType)
     case SAVE_NORMAL:
     default:
         status = TryLoadSaveSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
-        if (status != SAVE_STATUS_EMPTY && !LoadPokemonStorageExtension())
-            MigrateLegacyPokemonStorage();
+        if (status != SAVE_STATUS_EMPTY)
+        {
+            if (!LoadPokemonStorageExtension())
+                MigrateLegacyPokemonStorage();
+            else
+                RepairExpandedPokemonStorageMetadata();
+        }
         CopyPartyAndObjectsFromSave();
         gSaveFileStatus = status;
         gGameContinueCallback = NULL;
