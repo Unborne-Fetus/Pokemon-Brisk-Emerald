@@ -10,14 +10,14 @@ u32 GetProgressionLevelCap(void)
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_BADGE01_GET, 25},
-        {FLAG_BADGE02_GET, 29},
-        {FLAG_BADGE03_GET, 34},
-        {FLAG_BADGE04_GET, 39},
-        {FLAG_BADGE05_GET, 41},
-        {FLAG_BADGE06_GET, 43},
-        {FLAG_BADGE07_GET, 52},
-        {FLAG_BADGE08_GET, 56},
-        {FLAG_IS_CHAMPION, 68},
+        {FLAG_BADGE02_GET, 35},
+        {FLAG_BADGE03_GET, 45},
+        {FLAG_BADGE04_GET, 50},
+        {FLAG_BADGE05_GET, 55},
+        {FLAG_BADGE06_GET, 65},
+        {FLAG_BADGE07_GET, 75},
+        {FLAG_BADGE08_GET, 100},
+        {FLAG_IS_CHAMPION, MAX_LEVEL},
     };
 
     for (u32 i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
