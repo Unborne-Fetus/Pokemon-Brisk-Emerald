@@ -239,7 +239,19 @@ static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x,
         metatiles = mapLayout->secondaryTileset->metatiles;
         metatileId -= GetNumMetatilesInPrimary(mapLayout);
     }
-    DrawMetatile(MapGridGetMetatileLayerTypeAt(x, y), metatiles + metatileId * NUM_TILES_PER_METATILE, offset);
+    // Map metatiles store all three BG layers explicitly. Door animation
+    // frames still use the original eight-tile DrawMetatile format.
+    metatiles += metatileId * NUM_TILES_PER_METATILE;
+    for (u32 i = 0; i < 4; i++)
+    {
+        u16 pos = offset + (i / 2) * 0x20 + i % 2;
+        gOverworldTilemapBuffer_Bg3[pos] = metatiles[i];
+        gOverworldTilemapBuffer_Bg2[pos] = metatiles[i + 4];
+        gOverworldTilemapBuffer_Bg1[pos] = metatiles[i + 8];
+    }
+    ScheduleBgCopyTilemapToVram(1);
+    ScheduleBgCopyTilemapToVram(2);
+    ScheduleBgCopyTilemapToVram(3);
 }
 
 static void DrawMetatile(s32 metatileLayerType, const u16 *tiles, u16 offset)

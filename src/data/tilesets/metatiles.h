@@ -408,3 +408,56 @@ const u16 gMetatiles_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_
 const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame_frlg/metatile_attributes.bin");
 
 #endif // IS_FRLG
+
+// Team Aqua tilesets for new Brisk maps.
+
+const u16 gMetatiles_AquaAlternativeGeneral[] = INCBIN_U16("data/tilesets/primary/aqua_alternative_general/metatiles.bin");
+const u16 gMetatileAttributes_AquaAlternativeGeneral[] = INCBIN_U16("data/tilesets/primary/aqua_alternative_general/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaAutumnRuins[] = INCBIN_U16("data/tilesets/secondary/aqua_autumn_ruins/metatiles.bin");
+const u16 gMetatileAttributes_AquaAutumnRuins[] = INCBIN_U16("data/tilesets/secondary/aqua_autumn_ruins/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaBrickCafe[] = INCBIN_U16("data/tilesets/secondary/aqua_brick_cafe/metatiles.bin");
+const u16 gMetatileAttributes_AquaBrickCafe[] = INCBIN_U16("data/tilesets/secondary/aqua_brick_cafe/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaDesert[] = INCBIN_U16("data/tilesets/primary/aqua_desert/metatiles.bin");
+const u16 gMetatileAttributes_AquaDesert[] = INCBIN_U16("data/tilesets/primary/aqua_desert/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaDesertVillage[] = INCBIN_U16("data/tilesets/secondary/aqua_desert_village/metatiles.bin");
+const u16 gMetatileAttributes_AquaDesertVillage[] = INCBIN_U16("data/tilesets/secondary/aqua_desert_village/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaDojoExterior[] = INCBIN_U16("data/tilesets/secondary/aqua_dojo_exterior/metatiles.bin");
+const u16 gMetatileAttributes_AquaDojoExterior[] = INCBIN_U16("data/tilesets/secondary/aqua_dojo_exterior/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaDojoInterior[] = INCBIN_U16("data/tilesets/secondary/aqua_dojo_interior/metatiles.bin");
+const u16 gMetatileAttributes_AquaDojoInterior[] = INCBIN_U16("data/tilesets/secondary/aqua_dojo_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaHiddenGrotto[] = INCBIN_U16("data/tilesets/primary/aqua_hidden_grotto/metatiles.bin");
+const u16 gMetatileAttributes_AquaHiddenGrotto[] = INCBIN_U16("data/tilesets/primary/aqua_hidden_grotto/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaLugiaAltar[] = INCBIN_U16("data/tilesets/secondary/aqua_lugia_altar/metatiles.bin");
+const u16 gMetatileAttributes_AquaLugiaAltar[] = INCBIN_U16("data/tilesets/secondary/aqua_lugia_altar/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaPyramidInterior[] = INCBIN_U16("data/tilesets/primary/aqua_pyramid_interior/metatiles.bin");
+const u16 gMetatileAttributes_AquaPyramidInterior[] = INCBIN_U16("data/tilesets/primary/aqua_pyramid_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaPyramidInteriorSecondary[] = INCBIN_U16("data/tilesets/secondary/aqua_pyramid_interior/metatiles.bin");
+const u16 gMetatileAttributes_AquaPyramidInteriorSecondary[] = INCBIN_U16("data/tilesets/secondary/aqua_pyramid_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaShadyForest[] = INCBIN_U16("data/tilesets/secondary/aqua_shady_forest/metatiles.bin");
+const u16 gMetatileAttributes_AquaShadyForest[] = INCBIN_U16("data/tilesets/secondary/aqua_shady_forest/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaSmallTownLab[] = INCBIN_U16("data/tilesets/secondary/aqua_small_town_lab/metatiles.bin");
+const u16 gMetatileAttributes_AquaSmallTownLab[] = INCBIN_U16("data/tilesets/secondary/aqua_small_town_lab/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaSpaceMeteor[] = INCBIN_U16("data/tilesets/secondary/aqua_space_meteor/metatiles.bin");
+const u16 gMetatileAttributes_AquaSpaceMeteor[] = INCBIN_U16("data/tilesets/secondary/aqua_space_meteor/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaOrangeIslands[] = INCBIN_U16("data/tilesets/primary/aqua_orange_islands/metatiles.bin");
+const u16 gMetatileAttributes_AquaOrangeIslands[] = INCBIN_U16("data/tilesets/primary/aqua_orange_islands/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaValenciaIsland[] = INCBIN_U16("data/tilesets/secondary/aqua_valencia_island/metatiles.bin");
+const u16 gMetatileAttributes_AquaValenciaIsland[] = INCBIN_U16("data/tilesets/secondary/aqua_valencia_island/metatile_attributes.bin");
+
+const u16 gMetatiles_AquaHiddenGrottoSecondary[] = INCBIN_U16("data/tilesets/secondary/aqua_hidden_grotto/metatiles.bin");
+const u16 gMetatileAttributes_AquaHiddenGrottoSecondary[] = INCBIN_U16("data/tilesets/secondary/aqua_hidden_grotto/metatile_attributes.bin");

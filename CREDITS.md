@@ -161,3 +161,18 @@ From Team Aqua's Asset Repo:
 - Secret Base furniture: yoshord.
 
 Original per-pack credit/readme files are preserved under `resources/team_aqua`.
+
+### Selected Team Aqua tilesets
+
+The 16 selected full tilesets are imported from Team Aqua's Asset Repo (revision
+92686187379d04d38bdf08b509f2db136cc25c99). Full original author lists, source
+notes and Orange Islands permissions are retained in
+`resources/team_aqua/tilesets/`. This includes Rahtak's ports/submissions,
+Yumekua's assemblies, Ekat/Ekat99, Heartlessdragoon, Vurtax and the additional
+contributors named in each pack's credit file; tchemaster's Hidden Grotto;
+Princess-phoenix and the Pokemon Rejuvenation team (Pyramid); Kalarie and the
+Orange Islands contributors, with ShinyDragonHunter's metatile implementation;
+and the Alternative General contributors fisham33, skidmarc25,
+thedeadheroalistair. Preserve the full
+per-pack lists and permissions when redistributing these assets. Brick Cafe
+resources are for non-commercial projects.

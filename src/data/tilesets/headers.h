@@ -1541,3 +1541,192 @@ const struct Tileset gTileset_HallOfFame =
 };
 
 #endif // IS_FRLG
+
+// Team Aqua tilesets for new Brisk maps.
+
+const struct Tileset gTileset_AquaAlternativeGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_AquaAlternativeGeneral,
+    .palettes = gTilesetPalettes_AquaAlternativeGeneral,
+    .metatiles = gMetatiles_AquaAlternativeGeneral,
+    .metatileAttributes = gMetatileAttributes_AquaAlternativeGeneral,
+    .callback = InitTilesetAnim_AquaAlternativeGeneral,
+};
+
+const struct Tileset gTileset_AquaAutumnRuins =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaAutumnRuins,
+    .palettes = gTilesetPalettes_AquaAutumnRuins,
+    .metatiles = gMetatiles_AquaAutumnRuins,
+    .metatileAttributes = gMetatileAttributes_AquaAutumnRuins,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaBrickCafe =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaBrickCafe,
+    .palettes = gTilesetPalettes_AquaBrickCafe,
+    .metatiles = gMetatiles_AquaBrickCafe,
+    .metatileAttributes = gMetatileAttributes_AquaBrickCafe,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaDesert =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_AquaDesert,
+    .palettes = gTilesetPalettes_AquaDesert,
+    .metatiles = gMetatiles_AquaDesert,
+    .metatileAttributes = gMetatileAttributes_AquaDesert,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaDesertVillage =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaDesertVillage,
+    .palettes = gTilesetPalettes_AquaDesertVillage,
+    .metatiles = gMetatiles_AquaDesertVillage,
+    .metatileAttributes = gMetatileAttributes_AquaDesertVillage,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaDojoExterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaDojoExterior,
+    .palettes = gTilesetPalettes_AquaDojoExterior,
+    .metatiles = gMetatiles_AquaDojoExterior,
+    .metatileAttributes = gMetatileAttributes_AquaDojoExterior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaDojoInterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaDojoInterior,
+    .palettes = gTilesetPalettes_AquaDojoInterior,
+    .metatiles = gMetatiles_AquaDojoInterior,
+    .metatileAttributes = gMetatileAttributes_AquaDojoInterior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaHiddenGrotto =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_AquaHiddenGrotto,
+    .palettes = gTilesetPalettes_AquaHiddenGrotto,
+    .metatiles = gMetatiles_AquaHiddenGrotto,
+    .metatileAttributes = gMetatileAttributes_AquaHiddenGrotto,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaLugiaAltar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaLugiaAltar,
+    .palettes = gTilesetPalettes_AquaLugiaAltar,
+    .metatiles = gMetatiles_AquaLugiaAltar,
+    .metatileAttributes = gMetatileAttributes_AquaLugiaAltar,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaPyramidInterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_AquaPyramidInterior,
+    .palettes = gTilesetPalettes_AquaPyramidInterior,
+    .metatiles = gMetatiles_AquaPyramidInterior,
+    .metatileAttributes = gMetatileAttributes_AquaPyramidInterior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaPyramidInteriorSecondary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaPyramidInteriorSecondary,
+    .palettes = gTilesetPalettes_AquaPyramidInteriorSecondary,
+    .metatiles = gMetatiles_AquaPyramidInteriorSecondary,
+    .metatileAttributes = gMetatileAttributes_AquaPyramidInteriorSecondary,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaShadyForest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaShadyForest,
+    .palettes = gTilesetPalettes_AquaShadyForest,
+    .metatiles = gMetatiles_AquaShadyForest,
+    .metatileAttributes = gMetatileAttributes_AquaShadyForest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaSmallTownLab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaSmallTownLab,
+    .palettes = gTilesetPalettes_AquaSmallTownLab,
+    .metatiles = gMetatiles_AquaSmallTownLab,
+    .metatileAttributes = gMetatileAttributes_AquaSmallTownLab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaSpaceMeteor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaSpaceMeteor,
+    .palettes = gTilesetPalettes_AquaSpaceMeteor,
+    .metatiles = gMetatiles_AquaSpaceMeteor,
+    .metatileAttributes = gMetatileAttributes_AquaSpaceMeteor,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaOrangeIslands =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_AquaOrangeIslands,
+    .palettes = gTilesetPalettes_AquaOrangeIslands,
+    .metatiles = gMetatiles_AquaOrangeIslands,
+    .metatileAttributes = gMetatileAttributes_AquaOrangeIslands,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaValenciaIsland =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaValenciaIsland,
+    .palettes = gTilesetPalettes_AquaValenciaIsland,
+    .metatiles = gMetatiles_AquaValenciaIsland,
+    .metatileAttributes = gMetatileAttributes_AquaValenciaIsland,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AquaHiddenGrottoSecondary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AquaHiddenGrottoSecondary,
+    .palettes = gTilesetPalettes_AquaHiddenGrottoSecondary,
+    .metatiles = gMetatiles_AquaHiddenGrottoSecondary,
+    .metatileAttributes = gMetatileAttributes_AquaHiddenGrottoSecondary,
+    .callback = NULL,
+};

@@ -1,0 +1,142 @@
+{
+  "0": {
+    "name": "MB_NORMAL",
+    "emerald": 0
+  },
+  "132": {
+    "name": "MB_SIGNPOST",
+    "emerald": 29
+  },
+  "2": {
+    "name": "MB_TALL_GRASS",
+    "emerald": 2
+  },
+  "33": {
+    "name": "MB_SAND",
+    "emerald": 33
+  },
+  "105": {
+    "name": "MB_ANIMATED_DOOR",
+    "emerald": 105
+  },
+  "136": {
+    "name": "MB_POKEMART_SIGN",
+    "emerald": 31
+  },
+  "135": {
+    "name": "MB_POKEMON_CENTER_SIGN",
+    "emerald": 30
+  },
+  "96": {
+    "name": "MB_NON_ANIMATED_DOOR",
+    "emerald": 96
+  },
+  "57": {
+    "name": "MB_JUMP_WEST",
+    "emerald": 57
+  },
+  "56": {
+    "name": "MB_JUMP_EAST",
+    "emerald": 56
+  },
+  "59": {
+    "name": "MB_JUMP_SOUTH",
+    "emerald": 59
+  },
+  "42": {
+    "name": "MB_ROCK_STAIRS",
+    "emerald": 79
+  },
+  "164": {
+    "name": "MB_NORMAL",
+    "emerald": 0
+  },
+  "21": {
+    "name": "MB_OCEAN_WATER",
+    "emerald": 21
+  },
+  "82": {
+    "name": "MB_NORTHWARD_CURRENT",
+    "emerald": 82
+  },
+  "23": {
+    "name": "MB_SHALLOW_WATER",
+    "emerald": 23
+  },
+  "83": {
+    "name": "MB_SOUTHWARD_CURRENT",
+    "emerald": 83
+  },
+  "81": {
+    "name": "MB_WESTWARD_CURRENT",
+    "emerald": 81
+  },
+  "80": {
+    "name": "MB_EASTWARD_CURRENT",
+    "emerald": 80
+  },
+  "19": {
+    "name": "MB_WATERFALL",
+    "emerald": 19
+  },
+  "16": {
+    "name": "MB_POND_WATER",
+    "emerald": 16
+  },
+  "274": {
+    "name": "MB_DEEP_WATER",
+    "emerald": 18
+  },
+  "71": {
+    "name": "MB_SLIDE_SOUTH",
+    "emerald": 71
+  },
+  "69": {
+    "name": "MB_SLIDE_WEST",
+    "emerald": 69
+  },
+  "70": {
+    "name": "MB_SLIDE_NORTH",
+    "emerald": 70
+  },
+  "68": {
+    "name": "MB_SLIDE_EAST",
+    "emerald": 68
+  },
+  "8": {
+    "name": "MB_CAVE",
+    "emerald": 8
+  },
+  "98": {
+    "name": "MB_EAST_ARROW_WARP",
+    "emerald": 98
+  },
+  "99": {
+    "name": "MB_WEST_ARROW_WARP",
+    "emerald": 99
+  },
+  "101": {
+    "name": "MB_SOUTH_ARROW_WARP",
+    "emerald": 101
+  },
+  "50": {
+    "name": "MB_IMPASSABLE_NORTH",
+    "emerald": 50
+  },
+  "49": {
+    "name": "MB_IMPASSABLE_WEST",
+    "emerald": 49
+  },
+  "48": {
+    "name": "MB_IMPASSABLE_EAST",
+    "emerald": 48
+  },
+  "100": {
+    "name": "MB_NORTH_ARROW_WARP",
+    "emerald": 100
+  },
+  "17": {
+    "name": "MB_FAST_WATER",
+    "emerald": 44
+  }
+}

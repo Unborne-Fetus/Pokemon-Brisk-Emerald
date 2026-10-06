@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Alternative General Primary",
+    "symbol": "gTileset_AquaAlternativeGeneral",
+    "path": "data/tilesets/primary/aqua_alternative_general",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Autumn Ruins Secondary",
+    "symbol": "gTileset_AquaAutumnRuins",
+    "path": "data/tilesets/secondary/aqua_autumn_ruins",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Brick Cafe Interior Secondary",
+    "symbol": "gTileset_AquaBrickCafe",
+    "path": "data/tilesets/secondary/aqua_brick_cafe",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Desert Primary",
+    "symbol": "gTileset_AquaDesert",
+    "path": "data/tilesets/primary/aqua_desert",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Desert Village Secondary",
+    "symbol": "gTileset_AquaDesertVillage",
+    "path": "data/tilesets/secondary/aqua_desert_village",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Dojo Exterior Secondary",
+    "symbol": "gTileset_AquaDojoExterior",
+    "path": "data/tilesets/secondary/aqua_dojo_exterior",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Dojo Interior Secondary",
+    "symbol": "gTileset_AquaDojoInterior",
+    "path": "data/tilesets/secondary/aqua_dojo_interior",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Hidden Grotto Primary FRLG",
+    "symbol": "gTileset_AquaHiddenGrotto",
+    "path": "data/tilesets/primary/aqua_hidden_grotto",
+    "is_frlg": false,
+    "metatile_count": 512,
+    "adapted_from_frlg": true
+  },
+  {
+    "name": "Lugia Movie Altar Secondary",
+    "symbol": "gTileset_AquaLugiaAltar",
+    "path": "data/tilesets/secondary/aqua_lugia_altar",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Pyramid Interior Primary",
+    "symbol": "gTileset_AquaPyramidInterior",
+    "path": "data/tilesets/primary/aqua_pyramid_interior",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Pyramid Interior Secondary",
+    "symbol": "gTileset_AquaPyramidInteriorSecondary",
+    "path": "data/tilesets/secondary/aqua_pyramid_interior",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Shady Forest Secondary",
+    "symbol": "gTileset_AquaShadyForest",
+    "path": "data/tilesets/secondary/aqua_shady_forest",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Small town with lab Secondary",
+    "symbol": "gTileset_AquaSmallTownLab",
+    "path": "data/tilesets/secondary/aqua_small_town_lab",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Space Meteor Secondary",
+    "symbol": "gTileset_AquaSpaceMeteor",
+    "path": "data/tilesets/secondary/aqua_space_meteor",
+    "is_frlg": false,
+    "metatile_count": 512
+  },
+  {
+    "name": "Valencia Island",
+    "symbol": "gTileset_AquaOrangeIslands",
+    "path": "data/tilesets/primary/aqua_orange_islands",
+    "is_frlg": false,
+    "metatile_count": 512,
+    "adapted_from_frlg": true
+  },
+  {
+    "name": "Valencia Island",
+    "symbol": "gTileset_AquaValenciaIsland",
+    "path": "data/tilesets/secondary/aqua_valencia_island",
+    "is_frlg": false,
+    "metatile_count": 512,
+    "adapted_from_frlg": true
+  },
+  {
+    "name": "Hidden Grotto overflow companion",
+    "symbol": "gTileset_AquaHiddenGrottoSecondary",
+    "path": "data/tilesets/secondary/aqua_hidden_grotto",
+    "is_frlg": false,
+    "metatile_count": 512,
+    "companion_for": "gTileset_AquaHiddenGrotto"
+  }
+]

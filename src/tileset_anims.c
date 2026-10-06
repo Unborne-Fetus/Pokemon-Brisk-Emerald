@@ -1432,3 +1432,108 @@ void InitTilesetAnim_CeladonGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_CeladonGym;
 }
 
+
+static const u16 sAquaGeneral_calm_water_a_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/0.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/1.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/2.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/3.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/4.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/5.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/6.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_a_7[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_a/7.png", ".4bpp");
+static const u16 *const sAquaGeneral_calm_water_a[] = {sAquaGeneral_calm_water_a_0, sAquaGeneral_calm_water_a_1, sAquaGeneral_calm_water_a_2, sAquaGeneral_calm_water_a_3, sAquaGeneral_calm_water_a_4, sAquaGeneral_calm_water_a_5, sAquaGeneral_calm_water_a_6, sAquaGeneral_calm_water_a_7};
+static const u16 sAquaGeneral_calm_water_b_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/0.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/1.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/2.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/3.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/4.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/5.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/6.png", ".4bpp");
+static const u16 sAquaGeneral_calm_water_b_7[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/calm_water_b/7.png", ".4bpp");
+static const u16 *const sAquaGeneral_calm_water_b[] = {sAquaGeneral_calm_water_b_0, sAquaGeneral_calm_water_b_1, sAquaGeneral_calm_water_b_2, sAquaGeneral_calm_water_b_3, sAquaGeneral_calm_water_b_4, sAquaGeneral_calm_water_b_5, sAquaGeneral_calm_water_b_6, sAquaGeneral_calm_water_b_7};
+static const u16 sAquaGeneral_flower_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower/0.png", ".4bpp");
+static const u16 sAquaGeneral_flower_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower/1.png", ".4bpp");
+static const u16 sAquaGeneral_flower_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower/2.png", ".4bpp");
+static const u16 *const sAquaGeneral_flower[] = {sAquaGeneral_flower_0, sAquaGeneral_flower_1, sAquaGeneral_flower_0, sAquaGeneral_flower_2};
+static const u16 sAquaGeneral_flower_white_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower_white/0.png", ".4bpp");
+static const u16 sAquaGeneral_flower_white_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower_white/1.png", ".4bpp");
+static const u16 sAquaGeneral_flower_white_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/flower_white/2.png", ".4bpp");
+static const u16 *const sAquaGeneral_flower_white[] = {sAquaGeneral_flower_white_0, sAquaGeneral_flower_white_1, sAquaGeneral_flower_white_0, sAquaGeneral_flower_white_2};
+static const u16 sAquaGeneral_sand_water_edge_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/0.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/1.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/2.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/3.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/4.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/5.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge/6.png", ".4bpp");
+static const u16 *const sAquaGeneral_sand_water_edge[] = {sAquaGeneral_sand_water_edge_0, sAquaGeneral_sand_water_edge_1, sAquaGeneral_sand_water_edge_2, sAquaGeneral_sand_water_edge_3, sAquaGeneral_sand_water_edge_4, sAquaGeneral_sand_water_edge_5, sAquaGeneral_sand_water_edge_6, sAquaGeneral_sand_water_edge_0};
+static const u16 sAquaGeneral_sand_water_edge_b_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/0.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/1.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/2.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/3.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/4.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/5.png", ".4bpp");
+static const u16 sAquaGeneral_sand_water_edge_b_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/sand_water_edge_b/6.png", ".4bpp");
+static const u16 *const sAquaGeneral_sand_water_edge_b[] = {sAquaGeneral_sand_water_edge_b_0, sAquaGeneral_sand_water_edge_b_1, sAquaGeneral_sand_water_edge_b_2, sAquaGeneral_sand_water_edge_b_3, sAquaGeneral_sand_water_edge_b_4, sAquaGeneral_sand_water_edge_b_5, sAquaGeneral_sand_water_edge_b_6, sAquaGeneral_sand_water_edge_b_0};
+static const u16 sAquaGeneral_shallow_water_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/0.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/1.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/2.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/3.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/4.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/5.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/6.png", ".4bpp");
+static const u16 sAquaGeneral_shallow_water_7[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/shallow_water/7.png", ".4bpp");
+static const u16 *const sAquaGeneral_shallow_water[] = {sAquaGeneral_shallow_water_0, sAquaGeneral_shallow_water_1, sAquaGeneral_shallow_water_2, sAquaGeneral_shallow_water_3, sAquaGeneral_shallow_water_4, sAquaGeneral_shallow_water_5, sAquaGeneral_shallow_water_6, sAquaGeneral_shallow_water_7};
+static const u16 sAquaGeneral_water_edge_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/0.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/1.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/2.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/3.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/4.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/5.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/6.png", ".4bpp");
+static const u16 sAquaGeneral_water_edge_7[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_edge/7.png", ".4bpp");
+static const u16 *const sAquaGeneral_water_edge[] = {sAquaGeneral_water_edge_0, sAquaGeneral_water_edge_1, sAquaGeneral_water_edge_2, sAquaGeneral_water_edge_3, sAquaGeneral_water_edge_4, sAquaGeneral_water_edge_5, sAquaGeneral_water_edge_6, sAquaGeneral_water_edge_7};
+static const u16 sAquaGeneral_waterfall_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/waterfall/0.png", ".4bpp");
+static const u16 sAquaGeneral_waterfall_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/waterfall/1.png", ".4bpp");
+static const u16 sAquaGeneral_waterfall_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/waterfall/2.png", ".4bpp");
+static const u16 sAquaGeneral_waterfall_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/waterfall/3.png", ".4bpp");
+static const u16 *const sAquaGeneral_waterfall[] = {sAquaGeneral_waterfall_0, sAquaGeneral_waterfall_1, sAquaGeneral_waterfall_2, sAquaGeneral_waterfall_3};
+static const u16 sAquaGeneral_water_rock_0[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/0.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_1[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/1.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_2[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/2.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_3[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/3.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_4[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/4.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_5[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/5.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_6[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/6.png", ".4bpp");
+static const u16 sAquaGeneral_water_rock_7[] = INCGFX_U16("data/tilesets/primary/aqua_alternative_general/anim/water_rock/7.png", ".4bpp");
+static const u16 *const sAquaGeneral_water_rock[] = {sAquaGeneral_water_rock_0, sAquaGeneral_water_rock_1, sAquaGeneral_water_rock_2, sAquaGeneral_water_rock_3, sAquaGeneral_water_rock_4, sAquaGeneral_water_rock_5, sAquaGeneral_water_rock_6, sAquaGeneral_water_rock_7};
+static void TilesetAnim_AquaAlternativeGeneral(u16 timer)
+{
+    if (timer % 16 == 0)
+        AppendTilesetAnimToBuffer(sAquaGeneral_calm_water_a[(timer / 16) % ARRAY_COUNT(sAquaGeneral_calm_water_a)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 32);
+    if (timer % 16 == 1)
+        AppendTilesetAnimToBuffer(sAquaGeneral_calm_water_b[(timer / 16) % ARRAY_COUNT(sAquaGeneral_calm_water_b)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(2)), 32);
+    if (timer % 16 == 2)
+        AppendTilesetAnimToBuffer(sAquaGeneral_flower[(timer / 16) % ARRAY_COUNT(sAquaGeneral_flower)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(3)), 128);
+    if (timer % 16 == 3)
+        AppendTilesetAnimToBuffer(sAquaGeneral_flower_white[(timer / 16) % ARRAY_COUNT(sAquaGeneral_flower_white)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(7)), 128);
+    if (timer % 16 == 4)
+        AppendTilesetAnimToBuffer(sAquaGeneral_sand_water_edge[(timer / 16) % ARRAY_COUNT(sAquaGeneral_sand_water_edge)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(11)), 192);
+    if (timer % 16 == 5)
+        AppendTilesetAnimToBuffer(sAquaGeneral_sand_water_edge_b[(timer / 16) % ARRAY_COUNT(sAquaGeneral_sand_water_edge_b)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(17)), 64);
+    if (timer % 16 == 6)
+        AppendTilesetAnimToBuffer(sAquaGeneral_shallow_water[(timer / 16) % ARRAY_COUNT(sAquaGeneral_shallow_water)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(19)), 64);
+    if (timer % 16 == 7)
+        AppendTilesetAnimToBuffer(sAquaGeneral_water_edge[(timer / 16) % ARRAY_COUNT(sAquaGeneral_water_edge)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(21)), 128);
+    if (timer % 16 == 8)
+        AppendTilesetAnimToBuffer(sAquaGeneral_waterfall[(timer / 16) % ARRAY_COUNT(sAquaGeneral_waterfall)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(41)), 192);
+    if (timer % 16 == 9)
+        AppendTilesetAnimToBuffer(sAquaGeneral_water_rock[(timer / 16) % ARRAY_COUNT(sAquaGeneral_water_rock)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(25)), 512);
+}
+
+void InitTilesetAnim_AquaAlternativeGeneral(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_AquaAlternativeGeneral;
+}
