@@ -1849,7 +1849,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
     },
     [B_CATCH_OR_NOT] = {
         .fillValue = PIXEL_FILL(0xE),
-        .fontId = FONT_NORMAL,
+        .fontId = FONT_NARROW,
         .x = 0,
         .y = 1,
         .speed = 0,
