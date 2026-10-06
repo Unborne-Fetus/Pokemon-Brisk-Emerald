@@ -85,7 +85,8 @@ enum
 COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 
 // EWRAM
-EWRAM_DATA static u8 sLevelCapWindowId = WINDOW_NONE;
+EWRAM_DATA static u8 sLevelCapWindowId = 0;
+EWRAM_DATA static bool8 sLevelCapWindowActive = FALSE;
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
@@ -161,9 +162,9 @@ static const u8 sText_LevelCap[] = _("Level cap: {STR_VAR_1}");
 static const u8 sText_NextCap[] = _("Next: {STR_VAR_1}");
 static const u8 sText_MaxLevelUnlocked[] = _("Max level unlocked!");
 static const u8 *const sNextCapMilestones[] = {
-    _("Roxanne"), _("Brawly"), _("Wattson"), _("Flannery"),
-    _("Norman"), _("Winona"), _("Tate & Liza"), _("Juan"),
-    _("Become Champion"),
+    COMPOUND_STRING("Roxanne"), COMPOUND_STRING("Brawly"), COMPOUND_STRING("Wattson"), COMPOUND_STRING("Flannery"),
+    COMPOUND_STRING("Norman"), COMPOUND_STRING("Winona"), COMPOUND_STRING("Tate & Liza"), COMPOUND_STRING("Juan"),
+    COMPOUND_STRING("Become Champion"),
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -491,6 +492,7 @@ static void ShowLevelCapWindow(void)
     u32 milestone;
 
     sLevelCapWindowId = AddWindow(&sWindowTemplate_LevelCap);
+    sLevelCapWindowActive = TRUE;
     PutWindowTilemap(sLevelCapWindowId);
     DrawStdWindowFrame(sLevelCapWindowId, FALSE);
     ConvertIntToDecimalStringN(gStringVar1, GetProgressionLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -514,12 +516,12 @@ static void ShowLevelCapWindow(void)
 
 static void RemoveExtraStartMenuWindows(void)
 {
-    if (sLevelCapWindowId != WINDOW_NONE)
+    if (sLevelCapWindowActive)
     {
         ClearStdWindowAndFrameToTransparent(sLevelCapWindowId, FALSE);
         CopyWindowToVram(sLevelCapWindowId, COPYWIN_GFX);
         RemoveWindow(sLevelCapWindowId);
-        sLevelCapWindowId = WINDOW_NONE;
+        sLevelCapWindowActive = FALSE;
     }
     if (GetSafariZoneFlag())
     {

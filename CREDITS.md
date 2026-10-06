@@ -147,3 +147,17 @@ Imported from [Team Aqua’s Asset Repo](https://github.com/TeamAquasHideout/Tea
 - Blue: Horo; commissioned by Paccy.
 - Champion Iris (B2W2): Kasen.
 - Cynthia: spilledpizza, TheWiggliestJiggliest, RichardPT, robloxmaster376, The Spriters Resource, and The Radiant Quartz/Prismatic Platinum team, as credited by the source pack.
+
+
+### Brisk Emerald battle backgrounds and mapping/customization resources
+
+From Team Aqua's Asset Repo:
+
+- Battle backgrounds: PurrfectDoodle (Eva), RavePossum, and Ruki. Grassy plains inspired by LeoB (leob0505). Pond, sea, and grassy plains commissioned by Zatsu; long grass, sand, underwater, sky, cave, and snow commissioned by Guille.
+- Trainer customization PNG components and layered GIMP files: Coffee Cup.
+- Greenery sheet: FM and Zeikaro; ported by Rahtak.
+- Fence: KyuZee.
+- Plants and individual decorations: Oomer.
+- Secret Base furniture: yoshord.
+
+Original per-pack credit/readme files are preserved under `resources/team_aqua`.
