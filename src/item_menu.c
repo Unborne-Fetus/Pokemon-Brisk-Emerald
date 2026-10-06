@@ -1,7 +1,6 @@
 #include "global.h"
 #include "item_menu.h"
 #include "battle.h"
-#include "battle_script_commands.h"
 #include "battle_controllers.h"
 #include "battle_pyramid.h"
 #include "frontier_util.h"
@@ -222,7 +221,6 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
-static const u8 sText_CatchChance[] = _("Catch chance: {STR_VAR_1}%");
 
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);
@@ -1035,12 +1033,9 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
 static void PrintItemDescription(int itemIndex)
 {
     const u8 *str;
-    enum Item itemId = ITEM_NONE;
-
     if (itemIndex != LIST_CANCEL)
     {
-        itemId = GetBagItemId(gBagPosition.pocket, itemIndex);
-        str = GetItemDescription(itemId);
+        str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
     }
     else
     {
@@ -1049,28 +1044,8 @@ static void PrintItemDescription(int itemIndex)
         StringExpandPlaceholders(gStringVar4, gText_ReturnToVar1);
         str = gStringVar4;
     }
-
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
-
-    // In battle, turn the Poké Ball pocket into a live catch-rate calculator.
-    // gBattlerInMenuId is the player battler that opened the bag, so ball
-    // effects that depend on the thrower use the correct battler.
-    if (itemId != ITEM_NONE
-     && gBagPosition.location == ITEMMENULOCATION_BATTLE
-     && gBagPosition.pocket == POCKET_POKE_BALLS
-     && GetItemBattleUsage(itemId) == EFFECT_ITEM_THROW_BALL)
-    {
-        u32 chance = GetCatchChancePercent(itemId, gBattlerInMenuId);
-
-        ConvertIntToDecimalStringN(gStringVar1, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
-        StringExpandPlaceholders(gStringVar4, sText_CatchChance);
-        BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, 0, COLORID_NORMAL);
-        BagMenu_Print(WIN_DESCRIPTION, FONT_SMALL, str, 3, 17, 0, 0, 0, COLORID_NORMAL);
-    }
-    else
-    {
-        BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, str, 3, 1, 0, 0, 0, COLORID_NORMAL);
-    }
+    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, str, 3, 1, 0, 0, 0, COLORID_NORMAL);
 }
 
 static void BagMenu_PrintCursor(u8 listTaskId, u8 colorIndex)
