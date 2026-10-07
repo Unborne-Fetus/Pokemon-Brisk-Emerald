@@ -124,6 +124,7 @@ enum MonData {
     MON_DATA_DYNAMAX_LEVEL,
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
+    MON_DATA_COMPETITIVE_LEGAL,
     MON_DATA_EVOLUTION_TRACKER,
 };
 
@@ -274,7 +275,8 @@ struct BoxPokemon
     u16 checksum;
     u16 hpLost:14; // 16383 HP.
     u16 shinyModifier:1;
-    u16 unused_1E:1;
+    // Brisk provenance bit. Normal gameplay sets this; debug-created Pokémon leave it clear.
+    u16 competitiveLegal:1;
 
     union
     {
@@ -773,6 +775,7 @@ void ZeroEnemyPartyMons(void);
 u32 GetMonPersonality(enum Species species, u8 gender, u8 nature, u8 unownLetter);
 bool32 ComputePlayerShinyOdds(u32 personality, u32 value);
 void CreateMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId);
+void SetDebugMonCreation(bool32 enabled);
 void CreateRandomMon(struct Pokemon *mon, enum Species species, u8 level);
 void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u8 fixedIv);
 void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId);
