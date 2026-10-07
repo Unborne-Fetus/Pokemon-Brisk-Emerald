@@ -1464,6 +1464,11 @@ enum OverworldBallEncounterResult
     OVERWORLD_BALL_ROUTE_TOO_HIGH,
 };
 
+static bool32 IsOverworldBallSlotEligible(const struct WildPokemon *wildMon, u32 levelCap)
+{
+    return wildMon->species != SPECIES_NONE && wildMon->minLevel <= levelCap;
+}
+
 static bool32 HasOverworldBallEncounterAtOrBelowCap(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u32 levelCap)
 {
     u32 count = (area == WILD_AREA_LAND) ? NUM_LAND_MONS_ENCOUNTER_SLOTS : NUM_WATER_MONS_ENCOUNTER_SLOTS;
@@ -1473,12 +1478,49 @@ static bool32 HasOverworldBallEncounterAtOrBelowCap(const struct WildPokemonInfo
 
     for (u32 i = 0; i < count; i++)
     {
-        if (wildMonInfo->wildPokemon[i].species != SPECIES_NONE
-         && wildMonInfo->wildPokemon[i].minLevel <= levelCap)
+        if (IsOverworldBallSlotEligible(&wildMonInfo->wildPokemon[i], levelCap))
             return TRUE;
     }
 
     return FALSE;
+}
+
+static u32 ChooseOverworldBallEncounterSlot(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u32 levelCap)
+{
+    u32 count = (area == WILD_AREA_LAND) ? NUM_LAND_MONS_ENCOUNTER_SLOTS : NUM_WATER_MONS_ENCOUNTER_SLOTS;
+    u32 eligibleCount = 0;
+    u32 chosen;
+
+    for (u32 i = 0; i < count; i++)
+    {
+        if (IsOverworldBallSlotEligible(&wildMonInfo->wildPokemon[i], levelCap))
+            eligibleCount++;
+    }
+
+    if (eligibleCount == 0)
+        return count;
+
+    chosen = Random() % eligibleCount;
+    for (u32 i = 0; i < count; i++)
+    {
+        if (IsOverworldBallSlotEligible(&wildMonInfo->wildPokemon[i], levelCap))
+        {
+            if (chosen == 0)
+                return i;
+            chosen--;
+        }
+    }
+
+    return count;
+}
+
+static u8 ChooseOverworldBallEncounterLevel(const struct WildPokemon *wildMon, u32 levelCap)
+{
+    u32 minLevel = min(wildMon->minLevel, wildMon->maxLevel);
+    u32 maxLevel = max(wildMon->minLevel, wildMon->maxLevel);
+
+    maxLevel = min(maxLevel, levelCap);
+    return minLevel + (Random() % (maxLevel - minLevel + 1));
 }
 
 static enum OverworldBallEncounterResult GetOverworldBallEncounter(enum Species *species, u8 *level)
@@ -1509,8 +1551,6 @@ static enum OverworldBallEncounterResult GetOverworldBallEncounter(enum Species 
     landEligible = HasOverworldBallEncounterAtOrBelowCap(landMonsInfo, WILD_AREA_LAND, levelCap);
     waterEligible = HasOverworldBallEncounterAtOrBelowCap(waterMonsInfo, WILD_AREA_WATER, levelCap);
 
-    // If every available encounter on the route starts above the player's
-    // current progression cap, block overworld catching entirely.
     if (!landEligible && !waterEligible)
         return OVERWORLD_BALL_ROUTE_TOO_HIGH;
 
@@ -1538,18 +1578,12 @@ static enum OverworldBallEncounterResult GetOverworldBallEncounter(enum Species 
         area = WILD_AREA_WATER;
     }
 
-    if (area == WILD_AREA_LAND)
-        wildMonIndex = ChooseWildMonIndex_Land(wildMonInfo->wildPokemon);
-    else
-        wildMonIndex = ChooseWildMonIndex_Water(wildMonInfo->wildPokemon);
+    wildMonIndex = ChooseOverworldBallEncounterSlot(wildMonInfo, area, levelCap);
+    if (wildMonIndex >= ((area == WILD_AREA_LAND) ? NUM_LAND_MONS_ENCOUNTER_SLOTS : NUM_WATER_MONS_ENCOUNTER_SLOTS))
+        return OVERWORLD_BALL_ROUTE_TOO_HIGH;
 
     *species = wildMonInfo->wildPokemon[wildMonIndex].species;
-    if (*species == SPECIES_NONE)
-        return OVERWORLD_BALL_NO_ENCOUNTERS;
-
-    // Preserve the route's normal level roll, but never let this shortcut
-    // generate a Pokémon above the current progression cap.
-    *level = min(ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area), levelCap);
+    *level = ChooseOverworldBallEncounterLevel(&wildMonInfo->wildPokemon[wildMonIndex], levelCap);
     return OVERWORLD_BALL_ENCOUNTER_OK;
 }
 
@@ -1603,6 +1637,7 @@ static void ItemUseOnFieldCB_OverworldBall(u8 taskId)
     }
 
     CreateWildMon(species, level);
+    SetWildMonHeldItem();
     ball = GetItemSecondaryId(gSpecialVar_ItemId);
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_POKEBALL, &ball);
     GiveScriptedMonToPlayer(&gParties[B_TRAINER_OPPONENT_A][0], PARTY_SIZE);
