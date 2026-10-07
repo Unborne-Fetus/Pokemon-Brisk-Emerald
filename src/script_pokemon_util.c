@@ -25,10 +25,12 @@
 #include "script.h"
 #include "sprite.h"
 #include "string_util.h"
+#include "trainer_util.h"
 #include "tv.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
+#include "constants/opponents.h"
 #include "constants/battle_frontier.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
@@ -380,6 +382,39 @@ u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemp
     }
     CopyMon(&gParties[B_TRAINER_OPPONENT_A][slot], &mon, sizeof(struct Pokemon));
     return MON_GIVEN_TO_PARTY;
+}
+
+void GiveUnborneScizor(void)
+{
+    const struct Trainer *trainer = GetTrainerStructFromId(TRAINER_UNBORNE);
+    struct TrainerGenerator trainerGen = {0};
+    struct Pokemon mon;
+    bool32 found = FALSE;
+    u32 i;
+
+    MakeTrainerGenerator(&trainerGen, trainer);
+
+    // Generate the party in the same order as the battle so the Scizor uses
+    // the same trainer data and deterministic personality generation.
+    for (i = 0; i < trainer->partySize; i++)
+    {
+        GenerateMonFromTrainerMon(&mon, &trainer->party[i], &trainerGen);
+        if (trainer->party[i].species == SPECIES_SCIZOR)
+        {
+            found = TRUE;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return;
+    }
+
+    HealPokemon(&mon);
+    MonRestorePP(&mon);
+    gSpecialVar_Result = GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
 }
 
 u32 ScriptGiveMon(enum Species species, u8 level, enum Item item)
