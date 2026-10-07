@@ -3011,3 +3011,27 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+
+@ Brisk Emerald repeatable static encounter.
+@ The Pokémon is permanently hidden only when caught. Fainting it, running,
+@ teleporting, or losing leaves the object available for another attempt.
+@ Intended for simple overworld legendary / mythical / special static encounters.
+.macro brisk_static_legendary script:req, species:req, level:req, caughtFlag:req
+\script::
+    lockall
+    faceplayer
+    waitse
+    playmoncry \species, CRY_MODE_ENCOUNTER
+    delay 40
+    waitmoncry
+    setwildbattle \species, \level
+    special BattleSetup_StartLegendaryBattle
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, 1f
+    setflag \caughtFlag
+    removeobject VAR_LAST_TALKED
+1:
+    releaseall
+    end
+.endm
