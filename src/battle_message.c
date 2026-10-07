@@ -1847,6 +1847,17 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .color.accent = TEXT_DYNAMIC_COLOR_5,
         .color.shadow = TEXT_DYNAMIC_COLOR_6,
     },
+    [B_CATCH_OR_NOT] = {
+        .fillValue = PIXEL_FILL(0xE),
+        .fontId = FONT_NORMAL,
+        .x = 0,
+        .y = 1,
+        .speed = 0,
+        .color.foreground = 13,
+        .color.background = 14,
+        .color.accent = 14,
+        .color.shadow = 15,
+    },
 };
 
 static const struct BattleWindowText sTextOnWindowsInfo_KantoTutorial[] =
