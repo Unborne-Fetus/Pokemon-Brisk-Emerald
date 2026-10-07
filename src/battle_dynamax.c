@@ -76,9 +76,15 @@ bool32 CanDynamax(enum BattlerId battler)
     enum HoldEffect holdEffect = GetBattlerHoldEffectIgnoreNegation(battler);
     struct Pokemon *mon = GetBattlerMon(battler);
 
-    // Brisk Emerald only keeps Gigantamax; ordinary Dynamax is disabled.
-    if (!GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
-     || GetGMaxTargetSpecies(gBattleMons[battler].species) == SPECIES_NONE)
+    bool32 canGigantamax = GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
+                         && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE;
+
+    // Player-controlled Pokémon may Gigantamax, but may never use ordinary Dynamax.
+    // Trainer Pokémon may Dynamax only when their trainer data explicitly marks
+    // that Pokémon to use Dynamax (checked by ShouldTrainerBattlerUseGimmick below).
+    if (IsOnPlayerSide(battler)
+     && !((gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)
+     && !canGigantamax)
         return FALSE;
 
     // Prevents Zigzagoon from dynamaxing in vanilla.
