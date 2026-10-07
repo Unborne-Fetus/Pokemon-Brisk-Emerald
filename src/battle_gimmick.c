@@ -41,20 +41,16 @@ void AssignUsableGimmicks(void)
             }
         }
 
-        // G-Max takes priority over Tera.
+        // Dynamax/Gigantamax takes priority over Tera when the battler is
+        // actually eligible. CanDynamax enforces Brisk Emerald's rules:
+        // player = Gigantamax only, wild = never, trainer = explicitly selected mons only.
         if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
          && CanActivateGimmick(battler, GIMMICK_DYNAMAX))
         {
-            struct Pokemon *mon = GetBattlerMon(battler);
-
-            if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
-             && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE)
-            {
-                gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
-            }
+            gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
         }
 
-        // If G-Max wasn't selected, allow Tera.
+        // If Dynamax/G-Max wasn't selected, allow Tera.
         if (gBattleStruct->gimmick.usableGimmick[battler] == GIMMICK_NONE
          && CanActivateGimmick(battler, GIMMICK_TERA))
         {
