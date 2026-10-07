@@ -3193,9 +3193,21 @@ static const struct DebugSelection sGiveItemSelection = {
     .maxSteps = 2,
 };
 
+void Debug_BeginIllegalMonCreation(void)
+{
+    SetDebugMonCreation(TRUE);
+}
+
+void Debug_EndIllegalMonCreation(void)
+{
+    SetDebugMonCreation(FALSE);
+}
+
 static bool32 DebugSelection_GiveSimplePokemon_OnComplete(u8 taskId)
 {
+    SetDebugMonCreation(TRUE);
     ScriptGiveMon(DebugSelection_GetData(taskId, 0), DebugSelection_GetData(taskId, 1), ITEM_NONE);
+    SetDebugMonCreation(FALSE);
     DebugSelectionStep_ReturnToGiveMenu(taskId);
     PlaySE(SE_SUCCESS);
     return TRUE;
@@ -3422,7 +3434,9 @@ static bool32 DebugSelection_GiveComplexPokemon_OnComplete(u8 taskId)
     enum Species species = monData[0];
     u8 level = monData[1];
     u32 personality = GetMonPersonality(species, monData[2], monData[5] , RANDOM_UNOWN_LETTER);
+    SetDebugMonCreation(TRUE);
     CreateMon(&mon, species, level, personality, OTID_STRUCT_PLAYER_ID);
+    SetDebugMonCreation(FALSE);
     SetMonData(&mon, MON_DATA_IS_SHINY, &monData[3]);
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &monData[4]);
 
@@ -3485,7 +3499,9 @@ static const struct DebugSelection sComplexPokemonSelection = {
 
 static bool32 DebugSelection_GiveEggPokemon_OnComplete(u8 taskId)
 {
+    SetDebugMonCreation(TRUE);
     ScriptGiveEgg(DebugSelection_GetData(taskId, 0));
+    SetDebugMonCreation(FALSE);
     DebugSelectionStep_ReturnToGiveMenu(taskId);
     PlaySE(SE_SUCCESS);
     return TRUE;
