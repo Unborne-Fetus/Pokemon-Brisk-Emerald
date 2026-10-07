@@ -583,6 +583,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_REVIVAL_HERB",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_123_REVIVAL_HERB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(UXIE)",
+      "x": 55,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_UXIE",
+      "flag": "FLAG_DEFEATED_UXIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CALYREX)",
+      "x": 60,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_CALYREX",
+      "flag": "FLAG_DEFEATED_CALYREX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_BULU)",
+      "x": 68,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_TAPU_BULU",
+      "flag": "FLAG_DEFEATED_TAPU_BULU"
     }
   ],
   "warp_events": [
