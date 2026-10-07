@@ -252,25 +252,6 @@ static u8 HandleWriteSector(u16 sectorId, const struct SaveSectorLocation *locat
     return TryWriteSector(sector, gReadWriteSector->data);
 }
 
-static u8 HandleWriteSectorNBytes(u8 sectorId, u8 *data, u16 size)
-{
-    u16 i;
-    struct SaveSector *sector = &gSaveDataBuffer;
-
-    // Clear temp save sector
-    for (i = 0; i < SECTOR_SIZE; i++)
-        ((u8 *)sector)[i] = 0;
-
-    sector->signature = SECTOR_SIGNATURE;
-
-    // Copy data to temp buffer for writing
-    for (i = 0; i < size; i++)
-        sector->data[i] = data[i];
-
-    sector->id = CalculateChecksum(data, size); // though this appears to be incorrect, it might be some sector checksum instead of a whole save checksum and only appears to be relevent to HOF data, if used.
-    return TryWriteSector(sectorId, sector->data);
-}
-
 static u8 TryWriteSector(u8 sector, u8 *data)
 {
     if (ProgramFlashSectorAndVerify(sector, data)) // is damaged?
@@ -715,34 +696,6 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
     gSaveCounter = 0;
     gLastWrittenSector = 0;
     return SAVE_STATUS_CORRUPT;
-}
-
-static u8 TryLoadSaveSector(u8 sectorId, u8 *data, u16 size)
-{
-    u16 i;
-    struct SaveSector *sector = &gSaveDataBuffer;
-    ReadFlashSector(sectorId, sector);
-    if (sector->signature == SECTOR_SIGNATURE)
-    {
-        u16 checksum = CalculateChecksum(sector->data, size);
-        if (sector->id == checksum)
-        {
-            // Signature and checksum are correct, copy data
-            for (i = 0; i < size; i++)
-                data[i] = sector->data[i];
-            return SAVE_STATUS_OK;
-        }
-        else
-        {
-            // Incorrect checksum
-            return SAVE_STATUS_CORRUPT;
-        }
-    }
-    else
-    {
-        // Incorrect signature value
-        return SAVE_STATUS_EMPTY;
-    }
 }
 
 // Return value always ignored
