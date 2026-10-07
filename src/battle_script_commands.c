@@ -8153,37 +8153,6 @@ static u32 ComputeBallShakeOdds(u32 odds)
     return odds;
 }
 
-u32 GetCatchChancePercent(enum Item ballItem, enum BattlerId playerBattler)
-{
-    u32 wildMonBattler = GetCatchingBattler();
-    u32 odds = ComputeCaptureOdds(wildMonBattler, playerBattler, ballItem);
-    u32 criticalOdds;
-    u32 shakeOdds;
-    // Fixed-point probability where 1,000,000 == 100%.
-    // Keeping more precision here prevents low percentages from being biased
-    // by repeated integer truncation before the final display rounding.
-    u64 normalChance = 1000000;
-    u64 criticalChance = 1000000;
-    u64 totalChance;
-    u32 i;
-
-    if (odds == CAPTURE_GUARANTEED || odds > 254)
-        return 100;
-    if (odds == 0)
-        return 0;
-
-    shakeOdds = ComputeBallShakeOdds(odds);
-    for (i = 0; i < 4; i++)
-        normalChance = (normalChance * shakeOdds + 32768) / 65536;
-    criticalChance = (criticalChance * shakeOdds + 32768) / 65536;
-
-    criticalOdds = GetCriticalCaptureOdds(odds);
-    totalChance = ((256 - criticalOdds) * normalChance + criticalOdds * criticalChance + 128) / 256;
-
-    // Round to the nearest whole percent, rather than always rounding upward.
-    return min(100, (u32)((totalChance * 100 + 500000) / 1000000));
-}
-
 static void SetBallThrowShakes(void)
 {
     gBallToDisplay = gLastThrownBall = gLastUsedItem;
