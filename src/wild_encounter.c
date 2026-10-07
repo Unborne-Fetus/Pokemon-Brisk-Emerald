@@ -207,16 +207,7 @@ u32 ChooseWildMonIndex_Land(const struct WildPokemon *wildPokemon)
 
 u8 GetLandEncounterSlotForMatchCall(void)
 {
-    u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
-    u8 wildMonIndex;
-
-    for (wildMonIndex = 0; wildMonIndex < NUM_LAND_MONS_ENCOUNTER_SLOTS; wildMonIndex++)
-    {
-        if (rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_0 + wildMonIndex * 10)
-            break;
-    }
-
-    return wildMonIndex;
+    return Random() % NUM_LAND_MONS_ENCOUNTER_SLOTS;
 }
 
 
@@ -256,16 +247,7 @@ u32 ChooseWildMonIndex_Water(const struct WildPokemon *wildPokemon)
 // NUM_WATER_MONS_ENCOUNTER_SLOTS
 u8 GetWaterEncounterSlotForMatchCall(void)
 {
-    u8 rand = Random() % ENCOUNTER_CHANCE_WATER_MONS_TOTAL;
-    u8 wildMonIndex;
-
-    for (wildMonIndex = 0; wildMonIndex < NUM_WATER_MONS_ENCOUNTER_SLOTS; wildMonIndex++)
-    {
-        if (rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_0 + wildMonIndex * 10)
-            break;
-    }
-
-    return wildMonIndex;
+    return Random() % NUM_WATER_MONS_ENCOUNTER_SLOTS;
 }
 
 
@@ -1085,19 +1067,20 @@ bool8 IsAbilityAllowingEncounter(u8 level)
 
 static bool8 TryGetRandomWildMonIndexByType(const struct WildPokemon *wildMon, enum Type type, u8 numMon, u8 *monIndex)
 {
-    u8 validIndexes[numMon]; // variable length array, an interesting feature
-    u8 i, validMonCount;
+    u8 validIndexes[numMon];
+    u8 i, validMonCount = 0, nonEmptyCount = 0;
 
     for (i = 0; i < numMon; i++)
-        validIndexes[i] = 0;
-
-    for (validMonCount = 0, i = 0; i < numMon; i++)
     {
+        if (wildMon[i].species == SPECIES_NONE)
+            continue;
+
+        nonEmptyCount++;
         if (GetSpeciesType(wildMon[i].species, 0) == type || GetSpeciesType(wildMon[i].species, 1) == type)
             validIndexes[validMonCount++] = i;
     }
 
-    if (validMonCount == 0 || validMonCount == numMon)
+    if (validMonCount == 0 || validMonCount == nonEmptyCount)
         return FALSE;
 
     *monIndex = validIndexes[Random() % validMonCount];
