@@ -52,14 +52,14 @@ UnborneRoom_EventScript_UnborneDefeated::
 		item=ITEM_SCIZORITE
 		ball=BALL_MASTER
 		nature=NATURE_ADAMANT
-		abilityNum=2
+		abilityNum=1
 		gender=MALE
 		hpEv=248
 		atkEv=252
 		defEv=0
-		speedEv=8
+		speedEv=0
 		spAtkEv=0
-		spDefEv=0
+		spDefEv=8
 		hpIv=31
 		atkIv=31
 		defIv=31
