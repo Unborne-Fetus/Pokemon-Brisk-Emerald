@@ -205,11 +205,6 @@ u32 ChooseWildMonIndex_Land(const struct WildPokemon *wildPokemon)
     return 0;
 }
 
-u8 GetLandEncounterSlotForMatchCall(void)
-{
-    return Random() % NUM_LAND_MONS_ENCOUNTER_SLOTS;
-}
-
 
 u32 ChooseWildMonIndex_Water(const struct WildPokemon *wildPokemon)
 {
@@ -245,11 +240,6 @@ u32 ChooseWildMonIndex_Water(const struct WildPokemon *wildPokemon)
 }
 // Mostly equivalent to ChooseWildMonIndex_WaterRock
 // NUM_WATER_MONS_ENCOUNTER_SLOTS
-u8 GetWaterEncounterSlotForMatchCall(void)
-{
-    return Random() % NUM_WATER_MONS_ENCOUNTER_SLOTS;
-}
-
 
 // NUM_ROCK_SMASH_MONS_ENCOUNTER_SLOTS
 u32 ChooseWildMonIndex_Rocks(void)
