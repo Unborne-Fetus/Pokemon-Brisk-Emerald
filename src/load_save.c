@@ -24,6 +24,8 @@ static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey);
 
 #define SAVEBLOCK_MOVE_RANGE    128
 
+STATIC_ASSERT(sizeof(struct SaveBlock2) + sizeof(struct SaveBlock1) + sizeof(struct PokemonStorage) <= HEAP_SIZE, SaveBlockCopiesFitInHeap);
+
 struct LoadedSaveData
 {
  /*0x0000*/ struct Bag bag;
