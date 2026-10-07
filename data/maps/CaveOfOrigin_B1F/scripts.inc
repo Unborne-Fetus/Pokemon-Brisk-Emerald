@@ -119,23 +119,4 @@ CaveOfOrigin_B1F_Text_WellHeadToSkyPillar:
 
 
 
-CaveOfOrigin_B1F_EventScript_ARCEUS::
-    lockall
-    waitse
-    playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
-    delay 40
-    waitmoncry
-    setwildbattle SPECIES_ARCEUS, 30
-    special BattleSetup_StartLegendaryBattle
-
-    specialvar VAR_RESULT, GetBattleOutcome
-    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CaveOfOrigin_B1F_EventScript_CaughtARCEUS
-
-    releaseall
-    end
-
-CaveOfOrigin_B1F_EventScript_CaughtARCEUS::
-    setflag FLAG_HIDE_COO_ARCEUS
-    removeobject VAR_LAST_TALKED
-    releaseall
-    end
+brisk_static_legendary CaveOfOrigin_B1F_EventScript_ARCEUS, SPECIES_ARCEUS, 30, FLAG_HIDE_COO_ARCEUS
