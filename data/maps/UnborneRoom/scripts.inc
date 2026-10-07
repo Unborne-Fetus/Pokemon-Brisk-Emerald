@@ -48,28 +48,7 @@ UnborneRoom_EventScript_Unborne::
 
 UnborneRoom_EventScript_UnborneDefeated::
 	msgbox UnborneRoom_Text_UnbornePostBattle, MSGBOX_DEFAULT
-	givemon SPECIES_SCIZOR, 100
-		item=ITEM_SCIZORITE
-		ball=BALL_MASTER
-		nature=NATURE_ADAMANT
-		abilityNum=1
-		gender=MALE
-		hpEv=248
-		atkEv=252
-		defEv=0
-		speedEv=0
-		spAtkEv=0
-		spDefEv=8
-		hpIv=31
-		atkIv=31
-		defIv=31
-		speedIv=31
-		spAtkIv=31
-		spDefIv=31
-		move1=MOVE_AERIAL_ACE
-		move2=MOVE_BULLET_PUNCH
-		move3=MOVE_FURY_CUTTER
-		move4=MOVE_SWORDS_DANCE
+	special GiveUnborneScizor
 	release
 	end
 
