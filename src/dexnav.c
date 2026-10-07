@@ -1475,7 +1475,7 @@ static u8 GetEncounterLevelFromMapData(enum Species species, enum EncounterType 
     u8 max = 0;
     u8 i;
 
-    if (headerId == HEADER_NONE)
+    if (headerId == HEADER_NONE || species == SPECIES_NONE || species >= NUM_SPECIES)
         return MON_LEVEL_NONEXISTENT;
 
     switch (environment)
@@ -2023,6 +2023,9 @@ static enum Species DexNavGetSpecies(void)
     default:
         return SPECIES_NONE;
     }
+
+    if (species == SPECIES_NONE || species >= NUM_SPECIES)
+        return SPECIES_NONE;
 
     if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
         return SPECIES_NONE;
