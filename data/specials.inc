@@ -476,6 +476,7 @@ gSpecials::
 	def_special UpdateBattlePointsWindow
 	def_special CloseBattlePointsWindow
 	def_special GiveFrontierBattlePoints
+	def_special GiveUnborneScizor
 	def_special TakeFrontierBattlePoints
 	def_special GetFrontierBattlePoints
 	def_special ShowFrontierExchangeCornerItemIconWindow
