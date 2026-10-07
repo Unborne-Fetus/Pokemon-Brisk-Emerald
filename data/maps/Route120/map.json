@@ -603,6 +603,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZELF)",
+      "x": 17,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_AZELF",
+      "flag": "FLAG_DEFEATED_AZELF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUNKIDORI)",
+      "x": 21,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_MUNKIDORI",
+      "flag": "FLAG_DEFEATED_MUNKIDORI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FEZANDIPITI)",
+      "x": 23,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_FEZANDIPITI",
+      "flag": "FLAG_DEFEATED_FEZANDIPITI"
     }
   ],
   "warp_events": [
