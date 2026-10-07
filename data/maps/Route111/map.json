@@ -665,6 +665,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TING_LU)",
+      "x": 24,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_TING_LU",
+      "flag": "FLAG_DEFEATED_TING_LU"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LANDORUS)",
+      "x": 32,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_LANDORUS",
+      "flag": "FLAG_DEFEATED_LANDORUS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZAPDOS_GALAR)",
+      "x": 20,
+      "y": 95,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_ZAPDOS_GALAR",
+      "flag": "FLAG_DEFEATED_ZAPDOS_GALAR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OKIDOGI)",
+      "x": 24,
+      "y": 105,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_OKIDOGI",
+      "flag": "FLAG_DEFEATED_OKIDOGI"
     }
   ],
   "warp_events": [
