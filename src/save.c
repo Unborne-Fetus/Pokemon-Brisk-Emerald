@@ -23,9 +23,8 @@ static u8 HandleWriteSector(u16, const struct SaveSectorLocation *);
 static u8 HandleReplaceSector(u16, const struct SaveSectorLocation *);
 static void CopyToSaveBlock3(u32, struct SaveSector *);
 static void CopyFromSaveBlock3(u32, struct SaveSector *);
-static void SavePokemonStorageExtension(void);
-static bool8 LoadPokemonStorageExtension(void);
 static void MigrateLegacyPokemonStorage(void);
+static bool32 IsLegacyPokemonStorageLayout(void);
 static void RepairExpandedPokemonStorageMetadata(void);
 
 // Divide save blocks into individual chunks to be written to flash sectors
@@ -58,8 +57,6 @@ static void RepairExpandedPokemonStorageMetadata(void);
 
 #define LEGACY_TOTAL_BOXES_COUNT 14
 #define NUM_MAIN_STORAGE_SECTORS (SECTOR_ID_PKMN_STORAGE_END - SECTOR_ID_PKMN_STORAGE_START + 1)
-#define NUM_STORAGE_EXTENSION_SECTORS (SECTORS_COUNT - SECTOR_ID_HOF_1)
-#define STORAGE_EXTENSION_SECTOR_ID_BASE 0x100
 
 // Layout used by saves created before Brisk Emerald expanded the PC to 20 boxes.
 // This is used only to migrate the old metadata that followed box 14.
@@ -90,7 +87,7 @@ static u16 GetLegacyPokemonStorageSectorSize(u16 sectorId)
 
 static bool32 IsSaveSectorChecksumValidForSize(const struct SaveSector *sector, u16 size)
 {
-    return size != 0 && sector->checksum == CalculateChecksum((void *)sector->data, size);
+    return sector->checksum == CalculateChecksum((void *)sector->data, size);
 }
 
 struct
@@ -122,7 +119,7 @@ struct
 STATIC_ASSERT(sizeof(struct SaveBlock3) <= SAVE_BLOCK_3_CHUNK_SIZE * NUM_SECTORS_PER_SLOT, SaveBlock3FreeSpace);
 STATIC_ASSERT(sizeof(struct SaveBlock2) <= SECTOR_DATA_SIZE, SaveBlock2FreeSpace);
 STATIC_ASSERT(sizeof(struct SaveBlock1) <= SECTOR_DATA_SIZE * (SECTOR_ID_SAVEBLOCK1_END - SECTOR_ID_SAVEBLOCK1_START + 1), SaveBlock1FreeSpace);
-STATIC_ASSERT(sizeof(struct PokemonStorage) <= SECTOR_DATA_SIZE * (NUM_MAIN_STORAGE_SECTORS + NUM_STORAGE_EXTENSION_SECTORS), PokemonStorageFreeSpace);
+STATIC_ASSERT(sizeof(struct PokemonStorage) <= SECTOR_DATA_SIZE * NUM_MAIN_STORAGE_SECTORS, PokemonStorageFreeSpace);
 
 COMMON_DATA u16 gLastWrittenSector = 0;
 COMMON_DATA u32 gLastSaveCounter = 0;
@@ -766,88 +763,6 @@ static u16 CalculateChecksum(void *data, u16 size)
     return ((checksum >> 16) + checksum);
 }
 
-static u16 GetPokemonStorageExtensionChunkSize(u32 chunk)
-{
-    u32 offset = (NUM_MAIN_STORAGE_SECTORS + chunk) * SECTOR_DATA_SIZE;
-
-    if (offset >= sizeof(struct PokemonStorage))
-        return 0;
-
-    return min(sizeof(struct PokemonStorage) - offset, SECTOR_DATA_SIZE);
-}
-
-// Boxes 15-20 do not fit in Emerald's normal duplicated 14-sector save slots.
-// Brisk Emerald stores the tail of PokemonStorage in the four fixed special
-// sectors (28-31). These sectors therefore cannot also hold Hall of Fame,
-// Trainer Hill, or recorded-battle data.
-static void SavePokemonStorageExtension(void)
-{
-    u32 i;
-    struct SaveSector *sector = &gSaveDataBuffer;
-
-    for (i = 0; i < NUM_STORAGE_EXTENSION_SECTORS; i++)
-    {
-        u32 j;
-        u16 size = GetPokemonStorageExtensionChunkSize(i);
-        u32 offset = (NUM_MAIN_STORAGE_SECTORS + i) * SECTOR_DATA_SIZE;
-        u8 physicalSector = SECTOR_ID_HOF_1 + i;
-
-        for (j = 0; j < SECTOR_SIZE; j++)
-            ((u8 *)sector)[j] = 0;
-
-        if (size == 0)
-        {
-            EraseFlashSector(physicalSector);
-            continue;
-        }
-
-        memcpy(sector->data, (u8 *)gPokemonStoragePtr + offset, size);
-        sector->id = STORAGE_EXTENSION_SECTOR_ID_BASE + i;
-        sector->checksum = CalculateChecksum(sector->data, size);
-        sector->signature = SECTOR_SIGNATURE;
-        sector->counter = gSaveCounter;
-
-        if (ProgramFlashSectorAndVerify(physicalSector, sector->data))
-            SetDamagedSectorBits(ENABLE, physicalSector);
-        else
-            SetDamagedSectorBits(DISABLE, physicalSector);
-    }
-}
-
-// Returns FALSE for a pre-20-box save. If the extension is present but one
-// chunk is damaged, only that chunk is cleared rather than misreading legacy
-// Hall of Fame / special-sector data as Pokemon.
-static bool8 LoadPokemonStorageExtension(void)
-{
-    u32 i;
-    struct SaveSector *sector = &gSaveDataBuffer;
-
-    ReadFlashSector(SECTOR_ID_HOF_1, sector);
-    if (sector->signature != SECTOR_SIGNATURE
-     || sector->id != STORAGE_EXTENSION_SECTOR_ID_BASE)
-        return FALSE;
-
-    for (i = 0; i < NUM_STORAGE_EXTENSION_SECTORS; i++)
-    {
-        u16 size = GetPokemonStorageExtensionChunkSize(i);
-        u32 offset = (NUM_MAIN_STORAGE_SECTORS + i) * SECTOR_DATA_SIZE;
-        u8 *dst = (u8 *)gPokemonStoragePtr + offset;
-
-        if (size == 0)
-            continue;
-
-        ReadFlashSector(SECTOR_ID_HOF_1 + i, sector);
-        if (sector->signature == SECTOR_SIGNATURE
-         && sector->id == STORAGE_EXTENSION_SECTOR_ID_BASE + i
-         && sector->checksum == CalculateChecksum(sector->data, size))
-            memcpy(dst, sector->data, size);
-        else
-            memset(dst, 0, size);
-    }
-
-    return TRUE;
-}
-
 static void RepairExpandedPokemonStorageMetadata(void)
 {
     static const u8 sText_Box[] = _("BOX");
@@ -879,6 +794,19 @@ static void RepairExpandedPokemonStorageMetadata(void)
 
     if (gPokemonStoragePtr->currentBox >= TOTAL_BOXES_COUNT)
         gPokemonStoragePtr->currentBox = 0;
+}
+
+static bool32 IsLegacyPokemonStorageLayout(void)
+{
+    struct LegacyPokemonStorage *legacy = (struct LegacyPokemonStorage *)gPokemonStoragePtr;
+
+    // A legacy save stores BOX 1's name directly after box 14. When the old
+    // storage data is loaded into the larger 20-box buffer, the current
+    // boxNames area is zero-filled. This distinguishes old 14-box saves from
+    // native 20-box saves without consuming a new save-format marker.
+    return gPokemonStoragePtr->boxNames[0][0] == 0
+        && legacy->boxNames[0][0] != 0
+        && legacy->currentBox < LEGACY_TOTAL_BOXES_COUNT;
 }
 
 static void MigrateLegacyPokemonStorage(void)
@@ -942,14 +870,18 @@ u8 HandleSavingData(u8 saveType)
         CopyPartyAndObjectsToSave();
         WriteSaveSectorOrSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
 
-        // The special sectors are reserved for boxes 15-20.
-        SavePokemonStorageExtension();
+        // Save the Hall of Fame
+        if (gHoFSaveBuffer != NULL)
+        {
+            u8 *tempAddr = (void *) gHoFSaveBuffer;
+            HandleWriteSectorNBytes(SECTOR_ID_HOF_1, tempAddr, SECTOR_DATA_SIZE);
+            HandleWriteSectorNBytes(SECTOR_ID_HOF_2, tempAddr + SECTOR_DATA_SIZE, SECTOR_DATA_SIZE);
+        }
         break;
     case SAVE_NORMAL:
     default:
         CopyPartyAndObjectsToSave();
         WriteSaveSectorOrSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
-        SavePokemonStorageExtension();
         break;
     case SAVE_LINK:
     case SAVE_EREADER: // Dummied, now duplicate of SAVE_LINK
@@ -969,7 +901,6 @@ u8 HandleSavingData(u8 saveType)
         // Overwrite save slot
         CopyPartyAndObjectsToSave();
         WriteSaveSectorOrSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
-        SavePokemonStorageExtension();
         break;
     }
     gTrainerHillVBlankCounter = backupVar;
@@ -1100,7 +1031,7 @@ u8 LoadGameSave(u8 saveType)
         status = TryLoadSaveSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
         if (status != SAVE_STATUS_EMPTY)
         {
-            if (!LoadPokemonStorageExtension())
+            if (IsLegacyPokemonStorageLayout())
                 MigrateLegacyPokemonStorage();
             else
                 RepairExpandedPokemonStorageMetadata();
@@ -1110,9 +1041,17 @@ u8 LoadGameSave(u8 saveType)
         gGameContinueCallback = NULL;
         break;
     case SAVE_HALL_OF_FAME:
-        // Persistent Hall of Fame records are unavailable while sectors 28-31
-        // are used by the expanded PC storage.
-        status = SAVE_STATUS_EMPTY;
+        if (gHoFSaveBuffer != NULL)
+        {
+            u8 *hofData = (u8 *) gHoFSaveBuffer;
+            status = TryLoadSaveSector(SECTOR_ID_HOF_1, hofData, SECTOR_DATA_SIZE);
+            if (status == SAVE_STATUS_OK)
+                status = TryLoadSaveSector(SECTOR_ID_HOF_2, &hofData[SECTOR_DATA_SIZE], SECTOR_DATA_SIZE);
+        }
+        else
+        {
+            status = SAVE_STATUS_ERROR;
+        }
         break;
     }
 
@@ -1150,8 +1089,8 @@ u32 TryReadSpecialSaveSector(u8 sector, u8 *dst)
     s32 size;
     u8 *savData;
 
-    // Sectors 30-31 are reserved for boxes 15-20.
-    return SAVE_STATUS_ERROR;
+    if (sector != SECTOR_ID_TRAINER_HILL && sector != SECTOR_ID_RECORDED_BATTLE)
+        return SAVE_STATUS_ERROR;
 
     ReadFlash(sector, 0, (u8 *)&gSaveDataBuffer, SECTOR_SIZE);
     if (*(u32 *)(&gSaveDataBuffer.data[0]) != SPECIAL_SECTOR_SENTINEL)
@@ -1173,8 +1112,8 @@ u32 TryWriteSpecialSaveSector(u8 sector, u8 *src)
     u8 *savData;
     void *savDataBuffer;
 
-    // Sectors 30-31 are reserved for boxes 15-20.
-    return SAVE_STATUS_ERROR;
+    if (sector != SECTOR_ID_TRAINER_HILL && sector != SECTOR_ID_RECORDED_BATTLE)
+        return SAVE_STATUS_ERROR;
 
     savDataBuffer = &gSaveDataBuffer;
     *(u32 *)(savDataBuffer) = SPECIAL_SECTOR_SENTINEL;
@@ -1251,7 +1190,6 @@ void Task_LinkFullSave(u8 taskId)
         if (IsLinkTaskFinished())
         {
             LinkFullSave_SetLastSectorSignature();
-            SavePokemonStorageExtension();
             tState = 9;
         }
         break;
