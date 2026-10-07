@@ -64,23 +64,4 @@ Route126_EventScript_RematchPablo::
 
 
 
-Route126_EventScript_NECROZMA::
-    lockall
-    waitse
-    playmoncry SPECIES_NECROZMA, CRY_MODE_ENCOUNTER
-    delay 40
-    waitmoncry
-    setwildbattle SPECIES_NECROZMA, 70
-    special BattleSetup_StartLegendaryBattle
-
-    specialvar VAR_RESULT, GetBattleOutcome
-    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route126_EventScript_CaughtNECROZMA
-
-    releaseall
-    end
-
-Route126_EventScript_CaughtNECROZMA::
-    setflag FLAG_HIDE_ROUTE126_NECROZMA
-    removeobject VAR_LAST_TALKED
-    releaseall
-    end
+brisk_static_legendary Route126_EventScript_NECROZMA, SPECIES_NECROZMA, 70, FLAG_HIDE_ROUTE126_NECROZMA
