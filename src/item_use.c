@@ -1466,7 +1466,8 @@ enum OverworldBallEncounterResult
 
 static bool32 IsOverworldBallSlotEligible(const struct WildPokemon *wildMon, u32 levelCap)
 {
-    return wildMon->species != SPECIES_NONE && wildMon->minLevel <= levelCap;
+    return wildMon->species != SPECIES_NONE
+        && min(wildMon->minLevel, wildMon->maxLevel) <= levelCap;
 }
 
 static bool32 HasOverworldBallEncounterAtOrBelowCap(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u32 levelCap)
