@@ -378,16 +378,6 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .paletteNum = 5,
         .baseBlock = 0x0350,
     },
-    [B_CATCH_OR_NOT] = {
-        .bg = 0,
-        // Place the catch percentage directly beside the quick-Ball panel.
-        .tilemapLeft = 11,
-        .tilemapTop = 7,
-        .width = 9,
-        .height = 2,
-        .paletteNum = 5,
-        .baseBlock = 0x03BC,
-    },
     DUMMY_WIN_TEMPLATE
 };
 
