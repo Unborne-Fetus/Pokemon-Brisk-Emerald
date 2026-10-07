@@ -586,6 +586,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_119_SCOTT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MESPRIT)",
+      "x": 22,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_MESPRIT",
+      "flag": "FLAG_DEFEATED_MESPRIT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SUICUNE)",
+      "x": 26,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_SUICUNE",
+      "flag": "FLAG_DEFEATED_SUICUNE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(THUNDURUS)",
+      "x": 30,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BriskStatic_EventScript_THUNDURUS",
+      "flag": "FLAG_DEFEATED_THUNDURUS"
     }
   ],
   "warp_events": [
