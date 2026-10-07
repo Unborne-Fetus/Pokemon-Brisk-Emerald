@@ -3018,7 +3018,7 @@
 @ teleporting, or losing leaves the object available for another attempt.
 @ Intended for simple overworld legendary / mythical / special static encounters.
 .macro brisk_static_legendary script:req, species:req, level:req, caughtFlag:req
-\script::
+\script\()::
     lockall
     faceplayer
     waitse
