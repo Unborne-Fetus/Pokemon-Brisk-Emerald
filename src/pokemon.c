@@ -966,6 +966,13 @@ void SetBoxMonPerfectIVs(struct BoxPokemon *mon, u32 numPerfect)
     }
 }
 
+static bool32 sDebugMonCreation = FALSE;
+
+void SetDebugMonCreation(bool32 enabled)
+{
+    sDebugMonCreation = enabled;
+}
+
 void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
@@ -1012,6 +1019,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32
     value = BALL_POKE;
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+
+    value = !sDebugMonCreation;
+    SetBoxMonData(boxMon, MON_DATA_COMPETITIVE_LEGAL, &value);
 
     value = boxMon->personality & 0x1;
     enum Type teraType = value == 0 ? GetSpeciesType(species, 0) : GetSpeciesType(species, 1);
@@ -2483,6 +2493,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = (shinyValue < SHINY_ODDS) ^ boxMon->shinyModifier;
             break;
         }
+        case MON_DATA_COMPETITIVE_LEGAL:
+            retVal = boxMon->competitiveLegal;
+            break;
         case MON_DATA_HIDDEN_NATURE:
         {
             u32 nature = GetNatureFromPersonality(boxMon->personality);
@@ -2915,6 +2928,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             boxMon->shinyModifier = (shinyValue < SHINY_ODDS) ^ isShiny;
             break;
         }
+        case MON_DATA_COMPETITIVE_LEGAL:
+            SET8(boxMon->competitiveLegal);
+            break;
         case MON_DATA_HIDDEN_NATURE:
         {
             u32 nature = GetNatureFromPersonality(boxMon->personality);
