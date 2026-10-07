@@ -17,9 +17,11 @@ Debug_CheatStart::
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
 	setvar VAR_BIRCH_LAB_STATE, 2
 	setvar VAR_ROUTE101_STATE, 3
+	callnative Debug_BeginIllegalMonCreation
 	givemon SPECIES_TREECKO, 20, ITEM_NONE
 	givemon SPECIES_TORCHIC, 20, ITEM_NONE
 	givemon SPECIES_MUDKIP, 20, ITEM_NONE
+	callnative Debug_EndIllegalMonCreation
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
@@ -75,9 +77,11 @@ Debug_CheatStartFrlg::
 	setflag FLAG_OPENED_START_MENU
 	setflag FLAG_VISITED_OAKS_LAB
 	setflag FLAG_BEAT_RIVAL_IN_OAKS_LAB
+	callnative Debug_BeginIllegalMonCreation
 	givemon SPECIES_BULBASAUR, 20, ITEM_NONE
 	givemon SPECIES_CHARMANDER, 20, ITEM_NONE
 	givemon SPECIES_SQUIRTLE, 20, ITEM_NONE
+	callnative Debug_EndIllegalMonCreation
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	setflag FLAG_HIDE_RIVAL_IN_LAB
 	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 1 @ prevents Oak scene when trying to enter Route 1
