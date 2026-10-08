@@ -149,6 +149,13 @@ Imported from [Team Aqua’s Asset Repo](https://github.com/TeamAquasHideout/Tea
 - Cynthia: spilledpizza, TheWiggliestJiggliest, RichardPT, robloxmaster376, The Spriters Resource, and The Radiant Quartz/Prismatic Platinum team, as credited by the source pack.
 
 
+### Brisk Emerald Champion battle sprites
+
+- Leon: Poffin Case and Kyledove.
+- Volo: Ink.
+- Nemona: free-use sprite; original artist/source not specified in the project notes.
+- Diantha: source provided for Brisk Emerald; original artist/source not specified in the project notes.
+
 ### Brisk Emerald battle backgrounds and mapping/customization resources
 
 From Team Aqua's Asset Repo:
