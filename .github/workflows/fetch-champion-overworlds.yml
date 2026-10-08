@@ -24,7 +24,10 @@ jobs:
           curl -fL --retry 3 -o champion-overworld-sources/nemona.webp https://pokengine.b-cdn.net/play/images/trainers/overworlds/01l3qido.webp
           curl -fL --retry 3 -o champion-overworld-sources/volo.webp https://pokengine.b-cdn.net/play/images/trainers/overworlds/01jbrd82.webp
           file champion-overworld-sources/*
-          identify champion-overworld-sources/*.webp || true
+          cp graphics/object_events/pics/people/cynthia.png champion-overworld-sources/reference_cynthia.png
+          cp graphics/object_events/pics/people/iris.png champion-overworld-sources/reference_iris.png
+          cp graphics/object_events/pics/people/blue.png champion-overworld-sources/reference_blue.png
+          identify champion-overworld-sources/* || true
       - name: Upload source sheets
         uses: actions/upload-artifact@v4
         with:
