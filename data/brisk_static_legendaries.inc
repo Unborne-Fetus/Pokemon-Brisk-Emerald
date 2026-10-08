@@ -40,3 +40,7 @@ brisk_static_legendary BriskStatic_EventScript_OKIDOGI, SPECIES_OKIDOGI, 70, FLA
 brisk_static_legendary BriskStatic_EventScript_TAPU_KOKO, SPECIES_TAPU_KOKO, 70, FLAG_DEFEATED_TAPU_KOKO
 brisk_static_legendary BriskStatic_EventScript_XERNEAS, SPECIES_XERNEAS, 70, FLAG_DEFEATED_XERNEAS
 brisk_static_legendary BriskStatic_EventScript_YVELTAL, SPECIES_YVELTAL, 70, FLAG_DEFEATED_YVELTAL
+brisk_static_legendary BriskStatic_EventScript_XURKITREE, SPECIES_XURKITREE, 70, FLAG_DEFEATED_XURKITREE
+brisk_static_legendary BriskStatic_EventScript_CELESTEELA, SPECIES_CELESTEELA, 70, FLAG_DEFEATED_CELESTEELA
+brisk_static_legendary BriskStatic_EventScript_GUZZLORD, SPECIES_GUZZLORD, 70, FLAG_DEFEATED_GUZZLORD
+brisk_static_legendary BriskStatic_EventScript_NIHILEGO, SPECIES_NIHILEGO, 70, FLAG_DEFEATED_NIHILEGO

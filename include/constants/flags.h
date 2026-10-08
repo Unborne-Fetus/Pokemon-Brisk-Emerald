@@ -708,10 +708,10 @@
 #define FLAG_DEFEATED_TAPU_KOKO                 0x28C
 #define FLAG_DEFEATED_XERNEAS                   0x28D
 #define FLAG_DEFEATED_YVELTAL                   0x28E
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
+#define FLAG_DEFEATED_XURKITREE                 0x28F
+#define FLAG_DEFEATED_CELESTEELA                0x290
+#define FLAG_DEFEATED_GUZZLORD                  0x291
+#define FLAG_DEFEATED_NIHILEGO                  0x292
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
