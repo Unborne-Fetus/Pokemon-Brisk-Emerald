@@ -24,13 +24,7 @@ jobs:
           curl -fL --retry 3 -o champion-overworld-sources/nemona.webp https://pokengine.b-cdn.net/play/images/trainers/overworlds/01l3qido.webp
           curl -fL --retry 3 -o champion-overworld-sources/volo.webp https://pokengine.b-cdn.net/play/images/trainers/overworlds/01jbrd82.webp
           file champion-overworld-sources/*
-          python3 - <<'PY'
-          from PIL import Image
-          from pathlib import Path
-          for p in sorted(Path("champion-overworld-sources").glob("*.webp")):
-              with Image.open(p) as im:
-                  print(p.name, im.size, im.mode)
-          PY
+          identify champion-overworld-sources/*.webp || true
       - name: Upload source sheets
         uses: actions/upload-artifact@v4
         with:
