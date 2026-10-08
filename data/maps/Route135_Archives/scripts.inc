@@ -238,29 +238,24 @@ Route135_Archives_Text_WallacePostBattleSpeech:
 
 
 Route135_Archives_Text_CynthiaIntroSpeech:
-	.string "But that's enough talk. Let's get on with why you're here.\n"
-	.string "As the Pokémon League Champion, I accept your challenge!$"
+	.string "You've done well to make it this far.\\p"
+	.string "I'm Cynthia, Champion of Sinnoh.\\n"
+	.string "Show me the strength that brought\\l"
+	.string "you here!$"
 
 
 Route135_Archives_Text_CynthiaDefeat:
-	.string "...Just a few moments ago, you were the most\n"
-	.string "powerful challenger. And just now, you became\n"
-	.string "the most powerful of all the Trainers.\n"
-	.string "You are now our newest Champion!$"
+	.string "What an incredible battle...\\p"
+	.string "Your bond with your Pokémon\\n"
+	.string "carried you all the way through.$"
 
 
 Route135_Archives_Text_CynthiaPostBattleSpeech:
-	.string "That was excellent. Truly, an outstanding battle.\n"
-	.string "You gave the support your Pokémon needed to\n"
-	.string "maximize their power. And you guided them with\n"
-	.string "certainty to secure victory.\n"
-	.string "You have both passion and calculating coolness.\n"
-	.string "Together, you and your Pokémon can overcome\n"
-	.string "any challenge that may come your way.\n"
-	.string "Those are the impressions I got from our battle.\n"
-	.string "I'm glad I got to take part in the crowning of\n"
-	.string "Sinnoh's new Champion! Come with me.\n"
-	.string "We'll take the lift.$"
+	.string "That was an excellent battle.\\p"
+	.string "You trusted your Pokémon, and\\n"
+	.string "they answered that trust.\\p"
+	.string "Keep moving forward together.\\n"
+	.string "That's the mark of a true Champion.$"
 
 
 
