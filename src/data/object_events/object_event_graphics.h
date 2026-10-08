@@ -640,3 +640,15 @@ const u16 gObjectEventPal_ChampionCynthia[] = INCGFX_U16("graphics/object_events
 const u16 gObjectEventPic_Cynthia[] = INCGFX_U16("graphics/object_events/pics/people/cynthia.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_ChampionIris[] = INCGFX_U16("graphics/object_events/palettes/champion_iris.pal", ".gbapal");
 const u16 gObjectEventPic_Iris[] = INCGFX_U16("graphics/object_events/pics/people/iris.png", ".4bpp", "-mwidth 2 -mheight 4");
+
+const u16 gObjectEventPal_ChampionDiantha[] = INCGFX_U16("graphics/object_events/palettes/champion_diantha.pal", ".gbapal");
+const u16 gObjectEventPic_Diantha[] = INCGFX_U16("graphics/object_events/pics/people/diantha.png", ".4bpp", "-mwidth 4 -mheight 4");
+
+const u16 gObjectEventPal_ChampionLeon[] = INCGFX_U16("graphics/object_events/palettes/champion_leon.pal", ".gbapal");
+const u16 gObjectEventPic_Leon[] = INCGFX_U16("graphics/object_events/pics/people/leon.png", ".4bpp", "-mwidth 4 -mheight 4");
+
+const u16 gObjectEventPal_ChampionNemona[] = INCGFX_U16("graphics/object_events/palettes/champion_nemona.pal", ".gbapal");
+const u16 gObjectEventPic_Nemona[] = INCGFX_U16("graphics/object_events/pics/people/nemona.png", ".4bpp", "-mwidth 4 -mheight 4");
+
+const u16 gObjectEventPal_ChampionVolo[] = INCGFX_U16("graphics/object_events/palettes/champion_volo.pal", ".gbapal");
+const u16 gObjectEventPic_Volo[] = INCGFX_U16("graphics/object_events/pics/people/volo.png", ".4bpp", "-mwidth 4 -mheight 4");

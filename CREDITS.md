@@ -183,3 +183,14 @@ and the Alternative General contributors fisham33, skidmarc25,
 thedeadheroalistair. Preserve the full
 per-pack lists and permissions when redistributing these assets. Brick Cafe
 resources are for non-commercial projects.
+
+
+### Brisk Emerald additional Champion overworld sprites
+
+Imported from [Pokéngine](https://pokengine.org/) under its [Free to Use With Credit policy](https://www.pokengine.org/legal/public-use-policy). Original pixel art adapted to Emerald frame order and 16-color palettes.
+
+- [Diantha](https://pokengine.org/trainers/018pukjr/Diantha): Wolfang62/WolfPP, commissioned by briocheeee.
+- [Leon](https://pokengine.org/trainers/011rh3ku/Leon): DiegoWT, commissioned by Gavin Torem.
+- [Nemona](https://pokengine.org/trainers/01l3qido/Nemona): DiegoWT.
+- [Volo](https://pokengine.org/trainers/01jbrd82/Volo): Rekiem. This source contains front-facing poses only; the Archives uses the stationary front pose.
+- Kyledove: Pokéngine source collection and associated trainer resources.

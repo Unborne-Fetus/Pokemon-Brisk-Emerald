@@ -404,7 +404,17 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTre
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diantha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nemona;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volo;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
+    [OBJ_EVENT_GFX_DIANTHA] = &gObjectEventGraphicsInfo_Diantha,
+    [OBJ_EVENT_GFX_LEON] = &gObjectEventGraphicsInfo_Leon,
+    [OBJ_EVENT_GFX_NEMONA] = &gObjectEventGraphicsInfo_Nemona,
+    [OBJ_EVENT_GFX_VOLO] = &gObjectEventGraphicsInfo_Volo,
+
     [OBJ_EVENT_GFX_BLUE] = &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_CYNTHIA] = &gObjectEventGraphicsInfo_Cynthia,
     [OBJ_EVENT_GFX_IRIS] = &gObjectEventGraphicsInfo_Iris,

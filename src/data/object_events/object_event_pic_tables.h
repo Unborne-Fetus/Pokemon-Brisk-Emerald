@@ -2503,3 +2503,19 @@ static const struct SpriteFrameImage sPicTable_Cynthia[] = {
 static const struct SpriteFrameImage sPicTable_Iris[] = {
     overworld_ascending_frames(gObjectEventPic_Iris, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Diantha[] = {
+    overworld_ascending_frames(gObjectEventPic_Diantha, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Leon[] = {
+    overworld_ascending_frames(gObjectEventPic_Leon, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Nemona[] = {
+    overworld_ascending_frames(gObjectEventPic_Nemona, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Volo[] = {
+    overworld_ascending_frames(gObjectEventPic_Volo, 4, 4),
+};
