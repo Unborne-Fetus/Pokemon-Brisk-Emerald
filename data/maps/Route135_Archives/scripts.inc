@@ -168,257 +168,293 @@ Route135_Archives_EventScript_VoloDefeated::
 
 
 Route135_Archives_Text_BlueIntroSpeech:
-	.string "I am the most powerful trainer in the world!$"
+	.string "I am the most powerful\\n"
+	.string "trainer in the world!$"
 
 
 Route135_Archives_Text_BlueDefeat:
-	.string "NO! That can't be! You beat\n"
-	.string "my best! After all that work,\n"
-	.string "to become League champ?\n"
-	.string "My reign is over already? It's not fair!$"
+	.string "NO! That can't be! You beat\\n"
+	.string "my best! After all that work,\\p"
+	.string "to become League champ? My\\n"
+	.string "reign is over already? It's\\p"
+	.string "not fair!$"
+
 
 Route135_Archives_Text_BluePostBattleSpeech:
-	.string "Why? Why did I lose?\n"
-	.string "I never made any mistakes raising my Pokemon\n"
-	.string "Darn it!\n"
-	.string "You're the new Pokemon League Champ!\n"
-	.string "Although I don't like to admit it.$"
-
+	.string "Why? Why did I lose? I never\\n"
+	.string "made any mistakes raising my\\p"
+	.string "Pokemon Darn it! You're the\\n"
+	.string "new Pokemon League Champ!\\p"
+	.string "Although I don't like to\\n"
+	.string "admit it.$"
 
 
 Route135_Archives_Text_RedIntroSpeech:
-	.string "...\n"
-	.string "...\n"
-	.string "... \n"
-	.string ".................$"
+	.string "... ... ... .................$"
 
 
 Route135_Archives_Text_RedDefeat:
 	.string "...$"
+
 
 Route135_Archives_Text_RedPostBattleSpeech:
 	.string "...........$"
 
 
 Route135_Archives_Text_WallaceIntroSpeech:
-	.string "I cannot allow\p"
-	.string "a child to beat me!$"
+	.string "I cannot allow a child to\\n"
+	.string "beat me!$"
+
 
 Route135_Archives_Text_WallaceDefeat:
-	.string "...\p"
-	.string "...\n"
-	.string "...\p"
-	.string "...\n"
-	.string "...\p"
-	.string "...\n"
-	.string "...\p"
-	.string "...\n"
-	.string "You were brilliant, reminiscent\l"
-	.string "of my younger self\p"
-	.string "Congratulations {PLAYER}{KUN}!\p"
-	.string "Your strength is brilliant\n"
-	.string "Like a Brisk Emerald!$"
+	.string "... ... ... ... ... ... ...\\n"
+	.string "... You were brilliant,\\p"
+	.string "reminiscent of my younger\\n"
+	.string "self Congratulations\\p"
+	.string "{PLAYER}{KUN}! Your strength\\n"
+	.string "is brilliant Like a Brisk\\p"
+	.string "Emerald!$"
 
 
 Route135_Archives_Text_WallacePostBattleSpeech:
-	.string "WALLACE: The POKéMON you sent into\n"
-	.string "battle…\p"
-	.string "At times they danced like a spring\n"
-	.string "breeze, and at times they struck\l"
-	.string "like lightning.\p"
-	.string "It was with light, yet surefooted,\n"
-	.string "elegance that you led your POKéMON.\p"
-	.string "Even I felt bedazzled by your\n"
-	.string "masterful performance!\p"
-	.string "You now stand at the glorious peak\n"
-	.string "of the POKéMON LEAGUE.\p"
-	.string "I now proclaim you to be the new\n"
-	.string "HOENN region…$"
-
+	.string "WALLACE: The POKéMON you sent\\n"
+	.string "into battle… At times they\\p"
+	.string "danced like a spring breeze,\\n"
+	.string "and at times they struck like\\p"
+	.string "lightning. It was with light,\\n"
+	.string "yet surefooted, elegance that\\p"
+	.string "you led your POKéMON. Even I\\n"
+	.string "felt bedazzled by your\\p"
+	.string "masterful performance! You\\n"
+	.string "now stand at the glorious\\p"
+	.string "peak of the POKéMON LEAGUE. I\\n"
+	.string "now proclaim you to be the\\p"
+	.string "new HOENN region…$"
 
 
 Route135_Archives_Text_CynthiaIntroSpeech:
-	.string "You've done well to make it this far.\\p"
-	.string "I'm Cynthia, Champion of Sinnoh.\\n"
-	.string "Show me the strength that brought\\l"
-	.string "you here!$"
+	.string "You've done well to make it\\n"
+	.string "this far. I'm Cynthia,\\p"
+	.string "Champion of Sinnoh. Show me\\n"
+	.string "the strength that brought you\\p"
+	.string "here!$"
 
 
 Route135_Archives_Text_CynthiaDefeat:
-	.string "What an incredible battle...\\p"
-	.string "Your bond with your Pokémon\\n"
-	.string "carried you all the way through.$"
+	.string "What an incredible battle...\\n"
+	.string "Your bond with your Pokémon\\p"
+	.string "carried you all the way\\n"
+	.string "through.$"
 
 
 Route135_Archives_Text_CynthiaPostBattleSpeech:
-	.string "That was an excellent battle.\\p"
-	.string "You trusted your Pokémon, and\\n"
-	.string "they answered that trust.\\p"
-	.string "Keep moving forward together.\\n"
-	.string "That's the mark of a true Champion.$"
-
+	.string "That was an excellent battle.\\n"
+	.string "You trusted your Pokémon, and\\p"
+	.string "they answered that trust.\\n"
+	.string "Keep moving forward together.\\p"
+	.string "That's the mark of a true\\n"
+	.string "Champion.$"
 
 
 Route135_Archives_Text_IrisIntroSpeech:
-	.string "OK! Brace yourself! I'm Iris, the Pokémon League\n"
-	.string "Champion, and I'm going to defeat you!$"
+	.string "OK! Brace yourself! I'm Iris,\\n"
+	.string "the Pokémon League Champion,\\p"
+	.string "and I'm going to defeat you!$"
 
 
 Route135_Archives_Text_IrisDefeat:
-	.string "Aghhhh... I did my best, but we lost...$"
+	.string "Aghhhh... I did my best, but\\n"
+	.string "we lost...$"
 
 
 Route135_Archives_Text_IrisPostBattleSpeech:
-	.string "I'm upset I couldn't win! But you know what?\n"
-	.string "More than that, I'm happy!\n"
-	.string "I mean, come on. By having a serious battle,\n"
-	.string "you and your Pokémon, and me and my Pokémon,\n"
-	.string "we all got to know one another better than before!\n"
-	.string "Yep, we sure did! OK, let's go!\n"
-	.string "OK! Go on ahead! Hurry!$"
+	.string "I'm upset I couldn't win! But\\n"
+	.string "you know what? More than\\p"
+	.string "that, I'm happy! I mean, come\\n"
+	.string "on. By having a serious\\p"
+	.string "battle, you and your Pokémon,\\n"
+	.string "and me and my Pokémon, we all\\p"
+	.string "got to know one another\\n"
+	.string "better than before! Yep, we\\p"
+	.string "sure did! OK, let's go! OK!\\n"
+	.string "Go on ahead! Hurry!$"
 
 
 Route135_Archives_Text_DianthaIntroSpeech:
-	.string "Welcome at last, dear Trainer. As you must know,\n"
-	.string "I am the Champion, Diantha.\n"
+	.string "Welcome at last, dear\\n"
+	.string "Trainer. As you must know, I\\p"
+	.string "am the Champion, Diantha.$"
 
 
 Route135_Archives_Text_DianthaDefeat:
-	.string "Witnessing the noble spirits of you and your\n"
-	.string "Pokémon in battle has really touched my heart...$"
+	.string "Witnessing the noble spirits\\n"
+	.string "of you and your Pokémon in\\p"
+	.string "battle has really touched my\\n"
+	.string "heart...$"
 
 
 Route135_Archives_Text_DianthaPostBattleSpeech:
-	.string "I-I'm so choked up that it's hard to know what\n"
-	.string "I should say, but I...I... I'm just so glad at this\n"
-	.string "moment that I was good enough to be the Champion...\n"
-	.string "After all, it gave me the chance to meet and battle\n"
-	.string "with you and your wonderful Pokémon!\n"
-	.string "Now I understand just why dear Augustine--that's\n"
-	.string "Professor Sycamore to you--said he had to get\n"
-	.string "everything ready for the new Champion!\n"
-	.string "He'll be waiting for us in Lumiose City, but before\n"
-	.string "I take you there...\n"
-	.string "My dear, would you mind coming this way with me?$"
-
+	.string "I-I'm so choked up that it's\\n"
+	.string "hard to know what I should\\p"
+	.string "say, but I...I... I'm just so\\n"
+	.string "glad at this moment that I\\p"
+	.string "was good enough to be the\\n"
+	.string "Champion... After all, it\\p"
+	.string "gave me the chance to meet\\n"
+	.string "and battle with you and your\\p"
+	.string "wonderful Pokémon! Now I\\n"
+	.string "understand just why dear\\p"
+	.string "Augustine--that's Professor\\n"
+	.string "Sycamore to you--said he had\\p"
+	.string "to get everything ready for\\n"
+	.string "the new Champion! He'll be\\p"
+	.string "waiting for us in Lumiose\\n"
+	.string "City, but before I take you\\p"
+	.string "there... My dear, would you\\n"
+	.string "mind coming this way with me?$"
 
 
 Route135_Archives_Text_LeonIntroSpeech:
-	.string "I couldn't have dreamed of a better challenger\n"
-	.string "to help increase my winning streak!$"
+	.string "I couldn't have dreamed of a\\n"
+	.string "better challenger to help\\p"
+	.string "increase my winning streak!$"
 
 
 Route135_Archives_Text_LeonDefeat:
-	.string "Congratulations!\n"
-	.string "You've beat even the unbeatable Champion--\n"
-	.string "making you the new Champion of the region!$"
+	.string "Congratulations! You've beat\\n"
+	.string "even the unbeatable\\p"
+	.string "Champion-- making you the new\\n"
+	.string "Champion of the region!$"
 
 
 Route135_Archives_Text_LeonPostBattleSpeech:
-	.string "You've become a first-rate Trainer, all right.\n"
-	.string "I offer you my heartfelt congratulations!\n"
-	.string "And now that you've grown so strong, perhaps it's\n"
-	.string "time I started looking ahead myself.\n"
-	.string "It's time we adults started working on improving\n"
-	.string "the here and now, for the sake of all that's to come!\n"
-	.string "And you! What you ought to do now is...\n"
-	.string "believe in yourself and your partner Pokémon,\n"
-	.string "and keep on blasting ahead!\n"
-	.string "In order to create that bright future we all hope to see!\n"
-	.string "People of Galar!\n"
-	.string "Here you have it! A new legend born right before your eyes!\n"
-	.string "Your Champion!\n"
-	.string "Bet you can't wait to see what kind of future a kid\n"
-	.string "with this kind of strength might bring about!\n"
-	.string "I sure can't! Let's watch and see what they can do!$"
-
+	.string "You've become a first-rate\\n"
+	.string "Trainer, all right. I offer\\p"
+	.string "you my heartfelt\\n"
+	.string "congratulations! And now that\\p"
+	.string "you've grown so strong,\\n"
+	.string "perhaps it's time I started\\p"
+	.string "looking ahead myself. It's\\n"
+	.string "time we adults started\\p"
+	.string "working on improving the here\\n"
+	.string "and now, for the sake of all\\p"
+	.string "that's to come! And you! What\\n"
+	.string "you ought to do now is...\\p"
+	.string "believe in yourself and your\\n"
+	.string "partner Pokémon, and keep on\\p"
+	.string "blasting ahead! In order to\\n"
+	.string "create that bright future we\\p"
+	.string "all hope to see! People of\\n"
+	.string "Galar! Here you have it! A\\p"
+	.string "new legend born right before\\n"
+	.string "your eyes! Your Champion! Bet\\p"
+	.string "you can't wait to see what\\n"
+	.string "kind of future a kid with\\p"
+	.string "this kind of strength might\\n"
+	.string "bring about! I sure can't!\\p"
+	.string "Let's watch and see what they\\n"
+	.string "can do!$"
 
 
 Route135_Archives_Text_VoloIntroSpeech:
-	.string "Even if you don't wish to battle me, I'm not above\n"
-	.string "using force to take those plates from you.$"
+	.string "Even if you don't wish to\\n"
+	.string "battle me, I'm not above\\p"
+	.string "using force to take those\\n"
+	.string "plates from you.$"
 
 
 Route135_Archives_Text_VoloDefeat:
-	.string "Why? Why you?! Why do you have the blessing\n"
-	.string "of Arceus?!$"
+	.string "Why? Why you?! Why do you\\n"
+	.string "have the blessing of Arceus?!$"
 
 
 Route135_Archives_Text_VoloPostBattleSpeech:
-	.string "How? How could this happen?! Almighty Arceus,\n"
-	.string "if you have any heart within you, then tell me...\n"
-	.string "The blood of the ancient Sinnoh people flows in\n"
-	.string "my veins, does it not?! What is it, then, that you\n"
-	.string "find so lacking in me?!\n"
-	.string "Do you mean to tell me that this world doesn't\n"
-	.string "need to be remade?\n"
-	.string "I can't live with such questions...\n"
-	.string "I can't bear not satisfying this ache to know!\n"
-	.string "Answer me, then. Do you have some dream that\n"
-	.string "propels you, as I've had?\n"
-	.string "You don't even know...\n"
-	.string "Then perhaps the day will come when you will suffer\n"
-	.string "and agonize as I do now...\n"
-	.string "I am the great wielder of Pokémon.\n"
-	.string "And you... You battle alongside your Pokémon.\n"
-	.string "In the end, I was alone... But not you.\n"
-	.string "You will fight together with your Pokémon to seize\n"
-	.string "whatever dreams you have.\n"
-	.string "Here. Take it...\n"
-	.string "Take the plate that started me on this path--\n"
-	.string "the plate I once received from Giratina.\n"
-	.string "My journey is over.\n"
-	.string "My story ended when I lost to you.\n"
-	.string "I suppose now you've gathered all of the plates\n"
-	.string "said to exist in this land of Hisui.\n"
-	.string "So that's...that's it... The Azure Flute.\n"
-	.string "Heh. It comes to you.\n"
-	.string "So Arceus wishes to meet you...\n"
-	.string "Of all people, you had to be the one...\n"
-	.string "Is that why you were brought to this world?\n"
-	.string "Gah! I've no desire to watch from the sidelines\n"
-	.string "as Arceus comes to you!\n"
-	.string "And I absolutely cannot accept a world in which\n"
-	.string "you would ever manage to defeat Arceus...\n"
-	.string "Someday, I'll solve every riddle in the legends\n"
-	.string "of Hisui's Pokémon.\n"
-	.string "And on that day, I'll stand before Arceus at last--\n"
-	.string "No, I will CONQUER it!\n"
-	.string "No matter how many years, how many decades,\n"
-	.string "how many centuries it takes me!$"
-
-
+	.string "How? How could this happen?!\\n"
+	.string "Almighty Arceus, if you have\\p"
+	.string "any heart within you, then\\n"
+	.string "tell me... The blood of the\\p"
+	.string "ancient Sinnoh people flows\\n"
+	.string "in my veins, does it not?!\\p"
+	.string "What is it, then, that you\\n"
+	.string "find so lacking in me?! Do\\p"
+	.string "you mean to tell me that this\\n"
+	.string "world doesn't need to be\\p"
+	.string "remade? I can't live with\\n"
+	.string "such questions... I can't\\p"
+	.string "bear not satisfying this ache\\n"
+	.string "to know! Answer me, then. Do\\p"
+	.string "you have some dream that\\n"
+	.string "propels you, as I've had? You\\p"
+	.string "don't even know... Then\\n"
+	.string "perhaps the day will come\\p"
+	.string "when you will suffer and\\n"
+	.string "agonize as I do now... I am\\p"
+	.string "the great wielder of Pokémon.\\n"
+	.string "And you... You battle\\p"
+	.string "alongside your Pokémon. In\\n"
+	.string "the end, I was alone... But\\p"
+	.string "not you. You will fight\\n"
+	.string "together with your Pokémon to\\p"
+	.string "seize whatever dreams you\\n"
+	.string "have. Here. Take it... Take\\p"
+	.string "the plate that started me on\\n"
+	.string "this path-- the plate I once\\p"
+	.string "received from Giratina. My\\n"
+	.string "journey is over. My story\\p"
+	.string "ended when I lost to you. I\\n"
+	.string "suppose now you've gathered\\p"
+	.string "all of the plates said to\\n"
+	.string "exist in this land of Hisui.\\p"
+	.string "So that's...that's it... The\\n"
+	.string "Azure Flute. Heh. It comes to\\p"
+	.string "you. So Arceus wishes to meet\\n"
+	.string "you... Of all people, you had\\p"
+	.string "to be the one... Is that why\\n"
+	.string "you were brought to this\\p"
+	.string "world? Gah! I've no desire to\\n"
+	.string "watch from the sidelines as\\p"
+	.string "Arceus comes to you! And I\\n"
+	.string "absolutely cannot accept a\\p"
+	.string "world in which you would ever\\n"
+	.string "manage to defeat Arceus...\\p"
+	.string "Someday, I'll solve every\\n"
+	.string "riddle in the legends of\\p"
+	.string "Hisui's Pokémon. And on that\\n"
+	.string "day, I'll stand before Arceus\\p"
+	.string "at last-- No, I will CONQUER\\n"
+	.string "it! No matter how many years,\\p"
+	.string "how many decades, how many\\n"
+	.string "centuries it takes me!$"
 
 
 Route135_Archives_Text_NemonaIntroSpeech:
-	.string "You ready for a battle between Champions?\n"
-	.string "Lets see who comes out on top!$"
-
-
-
+	.string "You ready for a battle\\n"
+	.string "between Champions? Lets see\\p"
+	.string "who comes out on top!$"
 
 
 Route135_Archives_Text_NemonaDefeat:
-	.string "You...\n"
-	.string "YOU DID IT!$"
+	.string "You... YOU DID IT!$"
 
 
-
-Route135_Archives_Text_NemonaPostBattleSpeech: 
-	.string "This is legit incredible! You're the strongest\n" 
-	.string "out there!\n" 
-	.string "I mean, you knocked me flat, and I was giving you\n" 
-	.string "absolutely everything I had!\n" 
-	.string "Everything I...I...Ha haaa! Hahaha!\n"
-	.string "Oh man. Pokémon battling, am I right?\n"
-	.string "It's so much better--so much more fun than I ever\n"
-	.string "even knew!\n"
-	.string "Thanks for that incredible match.\n"
-	.string "You beat me for real this time!\n"
-	.string "Now let's give ourselves a minute and have a quick\n"
-	.string "break, ...before round two!\n"
-	.string "Which Pokémon should I bring out this time?\n"
+Route135_Archives_Text_NemonaPostBattleSpeech:
+	.string "This is legit incredible!\\n"
+	.string "You're the strongest out\\p"
+	.string "there! I mean, you knocked me\\n"
+	.string "flat, and I was giving you\\p"
+	.string "absolutely everything I had!\\n"
+	.string "Everything I...I...Ha haaa!\\p"
+	.string "Hahaha! Oh man. Pokémon\\n"
+	.string "battling, am I right? It's so\\p"
+	.string "much better--so much more fun\\n"
+	.string "than I ever even knew! Thanks\\p"
+	.string "for that incredible match.\\n"
+	.string "You beat me for real this\\p"
+	.string "time! Now let's give\\n"
+	.string "ourselves a minute and have a\\p"
+	.string "quick break, ...before round\\n"
+	.string "two! Which Pokémon should I\\p"
+	.string "bring out this time?\\n"
 	.string "Decisions, decisions!$"
-
 
 
