@@ -4298,9 +4298,7 @@ static void Task_HideFollowerNPCForTeleport(u8 taskId)
 
 static void Task_FieldMoveWaitForFade(u8 taskId)
 {
-    // A stalled weather fade must not leave field moves waiting indefinitely.
-    // After two seconds the menu fade has finished, so resume the field move.
-    if (IsWeatherNotFadingIn() == TRUE || ++gTasks[taskId].data[0] > 120)
+    if (IsWeatherNotFadingIn() == TRUE)
     {
         gFieldEffectArguments[0] = GetFieldMoveMonSpecies();
         gPostMenuFieldCallback();
