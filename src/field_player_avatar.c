@@ -1571,7 +1571,8 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
 
 static u16 GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(u8 outfit, u8 state, u8 gender, bool32 isAnim)
 {
-    if (outfit >= OUTFIT_COUNT)
+    // Older save files can have OUTFIT_NONE, which has no avatar or animation graphics.
+    if (outfit == OUTFIT_NONE || outfit >= OUTFIT_COUNT)
         outfit = DEFAULT_OUTFIT;
 
     if (gender >= GENDER_COUNT)
