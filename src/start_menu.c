@@ -1094,6 +1094,9 @@ static bool8 SaveErrorTimer(void)
 
 static u8 SaveConfirmSaveCallback(void)
 {
+    // The level-cap window is wider than the save-info window and shares
+    // BG0 tiles. Remove it before the save dialog reuses those tiles.
+    RemoveExtraStartMenuWindows();
     ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
     RemoveStartMenuWindow();
     ShowSaveInfoWindow();
