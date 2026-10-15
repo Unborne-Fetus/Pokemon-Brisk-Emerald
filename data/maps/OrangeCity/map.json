@@ -3,7 +3,6 @@
   "name": "OrangeCity",
   "layout": "LAYOUT_ORANGE_CITY",
   "music": "MUS_DEWFORD",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ORANGE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -68,8 +67,8 @@
   ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 9,
+      "x": 14,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
@@ -82,17 +81,24 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
-      "y": 27,
+      "x": 20,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 36,
-      "y": 27,
+      "x": 33,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ORANGE_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     }
   ],
@@ -100,11 +106,12 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 15,
+      "x": 18,
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OrangeCity_EventScript_TownSign"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }
