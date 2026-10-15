@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "battle_setup.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
@@ -463,6 +464,8 @@ static u8 PickWildMonNature(enum Species species)
 
 void CreateWildMon(enum Species species, u8 level)
 {
+    level = ScaleBriskLevel(level, species);
+    species = BriskRandomSpecies(species, BRISK_RAND_WILD);
     ZeroEnemyPartyMons();
     u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
     CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);

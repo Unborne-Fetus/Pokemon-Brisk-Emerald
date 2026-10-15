@@ -1021,14 +1021,17 @@ static void VBlankCB_Intro(void)
 
 void MainCB2_Intro(void)
 {
-    RunTasks();
-    AnimateSprites();
+    for (u32 tick = 0; tick < 2; tick++)
+    {
+        RunTasks();
+        AnimateSprites();
+        UpdatePaletteFade();
+        if (gIntroFrameCounter != -1)
+            gIntroFrameCounter++;
+    }
     BuildOamBuffer();
-    UpdatePaletteFade();
     if (gMain.newKeys != 0 && !gPaletteFade.active)
         SetMainCallback2(MainCB2_EndIntro);
-    else if (gIntroFrameCounter != -1)
-        gIntroFrameCounter++;
 }
 
 static void MainCB2_EndIntro(void)

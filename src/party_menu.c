@@ -5706,7 +5706,7 @@ static void Task_LearnNextMoveOrClosePartyMenu(u8 taskId)
 {
     if (IsFanfareTaskInactive() && ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON))))
     {
-        if (gPartyMenu.data1 == 1)
+        if (gPartyMenu.learnMoveState == 1)
         {
             Task_TryLearningNextMove(taskId);
         }
@@ -8926,8 +8926,12 @@ static void DrawBallCapsuleEditor(u8 taskId)
     static const u8 *const names[] = {COMPOUND_STRING("NONE"), COMPOUND_STRING("HEARTS"), COMPOUND_STRING("STARS"), COMPOUND_STRING("BUBBLES")};
     ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
     StringCopy(gStringVar2, names[GetBallCapsuleSeal(gTasks[taskId].data[12], gTasks[taskId].data[13])]);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Seal {STR_VAR_1}: {STR_VAR_2}\nLeft/Right: style  Up/Down: slot\nA: Save  B: Cancel"));
-    DisplayPartyMenuMessage(gStringVar4, FALSE);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Seal {STR_VAR_1}: {STR_VAR_2}  {DPAD_UPDOWN}: Slot\n{DPAD_LEFTRIGHT}: Style  A: Save  B: Cancel"));
+    // This editor owns the message window: no scrolling or auto-clearing task.
+    FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(TEXT_COLOR_WHITE));
+    DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
+    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, gStringVar4, TEXT_SKIP_DRAW, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -8973,3 +8977,49 @@ static void Task_EditBallCapsule(u8 taskId)
     gTasks[taskId].data[13] = slot;
     DrawBallCapsuleEditor(taskId);
 }
+
+#if TESTING
+bool32 Test_ResumeBriskCandyAfterLearnedMove(void)
+{
+    u8 taskId = CreateTask(Task_LearnNextMoveOrClosePartyMenu, 0);
+    MainCallback previous = gMain.callback2;
+    sInitialLevel = sFinalLevel = GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_LEVEL);
+    // Resume after the final level's move has been accepted, not after a menu choice.
+    MonTryLearningNewMoveAtLevel(&gParties[B_TRAINER_PLAYER][0], TRUE, sFinalLevel);
+    gPartyMenu.slotId = 0;
+    gPartyMenu.data1 = MOVE_VINE_WHIP;
+    gPartyMenu.learnMoveState = 1;
+    gPartyMenu.menuType = PARTY_MENU_TYPE_FIELD;
+    gMain.newKeys = A_BUTTON;
+    Task_LearnNextMoveOrClosePartyMenu(taskId);
+    bool32 beganEvolution = !gTasks[taskId].isActive && gMain.callback2 != previous;
+    gMain.callback2 = previous;
+    gMain.newKeys = 0;
+    ResetTasks();
+    return beganEvolution;
+}
+
+u8 Test_OpenBriskCapsuleEditor(void)
+{
+    InitBgsFromTemplates(0, sPartyMenuBgTemplates, ARRAY_COUNT(sPartyMenuBgTemplates));
+    SetBgTilemapBuffer(2, AllocZeroed(0x800));
+    InitWindows(sSinglePartyMenuWindowTemplate);
+    DeactivateAllTextPrinters();
+    sPartyMenuInternal = AllocZeroed(sizeof(*sPartyMenuInternal));
+    memset(sPartyMenuInternal->windowId, WINDOW_NONE, sizeof(sPartyMenuInternal->windowId));
+    gPartyMenu.slotId = 0;
+    u8 taskId = CreateTask(Task_EditBallCapsule, 0);
+    CursorCb_BallCapsule(taskId);
+    return taskId;
+}
+
+void Test_CloseBriskCapsuleEditor(void)
+{
+    ResetTasks();
+    Free(GetBgTilemapBuffer(2));
+    UnsetBgTilemapBuffer(2);
+    FreeAllWindowBuffers();
+    Free(sPartyMenuInternal);
+    sPartyMenuInternal = NULL;
+}
+#endif

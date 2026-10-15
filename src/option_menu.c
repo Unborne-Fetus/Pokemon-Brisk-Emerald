@@ -1,5 +1,8 @@
 #include "global.h"
 #include "brisk_options.h"
+#include "brisk_modes.h"
+#include "battle.h"
+#include "pokemon.h"
 #include "option_menu.h"
 #include "bg.h"
 #include "gpu_regs.h"
@@ -80,7 +83,7 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 3
+#define PAGE_COUNT 4
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -90,6 +93,8 @@ static void Task_OptionMenuSave(u8 taskId);
 static void StoreAllCurrentSettings(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg3(u8 taskId);
 static void DrawOptionsPg3(u8 taskId);
+static void DrawOptionsPg4(u8 taskId);
+static void Task_OptionMenuProcessInput_Pg4(u8 taskId);
 static void DrawToggle(u8 disabled, u8 y);
 static void ShinyOdds_DrawChoices(u8 selection);
 static void Task_OptionMenuFadeOut(u8 taskId);
@@ -164,6 +169,13 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
 {
     COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), gText_OptionMenuCancel,
+};
+
+enum { MENUITEM_DIFFICULTY, MENUITEM_RANDOM_WILD, MENUITEM_RANDOM_TRAINERS, MENUITEM_RANDOM_ITEMS, MENUITEM_RANDOM_IMPORTANT, MENUITEM_RANDOM_ALL, MENUITEM_CANCEL_PG4, MENUITEM_COUNT_PG4 };
+static const u8 *const sOptionMenuItemsNames_Pg4[] = {
+    COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("RANDOM WILD"),
+    COMPOUND_STRING("TRAINERS"), COMPOUND_STRING("ITEMS"),
+    COMPOUND_STRING("IMPORTANT"), COMPOUND_STRING("EVERYTHING"), gText_OptionMenuCancel,
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -313,6 +325,10 @@ static void Task_ChangePage(u8 taskId)
         DrawOptionsPg3(taskId);
         gTasks[taskId].func = Task_OptionMenuProcessInput_Pg3;
         break;
+    case 3:
+        DrawOptionsPg4(taskId);
+        gTasks[taskId].func = Task_OptionMenuProcessInput_Pg4;
+        break;
     }
 }
 
@@ -406,6 +422,10 @@ void CB2_InitOptionMenu(void)
         case 2:
             taskId = CreateTask(Task_OptionMenuProcessInput_Pg3, 0);
             DrawOptionsPg3(taskId);
+            break;
+        case 3:
+            taskId = CreateTask(Task_OptionMenuProcessInput_Pg4, 0);
+            DrawOptionsPg4(taskId);
             break;            
         }
         gMain.state++;
@@ -632,6 +652,8 @@ static void StoreAllCurrentSettings(u8 taskId)
 static void Task_OptionMenuSave(u8 taskId)
 {
     StoreAllCurrentSettings(taskId);
+    for (u32 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+        CalculateMonStats(&gParties[B_TRAINER_PLAYER][i]);
     BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -972,7 +994,7 @@ static void ButtonMode_DrawChoices(u8 selection)
 static void DrawHeaderText(void)
 {
     u32 i, widthOptions, xMid;
-    u8 pageDots[9] = _("");  // Array size should be at least (2 * PAGE_COUNT) -1
+    u8 pageDots[16] = _("");  // Array size should be at least (2 * PAGE_COUNT) -1
     widthOptions = GetStringWidth(FONT_NORMAL, gText_Option, 0);
 
     for (i = 0; i < PAGE_COUNT; i++)
@@ -1010,6 +1032,10 @@ static void DrawOptionMenuTexts(void)
     case 2:
         items = MENUITEM_COUNT_PG3;
         menu = sOptionMenuItemsNames_Pg3;
+        break;
+    case 3:
+        items = MENUITEM_COUNT_PG4;
+        menu = sOptionMenuItemsNames_Pg4;
         break;    
     }  
 
@@ -1116,5 +1142,53 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
             DrawToggle(!gTasks[taskId].tShinyHunt, 16);
         }
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+    }
+}
+
+
+static void DrawModesChoices(void)
+{
+    static const u8 *const modes[] = {COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}EASY"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}HARD"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}EXTREME")};
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 104, 0, 104, 16);
+    DrawOptionMenuChoice(modes[GetBriskDifficulty()], 104, 0, TRUE);
+    u32 settings = VarGet(VAR_BRISK_RANDOMIZER);
+    for (u32 row = MENUITEM_RANDOM_WILD; row <= MENUITEM_RANDOM_ALL; row++)
+        DrawToggle(!(settings & (1 << (row - MENUITEM_RANDOM_WILD))), row * 16);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+}
+
+static void DrawOptionsPg4(u8 taskId)
+{
+    ReadAllCurrentSettings(taskId);
+    DrawModesChoices();
+    HighlightOptionMenuItem(0);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_OptionMenuProcessInput_Pg4(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG4))
+        gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
+    {
+        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : MENUITEM_COUNT_PG4 - 1)) % MENUITEM_COUNT_PG4;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+    {
+        u32 row = gTasks[taskId].tMenuSelection;
+        if (row == MENUITEM_DIFFICULTY)
+            VarSet(VAR_BRISK_DIFFICULTY, (GetBriskDifficulty() + (JOY_REPEAT(DPAD_RIGHT) ? 1 : 3)) % 4);
+        else if (row >= MENUITEM_RANDOM_WILD && row <= MENUITEM_RANDOM_ALL)
+            VarSet(VAR_BRISK_RANDOMIZER, VarGet(VAR_BRISK_RANDOMIZER) ^ (1 << (row - MENUITEM_RANDOM_WILD)));
+        DrawModesChoices();
     }
 }

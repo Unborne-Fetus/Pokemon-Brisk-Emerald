@@ -631,7 +631,7 @@ void SetMinimumOWESpawnTimer(void)
     if (!WE_OW_ENCOUNTERS)
         return;
 
-    sOWESpawnCountdown = BriskShinyHunting() ? 6 : OWE_SPAWN_TIME_MINIMUM;
+    sOWESpawnCountdown = BriskShinyHunting() ? 1 : OWE_SPAWN_TIME_MINIMUM;
     if (LURE_STEP_COUNT && GetNumberOfActiveOWEs(OWE_GENERATED) < OWE_SPAWNS_MAX)
         sOWESpawnCountdown = OWE_SPAWN_TIME_LURE;
 }
@@ -1150,11 +1150,11 @@ static void SetNewOWESpawnCountdown(void)
     u32 numActive = GetNumberOfActiveOWEs(OWE_GENERATED);
 
     if (WE_OWE_SPAWN_REPLACEMENT && numActive >= OWE_SPAWNS_MAX)
-        sOWESpawnCountdown = BriskShinyHunting() ? 45 : OWE_SPAWN_TIME_REPLACEMENT;
+        sOWESpawnCountdown = BriskShinyHunting() ? 8 : OWE_SPAWN_TIME_REPLACEMENT;
     else if (LURE_STEP_COUNT && numActive < OWE_SPAWNS_MAX)
         sOWESpawnCountdown = OWE_SPAWN_TIME_LURE;
     else
-        sOWESpawnCountdown = BriskShinyHunting() ? 6 + 3 * numActive : OWE_SPAWN_TIME_MINIMUM + (OWE_SPAWN_TIME_PER_ACTIVE * numActive);
+        sOWESpawnCountdown = BriskShinyHunting() ? 1 + numActive : OWE_SPAWN_TIME_MINIMUM + (OWE_SPAWN_TIME_PER_ACTIVE * numActive);
 }
 
 static void DoOWESpawnAnim(struct ObjectEvent *owe)

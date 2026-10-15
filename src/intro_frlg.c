@@ -1042,10 +1042,13 @@ void CB2_SetUpIntroFrlg(void)
 
 static void CB2_Intro(void)
 {
-    RunTasks();
-    AnimateSprites();
+    for (u32 tick = 0; tick < 2; tick++)
+    {
+        RunTasks();
+        AnimateSprites();
+        UpdatePaletteFade();
+    }
     BuildOamBuffer();
-    UpdatePaletteFade();
 }
 
 static void VBlankCB_Intro(void)

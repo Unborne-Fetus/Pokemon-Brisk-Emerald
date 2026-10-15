@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "brisk_options.h"
 #include "malloc.h"
 #include "apprentice.h"
@@ -3240,42 +3241,42 @@ u32 GetSpeciesWeight(enum Species species)
 
 enum Type GetSpeciesType(enum Species species, u8 slot)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].types[slot];
+    return gSpeciesInfo[BriskTraitSpecies(species, 1)].types[slot];
 }
 
 enum Ability GetSpeciesAbility(enum Species species, u8 slot)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].abilities[slot];
+    return gSpeciesInfo[BriskTraitSpecies(species, 2)].abilities[slot];
 }
 
 u32 GetSpeciesBaseHP(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseHP;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseHP;
 }
 
 u32 GetSpeciesBaseAttack(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseAttack;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseAttack;
 }
 
 u32 GetSpeciesBaseDefense(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseDefense;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseDefense;
 }
 
 u32 GetSpeciesBaseSpAttack(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpAttack;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseSpAttack;
 }
 
 u32 GetSpeciesBaseSpDefense(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpDefense;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseSpDefense;
 }
 
 u32 GetSpeciesBaseSpeed(enum Species species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpeed;
+    return gSpeciesInfo[BriskTraitSpecies(species, 3)].baseSpeed;
 }
 
 u32 GetSpeciesBaseStat(enum Species species, u32 statIndex)
@@ -3310,7 +3311,7 @@ u32 GetSpeciesBaseStatTotal(enum Species species)
 
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species)
 {
-    const struct LevelUpMove *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].levelUpLearnset;
+    const struct LevelUpMove *learnset = gSpeciesInfo[BriskTraitSpecies(species, 4)].levelUpLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].levelUpLearnset;
     return learnset;
@@ -3318,7 +3319,7 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species)
 
 const u16 *GetSpeciesTeachableLearnset(enum Species species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].teachableLearnset;
+    const u16 *learnset = gSpeciesInfo[BriskTraitSpecies(species, 4)].teachableLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].teachableLearnset;
     return learnset;
@@ -3326,7 +3327,7 @@ const u16 *GetSpeciesTeachableLearnset(enum Species species)
 
 const u16 *GetSpeciesEggMoves(enum Species species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].eggMoveLearnset;
+    const u16 *learnset = gSpeciesInfo[BriskTraitSpecies(species, 4)].eggMoveLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].eggMoveLearnset;
     return learnset;
@@ -3346,7 +3347,7 @@ bool32 SpeciesHasEggMove(enum Species species, enum Move move)
 
 const struct Evolution *GetSpeciesEvolutions(enum Species species)
 {
-    const struct Evolution *evolutions = gSpeciesInfo[SanitizeSpeciesId(species)].evolutions;
+    const struct Evolution *evolutions = gSpeciesInfo[BriskTraitSpecies(species, 5)].evolutions;
     if (evolutions == NULL)
         return gSpeciesInfo[SPECIES_NONE].evolutions;
     return evolutions;
@@ -5507,6 +5508,9 @@ void SetWildMonHeldItem(void)
                     SetMonData(&gParties[B_TRAINER_OPPONENT_A][i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
             }
         }
+        enum Item held = GetMonData(&gParties[B_TRAINER_OPPONENT_A][i], MON_DATA_HELD_ITEM);
+        held = BriskRandomItem(held);
+        SetMonData(&gParties[B_TRAINER_OPPONENT_A][i], MON_DATA_HELD_ITEM, &held);
     }
 }
 

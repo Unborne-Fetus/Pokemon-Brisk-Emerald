@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "bg.h"
 #include "data.h"
 #include "decompress.h"
@@ -791,7 +792,7 @@ static void BuyMenuBuildListMenuTemplate(void)
     sListMenuItems = Alloc((sMartInfo.itemCount + 1) * sizeof(*sListMenuItems));
     sItemNames = Alloc((sMartInfo.itemCount + 1) * sizeof(*sItemNames));
     for (i = 0; i < sMartInfo.itemCount; i++)
-        BuyMenuSetListEntry(&sListMenuItems[i], sMartInfo.itemList[i], sItemNames[i]);
+        BuyMenuSetListEntry(&sListMenuItems[i], sMartInfo.martType == MART_TYPE_NORMAL ? BriskRandomItem(sMartInfo.itemList[i]) : sMartInfo.itemList[i], sItemNames[i]);
 
     StringCopy(sItemNames[i], gText_Cancel2);
     sListMenuItems[i].name = sItemNames[i];

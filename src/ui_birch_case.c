@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "battle_setup.h"
 #include "global.h"
 #include "ui_birch_case.h"
@@ -373,7 +374,7 @@ static void CreateHandSprite()
     gSprites[sBirchCaseDataPtr->handSpriteId].callback = CursorCallback;
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->handSpriteId], 2);
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[sBirchCaseDataPtr->handPosition]], 1);
-    SampleUi_DrawMonIcon(sStarterChoices[sBirchCaseDataPtr->handPosition].species);
+    SampleUi_DrawMonIcon(BriskRandomSpecies(sStarterChoices[sBirchCaseDataPtr->handPosition].species, BRISK_RAND_ALL));
     
     return;
 }
@@ -812,7 +813,7 @@ static void PrintTextToBottomBar(u8 textId)
     u8 x = 1 + 4;
     u8 y = 1 + 18;
 
-    u16 species = sStarterChoices[sBirchCaseDataPtr->handPosition].species;
+    u16 species = BriskRandomSpecies(sStarterChoices[sBirchCaseDataPtr->handPosition].species, BRISK_RAND_ALL);
     u16 dexNum = SpeciesToNationalPokedexNum(species);    
 
     FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -875,7 +876,7 @@ static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing th
     if (gTasks[taskId].data[11] >= 4)
     {
         if(sStarterChoices[sBirchCaseDataPtr->handPosition].species != SPECIES_NONE)
-            SampleUi_DrawMonIcon(sStarterChoices[sBirchCaseDataPtr->handPosition].species);
+            SampleUi_DrawMonIcon(BriskRandomSpecies(sStarterChoices[sBirchCaseDataPtr->handPosition].species, BRISK_RAND_ALL));
         gTasks[taskId].func = Task_BirchCaseMain;
         sBirchCaseDataPtr->movingSelector = FALSE;
         return;

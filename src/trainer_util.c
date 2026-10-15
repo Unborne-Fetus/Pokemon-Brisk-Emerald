@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "main.h"
 #include "data.h"
 #include "move.h"
@@ -122,6 +123,25 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 
 void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *trainerMon, struct TrainerGenerator *trainer)
 {
+    struct TrainerMon adjusted = *trainerMon;
+    if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
+    {
+        u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
+        adjusted.lvl = ScaleBriskLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
+        adjusted.heldItem = BriskRandomItem(adjusted.heldItem);
+        enum Species species = BriskRandomSpecies(adjusted.species, category);
+        if (species != adjusted.species || BriskRandomizerEnabled(BRISK_RAND_ALL))
+        {
+            adjusted.species = species;
+            adjusted.gender = TRAINER_MON_RANDOM_GENDER;
+            adjusted.ability = ABILITY_NONE;
+            adjusted.nickname = NULL;
+            for (u32 i = 0; i < MAX_MON_MOVES; i++)
+                adjusted.moves[i] = MOVE_NONE;
+            adjusted.gigantamaxFactor = FALSE;
+        }
+    }
+    trainerMon = &adjusted;
     u32 data;
     u32 personality = (LocalRandom32(&trainer->localRngState) & 0xFFFFDF00) + 0x1000;
     u32 genderValue = 0;

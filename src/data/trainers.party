@@ -2049,7 +2049,7 @@ Double Battle: No
 AI: Check Viability
 
 Munchlax	 @ Nugget
-Level: 10
+Level: 19
 
 
 === TRAINER_DAPHNE ===
@@ -2400,7 +2400,7 @@ Double Battle: No
 AI: Check Viability
 
 Farfetchd Galar @ Nugget
-Level: 10
+Level: 20
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE
@@ -4771,7 +4771,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Golem
-Level: 20
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
 - Defense Curl
@@ -4779,7 +4779,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Tomb
 
 Sudowoodo
-Level: 20
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bulldoze
 - Brick Break
@@ -4787,7 +4787,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Earth Power
 
 Steelix @ Steelixite
-Level: 20
+Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Body Press
 - Brutal Swing
@@ -4795,7 +4795,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dig
 
 Probopass @ Oran Berry
-Level: 20
+Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Block
 - Harden
@@ -5078,7 +5078,7 @@ Double Battle: No
 AI: Check Viability
 
 Bellossom
-Level: 10
+Level: 20
 
 === TRAINER_TED ===
 Name: TED
@@ -5184,7 +5184,7 @@ Double Battle: No
 AI: Check Viability
 
 Farfetchd
-Level: 10
+Level: 20
 
 
 === TRAINER_GEORGIA ===
@@ -5756,7 +5756,7 @@ Double Battle: No
 AI: Check Viability
 
 Persian Alola
-Level: 13
+Level: 25
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -5768,10 +5768,10 @@ Double Battle: No
 AI: Check Viability
 
 Maschiff
-Level: 14
+Level: 28
 
 Raticate Alola
-Level: 13
+Level: 26
 
 === TRAINER_JOSH ===
 Name: JOSH
@@ -5783,7 +5783,7 @@ Double Battle: No
 AI: Check Viability
 
 Growlithe Hisui
-Level: 15
+Level: 29
 
 
 === TRAINER_TOMMY ===
@@ -5796,10 +5796,10 @@ Double Battle: Yes
 AI: Check Viability
 
 Bastiodon
-Level: 15
+Level: 30
 
 Amaura
-Level: 15
+Level: 30
 
 === TRAINER_JOEY ===
 Name: JOEY
@@ -5811,7 +5811,7 @@ Double Battle: No
 AI: Check Viability
 
 Gurdurr
-Level: 15
+Level: 30
 
 === TRAINER_BEN ===
 Name: BEN
@@ -5983,10 +5983,10 @@ Double Battle: No
 AI: Check Viability
 
 Slowking Galar
-Level: 12
+Level: 23
 
 Slowbro Galar
-Level: 13
+Level: 26
 
 === TRAINER_TIMMY ===
 Name: TIMMY
@@ -6119,15 +6119,15 @@ Double Battle: No
 AI: Check Viability
 
 Gyarados @ Gyaradosite
-Level: 15
+Level: 30
 
 Kingler
 Gigantamax: Yes 
 Dynamax Level: 10
-Level: 18
+Level: 35
 
 Basculegion
-Level: 14
+Level: 28
 
 === TRAINER_CLAUDE ===
 Name: CLAUDE
@@ -9112,7 +9112,7 @@ Double Battle: Yes
 AI: Check Viability
 
 Indeedee F @ Psychic Seed
-Level: 15
+Level: 30
 Ability: Psychic Surge
 Nature: Timid
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -9122,7 +9122,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Protect
 
 Indeedee M @ Choice Scarf
-Level: 14
+Level: 28
 Ability: Psychic Surge
 Nature: Modest
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -12005,7 +12005,7 @@ Double Battle: No
 AI: Check Viability
 
 Golem @ Life Orb
-Level: 12
+Level: 23
 Ability: Sturdy
 EVs: 252 HP / 252 Atk / 4 Def
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -12016,7 +12016,7 @@ Nature: Adamant
 - Stealth Rock
 
 Coalossal @ Leftovers
-Level: 12
+Level: 23
 Ability: Steam Engine
 EVs: 252 HP / 252 Atk / 4 Def
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -12745,7 +12745,7 @@ Double Battle: No
 AI: Check Viability
 
 Ursaring @ Expert Belt
-Level: 15
+Level: 30
 Tera Type: Normal
 Ability: Guts
 Nature: Adamant
@@ -12757,7 +12757,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Play Nice
 
 Zangoose @ Expert Belt
-Level: 19
+Level: 37
 Ability: Immunity
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -12777,7 +12777,7 @@ Double Battle: No
 AI: Check Viability
 
 Girafarig @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Inner Focus
 Nature: Timid
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -12788,7 +12788,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growl
 
 Vigoroth @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Vital Spirit
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -12808,7 +12808,7 @@ Double Battle: No
 AI: Check Viability
 
 Mightyena @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Intimidate
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13098,7 +13098,7 @@ Double Battle: No
 AI: Check Viability
 
 Armaldo @ Expert Belt
-Level: 16
+Level: 31
 Ability: Battle Armor
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13109,7 +13109,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Harden
 
 Scolipede @ Expert Belt
-Level: 18
+Level: 35
 Ability: Poison Point
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13129,7 +13129,7 @@ Double Battle: No
 AI: Check Viability
 
 Dustox @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Shield Dust
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13140,7 +13140,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Moonlight
 
 Ledian @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Swarm
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13151,7 +13151,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 
 Beautifly @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Swarm
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13162,7 +13162,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Morning Sun
 
 Masquerain @ Sitrus Berry
-Level: 9
+Level: 18
 Ability: Intimidate
 Nature: Modest
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -13182,7 +13182,7 @@ Double Battle: No
 AI: Check Viability
 
 Beautifly @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Swarm
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13193,7 +13193,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Morning Sun
 
 Masquerain @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Intimidate
 Nature: Modest
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -13295,7 +13295,7 @@ Double Battle: No
 AI: Check Viability
 
 Butterfree @ Sitrus Berry
-Level: 12
+Level: 23
 Ability: Compound Eyes
 Nature: Modest
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -13306,7 +13306,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
 
 Dustox @ Sitrus Berry
-Level: 11
+Level: 21
 Ability: Shield Dust
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -13663,7 +13663,7 @@ Double Battle: No
 AI: Check Viability
 
 Nosepass @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Sturdy
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -15743,7 +15743,7 @@ Double Battle: No
 AI: Check Viability
 
 Ninetales @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Flash Fire
 Nature: Timid
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -15754,7 +15754,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Will-O-Wisp
 
 Arcanine @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Intimidate
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -15775,7 +15775,7 @@ Double Battle: No
 AI: Check Viability
 
 Roserade @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Natural Cure
 Nature: Timid
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -15786,7 +15786,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leech Seed
 
 Gardevoir @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Synchronize
 Nature: Timid
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -17292,7 +17292,7 @@ Double Battle: No
 AI: Check Viability
 
 Sandslash @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Sand Veil
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -17303,7 +17303,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sand Attack
 
 Donphan @ Leftovers
-Level: 10
+Level: 19
 Ability: Sturdy
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -17323,7 +17323,7 @@ Double Battle: No
 AI: Check Viability
 
 Vigoroth @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Vital Spirit
 Nature: Jolly
 EVs: 252 Atk / 4 SpD / 252 Spe
@@ -17334,7 +17334,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Energy
 
 Loudred @ Sitrus Berry
-Level: 10
+Level: 19
 Ability: Soundproof
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe

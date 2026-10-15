@@ -223,10 +223,13 @@ static const struct BgTemplate sBgTemplates_RhhCopyrightScreen[] =
 
 void CB2_ExpansionIntro(void)
 {
-    RunTasks();
-    AnimateSprites();
+    for (u32 tick = 0; tick < 2; tick++)
+    {
+        RunTasks();
+        AnimateSprites();
+        UpdatePaletteFade();
+    }
     BuildOamBuffer();
-    UpdatePaletteFade();
 }
 
 #define tState gTasks[taskId].data[0]

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
 #include "berry.h"
@@ -68,6 +69,7 @@ static void HealPlayerBoxes(void)
 
 u8 ScriptGiveEgg(enum Species species)
 {
+    species = BriskRandomSpecies(species, BRISK_RAND_ALL);
     struct Pokemon mon;
     u8 isEgg;
 
@@ -124,6 +126,10 @@ bool8 DoesPartyHaveEnigmaBerry(void)
 
 void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
 {
+    level = ScaleBriskLevel(level, species);
+    species = BriskRandomSpecies(species, BRISK_RAND_WILD);
+    item = BriskRandomItem(item);
+
     u8 heldItem[2];
 
     ZeroEnemyPartyMons();
@@ -142,6 +148,13 @@ void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
 }
 void CreateScriptedDoubleWildMon(enum Species species1, u8 level1, enum Item item1, enum Species species2, u8 level2, enum Item item2)
 {
+    level1 = ScaleBriskLevel(level1, species1);
+    species1 = BriskRandomSpecies(species1, BRISK_RAND_WILD);
+    item1 = BriskRandomItem(item1);
+    level2 = ScaleBriskLevel(level2, species2);
+    species2 = BriskRandomSpecies(species2, BRISK_RAND_WILD);
+    item2 = BriskRandomItem(item2);
+
     u8 heldItem1[2];
     u8 heldItem2[2];
 
@@ -371,7 +384,17 @@ u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemp
 {
     struct Pokemon mon;
 
-    CreateMonFromTemplate(&mon, monTemplate);
+    struct PokemonTemplate adjusted = *monTemplate;
+    if (adjusted.origin == GIFTMON_ORIGIN)
+    {
+        if (adjusted.level <= MAX_LEVEL)
+            adjusted.level = ScaleBriskLevel(adjusted.level, adjusted.species);
+        adjusted.species = BriskRandomSpecies(adjusted.species, BRISK_RAND_ALL);
+        if (BriskRandomizerEnabled(BRISK_RAND_ALL))
+            adjusted.gender = MON_GENDER_RANDOM;
+        adjusted.heldItem = BriskRandomItem(adjusted.heldItem);
+    }
+    CreateMonFromTemplate(&mon, &adjusted);
 
     if (side == B_SIDE_PLAYER)
         return GiveScriptedMonToPlayer(&mon, slot);
@@ -419,6 +442,10 @@ void GiveUnborneScizor(void)
 
 u32 ScriptGiveMon(enum Species species, u8 level, enum Item item)
 {
+    level = ScaleBriskLevel(level, species);
+    species = BriskRandomSpecies(species, BRISK_RAND_ALL);
+    item = BriskRandomItem(item);
+
     struct Pokemon mon;
     u8 heldItem[2];
 

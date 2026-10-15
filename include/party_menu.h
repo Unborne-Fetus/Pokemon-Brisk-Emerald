@@ -151,4 +151,10 @@ bool32 SetUpFieldMove_RockClimb(void);
 s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 chooseHalf, u8 lastSelectedSlot);
 #endif
 
+#if TESTING
+bool32 Test_ResumeBriskCandyAfterLearnedMove(void);
+u8 Test_OpenBriskCapsuleEditor(void);
+void Test_CloseBriskCapsuleEditor(void);
+#endif
+
 #endif // GUARD_PARTY_MENU_H
