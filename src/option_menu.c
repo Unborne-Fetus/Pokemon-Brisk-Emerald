@@ -62,7 +62,7 @@ enum
     MENUITEM_COUNT_PG2,
 };
 
-enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
+enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
 
 enum
 {
@@ -83,7 +83,7 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 4
+#define PAGE_COUNT 5
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -95,6 +95,8 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId);
 static void DrawOptionsPg3(u8 taskId);
 static void DrawOptionsPg4(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg4(u8 taskId);
+static void Task_OptionMenuProcessInput_Help(u8 taskId);
+static void DrawHelpPage(void);
 static void DrawToggle(u8 disabled, u8 y);
 static void ShinyOdds_DrawChoices(u8 selection);
 static void Task_OptionMenuFadeOut(u8 taskId);
@@ -122,6 +124,7 @@ static void DrawBgWindowFrames(void);
 
 EWRAM_DATA static bool8 sArrowPressed = FALSE;
 EWRAM_DATA static u8 sCurrPage = 0;
+EWRAM_DATA static u8 sHelpTopic = 0;
 
 static const u8 gText_Option[]             = _("OPTION");
 static const u8 gText_TextSpeedSlow[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
@@ -168,7 +171,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 
 static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
 {
-    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), gText_OptionMenuCancel,
+    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
 };
 
 enum { MENUITEM_DIFFICULTY, MENUITEM_RANDOM_WILD, MENUITEM_RANDOM_TRAINERS, MENUITEM_RANDOM_ITEMS, MENUITEM_RANDOM_IMPORTANT, MENUITEM_RANDOM_ALL, MENUITEM_CANCEL_PG4, MENUITEM_COUNT_PG4 };
@@ -177,6 +180,38 @@ static const u8 *const sOptionMenuItemsNames_Pg4[] = {
     COMPOUND_STRING("TRAINERS"), COMPOUND_STRING("ITEMS"),
     COMPOUND_STRING("IMPORTANT"), COMPOUND_STRING("EVERYTHING"), gText_OptionMenuCancel,
 };
+
+// In-game guide for recent Brisk Emerald features. Keep lines short for the GBA window.
+static const struct {
+    const u8 *title;
+    const u8 *description;
+} sHelpTopics[] = {
+    {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
+    {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
+    {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 lets you choose\nshiny odds from 1/8192\nup to 1/50. The setting\naffects normal shiny rolls.")},
+    {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},
+    {COMPOUND_STRING("SPEED CONTROLS"), COMPOUND_STRING("Options 2: battle speed\nranges from 1x to 4x.\nOverworld speed has 1x,\n2x, 4x and 8x settings.")},
+    {COMPOUND_STRING("AUTO RUN"), COMPOUND_STRING("Auto Run is on by default.\nNo need to hold B to run.\nTurn it off on Options\npage 2 if you prefer.")},
+    {COMPOUND_STRING("MENUS AND SAVING"), COMPOUND_STRING("Hold the D-pad to repeat\nthrough menus more quickly.\nSave messages are faster;\nyour save still gets written.")},
+    {COMPOUND_STRING("MOVE PROMPTS"), COMPOUND_STRING("Options 2 lets you skip\nautomatic level-up move\nprompts or turn them\nback on when you want.")},
+    {COMPOUND_STRING("LEVEL CAPS"), COMPOUND_STRING("Badge progress raises the\ncurrent POKéMON level cap.\nOptions 2 can turn caps off.\nSTART shows your next goal.")},
+    {COMPOUND_STRING("REMATCHES"), COMPOUND_STRING("Options page 2 controls\nunlimited trainer rematches.\nTurn this on to repeat\ntrainer battles freely.")},
+    {COMPOUND_STRING("MOVE RELEARNER"), COMPOUND_STRING("Open a POKéMON's summary\nand select the move option.\nUse L/R for Level, Egg,\nTM and Tutor move lists.")},
+    {COMPOUND_STRING("TM AND EGG MOVES"), COMPOUND_STRING("Egg moves come from the\nPOKéMON's egg move list.\nTM moves need the matching\nTM in your Bag.")},
+    {COMPOUND_STRING("MULTI-USE CANDY"), COMPOUND_STRING("Use several EXP Candies\nin one action to level up.\nLevel-up evolution checks\nstill occur during use.")},
+    {COMPOUND_STRING("BALL CAPSULES"), COMPOUND_STRING("Customize your POKéMON's\nentry effects in the\nBall Capsule editor.\nAssigned effects are saved.")},
+    {COMPOUND_STRING("OVERWORLD BALLS"), COMPOUND_STRING("Overworld POKé BALLS only\ncatch at or below your cap.\nRoutes that are too strong\nshow a warning instead.")},
+    {COMPOUND_STRING("CATCH CHANCES"), COMPOUND_STRING("During battle, catch-rate\ninformation appears near\nthe POKé BALL selection\nto help choose a ball.")},
+    {COMPOUND_STRING("REPELS"), COMPOUND_STRING("Repels now prevent wild\nencounters at all levels,\nregardless of your lead\nPOKéMON's level.")},
+    {COMPOUND_STRING("CUSTOM MEGAS"), COMPOUND_STRING("New custom Mega forms use\nnative 80x80 battle art.\nTheir Mega Stones are sold\nin the expanded shops.")},
+    {COMPOUND_STRING("STARTER FIXES"), COMPOUND_STRING("Starter natures, gender,\nIVs and shiny chances\nare rolled normally.\nNo fixed Hardy/zero IVs.")},
+    {COMPOUND_STRING("ORANGE COAST"), COMPOUND_STRING("Orange City and Routes\n143, 144, 145 and 146\nhave been added with\nOrange Islands-style tiles.")},
+    {COMPOUND_STRING("CHAMPION ROUTE"), COMPOUND_STRING("Route 135 is guarded\nuntil you have entered\nthe Hall of Fame.\nChampion Archives await.")},
+    {COMPOUND_STRING("ENCOUNTER RATES"), COMPOUND_STRING("Wild encounters in caves\nand on water have been\nrebalanced; regular land\ntables are unchanged.")},
+    {COMPOUND_STRING("WONDER TRADE"), COMPOUND_STRING("Use the in-game Wonder\nTrade to exchange a\nPOKéMON for a random\neligible trade partner.")},
+};
+static const u8 sHelpControls[] = _("UP/DOWN: TOPIC  A: NEXT");
+static const u8 sHelpExit[] = _("B: BACK    L/R: PAGES");
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
 {
@@ -329,6 +364,10 @@ static void Task_ChangePage(u8 taskId)
         DrawOptionsPg4(taskId);
         gTasks[taskId].func = Task_OptionMenuProcessInput_Pg4;
         break;
+    case 4:
+        DrawHelpPage();
+        gTasks[taskId].func = Task_OptionMenuProcessInput_Help;
+        break;
     }
 }
 
@@ -426,7 +465,11 @@ void CB2_InitOptionMenu(void)
         case 3:
             taskId = CreateTask(Task_OptionMenuProcessInput_Pg4, 0);
             DrawOptionsPg4(taskId);
-            break;            
+            break;
+        case 4:
+            taskId = CreateTask(Task_OptionMenuProcessInput_Help, 0);
+            DrawHelpPage();
+            break;
         }
         gMain.state++;
         break;
@@ -1122,6 +1165,13 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
     }
     else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG3))
         gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_HELP)
+    {
+        StoreAllCurrentSettings(taskId);
+        sHelpTopic = 0;
+        sCurrPage = 4;
+        gTasks[taskId].func = Task_ChangePage;
+    }
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
         gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : MENUITEM_COUNT_PG3 - 1)) % MENUITEM_COUNT_PG3;
@@ -1190,5 +1240,42 @@ static void Task_OptionMenuProcessInput_Pg4(u8 taskId)
         else if (row >= MENUITEM_RANDOM_WILD && row <= MENUITEM_RANDOM_ALL)
             VarSet(VAR_BRISK_RANDOMIZER, VarGet(VAR_BRISK_RANDOMIZER) ^ (1 << (row - MENUITEM_RANDOM_WILD)));
         DrawModesChoices();
+    }
+}
+
+
+static void DrawHelpPage(void)
+{
+    FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+    // No option row is highlighted while reading a help topic.
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, 0));
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpTopics[sHelpTopic].title, 8, 2, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpTopics[sHelpTopic].description, 8, 24, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpControls, 8, 94, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpExit, 8, 106, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_OptionMenuProcessInput_Help(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        sCurrPage = 2; // Return to the Options page containing HELP.
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN) || JOY_NEW(A_BUTTON))
+    {
+        s32 direction = JOY_REPEAT(DPAD_UP) ? -1 : 1;
+        sHelpTopic = (sHelpTopic + ARRAY_COUNT(sHelpTopics) + direction) % ARRAY_COUNT(sHelpTopics);
+        DrawHelpPage();
     }
 }
