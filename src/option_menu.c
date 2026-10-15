@@ -27,6 +27,7 @@
 #define tWindowFrameType data[6]
 #define tBattleSpeed data[7]
 #define tOverworldSpeed data[8]
+#define tAutoRunDisabled data[9]
 
 enum
 {
@@ -44,6 +45,7 @@ enum
 {
     MENUITEM_BATTLESPEED,
     MENUITEM_OVERWORLDSPEED,
+    MENUITEM_AUTORUN,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -65,6 +67,7 @@ enum
 // Page 2
 #define YPOS_BATTLESPEED      (MENUITEM_BATTLESPEED * 16)
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
+#define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
 #define PAGE_COUNT 2
 
@@ -91,6 +94,7 @@ static u8   BattleSpeed_ProcessInput(u8 selection);
 static void BattleSpeed_DrawChoices(u8 selection);
 static u8 OverworldSpeed_ProcessInput(u8 selection);
 static void OverworldSpeed_DrawChoices(u8 selection);
+static void AutoRun_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -134,6 +138,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_BATTLESPEED]    = gText_BattleSpeed,
     [MENUITEM_OVERWORLDSPEED] = gText_OverworldSpeed,
+    [MENUITEM_AUTORUN]        = COMPOUND_STRING("AUTO RUN"),
     [MENUITEM_CANCEL_PG2]     = gText_OptionMenuCancel,
 };
 
@@ -210,6 +215,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].tBattleSpeed = gSaveBlock2Ptr->optionsBattleSpeed;
     gTasks[taskId].tOverworldSpeed = VarGet(VAR_OVERWORLD_SPEEDUP);
+    gTasks[taskId].tAutoRunDisabled = VarGet(VAR_AUTO_RUN_DISABLED) != 0;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -230,6 +236,7 @@ static void DrawOptionsPg2(u8 taskId)
     ReadAllCurrentSettings(taskId);
     BattleSpeed_DrawChoices(gTasks[taskId].tBattleSpeed);
     OverworldSpeed_DrawChoices(gTasks[taskId].tOverworldSpeed);
+    AutoRun_DrawChoices(gTasks[taskId].tAutoRunDisabled);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -529,7 +536,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
 
             if (previousOption != gTasks[taskId].tOverworldSpeed)
                 OverworldSpeed_DrawChoices(gTasks[taskId].tOverworldSpeed);
-    break;
+            break;
+        case MENUITEM_AUTORUN:
+            previousOption = gTasks[taskId].tAutoRunDisabled;
+            gTasks[taskId].tAutoRunDisabled = BattleScene_ProcessInput(previousOption);
+            if (previousOption != gTasks[taskId].tAutoRunDisabled)
+                AutoRun_DrawChoices(gTasks[taskId].tAutoRunDisabled);
+            break;
         default:
             return;
         }
@@ -551,6 +564,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsBattleSpeed = gTasks[taskId].tBattleSpeed;
     VarSet(VAR_OVERWORLD_SPEEDUP, gTasks[taskId].tOverworldSpeed);
+    VarSet(VAR_AUTO_RUN_DISABLED, gTasks[taskId].tAutoRunDisabled);
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -968,4 +982,10 @@ static void DrawBgWindowFrames(void)
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);
 
     CopyBgTilemapBufferToVram(1);
+}
+
+static void AutoRun_DrawChoices(u8 selection)
+{
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, YPOS_AUTORUN, selection == 0);
+    DrawOptionMenuChoice(gText_BattleSceneOff, 160, YPOS_AUTORUN, selection != 0);
 }

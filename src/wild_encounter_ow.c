@@ -312,11 +312,11 @@ void UpdateOverworldWildEncounter(void)
     };
     u32 objectEventId = GetObjectEventIdByLocalId(infoOWE.localId);
     struct ObjectEvent *owe = &gObjectEvents[objectEventId];
-    if (ShouldDespawnGeneratedForNewOWE(owe))
+    if (objectEventId < OBJECT_EVENTS_COUNT && ShouldDespawnGeneratedForNewOWE(owe))
         RemoveObjectEvent(owe);
     objectEventId = SpawnSpecialObjectEvent(&objectEventTemplate);
 
-    assertf(objectEventId < OBJECT_EVENTS_COUNT, "could not spawn generated overworld encounter. too many object events exist")
+    if (objectEventId >= OBJECT_EVENTS_COUNT)
     {
         SetMinimumOWESpawnTimer();
         return;
@@ -880,15 +880,11 @@ static u32 GetGraphicsIdForOWE(const struct InfoOWE *info)
 
 static bool32 CheckCanLoadOWE(enum Species speciesId, bool32 isFemale, bool32 isShiny, s32 x, s32 y)
 {
-    assertf(CheckCanLoadOWE_Palette(speciesId, isFemale, isShiny, x, y), "could not load palette for overworld encounter\nspecies: %d\nfemale: %d\nshiny: %d\ncoords: %d %d", speciesId, isFemale, isShiny, x, y)
-    {
+    // Crowded maps can legitimately exhaust sprite palettes or tile memory.
+    // Leave the existing objects intact and retry spawning later.
+    if (!CheckCanLoadOWE_Palette(speciesId, isFemale, isShiny, x, y)
+     || !CheckCanLoadOWE_Tiles(speciesId, isFemale, isShiny, x, y))
         return FALSE;
-    }
-
-    assertf(CheckCanLoadOWE_Tiles(speciesId, isFemale, isShiny, x, y), "could not load sprite tiles for overworld encounter\nspecies: %d\nfemale: %d\nshiny: %d\ncoords: %d %d", speciesId, isFemale, isShiny, x, y)
-    {
-        return FALSE;
-    }
 
     return TRUE;
 }

@@ -169,6 +169,8 @@ static const u16 sShopInventory_ZeroBadges[] = {
     ITEM_AWAKENING,
     ITEM_PARALYZE_HEAL,
     ITEM_REVIVE,
+    ITEM_EXP_CANDY_XS,
+    ITEM_EXP_CANDY_S,
     ITEM_NONE
 };
 

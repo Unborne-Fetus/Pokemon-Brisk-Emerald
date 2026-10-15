@@ -118,7 +118,7 @@ struct MonChoiceData{ // This is the format used to define a mon, everything lef
     u8 level;   // Mon Level 5
     u16 item;   // Held item, just ITEM_POTION
     u8 ball; // this ballid does not change the design of the ball in the case, only in summary/throwing out to battle 
-    u8 nature; // NATURE_JOLLY, NATURE_ETC...
+    u8 nature; // NATURE_RANDOM, NATURE_JOLLY, NATURE_ETC...
     u8 abilityNum; // this is either 0/1 in vanilla or 0/1/2 in Expansion, its the ability num your mon uses from its possible abilities, not the ability constant itself
     u8 gender; // MON_MALE, MON_FEMALE, MON_GENDERLESS
     u8 evs[6]; // use format {255, 255, 0, 0, 0, 0}
@@ -132,20 +132,25 @@ struct MonChoiceData{ // This is the format used to define a mon, everything lef
 //
 //  Making Changes Here Changes The Options In The UI. This is where you define your mons
 //
+#define RANDOM_STARTER(speciesId) { .species = speciesId, .level = 5, .nature = NATURE_RANDOM, .gender = MON_GENDER_RANDOM, \
+    .ivs = {USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS} }
+
 static const struct MonChoiceData sStarterChoices[9] =
 {
-    [BALL_TOP_FIRST]        = {SPECIES_BULBASAUR, 5},
-    [BALL_TOP_SECOND]       = {SPECIES_CHARMANDER, 5},
-    [BALL_TOP_THIRD]        = {SPECIES_SQUIRTLE, 5},
+    [BALL_TOP_FIRST]        = RANDOM_STARTER(SPECIES_BULBASAUR),
+    [BALL_TOP_SECOND]       = RANDOM_STARTER(SPECIES_CHARMANDER),
+    [BALL_TOP_THIRD]        = RANDOM_STARTER(SPECIES_SQUIRTLE),
 
-    [BALL_MIDDLE_FIRST]     = {SPECIES_TREECKO, 5},
-    [BALL_MIDDLE_SECOND]    = {SPECIES_TORCHIC, 5},
-    [BALL_MIDDLE_THIRD]     = {SPECIES_MUDKIP, 5},
+    [BALL_MIDDLE_FIRST]     = RANDOM_STARTER(SPECIES_TREECKO),
+    [BALL_MIDDLE_SECOND]    = RANDOM_STARTER(SPECIES_TORCHIC),
+    [BALL_MIDDLE_THIRD]     = RANDOM_STARTER(SPECIES_MUDKIP),
 
-    [BALL_BOTTOM_FIRST]     = {SPECIES_FROAKIE, 5},
-    [BALL_BOTTOM_SECOND]    = {SPECIES_SNIVY, 5},
-    [BALL_TOP_FOURTH]       = {SPECIES_CHIMCHAR, 5},
+    [BALL_BOTTOM_FIRST]     = RANDOM_STARTER(SPECIES_FROAKIE),
+    [BALL_BOTTOM_SECOND]    = RANDOM_STARTER(SPECIES_SNIVY),
+    [BALL_TOP_FOURTH]       = RANDOM_STARTER(SPECIES_CHIMCHAR),
 };
+
+#undef RANDOM_STARTER
 
 //==========EWRAM==========//
 static EWRAM_DATA struct MenuResources *sBirchCaseDataPtr = NULL;

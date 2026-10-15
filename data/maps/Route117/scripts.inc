@@ -6,6 +6,7 @@ Route117_MapScripts::
 	.byte 0
 
 Route117_OnTransition:
+	call Route117_EventScript_UpdateSpecialEncounters
 	call Route117_EventScript_TryMoveDayCareMan
 	@ set flags for OW daycare mons
 	setflag FLAG_TEMP_1
@@ -240,3 +241,25 @@ Route117_Text_RouteSignMauville:
 Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"
 	.string "“Let us raise your POKéMON.”$"
+
+@ These relocated encounters require Brawly, even if the player skips his Gym.
+Route117_EventScript_UpdateSpecialEncounters:
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_4
+	setflag FLAG_TEMP_5
+	setflag FLAG_TEMP_6
+	goto_if_unset FLAG_BADGE02_GET, Route117_EventScript_SpecialEncountersDone
+	goto_if_set FLAG_DEFEATED_SHAYMIN, Route117_EventScript_SpecialEncounter3Done
+	clearflag FLAG_TEMP_3
+Route117_EventScript_SpecialEncounter3Done:
+	goto_if_set FLAG_DEFEATED_WO_CHIEN, Route117_EventScript_SpecialEncounter4Done
+	clearflag FLAG_TEMP_4
+Route117_EventScript_SpecialEncounter4Done:
+	goto_if_set FLAG_DEFEATED_CELEBI, Route117_EventScript_SpecialEncounter5Done
+	clearflag FLAG_TEMP_5
+Route117_EventScript_SpecialEncounter5Done:
+	goto_if_set FLAG_DEFEATED_XERNEAS, Route117_EventScript_SpecialEncounter6Done
+	clearflag FLAG_TEMP_6
+Route117_EventScript_SpecialEncounter6Done:
+Route117_EventScript_SpecialEncountersDone:
+	return
