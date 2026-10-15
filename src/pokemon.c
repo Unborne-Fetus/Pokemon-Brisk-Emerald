@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
+#include "battle_gfx_sfx_util.h"
 #include "battle_ai_util.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -1845,7 +1846,11 @@ enum Species GetUnownSpeciesId(u32 personality)
 void SetMultiuseSpriteTemplateToPokemon(enum Species speciesTag, enum BattlerPosition battlerPosition)
 {
     if (gMonSpritesGfxPtr != NULL)
+    {
+        // Menu callers use the standard canvas; actual battlers enable native pieces after creation.
+        PrepareBattleMonSpriteImages(SPECIES_NONE, battlerPosition);
         gMultiuseSpriteTemplate = gMonSpritesGfxPtr->templates[battlerPosition];
+    }
     else if (sMonSpritesGfxManagers[MON_SPR_GFX_MANAGER_A])
         gMultiuseSpriteTemplate = sMonSpritesGfxManagers[MON_SPR_GFX_MANAGER_A]->templates[battlerPosition];
     else if (sMonSpritesGfxManagers[MON_SPR_GFX_MANAGER_B])

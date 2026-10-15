@@ -2524,6 +2524,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sAzumarillLevelUpLearnset,
         .teachableLearnset = sAzumarillTeachableLearnset,
+        .formSpeciesIdTable = sAzumarillCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_MARILL
 
@@ -2921,6 +2922,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sJumpluffLevelUpLearnset,
         .teachableLearnset = sJumpluffTeachableLearnset,
+        .formSpeciesIdTable = sJumpluffCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_HOPPIP
 

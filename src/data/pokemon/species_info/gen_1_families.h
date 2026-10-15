@@ -8477,6 +8477,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sPoliwrathLevelUpLearnset,
         .teachableLearnset = sPoliwrathTeachableLearnset,
+        .formSpeciesIdTable = sPoliwrathCustomMegaFormSpeciesIdTable,
     },
 
 #if P_GEN_2_CROSS_EVOS
@@ -17003,6 +17004,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sElectivireLevelUpLearnset,
         .teachableLearnset = sElectivireTeachableLearnset,
+        .formSpeciesIdTable = sElectivireCustomMegaFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ELECTABUZZ
@@ -17225,6 +17227,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sMagmortarLevelUpLearnset,
         .teachableLearnset = sMagmortarTeachableLearnset,
+        .formSpeciesIdTable = sMagmortarCustomMegaFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_MAGMAR
@@ -19287,6 +19290,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sOmastarLevelUpLearnset,
         .teachableLearnset = sOmastarTeachableLearnset,
+        .formSpeciesIdTable = sOmastarCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_OMANYTE
 
@@ -19443,6 +19447,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sKabutopsLevelUpLearnset,
         .teachableLearnset = sKabutopsTeachableLearnset,
+        .formSpeciesIdTable = sKabutopsCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_KABUTO
 

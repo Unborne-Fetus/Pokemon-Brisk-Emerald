@@ -39,6 +39,9 @@ void HideBattlerShadowSprite(enum BattlerId battler);
 void FillAroundBattleWindows(void);
 void ClearTemporarySpeciesSpriteData(enum BattlerId battler, bool32 dontClearTransform, bool32 dontClearSubstitute);
 void AllocateMonSpritesGfx(void);
+void PrepareBattleMonSpriteImages(enum Species species, enum BattlerPosition position);
+void UpdateBattleMonSubsprites(enum BattlerId battler, enum Species species);
+void ClearBattleMonSpriteRow80(struct Sprite *sprite, u32 tileRow);
 void FreeMonSpritesGfx(void);
 bool32 ShouldPlayNormalMonCry(struct Pokemon *mon);
 

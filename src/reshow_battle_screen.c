@@ -329,6 +329,12 @@ void CreateBattlerSprite(enum BattlerId battler)
 
             SetMultiuseSpriteTemplateToPokemon(species, position);
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2), posY, GetBattlerSpriteSubpriority(battler));
+            enum Species nativeSpecies = gBattleSpritesDataPtr->battlerData[battler].transformSpecies;
+            if (nativeSpecies == SPECIES_NONE)
+                nativeSpecies = GetBattlerVisualSpecies(battler);
+            if (gBattleSpritesDataPtr->battlerData[battler].behindSubstitute || IsGhostBattleWithoutScope())
+                nativeSpecies = SPECIES_NONE;
+            UpdateBattleMonSubsprites(battler, nativeSpecies);
             gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;
             gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
@@ -369,6 +375,12 @@ void CreateBattlerSprite(enum BattlerId battler)
 
             SetMultiuseSpriteTemplateToPokemon(species, position);
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2), posY, GetBattlerSpriteSubpriority(battler));
+            enum Species nativeSpecies = gBattleSpritesDataPtr->battlerData[battler].transformSpecies;
+            if (nativeSpecies == SPECIES_NONE)
+                nativeSpecies = GetBattlerVisualSpecies(battler);
+            if (gBattleSpritesDataPtr->battlerData[battler].behindSubstitute || IsGhostBattleWithoutScope())
+                nativeSpecies = SPECIES_NONE;
+            UpdateBattleMonSubsprites(battler, nativeSpecies);
             gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;
             gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
@@ -433,6 +445,7 @@ static void CreateCaughtMonSprite(void)
 {
     SetMultiuseSpriteTemplateToPokemon(GetMonData(GetBattlerMon(gBattlerTarget), MON_DATA_SPECIES), GetBattlerPosition(gBattlerTarget));
     gBattlerSpriteIds[gBattlerTarget] = CreateSprite(&gMultiuseSpriteTemplate, DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2, GetBattlerSpriteSubpriority(gBattlerTarget));
+    UpdateBattleMonSubsprites(gBattlerTarget, GetBattlerVisualSpecies(gBattlerTarget));
     gSprites[gBattlerSpriteIds[gBattlerTarget]].oam.paletteNum = gBattlerTarget;
     gSprites[gBattlerSpriteIds[gBattlerTarget]].callback = SpriteCallbackDummy;
     gSprites[gBattlerSpriteIds[gBattlerTarget]].data[0] = gBattlerTarget;

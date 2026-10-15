@@ -1,3 +1,147 @@
+static const struct FormChange sAmoongussCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_AMOONGUSS},
+    {FORM_CHANGE_END_BATTLE, SPECIES_AMOONGUSS},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sAzumarillCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_AZUMARILL},
+    {FORM_CHANGE_END_BATTLE, SPECIES_AZUMARILL},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sButterfreeCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_BUTTERFREE},
+    {FORM_CHANGE_END_BATTLE, SPECIES_BUTTERFREE},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sConkeldurrCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_CONKELDURR},
+    {FORM_CHANGE_END_BATTLE, SPECIES_CONKELDURR},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sDarkraiCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_DARKRAI},
+    {FORM_CHANGE_END_BATTLE, SPECIES_DARKRAI},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sDugtrioCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_DUGTRIO},
+    {FORM_CHANGE_END_BATTLE, SPECIES_DUGTRIO},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sElectivireCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_ELECTIVIRE},
+    {FORM_CHANGE_END_BATTLE, SPECIES_ELECTIVIRE},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sExcadrillCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_EXCADRILL},
+    {FORM_CHANGE_END_BATTLE, SPECIES_EXCADRILL},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sFeraligatrCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_FERALIGATR},
+    {FORM_CHANGE_END_BATTLE, SPECIES_FERALIGATR},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sFlygonCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_FLYGON},
+    {FORM_CHANGE_END_BATTLE, SPECIES_FLYGON},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sGolemCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_GOLEM},
+    {FORM_CHANGE_END_BATTLE, SPECIES_GOLEM},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sJumpluffCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_JUMPLUFF},
+    {FORM_CHANGE_END_BATTLE, SPECIES_JUMPLUFF},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sKabutopsCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_KABUTOPS},
+    {FORM_CHANGE_END_BATTLE, SPECIES_KABUTOPS},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sMagmortarCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_MAGMORTAR},
+    {FORM_CHANGE_END_BATTLE, SPECIES_MAGMORTAR},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sMeganiumCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_MEGANIUM},
+    {FORM_CHANGE_END_BATTLE, SPECIES_MEGANIUM},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sMiloticCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_MILOTIC},
+    {FORM_CHANGE_END_BATTLE, SPECIES_MILOTIC},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sOmastarCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_OMASTAR},
+    {FORM_CHANGE_END_BATTLE, SPECIES_OMASTAR},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sPoliwrathCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_POLIWRATH},
+    {FORM_CHANGE_END_BATTLE, SPECIES_POLIWRATH},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sPyroarCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_PYROAR},
+    {FORM_CHANGE_END_BATTLE, SPECIES_PYROAR},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sShiftryCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_SHIFTRY},
+    {FORM_CHANGE_END_BATTLE, SPECIES_SHIFTRY},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sSnorlaxCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_SNORLAX},
+    {FORM_CHANGE_END_BATTLE, SPECIES_SNORLAX},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sTorkoalCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_TORKOAL},
+    {FORM_CHANGE_END_BATTLE, SPECIES_TORKOAL},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sTyphlosionCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_TYPHLOSION},
+    {FORM_CHANGE_END_BATTLE, SPECIES_TYPHLOSION},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sWhimsicottCustomMegaFormChangeTable[] = {
+    {FORM_CHANGE_FAINT, SPECIES_WHIMSICOTT},
+    {FORM_CHANGE_END_BATTLE, SPECIES_WHIMSICOTT},
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #if P_FAMILY_BULBASAUR
 static const struct FormChange sVenusaurFormChangeTable[] =
 {

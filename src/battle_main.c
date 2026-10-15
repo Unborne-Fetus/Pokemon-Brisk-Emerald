@@ -2516,7 +2516,7 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
         species = GetUnownSpeciesId(personality);
     yOffset = gSpeciesInfo[species].frontPicYOffset;
 
-    sprite->data[3] = 8 - yOffset / 8;
+    sprite->data[3] = sprite->subspriteMode == SUBSPRITES_MON_80x80 ? 10 : 8 - yOffset / 8;
     sprite->data[4] = 1;
     sprite->callback = SpriteCB_AnimFaintOpponent;
 }
@@ -2536,10 +2536,15 @@ static void SpriteCB_AnimFaintOpponent(struct Sprite *sprite)
         }
         else // Erase bottom part of the sprite to create a smooth illusion of mon falling down.
         {
-            u8 *dst = &gMonSpritesGfxPtr->spritesGfx[GetBattlerPosition(sprite->sBattler)][(sprite->data[3] << 8)];
+            if (sprite->subspriteMode == SUBSPRITES_MON_80x80)
+                ClearBattleMonSpriteRow80(sprite, sprite->data[3]);
+            else
+            {
+                u8 *dst = &gMonSpritesGfxPtr->spritesGfx[GetBattlerPosition(sprite->sBattler)][(sprite->data[3] << 8)];
 
-            for (i = 0; i < 0x100; i++)
-                *(dst++) = 0;
+                for (i = 0; i < 0x100; i++)
+                    *(dst++) = 0;
+            }
 
             StartSpriteAnim(sprite, 0);
         }

@@ -443,6 +443,10 @@ struct SpeciesInfo /*0xC4*/
     const union AnimCmd *const *frontAnimFrames;
     const u32 *frontPic;
     const u32 *backPic;
+    // Optional native 80x80 battle graphics, packed in subsprite tile order.
+    // frontPic/backPic remain 64x64 for menus and battle background effects.
+    const u8 *frontPic80;
+    const u8 *backPic80;
     const u16 *palette;
     const u16 *shinyPalette;
     const u8 *iconSprite;

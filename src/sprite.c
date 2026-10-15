@@ -1856,7 +1856,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
             x = subspriteTable->subsprites[i].x;
             y = subspriteTable->subsprites[i].y;
 
-            if (hFlip)
+            if (hFlip && !(oam->affineMode & ST_OAM_AFFINE_ON_MASK))
             {
                 s8 width = gOamDimensions[subspriteTable->subsprites[i].shape][subspriteTable->subsprites[i].size].width;
                 s16 right = x;
@@ -1865,7 +1865,7 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
                 x = ~x + 1;
             }
 
-            if (vFlip)
+            if (vFlip && !(oam->affineMode & ST_OAM_AFFINE_ON_MASK))
             {
                 s8 height = gOamDimensions[subspriteTable->subsprites[i].shape][subspriteTable->subsprites[i].size].height;
                 s16 bottom = y;
@@ -1879,6 +1879,23 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, u8 *oamIndex)
             subspriteOam.size = subspriteTable->subsprites[i].size;
             subspriteOam.x = (s16)baseX + (s16)x;
             subspriteOam.y = baseY + y;
+            if (sprite->subspriteMode == SUBSPRITES_MON_80x80 && (oam->affineMode & ST_OAM_AFFINE_ON_MASK))
+            {
+                // GBA affine matrices map screen pixels to texture pixels.
+                // Invert that matrix to move each piece's center with the parent.
+                const struct OamMatrix *matrix = &gOamMatrices[oam->matrixNum];
+                s32 determinant = matrix->a * matrix->d - matrix->b * matrix->c;
+                s32 width = gOamDimensions[subspriteOam.shape][subspriteOam.size].width;
+                s32 height = gOamDimensions[subspriteOam.shape][subspriteOam.size].height;
+                s32 centerX = (s16)x + width / 2;
+                s32 centerY = (s16)y + height / 2;
+                s32 boundScale = (oam->affineMode == ST_OAM_AFFINE_DOUBLE) ? 2 : 1;
+
+                if (determinant == 0)
+                    continue;
+                subspriteOam.x = baseX + 256 * (matrix->d * centerX - matrix->b * centerY) / determinant - width * boundScale / 2;
+                subspriteOam.y = baseY + 256 * (matrix->a * centerY - matrix->c * centerX) / determinant - height * boundScale / 2;
+            }
             subspriteOam.tileNum = tileNum + subspriteTable->subsprites[i].tileOffset;
 
             if (sprite->subspriteMode < SUBSPRITES_IGNORE_PRIORITY)

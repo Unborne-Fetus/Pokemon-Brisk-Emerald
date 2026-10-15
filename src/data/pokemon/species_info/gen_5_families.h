@@ -3253,6 +3253,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sConkeldurrLevelUpLearnset,
         .teachableLearnset = sConkeldurrTeachableLearnset,
+        .formSpeciesIdTable = sConkeldurrCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_TIMBURR
 
@@ -4271,6 +4272,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sWhimsicottLevelUpLearnset,
         .teachableLearnset = sWhimsicottTeachableLearnset,
+        .formSpeciesIdTable = sWhimsicottCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_COTTONEE
 
@@ -8821,6 +8823,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sAmoongussLevelUpLearnset,
         .teachableLearnset = sAmoongussTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_BRUTE_BONNET}),
+        .formSpeciesIdTable = sAmoongussCustomMegaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_FOONGUS
 

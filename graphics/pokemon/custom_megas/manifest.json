@@ -1,0 +1,218 @@
+[
+  {
+    "base_species": "SPECIES_AMOONGUSS",
+    "species": "SPECIES_AMOONGUSS_MEGA",
+    "id": 1573,
+    "asset_path": "graphics/pokemon/custom_megas/amoonguss/mega",
+    "future_stone_name": "Amoongussite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_AZUMARILL",
+    "species": "SPECIES_AZUMARILL_MEGA",
+    "id": 1574,
+    "asset_path": "graphics/pokemon/custom_megas/azumarill/mega",
+    "future_stone_name": "Azumarillite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_BUTTERFREE",
+    "species": "SPECIES_BUTTERFREE_MEGA",
+    "id": 1575,
+    "asset_path": "graphics/pokemon/custom_megas/butterfree/mega",
+    "future_stone_name": "Butterfreeite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_CONKELDURR",
+    "species": "SPECIES_CONKELDURR_MEGA",
+    "id": 1576,
+    "asset_path": "graphics/pokemon/custom_megas/conkeldurr/mega",
+    "future_stone_name": "Conkeldurrite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_DARKRAI",
+    "species": "SPECIES_DARKRAI_MEGA_M",
+    "id": 1577,
+    "asset_path": "graphics/pokemon/custom_megas/darkrai/mega_m",
+    "future_stone_name": "Darkranite M",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_DUGTRIO",
+    "species": "SPECIES_DUGTRIO_MEGA",
+    "id": 1578,
+    "asset_path": "graphics/pokemon/custom_megas/dugtrio/mega",
+    "future_stone_name": "Dugtrioite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_ELECTIVIRE",
+    "species": "SPECIES_ELECTIVIRE_MEGA",
+    "id": 1579,
+    "asset_path": "graphics/pokemon/custom_megas/electivire/mega",
+    "future_stone_name": "Electivireite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_EXCADRILL",
+    "species": "SPECIES_EXCADRILL_MEGA_M",
+    "id": 1580,
+    "asset_path": "graphics/pokemon/custom_megas/excadrill/mega_m",
+    "future_stone_name": "Excadrite M",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_FERALIGATR",
+    "species": "SPECIES_FERALIGATR_MEGA_M",
+    "id": 1581,
+    "asset_path": "graphics/pokemon/custom_megas/feraligatr/mega_m",
+    "future_stone_name": "Feraligite M",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_FLYGON",
+    "species": "SPECIES_FLYGON_MEGA",
+    "id": 1582,
+    "asset_path": "graphics/pokemon/custom_megas/flygon/mega",
+    "future_stone_name": "Flygonite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_GOLEM",
+    "species": "SPECIES_GOLEM_MEGA",
+    "id": 1583,
+    "asset_path": "graphics/pokemon/custom_megas/golem/mega",
+    "future_stone_name": "Golemite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_JUMPLUFF",
+    "species": "SPECIES_JUMPLUFF_MEGA",
+    "id": 1584,
+    "asset_path": "graphics/pokemon/custom_megas/jumpluff/mega",
+    "future_stone_name": "Jumpluffite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_KABUTOPS",
+    "species": "SPECIES_KABUTOPS_MEGA",
+    "id": 1585,
+    "asset_path": "graphics/pokemon/custom_megas/kabutops/mega",
+    "future_stone_name": "Kabutopsite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_MAGMORTAR",
+    "species": "SPECIES_MAGMORTAR_MEGA",
+    "id": 1586,
+    "asset_path": "graphics/pokemon/custom_megas/magmortar/mega",
+    "future_stone_name": "Magmortarite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_MEGANIUM",
+    "species": "SPECIES_MEGANIUM_MEGA_M",
+    "id": 1587,
+    "asset_path": "graphics/pokemon/custom_megas/meganium/mega_m",
+    "future_stone_name": "Meganiumite M",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_MILOTIC",
+    "species": "SPECIES_MILOTIC_MEGA",
+    "id": 1588,
+    "asset_path": "graphics/pokemon/custom_megas/milotic/mega",
+    "future_stone_name": "Miloticite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_OMASTAR",
+    "species": "SPECIES_OMASTAR_MEGA",
+    "id": 1589,
+    "asset_path": "graphics/pokemon/custom_megas/omastar/mega",
+    "future_stone_name": "Omastarite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_POLIWRATH",
+    "species": "SPECIES_POLIWRATH_MEGA",
+    "id": 1590,
+    "asset_path": "graphics/pokemon/custom_megas/poliwrath/mega",
+    "future_stone_name": "Poliwrathite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_PYROAR",
+    "species": "SPECIES_PYROAR_MEGA_M",
+    "id": 1591,
+    "asset_path": "graphics/pokemon/custom_megas/pyroar/mega_m",
+    "future_stone_name": "Pyroarite M",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_SHIFTRY",
+    "species": "SPECIES_SHIFTRY_MEGA",
+    "id": 1592,
+    "asset_path": "graphics/pokemon/custom_megas/shiftry/mega",
+    "future_stone_name": "Shiftryite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_SNORLAX",
+    "species": "SPECIES_SNORLAX_MEGA",
+    "id": 1593,
+    "asset_path": "graphics/pokemon/custom_megas/snorlax/mega",
+    "future_stone_name": "Snorlaxite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_TORKOAL",
+    "species": "SPECIES_TORKOAL_MEGA",
+    "id": 1594,
+    "asset_path": "graphics/pokemon/custom_megas/torkoal/mega",
+    "future_stone_name": "Torkoalite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_TYPHLOSION",
+    "species": "SPECIES_TYPHLOSION_MEGA",
+    "id": 1595,
+    "asset_path": "graphics/pokemon/custom_megas/typhlosion/mega",
+    "future_stone_name": "Typhlosionite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  },
+  {
+    "base_species": "SPECIES_WHIMSICOTT",
+    "species": "SPECIES_WHIMSICOTT_MEGA",
+    "id": 1596,
+    "asset_path": "graphics/pokemon/custom_megas/whimsicott/mega",
+    "future_stone_name": "Whimsicottite",
+    "stats": "Inherited from the current base form; balancing pending",
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+  }
+]

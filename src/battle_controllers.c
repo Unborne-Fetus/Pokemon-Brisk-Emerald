@@ -2030,6 +2030,7 @@ void StartSendOutAnim(enum BattlerId battler, bool32 dontClearTransform, bool32 
                                         GetBattlerSpriteDefault_Y(battler),
                                         GetBattlerSpriteSubpriority(battler));
 
+    UpdateBattleMonSubsprites(battler, species);
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
@@ -2367,6 +2368,7 @@ void BtlController_HandleLoadMonSprite(enum BattlerId battler)
                                                y,
                                                GetBattlerSpriteSubpriority(battler));
 
+    UpdateBattleMonSubsprites(battler, species);
     gSprites[gBattlerSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;

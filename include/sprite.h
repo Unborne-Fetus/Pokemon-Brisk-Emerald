@@ -150,6 +150,7 @@ enum
     SUBSPRITES_OFF,
     SUBSPRITES_ON,
     SUBSPRITES_IGNORE_PRIORITY, // on but priority is ignored
+    SUBSPRITES_MON_80x80, // Native battle composite; affine transforms share one origin.
 };
 
 struct Subsprite

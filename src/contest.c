@@ -1286,8 +1286,6 @@ void CB2_StartContest(void)
         sContestBgCopyFlags = 0;
         AllocContestResources();
         AllocateMonSpritesGfx();
-        FREE_AND_SET_NULL(gMonSpritesGfxPtr->firstDecompressed);
-        gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(0x4000);
         SetVBlankCallback(NULL);
         InitContestInfoBgs();
         InitContestWindows();

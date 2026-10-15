@@ -40,6 +40,84 @@ static void Task_ClearBitWhenBattleTableAnimDone(u8 taskId);
 static void Task_ClearBitWhenSpecialAnimDone(u8 taskId);
 static void ClearSpritesBattlerHealthboxAnimData(void);
 
+// Six legal GBA objects cover the entire 80x80 canvas (100 tiles).
+// Keep the same bottom baseline as a normal 64x64 battler.
+static const struct Subsprite sMonSubsprites80[] =
+{
+    {.x = -40, .y = -48, .shape = SPRITE_SHAPE(64x64), .size = SPRITE_SIZE(64x64), .tileOffset = 0},
+    {.x =  24, .y = -48, .shape = SPRITE_SHAPE(16x32), .size = SPRITE_SIZE(16x32), .tileOffset = 64},
+    {.x =  24, .y = -16, .shape = SPRITE_SHAPE(16x32), .size = SPRITE_SIZE(16x32), .tileOffset = 72},
+    {.x = -40, .y =  16, .shape = SPRITE_SHAPE(32x16), .size = SPRITE_SIZE(32x16), .tileOffset = 80},
+    {.x =  -8, .y =  16, .shape = SPRITE_SHAPE(32x16), .size = SPRITE_SIZE(32x16), .tileOffset = 88},
+    {.x =  24, .y =  16, .shape = SPRITE_SHAPE(16x16), .size = SPRITE_SIZE(16x16), .tileOffset = 96},
+};
+
+static const struct SubspriteTable sMonSubspriteTable80[] =
+{
+    {ARRAY_COUNT(sMonSubsprites80), sMonSubsprites80},
+};
+
+void PrepareBattleMonSpriteImages(enum Species species, enum BattlerPosition position)
+{
+    const u8 *native = NULL;
+
+    species = SanitizeSpeciesId(species);
+    if (!IsContest())
+        native = (position == B_POSITION_PLAYER_LEFT || position == B_POSITION_PLAYER_RIGHT)
+               ? gSpeciesInfo[species].backPic80 : gSpeciesInfo[species].frontPic80;
+
+    for (u32 frame = 0; frame < MAX_MON_PIC_FRAMES; frame++)
+    {
+        gMonSpritesGfxPtr->frameImages[position][frame].data = native != NULL
+            ? native : gMonSpritesGfxPtr->spritesGfx[position] + frame * MON_PIC_SIZE;
+        gMonSpritesGfxPtr->frameImages[position][frame].size = LARGE_MON_PIC_SIZE;
+    }
+}
+
+void UpdateBattleMonSubsprites(enum BattlerId battler, enum Species species)
+{
+    struct Sprite *sprite = &gSprites[gBattlerSpriteIds[battler]];
+
+    species = SanitizeSpeciesId(species);
+    PrepareBattleMonSpriteImages(species, GetBattlerPosition(battler));
+    sprite->images = gMonSpritesGfxPtr->frameImages[GetBattlerPosition(battler)];
+    if (!IsContest() && (IsOnPlayerSide(battler) ? gSpeciesInfo[species].backPic80 : gSpeciesInfo[species].frontPic80) != NULL)
+    {
+        SetSubspriteTables(sprite, sMonSubspriteTable80);
+        sprite->subspriteMode = SUBSPRITES_MON_80x80;
+        // Four composites use 24 hardware objects before healthboxes and effects.
+        gOamLimit = 128;
+    }
+    else
+    {
+        sprite->subspriteTables = NULL;
+        sprite->subspriteMode = SUBSPRITES_OFF;
+    }
+}
+
+void ClearBattleMonSpriteRow80(struct Sprite *sprite, u32 tileRow)
+{
+    u8 *gfx = gMonSpritesGfxPtr->spritesGfx[GetBattlerPosition(sprite->data[0])];
+
+    // Make a writable copy for the faint animation, rather than touching ROM.
+    if (sprite->images[0].data != gfx)
+    {
+        CpuCopy32(sprite->images[0].data, gfx, LARGE_MON_PIC_SIZE);
+        for (u32 frame = 0; frame < MAX_MON_PIC_FRAMES; frame++)
+            gMonSpritesGfxPtr->frameImages[GetBattlerPosition(sprite->data[0])][frame].data = gfx;
+    }
+    for (u32 i = 0; i < ARRAY_COUNT(sMonSubsprites80); i++)
+    {
+        const struct Subsprite *piece = &sMonSubsprites80[i];
+        u32 width = gOamDimensions[piece->shape][piece->size].width;
+        u32 height = gOamDimensions[piece->shape][piece->size].height;
+        s32 y = tileRow * 8 - 48 - piece->y;
+
+        if (y >= 0 && y < height)
+            CpuFill32(0, gfx + (piece->tileOffset + y / 8 * width / 8) * TILE_SIZE_4BPP, width / 8 * TILE_SIZE_4BPP);
+    }
+}
+
 // const rom data
 static const struct CompressedSpriteSheet sSpriteSheet_SinglesPlayerHealthbox =
 {
@@ -944,9 +1022,10 @@ void HandleSpeciesGfxDataChange(enum BattlerId battlerAtk, enum BattlerId battle
                                  targetSpecies,
                                  personalityValue);
     }
-    src = gMonSpritesGfxPtr->spritesGfx[position];
+    UpdateBattleMonSubsprites(battlerAtk, targetSpecies);
+    src = gMonSpritesGfxPtr->frameImages[position][0].data;
     dst = (void *)(OBJ_VRAM0 + gSprites[gBattlerSpriteIds[battlerAtk]].oam.tileNum * 32);
-    DmaCopy32(3, src, dst, MON_PIC_SIZE);
+    DmaCopy32(3, src, dst, LARGE_MON_PIC_SIZE);
     paletteOffset = OBJ_PLTT_ID(battlerAtk);
     paletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, isShiny, personalityValue);
     LoadPalette(paletteData, paletteOffset, PLTT_SIZE_4BPP);
@@ -1022,6 +1101,14 @@ void BattleLoadSubstituteOrMonSpriteGfx(enum BattlerId battler, bool8 loadMonSpr
 void LoadBattleMonGfxAndAnimate(enum BattlerId battler, bool8 loadMonSprite, u8 spriteId)
 {
     BattleLoadSubstituteOrMonSpriteGfx(battler, loadMonSprite);
+    enum Species species = SPECIES_NONE;
+    if (loadMonSprite)
+    {
+        species = gBattleSpritesDataPtr->battlerData[battler].transformSpecies;
+        if (species == SPECIES_NONE)
+            species = GetBattlerVisualSpecies(battler);
+    }
+    UpdateBattleMonSubsprites(battler, species);
     StartSpriteAnim(&gSprites[spriteId], 0);
 
     if (!loadMonSprite)
@@ -1378,11 +1465,11 @@ void AllocateMonSpritesGfx(void)
 {
     gMonSpritesGfxPtr = NULL;
     gMonSpritesGfxPtr = AllocZeroed(sizeof(*gMonSpritesGfxPtr));
-    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(MON_PIC_SIZE * MAX_MON_PIC_FRAMES * MAX_BATTLERS_COUNT);
+    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(BATTLE_MON_GFX_BUFFER_SIZE * MAX_BATTLERS_COUNT);
 
     for (u32 i = 0; i < MAX_BATTLERS_COUNT; i++)
     {
-        gMonSpritesGfxPtr->spritesGfx[i] = gMonSpritesGfxPtr->firstDecompressed + (i * MON_PIC_SIZE * MAX_MON_PIC_FRAMES);
+        gMonSpritesGfxPtr->spritesGfx[i] = gMonSpritesGfxPtr->firstDecompressed + (i * BATTLE_MON_GFX_BUFFER_SIZE);
         gMonSpritesGfxPtr->templates[i] = gBattlerSpriteTemplates[i];
 
         for (u32 j = 0; j < MAX_MON_PIC_FRAMES; j++)
@@ -1390,7 +1477,7 @@ void AllocateMonSpritesGfx(void)
             if (gMonSpritesGfxPtr->spritesGfx[i])
             {
                 gMonSpritesGfxPtr->frameImages[i][j].data = gMonSpritesGfxPtr->spritesGfx[i] + (j * MON_PIC_SIZE);
-                gMonSpritesGfxPtr->frameImages[i][j].size = MON_PIC_SIZE;
+                gMonSpritesGfxPtr->frameImages[i][j].size = LARGE_MON_PIC_SIZE;
             }
         }
 
