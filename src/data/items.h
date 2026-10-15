@@ -2199,7 +2199,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 20 : 35,
         .holdEffectParam = 100,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
+            "Repels all wild\n"
             "Pokémon for 100\n"
             "steps."),
         .pocket = POCKET_ITEMS,
@@ -2217,7 +2217,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 35 : 50,
         .holdEffectParam = 200,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
+            "Repels all wild\n"
             "Pokémon for 200\n"
             "steps."),
         .pocket = POCKET_ITEMS,
@@ -2235,7 +2235,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 45 : 70,
         .holdEffectParam = 250,
         .description = COMPOUND_STRING(
-            "Repels weak wild\n"
+            "Repels all wild\n"
             "Pokémon for 250\n"
             "steps."),
         .pocket = POCKET_ITEMS,

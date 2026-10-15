@@ -1023,21 +1023,8 @@ bool8 UpdateRepelCounter(void)
 
 bool8 IsWildLevelAllowedByRepel(u8 wildLevel)
 {
-    u8 i;
-
-    if (!REPEL_STEP_COUNT)
-        return TRUE;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        if (I_REPEL_INCLUDE_FAINTED == GEN_1 || I_REPEL_INCLUDE_FAINTED >= GEN_6 || GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP))
-        {
-            if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
-                return wildLevel >= GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL);
-        }
-    }
-
-    return FALSE;
+    // Repels block every wild level; lures have a separate step count.
+    return REPEL_STEP_COUNT == 0;
 }
 
 bool8 IsAbilityAllowingEncounter(u8 level)
