@@ -653,7 +653,8 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
                 sMoveRelearnerScrollState.listRow = 0;
                 RedrawMoveList();
                 MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
-                MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
+                if (B_SHOW_CATEGORY_ICON == TRUE)
+                    MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
                 AddScrollArrows();
             }
             else if (GameHasDifferentRelearners())
