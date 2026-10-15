@@ -23,6 +23,17 @@ static const struct SpriteTemplate sTemplate = {
 };
 static EWRAM_DATA u16 sParticleCount = 0;
 
+const u8 *GetBallCapsuleText(u32 text)
+{
+    static const u8 *const texts[] = {
+        COMPOUND_STRING("NONE"), COMPOUND_STRING("Let's go!"),
+        COMPOUND_STRING("Shine bright!"), COMPOUND_STRING("Showtime!"),
+        COMPOUND_STRING("You can do it!"), COMPOUND_STRING("Make a splash!"),
+        COMPOUND_STRING("Bring the heat!"), COMPOUND_STRING("Let's win!"),
+    };
+    return texts[text < BALL_CAPSULE_TEXT_COUNT ? text : 0];
+}
+
 u32 GetBallCapsuleSeal(u32 capsule, u32 slot)
 {
     return slot < BALL_CAPSULE_SLOTS ? (capsule >> (slot * 2)) & 3 : 0;

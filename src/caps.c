@@ -2,12 +2,19 @@
 #include "battle.h"
 #include "event_data.h"
 #include "caps.h"
+#include "brisk_modes.h"
 #include "pokemon.h"
 
 
+bool32 IsExtremeExpCap(void)
+{
+    return GetBriskDifficulty() == BRISK_MODE_EXTREME;
+}
+
 u32 GetProgressionLevelCap(void)
 {
-    if (VarGet(VAR_BRISK_NO_LEVEL_CAP))
+    u32 mode = GetBriskDifficulty();
+    if (mode == BRISK_MODE_EASY || (mode != BRISK_MODE_EXTREME && VarGet(VAR_BRISK_NO_LEVEL_CAP)))
         return MAX_LEVEL;
     static const u32 sLevelCapFlagMap[][2] =
     {
@@ -22,17 +29,23 @@ u32 GetProgressionLevelCap(void)
         {FLAG_IS_CHAMPION, MAX_LEVEL},
     };
 
+    u32 cap = MAX_LEVEL;
     for (u32 i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
     {
         if (!FlagGet(sLevelCapFlagMap[i][0]))
-            return sLevelCapFlagMap[i][1];
+        {
+            cap = sLevelCapFlagMap[i][1];
+            break;
+        }
     }
 
-    return MAX_LEVEL;
+    return mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME ? max(1, cap - 10) : cap;
 }
 
 u32 GetCurrentLevelCap(void)
 {
+    if (IsExtremeExpCap())
+        return GetProgressionLevelCap();
     if (VarGet(VAR_BRISK_NO_LEVEL_CAP))
         return MAX_LEVEL;
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
@@ -51,7 +64,9 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
     u32 levelDifference;
     u32 currentLevelCap = GetCurrentLevelCap();
 
-    if (B_EXP_CAP_TYPE == EXP_CAP_NONE)
+    if (IsExtremeExpCap() && level >= currentLevelCap)
+        return 0;
+    if (B_EXP_CAP_TYPE == EXP_CAP_NONE || GetBriskDifficulty() == BRISK_MODE_EASY)
         return expValue;
 
     if (level < currentLevelCap)

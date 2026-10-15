@@ -1025,7 +1025,7 @@ void MainCB2_Intro(void)
     {
         RunTasks();
         AnimateSprites();
-        UpdatePaletteFade();
+        UpdatePaletteFadeForFastIntro();
         if (gIntroFrameCounter != -1)
             gIntroFrameCounter++;
     }
@@ -1452,7 +1452,8 @@ static void Task_Scene2_BikeRide(u8 taskId)
         gTasks[taskId].tFlygonTimer++;
 
     // Alternate colors of the trees
-    CycleSceneryPalette(0);
+    if (gIntroFrameCounter & 1)
+        CycleSceneryPalette(0);
 }
 
 static void Task_Scene2_End(u8 taskId)
@@ -3430,3 +3431,37 @@ static void SpriteCB_RayquazaOrb(struct Sprite *sprite)
         break;
     }
 }
+
+#if TESTING
+bool32 Test_BriskIntroSceneryColors(void)
+{
+    MainCallback callback = gMain.callback2;
+    IntrCallback vblank = gMain.vblankCallback;
+    ResetTasks();
+    ResetSpriteData();
+    FreeAllSpritePalettes();
+    ResetPaletteFade();
+    gMain.newKeys = 0;
+    gIntroFrameCounter = 0;
+    CreateTask(Task_Scene1_Load, 0);
+    for (u32 frame = 0; frame < 600; frame++)
+    {
+        MainCB2_Intro();
+        VBlankCB_Intro();
+        gMain.vblankCounter1++;
+    }
+    bool32 colorsMatch = !gPaletteFade.active && gIntroFrameCounter > TIMER_START_SCENE_2;
+    for (u32 i = 1; i < 16; i++)
+        if (gPlttBufferFaded[i] != gPlttBufferUnfaded[i]
+            || gPlttBufferFaded[BG_PLTT_ID(15) + i] != gPlttBufferUnfaded[BG_PLTT_ID(15) + i])
+            colorsMatch = FALSE;
+    SetVBlankCallback(vblank);
+    gMain.callback2 = callback;
+    ResetTasks();
+    ResetSpriteData();
+    FreeAllSpritePalettes();
+    gReservedSpritePaletteCount = 0;
+    ResetPaletteFade();
+    return colorsMatch;
+}
+#endif

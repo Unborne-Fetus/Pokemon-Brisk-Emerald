@@ -620,11 +620,10 @@ static void Task_MoveRelearner_LearnMove(u8 taskId)
 
 static bool32 UpdateMoveRelearnerState(s8 direction)
 {
-    struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
     for (s32 i = 1; i < MOVE_RELEARNER_COUNT; i++)
     {
         s32 state = (gMoveRelearnerState + MOVE_RELEARNER_COUNT + direction * i) % MOVE_RELEARNER_COUNT;
-        if (CanBoxMonRelearnMoves(boxmon, state))
+        if (sRelearnTypes[state].isActive())
         {
             gMoveRelearnerState = state;
             StoreMoveText();
@@ -727,7 +726,7 @@ static s32 GetCurrentSelectedMove(void)
 
 static void ShowTeachMoveText(void)
 {
-    StringExpandPlaceholders(gStringVar4, gText_TeachWhichMoveToPkmn);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Teach which {STR_VAR_3} move?\nL/R: Level / Egg / TM / Tutor"));
     FillWindowPixelBuffer(RELEARNERWIN_MSG, 0x11);
     AddTextPrinterParameterized(RELEARNERWIN_MSG, FONT_NORMAL, gStringVar4, 0, 1, 0, NULL);
 }

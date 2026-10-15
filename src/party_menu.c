@@ -1,6 +1,7 @@
 #include "global.h"
 #include "ball_capsule.h"
 #include "pokeball.h"
+#include "item_icon.h"
 #include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
@@ -5904,7 +5905,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     tItemEffect = GetItemEffectType(gSpecialVar_ItemId);
     tItemCount = 1;
 
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    if (!((B_RARE_CANDY_CAP || IsExtremeExpCap()) && sInitialLevel >= GetCurrentLevelCap()))
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0, 0, 1);
     else
         cannotUseEffect = TRUE;
@@ -8956,12 +8957,32 @@ static enum PokeBall FindReplacementBall(struct Pokemon *mon, enum PokeBall star
     return BALL_STRANGE;
 }
 
+#define TAG_CHANGE_BALL 0x5F21
+static void FreeChangeBallIcon(u8 taskId)
+{
+    u32 sprite = gTasks[taskId].data[14];
+    if (sprite < MAX_SPRITES && gSprites[sprite].inUse && gSprites[sprite].oam.tileNum == GetSpriteTileStartByTag(TAG_CHANGE_BALL))
+        DestroySprite(&gSprites[sprite]);
+    FreeSpriteTilesByTag(TAG_CHANGE_BALL);
+    FreeSpritePaletteByTag(TAG_CHANGE_BALL);
+    gTasks[taskId].data[14] = MAX_SPRITES;
+}
+
 static void DrawChangeBallEditor(u8 taskId)
 {
     enum Item item = gPokeBalls[gTasks[taskId].data[12]].itemId;
+    FreeChangeBallIcon(taskId);
+    u32 sprite = AddItemIconSprite(TAG_CHANGE_BALL, TAG_CHANGE_BALL, item);
+    gTasks[taskId].data[14] = sprite;
+    if (sprite < MAX_SPRITES)
+    {
+        gSprites[sprite].x = 24;
+        gSprites[sprite].y = 136;
+        gSprites[sprite].oam.priority = 0;
+    }
     CopyItemName(item, gStringVar1);
     ConvertIntToDecimalStringN(gStringVar2, CountTotalItemQuantityInBag(item), STR_CONV_MODE_LEFT_ALIGN, 4);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} x{STR_VAR_2} (uses 1)\n{DPAD_LEFTRIGHT}: Ball  A: Change  B: Cancel"));
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("          {STR_VAR_1} x{STR_VAR_2} (uses 1)\n          Left/Right: Ball A: Use B: Back"));
     FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(TEXT_COLOR_WHITE));
     DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
     AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, gStringVar4, TEXT_SKIP_DRAW, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
@@ -8994,6 +9015,7 @@ static void CursorCb_ChangeBall(u8 taskId)
         gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         return;
     }
+    gTasks[taskId].data[14] = MAX_SPRITES;
     DrawChangeBallEditor(taskId);
     gTasks[taskId].func = Task_ChangeBall;
 }
@@ -9003,6 +9025,7 @@ static void Task_ChangeBall(u8 taskId)
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
     if (JOY_NEW(B_BUTTON))
     {
+        FreeChangeBallIcon(taskId);
         ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
         ClearWindowTilemap(WIN_MSG);
         CursorCb_Cancel1(taskId);
@@ -9011,6 +9034,7 @@ static void Task_ChangeBall(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         ChangeMonBall(mon, gTasks[taskId].data[12]);
+        FreeChangeBallIcon(taskId);
         ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
         ClearWindowTilemap(WIN_MSG);
         CursorCb_Cancel1(taskId);
@@ -9029,9 +9053,19 @@ static void Task_ChangeBall(u8 taskId)
 static void DrawBallCapsuleEditor(u8 taskId)
 {
     static const u8 *const names[] = {COMPOUND_STRING("NONE"), COMPOUND_STRING("HEARTS"), COMPOUND_STRING("STARS"), COMPOUND_STRING("BUBBLES")};
-    ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
-    StringCopy(gStringVar2, names[GetBallCapsuleSeal(gTasks[taskId].data[12], gTasks[taskId].data[13])]);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Seal {STR_VAR_1}: {STR_VAR_2}  {DPAD_UPDOWN}: Slot\n{DPAD_LEFTRIGHT}: Style  A: Save  B: Cancel"));
+    if (gTasks[taskId].data[13] == BALL_CAPSULE_SLOTS)
+    {
+        StringCopy(gStringVar1, COMPOUND_STRING("Text"));
+        StringCopy(gStringVar2, GetBallCapsuleText(gTasks[taskId].data[14]));
+    }
+    else
+    {
+        StringCopy(gStringVar1, COMPOUND_STRING("Seal "));
+        ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+        StringAppend(gStringVar1, gStringVar3);
+        StringCopy(gStringVar2, names[GetBallCapsuleSeal(gTasks[taskId].data[12], gTasks[taskId].data[13])]);
+    }
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}: {STR_VAR_2}  Up/Down: Row\nLeft/Right: Edit  A: Save  B: Back"));
     // This editor owns the message window: no scrolling or auto-clearing task.
     FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(TEXT_COLOR_WHITE));
     DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
@@ -9047,6 +9081,7 @@ static void CursorCb_BallCapsule(u8 taskId)
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
     gTasks[taskId].data[12] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE);
     gTasks[taskId].data[13] = 0;
+    gTasks[taskId].data[14] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT);
     DrawBallCapsuleEditor(taskId);
     gTasks[taskId].func = Task_EditBallCapsule;
 }
@@ -9059,18 +9094,26 @@ static void Task_EditBallCapsule(u8 taskId)
     {
         u8 value = capsule;
         SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE, &value);
+        value = gTasks[taskId].data[14];
+        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT, &value);
+        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+        ClearWindowTilemap(WIN_MSG);
         CursorCb_Cancel1(taskId);
         return;
     }
     if (JOY_NEW(B_BUTTON))
     {
+        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+        ClearWindowTilemap(WIN_MSG);
         CursorCb_Cancel1(taskId);
         return;
     }
     if (JOY_REPEAT(DPAD_UP))
-        slot = (slot + BALL_CAPSULE_SLOTS - 1) % BALL_CAPSULE_SLOTS;
+        slot = (slot + BALL_CAPSULE_SLOTS) % (BALL_CAPSULE_SLOTS + 1);
     else if (JOY_REPEAT(DPAD_DOWN))
-        slot = (slot + 1) % BALL_CAPSULE_SLOTS;
+        slot = (slot + 1) % (BALL_CAPSULE_SLOTS + 1);
+    else if (slot == BALL_CAPSULE_SLOTS && JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+        gTasks[taskId].data[14] = (gTasks[taskId].data[14] + (JOY_REPEAT(DPAD_RIGHT) ? 1 : BALL_CAPSULE_TEXT_COUNT - 1)) % BALL_CAPSULE_TEXT_COUNT;
     else if (JOY_REPEAT(DPAD_LEFT))
         capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + 3) % BALL_CAPSULE_STYLES);
     else if (JOY_REPEAT(DPAD_RIGHT))

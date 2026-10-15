@@ -388,7 +388,7 @@ static u8 GetNumLevelsGainedFromSteps(struct DaycareMon *daycareMon)
     levelAfter = GetLevelAfterDaycareSteps(&daycareMon->mon, daycareMon->steps);
     if (levelAfter > GetCurrentLevelCap())
         levelAfter = GetCurrentLevelCap();
-    return levelAfter - levelBefore;
+    return levelAfter > levelBefore ? levelAfter - levelBefore : 0;
 }
 
 static u8 GetNumLevelsGainedForDaycareMon(struct DaycareMon *daycareMon)

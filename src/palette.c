@@ -104,6 +104,13 @@ u32 UpdatePaletteFade(void)
     return result;
 }
 
+u32 UpdatePaletteFadeForFastIntro(void)
+{
+    // The intro's second logical frame replaces the first before VBlank.
+    sPlttBufferTransferPending = FALSE;
+    return UpdatePaletteFade();
+}
+
 u32 PrevPaletteFadeResult(void)
 {
     return sPlttPreviousUpdateResult;

@@ -4742,7 +4742,7 @@ static inline bool32 ShouldShowMoveRelearner(void)
     return (P_SUMMARY_SCREEN_MOVE_RELEARNER
          && !sMonSummaryScreen->lockMovesFlag
          && sMonSummaryScreen->mode != SUMMARY_MODE_BOX_CURSOR
-         && sMonSummaryScreen->hasRelearnableMoves
+         && !sMonSummaryScreen->summary.isEgg
          && !InBattleFactory()
          && !InSlateportBattleTent());
 }
@@ -4842,9 +4842,6 @@ static inline void ShowUtilityPrompt(s16 mode)
 static void UpdateRelearnPrompt(void)
 {
     FillWindowPixelBuffer(PSS_LABEL_WINDOW_PROMPT_RELEARN, PIXEL_FILL(0));
-    if (!sMonSummaryScreen->hasRelearnableMoves)
-        return;
-
     const u8 *relearnText;
     relearnText = sText_Relearn;
 

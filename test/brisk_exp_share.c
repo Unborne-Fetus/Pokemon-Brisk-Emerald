@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_modes.h"
+#include "caps.h"
 #include "event_data.h"
 #include "item.h"
 #include "test/battle.h"
@@ -21,9 +22,9 @@ WILD_BATTLE_TEST("Brisk EXP Share rewards use difficulty percentages without red
         VarSet(VAR_BRISK_NO_LEVEL_CAP, 1);
         VarSet(VAR_BRISK_EXP_SHARE, modern ? 1 : 0);
         GIVE_PLAYER_ITEM(ITEM_MODERN_EXP_SHARE, 1);
-        PLAYER(SPECIES_WOBBUFFET) { Level(20); Moves(MOVE_SCRATCH); }
-        PLAYER(SPECIES_WOBBUFFET) { Level(20); Item(modern ? ITEM_NONE : ITEM_EXP_SHARE); }
-        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); }
+        PLAYER(SPECIES_WOBBUFFET) { Level(10); Moves(MOVE_SCRATCH); }
+        PLAYER(SPECIES_WOBBUFFET) { Level(10); Item(modern ? ITEM_NONE : ITEM_EXP_SHARE); }
+        OPPONENT(SPECIES_CATERPIE) { Level(7); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
@@ -31,8 +32,8 @@ WILD_BATTLE_TEST("Brisk EXP Share rewards use difficulty percentages without red
         MESSAGE("The wild Caterpie fainted!");
         EXPERIENCE_BAR(player);
     } THEN {
-        u32 baseExp = gSpeciesInfo[SPECIES_CATERPIE].expYield * 10 / 7;
-        u32 startExp = gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][20];
+        u32 baseExp = gSpeciesInfo[SPECIES_CATERPIE].expYield * 7 / 7;
+        u32 startExp = gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][10];
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP), startExp + baseExp);
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_EXP), startExp + ScaleBriskSharedExp(baseExp));
         VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
@@ -55,6 +56,33 @@ SINGLE_BATTLE_TEST("Brisk item restrictions keep opposing trainer item actions w
     } SCENE {
         HP_BAR(opponent, damage: -20);
     } THEN {
+        VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    }
+}
+
+WILD_BATTLE_TEST("Brisk Extreme battle EXP stops exactly at the reduced cap, including boosted rewards")
+{
+    s32 offset = 0;
+    PARAMETRIZE { offset = -1; }
+    PARAMETRIZE { offset = 0; }
+    PARAMETRIZE { offset = 1; }
+    u32 cap = 0;
+    GIVEN {
+        WITH_CONFIG(B_SCALED_EXP, GEN_3);
+        VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXTREME);
+        cap = GetCurrentLevelCap();
+        PLAYER(SPECIES_WOBBUFFET) { Level(cap + offset); Item(ITEM_LUCKY_EGG); }
+        OPPONENT(SPECIES_BLISSEY) { Level(100); Moves(MOVE_MEMENTO); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_MEMENTO); }
+    } SCENE {
+        if (offset < 0) { EXPERIENCE_BAR(player); }
+        else { NOT EXPERIENCE_BAR(player); }
+    } THEN {
+        u32 cap = GetCurrentLevelCap();
+        u32 finalLevel = offset < 0 ? cap : cap + offset;
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_LEVEL), finalLevel);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][finalLevel]);
         VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
     }
 }

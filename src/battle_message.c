@@ -1,4 +1,5 @@
 #include "global.h"
+#include "ball_capsule.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_record.h"
@@ -2814,6 +2815,22 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
     }
 
     BattleStringExpandPlaceholdersToDisplayedString(stringPtr);
+    // Keep the standard send-out name text and add the selected capsule phrase.
+    enum BattlerId capsuleBattler = stringID == STRINGID_SWITCHINMON ? gBattleScripting.battler : battler;
+    if ((stringID == STRINGID_INTROSENDOUT || stringID == STRINGID_SWITCHINMON)
+        && BattlerIsPlayer(capsuleBattler))
+    {
+        u32 partyId = stringID == STRINGID_SWITCHINMON ? gBattleStruct->monToSwitchIntoId[capsuleBattler] : gBattlerPartyIndexes[capsuleBattler];
+        if (partyId < PARTY_SIZE)
+        {
+            u32 text = GetMonData(&gParties[B_TRAINER_PLAYER][partyId], MON_DATA_BALL_CAPSULE_TEXT);
+            if (text != 0)
+            {
+                StringAppend(gDisplayedStringBattle, COMPOUND_STRING("\n"));
+                StringAppend(gDisplayedStringBattle, GetBallCapsuleText(text));
+            }
+        }
+    }
 }
 
 u32 BattleStringExpandPlaceholdersToDisplayedString(const u8 *src)

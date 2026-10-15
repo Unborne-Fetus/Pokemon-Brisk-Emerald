@@ -188,10 +188,10 @@ static const struct {
     const u8 *description;
 } sHelpTopics[] = {
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
-    {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("Original prices; basic AI.\nBattle items are allowed.\nBattle style is SHIFT.\nShared EXP is 200%.")},
+    {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("No level caps; prices x1.\nBasic AI; items allowed.\nSHIFT style; shared EXP 200%.\nOver-level freely.")},
     {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Prices x2; original AI.\nBattle items are allowed.\nChoose SHIFT or SET style.\nShared EXP remains 100%.")},
-    {COMPOUND_STRING("HARD RULES"), COMPOUND_STRING("Prices x4; smarter choices.\nNo battle items; SET style.\nShared EXP is 50%.\nHeld items still work.")},
-    {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Prices x10; omniscient AI.\nNo battle items; SET style.\nEXP Share is disabled.\nWild POKé BALLS still work.")},
+    {COMPOUND_STRING("HARD RULES"), COMPOUND_STRING("Regular caps minus 10.\nPrices x4; smarter choices.\nNo items; SET; shared EXP 50%.\nUnder-cap catches can grow.")},
+    {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Caps minus 10; EXP stops.\nPrices x10; omniscient AI.\nNo items; SET; no EXP Share.\nWild POKé BALLS still work.")},
     {COMPOUND_STRING("EXP SHARE MODES"), COMPOUND_STRING("Options 3: GEN 3 is held.\nMODERN shares with the team.\nBoth keep full battler EXP.\nDifficulty sets shared EXP.")},
     {COMPOUND_STRING("MODERN EXP SHARE"), COMPOUND_STRING("Devon reward: a Key Item.\nUse it in the Bag for ON/OFF.\nSwitch MODERN on Options 3.\nIt isn't sold in Lilycove.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
@@ -201,12 +201,12 @@ static const struct {
     {COMPOUND_STRING("AUTO RUN"), COMPOUND_STRING("Auto Run is on by default.\nNo need to hold B to run.\nTurn it off on Options\npage 2 if you prefer.")},
     {COMPOUND_STRING("MENUS AND SAVING"), COMPOUND_STRING("Hold the D-pad to repeat\nthrough menus more quickly.\nSave messages are faster;\nyour save still gets written.")},
     {COMPOUND_STRING("MOVE PROMPTS"), COMPOUND_STRING("Options 2 lets you skip\nautomatic level-up move\nprompts or turn them\nback on when you want.")},
-    {COMPOUND_STRING("LEVEL CAPS"), COMPOUND_STRING("Badge progress raises the\ncurrent POKéMON level cap.\nOptions 2 can turn caps off.\nSTART shows your next goal.")},
+    {COMPOUND_STRING("LEVEL CAPS"), COMPOUND_STRING("Easy: no cap. Normal: regular.\nHard/Extreme: caps minus 10.\nExtreme stops EXP at its cap.\nSTART shows the current cap.")},
     {COMPOUND_STRING("REMATCHES"), COMPOUND_STRING("Options page 2 controls\nunlimited trainer rematches.\nTurn this on to repeat\ntrainer battles freely.")},
-    {COMPOUND_STRING("MOVE RELEARNER"), COMPOUND_STRING("Open a POKéMON's summary\nand select the move option.\nUse L/R for Level, Egg,\nTM and Tutor move lists.")},
+    {COMPOUND_STRING("MOVE RELEARNER"), COMPOUND_STRING("Summary: moves page, START.\nUse L/R for Level, Egg,\nTM and Tutor move lists.\nEmpty lists can be browsed.")},
     {COMPOUND_STRING("TM AND EGG MOVES"), COMPOUND_STRING("Egg moves come from the\nPOKéMON's egg move list.\nTM moves need the matching\nTM in your Bag.")},
     {COMPOUND_STRING("MULTI-USE CANDY"), COMPOUND_STRING("Use several EXP Candies\nin one action to level up.\nLevel-up evolution checks\nstill occur during use.")},
-    {COMPOUND_STRING("BALL CAPSULES"), COMPOUND_STRING("Customize your POKéMON's\nentry effects in the\nBall Capsule editor.\nAssigned effects are saved.")},
+    {COMPOUND_STRING("BALL CAPSULES"), COMPOUND_STRING("Party: ITEM, BALL CAPSULE.\nUp/Down picks seal or text.\nLeft/Right edits; A saves.\nPhrases play on send-out.")},
     {COMPOUND_STRING("OVERWORLD BALLS"), COMPOUND_STRING("Overworld POKé BALLS only\ncatch at or below your cap.\nRoutes that are too strong\nshow a warning instead.")},
     {COMPOUND_STRING("CATCH CHANCES"), COMPOUND_STRING("During battle, catch-rate\ninformation appears near\nthe POKé BALL selection\nto help choose a ball.")},
     {COMPOUND_STRING("REPELS"), COMPOUND_STRING("Repels now prevent wild\nencounters at all levels,\nregardless of your lead\nPOKéMON's level.")},
@@ -323,7 +323,7 @@ static void DrawOptionsPg2(u8 taskId)
     OverworldSpeed_DrawChoices(gTasks[taskId].tOverworldSpeed);
     AutoRun_DrawChoices(gTasks[taskId].tAutoRunDisabled);
     DrawToggle(gTasks[taskId].tSkipMoves, MENUITEM_MOVEPROMPTS * 16);
-    DrawToggle(gTasks[taskId].tNoLevelCap, MENUITEM_LEVELCAP * 16);
+    DrawToggle(GetBriskDifficulty() == BRISK_MODE_EASY ? TRUE : GetBriskDifficulty() == BRISK_MODE_EXTREME ? FALSE : gTasks[taskId].tNoLevelCap, MENUITEM_LEVELCAP * 16);
     DrawToggle(!gTasks[taskId].tRematches, MENUITEM_REMATCHES * 16);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
@@ -663,6 +663,8 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             DrawToggle(gTasks[taskId].tSkipMoves, MENUITEM_MOVEPROMPTS * 16);
             break;
         case MENUITEM_LEVELCAP:
+            if (GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_EXTREME)
+                break;
             gTasks[taskId].tNoLevelCap = BattleScene_ProcessInput(gTasks[taskId].tNoLevelCap);
             DrawToggle(gTasks[taskId].tNoLevelCap, MENUITEM_LEVELCAP * 16);
             break;
