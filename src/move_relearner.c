@@ -618,13 +618,12 @@ static void Task_MoveRelearner_LearnMove(u8 taskId)
     gTasks[taskId].tState = LearnMove(&sMoveLearnUI, taskId);
 }
 
-static bool32 UpdateMoveRelearnerState(void)
+static bool32 UpdateMoveRelearnerState(s8 direction)
 {
-    u32 state;
     struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
-    for (u32 i = 1; i < MOVE_RELEARNER_COUNT; i++)
+    for (s32 i = 1; i < MOVE_RELEARNER_COUNT; i++)
     {
-        state = (gMoveRelearnerState + i) % MOVE_RELEARNER_COUNT;
+        s32 state = (gMoveRelearnerState + MOVE_RELEARNER_COUNT + direction * i) % MOVE_RELEARNER_COUNT;
         if (CanBoxMonRelearnMoves(boxmon, state))
         {
             gMoveRelearnerState = state;
@@ -643,14 +642,19 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
     switch (itemId)
     {
     case LIST_NOTHING_CHOSEN:
-        if (JOY_NEW(SELECT_BUTTON) && gRelearnMode != RELEARN_MODE_SCRIPT)
+        if (JOY_NEW(SELECT_BUTTON | L_BUTTON | R_BUTTON) && gRelearnMode != RELEARN_MODE_SCRIPT)
         {
-            if (UpdateMoveRelearnerState())
+            s8 direction = JOY_NEW(L_BUTTON) ? -1 : 1;
+            if (UpdateMoveRelearnerState(direction))
             {
                 PlaySE(SE_SUCCESS);
+                RemoveScrollArrows();
                 sMoveRelearnerScrollState.listOffset = 0;
                 sMoveRelearnerScrollState.listRow = 0;
                 RedrawMoveList();
+                MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
+                MoveRelearnerShowHideCategoryIcon(GetCurrentSelectedMove());
+                AddScrollArrows();
             }
             else if (GameHasDifferentRelearners())
             {
@@ -659,7 +663,8 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
         }
         else if (!C_HIDE_CONTEST_DATA)
         {
-            if (!(JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressedAndHeld())
+            if (!(JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+             && !(gRelearnMode == RELEARN_MODE_SCRIPT && GetLRKeysPressedAndHeld()))
                 break;
 
             PlaySE(SE_SELECT);
