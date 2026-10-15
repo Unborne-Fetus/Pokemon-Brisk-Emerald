@@ -585,7 +585,7 @@ static void Task_HandleMultichoiceInput(u8 taskId)
             else
                 selection = Menu_ProcessInput();
 
-            if (JOY_NEW(DPAD_UP | DPAD_DOWN))
+            if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
             {
                 DrawLinkServicesMultichoiceMenu(tMultichoiceId);
             }

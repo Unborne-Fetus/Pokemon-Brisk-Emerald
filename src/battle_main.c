@@ -2286,7 +2286,7 @@ static void AskRecordBattle(void)
         }
         break;
     case STATE_HANDLE_YES_NO:
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             if (gBattleCommunication[CURSOR_POSITION] != 0)
             {
@@ -2297,7 +2297,7 @@ static void AskRecordBattle(void)
                 BattleCreateYesNoCursorAt(0);
             }
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {

@@ -1545,9 +1545,9 @@ static void Task_PCMainMenu(u8 taskId)
         {
         case MENU_NOTHING_CHOSEN:
             task->tNextOption = task->tSelectedOption;
-            if (JOY_NEW(DPAD_UP) && --task->tNextOption < 0)
+            if (JOY_REPEAT(DPAD_UP) && --task->tNextOption < 0)
                 task->tNextOption = OPTIONS_COUNT - 1;
-            if (JOY_NEW(DPAD_DOWN) && ++task->tNextOption > OPTIONS_COUNT - 1)
+            if (JOY_REPEAT(DPAD_DOWN) && ++task->tNextOption > OPTIONS_COUNT - 1)
                 task->tNextOption = 0;
 
             if (task->tSelectedOption != task->tNextOption)
@@ -1583,7 +1583,7 @@ static void Task_PCMainMenu(u8 taskId)
             else
             {
                 // Enter PC
-                FadeScreen(FADE_TO_BLACK, 0);
+                FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
                 task->tState = STATE_ENTER_PC;
             }
             break;
@@ -1598,7 +1598,7 @@ static void Task_PCMainMenu(u8 taskId)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             task->tState = STATE_HANDLE_INPUT;
         }
-        else if (JOY_NEW(DPAD_UP))
+        else if (JOY_REPEAT(DPAD_UP))
         {
             if (--task->tSelectedOption < 0)
                 task->tSelectedOption = OPTIONS_COUNT - 1;
@@ -1608,7 +1608,7 @@ static void Task_PCMainMenu(u8 taskId)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             task->tState = STATE_HANDLE_INPUT;
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             if (++task->tSelectedOption >= OPTIONS_COUNT - 1)
                 task->tSelectedOption = 0;
@@ -1799,12 +1799,12 @@ static u8 HandleChooseBoxMenuInput(void)
         PlaySE(SE_SELECT);
         return sChooseBoxMenu->curBox;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         PlaySE(SE_SELECT);
         ChooseBoxMenu_MoveLeft();
     }
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
     {
         PlaySE(SE_SELECT);
         ChooseBoxMenu_MoveRight();
@@ -2208,7 +2208,7 @@ static void Task_ReshowPokeStorage(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        BeginNormalPaletteFade(PALETTES_ALL, -1, 0x10, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0x10, 0, RGB_BLACK);
         sStorage->state++;
         break;
     case 1:
@@ -3702,7 +3702,7 @@ static void Task_NameBox(u8 taskId)
     {
     case 0:
         SaveMovingMon();
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         sStorage->state++;
         break;
     case 1:
@@ -3722,7 +3722,7 @@ static void Task_ShowMonSummary(u8 taskId)
     {
     case 0:
         InitSummaryScreenData();
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         sStorage->state++;
         break;
     case 1:
@@ -3741,7 +3741,7 @@ static void Task_GiveItemFromBag(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         sStorage->state++;
         break;
     case 1:
@@ -8333,12 +8333,12 @@ static s16 HandleMenuInput(void)
             input = MENU_B_PRESSED;
         }
 
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             PlaySE(SE_SELECT);
             Menu_MoveCursor(-1);
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             PlaySE(SE_SELECT);
             Menu_MoveCursor(1);

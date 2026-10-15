@@ -400,7 +400,7 @@ static void CB2_SetupOutfitMenu(void)
         gMain.state++;
         break;
     case STATE_FADE:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         gMain.state++;
         break;
     default:
@@ -824,7 +824,7 @@ static void Task_PrintOutfitLocked(u8 taskId)
 static inline void CloseOutfitMenu(u8 taskId)
 {
     PlaySE(SE_RG_HELP_CLOSE);
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_CloseOutfitMenu;
 }
 

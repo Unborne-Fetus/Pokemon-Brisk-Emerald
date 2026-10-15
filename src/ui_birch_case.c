@@ -964,7 +964,7 @@ static void Task_BirchCaseConfirmSelection(u8 taskId)
 static void Task_BirchCaseMain(u8 taskId)
 {
     u16 oldPosition = sBirchCaseDataPtr->handPosition;
-    if(JOY_NEW(DPAD_UP))
+    if(JOY_REPEAT(DPAD_UP))
     {
         PlaySE(SE_SELECT);
         if(sBirchCaseDataPtr->handPosition <= BALL_TOP_FOURTH) // top row move up
@@ -990,7 +990,7 @@ static void Task_BirchCaseMain(u8 taskId)
         ChangePositionUpdateSpriteAnims(oldPosition, taskId);
         return;
     }
-    if(JOY_NEW(DPAD_DOWN))
+    if(JOY_REPEAT(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         if(sBirchCaseDataPtr->handPosition <= BALL_TOP_FOURTH) // top row move down
@@ -1019,7 +1019,7 @@ static void Task_BirchCaseMain(u8 taskId)
         ChangePositionUpdateSpriteAnims(oldPosition, taskId);
         return;
     }
-    if(JOY_NEW(DPAD_RIGHT))
+    if(JOY_REPEAT(DPAD_RIGHT))
     {
         PlaySE(SE_SELECT);
         if(sBirchCaseDataPtr->handPosition <= BALL_TOP_FOURTH) // top row move down
@@ -1046,7 +1046,7 @@ static void Task_BirchCaseMain(u8 taskId)
         ChangePositionUpdateSpriteAnims(oldPosition, taskId);
         return;
     }
-    if(JOY_NEW(DPAD_LEFT))
+    if(JOY_REPEAT(DPAD_LEFT))
     {
         PlaySE(SE_SELECT);
         if(sBirchCaseDataPtr->handPosition <= BALL_TOP_FOURTH) // top row move down

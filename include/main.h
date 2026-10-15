@@ -46,6 +46,10 @@ extern const enum Language gGameLanguage;
 extern const u8 RomHeaderGameCode[GAME_CODE_LENGTH];
 extern const u8 RomHeaderSoftwareVersion;
 
+// At 60 fps: a 1/3-second hold buffer, then 20 navigation steps per second.
+#define KEY_REPEAT_START_DELAY 20
+#define KEY_REPEAT_CONTINUE_DELAY 3
+
 extern u16 gKeyRepeatStartDelay;
 extern bool8 gLinkTransferringData;
 extern struct Main gMain;

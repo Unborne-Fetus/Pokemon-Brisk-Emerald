@@ -645,7 +645,7 @@ static void Task_HandleShopMenuBuy(u8 taskId)
     tCallbackHi = (u32)CB2_InitBuyMenu >> 16;
     tCallbackLo = (u32)CB2_InitBuyMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
 }
 
 static void Task_HandleShopMenuSell(u8 taskId)
@@ -654,7 +654,7 @@ static void Task_HandleShopMenuSell(u8 taskId)
     tCallbackHi = (u32)CB2_GoToSellMenu >> 16;
     tCallbackLo = (u32)CB2_GoToSellMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
 }
 
 void CB2_ExitSellMenu(void)
@@ -766,7 +766,7 @@ static void CB2_InitBuyMenu(void)
         taskId = CreateTask(Task_BuyMenu, 8);
         gTasks[taskId].tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB_BuyMenu);
         SetMainCallback2(CB2_BuyMenu);
         break;
@@ -1460,7 +1460,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
 static void ExitBuyMenu(u8 taskId)
 {
     gFieldCallback = MapPostLoadHook_ReturnToShopMenu;
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_ExitBuyMenu;
 }
 

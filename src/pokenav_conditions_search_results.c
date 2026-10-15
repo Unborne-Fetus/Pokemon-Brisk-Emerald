@@ -193,11 +193,11 @@ static u32 HandleConditionSearchInput(struct Pokenav_SearchResults *menu)
     {
         return CONDITION_SEARCH_FUNC_MOVE_DOWN;
     }
-    else if (JOY_NEW(DPAD_LEFT))
+    else if (JOY_REPEAT(DPAD_LEFT))
     {
         return CONDITION_SEARCH_FUNC_PAGE_UP;
     }
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
     {
         return CONDITION_SEARCH_FUNC_PAGE_DOWN;
     }

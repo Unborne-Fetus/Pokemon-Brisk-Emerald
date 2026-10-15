@@ -134,13 +134,13 @@ static u32 GetExitMatchCallMenuId(struct Pokenav_MatchCallMenu *state)
 
 static u32 CB2_HandleMatchCallOptionsInput(struct Pokenav_MatchCallMenu *state)
 {
-    if (JOY_NEW(DPAD_UP) && state->optionCursorPos)
+    if (JOY_REPEAT(DPAD_UP) && state->optionCursorPos)
     {
         state->optionCursorPos--;
         return POKENAV_MC_FUNC_MOVE_OPTIONS_CURSOR;
     }
 
-    if (JOY_NEW(DPAD_DOWN) && state->optionCursorPos < state->maxOptionId)
+    if (JOY_REPEAT(DPAD_DOWN) && state->optionCursorPos < state->maxOptionId)
     {
         state->optionCursorPos++;
         return POKENAV_MC_FUNC_MOVE_OPTIONS_CURSOR;

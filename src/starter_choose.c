@@ -502,12 +502,12 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         gTasks[taskId].tPkmnSpriteId = spriteId;
         gTasks[taskId].func = Task_WaitForStarterSprite;
     }
-    else if (JOY_NEW(DPAD_LEFT) && selection > 0)
+    else if (JOY_REPEAT(DPAD_LEFT) && selection > 0)
     {
         gTasks[taskId].tStarterSelection--;
         gTasks[taskId].func = Task_MoveStarterChooseCursor;
     }
-    else if (JOY_NEW(DPAD_RIGHT) && selection < STARTER_MON_COUNT - 1)
+    else if (JOY_REPEAT(DPAD_RIGHT) && selection < STARTER_MON_COUNT - 1)
     {
         gTasks[taskId].tStarterSelection++;
         gTasks[taskId].func = Task_MoveStarterChooseCursor;

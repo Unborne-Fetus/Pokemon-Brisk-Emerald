@@ -699,7 +699,7 @@ static bool8 LoadPokedexListPage(u8 page)
         gMain.state++;
         break;
     case 4:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0x10, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB_Pokedex);
         gMain.state++;
         break;
@@ -1366,7 +1366,7 @@ bool32 Task_TryLoadInfoScreen_HGSS(u8 taskId)
             preservedPalettes = 0x14; // each bit represents a palette index
         if (gTasks[taskId].tMonSpriteDone)
             preservedPalettes |= (1 << (gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum + 16));
-        BeginNormalPaletteFade(~preservedPalettes, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(~preservedPalettes, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -1409,10 +1409,10 @@ bool32 TryHandleInfoScreenInput_HGSS(u8 taskId)
     if (!POKEDEX_PLUS_HGSS)
         return FALSE;
 
-    if (POKEDEX_PLUS_HGSS && ((JOY_NEW(DPAD_RIGHT) || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))))
+    if (POKEDEX_PLUS_HGSS && ((JOY_REPEAT(DPAD_RIGHT) || (JOY_REPEAT(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))))
     {
         sPokedexView->selectedScreen = AREA_SCREEN;
-        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 1;
         gTasks[taskId].func = Task_SwitchScreensFromInfoScreen;
         PlaySE(SE_PIN);
@@ -1590,7 +1590,7 @@ void Task_DisplayCaughtMonDexPageHGSS(u8 taskId)
 
         spriteId = Pokedex_CreateCaughtMonSprite(species, MON_PAGE_X, MON_PAGE_Y);
         LoadPalette(paletteData, OBJ_PLTT_ID(gSprites[spriteId].oam.paletteNum), PLTT_SIZE_4BPP);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0x10, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gTasks[taskId].tMonSpriteId = spriteId;
         gTasks[taskId].tState++;
@@ -2045,7 +2045,7 @@ static void Task_LoadStatsScreen(u8 taskId)
             preservedPalettes = 0x14; // each bit represents a palette index
         if (gTasks[taskId].data[1] != 0)
             preservedPalettes |= (1 << (gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum + 16));
-        BeginNormalPaletteFade(~preservedPalettes, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(~preservedPalettes, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -2103,7 +2103,7 @@ static void Task_HandleStatsScreenInput(u8 taskId)
     }
     if (JOY_NEW(B_BUTTON))
     {
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFFF, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ExitStatsScreen;
         PlaySE(SE_PC_OFF);
         return;
@@ -2142,22 +2142,22 @@ static void Task_HandleStatsScreenInput(u8 taskId)
     }
 
     //Switch screens
-    if ((JOY_NEW(DPAD_LEFT) || (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
+    if ((JOY_REPEAT(DPAD_LEFT) || (JOY_REPEAT(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
     {
         sPokedexView->selectedScreen = INFO_SCREEN;
-        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 1;
         gTasks[taskId].func = Task_SwitchScreensFromStatsScreen;
         PlaySE(SE_PIN);
     }
-    if ((JOY_NEW(DPAD_RIGHT) || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
+    if ((JOY_REPEAT(DPAD_RIGHT) || (JOY_REPEAT(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
     {
         if (!sPokedexListItem->owned)
             PlaySE(SE_FAILURE);
         else
         {
             sPokedexView->selectedScreen = EVO_SCREEN;
-            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+            BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
             sPokedexView->screenSwitchState = 3;
             gTasks[taskId].func = Task_SwitchScreensFromStatsScreen;
             PlaySE(SE_PIN);
@@ -3171,7 +3171,7 @@ static void Task_LoadEvolutionScreen(u8 taskId)
             preservedPalettes = 0x14; // each bit represents a palette index
         if (gTasks[taskId].data[1] != 0)
             preservedPalettes |= (1 << (gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum + 16));
-        BeginNormalPaletteFade(~preservedPalettes, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(~preservedPalettes, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -3211,7 +3211,7 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
     if (JOY_NEW(START_BUTTON))
     {
         sPokedexView->selectedScreen = FORMS_SCREEN;
-        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 3;
         gTasks[taskId].func = Task_SwitchScreensFromEvolutionScreen;
         PlaySE(SE_PIN);
@@ -3223,7 +3223,7 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
         u8 base_y_offset = 9;
         u8 pos = sPokedexView->sEvoScreenData.menuPos;
         u8 max = sPokedexView->sEvoScreenData.numAllEvolutions - 1;
-        if (JOY_NEW(DPAD_DOWN))
+        if (JOY_REPEAT(DPAD_DOWN))
         {
             do
             {
@@ -3235,7 +3235,7 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
             gSprites[sPokedexView->sEvoScreenData.arrowSpriteId].y = sPokedexView->sEvoScreenData.arrowSpriteDist[pos] + base_y + base_y_offset * pos;
             sPokedexView->sEvoScreenData.menuPos = pos;
         }
-        else if (JOY_NEW(DPAD_UP))
+        else if (JOY_REPEAT(DPAD_UP))
         {
             do
             {
@@ -3267,7 +3267,7 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
 
             sPokedexView->sEvoScreenData.fromEvoPage = TRUE;
             PlaySE(SE_PIN);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_LoadInfoScreenWaitForFade;
         }
     }
@@ -3275,29 +3275,29 @@ static void Task_HandleEvolutionScreenInput(u8 taskId)
     //Exit to overview
     if (JOY_NEW(B_BUTTON))
     {
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFFF, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ExitEvolutionScreen;
         PlaySE(SE_PC_OFF);
         return;
     }
 
     //Switch screens
-    if ((JOY_NEW(DPAD_LEFT) || (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
+    if ((JOY_REPEAT(DPAD_LEFT) || (JOY_REPEAT(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
     {
         sPokedexView->selectedScreen = STATS_SCREEN;
-        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+        BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 1;
         gTasks[taskId].func = Task_SwitchScreensFromEvolutionScreen;
         PlaySE(SE_PIN);
     }
-    if ((JOY_NEW(DPAD_RIGHT) || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
+    if ((JOY_REPEAT(DPAD_RIGHT) || (JOY_REPEAT(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
     {
         if (!sPokedexListItem->owned)
             PlaySE(SE_FAILURE);
         else
         {
             sPokedexView->selectedScreen = CRY_SCREEN;
-            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+            BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
             sPokedexView->screenSwitchState = 2;
             gTasks[taskId].func = Task_SwitchScreensFromEvolutionScreen;
             PlaySE(SE_PIN);
@@ -4077,7 +4077,7 @@ static void Task_LoadFormsScreen(u8 taskId)
             preservedPalettes = 0x14; // each bit represents a palette index
         if (gTasks[taskId].data[1] != 0)
             preservedPalettes |= (1 << (gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum + 16));
-        BeginNormalPaletteFade(~preservedPalettes, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(~preservedPalettes, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -4130,7 +4130,7 @@ static void Task_HandleFormsScreenInput(u8 taskId)
         if (JOY_NEW(START_BUTTON))
         {
             sPokedexView->selectedScreen = EVO_SCREEN;
-            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 0x10, RGB_BLACK);
+            BeginNormalPaletteFade(0xFFFFFFEB, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
             sPokedexView->screenSwitchState = 1;
             gTasks[taskId].func = Task_SwitchScreensFromFormsScreen;
             PlaySE(SE_PIN);
@@ -4139,7 +4139,7 @@ static void Task_HandleFormsScreenInput(u8 taskId)
         //Exit to overview
         if (JOY_NEW(B_BUTTON))
         {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(0xFFFFFFFF, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_ExitFormsScreen;
             PlaySE(SE_PC_OFF);
             return;
@@ -4151,13 +4151,13 @@ static void Task_HandleFormsScreenInput(u8 taskId)
         u8 column = 0;
         u8 menuPos = sPokedexView->sFormScreenData.menuPos;
         //Grid navigation
-        if (JOY_NEW(DPAD_RIGHT))
+        if (JOY_REPEAT(DPAD_RIGHT))
             menuPos += 1;
-        else if (JOY_NEW(DPAD_LEFT))
+        else if (JOY_REPEAT(DPAD_LEFT))
             menuPos -= 1;
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
             menuPos += 7;
-        else if (JOY_NEW(DPAD_UP))
+        else if (JOY_REPEAT(DPAD_UP))
         {
             if (menuPos > 7)
                 menuPos -= 7;
@@ -4193,7 +4193,7 @@ static void Task_HandleFormsScreenInput(u8 taskId)
             sPokedexView->sEvoScreenData.fromEvoPage = TRUE;
             sPokedexView->sFormScreenData.inSubmenu = FALSE;
             PlaySE(SE_PIN);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_LoadInfoScreenWaitForFade;
         }
 
@@ -4400,7 +4400,7 @@ bool32 TryLoadCryScreen_HGSS(u8 taskId)
         break;
     }
     case 8:
-        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0x10, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), MENU_FADE_DELAY, 0x10, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -4526,7 +4526,7 @@ bool32 TryLoadSizeScreen_HGSS(u8 taskId)
         gMain.state++;
         break;
     case 7:
-        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0x10, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), MENU_FADE_DELAY, 0x10, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
         gMain.state++;
         break;
@@ -4677,7 +4677,7 @@ bool32 TryLoadSearchMenu_HGSS(u8 taskId)
         gMain.state++;
         break;
     case 2:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         sPokedexView->statBarsSpriteId = 0xFF;
         CreateStatBars(&sPokedexView->pokedexList[sPokedexView->selectedPokemon]);
         gMain.state++;

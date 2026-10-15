@@ -256,8 +256,8 @@ static void SeedRngWithRtc(void)
 
 void InitKeys(void)
 {
-    gKeyRepeatContinueDelay = 5;
-    gKeyRepeatStartDelay = 40;
+    gKeyRepeatContinueDelay = KEY_REPEAT_CONTINUE_DELAY;
+    gKeyRepeatStartDelay = KEY_REPEAT_START_DELAY;
 
     gMain.heldKeys = 0;
     gMain.newKeys = 0;
@@ -273,11 +273,8 @@ static void ReadKeys(void)
     gMain.newKeys = gMain.newKeysRaw;
     gMain.newAndRepeatedKeys = gMain.newKeysRaw;
 
-    // BUG: Key repeat won't work when pressing L using L=A button mode
-    // because it compares the raw key input with the remapped held keys.
-    // Note that newAndRepeatedKeys is never remapped either.
-
-    if (keyInput != 0 && gMain.heldKeys == keyInput)
+    // Compare raw inputs so L=A mode does not keep resetting the hold buffer.
+    if (keyInput != 0 && gMain.heldKeysRaw == keyInput)
     {
         gMain.keyRepeatCounter--;
 

@@ -370,7 +370,7 @@ void CB2_InitOptionMenu(void)
         break;
     }
     case 11:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB);
         SetMainCallback2(MainCB2);
         return;
@@ -401,7 +401,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         gTasks[taskId].func = Task_OptionMenuSave;
     }
-    else if (JOY_NEW(DPAD_UP))
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (gTasks[taskId].tMenuSelection > 0)
             gTasks[taskId].tMenuSelection--;
@@ -409,7 +409,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             gTasks[taskId].tMenuSelection = MENUITEM_CANCEL;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL)
             gTasks[taskId].tMenuSelection++;
@@ -501,7 +501,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
     {
         gTasks[taskId].func = Task_OptionMenuSave;
     }
-    else if (JOY_NEW(DPAD_UP))
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (gTasks[taskId].tMenuSelection > 0)
             gTasks[taskId].tMenuSelection--;
@@ -509,7 +509,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             gTasks[taskId].tMenuSelection = MENUITEM_CANCEL_PG2;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL_PG2)
             gTasks[taskId].tMenuSelection++;
@@ -566,7 +566,7 @@ static void Task_OptionMenuSave(u8 taskId)
     VarSet(VAR_OVERWORLD_SPEEDUP, gTasks[taskId].tOverworldSpeed);
     VarSet(VAR_AUTO_RUN_DISABLED, gTasks[taskId].tAutoRunDisabled);
 
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
 
@@ -606,13 +606,13 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
 
 static u8 BattleSpeed_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (++selection > 3)  // If the selection exceeds 3, wrap around to 0
             selection = 0;
             sArrowPressed = TRUE;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         if (--selection > 3)  // If the selection is negative, wrap around to 3
             selection = 3;
@@ -625,7 +625,7 @@ static u8 BattleSpeed_ProcessInput(u8 selection)
 
 static u8 OverworldSpeed_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (++selection > 3)
             selection = 0;
@@ -633,7 +633,7 @@ static u8 OverworldSpeed_ProcessInput(u8 selection)
         sArrowPressed = TRUE;
     }
 
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         if (--selection > 3)
             selection = 3;
@@ -686,7 +686,7 @@ static void BattleSpeed_DrawChoices(u8 selection)
 
 static u8 TextSpeed_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (selection <= 1)
             selection++;
@@ -695,7 +695,7 @@ static u8 TextSpeed_ProcessInput(u8 selection)
 
         sArrowPressed = TRUE;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         if (selection != 0)
             selection--;
@@ -732,7 +732,7 @@ static void TextSpeed_DrawChoices(u8 selection)
 
 static u8 BattleScene_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
     {
         selection ^= 1;
         sArrowPressed = TRUE;
@@ -755,7 +755,7 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
     {
         selection ^= 1;
         sArrowPressed = TRUE;
@@ -778,7 +778,7 @@ static void BattleStyle_DrawChoices(u8 selection)
 
 static u8 Sound_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
     {
         selection ^= 1;
         SetPokemonCryStereo(selection);
@@ -802,7 +802,7 @@ static void Sound_DrawChoices(u8 selection)
 
 static u8 FrameType_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (selection < WINDOW_FRAMES_COUNT - 1)
             selection++;
@@ -813,7 +813,7 @@ static u8 FrameType_ProcessInput(u8 selection)
         LoadPalette(GetWindowFrameTilesPal(selection)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         sArrowPressed = TRUE;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         if (selection != 0)
             selection--;
@@ -860,7 +860,7 @@ static void FrameType_DrawChoices(u8 selection)
 
 static u8 ButtonMode_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (selection <= 1)
             selection++;
@@ -869,7 +869,7 @@ static u8 ButtonMode_ProcessInput(u8 selection)
 
         sArrowPressed = TRUE;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
     {
         if (selection != 0)
             selection--;

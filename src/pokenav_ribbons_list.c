@@ -179,9 +179,9 @@ static u32 HandleRibbonsMonListInput(struct Pokenav_RibbonsMonList *list)
         return RIBBONS_MON_LIST_FUNC_MOVE_UP;
     if (JOY_REPEAT(DPAD_DOWN))
         return RIBBONS_MON_LIST_FUNC_MOVE_DOWN;
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
         return RIBBONS_MON_LIST_FUNC_PAGE_UP;
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_RIGHT))
         return RIBBONS_MON_LIST_FUNC_PAGE_DOWN;
     if (JOY_NEW(B_BUTTON))
     {

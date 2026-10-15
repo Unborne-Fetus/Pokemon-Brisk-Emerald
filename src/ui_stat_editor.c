@@ -866,21 +866,21 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_StatEditorTurnOff;
     }
-    if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
+    if (JOY_REPEAT(DPAD_LEFT) || JOY_REPEAT(DPAD_RIGHT))
     {
         if(sStatEditorDataPtr->selector_x == 0)
             sStatEditorDataPtr->selector_x = 1;
         else
             sStatEditorDataPtr->selector_x = 0; 
     }
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_REPEAT(DPAD_UP))
     {
         if (sStatEditorDataPtr->selector_y == 0)
             sStatEditorDataPtr->selector_y = 5;
         else
             sStatEditorDataPtr->selector_y--;
     }
-    if (JOY_NEW(DPAD_DOWN))
+    if (JOY_REPEAT(DPAD_DOWN))
     {
         if (sStatEditorDataPtr->selector_y == 5)
             sStatEditorDataPtr->selector_y = 0;
@@ -1029,13 +1029,13 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
         PrintTitleToWindowMainState();
         return;
     }
-    if (JOY_NEW(DPAD_LEFT))
+    if (JOY_REPEAT(DPAD_LEFT))
         HandleEditingStatInput(EDIT_INPUT_DECREASE_STATE);
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
         HandleEditingStatInput(EDIT_INPUT_INCREASE_STATE);
-    else if (JOY_NEW(DPAD_UP) || JOY_NEW(R_BUTTON))
+    else if (JOY_REPEAT(DPAD_UP) || JOY_NEW(R_BUTTON))
         HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
-    else if (JOY_NEW(DPAD_DOWN) || JOY_NEW(L_BUTTON))
+    else if (JOY_REPEAT(DPAD_DOWN) || JOY_NEW(L_BUTTON))
         HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
 
 }

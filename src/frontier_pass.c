@@ -789,7 +789,7 @@ static bool32 InitFrontierPass(void)
         LoadCursorAndSymbolSprites();
         SetVBlankCallback(VBlankCB_FrontierPass);
         BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         break;
     case 10:
         AnimateSprites();
@@ -812,7 +812,7 @@ static bool32 HideFrontierPass(void)
     case 0:
         if (sPassData->areaToShow != CURSOR_AREA_MAP && sPassData->areaToShow != CURSOR_AREA_CARD)
         {
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         }
         else
         {
@@ -1514,14 +1514,14 @@ static void Task_HandleFrontierMap(u8 taskId)
             PlaySE(SE_PC_OFF);
             tState = 4;
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             if (sMapData->cursorPos >= NUM_FRONTIER_FACILITIES - 1)
                 HandleFrontierMapCursorMove(0);
             else
                 tState = 2;
         }
-        else if (JOY_NEW(DPAD_UP))
+        else if (JOY_REPEAT(DPAD_UP))
         {
             if (sMapData->cursorPos == 0)
                 HandleFrontierMapCursorMove(1);

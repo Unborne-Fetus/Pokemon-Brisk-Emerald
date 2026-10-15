@@ -765,7 +765,7 @@ static bool8 ShowPartyMenu(void)
         gMain.state++;
         break;
     case 22:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         gMain.state++;
         break;
     default:
@@ -876,7 +876,7 @@ static bool8 ReloadPartyMenu(void)
 
 static void ExitPartyMenu(void)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     CreateTask(Task_ExitPartyMenu, 0);
     SetVBlankCallback(VBlankCB_PartyMenu);
     SetMainCallback2(CB2_UpdatePartyMenu);
@@ -1460,7 +1460,7 @@ static void SwapPartyPokemon(struct Pokemon *mon1, struct Pokemon *mon2)
 
 static void Task_ClosePartyMenu(u8 taskId)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_ClosePartyMenuAndSetCB2;
 }
 
@@ -8131,7 +8131,7 @@ static void Task_PartyMenuWaitForFade(u8 taskId)
 void ChooseContestMon(void)
 {
     LockPlayerFieldControls();
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
     CreateTask(Task_ChooseContestMon, 10);
 }
 
@@ -8159,7 +8159,7 @@ static void CB2_ChooseContestMon(void)
 void ChoosePartyMon(void)
 {
     LockPlayerFieldControls();
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
     CreateTask(Task_ChoosePartyMon, 10);
 }
 
@@ -8177,7 +8177,7 @@ void ChooseMonForMoveRelearner(void)
 {
     gRelearnMode = RELEARN_MODE_SCRIPT;
     LockPlayerFieldControls();
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
     CreateTask(Task_ChooseMonForMoveRelearner, 10);
 }
 
@@ -8222,7 +8222,7 @@ void DoBattlePyramidMonsHaveHeldItem(void)
 void BattlePyramidChooseMonHeldItems(void)
 {
     LockPlayerFieldControls();
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
     CreateTask(Task_BattlePyramidChooseMonHeldItems, 10);
 }
 

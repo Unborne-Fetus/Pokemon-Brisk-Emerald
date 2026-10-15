@@ -2336,7 +2336,7 @@ static void Task_DexNavMain(u8 taskId)
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         task->func = Task_DexNavFadeAndExit;
     }
-    else if (JOY_NEW(DPAD_UP))
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (sDexNavUiDataPtr->cursorRow == ROW_WATER)
         {
@@ -2355,7 +2355,7 @@ static void Task_DexNavMain(u8 taskId)
         PlaySE(SE_RG_BAG_CURSOR);
         UpdateCursorPosition();
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (sDexNavUiDataPtr->cursorRow == ROW_HIDDEN)
         {
@@ -2376,7 +2376,7 @@ static void Task_DexNavMain(u8 taskId)
         PlaySE(SE_RG_BAG_CURSOR);
         UpdateCursorPosition();
     }
-    else if (JOY_NEW(DPAD_LEFT))
+    else if (JOY_REPEAT(DPAD_LEFT))
     {
         if (sDexNavUiDataPtr->cursorCol == 0)
         {
@@ -2401,7 +2401,7 @@ static void Task_DexNavMain(u8 taskId)
         PlaySE(SE_RG_BAG_CURSOR);
         UpdateCursorPosition();
     }
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
     {
         switch (sDexNavUiDataPtr->cursorRow)
         {

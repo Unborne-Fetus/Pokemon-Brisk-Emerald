@@ -618,8 +618,8 @@ static void InitStartMenu(void)
 
 static void StartMenuTask(u8 taskId)
 {
-    if (InitStartMenuStep() == TRUE)
-        SwitchTaskToFollowupFunc(taskId);
+    InitStartMenu();
+    SwitchTaskToFollowupFunc(taskId);
 }
 
 static void CreateStartMenuTask(TaskFunc followupFunc)
@@ -634,11 +634,7 @@ static void CreateStartMenuTask(TaskFunc followupFunc)
 
 static bool8 FieldCB_ReturnToFieldStartMenu(void)
 {
-    if (InitStartMenuStep() == FALSE)
-    {
-        return FALSE;
-    }
-
+    InitStartMenu();
     ReturnToFieldOpenStartMenu();
     return TRUE;
 }
@@ -684,13 +680,13 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_REPEAT(DPAD_UP))
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(-1);
     }
 
-    if (JOY_NEW(DPAD_DOWN))
+    if (JOY_REPEAT(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(1);
@@ -716,7 +712,7 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
         {
-           FadeScreen(FADE_TO_BLACK, 0);
+           FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
         }
 
         return FALSE;
@@ -1020,7 +1016,7 @@ static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void))
 {
     StringExpandPlaceholders(gStringVar4, message);
     LoadMessageBoxAndFrameGfx(0, TRUE);
-    AddTextPrinterForMessage(TRUE);
+    AddTextPrinterWithCustomSpeedForMessage(TRUE, 0);
     sSavingComplete = TRUE;
     sSaveDialogCallback = saveCallback;
 }
@@ -1237,6 +1233,7 @@ static u8 SaveSuccessCallback(void)
     if (!IsTextPrinterActiveOnWindow(0))
     {
         PlaySE(SE_SAVE);
+        sSaveDialogTimer = 15;
         sSaveDialogCallback = SaveReturnSuccessCallback;
     }
 
@@ -1245,7 +1242,7 @@ static u8 SaveSuccessCallback(void)
 
 static u8 SaveReturnSuccessCallback(void)
 {
-    if (!IsSEPlaying() && SaveSuccesTimer())
+    if (SaveSuccesTimer())
     {
         HideSaveInfoWindow();
         return SAVE_SUCCESS;
@@ -1397,7 +1394,7 @@ static void Task_SaveAfterLinkBattle(u8 taskId)
             DrawTextBorderOuter(0, 8, 14);
             PutWindowTilemap(0);
             CopyWindowToVram(0, COPYWIN_FULL);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
 
             if (gWirelessCommType != 0 && InUnionRoom())
             {
@@ -1430,7 +1427,7 @@ static void Task_SaveAfterLinkBattle(u8 taskId)
             }
             break;
         case 3:
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
             *state = 4;
             break;
         case 4:

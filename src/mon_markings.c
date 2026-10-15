@@ -394,7 +394,7 @@ bool8 HandleMonMarkingsMenuInput(void)
 {
     u16 i;
 
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_REPEAT(DPAD_UP))
     {
         PlaySE(SE_SELECT);
         if (--sMenu->cursorPos < 0)
@@ -402,7 +402,7 @@ bool8 HandleMonMarkingsMenuInput(void)
         return TRUE;
     }
 
-    if (JOY_NEW(DPAD_DOWN))
+    if (JOY_REPEAT(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         if (++sMenu->cursorPos > SELECTION_CANCEL)

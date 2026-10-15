@@ -317,7 +317,7 @@ void TeachMoveRelearnerMove(void)
     CreateTask(Task_WaitForFadeOut, 10);
     gRelearnMode = RELEARN_MODE_SCRIPT;
     // Fade to black
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
 }
 
 static void Task_WaitForFadeOut(u8 taskId)
@@ -537,7 +537,7 @@ static void UIEndTask(u8 taskId)
     if (gRelearnMode == RELEARN_MODE_SCRIPT && gSpecialVar_Result == TRUE)
     {
         gTasks[taskId].func = Task_MoveRelearner_Quit;
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         return;
     }
     if (gSpecialVar_Result == TRUE)
@@ -588,7 +588,7 @@ static void Task_MoveRelearner_Giveup_Answer(u8 taskId)
         if (gRelearnMode == RELEARN_MODE_SCRIPT)
             gSpecialVar_Result = FALSE;
         gTasks[taskId].func = Task_MoveRelearner_Quit;
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
         break;
     case 1: // No
     case MENU_B_PRESSED:
@@ -659,7 +659,7 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
         }
         else if (!C_HIDE_CONTEST_DATA)
         {
-            if (!(JOY_NEW(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressed())
+            if (!(JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressedAndHeld())
                 break;
 
             PlaySE(SE_SELECT);

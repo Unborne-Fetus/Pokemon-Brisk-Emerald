@@ -259,7 +259,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
 
         if (gBattleStruct->ackBallUseBtn)
         {
-            if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_DOWN) || JOY_NEW(DPAD_RIGHT)))
+            if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_REPEAT(DPAD_DOWN) || JOY_REPEAT(DPAD_RIGHT)))
             {
                 bool32 sameBall = FALSE;
                 u32 nextBall = GetNextBall(gBallToDisplay);
@@ -271,7 +271,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
                 SwapBallToDisplay(sameBall);
                 PlaySE(SE_SELECT);
             }
-            else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_LEFT)))
+            else if (JOY_HELD(B_LAST_USED_BALL_BUTTON) && (JOY_REPEAT(DPAD_UP) || JOY_REPEAT(DPAD_LEFT)))
             {
                 bool32 sameBall = FALSE;
                 u32 prevBall = GetPrevBall(gBallToDisplay);
@@ -324,7 +324,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
         }
         BtlController_Complete(battler);
     }
-    else if (JOY_NEW(DPAD_LEFT))
+    else if (JOY_REPEAT(DPAD_LEFT))
     {
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
@@ -334,7 +334,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
@@ -344,7 +344,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
-    else if (JOY_NEW(DPAD_UP))
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
@@ -354,7 +354,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
@@ -464,7 +464,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
         DoBounceEffect(battler, BOUNCE_MON, 7, 1);
         EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
     }
-    else if (JOY_NEW(DPAD_LEFT | DPAD_UP))
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_UP))
     {
         PlaySE(SE_SELECT);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
@@ -520,7 +520,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
         }
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
     }
-    else if (JOY_NEW(DPAD_RIGHT | DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_RIGHT | DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
@@ -796,7 +796,7 @@ void HandleInputChooseMove(enum BattlerId battler)
             TryToHideMoveInfoWindow();
         }
     }
-    else if (JOY_NEW(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
+    else if (JOY_REPEAT(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
     {
         if (gMoveSelectionCursor[battler] & 1)
         {
@@ -812,7 +812,7 @@ void HandleInputChooseMove(enum BattlerId battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (JOY_NEW(DPAD_RIGHT) && !gBattleStruct->zmove.viewing)
+    else if (JOY_REPEAT(DPAD_RIGHT) && !gBattleStruct->zmove.viewing)
     {
         if (!(gMoveSelectionCursor[battler] & 1)
          && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
@@ -829,7 +829,7 @@ void HandleInputChooseMove(enum BattlerId battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (JOY_NEW(DPAD_UP) && !gBattleStruct->zmove.viewing)
+    else if (JOY_REPEAT(DPAD_UP) && !gBattleStruct->zmove.viewing)
     {
         if (gMoveSelectionCursor[battler] & 2)
         {
@@ -845,7 +845,7 @@ void HandleInputChooseMove(enum BattlerId battler)
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
         }
     }
-    else if (JOY_NEW(DPAD_DOWN) && !gBattleStruct->zmove.viewing)
+    else if (JOY_REPEAT(DPAD_DOWN) && !gBattleStruct->zmove.viewing)
     {
         if (!(gMoveSelectionCursor[battler] & 2)
          && (gMoveSelectionCursor[battler] ^ 2) < gNumberOfMovesToChoose)
@@ -956,14 +956,14 @@ static u32 UNUSED HandleMoveInputUnused(enum BattlerId battler)
         gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
         var = 0xFF;
     }
-    if (JOY_NEW(DPAD_LEFT) && gMoveSelectionCursor[battler] & 1)
+    if (JOY_REPEAT(DPAD_LEFT) && gMoveSelectionCursor[battler] & 1)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 1;
         PlaySE(SE_SELECT);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
-    if (JOY_NEW(DPAD_RIGHT) && !(gMoveSelectionCursor[battler] & 1)
+    if (JOY_REPEAT(DPAD_RIGHT) && !(gMoveSelectionCursor[battler] & 1)
         && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
@@ -971,14 +971,14 @@ static u32 UNUSED HandleMoveInputUnused(enum BattlerId battler)
         PlaySE(SE_SELECT);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
-    if (JOY_NEW(DPAD_UP) && gMoveSelectionCursor[battler] & 2)
+    if (JOY_REPEAT(DPAD_UP) && gMoveSelectionCursor[battler] & 2)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 2;
         PlaySE(SE_SELECT);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
     }
-    if (JOY_NEW(DPAD_DOWN) && !(gMoveSelectionCursor[battler] & 2)
+    if (JOY_REPEAT(DPAD_DOWN) && !(gMoveSelectionCursor[battler] & 2)
         && (gMoveSelectionCursor[battler] ^ 2) < gNumberOfMovesToChoose)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
@@ -1116,7 +1116,7 @@ void HandleMoveSwitching(enum BattlerId battler)
         MoveSelectionDisplayPPNumber(battler);
         MoveSelectionDisplayMoveType(battler);
     }
-    else if (JOY_NEW(DPAD_LEFT))
+    else if (JOY_REPEAT(DPAD_LEFT))
     {
         if (gMultiUsePlayerCursor & 1)
         {
@@ -1134,7 +1134,7 @@ void HandleMoveSwitching(enum BattlerId battler)
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
     }
-    else if (JOY_NEW(DPAD_RIGHT))
+    else if (JOY_REPEAT(DPAD_RIGHT))
     {
         if (!(gMultiUsePlayerCursor & 1) && (gMultiUsePlayerCursor ^ 1) < gNumberOfMovesToChoose)
         {
@@ -1152,7 +1152,7 @@ void HandleMoveSwitching(enum BattlerId battler)
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
     }
-    else if (JOY_NEW(DPAD_UP))
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (gMultiUsePlayerCursor & 2)
         {
@@ -1170,7 +1170,7 @@ void HandleMoveSwitching(enum BattlerId battler)
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (!(gMultiUsePlayerCursor & 2) && (gMultiUsePlayerCursor ^ 2) < gNumberOfMovesToChoose)
         {
@@ -1617,14 +1617,14 @@ static void CompleteWhenChoseItem(enum BattlerId battler)
 
 static void PlayerHandleYesNoInput(enum BattlerId battler)
 {
-    if (JOY_NEW(DPAD_UP) && gMultiUsePlayerCursor != 0)
+    if (JOY_REPEAT(DPAD_UP) && gMultiUsePlayerCursor != 0)
     {
         PlaySE(SE_SELECT);
         BattleDestroyYesNoCursorAt(gMultiUsePlayerCursor);
         gMultiUsePlayerCursor = 0;
         BattleCreateYesNoCursorAt(0);
     }
-    if (JOY_NEW(DPAD_DOWN) && gMultiUsePlayerCursor == 0)
+    if (JOY_REPEAT(DPAD_DOWN) && gMultiUsePlayerCursor == 0)
     {
         PlaySE(SE_SELECT);
         BattleDestroyYesNoCursorAt(gMultiUsePlayerCursor);

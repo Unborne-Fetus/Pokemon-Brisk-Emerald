@@ -463,7 +463,7 @@ static void ReturnToConditionMenu(struct Pokenav_Menu *menu)
 
 static bool32 UpdateMenuCursorPos(struct Pokenav_Menu *menu)
 {
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_REPEAT(DPAD_UP))
     {
         if (--menu->cursorPos < 0)
             menu->cursorPos = sLastCursorPositions[menu->menuType];
@@ -471,7 +471,7 @@ static bool32 UpdateMenuCursorPos(struct Pokenav_Menu *menu)
         menu->currMenuItem = sMenuItems[menu->menuType][menu->cursorPos];
         return TRUE;
     }
-    else if (JOY_NEW(DPAD_DOWN))
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         menu->cursorPos++;
         if (menu->cursorPos > sLastCursorPositions[menu->menuType])

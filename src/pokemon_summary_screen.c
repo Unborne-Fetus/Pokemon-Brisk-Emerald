@@ -1399,7 +1399,7 @@ static bool8 LoadGraphics(void)
         gMain.state++;
         break;
     case 24:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         gPaletteFade.bufferTransferDisabled = 0;
         gMain.state++;
         break;
@@ -1638,7 +1638,7 @@ static void FreeSummaryScreen(void)
 
 static void BeginCloseSummaryScreen(u8 taskId)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = CloseSummaryScreen;
 }
 
@@ -1740,19 +1740,19 @@ static void Task_HandleInput(u8 taskId)
 {
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             ChangeSummaryPokemon(taskId, -1);
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             ChangeSummaryPokemon(taskId, 1);
         }
-        else if (JOY_NEW(DPAD_LEFT))
+        else if (JOY_REPEAT(DPAD_LEFT))
         {
             ChangePage(taskId, -1);
         }
-        else if (JOY_NEW(DPAD_RIGHT))
+        else if (JOY_REPEAT(DPAD_RIGHT))
         {
             ChangePage(taskId, 1);
         }
@@ -2325,12 +2325,12 @@ static void Task_HandleInput_MoveSelect(u8 taskId)
 
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             data[0] = 4;
             ChangeSelectedMove(data, -1, &sMonSummaryScreen->firstMoveIndex);
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             data[0] = 4;
             ChangeSelectedMove(data, 1, &sMonSummaryScreen->firstMoveIndex);
@@ -2471,12 +2471,12 @@ static void Task_HandleInput_MovePositionSwitch(u8 taskId)
 
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             data[0] = 3;
             ChangeSelectedMove(&data[0], -1, &sMonSummaryScreen->secondMoveIndex);
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             data[0] = 3;
             ChangeSelectedMove(&data[0], 1, &sMonSummaryScreen->secondMoveIndex);
@@ -2614,21 +2614,21 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
     {
         if (gPaletteFade.active != TRUE)
         {
-            if (JOY_NEW(DPAD_UP))
+            if (JOY_REPEAT(DPAD_UP))
             {
                 data[0] = 4;
                 ChangeSelectedMove(data, -1, &sMonSummaryScreen->firstMoveIndex);
             }
-            else if (JOY_NEW(DPAD_DOWN))
+            else if (JOY_REPEAT(DPAD_DOWN))
             {
                 data[0] = 4;
                 ChangeSelectedMove(data, 1, &sMonSummaryScreen->firstMoveIndex);
             }
-            else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
+            else if (JOY_REPEAT(DPAD_LEFT) || GetLRKeysPressedAndHeld() == MENU_L_PRESSED)
             {
                 ChangePage(taskId, -1);
             }
-            else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
+            else if (JOY_REPEAT(DPAD_RIGHT) || GetLRKeysPressedAndHeld() == MENU_R_PRESSED)
             {
                 ChangePage(taskId, 1);
             }
@@ -2691,7 +2691,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
     enum Move move;
     if (FuncIsActiveTask(Task_SlidePowerAccWindow) != 1)
     {
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             data[1] = 1;
             data[0] = 4;
@@ -2699,7 +2699,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
             data[1] = 0;
             gTasks[taskId].func = Task_HandleReplaceMoveInput;
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             data[1] = 1;
             data[0] = 4;
@@ -2707,7 +2707,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
             data[1] = 0;
             gTasks[taskId].func = Task_HandleReplaceMoveInput;
         }
-        else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
+        else if (JOY_REPEAT(DPAD_LEFT) || GetLRKeysPressedAndHeld() == MENU_L_PRESSED)
         {
             if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES)
             {
@@ -2721,7 +2721,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
                 PositionAppealJamSlidingWindow(9, -2, move);
             }
         }
-        else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
+        else if (JOY_REPEAT(DPAD_RIGHT) || GetLRKeysPressedAndHeld() == MENU_R_PRESSED)
         {
             if (sMonSummaryScreen->currPageIndex != PSS_PAGE_CONTEST_MOVES)
             {

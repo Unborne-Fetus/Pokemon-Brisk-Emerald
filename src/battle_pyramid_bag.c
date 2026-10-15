@@ -391,7 +391,7 @@ static void UNUSED OpenBattlePyramidBagInBattle(void)
 void ChooseItemsToTossFromPyramidBag(void)
 {
     LockPlayerFieldControls();
-    FadeScreen(FADE_TO_BLACK, 0);
+    FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
     CreateTask(Task_ChooseItemsToTossFromPyramidBag, 10);
 }
 
@@ -529,7 +529,7 @@ static bool8 LoadPyramidBagMenu(void)
         gMain.state++;
         break;
     case 16:
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 16, 0, RGB_BLACK);
         gPaletteFade.bufferTransferDisabled = FALSE;
         gMain.state++;
         break;
@@ -865,7 +865,7 @@ static void PrintSelectorArrowAtPos(u8 y, u8 colorId)
 
 void CloseBattlePyramidBag(u8 taskId)
 {
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_ClosePyramidBag;
 }
 
@@ -1024,7 +1024,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
         s8 id = Menu_GetCursorPos();
-        if (JOY_NEW(DPAD_UP))
+        if (JOY_REPEAT(DPAD_UP))
         {
             if (id > 0 && IsValidMenuAction(id - 2))
             {
@@ -1032,7 +1032,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_UP);
             }
         }
-        else if (JOY_NEW(DPAD_DOWN))
+        else if (JOY_REPEAT(DPAD_DOWN))
         {
             if (id < gPyramidBagMenu->menuActionsCount - 2 && IsValidMenuAction(id + 2))
             {
@@ -1040,7 +1040,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_DOWN);
             }
         }
-        else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
+        else if (JOY_REPEAT(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
         {
             if (id & 1 && IsValidMenuAction(id - 1))
             {
@@ -1048,7 +1048,7 @@ static void HandleMenuActionInput_2x2(u8 taskId)
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_LEFT, MENU_CURSOR_DELTA_NONE);
             }
         }
-        else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
+        else if (JOY_REPEAT(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
         {
             if (!(id & 1) && IsValidMenuAction(id + 1))
             {
