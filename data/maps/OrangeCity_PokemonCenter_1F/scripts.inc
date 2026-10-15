@@ -1,0 +1,14 @@
+OrangeCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OrangeCity_PokemonCenter_1F_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+	.byte 0
+OrangeCity_PokemonCenter_1F_OnTransition:
+	setrespawn HEAL_LOCATION_ORANGE_CITY
+	end
+OrangeCity_PokemonCenter_1F_EventScript_Nurse::
+	setvar VAR_0x800B, LOCALID_ORANGE_CITY_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end

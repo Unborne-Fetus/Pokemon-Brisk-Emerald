@@ -1776,3 +1776,21 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 
 	.include "data/brisk_static_legendaries.inc"
+
+	.include "data/maps/Route144/scripts.inc"
+
+	.include "data/maps/OrangeCity/scripts.inc"
+
+	.include "data/maps/Route145/scripts.inc"
+
+	.include "data/maps/Route146/scripts.inc"
+
+	.include "data/maps/OrangeCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/OrangeCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/OrangeCity_Mart/scripts.inc"
+
+	.include "data/maps/OrangeCity_House1/scripts.inc"
+
+	.include "data/maps/OrangeCity_House2/scripts.inc"

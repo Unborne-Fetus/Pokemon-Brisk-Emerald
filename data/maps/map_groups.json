@@ -75,7 +75,8 @@
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
-    "gMapGroup_IndoorRoute135"
+    "gMapGroup_IndoorRoute135",
+    "gMapGroup_IndoorOrangeCity"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -143,7 +144,11 @@
     "Route140",
     "Route141",
     "Route142",
-    "Route143"
+    "Route143",
+    "Route144",
+    "OrangeCity",
+    "Route145",
+    "Route146"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -1180,5 +1185,12 @@
   ],
   "gMapGroup_IndoorRoute135": [
     "Route135_Archives"
+  ],
+  "gMapGroup_IndoorOrangeCity": [
+    "OrangeCity_PokemonCenter_1F",
+    "OrangeCity_PokemonCenter_2F",
+    "OrangeCity_Mart",
+    "OrangeCity_House1",
+    "OrangeCity_House2"
   ]
 }

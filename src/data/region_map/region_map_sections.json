@@ -1069,7 +1069,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_MANSION",
-      "name": "POKéMON MANSION",
+      "name": "POK\u00e9MON MANSION",
       "x": 4,
       "y": 14,
       "width": 1,
@@ -1085,7 +1085,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
-      "name": "POKéMON LEAGUE",
+      "name": "POK\u00e9MON LEAGUE",
       "x": 2,
       "y": 3,
       "width": 1,
@@ -1109,7 +1109,7 @@
     },
     {
       "id": "MAPSEC_POKEMON_TOWER",
-      "name": "POKéMON TOWER",
+      "name": "POK\u00e9MON TOWER",
       "x": 18,
       "y": 6,
       "width": 1,
@@ -1666,6 +1666,22 @@
     {
       "id": "MAPSEC_ROUTE_143",
       "name": "Route 143"
+    },
+    {
+      "id": "MAPSEC_ROUTE_144",
+      "name": "Route 144"
+    },
+    {
+      "id": "MAPSEC_ORANGE_CITY",
+      "name": "ORANGE CITY"
+    },
+    {
+      "id": "MAPSEC_ROUTE_145",
+      "name": "Route 145"
+    },
+    {
+      "id": "MAPSEC_ROUTE_146",
+      "name": "Route 146"
     }
   ]
 }

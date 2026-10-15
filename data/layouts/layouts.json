@@ -9481,10 +9481,10 @@
     {
       "id": "LAYOUT_ROUTE143",
       "name": "Route143_Layout",
-      "width": 29,
-      "height": 50,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_EverGrande",
+      "width": 40,
+      "height": 36,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
       "border_filepath": "data/layouts/Route143/border.bin",
       "blockdata_filepath": "data/layouts/Route143/map.bin",
       "layout_version": "emerald"
@@ -9509,6 +9509,50 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ShoalCave_LowTideIceRoom_2/border.bin",
       "blockdata_filepath": "data/layouts/ShoalCave_LowTideIceRoom_2/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE144",
+      "name": "Route144_Layout",
+      "width": 48,
+      "height": 36,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/Route144/border.bin",
+      "blockdata_filepath": "data/layouts/Route144/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ORANGE_CITY",
+      "name": "OrangeCity_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/OrangeCity/border.bin",
+      "blockdata_filepath": "data/layouts/OrangeCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE145",
+      "name": "Route145_Layout",
+      "width": 48,
+      "height": 36,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/Route145/border.bin",
+      "blockdata_filepath": "data/layouts/Route145/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE146",
+      "name": "Route146_Layout",
+      "width": 40,
+      "height": 44,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/Route146/border.bin",
+      "blockdata_filepath": "data/layouts/Route146/map.bin",
       "layout_version": "emerald"
     }
   ]
