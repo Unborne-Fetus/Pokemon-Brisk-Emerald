@@ -1,5 +1,6 @@
 #include "global.h"
 #include "ball_capsule.h"
+#include "pokeball.h"
 #include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
@@ -115,6 +116,7 @@ enum {
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
     MENU_BALL_CAPSULE,
+    MENU_CHANGE_BALL,
     MENU_FIELD_MOVES
 };
 
@@ -465,6 +467,8 @@ static void CB2_ReturnToPartyMenuFromStatEditor(void);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_BallCapsule(u8);
+static void CursorCb_ChangeBall(u8);
+static void Task_ChangeBall(u8);
 static void Task_EditBallCapsule(u8);
 static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
@@ -8920,6 +8924,107 @@ s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 choose
 }
 #endif
 
+// Rehousing consumes the replacement ball. Never refund the original capture ball.
+static bool32 CanChangeMonBall(struct Pokemon *mon, enum PokeBall ball)
+{
+    return ball > BALL_STRANGE && ball < POKEBALL_COUNT && ball != BALL_MASTER
+        && GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE
+        && !GetMonData(mon, MON_DATA_IS_EGG)
+        && GetMonData(mon, MON_DATA_POKEBALL) != BALL_MASTER
+        && GetMonData(mon, MON_DATA_POKEBALL) != ball
+        && CheckBagHasItem(gPokeBalls[ball].itemId, 1);
+}
+
+static bool32 ChangeMonBall(struct Pokemon *mon, enum PokeBall ball)
+{
+    if (!CanChangeMonBall(mon, ball) || !RemoveBagItem(gPokeBalls[ball].itemId, 1))
+        return FALSE;
+    u8 value = ball;
+    SetMonData(mon, MON_DATA_POKEBALL, &value);
+    return TRUE;
+}
+
+static enum PokeBall FindReplacementBall(struct Pokemon *mon, enum PokeBall start, s32 direction)
+{
+    s32 ball = start;
+    for (u32 i = 0; i < POKEBALL_COUNT; i++)
+    {
+        ball = (ball + POKEBALL_COUNT + direction) % POKEBALL_COUNT;
+        if (CanChangeMonBall(mon, ball))
+            return ball;
+    }
+    return BALL_STRANGE;
+}
+
+static void DrawChangeBallEditor(u8 taskId)
+{
+    enum Item item = gPokeBalls[gTasks[taskId].data[12]].itemId;
+    CopyItemName(item, gStringVar1);
+    ConvertIntToDecimalStringN(gStringVar2, CountTotalItemQuantityInBag(item), STR_CONV_MODE_LEFT_ALIGN, 4);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1} x{STR_VAR_2} (uses 1)\n{DPAD_LEFTRIGHT}: Ball  A: Change  B: Cancel"));
+    FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(TEXT_COLOR_WHITE));
+    DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
+    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, gStringVar4, TEXT_SKIP_DRAW, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static void CursorCb_ChangeBall(u8 taskId)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    const u8 *error = NULL;
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD || MenuHelpers_IsLinkActive())
+        error = COMPOUND_STRING("You can't change balls here.");
+    else if (GetMonData(mon, MON_DATA_IS_EGG))
+        error = COMPOUND_STRING("An Egg's ball can't be changed.");
+    else if (GetMonData(mon, MON_DATA_POKEBALL) == BALL_MASTER)
+        error = COMPOUND_STRING("A Master Ball can't be changed.");
+    else
+    {
+        gTasks[taskId].data[12] = FindReplacementBall(mon, BALL_STRANGE, 1);
+        if (gTasks[taskId].data[12] == BALL_STRANGE)
+            error = COMPOUND_STRING("No replacement balls in the Bag.\nMaster Balls can't be used.");
+    }
+    if (error != NULL)
+    {
+        DisplayPartyMenuMessage(error, TRUE);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        return;
+    }
+    DrawChangeBallEditor(taskId);
+    gTasks[taskId].func = Task_ChangeBall;
+}
+
+static void Task_ChangeBall(u8 taskId)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+    if (JOY_NEW(B_BUTTON))
+    {
+        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+        ClearWindowTilemap(WIN_MSG);
+        CursorCb_Cancel1(taskId);
+        return;
+    }
+    if (JOY_NEW(A_BUTTON))
+    {
+        ChangeMonBall(mon, gTasks[taskId].data[12]);
+        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+        ClearWindowTilemap(WIN_MSG);
+        CursorCb_Cancel1(taskId);
+        return;
+    }
+    s32 direction = JOY_REPEAT(DPAD_LEFT) ? -1 : JOY_REPEAT(DPAD_RIGHT) ? 1 : 0;
+    if (direction != 0)
+    {
+        gTasks[taskId].data[12] = FindReplacementBall(mon, gTasks[taskId].data[12], direction);
+        PlaySE(SE_SELECT);
+        DrawChangeBallEditor(taskId);
+    }
+}
+
 // Three two-bit seal slots live in unused boxed-Pokemon bits, preserving save layout.
 static void DrawBallCapsuleEditor(u8 taskId)
 {
@@ -8979,6 +9084,11 @@ static void Task_EditBallCapsule(u8 taskId)
 }
 
 #if TESTING
+bool32 Test_ChangeMonBall(struct Pokemon *mon, enum PokeBall ball)
+{
+    return ChangeMonBall(mon, ball);
+}
+
 bool32 Test_ResumeBriskCandyAfterLearnedMove(void)
 {
     u8 taskId = CreateTask(Task_LearnNextMoveOrClosePartyMenu, 0);
@@ -9010,6 +9120,15 @@ u8 Test_OpenBriskCapsuleEditor(void)
     gPartyMenu.slotId = 0;
     u8 taskId = CreateTask(Task_EditBallCapsule, 0);
     CursorCb_BallCapsule(taskId);
+    return taskId;
+}
+
+u8 Test_OpenBriskBallEditor(void)
+{
+    u8 taskId = Test_OpenBriskCapsuleEditor();
+    gPartyMenu.menuType = PARTY_MENU_TYPE_FIELD;
+    CursorCb_Item(taskId);
+    sCursorOptions[MENU_CHANGE_BALL].func(taskId);
     return taskId;
 }
 

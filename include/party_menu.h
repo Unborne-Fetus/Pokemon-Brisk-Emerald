@@ -3,6 +3,9 @@
 
 #include "main.h"
 #include "task.h"
+#if TESTING
+#include "constants/pokeball.h"
+#endif
 
 enum PartyMenuLayout
 {
@@ -153,6 +156,8 @@ s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 choose
 
 #if TESTING
 bool32 Test_ResumeBriskCandyAfterLearnedMove(void);
+bool32 Test_ChangeMonBall(struct Pokemon *mon, enum PokeBall ball);
+u8 Test_OpenBriskBallEditor(void);
 u8 Test_OpenBriskCapsuleEditor(void);
 void Test_CloseBriskCapsuleEditor(void);
 #endif
