@@ -6,11 +6,14 @@ custom counterparts use `SPECIES_*_MEGA_M` identifiers. Future stone names are
 **Meganiumite M**, **Feraligite M**, **Excadrite M**, **Pyroarite M**, and
 **Darkranite M**. No stone items or evolution triggers are added by this import.
 
-This is an artwork and renderer foundation. The imported forms inherit Brisk's
-current base species stats, types, abilities, learnsets, icons and overworld
-graphics. Battle balancing and custom shiny palettes are pending. Both normal
-and shiny individuals currently use the supplied artwork's normal palette.
-The forms revert to their base species on fainting or after battle.
+Stats, types and abilities match the supplied reference cards for all 24 forms.
+Their learnsets, icons and overworld graphics inherit Brisk's base species data.
+All listed abilities use the existing battle implementations, including Dragonize,
+Piercing Drill and Fire Mane. Flygon's six individual stats total 610; these values
+are used even though its reference card labels the total as 620.
+Custom shiny palettes are pending. Both normal and shiny individuals currently
+use the supplied artwork's normal palette. The forms revert to their base species
+on fainting or after battle.
 
 ## Graphics
 

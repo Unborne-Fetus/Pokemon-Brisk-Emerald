@@ -5,8 +5,21 @@
     "id": 1573,
     "asset_path": "graphics/pokemon/custom_megas/amoonguss/mega",
     "future_stone_name": "Amoongussite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 114,
+      "attack": 90,
+      "defense": 120,
+      "sp_attack": 100,
+      "sp_defense": 110,
+      "speed": 30
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GRASS",
+      "POISON"
+    ],
+    "ability": "ABILITY_EFFECT_SPORE",
+    "base_stat_total": 564
   },
   {
     "base_species": "SPECIES_AZUMARILL",
@@ -14,8 +27,21 @@
     "id": 1574,
     "asset_path": "graphics/pokemon/custom_megas/azumarill/mega",
     "future_stone_name": "Azumarillite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 100,
+      "attack": 80,
+      "defense": 118,
+      "sp_attack": 60,
+      "sp_defense": 120,
+      "speed": 42
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "WATER",
+      "FAIRY"
+    ],
+    "ability": "ABILITY_HUGE_POWER",
+    "base_stat_total": 520
   },
   {
     "base_species": "SPECIES_BUTTERFREE",
@@ -23,8 +49,21 @@
     "id": 1575,
     "asset_path": "graphics/pokemon/custom_megas/butterfree/mega",
     "future_stone_name": "Butterfreeite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 60,
+      "attack": 25,
+      "defense": 90,
+      "sp_attack": 110,
+      "sp_defense": 110,
+      "speed": 100
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "BUG",
+      "FLYING"
+    ],
+    "ability": "ABILITY_SERENE_GRACE",
+    "base_stat_total": 495
   },
   {
     "base_species": "SPECIES_CONKELDURR",
@@ -32,8 +71,20 @@
     "id": 1576,
     "asset_path": "graphics/pokemon/custom_megas/conkeldurr/mega",
     "future_stone_name": "Conkeldurrite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 105,
+      "attack": 170,
+      "defense": 125,
+      "sp_attack": 55,
+      "sp_defense": 105,
+      "speed": 45
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "FIGHTING"
+    ],
+    "ability": "ABILITY_STAMINA",
+    "base_stat_total": 605
   },
   {
     "base_species": "SPECIES_DARKRAI",
@@ -41,8 +92,20 @@
     "id": 1577,
     "asset_path": "graphics/pokemon/custom_megas/darkrai/mega_m",
     "future_stone_name": "Darkranite M",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 105,
+      "sp_attack": 165,
+      "sp_defense": 105,
+      "speed": 145
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "DARK"
+    ],
+    "ability": "ABILITY_DARK_AURA",
+    "base_stat_total": 700
   },
   {
     "base_species": "SPECIES_DUGTRIO",
@@ -50,8 +113,21 @@
     "id": 1578,
     "asset_path": "graphics/pokemon/custom_megas/dugtrio/mega",
     "future_stone_name": "Dugtrioite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 35,
+      "attack": 150,
+      "defense": 90,
+      "sp_attack": 50,
+      "sp_defense": 70,
+      "speed": 130
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GROUND",
+      "FIGHTING"
+    ],
+    "ability": "ABILITY_UNSEEN_FIST",
+    "base_stat_total": 525
   },
   {
     "base_species": "SPECIES_ELECTIVIRE",
@@ -59,8 +135,21 @@
     "id": 1579,
     "asset_path": "graphics/pokemon/custom_megas/electivire/mega",
     "future_stone_name": "Electivireite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 75,
+      "attack": 168,
+      "defense": 95,
+      "sp_attack": 70,
+      "sp_defense": 122,
+      "speed": 110
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "ELECTRIC",
+      "FIGHTING"
+    ],
+    "ability": "ABILITY_MOTOR_DRIVE",
+    "base_stat_total": 640
   },
   {
     "base_species": "SPECIES_EXCADRILL",
@@ -68,8 +157,21 @@
     "id": 1580,
     "asset_path": "graphics/pokemon/custom_megas/excadrill/mega_m",
     "future_stone_name": "Excadrite M",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 110,
+      "attack": 155,
+      "defense": 110,
+      "sp_attack": 65,
+      "sp_defense": 65,
+      "speed": 103
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GROUND",
+      "STEEL"
+    ],
+    "ability": "ABILITY_PIERCING_DRILL",
+    "base_stat_total": 608
   },
   {
     "base_species": "SPECIES_FERALIGATR",
@@ -77,8 +179,21 @@
     "id": 1581,
     "asset_path": "graphics/pokemon/custom_megas/feraligatr/mega_m",
     "future_stone_name": "Feraligite M",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 85,
+      "attack": 150,
+      "defense": 130,
+      "sp_attack": 85,
+      "sp_defense": 83,
+      "speed": 97
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "ability": "ABILITY_DRAGONIZE",
+    "base_stat_total": 630
   },
   {
     "base_species": "SPECIES_FLYGON",
@@ -86,8 +201,22 @@
     "id": 1582,
     "asset_path": "graphics/pokemon/custom_megas/flygon/mega",
     "future_stone_name": "Flygonite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 80,
+      "attack": 140,
+      "defense": 110,
+      "sp_attack": 80,
+      "sp_defense": 100,
+      "speed": 100
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GROUND",
+      "DRAGON"
+    ],
+    "ability": "ABILITY_SAND_RUSH",
+    "base_stat_total": 610,
+    "reference_note": "The six individual values total 610; the card labels BST as 620. Individual values are used."
   },
   {
     "base_species": "SPECIES_GOLEM",
@@ -95,8 +224,20 @@
     "id": 1583,
     "asset_path": "graphics/pokemon/custom_megas/golem/mega",
     "future_stone_name": "Golemite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 80,
+      "attack": 150,
+      "defense": 160,
+      "sp_attack": 70,
+      "sp_defense": 100,
+      "speed": 35
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "ROCK"
+    ],
+    "ability": "ABILITY_ROUGH_SKIN",
+    "base_stat_total": 595
   },
   {
     "base_species": "SPECIES_JUMPLUFF",
@@ -104,8 +245,21 @@
     "id": 1584,
     "asset_path": "graphics/pokemon/custom_megas/jumpluff/mega",
     "future_stone_name": "Jumpluffite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 75,
+      "attack": 65,
+      "defense": 120,
+      "sp_attack": 65,
+      "sp_defense": 110,
+      "speed": 125
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GRASS",
+      "FLYING"
+    ],
+    "ability": "ABILITY_COTTON_DOWN",
+    "base_stat_total": 560
   },
   {
     "base_species": "SPECIES_KABUTOPS",
@@ -113,8 +267,21 @@
     "id": 1585,
     "asset_path": "graphics/pokemon/custom_megas/kabutops/mega",
     "future_stone_name": "Kabutopsite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 60,
+      "attack": 145,
+      "defense": 130,
+      "sp_attack": 75,
+      "sp_defense": 80,
+      "speed": 105
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "ROCK",
+      "WATER"
+    ],
+    "ability": "ABILITY_INTREPID_SWORD",
+    "base_stat_total": 595
   },
   {
     "base_species": "SPECIES_MAGMORTAR",
@@ -122,8 +289,20 @@
     "id": 1586,
     "asset_path": "graphics/pokemon/custom_megas/magmortar/mega",
     "future_stone_name": "Magmortarite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 75,
+      "attack": 105,
+      "defense": 122,
+      "sp_attack": 165,
+      "sp_defense": 110,
+      "speed": 63
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "FIRE"
+    ],
+    "ability": "ABILITY_STEAM_ENGINE",
+    "base_stat_total": 640
   },
   {
     "base_species": "SPECIES_MEGANIUM",
@@ -131,8 +310,21 @@
     "id": 1587,
     "asset_path": "graphics/pokemon/custom_megas/meganium/mega_m",
     "future_stone_name": "Meganiumite M",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 80,
+      "attack": 102,
+      "defense": 140,
+      "sp_attack": 103,
+      "sp_defense": 120,
+      "speed": 80
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GRASS",
+      "FAIRY"
+    ],
+    "ability": "ABILITY_TRIAGE",
+    "base_stat_total": 625
   },
   {
     "base_species": "SPECIES_MILOTIC",
@@ -140,8 +332,20 @@
     "id": 1588,
     "asset_path": "graphics/pokemon/custom_megas/milotic/mega",
     "future_stone_name": "Miloticite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 95,
+      "attack": 60,
+      "defense": 92,
+      "sp_attack": 150,
+      "sp_defense": 130,
+      "speed": 113
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "WATER"
+    ],
+    "ability": "ABILITY_DAZZLING",
+    "base_stat_total": 640
   },
   {
     "base_species": "SPECIES_OMASTAR",
@@ -149,8 +353,21 @@
     "id": 1589,
     "asset_path": "graphics/pokemon/custom_megas/omastar/mega",
     "future_stone_name": "Omastarite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 70,
+      "attack": 80,
+      "defense": 130,
+      "sp_attack": 145,
+      "sp_defense": 125,
+      "speed": 45
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "ROCK",
+      "WATER"
+    ],
+    "ability": "ABILITY_STORM_DRAIN",
+    "base_stat_total": 595
   },
   {
     "base_species": "SPECIES_POLIWRATH",
@@ -158,8 +375,21 @@
     "id": 1590,
     "asset_path": "graphics/pokemon/custom_megas/poliwrath/mega",
     "future_stone_name": "Poliwrathite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 90,
+      "attack": 155,
+      "defense": 125,
+      "sp_attack": 60,
+      "sp_defense": 110,
+      "speed": 70
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "WATER",
+      "FIGHTING"
+    ],
+    "ability": "ABILITY_STAMINA",
+    "base_stat_total": 610
   },
   {
     "base_species": "SPECIES_PYROAR",
@@ -167,8 +397,21 @@
     "id": 1591,
     "asset_path": "graphics/pokemon/custom_megas/pyroar/mega_m",
     "future_stone_name": "Pyroarite M",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 86,
+      "attack": 68,
+      "defense": 87,
+      "sp_attack": 134,
+      "sp_defense": 106,
+      "speed": 126
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "FIRE",
+      "NORMAL"
+    ],
+    "ability": "ABILITY_FIRE_MANE",
+    "base_stat_total": 607
   },
   {
     "base_species": "SPECIES_SHIFTRY",
@@ -176,8 +419,21 @@
     "id": 1592,
     "asset_path": "graphics/pokemon/custom_megas/shiftry/mega",
     "future_stone_name": "Shiftryite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 90,
+      "attack": 140,
+      "defense": 60,
+      "sp_attack": 100,
+      "sp_defense": 60,
+      "speed": 130
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GRASS",
+      "DARK"
+    ],
+    "ability": "ABILITY_WIND_RIDER",
+    "base_stat_total": 580
   },
   {
     "base_species": "SPECIES_SNORLAX",
@@ -185,8 +441,20 @@
     "id": 1593,
     "asset_path": "graphics/pokemon/custom_megas/snorlax/mega",
     "future_stone_name": "Snorlaxite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 160,
+      "attack": 145,
+      "defense": 85,
+      "sp_attack": 85,
+      "sp_defense": 135,
+      "speed": 30
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "NORMAL"
+    ],
+    "ability": "ABILITY_FLUFFY",
+    "base_stat_total": 640
   },
   {
     "base_species": "SPECIES_TORKOAL",
@@ -194,8 +462,21 @@
     "id": 1594,
     "asset_path": "graphics/pokemon/custom_megas/torkoal/mega",
     "future_stone_name": "Torkoalite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 160,
+      "sp_attack": 120,
+      "sp_defense": 90,
+      "speed": 20
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "FIRE",
+      "STEEL"
+    ],
+    "ability": "ABILITY_DROUGHT",
+    "base_stat_total": 570
   },
   {
     "base_species": "SPECIES_TYPHLOSION",
@@ -203,8 +484,20 @@
     "id": 1595,
     "asset_path": "graphics/pokemon/custom_megas/typhlosion/mega",
     "future_stone_name": "Typhlosionite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 78,
+      "attack": 89,
+      "defense": 108,
+      "sp_attack": 144,
+      "sp_defense": 110,
+      "speed": 105
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "FIRE"
+    ],
+    "ability": "ABILITY_SOLAR_POWER",
+    "base_stat_total": 634
   },
   {
     "base_species": "SPECIES_WHIMSICOTT",
@@ -212,7 +505,20 @@
     "id": 1596,
     "asset_path": "graphics/pokemon/custom_megas/whimsicott/mega",
     "future_stone_name": "Whimsicottite",
-    "stats": "Inherited from the current base form; balancing pending",
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied"
+    "stats": {
+      "hp": 60,
+      "attack": 67,
+      "defense": 110,
+      "sp_attack": 105,
+      "sp_defense": 100,
+      "speed": 138
+    },
+    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "types": [
+      "GRASS",
+      "FAIRY"
+    ],
+    "ability": "ABILITY_HOSPITALITY",
+    "base_stat_total": 580
   }
 ]
