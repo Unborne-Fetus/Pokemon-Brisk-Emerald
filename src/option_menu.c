@@ -194,6 +194,7 @@ static const struct {
     {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Caps minus 10; EXP stops.\nPrices x10; omniscient AI.\nNo items; SET; no EXP Share.\nWild POKé BALLS still work.")},
     {COMPOUND_STRING("EXP SHARE MODES"), COMPOUND_STRING("Options 3: GEN 3 is held.\nMODERN shares with the team.\nBoth keep full battler EXP.\nDifficulty sets shared EXP.")},
     {COMPOUND_STRING("MODERN EXP SHARE"), COMPOUND_STRING("Devon reward: a Key Item.\nUse it in the Bag for ON/OFF.\nSwitch MODERN on Options 3.\nIt isn't sold in Lilycove.")},
+    {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: original training.\nHARD: perfect IVs, old EVs.\nEXTREME: perfect IVs, new EVs.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
     {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 lets you choose\nshiny odds from 1/8192\nup to 1/50. The setting\naffects normal shiny rolls.")},
     {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},

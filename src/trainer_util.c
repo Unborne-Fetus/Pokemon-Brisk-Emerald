@@ -121,6 +121,59 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
     trainerGen->localRngState = LocalRandomSeed(otID);
 }
 
+// Apply difficulty to the generated opponent, leaving authored teams untouched.
+static void ApplyBriskTrainerTraining(struct Pokemon *mon)
+{
+    u32 mode = GetBriskDifficulty();
+    if (mode == BRISK_MODE_NORMAL)
+        return;
+
+    u32 ivs = mode == BRISK_MODE_EASY ? 0 : 0x3FFFFFFF; // Six 5-bit IVs.
+    SetMonData(mon, MON_DATA_IVS, &ivs);
+    if (mode == BRISK_MODE_HARD)
+        return;
+
+    u8 evs[NUM_STATS] = {0};
+    if (mode == BRISK_MODE_EXTREME)
+    {
+        const struct SpeciesInfo *info = &gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)];
+        u16 scores[NUM_STATS] = {info->baseHP, info->baseAttack, info->baseDefense,
+            info->baseSpeed, info->baseSpAttack, info->baseSpDefense};
+        bool32 physical = FALSE, special = FALSE, slow = FALSE;
+        for (u32 i = 0; i < MAX_MON_MOVES; i++)
+        {
+            enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+            if (move == MOVE_TRICK_ROOM || move == MOVE_GYRO_BALL)
+                slow = TRUE;
+            if (move == MOVE_NONE || GetMovePower(move) <= 1)
+                continue;
+            if (GetMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL && move != MOVE_BODY_PRESS && move != MOVE_FOUL_PLAY)
+                physical = TRUE;
+            if (GetMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL)
+                special = TRUE;
+        }
+        if (!physical) scores[STAT_ATK] = 0;
+        if (!special) scores[STAT_SPATK] = 0;
+        if (slow) scores[STAT_SPEED] = 0;
+        if (info->baseHP == 1) scores[STAT_HP] = 0;
+        // Stable tie order; no random rolls and no EVs above 252 or 510 total.
+        static const u8 amounts[] = {252, 252, 6};
+        for (u32 i = 0; i < ARRAY_COUNT(amounts); i++)
+        {
+            u32 best = 0;
+            for (u32 stat = 1; stat < NUM_STATS; stat++)
+                if (scores[stat] > scores[best])
+                    best = stat;
+            if (scores[best] == 0)
+                break;
+            evs[best] = amounts[i];
+            scores[best] = 0;
+        }
+    }
+    for (u32 stat = 0; stat < NUM_STATS; stat++)
+        SetMonData(mon, MON_DATA_HP_EV + stat, &evs[stat]);
+}
+
 void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *trainerMon, struct TrainerGenerator *trainer)
 {
     struct TrainerMon adjusted = *trainerMon;
@@ -239,6 +292,9 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         data = TYPE_MYSTERY;
         SetMonData(mon, MON_DATA_TERA_TYPE, &data);
     }
+
+    if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
+        ApplyBriskTrainerTraining(mon);
 
     CalculateMonStats(mon);
     SetMonData(mon, MON_DATA_OT_NAME, trainer->name);
