@@ -2,9 +2,13 @@
 
 The supplied pack adds 24 custom Mega species (IDs 1573–1596). The existing
 Meganium, Feraligatr, Excadrill, Pyroar and Darkrai Megas are preserved; their
-custom counterparts use `SPECIES_*_MEGA_M` identifiers. Future stone names are
+custom counterparts use `SPECIES_*_MEGA_M` identifiers. Their distinct stone names are
 **Meganiumite M**, **Feraligite M**, **Excadrite M**, **Pyroarite M**, and
-**Darkranite M**. No stone items or evolution triggers are added by this import.
+**Darkranite M**. Each custom form has its own held Mega Stone and evolution trigger. All 24
+stones are sold with the existing Mega Stones at Lilycove Department Store
+4F (top-right clerk) for ₽500 each. Existing item IDs and original stones are
+preserved. New stone icons and palettes are copies of existing stone assets;
+`manifest.json` records each source.
 
 Stats, types and abilities match the supplied reference cards for all 24 forms.
 Their learnsets, icons and overworld graphics inherit Brisk's base species data.

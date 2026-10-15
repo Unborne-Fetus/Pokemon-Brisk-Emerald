@@ -21,6 +21,8 @@ const u8 gQuestionMarksItemName[] = _("????????");
 
 const struct ItemInfo gItemsInfo[] =
 {
+#include "custom_mega_stones.h"
+
     [ITEM_NONE] =
     {
         .name = gQuestionMarksItemName,

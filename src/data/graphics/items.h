@@ -4,6 +4,8 @@ const u16 gItemIconPalette_QuestionMark[] = INCGFX_U16("graphics/items/icon_pale
 const u32 gItemIcon_ReturnToFieldArrow[] = INCGFX_U32("graphics/items/icons/return_to_field_arrow.png", ".4bpp.smol");
 const u16 gItemIconPalette_ReturnToFieldArrow[] = INCGFX_U16("graphics/items/icon_palettes/return_to_field_arrow.pal", ".gbapal");
 
+#include "custom_mega_stones.h"
+
 // Poké Balls
 
 const u32 gItemIcon_StrangeBall[] = INCGFX_U32("graphics/items/icons/strange_ball.png", ".4bpp.smol");

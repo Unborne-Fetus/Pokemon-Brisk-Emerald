@@ -505,6 +505,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sTyphlosionLevelUpLearnset,
         .teachableLearnset = sTyphlosionTeachableLearnset,
         .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionCustomMegaFormChangeTable,
     },
 
 #if P_HISUIAN_FORMS
@@ -2525,6 +2526,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sAzumarillLevelUpLearnset,
         .teachableLearnset = sAzumarillTeachableLearnset,
         .formSpeciesIdTable = sAzumarillCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sAzumarillCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_MARILL
 
@@ -2923,6 +2925,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sJumpluffLevelUpLearnset,
         .teachableLearnset = sJumpluffTeachableLearnset,
         .formSpeciesIdTable = sJumpluffCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sJumpluffCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_HOPPIP
 

@@ -1,5 +1,5 @@
 // Stats, types and abilities match the supplied custom Mega reference cards.
-// No stones or Mega Evolution triggers are assigned in this stage.
+// Each form is activated by its distinct held Mega Stone.
     [SPECIES_AMOONGUSS_MEGA] =
     {
         .baseHP        = 114,

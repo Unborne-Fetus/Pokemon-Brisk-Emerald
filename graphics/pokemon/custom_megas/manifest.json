@@ -4,7 +4,6 @@
     "species": "SPECIES_AMOONGUSS_MEGA",
     "id": 1573,
     "asset_path": "graphics/pokemon/custom_megas/amoonguss/mega",
-    "future_stone_name": "Amoongussite",
     "stats": {
       "hp": 114,
       "attack": 90,
@@ -19,14 +18,16 @@
       "POISON"
     ],
     "ability": "ABILITY_EFFECT_SPORE",
-    "base_stat_total": 564
+    "base_stat_total": 564,
+    "stone_name": "Amoongussite",
+    "stone_item": "ITEM_AMOONGUSSITE",
+    "stone_asset_source": "venusaurite"
   },
   {
     "base_species": "SPECIES_AZUMARILL",
     "species": "SPECIES_AZUMARILL_MEGA",
     "id": 1574,
     "asset_path": "graphics/pokemon/custom_megas/azumarill/mega",
-    "future_stone_name": "Azumarillite",
     "stats": {
       "hp": 100,
       "attack": 80,
@@ -41,14 +42,16 @@
       "FAIRY"
     ],
     "ability": "ABILITY_HUGE_POWER",
-    "base_stat_total": 520
+    "base_stat_total": 520,
+    "stone_name": "Azumarillite",
+    "stone_item": "ITEM_AZUMARILLITE",
+    "stone_asset_source": "altarianite"
   },
   {
     "base_species": "SPECIES_BUTTERFREE",
     "species": "SPECIES_BUTTERFREE_MEGA",
     "id": 1575,
     "asset_path": "graphics/pokemon/custom_megas/butterfree/mega",
-    "future_stone_name": "Butterfreeite",
     "stats": {
       "hp": 60,
       "attack": 25,
@@ -63,14 +66,16 @@
       "FLYING"
     ],
     "ability": "ABILITY_SERENE_GRACE",
-    "base_stat_total": 495
+    "base_stat_total": 495,
+    "stone_name": "Butterfreeite",
+    "stone_item": "ITEM_BUTTERFREEITE",
+    "stone_asset_source": "beedrillite"
   },
   {
     "base_species": "SPECIES_CONKELDURR",
     "species": "SPECIES_CONKELDURR_MEGA",
     "id": 1576,
     "asset_path": "graphics/pokemon/custom_megas/conkeldurr/mega",
-    "future_stone_name": "Conkeldurrite",
     "stats": {
       "hp": 105,
       "attack": 170,
@@ -84,14 +89,16 @@
       "FIGHTING"
     ],
     "ability": "ABILITY_STAMINA",
-    "base_stat_total": 605
+    "base_stat_total": 605,
+    "stone_name": "Conkeldurrite",
+    "stone_item": "ITEM_CONKELDURRITE",
+    "stone_asset_source": "lopunnite"
   },
   {
     "base_species": "SPECIES_DARKRAI",
     "species": "SPECIES_DARKRAI_MEGA_M",
     "id": 1577,
     "asset_path": "graphics/pokemon/custom_megas/darkrai/mega_m",
-    "future_stone_name": "Darkranite M",
     "stats": {
       "hp": 70,
       "attack": 110,
@@ -105,14 +112,16 @@
       "DARK"
     ],
     "ability": "ABILITY_DARK_AURA",
-    "base_stat_total": 700
+    "base_stat_total": 700,
+    "stone_name": "Darkranite M",
+    "stone_item": "ITEM_DARKRANITE_M",
+    "stone_asset_source": "darkranite"
   },
   {
     "base_species": "SPECIES_DUGTRIO",
     "species": "SPECIES_DUGTRIO_MEGA",
     "id": 1578,
     "asset_path": "graphics/pokemon/custom_megas/dugtrio/mega",
-    "future_stone_name": "Dugtrioite",
     "stats": {
       "hp": 35,
       "attack": 150,
@@ -127,14 +136,16 @@
       "FIGHTING"
     ],
     "ability": "ABILITY_UNSEEN_FIST",
-    "base_stat_total": 525
+    "base_stat_total": 525,
+    "stone_name": "Dugtrioite",
+    "stone_item": "ITEM_DUGTRIOITE",
+    "stone_asset_source": "steelixite"
   },
   {
     "base_species": "SPECIES_ELECTIVIRE",
     "species": "SPECIES_ELECTIVIRE_MEGA",
     "id": 1579,
     "asset_path": "graphics/pokemon/custom_megas/electivire/mega",
-    "future_stone_name": "Electivireite",
     "stats": {
       "hp": 75,
       "attack": 168,
@@ -149,14 +160,16 @@
       "FIGHTING"
     ],
     "ability": "ABILITY_MOTOR_DRIVE",
-    "base_stat_total": 640
+    "base_stat_total": 640,
+    "stone_name": "Electivireite",
+    "stone_item": "ITEM_ELECTIVIREITE",
+    "stone_asset_source": "ampharosite"
   },
   {
     "base_species": "SPECIES_EXCADRILL",
     "species": "SPECIES_EXCADRILL_MEGA_M",
     "id": 1580,
     "asset_path": "graphics/pokemon/custom_megas/excadrill/mega_m",
-    "future_stone_name": "Excadrite M",
     "stats": {
       "hp": 110,
       "attack": 155,
@@ -171,14 +184,16 @@
       "STEEL"
     ],
     "ability": "ABILITY_PIERCING_DRILL",
-    "base_stat_total": 608
+    "base_stat_total": 608,
+    "stone_name": "Excadrite M",
+    "stone_item": "ITEM_EXCADRITE_M",
+    "stone_asset_source": "excadrite"
   },
   {
     "base_species": "SPECIES_FERALIGATR",
     "species": "SPECIES_FERALIGATR_MEGA_M",
     "id": 1581,
     "asset_path": "graphics/pokemon/custom_megas/feraligatr/mega_m",
-    "future_stone_name": "Feraligite M",
     "stats": {
       "hp": 85,
       "attack": 150,
@@ -193,14 +208,16 @@
       "DRAGON"
     ],
     "ability": "ABILITY_DRAGONIZE",
-    "base_stat_total": 630
+    "base_stat_total": 630,
+    "stone_name": "Feraligite M",
+    "stone_item": "ITEM_FERALIGITE_M",
+    "stone_asset_source": "feraligite"
   },
   {
     "base_species": "SPECIES_FLYGON",
     "species": "SPECIES_FLYGON_MEGA",
     "id": 1582,
     "asset_path": "graphics/pokemon/custom_megas/flygon/mega",
-    "future_stone_name": "Flygonite",
     "stats": {
       "hp": 80,
       "attack": 140,
@@ -216,14 +233,16 @@
     ],
     "ability": "ABILITY_SAND_RUSH",
     "base_stat_total": 610,
-    "reference_note": "The six individual values total 610; the card labels BST as 620. Individual values are used."
+    "reference_note": "The six individual values total 610; the card labels BST as 620. Individual values are used.",
+    "stone_name": "Flygonite",
+    "stone_item": "ITEM_FLYGONITE",
+    "stone_asset_source": "sceptilite"
   },
   {
     "base_species": "SPECIES_GOLEM",
     "species": "SPECIES_GOLEM_MEGA",
     "id": 1583,
     "asset_path": "graphics/pokemon/custom_megas/golem/mega",
-    "future_stone_name": "Golemite",
     "stats": {
       "hp": 80,
       "attack": 150,
@@ -237,14 +256,16 @@
       "ROCK"
     ],
     "ability": "ABILITY_ROUGH_SKIN",
-    "base_stat_total": 595
+    "base_stat_total": 595,
+    "stone_name": "Golemite",
+    "stone_item": "ITEM_GOLEMITE",
+    "stone_asset_source": "aggronite"
   },
   {
     "base_species": "SPECIES_JUMPLUFF",
     "species": "SPECIES_JUMPLUFF_MEGA",
     "id": 1584,
     "asset_path": "graphics/pokemon/custom_megas/jumpluff/mega",
-    "future_stone_name": "Jumpluffite",
     "stats": {
       "hp": 75,
       "attack": 65,
@@ -259,14 +280,16 @@
       "FLYING"
     ],
     "ability": "ABILITY_COTTON_DOWN",
-    "base_stat_total": 560
+    "base_stat_total": 560,
+    "stone_name": "Jumpluffite",
+    "stone_item": "ITEM_JUMPLUFFITE",
+    "stone_asset_source": "altarianite"
   },
   {
     "base_species": "SPECIES_KABUTOPS",
     "species": "SPECIES_KABUTOPS_MEGA",
     "id": 1585,
     "asset_path": "graphics/pokemon/custom_megas/kabutops/mega",
-    "future_stone_name": "Kabutopsite",
     "stats": {
       "hp": 60,
       "attack": 145,
@@ -281,14 +304,16 @@
       "WATER"
     ],
     "ability": "ABILITY_INTREPID_SWORD",
-    "base_stat_total": 595
+    "base_stat_total": 595,
+    "stone_name": "Kabutopsite",
+    "stone_item": "ITEM_KABUTOPSITE",
+    "stone_asset_source": "tyranitarite"
   },
   {
     "base_species": "SPECIES_MAGMORTAR",
     "species": "SPECIES_MAGMORTAR_MEGA",
     "id": 1586,
     "asset_path": "graphics/pokemon/custom_megas/magmortar/mega",
-    "future_stone_name": "Magmortarite",
     "stats": {
       "hp": 75,
       "attack": 105,
@@ -302,14 +327,16 @@
       "FIRE"
     ],
     "ability": "ABILITY_STEAM_ENGINE",
-    "base_stat_total": 640
+    "base_stat_total": 640,
+    "stone_name": "Magmortarite",
+    "stone_item": "ITEM_MAGMORTARITE",
+    "stone_asset_source": "cameruptite"
   },
   {
     "base_species": "SPECIES_MEGANIUM",
     "species": "SPECIES_MEGANIUM_MEGA_M",
     "id": 1587,
     "asset_path": "graphics/pokemon/custom_megas/meganium/mega_m",
-    "future_stone_name": "Meganiumite M",
     "stats": {
       "hp": 80,
       "attack": 102,
@@ -324,14 +351,16 @@
       "FAIRY"
     ],
     "ability": "ABILITY_TRIAGE",
-    "base_stat_total": 625
+    "base_stat_total": 625,
+    "stone_name": "Meganiumite M",
+    "stone_item": "ITEM_MEGANIUMITE_M",
+    "stone_asset_source": "meganiumite"
   },
   {
     "base_species": "SPECIES_MILOTIC",
     "species": "SPECIES_MILOTIC_MEGA",
     "id": 1588,
     "asset_path": "graphics/pokemon/custom_megas/milotic/mega",
-    "future_stone_name": "Miloticite",
     "stats": {
       "hp": 95,
       "attack": 60,
@@ -345,14 +374,16 @@
       "WATER"
     ],
     "ability": "ABILITY_DAZZLING",
-    "base_stat_total": 640
+    "base_stat_total": 640,
+    "stone_name": "Miloticite",
+    "stone_item": "ITEM_MILOTICITE",
+    "stone_asset_source": "gyaradosite"
   },
   {
     "base_species": "SPECIES_OMASTAR",
     "species": "SPECIES_OMASTAR_MEGA",
     "id": 1589,
     "asset_path": "graphics/pokemon/custom_megas/omastar/mega",
-    "future_stone_name": "Omastarite",
     "stats": {
       "hp": 70,
       "attack": 80,
@@ -367,14 +398,16 @@
       "WATER"
     ],
     "ability": "ABILITY_STORM_DRAIN",
-    "base_stat_total": 595
+    "base_stat_total": 595,
+    "stone_name": "Omastarite",
+    "stone_item": "ITEM_OMASTARITE",
+    "stone_asset_source": "slowbronite"
   },
   {
     "base_species": "SPECIES_POLIWRATH",
     "species": "SPECIES_POLIWRATH_MEGA",
     "id": 1590,
     "asset_path": "graphics/pokemon/custom_megas/poliwrath/mega",
-    "future_stone_name": "Poliwrathite",
     "stats": {
       "hp": 90,
       "attack": 155,
@@ -389,14 +422,16 @@
       "FIGHTING"
     ],
     "ability": "ABILITY_STAMINA",
-    "base_stat_total": 610
+    "base_stat_total": 610,
+    "stone_name": "Poliwrathite",
+    "stone_item": "ITEM_POLIWRATHITE",
+    "stone_asset_source": "swampertite"
   },
   {
     "base_species": "SPECIES_PYROAR",
     "species": "SPECIES_PYROAR_MEGA_M",
     "id": 1591,
     "asset_path": "graphics/pokemon/custom_megas/pyroar/mega_m",
-    "future_stone_name": "Pyroarite M",
     "stats": {
       "hp": 86,
       "attack": 68,
@@ -411,14 +446,16 @@
       "NORMAL"
     ],
     "ability": "ABILITY_FIRE_MANE",
-    "base_stat_total": 607
+    "base_stat_total": 607,
+    "stone_name": "Pyroarite M",
+    "stone_item": "ITEM_PYROARITE_M",
+    "stone_asset_source": "pyroarite"
   },
   {
     "base_species": "SPECIES_SHIFTRY",
     "species": "SPECIES_SHIFTRY_MEGA",
     "id": 1592,
     "asset_path": "graphics/pokemon/custom_megas/shiftry/mega",
-    "future_stone_name": "Shiftryite",
     "stats": {
       "hp": 90,
       "attack": 140,
@@ -433,14 +470,16 @@
       "DARK"
     ],
     "ability": "ABILITY_WIND_RIDER",
-    "base_stat_total": 580
+    "base_stat_total": 580,
+    "stone_name": "Shiftryite",
+    "stone_item": "ITEM_SHIFTRYITE",
+    "stone_asset_source": "sceptilite"
   },
   {
     "base_species": "SPECIES_SNORLAX",
     "species": "SPECIES_SNORLAX_MEGA",
     "id": 1593,
     "asset_path": "graphics/pokemon/custom_megas/snorlax/mega",
-    "future_stone_name": "Snorlaxite",
     "stats": {
       "hp": 160,
       "attack": 145,
@@ -454,14 +493,16 @@
       "NORMAL"
     ],
     "ability": "ABILITY_FLUFFY",
-    "base_stat_total": 640
+    "base_stat_total": 640,
+    "stone_name": "Snorlaxite",
+    "stone_item": "ITEM_SNORLAXITE",
+    "stone_asset_source": "audinite"
   },
   {
     "base_species": "SPECIES_TORKOAL",
     "species": "SPECIES_TORKOAL_MEGA",
     "id": 1594,
     "asset_path": "graphics/pokemon/custom_megas/torkoal/mega",
-    "future_stone_name": "Torkoalite",
     "stats": {
       "hp": 70,
       "attack": 110,
@@ -476,14 +517,16 @@
       "STEEL"
     ],
     "ability": "ABILITY_DROUGHT",
-    "base_stat_total": 570
+    "base_stat_total": 570,
+    "stone_name": "Torkoalite",
+    "stone_item": "ITEM_TORKOALITE",
+    "stone_asset_source": "cameruptite"
   },
   {
     "base_species": "SPECIES_TYPHLOSION",
     "species": "SPECIES_TYPHLOSION_MEGA",
     "id": 1595,
     "asset_path": "graphics/pokemon/custom_megas/typhlosion/mega",
-    "future_stone_name": "Typhlosionite",
     "stats": {
       "hp": 78,
       "attack": 89,
@@ -497,14 +540,16 @@
       "FIRE"
     ],
     "ability": "ABILITY_SOLAR_POWER",
-    "base_stat_total": 634
+    "base_stat_total": 634,
+    "stone_name": "Typhlosionite",
+    "stone_item": "ITEM_TYPHLOSIONITE",
+    "stone_asset_source": "blazikenite"
   },
   {
     "base_species": "SPECIES_WHIMSICOTT",
     "species": "SPECIES_WHIMSICOTT_MEGA",
     "id": 1596,
     "asset_path": "graphics/pokemon/custom_megas/whimsicott/mega",
-    "future_stone_name": "Whimsicottite",
     "stats": {
       "hp": 60,
       "attack": 67,
@@ -519,6 +564,9 @@
       "FAIRY"
     ],
     "ability": "ABILITY_HOSPITALITY",
-    "base_stat_total": 580
+    "base_stat_total": 580,
+    "stone_name": "Whimsicottite",
+    "stone_item": "ITEM_WHIMSICOTTITE",
+    "stone_asset_source": "altarianite"
   }
 ]

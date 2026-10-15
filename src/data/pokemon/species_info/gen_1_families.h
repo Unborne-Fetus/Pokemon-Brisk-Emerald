@@ -6955,6 +6955,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sDugtrioLevelUpLearnset,
         .teachableLearnset = sDugtrioTeachableLearnset,
         .formSpeciesIdTable = sDugtrioFormSpeciesIdTable,
+        .formChangeTable = sDugtrioCustomMegaFormChangeTable,
     },
 
 #if P_ALOLAN_FORMS
@@ -8478,6 +8479,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPoliwrathLevelUpLearnset,
         .teachableLearnset = sPoliwrathTeachableLearnset,
         .formSpeciesIdTable = sPoliwrathCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sPoliwrathCustomMegaFormChangeTable,
     },
 
 #if P_GEN_2_CROSS_EVOS
@@ -9901,6 +9903,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sGolemLevelUpLearnset,
         .teachableLearnset = sGolemTeachableLearnset,
         .formSpeciesIdTable = sGolemFormSpeciesIdTable,
+        .formChangeTable = sGolemCustomMegaFormChangeTable,
     },
 
 #if P_ALOLAN_FORMS
@@ -17005,6 +17008,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sElectivireLevelUpLearnset,
         .teachableLearnset = sElectivireTeachableLearnset,
         .formSpeciesIdTable = sElectivireCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sElectivireCustomMegaFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ELECTABUZZ
@@ -17228,6 +17232,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sMagmortarLevelUpLearnset,
         .teachableLearnset = sMagmortarTeachableLearnset,
         .formSpeciesIdTable = sMagmortarCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sMagmortarCustomMegaFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_MAGMAR
@@ -19291,6 +19296,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sOmastarLevelUpLearnset,
         .teachableLearnset = sOmastarTeachableLearnset,
         .formSpeciesIdTable = sOmastarCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sOmastarCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_OMANYTE
 
@@ -19448,6 +19454,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sKabutopsLevelUpLearnset,
         .teachableLearnset = sKabutopsTeachableLearnset,
         .formSpeciesIdTable = sKabutopsCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sKabutopsCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_KABUTO
 

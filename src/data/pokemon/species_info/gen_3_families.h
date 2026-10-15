@@ -2357,6 +2357,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sShiftryLevelUpLearnset,
         .teachableLearnset = sShiftryTeachableLearnset,
         .formSpeciesIdTable = sShiftryCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sShiftryCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_SEEDOT
 
@@ -7092,6 +7093,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sTorkoalTeachableLearnset,
         .eggMoveLearnset = sTorkoalEggMoveLearnset,
         .formSpeciesIdTable = sTorkoalCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sTorkoalCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_TORKOAL
 
@@ -7555,6 +7557,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sFlygonLevelUpLearnset,
         .teachableLearnset = sFlygonTeachableLearnset,
         .formSpeciesIdTable = sFlygonCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sFlygonCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_TRAPINCH
 
@@ -9198,6 +9201,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sMiloticLevelUpLearnset,
         .teachableLearnset = sMiloticTeachableLearnset,
         .formSpeciesIdTable = sMiloticCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sMiloticCustomMegaFormChangeTable,
     },
 #endif //P_FAMILY_FEEBAS
 
