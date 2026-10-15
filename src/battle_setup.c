@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "load_save.h"
 #include "malloc.h"
@@ -1265,8 +1266,9 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
     PUSH       (EventSnippet_RevealTrainer)
 
     bool32 isTrainerDefeated = !battleParams->params.skipFlagCheck && GetTrainerFlag();
+    bool32 repeatBattle = isTrainerDefeated && BriskInfiniteRematches() && !battleParams->params.isRematch;
 
-    if ((isTrainerDefeated && !battleParams->params.isRematch)
+    if ((isTrainerDefeated && !battleParams->params.isRematch && !repeatBattle)
     || (!IsTrainerReadyForRematch() && battleParams->params.isRematch)) {
         PUSH(EventSnippet_GotoPostBattleScript)
         return;
@@ -1294,7 +1296,15 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
     PUSH_IF_SET(EventSnippet_SetTrainerFacingDirection, battleParams->params.facePlayer);
     PUSH_IF_SET(EventSnippet_ShowTrainerIntroMsg, battleParams->params.introTextA)
     PUSH_IF_ELSE(EventSnippet_DoRematchTrainerBattle, EventSnippet_DoTrainerBattle, battleParams->params.isRematch)
-    PUSH_IF_ELSE(EventSnippet_GotoPostBattleScript, EventSnippet_EndTrainerBattle, battleParams->params.continueScript)
+    if (repeatBattle)
+    {
+        // Do not replay story continuations, gift scripts or post-battle return scripts.
+        PUSH(EventSnippet_EndRepeatTrainerBattle)
+    }
+    else
+    {
+        PUSH_IF_ELSE(EventSnippet_GotoPostBattleScript, EventSnippet_EndTrainerBattle, battleParams->params.continueScript)
+    }
 
     return;
 }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "ball_capsule.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "decompress.h"
@@ -822,6 +823,8 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
     StartSpriteAnim(sprite, 1);
     ballId = GetBattlerPokeballItemId(battler);
     AnimateBallOpenParticles(sprite->x, sprite->y - 5, 1, 28, ballId);
+    if (gMain.inBattle)
+        PlayBallCapsule(battler, sprite->x, sprite->y - 5);
     sprite->data[0] = LaunchBallFadeMonTask(TRUE, sprite->sBattler, 14, ballId);
     sprite->callback = HandleBallAnimEnd;
 

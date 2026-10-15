@@ -125,6 +125,9 @@ bool32 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targ
     }
     else
     {
+        // Common full-screen fades finish in two frames; retain partial color effects.
+        if (blendColor == RGB_BLACK && ((startY == 0 && targetY == 16) || (startY == 16 && targetY == 0)))
+            delay = -6;
         gPaletteFade.deltaY = 2;
 
         if (delay < 0)

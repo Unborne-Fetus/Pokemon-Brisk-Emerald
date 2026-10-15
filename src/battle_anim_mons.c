@@ -204,6 +204,8 @@ u8 GetBattlerSpriteFinal_Y(enum BattlerId battler, enum Species species, bool32 
         if (y > DISPLAY_HEIGHT - MON_PIC_HEIGHT + 8)
             y = DISPLAY_HEIGHT - MON_PIC_HEIGHT + 8;
     }
+    if (!IsContest() && IsOnPlayerSide(battler) && gSpeciesInfo[SanitizeSpeciesId(species)].backPic80 != NULL)
+        y += 4;
     return y;
 }
 

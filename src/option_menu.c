@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "option_menu.h"
 #include "bg.h"
 #include "gpu_regs.h"
@@ -28,6 +29,11 @@
 #define tBattleSpeed data[7]
 #define tOverworldSpeed data[8]
 #define tAutoRunDisabled data[9]
+#define tSkipMoves data[10]
+#define tNoLevelCap data[11]
+#define tRematches data[12]
+#define tShinyOdds data[13]
+#define tShinyHunt data[14]
 
 enum
 {
@@ -46,9 +52,14 @@ enum
     MENUITEM_BATTLESPEED,
     MENUITEM_OVERWORLDSPEED,
     MENUITEM_AUTORUN,
+    MENUITEM_MOVEPROMPTS,
+    MENUITEM_LEVELCAP,
+    MENUITEM_REMATCHES,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
+
+enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
 
 enum
 {
@@ -69,13 +80,18 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 2
+#define PAGE_COUNT 3
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuFadeIn_Pg2(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg2(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
+static void StoreAllCurrentSettings(u8 taskId);
+static void Task_OptionMenuProcessInput_Pg3(u8 taskId);
+static void DrawOptionsPg3(u8 taskId);
+static void DrawToggle(u8 disabled, u8 y);
+static void ShinyOdds_DrawChoices(u8 selection);
 static void Task_OptionMenuFadeOut(u8 taskId);
 static void HighlightOptionMenuItem(u8 selection);
 static u8 TextSpeed_ProcessInput(u8 selection);
@@ -139,7 +155,15 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
     [MENUITEM_BATTLESPEED]    = gText_BattleSpeed,
     [MENUITEM_OVERWORLDSPEED] = gText_OverworldSpeed,
     [MENUITEM_AUTORUN]        = COMPOUND_STRING("AUTO RUN"),
+    [MENUITEM_MOVEPROMPTS] = COMPOUND_STRING("MOVE PROMPTS"),
+    [MENUITEM_LEVELCAP] = COMPOUND_STRING("LEVEL CAPS"),
+    [MENUITEM_REMATCHES] = COMPOUND_STRING("REMATCHES"),
     [MENUITEM_CANCEL_PG2]     = gText_OptionMenuCancel,
+};
+
+static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
+{
+    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), gText_OptionMenuCancel,
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -216,6 +240,12 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tBattleSpeed = gSaveBlock2Ptr->optionsBattleSpeed;
     gTasks[taskId].tOverworldSpeed = VarGet(VAR_OVERWORLD_SPEEDUP);
     gTasks[taskId].tAutoRunDisabled = VarGet(VAR_AUTO_RUN_DISABLED) != 0;
+    gTasks[taskId].tSkipMoves = BriskSkipMovePrompts();
+    gTasks[taskId].tNoLevelCap = VarGet(VAR_BRISK_NO_LEVEL_CAP) != 0;
+    gTasks[taskId].tRematches = BriskInfiniteRematches();
+    u32 odds = VarGet(VAR_BRISK_SHINY_ODDS);
+    gTasks[taskId].tShinyOdds = odds >= 1 && odds <= BRISK_SHINY_CHOICES ? odds : 5;
+    gTasks[taskId].tShinyHunt = BriskShinyHunting();
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -237,6 +267,9 @@ static void DrawOptionsPg2(u8 taskId)
     BattleSpeed_DrawChoices(gTasks[taskId].tBattleSpeed);
     OverworldSpeed_DrawChoices(gTasks[taskId].tOverworldSpeed);
     AutoRun_DrawChoices(gTasks[taskId].tAutoRunDisabled);
+    DrawToggle(gTasks[taskId].tSkipMoves, MENUITEM_MOVEPROMPTS * 16);
+    DrawToggle(gTasks[taskId].tNoLevelCap, MENUITEM_LEVELCAP * 16);
+    DrawToggle(!gTasks[taskId].tRematches, MENUITEM_REMATCHES * 16);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -262,6 +295,7 @@ static u8 Process_ChangePage(u8 CurrentPage)
 
 static void Task_ChangePage(u8 taskId)
 {
+    FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
     DrawHeaderText();
     PutWindowTilemap(1);
     DrawOptionMenuTexts();
@@ -274,6 +308,10 @@ static void Task_ChangePage(u8 taskId)
     case 1:
         DrawOptionsPg2(taskId);
         gTasks[taskId].func = Task_OptionMenuFadeIn_Pg2;
+        break;
+    case 2:
+        DrawOptionsPg3(taskId);
+        gTasks[taskId].func = Task_OptionMenuProcessInput_Pg3;
         break;
     }
 }
@@ -364,6 +402,10 @@ void CB2_InitOptionMenu(void)
         case 1:
             taskId = CreateTask(Task_OptionMenuFadeIn_Pg2, 0);
             DrawOptionsPg2(taskId);
+            break;
+        case 2:
+            taskId = CreateTask(Task_OptionMenuProcessInput_Pg3, 0);
+            DrawOptionsPg3(taskId);
             break;            
         }
         gMain.state++;
@@ -389,6 +431,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
         ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
+        StoreAllCurrentSettings(taskId);
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
@@ -489,6 +532,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
     {
         FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
         ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
+        StoreAllCurrentSettings(taskId);
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
@@ -543,6 +587,18 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].tAutoRunDisabled)
                 AutoRun_DrawChoices(gTasks[taskId].tAutoRunDisabled);
             break;
+        case MENUITEM_MOVEPROMPTS:
+            gTasks[taskId].tSkipMoves = BattleScene_ProcessInput(gTasks[taskId].tSkipMoves);
+            DrawToggle(gTasks[taskId].tSkipMoves, MENUITEM_MOVEPROMPTS * 16);
+            break;
+        case MENUITEM_LEVELCAP:
+            gTasks[taskId].tNoLevelCap = BattleScene_ProcessInput(gTasks[taskId].tNoLevelCap);
+            DrawToggle(gTasks[taskId].tNoLevelCap, MENUITEM_LEVELCAP * 16);
+            break;
+        case MENUITEM_REMATCHES:
+            gTasks[taskId].tRematches = BattleScene_ProcessInput(gTasks[taskId].tRematches);
+            DrawToggle(!gTasks[taskId].tRematches, MENUITEM_REMATCHES * 16);
+            break;
         default:
             return;
         }
@@ -554,7 +610,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
     }
 }
 
-static void Task_OptionMenuSave(u8 taskId)
+static void StoreAllCurrentSettings(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
     gSaveBlock2Ptr->optionsBattleSceneOff = gTasks[taskId].tBattleSceneOff;
@@ -566,6 +622,16 @@ static void Task_OptionMenuSave(u8 taskId)
     VarSet(VAR_OVERWORLD_SPEEDUP, gTasks[taskId].tOverworldSpeed);
     VarSet(VAR_AUTO_RUN_DISABLED, gTasks[taskId].tAutoRunDisabled);
 
+    VarSet(VAR_BRISK_SKIP_MOVE_PROMPTS, gTasks[taskId].tSkipMoves);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, gTasks[taskId].tNoLevelCap);
+    VarSet(VAR_BRISK_INFINITE_REMATCHES, gTasks[taskId].tRematches);
+    VarSet(VAR_BRISK_SHINY_ODDS, gTasks[taskId].tShinyOdds);
+    VarSet(VAR_BRISK_SHINY_HUNT, gTasks[taskId].tShinyHunt);
+}
+
+static void Task_OptionMenuSave(u8 taskId)
+{
+    StoreAllCurrentSettings(taskId);
     BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -940,6 +1006,10 @@ static void DrawOptionMenuTexts(void)
     case 1:
         items = MENUITEM_COUNT_PG2;
         menu = sOptionMenuItemsNames_Pg2;
+        break;
+    case 2:
+        items = MENUITEM_COUNT_PG3;
+        menu = sOptionMenuItemsNames_Pg3;
         break;    
     }  
 
@@ -988,4 +1058,63 @@ static void AutoRun_DrawChoices(u8 selection)
 {
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, YPOS_AUTORUN, selection == 0);
     DrawOptionMenuChoice(gText_BattleSceneOff, 160, YPOS_AUTORUN, selection != 0);
+}
+
+static void DrawToggle(u8 disabled, u8 y)
+{
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, disabled == 0);
+    DrawOptionMenuChoice(gText_BattleSceneOff, 160, y, disabled != 0);
+}
+
+static void ShinyOdds_DrawChoices(u8 selection)
+{
+    FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 104, 0, 104, 16);
+    StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}1/"));
+    ConvertIntToDecimalStringN(gStringVar2, GetBriskShinyDenominatorForSetting(selection), STR_CONV_MODE_LEFT_ALIGN, 4);
+    StringAppend(gStringVar1, gStringVar2);
+    DrawOptionMenuChoice(gStringVar1, 104, 0, 1);
+}
+
+static void DrawOptionsPg3(u8 taskId)
+{
+    ReadAllCurrentSettings(taskId);
+    ShinyOdds_DrawChoices(gTasks[taskId].tShinyOdds);
+    DrawToggle(!gTasks[taskId].tShinyHunt, 16);
+    HighlightOptionMenuItem(0);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG3))
+        gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
+    {
+        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : MENUITEM_COUNT_PG3 - 1)) % MENUITEM_COUNT_PG3;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+    {
+        if (gTasks[taskId].tMenuSelection == MENUITEM_SHINYODDS)
+        {
+            u32 value = gTasks[taskId].tShinyOdds - 1;
+            value = (value + (JOY_REPEAT(DPAD_RIGHT) ? 1 : BRISK_SHINY_CHOICES - 1)) % BRISK_SHINY_CHOICES;
+            gTasks[taskId].tShinyOdds = value + 1;
+            ShinyOdds_DrawChoices(value + 1);
+        }
+        else if (gTasks[taskId].tMenuSelection == MENUITEM_SHINYHUNT)
+        {
+            gTasks[taskId].tShinyHunt ^= 1;
+            DrawToggle(!gTasks[taskId].tShinyHunt, 16);
+        }
+        CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+    }
 }

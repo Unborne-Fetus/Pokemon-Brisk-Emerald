@@ -1,4 +1,6 @@
 #include "global.h"
+#include "ball_capsule.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -112,6 +114,7 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_BALL_CAPSULE,
     MENU_FIELD_MOVES
 };
 
@@ -461,6 +464,8 @@ static void CursorCb_StatEdit(u8);
 static void CB2_ReturnToPartyMenuFromStatEditor(void);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
+static void CursorCb_BallCapsule(u8);
+static void Task_EditBallCapsule(u8);
 static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
 static void CursorCb_TakeItem(u8);
@@ -5756,8 +5761,6 @@ static void CB2_ShowSummaryScreenToForgetMove(void)
 
 static void CB2_ReturnToPartyMenuWhileLearningMove(void)
 {
-    if (sFinalLevel != 0)
-        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_LEVEL, &sFinalLevel); // to avoid displaying incorrect level
     if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
         InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_NONE, Task_ReturnToPartyMenuWhileLearningMove, gPartyMenu.exitCallback);
     else
@@ -6030,14 +6033,16 @@ static void Task_TryLearnNewMoves(u8 taskId)
         RemoveLevelUpStatsWindow();
         for (; sInitialLevel <= sFinalLevel; sInitialLevel++)
         {
-            SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_LEVEL, &sInitialLevel);
-            learnMove = MonTryLearningNewMove(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], TRUE);
+            learnMove = MonTryLearningNewMoveAtLevel(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], TRUE, sInitialLevel);
             gPartyMenu.learnMoveState = 1;
             switch (learnMove)
             {
             case 0: // No moves to learn
                 if (sInitialLevel >= sFinalLevel)
+                {
                     PartyMenuTryEvolution(taskId);
+                    return;
+                }
                 break;
             case MON_HAS_MAX_MOVES:
                 DisplayMonNeedsToReplaceMove(taskId);
@@ -6058,15 +6063,19 @@ static void Task_TryLearnNewMoves(u8 taskId)
 static void Task_TryLearningNextMove(u8 taskId)
 {
     u16 result;
+    bool32 firstMove = FALSE;
     for (; sInitialLevel <= sFinalLevel; sInitialLevel++)
     {
-        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_LEVEL, &sInitialLevel);
-        result = MonTryLearningNewMove(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], FALSE);
+        result = MonTryLearningNewMoveAtLevel(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], firstMove, sInitialLevel);
+        firstMove = TRUE;
         switch (result)
         {
         case 0: // No moves to learn
             if (sInitialLevel >= sFinalLevel)
+            {
                 PartyMenuTryEvolution(taskId);
+                return;
+            }
             break;
         case MON_HAS_MAX_MOVES:
             DisplayMonNeedsToReplaceMove(taskId);
@@ -6123,6 +6132,13 @@ static void PartyMenuTryEvolution(u8 taskId)
 
 static void DisplayMonNeedsToReplaceMove(u8 taskId)
 {
+    if (BriskSkipMovePrompts())
+    {
+        gPartyMenu.data1 = gMoveToLearn;
+        DisplayPartyMenuMessage(gText_WhichMoveToForget, TRUE);
+        gTasks[taskId].func = Task_ShowSummaryScreenToForgetMove;
+        return;
+    }
     GetMonNickname(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], gStringVar1);
     StringCopy(gStringVar2, GetMoveName(gMoveToLearn));
     StringExpandPlaceholders(gStringVar4, gText_PkmnNeedsToReplaceMove);
@@ -8903,3 +8919,57 @@ s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 choose
     return slotId;
 }
 #endif
+
+// Three two-bit seal slots live in unused boxed-Pokemon bits, preserving save layout.
+static void DrawBallCapsuleEditor(u8 taskId)
+{
+    static const u8 *const names[] = {COMPOUND_STRING("NONE"), COMPOUND_STRING("HEARTS"), COMPOUND_STRING("STARS"), COMPOUND_STRING("BUBBLES")};
+    ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    StringCopy(gStringVar2, names[GetBallCapsuleSeal(gTasks[taskId].data[12], gTasks[taskId].data[13])]);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Seal {STR_VAR_1}: {STR_VAR_2}\nLeft/Right: style  Up/Down: slot\nA: Save  B: Cancel"));
+    DisplayPartyMenuMessage(gStringVar4, FALSE);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static void CursorCb_BallCapsule(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    gTasks[taskId].data[12] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE);
+    gTasks[taskId].data[13] = 0;
+    DrawBallCapsuleEditor(taskId);
+    gTasks[taskId].func = Task_EditBallCapsule;
+}
+
+static void Task_EditBallCapsule(u8 taskId)
+{
+    u32 slot = gTasks[taskId].data[13];
+    u32 capsule = gTasks[taskId].data[12];
+    if (JOY_NEW(A_BUTTON))
+    {
+        u8 value = capsule;
+        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE, &value);
+        CursorCb_Cancel1(taskId);
+        return;
+    }
+    if (JOY_NEW(B_BUTTON))
+    {
+        CursorCb_Cancel1(taskId);
+        return;
+    }
+    if (JOY_REPEAT(DPAD_UP))
+        slot = (slot + BALL_CAPSULE_SLOTS - 1) % BALL_CAPSULE_SLOTS;
+    else if (JOY_REPEAT(DPAD_DOWN))
+        slot = (slot + 1) % BALL_CAPSULE_SLOTS;
+    else if (JOY_REPEAT(DPAD_LEFT))
+        capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + 3) % BALL_CAPSULE_STYLES);
+    else if (JOY_REPEAT(DPAD_RIGHT))
+        capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + 1) % BALL_CAPSULE_STYLES);
+    else
+        return;
+    PlaySE(SE_SELECT);
+    gTasks[taskId].data[12] = capsule;
+    gTasks[taskId].data[13] = slot;
+    DrawBallCapsuleEditor(taskId);
+}

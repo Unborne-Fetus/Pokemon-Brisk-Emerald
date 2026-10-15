@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
 #include "battle_message.h"
@@ -893,6 +894,12 @@ static void Task_EvolutionScene(u8 taskId)
         switch (gTasks[taskId].tLearnMoveState)
         {
         case MVSTATE_INTRO_MSG_1:
+            if (BriskSkipMovePrompts())
+            {
+                gTasks[taskId].tLearnMoveState = MVSTATE_SHOW_MOVE_SELECT;
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                break;
+            }
             if (!IsTextPrinterActiveOnWindow(0) && !IsSEPlaying())
             {
                 // "{mon} is trying to learn {move}"
@@ -1300,6 +1307,12 @@ static void Task_TradeEvolutionScene(u8 taskId)
         switch (gTasks[taskId].tLearnMoveState)
         {
         case T_MVSTATE_INTRO_MSG_1:
+            if (BriskSkipMovePrompts())
+            {
+                gTasks[taskId].tLearnMoveState = T_MVSTATE_SHOW_MOVE_SELECT;
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                break;
+            }
             if (!IsTextPrinterActiveOnWindow(0) && !IsSEPlaying())
             {
                 // "{mon} is trying to learn {move}"

@@ -7,6 +7,8 @@
 
 u32 GetProgressionLevelCap(void)
 {
+    if (VarGet(VAR_BRISK_NO_LEVEL_CAP))
+        return MAX_LEVEL;
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_BADGE01_GET, 25},
@@ -31,6 +33,8 @@ u32 GetProgressionLevelCap(void)
 
 u32 GetCurrentLevelCap(void)
 {
+    if (VarGet(VAR_BRISK_NO_LEVEL_CAP))
+        return MAX_LEVEL;
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
         return GetProgressionLevelCap();
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)

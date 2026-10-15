@@ -195,3 +195,7 @@ EventSnippet_NotEnoughMonsForDoubleBattle::
 	waitbuttonpress
 	release
 	end
+
+EventSnippet_EndRepeatTrainerBattle::
+	releaseall
+	end

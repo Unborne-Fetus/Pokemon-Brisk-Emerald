@@ -3099,6 +3099,8 @@ BattleScript_AskToLearnMove::
 	printstring STRINGID_TRYTOLEARNMOVE2
 	printstring STRINGID_TRYTOLEARNMOVE3
 	waitstate
+BattleScript_SelectMoveDirectly::
+	buffermovetolearn
 	setbyte sLEARNMOVE_STATE, 0
 	yesnoboxlearnmove BattleScript_ForgotAndLearnedNewMove
 .if P_ASK_MOVE_CONFIRMATION == TRUE
