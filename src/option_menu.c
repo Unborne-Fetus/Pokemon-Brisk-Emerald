@@ -37,6 +37,7 @@
 #define tRematches data[12]
 #define tShinyOdds data[13]
 #define tShinyHunt data[14]
+#define tExpShare data[15]
 
 enum
 {
@@ -62,7 +63,7 @@ enum
     MENUITEM_COUNT_PG2,
 };
 
-enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
+enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_EXPSHARE, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
 
 enum
 {
@@ -171,7 +172,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 
 static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
 {
-    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
+    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("EXP SHARE"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
 };
 
 enum { MENUITEM_DIFFICULTY, MENUITEM_RANDOM_WILD, MENUITEM_RANDOM_TRAINERS, MENUITEM_RANDOM_ITEMS, MENUITEM_RANDOM_IMPORTANT, MENUITEM_RANDOM_ALL, MENUITEM_CANCEL_PG4, MENUITEM_COUNT_PG4 };
@@ -187,6 +188,12 @@ static const struct {
     const u8 *description;
 } sHelpTopics[] = {
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
+    {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("Original prices; basic AI.\nBattle items are allowed.\nBattle style is SHIFT.\nShared EXP is 200%.")},
+    {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Prices x2; original AI.\nBattle items are allowed.\nChoose SHIFT or SET style.\nShared EXP remains 100%.")},
+    {COMPOUND_STRING("HARD RULES"), COMPOUND_STRING("Prices x4; smarter choices.\nNo battle items; SET style.\nShared EXP is 50%.\nHeld items still work.")},
+    {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Prices x10; omniscient AI.\nNo battle items; SET style.\nEXP Share is disabled.\nWild POKé BALLS still work.")},
+    {COMPOUND_STRING("EXP SHARE MODES"), COMPOUND_STRING("Options 3: GEN 3 is held.\nMODERN shares with the team.\nBoth keep full battler EXP.\nDifficulty sets shared EXP.")},
+    {COMPOUND_STRING("MODERN EXP SHARE"), COMPOUND_STRING("Devon reward: a Key Item.\nUse it in the Bag for ON/OFF.\nSwitch MODERN on Options 3.\nIt isn't sold in Lilycove.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
     {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 lets you choose\nshiny odds from 1/8192\nup to 1/50. The setting\naffects normal shiny rolls.")},
     {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},
@@ -293,6 +300,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     u32 odds = VarGet(VAR_BRISK_SHINY_ODDS);
     gTasks[taskId].tShinyOdds = odds >= 1 && odds <= BRISK_SHINY_CHOICES ? odds : 5;
     gTasks[taskId].tShinyHunt = BriskShinyHunting();
+    gTasks[taskId].tExpShare = BriskModernExpShare();
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -690,6 +698,7 @@ static void StoreAllCurrentSettings(u8 taskId)
     VarSet(VAR_BRISK_INFINITE_REMATCHES, gTasks[taskId].tRematches);
     VarSet(VAR_BRISK_SHINY_ODDS, gTasks[taskId].tShinyOdds);
     VarSet(VAR_BRISK_SHINY_HUNT, gTasks[taskId].tShinyHunt);
+    SetBriskExpShareMode(gTasks[taskId].tExpShare);
 }
 
 static void Task_OptionMenuSave(u8 taskId)
@@ -886,6 +895,8 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
+    if (GetBriskDifficulty() != BRISK_MODE_NORMAL)
+        return selection;
     if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
     {
         selection ^= 1;
@@ -899,6 +910,7 @@ static void BattleStyle_DrawChoices(u8 selection)
 {
     u8 styles[2];
 
+    selection = GetBriskBattleStyle(selection);
     styles[0] = 0;
     styles[1] = 0;
     styles[selection] = 1;
@@ -1144,11 +1156,18 @@ static void ShinyOdds_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gStringVar1, 104, 0, 1);
 }
 
+static void ExpShare_DrawChoices(u8 modern)
+{
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}GEN 3"), 104, MENUITEM_EXPSHARE * 16, !modern);
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}MODERN"), 155, MENUITEM_EXPSHARE * 16, modern);
+}
+
 static void DrawOptionsPg3(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
     ShinyOdds_DrawChoices(gTasks[taskId].tShinyOdds);
     DrawToggle(!gTasks[taskId].tShinyHunt, 16);
+    ExpShare_DrawChoices(gTasks[taskId].tExpShare);
     HighlightOptionMenuItem(0);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -1190,6 +1209,11 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
         {
             gTasks[taskId].tShinyHunt ^= 1;
             DrawToggle(!gTasks[taskId].tShinyHunt, 16);
+        }
+        else if (gTasks[taskId].tMenuSelection == MENUITEM_EXPSHARE)
+        {
+            gTasks[taskId].tExpShare ^= 1;
+            ExpShare_DrawChoices(gTasks[taskId].tExpShare);
         }
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
     }

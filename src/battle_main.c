@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
@@ -2829,7 +2830,7 @@ static void ClearSetBScriptingStruct(void)
     memset(&gBattleScripting, 0, sizeof(gBattleScripting));
 
     gBattleScripting.windowsType = temp;
-    gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    gBattleScripting.battleStyle = GetBriskBattleStyle(gSaveBlock2Ptr->optionsBattleStyle);
     #if TESTING
     gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     #endif
@@ -3996,7 +3997,8 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag())
+                    if ((IsOnPlayerSide(battler) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER) && !BriskBattleItemsAllowed())
+                        || (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag()))
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

@@ -237,5 +237,4 @@ LilycoveCity_DepartmentStoreRooftop_EXP:
 	.2byte ITEM_EXP_CANDY_XL
 	.2byte ITEM_DYNAMAX_CANDY
 	.2byte ITEM_RARE_CANDY
-	.2byte ITEM_EXP_SHARE
 	pokemartlistend

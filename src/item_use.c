@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "item_use.h"
 #include "outfit_menu.h"
 #include "battle.h"
@@ -260,7 +261,11 @@ STATIC_ASSERT(I_EXP_SHARE_ITEM < GEN_6 || I_EXP_SHARE_FLAG > TEMP_FLAGS_END, You
 
 void ItemUseOutOfBattle_ExpShare(u8 taskId)
 {
-#if I_EXP_SHARE_ITEM >= GEN_6
+    if (gSpecialVar_ItemId != ITEM_MODERN_EXP_SHARE || !BriskModernExpShare() || GetBriskDifficulty() == BRISK_MODE_EXTREME)
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+        return;
+    }
     if (IsGen6ExpShareEnabled())
     {
         PlaySE(SE_PC_OFF);
@@ -277,10 +282,7 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
         else
             DisplayItemMessage(taskId, FONT_NORMAL, gText_ExpShareOn, CloseItemMessage);
     }
-    FlagToggle(I_EXP_SHARE_FLAG);
-#else
-    DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-#endif
+    VarSet(VAR_BRISK_EXP_SHARE, VarGet(VAR_BRISK_EXP_SHARE) == 1 ? 2 : 1);
 }
 
 void ItemUseOutOfBattle_Bike(u8 taskId)

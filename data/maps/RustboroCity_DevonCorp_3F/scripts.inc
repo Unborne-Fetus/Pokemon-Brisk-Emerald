@@ -164,6 +164,10 @@ RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	giveitem ITEM_EXP_SHARE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_EXP_SHARE
+	checkitem ITEM_MODERN_EXP_SHARE
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_3F_EventScript_ExplainExpShare
+	giveitem ITEM_MODERN_EXP_SHARE
+RustboroCity_DevonCorp_3F_EventScript_ExplainExpShare:
 	msgbox RustboroCity_DevonCorp_3F_Text_ExplainExpShare, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
@@ -250,13 +254,14 @@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "It should help you, a TRAINER.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
-	.string "MR. STONE: A POKéMON holding that\n"
-	.string "EXP. SHARE will be given some of the\l"
-	.string "EXP Points from battle.\p"
-	.string "It will get EXP Points even if it didn't\n"
-	.string "actually battle.\p"
-	.string "I would say EXP. SHARE is quite useful\n"
-	.string "for raising weak POKéMON.$"
+	.string "MR. STONE: Choose your EXP. SHARE\n"
+	.string "mode on OPTIONS page 3.\p"
+	.string "GEN 3 uses the held item. MODERN\n"
+	.string "uses the Key Item for your team.\p"
+	.string "Use the Key Item to turn sharing\n"
+	.string "on or off while in MODERN mode.\p"
+	.string "Your difficulty controls how much\n"
+	.string "shared EXP your POKéMON receive.$"
 
 RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 	.string "MR. STONE: Since my youth, I've immersed\n"

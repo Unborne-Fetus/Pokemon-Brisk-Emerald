@@ -9796,6 +9796,21 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_WhiteHerb,
     },
 
+    [ITEM_MODERN_EXP_SHARE] =
+    {
+        .name = ITEM_NAME("Exp. Share"),
+        .description = COMPOUND_STRING(
+            "Shares Exp. with all\n"
+            "party members in\n"
+            "Modern mode. ON/OFF."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_ExpShare,
+        .iconPic = gItemIcon_ExpShare,
+        .iconPalette = gItemIconPalette_ExpShare,
+    },
+
     [ITEM_EXP_SHARE] =
     {
         .name = ITEM_NAME("Exp. Share"),

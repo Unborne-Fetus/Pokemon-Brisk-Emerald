@@ -1,0 +1,121 @@
+#include "global.h"
+#include "battle.h"
+#include "battle_util.h"
+#include "brisk_modes.h"
+#include "data.h"
+#include "event_data.h"
+#include "item.h"
+#include "pokemon.h"
+#include "test/test.h"
+#include "constants/battle_ai.h"
+
+TEST("Brisk difficulty purchase prices scale while resale values stay fixed")
+{
+    static const u8 multipliers[] = {2, 1, 4, 10};
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        EXPECT_EQ(GetItemPrice(ITEM_POTION), gItemsInfo[ITEM_POTION].price * multipliers[mode]);
+        EXPECT_EQ(GetItemPrice(ITEM_RARE_CANDY), gItemsInfo[ITEM_RARE_CANDY].price * multipliers[mode]);
+        EXPECT_EQ(GetItemSellPrice(ITEM_RARE_CANDY), gItemsInfo[ITEM_RARE_CANDY].price / ITEM_SELL_FACTOR);
+        EXPECT_EQ(GetItemPrice(ITEM_MODERN_EXP_SHARE), 0);
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
+TEST("Brisk difficulty trainer AI preserves Normal and upgrades Hard and Extreme")
+{
+    u64 original = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREDICT_MOVE | AI_FLAG_RANDOMIZE_SWITCHIN;
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
+    EXPECT_EQ(GetBriskTrainerAiFlags(original), AI_FLAG_CHECK_BAD_MOVE);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    EXPECT_EQ(GetBriskTrainerAiFlags(original), original);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_HARD);
+    EXPECT_EQ(GetBriskTrainerAiFlags(original), original | AI_FLAG_SMART_MON_CHOICES);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXTREME);
+    EXPECT_EQ(GetBriskTrainerAiFlags(original), original | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
+TEST("Brisk difficulty enforces battle style without overwriting the player's preference")
+{
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        for (u32 preference = 0; preference < 2; preference++)
+        {
+            u32 expected = mode == BRISK_MODE_NORMAL ? preference : mode == BRISK_MODE_EASY ? OPTIONS_BATTLE_STYLE_SHIFT : OPTIONS_BATTLE_STYLE_SET;
+            EXPECT_EQ(GetBriskBattleStyle(preference), expected);
+        }
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
+TEST("Brisk difficulty blocks battle consumables on Hard and Extreme but keeps catching")
+{
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        bool32 allowed = mode == BRISK_MODE_NORMAL || mode == BRISK_MODE_EASY;
+        EXPECT_EQ(BriskBattleItemsAllowed(), allowed);
+        EXPECT_EQ(BriskCanUseBattleItem(ITEM_POTION), allowed);
+        EXPECT_EQ(BriskCanUseBattleItem(ITEM_REVIVE), allowed);
+        EXPECT_EQ(BriskCanUseBattleItem(ITEM_X_ATTACK), allowed);
+        EXPECT(BriskCanUseBattleItem(ITEM_POKE_BALL));
+        EXPECT(BriskCanUseBattleItem(ITEM_MASTER_BALL));
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
+TEST("Brisk EXP Share modes preserve legacy items and modern on off state")
+{
+    ClearBag();
+    FlagSet(FLAG_RECEIVED_EXP_SHARE);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    VarSet(VAR_BRISK_EXP_SHARE, 0);
+    AddBagItem(ITEM_EXP_SHARE, 1);
+    SetBriskExpShareMode(TRUE);
+    EXPECT(BriskModernExpShare());
+    EXPECT(IsGen6ExpShareEnabled());
+    EXPECT(CheckBagHasItem(ITEM_MODERN_EXP_SHARE, 1));
+    EXPECT(CheckBagHasItem(ITEM_EXP_SHARE, 1));
+    EXPECT_EQ(GetItemPocket(ITEM_MODERN_EXP_SHARE), POCKET_KEY_ITEMS);
+    EXPECT(GetItemImportance(ITEM_MODERN_EXP_SHARE));
+    EXPECT_EQ(GetItemPocket(ITEM_EXP_SHARE), POCKET_ITEMS);
+    VarSet(VAR_BRISK_EXP_SHARE, 2);
+    SetBriskExpShareMode(TRUE);
+    EXPECT(!IsGen6ExpShareEnabled());
+    EXPECT_EQ(VarGet(VAR_BRISK_EXP_SHARE), 2);
+    SetBriskExpShareMode(FALSE);
+    EXPECT(!BriskModernExpShare());
+    EXPECT(CheckBagHasItem(ITEM_MODERN_EXP_SHARE, 1));
+    FlagClear(FLAG_RECEIVED_EXP_SHARE);
+    ClearBag();
+}
+
+TEST("Brisk EXP Share recipient rules disable both versions on Extreme")
+{
+    struct Pokemon holder, other;
+    CreateMonWithIVs(&holder, SPECIES_PIKACHU, 20, 0, OTID_STRUCT_PRESET(0), 0);
+    CreateMonWithIVs(&other, SPECIES_PIKACHU, 20, 0, OTID_STRUCT_PRESET(0), 0);
+    u16 held = ITEM_EXP_SHARE;
+    SetMonData(&holder, MON_DATA_HELD_ITEM, &held);
+    ClearBag();
+    AddBagItem(ITEM_MODERN_EXP_SHARE, 1);
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        VarSet(VAR_BRISK_EXP_SHARE, 0);
+        EXPECT_EQ(BriskMonGetsExpShare(&holder), mode != BRISK_MODE_EXTREME);
+        EXPECT(!BriskMonGetsExpShare(&other));
+        VarSet(VAR_BRISK_EXP_SHARE, 1);
+        EXPECT_EQ(BriskMonGetsExpShare(&holder), mode != BRISK_MODE_EXTREME);
+        EXPECT_EQ(BriskMonGetsExpShare(&other), mode != BRISK_MODE_EXTREME);
+        VarSet(VAR_BRISK_EXP_SHARE, 2);
+        EXPECT(!BriskMonGetsExpShare(&holder));
+        EXPECT(!BriskMonGetsExpShare(&other));
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    VarSet(VAR_BRISK_EXP_SHARE, 0);
+    ClearBag();
+}

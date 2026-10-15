@@ -11,7 +11,19 @@
 #define BRISK_RAND_IMPORTANT (1 << 3)
 #define BRISK_RAND_ALL (1 << 4)
 
+struct Pokemon;
+
 u32 GetBriskDifficulty(void);
+u32 GetBriskPriceMultiplier(void);
+u64 GetBriskTrainerAiFlags(u64 flags);
+u32 GetBriskBattleStyle(u32 preference);
+bool32 BriskBattleItemsAllowed(void);
+bool32 BriskCanUseBattleItem(enum Item item);
+bool32 BriskModernExpShare(void);
+bool32 BriskModernExpShareEnabled(void);
+bool32 BriskMonGetsExpShare(struct Pokemon *mon);
+u32 ScaleBriskSharedExp(u32 exp);
+void SetBriskExpShareMode(bool32 modern);
 u32 ScaleBriskLevel(u32 level, u32 salt);
 bool32 BriskRandomizerEnabled(u32 category);
 bool32 BriskIsImportantTrainer(u32 trainerClass);

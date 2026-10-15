@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "brisk_options.h"
 #include "battle.h"
 #include "battle_hold_effects.h"
@@ -2140,7 +2141,6 @@ static void Cmd_getexp(void)
 {
     CMD_ARGS(u8 battler);
 
-    enum HoldEffect holdEffect;
     s32 i; // also used as stringId
     u8 *expMonId = &gBattleStruct->expGetterMonId;
     u32 currLvl;
@@ -2187,8 +2187,7 @@ static void Cmd_getexp(void)
                 if ((1u << i) & sentInBits)
                     viaSentIn++;
 
-                holdEffect = GetMonHoldEffect(&gParties[B_TRAINER_PLAYER][i]);
-                if (holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                if (BriskMonGetsExpShare(&gParties[B_TRAINER_PLAYER][i]))
                 {
                     expShareBits |= 1u << i;
                     viaExpShare++;
@@ -2253,9 +2252,9 @@ static void Cmd_getexp(void)
         if (gBattleControllerExecFlags == 0)
         {
             bool32 wasSentOut = (gBattleStruct->expSentInMons & (1u << *expMonId)) != 0;
-            holdEffect = GetMonHoldEffect(&gParties[B_TRAINER_PLAYER][*expMonId]);
+            bool32 getsExpShare = BriskMonGetsExpShare(&gParties[B_TRAINER_PLAYER][*expMonId]);
 
-            if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !wasSentOut && !IsGen6ExpShareEnabled())
+            if ((!getsExpShare && !wasSentOut)
              || GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
             {
                 gBattleScripting.getexpState = 5;
@@ -2289,13 +2288,15 @@ static void Cmd_getexp(void)
                     else
                         gBattleStruct->battlerExpReward = 0;
 
-                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                    if (getsExpShare
                         && (B_SPLIT_EXP < GEN_6 || gBattleStruct->battlerExpReward == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
                         gBattleStruct->battlerExpReward += GetSoftLevelCapExpValue(gParties[B_TRAINER_PLAYER][*expMonId].level, gBattleStruct->expShareExpValue);
                     }
 
                     ApplyExperienceMultipliers(&gBattleStruct->battlerExpReward, *expMonId, gBattlerFainted);
+                    if (getsExpShare && !wasSentOut)
+                        gBattleStruct->battlerExpReward = ScaleBriskSharedExp(gBattleStruct->battlerExpReward);
 
                     if (B_EXP_CAP_TYPE == EXP_CAP_HARD && gBattleStruct->battlerExpReward != 0)
                     {
@@ -2323,7 +2324,7 @@ static void Cmd_getexp(void)
                     PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
                     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff3, 6, gBattleStruct->battlerExpReward);
 
-                    if (wasSentOut || holdEffect == HOLD_EFFECT_EXP_SHARE)
+                    if (wasSentOut || (getsExpShare && !BriskModernExpShare()))
                     {
                         PrepareStringBattle(STRINGID_PKMNGAINEDEXP, 0);
                     }

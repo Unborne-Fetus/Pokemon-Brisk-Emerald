@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "item_menu.h"
 #include "battle.h"
 #include "battle_script_commands.h"
@@ -2118,6 +2119,11 @@ static void ItemMenu_UseInBattle(u8 taskId)
         return;
 
     RemoveContextWindow();
+    if (!BriskCanUseBattleItem(gSpecialVar_ItemId))
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, COMPOUND_STRING("Battle items are disabled on\nthis difficulty."), HandleErrorMessage);
+        return;
+    }
     if (type == ITEM_USE_BAG_MENU || (type == ITEM_USE_BATTLER && !IsDoubleBattle()))
         ItemUseInBattle_BagMenu(taskId);
     else if (type == ITEM_USE_PARTY_MENU || (type == ITEM_USE_BATTLER && IsDoubleBattle()))

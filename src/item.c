@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "item.h"
 #include "berry.h"
 #include "pokeball.h"
@@ -819,7 +820,7 @@ const u8 *GetItemName(enum Item itemId)
 
 u32 GetItemPrice(enum Item itemId)
 {
-    return gItemsInfo[SanitizeItemId(itemId)].price;
+    return gItemsInfo[SanitizeItemId(itemId)].price * GetBriskPriceMultiplier();
 }
 
 static bool32 DoesItemHavePluralName(enum Item itemId)
@@ -957,7 +958,7 @@ u32 GetItemStatus1Mask(enum Item itemId)
 
 u32 GetItemSellPrice(enum Item itemId)
 {
-    return GetItemPrice(itemId) / ITEM_SELL_FACTOR;
+    return gItemsInfo[SanitizeItemId(itemId)].price / ITEM_SELL_FACTOR;
 }
 
 bool32 IsHoldEffectChoice(enum HoldEffect holdEffect)
