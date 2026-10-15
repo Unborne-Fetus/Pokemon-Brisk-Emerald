@@ -1250,9 +1250,9 @@ static void DrawHelpPage(void)
     // No option row is highlighted while reading a help topic.
     SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, 0));
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpTopics[sHelpTopic].title, 8, 2, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpTopics[sHelpTopic].description, 8, 24, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpControls, 8, 94, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpExit, 8, 106, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sHelpTopics[sHelpTopic].description, 8, 20, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_SMALL, sHelpControls, 8, 88, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_SMALL, sHelpExit, 8, 100, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1274,8 +1274,10 @@ static void Task_OptionMenuProcessInput_Help(u8 taskId)
     }
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN) || JOY_NEW(A_BUTTON))
     {
-        s32 direction = JOY_REPEAT(DPAD_UP) ? -1 : 1;
-        sHelpTopic = (sHelpTopic + ARRAY_COUNT(sHelpTopics) + direction) % ARRAY_COUNT(sHelpTopics);
+        if (JOY_REPEAT(DPAD_UP))
+            sHelpTopic = sHelpTopic == 0 ? ARRAY_COUNT(sHelpTopics) - 1 : sHelpTopic - 1;
+        else
+            sHelpTopic = (sHelpTopic + 1) % ARRAY_COUNT(sHelpTopics);
         DrawHelpPage();
     }
 }
