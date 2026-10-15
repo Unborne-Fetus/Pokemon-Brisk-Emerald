@@ -1027,3 +1027,16 @@ LittlerootTown_Text_BRISK:
 	.string "Pokemon Brisk Emerald\n"
 	.string "“Enjoy yourself, and keep going!.”$"
 
+LittlerootTown_EventScript_LeagueCheckpoint::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_LeagueCheckpoint, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_Text_LeagueCheckpoint:
+	.string "Route 135 and the routes beyond are\n"
+	.string "reserved for POKéMON LEAGUE CHAMPIONS.\p"
+	.string "Defeat the ELITE FOUR and CHAMPION,\n"
+	.string "then enter the HALL OF FAME.\p"
+	.string "We will open the way for you then!$"
