@@ -274,9 +274,10 @@ static const u16 sOptionMenuDarkBg_Pal[] = {RGB(2, 3, 5)};
 
 static void LoadOptionTheme(u8 frame)
 {
+    SetGpuReg(REG_OFFSET_BLDY, BriskDarkMode() ? 2 : 4);
     LoadPalette(BriskDarkMode() ? sOptionMenuDarkBg_Pal : sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
     LoadPalette(GetWindowFrameTilesPal(frame)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
-    LoadBriskMenuPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+    LoadBriskMenuPaletteStyled(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal), BRISK_PALETTE_OPTIONS);
 }
 
 
@@ -425,7 +426,7 @@ void CB2_InitOptionMenu(void)
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_CLR);
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_DARKEN);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
-        SetGpuReg(REG_OFFSET_BLDY, 4);
+        SetGpuReg(REG_OFFSET_BLDY, BriskDarkMode() ? 2 : 4);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
         ShowBg(0);
         ShowBg(1);
@@ -448,7 +449,7 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 5:
-        LoadBriskMenuPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+        LoadBriskMenuPaletteStyled(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal), BRISK_PALETTE_OPTIONS);
         gMain.state++;
         break;
     case 6:

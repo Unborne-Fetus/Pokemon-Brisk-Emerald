@@ -1464,8 +1464,8 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LoadBriskMenuPalette(gSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
-        LoadBriskMenuPalette(&gPPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1));
+        LoadBriskMenuPaletteStyled(gSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP, BRISK_PALETTE_SUMMARY);
+        LoadBriskMenuPaletteStyled(&gPPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1), BRISK_PALETTE_PP);
         sMonSummaryScreen->switchCounter++;
         break;
     case 7:

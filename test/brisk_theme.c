@@ -1,6 +1,7 @@
 #include "global.h"
 #include "brisk_options.h"
 #include "event_data.h"
+#include "graphics.h"
 #include "main.h"
 #include "menu.h"
 #include "option_menu.h"
@@ -111,4 +112,70 @@ TEST("Brisk theme stays light before save pointers are initialized")
     gSaveBlock1Ptr = saved;
     EXPECT(!dark);
     EXPECT_EQ(memcmp(copy, source, sizeof(source)), 0);
+}
+
+TEST("Brisk theme gives identical whites distinct text, surface and border roles")
+{
+    u16 source[16], text[16], frame[16], party[16];
+    for (u32 i = 0; i < ARRAY_COUNT(source); i++)
+        source[i] = RGB(31, 31, 31);
+    VarSet(VAR_BRISK_DARK_MODE, 1);
+    BriskCopyMenuPaletteStyled(text, source, 16, 0, BRISK_PALETTE_TEXT);
+    BriskCopyMenuPaletteStyled(frame, source, 16, 0, BRISK_PALETTE_FRAME);
+    BriskCopyMenuPaletteStyled(party, source, 16, 48, BRISK_PALETTE_PARTY);
+    EXPECT_EQ(text[1], RGB(3, 4, 6));
+    EXPECT_EQ(text[2], RGB(29, 30, 31));
+    EXPECT_EQ(frame[14], text[1]);
+    EXPECT_NE(frame[1], text[1]); // Border remains brighter than the fill.
+    EXPECT_EQ(party[3], text[2]); // Already-white nickname text stays light.
+    EXPECT_NE(party[4], party[3]);
+    EXPECT_NE(party[4], text[1]); // Card is raised above the main panel.
+    for (u32 style = BRISK_PALETTE_TEXT; style <= BRISK_PALETTE_PP; style++)
+    {
+        BriskCopyMenuPaletteStyled(text, source, 16, 0, style);
+        EXPECT_EQ(text[0], source[0]);
+    }
+    VarSet(VAR_BRISK_DARK_MODE, 0);
+    for (u32 style = BRISK_PALETTE_TEXT; style <= BRISK_PALETTE_PP; style++)
+    {
+        BriskCopyMenuPaletteStyled(text, source, 16, 0, style);
+        EXPECT_EQ(memcmp(text, source, sizeof(source)), 0);
+    }
+}
+
+TEST("Brisk theme preserves party HP and gender colors while distinguishing selection and fainting")
+{
+    u16 palette[176];
+    VarSet(VAR_BRISK_DARK_MODE, 1);
+    BriskCopyMenuPaletteStyled(palette, gPartyMenuBg_Pal, ARRAY_COUNT(palette), 0, BRISK_PALETTE_PARTY);
+    for (u32 bank = 3; bank < 11; bank++)
+    {
+        for (u32 slot = 9; slot <= 12; slot++)
+            EXPECT_EQ(palette[bank * 16 + slot], gPartyMenuBg_Pal[bank * 16 + slot]);
+        EXPECT_EQ(palette[bank * 16 + 3], RGB(29, 30, 31));
+    }
+    EXPECT_NE(palette[3 * 16 + 4], palette[7 * 16 + 4]);
+    EXPECT_NE(palette[3 * 16 + 4], palette[5 * 16 + 4]);
+    EXPECT_NE(palette[6 * 16 + 4], palette[5 * 16 + 4]);
+    VarSet(VAR_BRISK_DARK_MODE, 0);
+}
+
+TEST("Brisk theme styles multiple palette banks without changing PP warnings or neighboring colors")
+{
+    u16 copy[32];
+    VarSet(VAR_BRISK_DARK_MODE, 1);
+    BriskCopyMenuPaletteStyled(copy, gBagScreenMale_Pal, 32, 0, BRISK_PALETTE_BAG);
+    EXPECT_EQ(copy[1], RGB(3, 4, 6));
+    EXPECT_EQ(copy[17], RGB(29, 30, 31));
+    EXPECT_EQ(copy[0], gBagScreenMale_Pal[0]);
+    EXPECT_EQ(copy[16], gBagScreenMale_Pal[16]);
+    LoadBriskMenuPaletteStyled(gBagScreenMale_Pal, 0, PLTT_SIZEOF(32), BRISK_PALETTE_BAG);
+    EXPECT_EQ(gPlttBufferUnfaded[0], RGB(1, 2, 3));
+    EXPECT_EQ(gPlttBufferUnfaded[16], gBagScreenMale_Pal[16]);
+    LoadBriskMenuPaletteStyled(gPPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(15), BRISK_PALETTE_PP);
+    for (u32 i = 0; i < 6; i++)
+        EXPECT_EQ(gPlttBufferUnfaded[BG_PLTT_ID(8) + 1 + i], gPPTextPalette[i]);
+    EXPECT_EQ(gPlttBufferUnfaded[BG_PLTT_ID(8) + 7], RGB(29, 30, 31));
+    EXPECT_EQ(gPlttBufferUnfaded[BG_PLTT_ID(8) + 8], RGB(8, 10, 13));
+    VarSet(VAR_BRISK_DARK_MODE, 0);
 }

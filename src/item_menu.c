@@ -866,9 +866,9 @@ static bool8 LoadBagMenu_Graphics(void)
         break;
     case 2:
         if (!IsWallysBag() && gSaveBlock2Ptr->playerGender != MALE)
-            LoadBriskMenuPalette(gBagScreenFemale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+            LoadBriskMenuPaletteStyled(gBagScreenFemale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP, BRISK_PALETTE_BAG);
         else
-            LoadBriskMenuPalette(gBagScreenMale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+            LoadBriskMenuPaletteStyled(gBagScreenMale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP, BRISK_PALETTE_BAG);
         gBagMenu->graphicsLoadState++;
         break;
     case 3:

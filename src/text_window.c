@@ -100,7 +100,7 @@ const struct TilesPal *GetWindowFrameTilesPal(u8 id)
         id = 0;
     if (!BriskDarkMode())
         return &sWindowFrames[id];
-    BriskCopyMenuPalette(sDarkFramePalettes[id], sWindowFrames[id].pal, 16, 0);
+    BriskCopyMenuPaletteStyled(sDarkFramePalettes[id], sWindowFrames[id].pal, 16, 0, BRISK_PALETTE_FRAME);
     sDarkWindowFrames[id].tiles = sWindowFrames[id].tiles;
     sDarkWindowFrames[id].pal = sDarkFramePalettes[id];
     return &sDarkWindowFrames[id];
@@ -132,7 +132,7 @@ void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset)
 void LoadWindowGfx(u8 windowId, u8 frameId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sWindowFrames[frameId].tiles, 0x120, destOffset);
-    LoadBriskMenuPalette(sWindowFrames[frameId].pal, palOffset, PLTT_SIZE_4BPP);
+    LoadBriskMenuPaletteStyled(sWindowFrames[frameId].pal, palOffset, PLTT_SIZE_4BPP, BRISK_PALETTE_FRAME);
 }
 
 void LoadUserWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
@@ -212,7 +212,7 @@ const u16 *GetTextWindowPalette(u8 id)
     const u16 *source = (const u16 *)(sTextWindowPalettes) + id;
     if (!BriskDarkMode())
         return source;
-    BriskCopyMenuPalette(sDarkWindowPalettes[id / 16], source, 16, 0);
+    BriskCopyMenuPaletteStyled(sDarkWindowPalettes[id / 16], source, 16, 0, BRISK_PALETTE_TEXT);
     return sDarkWindowPalettes[id / 16];
 }
 
@@ -220,7 +220,7 @@ const u16 *GetOverworldTextboxPalettePtr(void)
 {
     if (!BriskDarkMode())
         return gMessageBox_Pal;
-    BriskCopyMenuPalette(sDarkMessagePalette, gMessageBox_Pal, 16, 0);
+    BriskCopyMenuPaletteStyled(sDarkMessagePalette, gMessageBox_Pal, 16, 0, BRISK_PALETTE_TEXT);
     return sDarkMessagePalette;
 }
 
