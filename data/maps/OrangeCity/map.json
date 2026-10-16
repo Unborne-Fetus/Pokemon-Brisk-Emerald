@@ -67,8 +67,8 @@
   ],
   "warp_events": [
     {
-      "x": 14,
-      "y": 15,
+      "x": 40,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_MART",
       "dest_warp_id": "0"
