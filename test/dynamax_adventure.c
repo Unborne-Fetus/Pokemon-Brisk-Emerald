@@ -212,10 +212,18 @@ TEST("Adventure: script bridge reports state and rejects invalid operations")
 }
 
 #include "battle_gimmick.h"
+#include "battle_dynamax.h"
 #include "test/battle.h"
 
-TWO_VS_ONE_BATTLE_TEST("Adventure: 2v1 keeps the lone boss Dynamaxed beyond three turns")
+TWO_VS_ONE_BATTLE_TEST("Adventure: only the boss Dynamaxes or Gigantamaxes and both rentals stay regular")
 {
+    enum Species boss, expected;
+    bool32 factor;
+    PARAMETRIZE { boss = SPECIES_WOBBUFFET; expected = SPECIES_WOBBUFFET; factor = FALSE; }
+    PARAMETRIZE { boss = SPECIES_CHARIZARD; expected = SPECIES_CHARIZARD_GMAX; factor = TRUE; }
+    PARAMETRIZE { boss = SPECIES_ZACIAN; expected = SPECIES_ZACIAN; factor = FALSE; }
+    PARAMETRIZE { boss = SPECIES_ZAMAZENTA; expected = SPECIES_ZAMAZENTA; factor = FALSE; }
+    PARAMETRIZE { boss = SPECIES_ETERNATUS; expected = SPECIES_ETERNATUS; factor = FALSE; }
     GIVEN {
         StartRental();
         EXPECT(DynamaxAdventure_ChoosePath(0));
@@ -224,17 +232,26 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: 2v1 keeps the lone boss Dynamaxed beyond thre
         gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
         gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
         gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); DynamaxLevel(10); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); DynamaxLevel(10); }
+        PLAYER(SPECIES_CHARIZARD) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); GigantamaxFactor(TRUE); DynamaxLevel(10); }
+        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_CELEBRATE); GigantamaxFactor(TRUE); }
+        OPPONENT(boss) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); GigantamaxFactor(factor); DynamaxLevel(10); }
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_CELEBRATE, gimmick: GIMMICK_DYNAMAX); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
     } THEN {
         EXPECT_EQ(GetActiveGimmick(B_BATTLER_1), GIMMICK_DYNAMAX);
         EXPECT_EQ(opponentLeft->maxHP, 400);
+        EXPECT_EQ(opponentLeft->species, expected);
+        EXPECT_EQ(playerLeft->species, SPECIES_CHARIZARD);
+        EXPECT_EQ(playerRight->species, SPECIES_VENUSAUR);
+        EXPECT_EQ(playerLeft->maxHP, 200);
+        EXPECT(!CanDynamax(B_BATTLER_0));
+        EXPECT(!CanDynamax(B_BATTLER_2));
+        EXPECT_EQ(gBattleStruct->gimmick.usableGimmick[B_BATTLER_0], GIMMICK_NONE);
+        EXPECT_EQ(gBattleStruct->gimmick.usableGimmick[B_BATTLER_2], GIMMICK_NONE);
+        EXPECT_EQ(GetActiveGimmick(B_BATTLER_2), GIMMICK_NONE);
         EXPECT(gAbsentBattlerFlags & (1u << B_BATTLER_3));
         EXPECT_EQ(GetActiveGimmick(B_BATTLER_0), GIMMICK_NONE);
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
@@ -474,4 +491,42 @@ TEST("Adventure: previous partner party identity and opponent context are restor
     EXPECT_EQ(gPartnerTrainerId, TRAINER_PARTNER(PARTNER_STEVEN));
     EXPECT_EQ(TRAINER_BATTLE_PARAM.opponentB, 123);
     EXPECT(DynamaxAdventure_Quit());
+}
+
+TEST("Adventure: boss preparation prefers G-Max without giving that factor to rentals or catches")
+{
+    bool32 found = FALSE;
+    for (u32 seed = 0; seed < 64 && !found; seed++)
+    {
+        EXPECT(DynamaxAdventure_Begin(seed));
+        EXPECT(DynamaxAdventure_ChooseRental(0));
+        EXPECT(DynamaxAdventure_ChooseRental(1));
+        struct Pokemon *path = DynamaxAdventure_GetPath(0);
+        enum Species species = GetMonData(path, MON_DATA_SPECIES);
+        enum Species gmax = GetGMaxTargetSpecies(species);
+        if (gmax == species || !gSpeciesInfo[gmax].isGigantamax)
+        {
+            EXPECT(DynamaxAdventure_Quit());
+            continue;
+        }
+        EXPECT_EQ(GetMonData(path, MON_DATA_GIGANTAMAX_FACTOR), FALSE);
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_GIGANTAMAX_FACTOR), TRUE);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR), FALSE);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_GIGANTAMAX_FACTOR), FALSE);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        EXPECT(DynamaxAdventure_Catch(TRUE));
+        EXPECT_EQ(GetMonData(DynamaxAdventure_GetCaught(0), MON_DATA_SPECIES), species);
+        EXPECT_EQ(GetMonData(DynamaxAdventure_GetCaught(0), MON_DATA_GIGANTAMAX_FACTOR), FALSE);
+        EXPECT(DynamaxAdventure_SwapRental(1));
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_SPECIES), species);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_GIGANTAMAX_FACTOR), FALSE);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
+        EXPECT(DynamaxAdventure_Quit());
+        found = TRUE;
+    }
+    EXPECT(found);
 }

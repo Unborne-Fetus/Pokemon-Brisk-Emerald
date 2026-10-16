@@ -80,9 +80,9 @@ bool32 CanDynamax(enum BattlerId battler)
     bool32 canGigantamax = GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
                          && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE;
 
-    // Only the primary encounter is a raid boss; its support never Dynamaxes.
-    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler)
-     && GetBattlerPosition(battler) != B_POSITION_OPPONENT_LEFT)
+    // Adventure rentals stay regular, even if they have a Gigantamax factor.
+    if (IsDynamaxAdventureBattle()
+     && (IsOnPlayerSide(battler) || GetBattlerPosition(battler) != B_POSITION_OPPONENT_LEFT))
         return FALSE;
 
     // Player-controlled Pokémon may Gigantamax, but may never use ordinary Dynamax.
@@ -108,9 +108,10 @@ bool32 CanDynamax(enum BattlerId battler)
     }
 
     // Check if species isn't allowed to Dynamax.
-    if (GET_BASE_SPECIES_ID(species) == SPECIES_ZACIAN
+    if (!IsDynamaxAdventureBattle()
+     && (GET_BASE_SPECIES_ID(species) == SPECIES_ZACIAN
         || GET_BASE_SPECIES_ID(species) == SPECIES_ZAMAZENTA
-        || GET_BASE_SPECIES_ID(species) == SPECIES_ETERNATUS)
+        || GET_BASE_SPECIES_ID(species) == SPECIES_ETERNATUS))
         return FALSE;
 
     // Check if Trainer has already Dynamaxed.

@@ -106,7 +106,7 @@ enum Gimmick GetActiveGimmick(enum BattlerId battler)
 bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmick)
 {
     if (IsDynamaxAdventureBattle())
-        return gimmick == GIMMICK_DYNAMAX;
+        return gimmick == GIMMICK_DYNAMAX && !IsOnPlayerSide(battler);
 
     // There are no trainer party settings in battles, but the AI needs to know which gimmick to use.
     #if TESTING

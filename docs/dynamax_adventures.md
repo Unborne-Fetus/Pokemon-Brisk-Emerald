@@ -30,10 +30,15 @@ SaveBlock fields.
 - Legendary moves and abilities use the existing strong loadout scorer without
   changing difficulty or global flags. Passive Cosmog/Cosmoem get an explicit
   Psychic/Shadow Ball/Light Screen/Protect boss set so every entry can fight.
-- The sole opponent Dynamaxes automatically and stays Dynamaxed.
-  The player/rival side can Dynamax one rental for the normal three turns,
-  without a Band or world flag. Zacian, Zamazenta, and
-  Eternatus retain their existing inability to Dynamax and fight normally.
+- The sole opponent automatically **Gigantamaxes when its species has an
+  enabled G-Max form**, or Dynamaxes otherwise, and keeps that transformation
+  for the encounter. This also applies to bosses such as Zacian, Zamazenta,
+  and Eternatus through an adventure-only exception to their ordinary ban.
+- **Both the player and rival rentals remain regular Pokémon.** They cannot
+  Dynamax, Gigantamax, Mega Evolve, or Terastallize during an adventure. Boss
+  G-Max eligibility is installed only on the temporary enemy copy; catching
+  and swapping that species still supplies its regular form. Other battle
+  modes retain their existing gimmick restrictions.
 - Four lives. A whole-team loss spends one life, heals both rentals, and allows
   a retry. Four losses or running away finish the run. A partner that faints
   during a victory is revived at half HP for the next double battle. Other
