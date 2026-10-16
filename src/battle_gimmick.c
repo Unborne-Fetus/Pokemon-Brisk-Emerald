@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -22,6 +23,18 @@ void AssignUsableGimmicks(void)
     for (enum BattlerId battler = 0; battler < gBattlersCount; ++battler)
     {
         gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_NONE;
+
+        // Adventures are a scoped exception to the ordinary wild/gimmick rules.
+        if (IsDynamaxAdventureBattle())
+        {
+            if (CanActivateGimmick(battler, GIMMICK_DYNAMAX))
+            {
+                gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
+                if (!IsOnPlayerSide(battler))
+                    gBattleStruct->gimmick.toActivate |= 1u << battler;
+            }
+            continue;
+        }
 
         // Wild battles do not allow battle gimmicks.
         if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
@@ -92,6 +105,9 @@ enum Gimmick GetActiveGimmick(enum BattlerId battler)
 // Returns whether a trainer mon is intended to use an unrestrictive gimmick via .useGimmick (i.e Tera).
 bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmick)
 {
+    if (IsDynamaxAdventureBattle())
+        return gimmick == GIMMICK_DYNAMAX;
+
     // There are no trainer party settings in battles, but the AI needs to know which gimmick to use.
     #if TESTING
     return gimmick == TestRunner_Battle_GetChosenGimmick(GetBattlerTrainer(battler), gBattlerPartyIndexes[battler]);

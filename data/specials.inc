@@ -642,3 +642,5 @@ gSpecials::
 	def_special CheckAddCoins
 
         def_special UnlockWallaceOutfit
+
+	def_special RunDynamaxAdventure

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "caps.h"
 #include "brisk_modes.h"
 #include "battle.h"
@@ -5628,6 +5629,9 @@ enum Obedience GetAttackerObedienceForAction(void)
     u8 obedienceLevel = 0;
     u8 levelReferenced;
 
+    if (IsDynamaxAdventureBattle())
+        return OBEYS;
+
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
         return OBEYS;
     if (BattlerHasAi(gBattlerAttacker))
@@ -11128,6 +11132,8 @@ void SetValuesOnFaint(enum BattlerId battler)
 
 bool32 IsVictoryCatch(void)
 {
+    if (IsDynamaxAdventureBattle())
+        return FALSE; // Adventure catches are handled after returning to the caller.
     return gBattleTypeFlags & BATTLE_TYPE_RAID
         || FlagGet(B_FLAG_VICTORY_CATCH_RANDOM)
         || FlagGet(B_FLAG_VICTORY_CATCH_GUARANTEED);

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -84,7 +85,7 @@ bool32 CanDynamax(enum BattlerId battler)
     // that Pokémon to use Dynamax (checked by ShouldTrainerBattlerUseGimmick below).
     if (IsOnPlayerSide(battler)
      && !((gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)
-     && !canGigantamax)
+     && !canGigantamax && !IsDynamaxAdventureBattle())
         return FALSE;
 
     // Prevents Zigzagoon from dynamaxing in vanilla.
@@ -92,7 +93,7 @@ bool32 CanDynamax(enum BattlerId battler)
         return FALSE;
 
     // Check if Player has a Dynamax Band.
-    if (!TESTING && (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT
+    if (!TESTING && !IsDynamaxAdventureBattle() && (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT
         || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)))
     {
         if (!CheckBagHasItem(ITEM_DYNAMAX_BAND, 1))

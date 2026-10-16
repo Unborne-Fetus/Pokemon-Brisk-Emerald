@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_hold_effects.h"
 #include "battle_setup.h"
@@ -1536,6 +1537,10 @@ static bool32 HandleEndTurnDynamax(enum BattlerId battler)
     bool32 effect = FALSE;
 
     gBattleStruct->eventState.endTurnBattler++;
+
+    // Adventure opponents remain Dynamaxed; rentals keep the normal three turns.
+    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler))
+        return FALSE;
 
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX
      && gBattleStruct->dynamax.dynamaxTurns[battler] > 0)

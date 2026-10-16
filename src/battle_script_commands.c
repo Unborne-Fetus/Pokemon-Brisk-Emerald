@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
 #include "battle.h"
@@ -2103,6 +2104,8 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 
 static bool32 BattleTypeAllowsExp(void)
 {
+    if (IsDynamaxAdventureBattle())
+        return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;
     else if (gBattleTypeFlags &
@@ -5735,7 +5738,7 @@ static void Cmd_givepaydaymoney(void)
 {
     CMD_ARGS();
 
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && gPaydayMoney != 0)
+    if (!IsDynamaxAdventureBattle() && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && gPaydayMoney != 0)
     {
         u32 bonusMoney = gPaydayMoney * gBattleStruct->moneyMultiplier;
         AddMoney(&gSaveBlock1Ptr->money, bonusMoney);

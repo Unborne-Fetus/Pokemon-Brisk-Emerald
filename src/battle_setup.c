@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "brisk_options.h"
 #include "battle.h"
 #include "load_save.h"
@@ -529,6 +530,26 @@ void StartOldManTutorialBattle(void)
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_CATCH_TUTORIAL;
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
+static void CB2_EndDynamaxAdventureBattle(void)
+{
+    CpuFill16(0, (void *)BG_PLTT, BG_PLTT_SIZE);
+    ResetOamRange(0, 128);
+    DynamaxAdventure_FinishBattle(gBattleOutcome);
+    // Even a loss resumes the caller, without whiteout, money loss, or story flags.
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+bool32 BattleSetup_StartDynamaxAdventureBattle(void)
+{
+    if (!DynamaxAdventure_PrepareBattle())
+        return FALSE;
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_EndDynamaxAdventureBattle;
+    gBattleTypeFlags = 0;
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    return TRUE;
 }
 
 void BattleSetup_StartScriptedWildBattle(void)

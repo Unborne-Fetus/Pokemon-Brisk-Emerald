@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "agb_flash.h"
 #include "gba/flash_internal.h"
 #include "fieldmap.h"
@@ -931,6 +932,12 @@ u8 HandleSavingData(u8 saveType)
 
 u8 TrySavingData(u8 saveType)
 {
+    // A caller must never serialize the temporary rental battle party.
+    if (IsDynamaxAdventureBattle())
+    {
+        gSaveAttemptStatus = SAVE_STATUS_ERROR;
+        return SAVE_STATUS_ERROR;
+    }
     if (gFlashMemoryPresent != TRUE)
     {
         gSaveAttemptStatus = SAVE_STATUS_ERROR;

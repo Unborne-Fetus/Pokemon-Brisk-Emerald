@@ -1,0 +1,34 @@
+#ifndef GUARD_CONSTANTS_DYNAMAX_ADVENTURE_H
+#define GUARD_CONSTANTS_DYNAMAX_ADVENTURE_H
+
+#define DA_ENCOUNTERS 4
+#define DA_RENTAL_CHOICES 3
+#define DA_PATH_CHOICES 2
+#define DA_STARTING_LIVES 4
+#define DA_RENTAL_LEVEL 65
+#define DA_BOSS_LEVEL 70
+
+#define DA_PHASE_INACTIVE 0
+#define DA_PHASE_RENTAL 1
+#define DA_PHASE_PATH 2
+#define DA_PHASE_READY 3
+#define DA_PHASE_BATTLE 4
+#define DA_PHASE_CATCH 5
+#define DA_PHASE_SWAP 6
+#define DA_PHASE_FINISHED 7
+
+// RunDynamaxAdventure: operation in VAR_0x8004, argument in VAR_0x8005.
+#define DA_OP_BEGIN 0
+#define DA_OP_STATUS 1
+#define DA_OP_RENTAL_INFO 2
+#define DA_OP_CHOOSE_RENTAL 3
+#define DA_OP_PATH_INFO 4
+#define DA_OP_CHOOSE_PATH 5
+#define DA_OP_START_BATTLE 6
+#define DA_OP_CATCH 7
+#define DA_OP_SWAP 8
+#define DA_OP_REWARD_INFO 9
+#define DA_OP_CLAIM 10
+#define DA_OP_QUIT 11
+
+#endif
