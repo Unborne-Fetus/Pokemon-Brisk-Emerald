@@ -2,6 +2,8 @@
 #include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_setup.h"
+#include "battle_partner.h"
+#include "constants/opponents.h"
 #include "brisk_trainer_moves.h"
 #include "data.h"
 #include "move.h"
@@ -72,10 +74,13 @@ struct DynamaxAdventure
     struct Pokemon team[DA_TEAM_SIZE];
     u8 selectedOffers;
     struct Pokemon encounter;
-    struct Pokemon support;
     struct Pokemon caught[DA_ENCOUNTERS];
     struct Pokemon originalParty[PARTY_SIZE];
     u8 originalPartyCount;
+    struct Pokemon originalPartnerParty[PARTY_SIZE];
+    u8 originalPartnerCount;
+    u16 originalPartnerId;
+    u16 originalOpponentB;
     u16 bossSpecies;
 };
 
@@ -269,10 +274,6 @@ bool32 DynamaxAdventure_ChoosePath(u32 choice)
     if (mon == NULL)
         return FALSE;
     sAdventure->encounter = *mon;
-    u32 support = NextRandom() % ARRAY_COUNT(sRentals);
-    if (sRentals[support].species == GetMonData(mon, MON_DATA_SPECIES))
-        support = (support + 1) % ARRAY_COUNT(sRentals);
-    CreateRental(&sAdventure->support, &sRentals[support], DA_RENTAL_LEVEL);
     sAdventure->status.phase = DA_PHASE_READY;
     return TRUE;
 }
@@ -282,20 +283,32 @@ bool32 IsDynamaxAdventureBattle(void)
     return sAdventure != NULL && sAdventure->status.phase == DA_PHASE_BATTLE;
 }
 
+u16 DynamaxAdventure_GetRivalPartnerId(void)
+{
+    return gSaveBlock2Ptr->playerGender == FEMALE ? TRAINER_PARTNER(PARTNER_BRENDAN) : TRAINER_PARTNER(PARTNER_MAY);
+}
+
 bool32 DynamaxAdventure_PrepareBattle(void)
 {
     if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_READY || gMain.inBattle)
         return FALSE;
     memcpy(sAdventure->originalParty, gParties[B_TRAINER_PLAYER], sizeof(sAdventure->originalParty));
     sAdventure->originalPartyCount = gPartiesCount[B_TRAINER_PLAYER];
-    memset(gParties[B_TRAINER_PLAYER], 0, sizeof(sAdventure->originalParty));
-    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
-        gParties[B_TRAINER_PLAYER][i] = sAdventure->team[i];
-    gPartiesCount[B_TRAINER_PLAYER] = DA_TEAM_SIZE;
+    memcpy(sAdventure->originalPartnerParty, gParties[B_TRAINER_PARTNER], sizeof(sAdventure->originalPartnerParty));
+    sAdventure->originalPartnerCount = gPartiesCount[B_TRAINER_PARTNER];
+    sAdventure->originalPartnerId = gPartnerTrainerId;
+    sAdventure->originalOpponentB = TRAINER_BATTLE_PARAM.opponentB;
+    ZeroPartyMons(gParties[B_TRAINER_PLAYER]);
+    ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
+    gParties[B_TRAINER_PLAYER][0] = sAdventure->team[0];
+    gParties[B_TRAINER_PARTNER][0] = sAdventure->team[1];
+    gPartiesCount[B_TRAINER_PLAYER] = 1;
+    gPartiesCount[B_TRAINER_PARTNER] = 1;
+    gPartnerTrainerId = DynamaxAdventure_GetRivalPartnerId();
+    TRAINER_BATTLE_PARAM.opponentB = 0xFFFF;
     ZeroEnemyPartyMons();
     gParties[B_TRAINER_OPPONENT_A][0] = sAdventure->encounter;
-    gParties[B_TRAINER_OPPONENT_A][1] = sAdventure->support;
-    gPartiesCount[B_TRAINER_OPPONENT_A] = DA_TEAM_SIZE;
+    gPartiesCount[B_TRAINER_OPPONENT_A] = 1;
     sAdventure->status.phase = DA_PHASE_BATTLE;
     return TRUE;
 }
@@ -304,10 +317,14 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
 {
     if (!IsDynamaxAdventureBattle())
         return FALSE;
-    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
-        sAdventure->team[i] = gParties[B_TRAINER_PLAYER][i];
+    sAdventure->team[0] = gParties[B_TRAINER_PLAYER][0];
+    sAdventure->team[1] = gParties[B_TRAINER_PARTNER][0];
     memcpy(gParties[B_TRAINER_PLAYER], sAdventure->originalParty, sizeof(sAdventure->originalParty));
     gPartiesCount[B_TRAINER_PLAYER] = sAdventure->originalPartyCount;
+    memcpy(gParties[B_TRAINER_PARTNER], sAdventure->originalPartnerParty, sizeof(sAdventure->originalPartnerParty));
+    gPartiesCount[B_TRAINER_PARTNER] = sAdventure->originalPartnerCount;
+    gPartnerTrainerId = sAdventure->originalPartnerId;
+    TRAINER_BATTLE_PARAM.opponentB = sAdventure->originalOpponentB;
     if (outcome == B_OUTCOME_WON)
     {
         for (u32 i = 0; i < DA_TEAM_SIZE; i++)

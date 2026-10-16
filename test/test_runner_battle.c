@@ -554,6 +554,12 @@ static void BattleTest_Run(void *data)
 
     for (i = 0; i < STATE->battlersCount; i++)
     {
+        // A wild multi battle may have a single enemy; its right slot is absent.
+        if (i == B_POSITION_OPPONENT_RIGHT
+         && (DATA.recordedBattle.battleFlags & BATTLE_TYPE_MULTI)
+         && !(DATA.recordedBattle.battleFlags & BATTLE_TYPE_TRAINER)
+         && DATA.partySizes[B_TRAINER_OPPONENT_A] == 1)
+            continue;
         requiredPartySizes[Test_GetBattlerTrainer(i)] = DATA.currentMonIndexes[i] + 1;
     }
     for (enum BattleTrainer trainer = B_TRAINER_PLAYER; trainer < MAX_BATTLE_TRAINERS; trainer++)

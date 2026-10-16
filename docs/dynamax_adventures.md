@@ -6,11 +6,15 @@ SaveBlock fields.
 
 ## Implemented run
 
-- Choose **two distinct rentals** from three offers. Both are player-controlled
-  in ordinary double battles, against the primary encounter plus one support.
+- Choose **two distinct rentals** from three offers. The player controls the
+  first; their rival controls the second through the normal partner AI.
+  **May partners with a male player; Brendan partners with a female player.**
+  Each encounter is a true **two-versus-one** wild multi battle, with exactly
+  one opposing Pokémon and no opposing support. Names and trainer back sprites
+  use dedicated rival partner identities.
 - **48 shared rental/regular-encounter sets**, retaining the original species
   and adding competitive attackers and doubles supports. All rentals, regular
-  encounters, support Pokémon, and legendary bosses are **level 100**.
+  encounters, rival rentals, and legendary bosses are **level 100**.
 - Curated four-move doubles sets include Fake Out, redirection, Tailwind,
   screens, weather/terrain, priority, recovery, and Protect. Rentals have chosen
   species abilities, 31 IVs, 508 EVs, and matching offensive/support natures.
@@ -26,9 +30,9 @@ SaveBlock fields.
 - Legendary moves and abilities use the existing strong loadout scorer without
   changing difficulty or global flags. Passive Cosmog/Cosmoem get an explicit
   Psychic/Shadow Ball/Light Screen/Protect boss set so every entry can fight.
-- Only the primary opponent Dynamaxes automatically and stays Dynamaxed.
-  Its support does not Dynamax. The player can Dynamax one rental for the
-  normal three turns, without a Band or world flag. Zacian, Zamazenta, and
+- The sole opponent Dynamaxes automatically and stays Dynamaxed.
+  The player/rival side can Dynamax one rental for the normal three turns,
+  without a Band or world flag. Zacian, Zamazenta, and
   Eternatus retain their existing inability to Dynamax and fight normally.
 - Four lives. A whole-team loss spends one life, heals both rentals, and allows
   a retry. Four losses or running away finish the run. A partner that faints
@@ -37,8 +41,8 @@ SaveBlock fields.
 - No battle EXP, bag items (including balls), or Pay Day money. Rentals obey
   regardless of badges and difficulty caps.
 - After victory, the primary encounter is an optional guaranteed catch without
-  spending a ball. The support is not catchable. For ordinary catches, either
-  rental can be replaced with a healed version of the primary encounter.
+  spending a ball. For ordinary catches, either the player's or rival's rental
+  can be replaced with a healed version of the encounter.
 - Catch shininess rolls at 1/300 when accepted and remains hidden on battle
   opponents and replacement rentals. Reward previews can reveal it.
 - At the end, choose exactly one caught Pokémon, including after a failed run.
@@ -46,8 +50,8 @@ SaveBlock fields.
   Full party and PC storage retains the reward until space becomes available.
   Quitting instead discards all temporary catches.
 
-This is a **two-versus-two** backend. Four-person teams, AI allies, networking,
-shields, individual-faint life counting, a ten-turn limit, route graphics,
+This is a **two-versus-one** backend with an AI rival. Four-person teams,
+networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
 menus, scientists, backpackers, legendary completion records, and adventure
 resumption from a save remain future work. No world entrance is installed.
 
@@ -57,8 +61,11 @@ functions expose the exact active species lists for a future UI or tooling.
 ## Party and state safety
 
 The real party remains in place between encounters. `PrepareBattle` backs up
-all six party slots and the party count before installing the two rentals. The
-battle return callback restores that exact party before resuming the script,
+all six party slots and the party count before installing the player's rental.
+The rival rental lives in its own partner party. The previous partner party,
+count, trainer identity, and opponent context are also backed up, and ordinary
+follower setup cannot overwrite this temporary rival.
+The battle return callback restores those parties and identities before resuming the script,
 including on defeat or escape; it does not white out the player. A second
 battle preparation, reward claim, or quit is rejected during battle.
 
@@ -111,7 +118,7 @@ argument from `VAR_0x8005`. `VAR_RESULT` reports success/failure.
 | `DA_OP_CHOOSE_PATH` | Branch 0–1 | Prepares that encounter |
 | `DA_OP_START_BATTLE` | None | Launches battle if READY |
 | `DA_OP_CATCH` | 0=skip, nonzero=catch | Catch or advance |
-| `DA_OP_SWAP` | 0=keep both, 1=replace first, 2=replace second | Swap or advance |
+| `DA_OP_SWAP` | 0=keep both, 1=replace player rental, 2=replace rival rental | Swap or advance |
 | `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, only when FINISHED |
 | `DA_OP_CLAIM` | Caught index | Gives one reward and closes run |
 | `DA_OP_QUIT` | None | Discards the run outside battle |

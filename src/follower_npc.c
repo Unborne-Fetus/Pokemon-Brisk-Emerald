@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "follower_npc.h"
 #include "follower_npc_alternate_sprites.h"
 #include "battle.h"
@@ -1681,6 +1682,8 @@ bool32 IsNPCFollowerWildBattle(void)
 
 void PrepareForFollowerNPCBattle(void)
 {
+    if (IsDynamaxAdventureBattle())
+        return; // The adventure already installed the rival and their rental.
     // Load the partner party if the NPC follower should participate.
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && FollowerNPCIsBattlePartner())
     {

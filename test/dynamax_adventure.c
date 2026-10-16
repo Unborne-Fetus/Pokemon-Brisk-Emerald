@@ -1,6 +1,12 @@
 #include "global.h"
 #include "dynamax_adventure.h"
 #include "battle.h"
+#include "battle_setup.h"
+#include "battle_partner.h"
+#include "battle_controllers.h"
+#include "trainer_util.h"
+#include "constants/opponents.h"
+#include "constants/battle_ai.h"
 #include "data.h"
 #include "brisk_modes.h"
 #include "event_data.h"
@@ -86,10 +92,11 @@ TEST("Adventure: battle isolation restores the entire original party and blocks 
     EXPECT(DynamaxAdventure_ChoosePath(0));
     EXPECT(DynamaxAdventure_PrepareBattle());
     EXPECT(IsDynamaxAdventureBattle());
-    EXPECT_EQ(gPartiesCount[B_TRAINER_PLAYER], DA_TEAM_SIZE);
-    EXPECT_EQ(gPartiesCount[B_TRAINER_OPPONENT_A], DA_TEAM_SIZE);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_LEVEL), DA_RENTAL_LEVEL);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_LEVEL), DA_RENTAL_LEVEL);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PLAYER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_OPPONENT_A], 1);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_LEVEL), DA_RENTAL_LEVEL);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_SPECIES), SPECIES_NONE);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_LEVEL), DA_RENTAL_LEVEL);
     EXPECT(!BriskCanUseBattleItem(ITEM_POTION));
     EXPECT(!BriskCanUseBattleItem(ITEM_MASTER_BALL));
@@ -207,25 +214,28 @@ TEST("Adventure: script bridge reports state and rejects invalid operations")
 #include "battle_gimmick.h"
 #include "test/battle.h"
 
-DOUBLE_BATTLE_TEST("Adventure: doubles Dynamax only the boss and keep its timer beyond three turns")
+TWO_VS_ONE_BATTLE_TEST("Adventure: 2v1 keeps the lone boss Dynamaxed beyond three turns")
 {
     GIVEN {
         StartRental();
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
+        // Exercise the real wild-partner path rather than a trainer encounter.
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); DynamaxLevel(10); }
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET) { MaxHP(200); HP(200); Moves(MOVE_CELEBRATE); DynamaxLevel(10); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_CELEBRATE, gimmick: GIMMICK_DYNAMAX); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
-        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
-        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
-        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE, gimmick: GIMMICK_DYNAMAX); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
     } THEN {
         EXPECT_EQ(GetActiveGimmick(B_BATTLER_1), GIMMICK_DYNAMAX);
         EXPECT_EQ(opponentLeft->maxHP, 400);
-        EXPECT_EQ(GetActiveGimmick(B_BATTLER_3), GIMMICK_NONE);
+        EXPECT(gAbsentBattlerFlags & (1u << B_BATTLER_3));
         EXPECT_EQ(GetActiveGimmick(B_BATTLER_0), GIMMICK_NONE);
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
         gMain.inBattle = FALSE;
@@ -233,31 +243,34 @@ DOUBLE_BATTLE_TEST("Adventure: doubles Dynamax only the boss and keep its timer 
     }
 }
 
-DOUBLE_BATTLE_TEST("Adventure: both rentals obey without badges and grant no EXP")
+AI_TWO_VS_ONE_BATTLE_TEST("Adventure: AI partner attacks the sole boss and neither rental gains EXP")
 {
     GIVEN {
+        AI_FLAGS(AI_FLAG_BASIC_TRAINER | AI_FLAG_DOUBLE_BATTLE);
         StartRental();
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
-        PLAYER(SPECIES_WOBBUFFET) { Level(65); Speed(201); Moves(MOVE_DRAGON_RAGE); }
-        PLAYER(SPECIES_WOBBUFFET) { Level(65); Speed(200); Moves(MOVE_DRAGON_RAGE); }
+        // Exercise the real wild-partner path rather than a trainer encounter.
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Level(65); Speed(201); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_ZACIAN) { Level(65); Speed(200); Moves(MOVE_DRAGON_CLAW); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); Moves(MOVE_SCRATCH); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(99); Moves(MOVE_SCRATCH); }
     } WHEN {
         TURN {
-            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentRight);
-            MOVE(opponentLeft, MOVE_SCRATCH, target: playerLeft);
-            MOVE(opponentRight, MOVE_SCRATCH, target: playerLeft);
+            MOVE(playerLeft, MOVE_CELEBRATE);
+            EXPECT_MOVE(playerRight, MOVE_DRAGON_CLAW, target: opponentLeft);
         }
     } SCENE {
-        MESSAGE("Wobbuffet used Dragon Rage!");
-        MESSAGE("The opposing Wobbuffet fainted!");
-        MESSAGE("Wobbuffet used Dragon Rage!");
-        MESSAGE("The opposing Wobbuffet fainted!");
+        MESSAGE("Wobbuffet used Celebrate!");
+        MESSAGE("Zacian used Dragon Claw!");
+        MESSAGE("The wild Wobbuffet fainted!");
     } THEN {
-        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
-            EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][65]);
+        EXPECT(gAbsentBattlerFlags & (1u << B_BATTLER_3));
+        EXPECT_EQ(gBattlerBattleController[B_BATTLER_2], BATTLE_CONTROLLER_PLAYER_PARTNER);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WOBBUFFET].growthRate][65]);
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_ZACIAN].growthRate][65]);
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());
@@ -393,8 +406,8 @@ TEST("Adventure: swapping either rental preserves the other and revives a fallen
     EXPECT(DynamaxAdventure_PrepareBattle());
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES), first);
     EXPECT_GT(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HP), 0);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_SPECIES), encounter);
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_HP), GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_MAX_HP));
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_SPECIES), encounter);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_HP), GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_MAX_HP));
     EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
     EXPECT(DynamaxAdventure_Quit());
 }
@@ -419,5 +432,46 @@ TEST("Adventure: every boss generates at level 100 with usable attacks")
         EXPECT(attack);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_HP), GetMonData(&mon, MON_DATA_MAX_HP));
     }
+    EXPECT(DynamaxAdventure_Quit());
+}
+
+TEST("Adventure: rival identity follows player gender and has a real partner back sprite")
+{
+    u8 gender = gSaveBlock2Ptr->playerGender;
+    gSaveBlock2Ptr->playerGender = MALE;
+    EXPECT_EQ(DynamaxAdventure_GetRivalPartnerId(), TRAINER_PARTNER(PARTNER_MAY));
+    const struct Trainer *may = GetTrainerStructFromId(DynamaxAdventure_GetRivalPartnerId());
+    EXPECT_EQ(may->trainerPic, TRAINER_PIC_MAY);
+    EXPECT(gTrainerPicInfo[may->trainerPic].backPic != NULL);
+    gSaveBlock2Ptr->playerGender = FEMALE;
+    EXPECT_EQ(DynamaxAdventure_GetRivalPartnerId(), TRAINER_PARTNER(PARTNER_BRENDAN));
+    const struct Trainer *brendan = GetTrainerStructFromId(DynamaxAdventure_GetRivalPartnerId());
+    EXPECT_EQ(brendan->trainerPic, TRAINER_PIC_BRENDAN);
+    EXPECT(gTrainerPicInfo[brendan->trainerPic].backPic != NULL);
+    gSaveBlock2Ptr->playerGender = gender;
+}
+
+TEST("Adventure: previous partner party identity and opponent context are restored")
+{
+    struct Pokemon original[PARTY_SIZE];
+    ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
+    CreateMonWithIVs(&gParties[B_TRAINER_PARTNER][0], SPECIES_EEVEE, 23, 0, OTID_STRUCT_PLAYER_ID, 9);
+    memcpy(original, gParties[B_TRAINER_PARTNER], sizeof(original));
+    gPartiesCount[B_TRAINER_PARTNER] = 1;
+    gPartnerTrainerId = TRAINER_PARTNER(PARTNER_STEVEN);
+    TRAINER_BATTLE_PARAM.opponentB = 123;
+    StartRental();
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PLAYER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_OPPONENT_A], 1);
+    EXPECT_EQ(gPartnerTrainerId, DynamaxAdventure_GetRivalPartnerId());
+    EXPECT_EQ(TRAINER_BATTLE_PARAM.opponentB, 0xFFFF);
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_LOST));
+    EXPECT_EQ(memcmp(original, gParties[B_TRAINER_PARTNER], sizeof(original)), 0);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
+    EXPECT_EQ(gPartnerTrainerId, TRAINER_PARTNER(PARTNER_STEVEN));
+    EXPECT_EQ(TRAINER_BATTLE_PARAM.opponentB, 123);
     EXPECT(DynamaxAdventure_Quit());
 }

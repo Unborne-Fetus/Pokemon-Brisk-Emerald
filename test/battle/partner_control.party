@@ -67,3 +67,35 @@ Difficulty: Hard
 
 Arceus
 Level: 99
+
+=== PARTNER_BRENDAN ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Pikachu
+Timid Nature
+Level: 100
+- Thunderbolt
+- Fake Out
+- Helping Hand
+- Protect
+
+=== PARTNER_MAY ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Pikachu
+Timid Nature
+Level: 100
+- Thunderbolt
+- Fake Out
+- Helping Hand
+- Protect
