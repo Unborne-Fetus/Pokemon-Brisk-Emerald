@@ -682,3 +682,93 @@
         .iconPic = gItemIcon_Torterrite,
         .iconPalette = gItemIconPalette_Torterrite,
     },
+
+    [ITEM_CLAWITZERITE] =
+    {
+        .name = ITEM_NAME("Clawitzerite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Clawitzer to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Clawitzerite,
+        .iconPalette = gItemIconPalette_Clawitzerite,
+    },
+
+    [ITEM_TINKATONITE] =
+    {
+        .name = ITEM_NAME("Tinkatonite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Tinkaton to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Tinkatonite,
+        .iconPalette = gItemIconPalette_Tinkatonite,
+    },
+
+    [ITEM_ARBOLIVITE] =
+    {
+        .name = ITEM_NAME("Arbolivite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Arboliva to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Arbolivite,
+        .iconPalette = gItemIconPalette_Arbolivite,
+    },
+
+    [ITEM_CRYOGONALITE] =
+    {
+        .name = ITEM_NAME("Cryogonalite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Cryogonal to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Cryogonalite,
+        .iconPalette = gItemIconPalette_Cryogonalite,
+    },
+
+    [ITEM_HAXORITE] =
+    {
+        .name = ITEM_NAME("Haxorite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Haxorus to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Haxorite,
+        .iconPalette = gItemIconPalette_Haxorite,
+    },

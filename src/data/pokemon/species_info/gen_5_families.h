@@ -10507,6 +10507,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sHaxorusLevelUpLearnset,
         .teachableLearnset = sHaxorusTeachableLearnset,
+        .formSpeciesIdTable = sHaxorusAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sHaxorusAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_AXEW
 
@@ -10727,6 +10729,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sCryogonalLevelUpLearnset,
         .teachableLearnset = sCryogonalTeachableLearnset,
+        .formSpeciesIdTable = sCryogonalAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sCryogonalAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_CRYOGONAL
 

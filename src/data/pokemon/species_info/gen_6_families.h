@@ -4366,6 +4366,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sClawitzerLevelUpLearnset,
         .teachableLearnset = sClawitzerTeachableLearnset,
+        .formSpeciesIdTable = sClawitzerAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sClawitzerAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_CLAUNCHER
 

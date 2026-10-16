@@ -1,3 +1,8 @@
+static const u16 sHaxorusAddedMegaFormSpeciesIdTable[] = { SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA, FORM_SPECIES_END };
+static const u16 sCryogonalAddedMegaFormSpeciesIdTable[] = { SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA, FORM_SPECIES_END };
+static const u16 sArbolivaAddedMegaFormSpeciesIdTable[] = { SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA, FORM_SPECIES_END };
+static const u16 sTinkatonAddedMegaFormSpeciesIdTable[] = { SPECIES_TINKATON, SPECIES_TINKATON_MEGA, FORM_SPECIES_END };
+static const u16 sClawitzerAddedMegaFormSpeciesIdTable[] = { SPECIES_CLAWITZER, SPECIES_CLAWITZER_MEGA, FORM_SPECIES_END };
 static const u16 sTorterraAddedMegaFormSpeciesIdTable[] = { SPECIES_TORTERRA, SPECIES_TORTERRA_MEGA, FORM_SPECIES_END };
 static const u16 sSlakingAddedMegaFormSpeciesIdTable[] = { SPECIES_SLAKING, SPECIES_SLAKING_MEGA, FORM_SPECIES_END };
 static const u16 sRoseradeAddedMegaFormSpeciesIdTable[] = { SPECIES_ROSERADE, SPECIES_ROSERADE_MEGA, FORM_SPECIES_END };

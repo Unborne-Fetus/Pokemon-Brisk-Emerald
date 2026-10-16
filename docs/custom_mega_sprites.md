@@ -108,3 +108,29 @@ Artist credits from each pack are retained in each asset folder's `CREDITS.md`;
 ThunderRainbow credits its spritework; SpiritsUndead credits Yogurcomics,
 Max S and PhatmonMonstr. iriv24 credits camioftargon, IridescentMirage,
 Rachel T, Pokets and X.
+
+## SpectralMallow sprite sheets
+
+Five forms (IDs 1611–1615) import the original sheets preserved under
+`resources/spectralmallow/`. Credit: [SpectralMallow](https://www.deviantart.com/spectralmallow/gallery).
+Normal and shiny front/back artwork is extracted from the sheets and fitted
+proportionally to the native 80×80 renderer; compatibility fronts have two
+identical 64×64 frames. The renderer applies the existing four-pixel lower
+back alignment. Normal/shiny palette indexes are shared between both views.
+All forms gain 100 base stat points without changing HP.
+
+| Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe | Stone |
+|---|---|---|---|---|
+| Clawitzer | Water/Dragon | Mega Launcher | 71/83/108/170/89/79 | Clawitzerite |
+| Tinkaton | Fairy/Steel | Tough Claws | 85/115/107/70/115/114 | Tinkatonite |
+| Arboliva | Grass/Fairy | Grassy Surge | 78/69/120/165/129/49 | Arbolivite |
+| Cryogonal | Ice | Levitate | 80/50/90/125/145/125 | Cryogonalite |
+| Haxorus | Dragon/Steel | Sharpness | 76/177/120/60/90/117 | Haxorite |
+
+Typing follows the artist's design descriptions. Level-up/teachable moves
+inherit the base species. Arboliva gains level-one Dazzling Gleam and Haxorus
+gains level-one Iron Head in the active Gen 9 learnsets, so the summary
+relearner can prepare them for their new secondary types before battle.
+Each has its own stone, copied from an existing stone asset and sold by
+the Lilycove 4F Mega Stone clerk at the standard base price of ₽500.
+`spectralmallow_manifest.json` records source sheets and battle data.

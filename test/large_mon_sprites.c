@@ -25,11 +25,13 @@ static void CreateTestMonSprite(enum BattlerId battler, enum Species species)
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
 }
 
-TEST("Native Mega sprites support all 24 forms and both battle views")
+TEST("Native Mega sprites support all native forms and both battle views")
 {
     InitLargeSpriteTest();
-    for (u32 species = SPECIES_AMOONGUSS_MEGA; species <= SPECIES_WHIMSICOTT_MEGA; species++)
+    for (u32 species = SPECIES_AMOONGUSS_MEGA; species <= SPECIES_HAXORUS_MEGA; species++)
     {
+        if (species > SPECIES_WHIMSICOTT_MEGA && species < SPECIES_CLAWITZER_MEGA)
+            continue;
         EXPECT(gSpeciesInfo[species].isMegaEvolution);
         EXPECT(gSpeciesInfo[species].frontPic80 != NULL);
         EXPECT(gSpeciesInfo[species].backPic80 != NULL);

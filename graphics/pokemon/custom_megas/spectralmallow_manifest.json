@@ -1,0 +1,156 @@
+[
+  {
+    "base_species": "SPECIES_CLAWITZER",
+    "species": "SPECIES_CLAWITZER_MEGA",
+    "id": 1611,
+    "asset_path": "graphics/pokemon/custom_megas/clawitzer/mega",
+    "stats": [
+      71,
+      83,
+      108,
+      79,
+      170,
+      89
+    ],
+    "ability": "ABILITY_MEGA_LAUNCHER",
+    "stone_name": "Clawitzerite",
+    "stone_item": "ITEM_CLAWITZERITE",
+    "stone_asset_source": "blastoisinite",
+    "source_pack": "SpectralMallow/clawitzer",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "source_sheet": "resources/spectralmallow/clawitzer.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_TINKATON",
+    "species": "SPECIES_TINKATON_MEGA",
+    "id": 1612,
+    "asset_path": "graphics/pokemon/custom_megas/tinkaton/mega",
+    "stats": [
+      85,
+      115,
+      107,
+      114,
+      70,
+      115
+    ],
+    "ability": "ABILITY_TOUGH_CLAWS",
+    "stone_name": "Tinkatonite",
+    "stone_item": "ITEM_TINKATONITE",
+    "stone_asset_source": "mawilite",
+    "source_pack": "SpectralMallow/tinkaton",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "FAIRY",
+      "STEEL"
+    ],
+    "source_sheet": "resources/spectralmallow/tinkaton.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_ARBOLIVA",
+    "species": "SPECIES_ARBOLIVA_MEGA",
+    "id": 1613,
+    "asset_path": "graphics/pokemon/custom_megas/arboliva/mega",
+    "stats": [
+      78,
+      69,
+      120,
+      49,
+      165,
+      129
+    ],
+    "ability": "ABILITY_GRASSY_SURGE",
+    "stone_name": "Arbolivite",
+    "stone_item": "ITEM_ARBOLIVITE",
+    "stone_asset_source": "gardevoirite",
+    "source_pack": "SpectralMallow/arboliva",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "GRASS",
+      "FAIRY"
+    ],
+    "source_sheet": "resources/spectralmallow/arboliva.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_CRYOGONAL",
+    "species": "SPECIES_CRYOGONAL_MEGA",
+    "id": 1614,
+    "asset_path": "graphics/pokemon/custom_megas/cryogonal/mega",
+    "stats": [
+      80,
+      50,
+      90,
+      125,
+      125,
+      145
+    ],
+    "ability": "ABILITY_LEVITATE",
+    "stone_name": "Cryogonalite",
+    "stone_item": "ITEM_CRYOGONALITE",
+    "stone_asset_source": "glalitite",
+    "source_pack": "SpectralMallow/cryogonal",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "ICE"
+    ],
+    "source_sheet": "resources/spectralmallow/cryogonal.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_HAXORUS",
+    "species": "SPECIES_HAXORUS_MEGA",
+    "id": 1615,
+    "asset_path": "graphics/pokemon/custom_megas/haxorus/mega",
+    "stats": [
+      76,
+      177,
+      120,
+      117,
+      60,
+      90
+    ],
+    "ability": "ABILITY_SHARPNESS",
+    "stone_name": "Haxorite",
+    "stone_item": "ITEM_HAXORITE",
+    "stone_asset_source": "scizorite",
+    "source_pack": "SpectralMallow/haxorus",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "DRAGON",
+      "STEEL"
+    ],
+    "source_sheet": "resources/spectralmallow/haxorus.png",
+    "native_size": [
+      80,
+      80
+    ]
+  }
+]

@@ -3583,4 +3583,19 @@ extern const u16 gMonShinyPalette_TorterraMega[];
 extern const u32 gItemIcon_Torterrite[];
 extern const u16 gItemIconPalette_Torterrite[];
 
+extern const u32 gItemIcon_Clawitzerite[];
+extern const u16 gItemIconPalette_Clawitzerite[];
+
+extern const u32 gItemIcon_Tinkatonite[];
+extern const u16 gItemIconPalette_Tinkatonite[];
+
+extern const u32 gItemIcon_Arbolivite[];
+extern const u16 gItemIconPalette_Arbolivite[];
+
+extern const u32 gItemIcon_Cryogonalite[];
+extern const u16 gItemIconPalette_Cryogonalite[];
+
+extern const u32 gItemIcon_Haxorite[];
+extern const u16 gItemIconPalette_Haxorite[];
+
 #endif //GUARD_GRAPHICS_H

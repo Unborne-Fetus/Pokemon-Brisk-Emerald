@@ -213,3 +213,38 @@ const u16 gMonShinyPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/custom_m
 const u16 gMonShinyPalette_TorkoalMega[] = INCGFX_U16("graphics/pokemon/custom_megas/torkoal/mega/shiny.pal", ".gbapal");
 const u16 gMonShinyPalette_TyphlosionMega[] = INCGFX_U16("graphics/pokemon/custom_megas/typhlosion/mega/shiny.pal", ".gbapal");
 const u16 gMonShinyPalette_WhimsicottMega[] = INCGFX_U16("graphics/pokemon/custom_megas/whimsicott/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_ClawitzerMega[] = INCGFX_U32("graphics/pokemon/custom_megas/clawitzer/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_ClawitzerMega[] = INCGFX_U32("graphics/pokemon/custom_megas/clawitzer/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_ClawitzerMega[] = INCGFX_U16("graphics/pokemon/custom_megas/clawitzer/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_ClawitzerMega[] = INCGFX_U16("graphics/pokemon/custom_megas/clawitzer/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_TinkatonMega[] = INCGFX_U32("graphics/pokemon/custom_megas/tinkaton/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_TinkatonMega[] = INCGFX_U32("graphics/pokemon/custom_megas/tinkaton/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_TinkatonMega[] = INCGFX_U16("graphics/pokemon/custom_megas/tinkaton/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_TinkatonMega[] = INCGFX_U16("graphics/pokemon/custom_megas/tinkaton/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_ArbolivaMega[] = INCGFX_U32("graphics/pokemon/custom_megas/arboliva/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_ArbolivaMega[] = INCGFX_U32("graphics/pokemon/custom_megas/arboliva/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_ArbolivaMega[] = INCGFX_U16("graphics/pokemon/custom_megas/arboliva/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_ArbolivaMega[] = INCGFX_U16("graphics/pokemon/custom_megas/arboliva/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_CryogonalMega[] = INCGFX_U32("graphics/pokemon/custom_megas/cryogonal/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_CryogonalMega[] = INCGFX_U32("graphics/pokemon/custom_megas/cryogonal/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_CryogonalMega[] = INCGFX_U16("graphics/pokemon/custom_megas/cryogonal/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_CryogonalMega[] = INCGFX_U16("graphics/pokemon/custom_megas/cryogonal/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/haxorus/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/haxorus/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/haxorus/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/haxorus/mega/shiny.pal", ".gbapal");
+const u8 gMonFrontPic80_ClawitzerMega[] = INCGFX_U8("graphics/pokemon/custom_megas/clawitzer/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_ClawitzerMega[] = INCGFX_U8("graphics/pokemon/custom_megas/clawitzer/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_TinkatonMega[] = INCGFX_U8("graphics/pokemon/custom_megas/tinkaton/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_TinkatonMega[] = INCGFX_U8("graphics/pokemon/custom_megas/tinkaton/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_ArbolivaMega[] = INCGFX_U8("graphics/pokemon/custom_megas/arboliva/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_ArbolivaMega[] = INCGFX_U8("graphics/pokemon/custom_megas/arboliva/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_CryogonalMega[] = INCGFX_U8("graphics/pokemon/custom_megas/cryogonal/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_CryogonalMega[] = INCGFX_U8("graphics/pokemon/custom_megas/cryogonal/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_HaxorusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/haxorus/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_HaxorusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/haxorus/mega/back_tiles.png", ".4bpp");

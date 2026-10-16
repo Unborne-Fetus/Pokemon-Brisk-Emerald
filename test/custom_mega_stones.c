@@ -49,6 +49,11 @@ static const struct CustomMegaStoneCase
     {SPECIES_ROSERADE, SPECIES_ROSERADE_MEGA, ITEM_ROSERADITE},
     {SPECIES_SLAKING, SPECIES_SLAKING_MEGA, ITEM_SLAKINGITE},
     {SPECIES_TORTERRA, SPECIES_TORTERRA_MEGA, ITEM_TORTERRITE},
+    {SPECIES_CLAWITZER, SPECIES_CLAWITZER_MEGA, ITEM_CLAWITZERITE},
+    {SPECIES_TINKATON, SPECIES_TINKATON_MEGA, ITEM_TINKATONITE},
+    {SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA, ITEM_ARBOLIVITE},
+    {SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA, ITEM_CRYOGONALITE},
+    {SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA, ITEM_HAXORITE},
 };
 
 TEST("Custom Mega stones select the correct form and keep it when switching")
@@ -110,6 +115,11 @@ TEST("Custom Mega stones preserve the five original Mega stone targets")
 TEST("Custom Mega additions have stable stats, palettes and distinct stones")
 {
     static const enum Species additions[][2] = {
+        {SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA},
+        {SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA},
+        {SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA},
+        {SPECIES_TINKATON, SPECIES_TINKATON_MEGA},
+        {SPECIES_CLAWITZER, SPECIES_CLAWITZER_MEGA},
         {SPECIES_NIDOQUEEN, SPECIES_NIDOQUEEN_MEGA},
         {SPECIES_NIDOKING, SPECIES_NIDOKING_MEGA},
         {SPECIES_TROPIUS, SPECIES_TROPIUS_MEGA},
@@ -140,7 +150,7 @@ TEST("Custom Mega additions have stable stats, palettes and distinct stones")
         EXPECT(mega->shinyPalette != NULL);
         EXPECT_EQ(mega->levelUpLearnset, base->levelUpLearnset);
         EXPECT_EQ(mega->teachableLearnset, base->teachableLearnset);
-        EXPECT_EQ(mega->backPicYOffset, 4);
+        EXPECT_EQ(mega->backPicYOffset, mega->backPic80 != NULL ? 0 : 4);
     }
 }
 

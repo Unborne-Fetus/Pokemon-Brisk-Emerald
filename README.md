@@ -14,6 +14,10 @@ Pokemon Brisk Emerald is a combo of the features of pokeemerald expansion, and m
 
 # [Credits](CREDITS.md)
 
+Custom Mega Clawitzer, Tinkaton, Arboliva, Cryogonal and Haxorus designs
+and sprite sheets by [SpectralMallow](https://www.deviantart.com/spectralmallow/gallery).
+
+
  [![](https://img.shields.io/github/all-contributors/rh-hideout/pokeemerald-expansion/upcoming)](CREDITS.md)
 
 

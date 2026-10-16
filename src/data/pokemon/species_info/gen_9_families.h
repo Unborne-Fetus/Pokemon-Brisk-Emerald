@@ -1753,6 +1753,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sArbolivaLevelUpLearnset,
         .teachableLearnset = sArbolivaTeachableLearnset,
+        .formSpeciesIdTable = sArbolivaAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sArbolivaAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_SMOLIV
 
@@ -3911,6 +3913,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sTinkatonLevelUpLearnset,
         .teachableLearnset = sTinkatonTeachableLearnset,
+        .formSpeciesIdTable = sTinkatonAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sTinkatonAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_TINKATINK
 
