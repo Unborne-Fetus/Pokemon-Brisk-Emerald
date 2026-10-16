@@ -237,7 +237,8 @@
     "stone_item": "ITEM_ROSERADITE",
     "stone_asset_source": "gardevoirite",
     "source_pack": "iriv24/roserade",
-    "shiny": "Normal palette; no shiny supplied"
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
+    "shiny_palette_source": "graphics/pokemon/roserade/shiny.pal"
   },
   {
     "base_species": "SPECIES_SLAKING",
@@ -257,7 +258,8 @@
     "stone_item": "ITEM_SLAKINGITE",
     "stone_asset_source": "kangaskhanite",
     "source_pack": "iriv24/slaking",
-    "shiny": "Normal palette; no shiny supplied"
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
+    "shiny_palette_source": "graphics/pokemon/slaking/shiny.pal"
   },
   {
     "base_species": "SPECIES_TORTERRA",
@@ -277,6 +279,7 @@
     "stone_item": "ITEM_TORTERRITE",
     "stone_asset_source": "steelixite",
     "source_pack": "iriv24/torterra",
-    "shiny": "Normal palette; no shiny supplied"
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
+    "shiny_palette_source": "graphics/pokemon/torterra/shiny.pal"
   }
 ]

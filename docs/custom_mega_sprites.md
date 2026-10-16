@@ -15,8 +15,8 @@ Their learnsets, icons and overworld graphics inherit Brisk's base species data.
 All listed abilities use the existing battle implementations, including Dragonize,
 Piercing Drill and Fire Mane. Flygon's six individual stats total 610; these values
 are used even though its reference card labels the total as 620.
-Custom shiny palettes are pending. Both normal and shiny individuals currently
-use the supplied artwork's normal palette. The forms revert to their base species
+The original 24 forms now have shiny palettes adapted from their base forms'
+normal-to-shiny color changes, preserving the Mega artwork's palette indexes. The forms revert to their base species
 on fainting or after battle.
 
 ## Graphics
@@ -100,8 +100,10 @@ All fourteen stones have individually named copies of existing stone icon
 and palette files, and are stocked by the Lilycove 4F Mega Stone clerk at
 the same base price of ₽500. Difficulty price scaling still applies.
 `added_manifest.json` records sources, stats, stones, and palette availability.
-Roserade, Slaking and Torterra lack separate shiny palettes in the uploads,
-so they currently use their normal palette for shiny individuals.
+Roserade, Slaking and Torterra use shiny palettes adapted from their base
+forms. All other additional forms retain the supplied shiny palettes.
+`tools/brisk/mega_shiny_palettes.py` regenerates the 27 derived palettes.
+Transparency is preserved and colors remain within the GBA palette format.
 Artist credits from each pack are retained in each asset folder's `CREDITS.md`;
 ThunderRainbow credits its spritework; SpiritsUndead credits Yogurcomics,
 Max S and PhatmonMonstr. iriv24 credits camioftargon, IridescentMirage,

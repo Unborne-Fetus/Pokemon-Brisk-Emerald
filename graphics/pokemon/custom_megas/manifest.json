@@ -12,7 +12,7 @@
       "sp_defense": 110,
       "speed": 30
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GRASS",
       "POISON"
@@ -21,7 +21,8 @@
     "base_stat_total": 564,
     "stone_name": "Amoongussite",
     "stone_item": "ITEM_AMOONGUSSITE",
-    "stone_asset_source": "venusaurite"
+    "stone_asset_source": "venusaurite",
+    "shiny_palette_source": "graphics/pokemon/amoonguss/shiny.pal"
   },
   {
     "base_species": "SPECIES_AZUMARILL",
@@ -36,7 +37,7 @@
       "sp_defense": 120,
       "speed": 42
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "WATER",
       "FAIRY"
@@ -45,7 +46,8 @@
     "base_stat_total": 520,
     "stone_name": "Azumarillite",
     "stone_item": "ITEM_AZUMARILLITE",
-    "stone_asset_source": "altarianite"
+    "stone_asset_source": "altarianite",
+    "shiny_palette_source": "graphics/pokemon/azumarill/shiny.pal"
   },
   {
     "base_species": "SPECIES_BUTTERFREE",
@@ -60,7 +62,7 @@
       "sp_defense": 110,
       "speed": 100
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "BUG",
       "FLYING"
@@ -69,7 +71,8 @@
     "base_stat_total": 495,
     "stone_name": "Butterfreeite",
     "stone_item": "ITEM_BUTTERFREEITE",
-    "stone_asset_source": "beedrillite"
+    "stone_asset_source": "beedrillite",
+    "shiny_palette_source": "graphics/pokemon/butterfree/shiny.pal"
   },
   {
     "base_species": "SPECIES_CONKELDURR",
@@ -84,7 +87,7 @@
       "sp_defense": 105,
       "speed": 45
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "FIGHTING"
     ],
@@ -92,7 +95,8 @@
     "base_stat_total": 605,
     "stone_name": "Conkeldurrite",
     "stone_item": "ITEM_CONKELDURRITE",
-    "stone_asset_source": "lopunnite"
+    "stone_asset_source": "lopunnite",
+    "shiny_palette_source": "graphics/pokemon/conkeldurr/shiny.pal"
   },
   {
     "base_species": "SPECIES_DARKRAI",
@@ -107,7 +111,7 @@
       "sp_defense": 105,
       "speed": 145
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "DARK"
     ],
@@ -115,7 +119,8 @@
     "base_stat_total": 700,
     "stone_name": "Darkranite M",
     "stone_item": "ITEM_DARKRANITE_M",
-    "stone_asset_source": "darkranite"
+    "stone_asset_source": "darkranite",
+    "shiny_palette_source": "graphics/pokemon/darkrai/shiny.pal"
   },
   {
     "base_species": "SPECIES_DUGTRIO",
@@ -130,7 +135,7 @@
       "sp_defense": 70,
       "speed": 130
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GROUND",
       "FIGHTING"
@@ -139,7 +144,8 @@
     "base_stat_total": 525,
     "stone_name": "Dugtrioite",
     "stone_item": "ITEM_DUGTRIOITE",
-    "stone_asset_source": "steelixite"
+    "stone_asset_source": "steelixite",
+    "shiny_palette_source": "graphics/pokemon/dugtrio/shiny.pal"
   },
   {
     "base_species": "SPECIES_ELECTIVIRE",
@@ -154,7 +160,7 @@
       "sp_defense": 122,
       "speed": 110
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "ELECTRIC",
       "FIGHTING"
@@ -163,7 +169,8 @@
     "base_stat_total": 640,
     "stone_name": "Electivireite",
     "stone_item": "ITEM_ELECTIVIREITE",
-    "stone_asset_source": "ampharosite"
+    "stone_asset_source": "ampharosite",
+    "shiny_palette_source": "graphics/pokemon/electivire/shiny.pal"
   },
   {
     "base_species": "SPECIES_EXCADRILL",
@@ -178,7 +185,7 @@
       "sp_defense": 65,
       "speed": 103
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GROUND",
       "STEEL"
@@ -187,7 +194,8 @@
     "base_stat_total": 608,
     "stone_name": "Excadrite M",
     "stone_item": "ITEM_EXCADRITE_M",
-    "stone_asset_source": "excadrite"
+    "stone_asset_source": "excadrite",
+    "shiny_palette_source": "graphics/pokemon/excadrill/shiny.pal"
   },
   {
     "base_species": "SPECIES_FERALIGATR",
@@ -202,7 +210,7 @@
       "sp_defense": 83,
       "speed": 97
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "WATER",
       "DRAGON"
@@ -211,7 +219,8 @@
     "base_stat_total": 630,
     "stone_name": "Feraligite M",
     "stone_item": "ITEM_FERALIGITE_M",
-    "stone_asset_source": "feraligite"
+    "stone_asset_source": "feraligite",
+    "shiny_palette_source": "graphics/pokemon/feraligatr/shiny.pal"
   },
   {
     "base_species": "SPECIES_FLYGON",
@@ -226,7 +235,7 @@
       "sp_defense": 100,
       "speed": 100
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GROUND",
       "DRAGON"
@@ -236,7 +245,8 @@
     "reference_note": "The six individual values total 610; the card labels BST as 620. Individual values are used.",
     "stone_name": "Flygonite",
     "stone_item": "ITEM_FLYGONITE",
-    "stone_asset_source": "sceptilite"
+    "stone_asset_source": "sceptilite",
+    "shiny_palette_source": "graphics/pokemon/flygon/shiny.pal"
   },
   {
     "base_species": "SPECIES_GOLEM",
@@ -251,7 +261,7 @@
       "sp_defense": 100,
       "speed": 35
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "ROCK"
     ],
@@ -259,7 +269,8 @@
     "base_stat_total": 595,
     "stone_name": "Golemite",
     "stone_item": "ITEM_GOLEMITE",
-    "stone_asset_source": "aggronite"
+    "stone_asset_source": "aggronite",
+    "shiny_palette_source": "graphics/pokemon/golem/shiny.pal"
   },
   {
     "base_species": "SPECIES_JUMPLUFF",
@@ -274,7 +285,7 @@
       "sp_defense": 110,
       "speed": 125
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GRASS",
       "FLYING"
@@ -283,7 +294,8 @@
     "base_stat_total": 560,
     "stone_name": "Jumpluffite",
     "stone_item": "ITEM_JUMPLUFFITE",
-    "stone_asset_source": "altarianite"
+    "stone_asset_source": "altarianite",
+    "shiny_palette_source": "graphics/pokemon/jumpluff/shiny.pal"
   },
   {
     "base_species": "SPECIES_KABUTOPS",
@@ -298,7 +310,7 @@
       "sp_defense": 80,
       "speed": 105
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "ROCK",
       "WATER"
@@ -307,7 +319,8 @@
     "base_stat_total": 595,
     "stone_name": "Kabutopsite",
     "stone_item": "ITEM_KABUTOPSITE",
-    "stone_asset_source": "tyranitarite"
+    "stone_asset_source": "tyranitarite",
+    "shiny_palette_source": "graphics/pokemon/kabutops/shiny.pal"
   },
   {
     "base_species": "SPECIES_MAGMORTAR",
@@ -322,7 +335,7 @@
       "sp_defense": 110,
       "speed": 63
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "FIRE"
     ],
@@ -330,7 +343,8 @@
     "base_stat_total": 640,
     "stone_name": "Magmortarite",
     "stone_item": "ITEM_MAGMORTARITE",
-    "stone_asset_source": "cameruptite"
+    "stone_asset_source": "cameruptite",
+    "shiny_palette_source": "graphics/pokemon/magmortar/shiny.pal"
   },
   {
     "base_species": "SPECIES_MEGANIUM",
@@ -345,7 +359,7 @@
       "sp_defense": 120,
       "speed": 80
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GRASS",
       "FAIRY"
@@ -354,7 +368,8 @@
     "base_stat_total": 625,
     "stone_name": "Meganiumite M",
     "stone_item": "ITEM_MEGANIUMITE_M",
-    "stone_asset_source": "meganiumite"
+    "stone_asset_source": "meganiumite",
+    "shiny_palette_source": "graphics/pokemon/meganium/shiny.pal"
   },
   {
     "base_species": "SPECIES_MILOTIC",
@@ -369,7 +384,7 @@
       "sp_defense": 130,
       "speed": 113
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "WATER"
     ],
@@ -377,7 +392,8 @@
     "base_stat_total": 640,
     "stone_name": "Miloticite",
     "stone_item": "ITEM_MILOTICITE",
-    "stone_asset_source": "gyaradosite"
+    "stone_asset_source": "gyaradosite",
+    "shiny_palette_source": "graphics/pokemon/milotic/shiny.pal"
   },
   {
     "base_species": "SPECIES_OMASTAR",
@@ -392,7 +408,7 @@
       "sp_defense": 125,
       "speed": 45
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "ROCK",
       "WATER"
@@ -401,7 +417,8 @@
     "base_stat_total": 595,
     "stone_name": "Omastarite",
     "stone_item": "ITEM_OMASTARITE",
-    "stone_asset_source": "slowbronite"
+    "stone_asset_source": "slowbronite",
+    "shiny_palette_source": "graphics/pokemon/omastar/shiny.pal"
   },
   {
     "base_species": "SPECIES_POLIWRATH",
@@ -416,7 +433,7 @@
       "sp_defense": 110,
       "speed": 70
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "WATER",
       "FIGHTING"
@@ -425,7 +442,8 @@
     "base_stat_total": 610,
     "stone_name": "Poliwrathite",
     "stone_item": "ITEM_POLIWRATHITE",
-    "stone_asset_source": "swampertite"
+    "stone_asset_source": "swampertite",
+    "shiny_palette_source": "graphics/pokemon/poliwrath/shiny.pal"
   },
   {
     "base_species": "SPECIES_PYROAR",
@@ -440,7 +458,7 @@
       "sp_defense": 106,
       "speed": 126
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "FIRE",
       "NORMAL"
@@ -449,7 +467,8 @@
     "base_stat_total": 607,
     "stone_name": "Pyroarite M",
     "stone_item": "ITEM_PYROARITE_M",
-    "stone_asset_source": "pyroarite"
+    "stone_asset_source": "pyroarite",
+    "shiny_palette_source": "graphics/pokemon/pyroar/shiny.pal"
   },
   {
     "base_species": "SPECIES_SHIFTRY",
@@ -464,7 +483,7 @@
       "sp_defense": 60,
       "speed": 130
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GRASS",
       "DARK"
@@ -473,7 +492,8 @@
     "base_stat_total": 580,
     "stone_name": "Shiftryite",
     "stone_item": "ITEM_SHIFTRYITE",
-    "stone_asset_source": "sceptilite"
+    "stone_asset_source": "sceptilite",
+    "shiny_palette_source": "graphics/pokemon/shiftry/shiny.pal"
   },
   {
     "base_species": "SPECIES_SNORLAX",
@@ -488,7 +508,7 @@
       "sp_defense": 135,
       "speed": 30
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "NORMAL"
     ],
@@ -496,7 +516,8 @@
     "base_stat_total": 640,
     "stone_name": "Snorlaxite",
     "stone_item": "ITEM_SNORLAXITE",
-    "stone_asset_source": "audinite"
+    "stone_asset_source": "audinite",
+    "shiny_palette_source": "graphics/pokemon/snorlax/shiny.pal"
   },
   {
     "base_species": "SPECIES_TORKOAL",
@@ -511,7 +532,7 @@
       "sp_defense": 90,
       "speed": 20
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "FIRE",
       "STEEL"
@@ -520,7 +541,8 @@
     "base_stat_total": 570,
     "stone_name": "Torkoalite",
     "stone_item": "ITEM_TORKOALITE",
-    "stone_asset_source": "cameruptite"
+    "stone_asset_source": "cameruptite",
+    "shiny_palette_source": "graphics/pokemon/torkoal/shiny.pal"
   },
   {
     "base_species": "SPECIES_TYPHLOSION",
@@ -535,7 +557,7 @@
       "sp_defense": 110,
       "speed": 105
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "FIRE"
     ],
@@ -543,7 +565,8 @@
     "base_stat_total": 634,
     "stone_name": "Typhlosionite",
     "stone_item": "ITEM_TYPHLOSIONITE",
-    "stone_asset_source": "blazikenite"
+    "stone_asset_source": "blazikenite",
+    "shiny_palette_source": "graphics/pokemon/typhlosion/shiny.pal"
   },
   {
     "base_species": "SPECIES_WHIMSICOTT",
@@ -558,7 +581,7 @@
       "sp_defense": 100,
       "speed": 138
     },
-    "shiny": "Uses supplied normal palette until shiny artwork is supplied",
+    "shiny": "Base-form shiny colors adapted to Mega palette indexes",
     "types": [
       "GRASS",
       "FAIRY"
@@ -567,6 +590,7 @@
     "base_stat_total": 580,
     "stone_name": "Whimsicottite",
     "stone_item": "ITEM_WHIMSICOTTITE",
-    "stone_asset_source": "altarianite"
+    "stone_asset_source": "altarianite",
+    "shiny_palette_source": "graphics/pokemon/whimsicott/shiny.pal"
   }
 ]
