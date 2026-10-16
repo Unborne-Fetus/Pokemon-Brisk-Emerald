@@ -80,9 +80,8 @@ bool32 CanDynamax(enum BattlerId battler)
     bool32 canGigantamax = GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
                          && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE;
 
-    // Adventure rentals stay regular, even if they have a Gigantamax factor.
-    if (IsDynamaxAdventureBattle()
-     && (IsOnPlayerSide(battler) || GetBattlerPosition(battler) != B_POSITION_OPPONENT_LEFT))
+    if (IsDynamaxAdventureBattle() && !canGigantamax
+     && (IsOnPlayerSide(battler) || DynamaxAdventure_GetStatus().stage < DA_ENCOUNTERS - 1))
         return FALSE;
 
     // Player-controlled Pokémon may Gigantamax, but may never use ordinary Dynamax.
@@ -149,6 +148,8 @@ bool32 IsGigantamaxed(enum BattlerId battler)
 
 static uq4_12_t AdventureDynamaxHPMultiplier(struct Pokemon *mon, bool32 inverse)
 {
+    if (IsDynamaxAdventureBattle() && (mon == &gParties[B_TRAINER_PLAYER][0] || mon == &gParties[B_TRAINER_PARTNER][0]))
+        return UQ_4_12(1.0); // Difficulty already supplies each rental's total HP.
     if (IsDynamaxAdventureBattle() && mon == &gParties[B_TRAINER_OPPONENT_A][0])
     {
         u32 scale = DynamaxAdventure_GetBossHPMultiplier();

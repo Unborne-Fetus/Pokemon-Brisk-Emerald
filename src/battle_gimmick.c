@@ -27,10 +27,11 @@ void AssignUsableGimmicks(void)
         // Adventures are a scoped exception to the ordinary wild/gimmick rules.
         if (IsDynamaxAdventureBattle())
         {
-            if (CanActivateGimmick(battler, GIMMICK_DYNAMAX))
+            enum Gimmick gimmick = CanActivateGimmick(battler, GIMMICK_MEGA) ? GIMMICK_MEGA : GIMMICK_DYNAMAX;
+            if (CanActivateGimmick(battler, gimmick))
             {
-                gBattleStruct->gimmick.usableGimmick[battler] = GIMMICK_DYNAMAX;
-                if (!IsOnPlayerSide(battler))
+                gBattleStruct->gimmick.usableGimmick[battler] = gimmick;
+                if (GetBattlerPosition(battler) != B_POSITION_PLAYER_LEFT)
                     gBattleStruct->gimmick.toActivate |= 1u << battler;
             }
             continue;
@@ -106,7 +107,7 @@ enum Gimmick GetActiveGimmick(enum BattlerId battler)
 bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmick)
 {
     if (IsDynamaxAdventureBattle())
-        return gimmick == GIMMICK_DYNAMAX && !IsOnPlayerSide(battler);
+        return gimmick == GIMMICK_DYNAMAX || gimmick == GIMMICK_MEGA;
 
     // There are no trainer party settings in battles, but the AI needs to know which gimmick to use.
     #if TESTING
@@ -130,7 +131,7 @@ bool32 ShouldTrainerBattlerUseGimmick(enum BattlerId battler, enum Gimmick gimmi
 // Returns whether a trainer has used a gimmick during a battle.
 bool32 HasTrainerUsedGimmick(enum BattlerId battler, enum Gimmick gimmick)
 {
-    if (IsDoubleBattle() && (IsPartnerMonFromSameTrainer(battler) || (gimmick == GIMMICK_DYNAMAX)))
+    if (!IsDynamaxAdventureBattle() && IsDoubleBattle() && (IsPartnerMonFromSameTrainer(battler) || (gimmick == GIMMICK_DYNAMAX)))
     {
         enum BattlerId partner = GetPartnerBattler(battler);
         if (gBattleStruct->gimmick.activated[partner][gimmick]
@@ -145,7 +146,7 @@ bool32 HasTrainerUsedGimmick(enum BattlerId battler, enum Gimmick gimmick)
 void SetGimmickAsActivated(enum BattlerId battler, enum Gimmick gimmick)
 {
     gBattleStruct->gimmick.activated[battler][gimmick] = TRUE;
-    if (IsDoubleBattle() && (IsPartnerMonFromSameTrainer(battler) || (gimmick == GIMMICK_DYNAMAX)))
+    if (!IsDynamaxAdventureBattle() && IsDoubleBattle() && (IsPartnerMonFromSameTrainer(battler) || (gimmick == GIMMICK_DYNAMAX)))
         gBattleStruct->gimmick.activated[GetPartnerBattler(battler)][gimmick] = TRUE;
 }
 

@@ -2,6 +2,9 @@
 #include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_main.h"
+#include "brisk_modes.h"
+#include "constants/form_change_types.h"
+#include "constants/items.h"
 #include "battle_setup.h"
 #include "battle_partner.h"
 #include "constants/opponents.h"
@@ -22,18 +25,66 @@ struct AdventureSet
     u16 moves[MAX_MON_MOVES];
     u16 ability;
     bool8 support;
+    u16 item;
 };
 
 #include "data/dynamax_adventure.h"
 
+static u16 AdventureMegaStone(enum Species species)
+{
+    const struct FormChange *forms = GetSpeciesFormChanges(species);
+    if (forms != NULL)
+        for (u32 i = 0; forms[i].method != FORM_CHANGE_TERMINATOR; i++)
+            if (forms[i].method == FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM
+             && IsSpeciesEnabled(forms[i].targetSpecies) && gSpeciesInfo[forms[i].targetSpecies].isMegaEvolution)
+            {
+                if ((species == SPECIES_CHARIZARD && forms[i].param1 == ITEM_CHARIZARDITE_X)
+                 || (species == SPECIES_MEWTWO && forms[i].param1 == ITEM_MEWTWONITE_X))
+                    continue; // These sets use their special-attacking Mega forms.
+                return forms[i].param1;
+            }
+    return ITEM_NONE;
+}
+
+static enum Species AdventureBattleSpecies(enum Species species)
+{
+    u16 stone = AdventureMegaStone(species);
+    const struct FormChange *forms = GetSpeciesFormChanges(species);
+    if (stone != ITEM_NONE && forms != NULL)
+        for (u32 i = 0; forms[i].method != FORM_CHANGE_TERMINATOR; i++)
+            if (forms[i].method == FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM && forms[i].param1 == stone)
+                return forms[i].targetSpecies;
+    return species;
+}
+
+static bool32 AdventureHasGMax(enum Species species)
+{
+    enum Species target = GetGMaxTargetSpecies(species);
+    return target != species && target != SPECIES_NONE && IsSpeciesEnabled(target) && gSpeciesInfo[target].isGigantamax;
+}
+
 u32 DynamaxAdventure_GetRentalPoolCount(void)
 {
-    return ARRAY_COUNT(sRentals);
+    u32 count = 0;
+    for (u32 i = 0; i < ARRAY_COUNT(sRentals); i++)
+        if (AdventureMegaStone(sRentals[i].species) || AdventureHasGMax(sRentals[i].species))
+            count++;
+    return count;
+}
+
+static const struct AdventureSet *GetRentalSet(u32 index)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sRentals); i++)
+        if (AdventureMegaStone(sRentals[i].species) || AdventureHasGMax(sRentals[i].species))
+            if (index-- == 0)
+                return &sRentals[i];
+    return NULL;
 }
 
 enum Species DynamaxAdventure_GetRentalPoolSpecies(u32 index)
 {
-    return index < ARRAY_COUNT(sRentals) ? sRentals[index].species : SPECIES_NONE;
+    const struct AdventureSet *set = GetRentalSet(index);
+    return set == NULL ? SPECIES_NONE : set->species;
 }
 
 bool32 DynamaxAdventure_IsBossSpecies(enum Species species)
@@ -84,6 +135,10 @@ struct DynamaxAdventure
     u16 originalPartnerId;
     u16 originalOpponentB;
     u16 bossSpecies;
+    u8 hpNumerator;
+    u8 hpDenominator;
+    u16 rentalItems[DA_TEAM_SIZE];
+    u8 rentalAbilities[DA_TEAM_SIZE];
 };
 
 // Transient by design: no SaveBlock fields, story flags, or facility records.
@@ -111,8 +166,27 @@ static void HealRental(struct Pokemon *mon)
 static void TrainMon(struct Pokemon *mon, bool32 support)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
-    bool32 physical = GetSpeciesBaseAttack(species) >= GetSpeciesBaseSpAttack(species);
+    u32 physicalMoves = 0, specialMoves = 0;
+    bool32 bodyPress = FALSE;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        bodyPress |= move == MOVE_BODY_PRESS;
+        if (GetMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL) physicalMoves++;
+        if (GetMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL) specialMoves++;
+    }
+    bool32 physical = physicalMoves == specialMoves ? GetSpeciesBaseAttack(species) >= GetSpeciesBaseSpAttack(species) : physicalMoves > specialMoves;
     bool32 slow = GetSpeciesBaseSpeed(species) <= 60;
+    if (slow)
+    {
+        u8 zero = 0;
+        SetMonData(mon, MON_DATA_SPEED_IV, &zero);
+    }
+    if (physicalMoves == 0 && specialMoves != 0)
+    {
+        u8 zero = 0;
+        SetMonData(mon, MON_DATA_ATK_IV, &zero);
+    }
     u8 evs[NUM_STATS] = {0};
     u8 nature;
     if (support)
@@ -121,14 +195,22 @@ static void TrainMon(struct Pokemon *mon, bool32 support)
         evs[STAT_HP] = 252;
         evs[defense ? STAT_DEF : STAT_SPDEF] = 252;
         evs[defense ? STAT_SPDEF : STAT_DEF] = 4;
-        nature = defense ? (physical ? NATURE_IMPISH : NATURE_BOLD) : (physical ? NATURE_CAREFUL : NATURE_CALM);
+        nature = defense ? (slow ? NATURE_RELAXED : physical ? NATURE_IMPISH : NATURE_BOLD) : (slow ? NATURE_SASSY : physical ? NATURE_CAREFUL : NATURE_CALM);
     }
     else
     {
         evs[physical ? STAT_ATK : STAT_SPATK] = 252;
         evs[slow ? STAT_HP : STAT_SPEED] = 252;
         evs[slow ? STAT_SPDEF : STAT_HP] = 4;
-        nature = physical ? (slow ? NATURE_ADAMANT : NATURE_JOLLY) : (slow ? NATURE_MODEST : NATURE_TIMID);
+        nature = physical ? (slow ? NATURE_BRAVE : NATURE_JOLLY) : (slow ? NATURE_QUIET : NATURE_TIMID);
+    }
+    if (bodyPress)
+    {
+        memset(evs, 0, sizeof(evs));
+        evs[STAT_HP] = 252;
+        evs[STAT_DEF] = 252;
+        evs[STAT_SPDEF] = 4;
+        nature = slow ? NATURE_RELAXED : NATURE_IMPISH;
     }
     for (u32 stat = 0; stat < NUM_STATS; stat++)
         SetMonData(mon, MON_DATA_HP_EV + stat, &evs[stat]);
@@ -140,7 +222,8 @@ static void CreateRental(struct Pokemon *mon, const struct AdventureSet *set, u3
     u32 personality = NextRandom() << 16;
     personality |= NextRandom();
     u8 dynamaxLevel = 10;
-    u8 shiny = FALSE;
+    u8 shiny = NextRandom() % DA_SHINY_DENOMINATOR == 0;
+    u8 friendship = 255;
     CreateMonWithIVs(mon, set->species, level, personality, OTID_STRUCT_PLAYER_ID, 31);
     if (set->moves[0] != MOVE_NONE)
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
@@ -149,18 +232,29 @@ static void CreateRental(struct Pokemon *mon, const struct AdventureSet *set, u3
     for (u32 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
         if (set->ability != ABILITY_NONE && GetAbilityBySpecies(set->species, slot) == set->ability)
             SetMonData(mon, MON_DATA_ABILITY_NUM, &slot);
+    SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
     TrainMon(mon, set->support);
+    u16 stone = AdventureMegaStone(set->species);
+    u16 item = stone != ITEM_NONE ? stone : set->item != ITEM_NONE ? set->item : set->support ? ITEM_SITRUS_BERRY : ITEM_LIFE_ORB;
+    SetMonData(mon, MON_DATA_HELD_ITEM, &item);
+    u8 gmax = stone == ITEM_NONE && AdventureHasGMax(set->species);
+    SetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR, &gmax);
     SetMonData(mon, MON_DATA_DYNAMAX_LEVEL, &dynamaxLevel);
-    // Shininess is rolled only after winning, never previewed on a rental/boss.
+    // Roll once per generated Pokemon; catching and swapping preserve it.
     SetMonData(mon, MON_DATA_IS_SHINY, &shiny);
     HealRental(mon);
 }
 
 static void CreateBoss(struct Pokemon *mon)
 {
-    const struct AdventureSet set = {.species = sAdventure->bossSpecies};
-    CreateRental(mon, &set, DA_BOSS_LEVEL);
-    ApplyBriskStrongLoadout(mon);
+    const struct AdventureSet fallback = {.species = sAdventure->bossSpecies};
+    const struct AdventureSet *set = &fallback;
+    for (u32 i = 0; i < ARRAY_COUNT(sBossSets); i++)
+        if (sBossSets[i].species == sAdventure->bossSpecies)
+            set = &sBossSets[i];
+    CreateRental(mon, set, DA_BOSS_LEVEL);
+    if (set == &fallback)
+        ApplyBriskStrongLoadout(mon);
     // Cosmog and Cosmoem have no damaging learnset; give them a usable raid set.
     bool32 hasAttack = FALSE;
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
@@ -175,6 +269,10 @@ static void CreateBoss(struct Pokemon *mon)
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
             SetMonMoveSlot(mon, moves[i], i);
     }
+    enum Species species = sAdventure->bossSpecies;
+    bool32 bulky = species == SPECIES_CRESSELIA || species == SPECIES_UXIE || species == SPECIES_LUGIA
+                || species == SPECIES_WO_CHIEN || species == SPECIES_TING_LU;
+    TrainMon(mon, bulky);
     HealRental(mon);
 }
 
@@ -182,6 +280,11 @@ static void CreateBoss(struct Pokemon *mon)
 bool32 Test_DynamaxAdventure_CreateBoss(struct Pokemon *mon, enum Species species)
 {
     if (sAdventure == NULL || !DynamaxAdventure_IsBossSpecies(species))
+        return FALSE;
+    bool32 curated = FALSE;
+    for (u32 i = 0; i < ARRAY_COUNT(sBossSets); i++)
+        curated |= sBossSets[i].species == species;
+    if (!curated)
         return FALSE;
     u16 previous = sAdventure->bossSpecies;
     sAdventure->bossSpecies = species;
@@ -200,10 +303,20 @@ static void GeneratePaths(void)
     }
     else
     {
-        u32 first = NextRandom() % ARRAY_COUNT(sRentals);
-        u32 second = (first + 1 + NextRandom() % (ARRAY_COUNT(sRentals) - 1)) % ARRAY_COUNT(sRentals);
-        CreateRental(&sAdventure->paths[0], &sRentals[first], DA_RENTAL_LEVEL);
-        CreateRental(&sAdventure->paths[1], &sRentals[second], DA_RENTAL_LEVEL);
+        // One Mega route and one G-Max route, with distinct species.
+        for (u32 branch = 0; branch < DA_PATH_CHOICES; branch++)
+        {
+            u32 count = DynamaxAdventure_GetRentalPoolCount();
+            u32 start = NextRandom() % count;
+            const struct AdventureSet *set = GetRentalSet(start);
+            for (u32 i = 0; i < count; i++)
+            {
+                const struct AdventureSet *candidate = GetRentalSet((start + i) % count);
+                bool32 mega = AdventureMegaStone(candidate->species) != ITEM_NONE;
+                if (mega == (branch == 0)) { set = candidate; break; }
+            }
+            CreateRental(&sAdventure->paths[branch], set, DA_RENTAL_LEVEL);
+        }
     }
     sAdventure->status.phase = DA_PHASE_PATH;
 }
@@ -219,13 +332,15 @@ bool32 DynamaxAdventure_Begin(u32 seed)
     memset(&sAdventureData, 0, sizeof(sAdventureData));
     sAdventure = &sAdventureData;
     sAdventure->rng = seed;
+    sAdventure->hpNumerator = GetBriskDifficulty() == BRISK_MODE_EASY ? 4 : GetBriskDifficulty() == BRISK_MODE_NORMAL ? 2 : 1;
+    sAdventure->hpDenominator = GetBriskDifficulty() == BRISK_MODE_EXTREME ? 2 : 1;
     sAdventure->status.phase = DA_PHASE_RENTAL;
     sAdventure->status.lives = DA_STARTING_LIVES;
     sAdventure->bossSpecies = DynamaxAdventure_GetBossPoolSpecies(NextRandom() % bossCount);
-    first = NextRandom() % ARRAY_COUNT(sRentals);
+    first = NextRandom() % DynamaxAdventure_GetRentalPoolCount();
     // Distinct offers, with deterministic run generation from the supplied seed.
     for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
-        CreateRental(&sAdventure->rentals[i], &sRentals[(first + i * 5) % ARRAY_COUNT(sRentals)], DA_RENTAL_LEVEL);
+        CreateRental(&sAdventure->rentals[i], GetRentalSet((first + i) % DynamaxAdventure_GetRentalPoolCount()), DA_RENTAL_LEVEL);
     return TRUE;
 }
 
@@ -269,6 +384,12 @@ bool32 DynamaxAdventure_ChooseRental(u32 choice)
     sAdventure->team[1] = sAdventure->rentals[rival];
     sAdventure->status.rentalsChosen = DA_TEAM_SIZE;
     sAdventure->selectedOffers = (1u << choice) | (1u << rival);
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+    {
+        HealRental(&sAdventure->team[i]);
+        sAdventure->rentalItems[i] = GetMonData(&sAdventure->team[i], MON_DATA_HELD_ITEM);
+        sAdventure->rentalAbilities[i] = GetMonData(&sAdventure->team[i], MON_DATA_ABILITY_NUM);
+    }
     GeneratePaths();
     return TRUE;
 }
@@ -312,9 +433,6 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
     gParties[B_TRAINER_PLAYER][0] = sAdventure->team[0];
     gParties[B_TRAINER_PARTNER][0] = sAdventure->team[1];
-    u8 factor = FALSE;
-    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_GIGANTAMAX_FACTOR, &factor);
-    SetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_GIGANTAMAX_FACTOR, &factor);
     gPartiesCount[B_TRAINER_PLAYER] = 1;
     gPartiesCount[B_TRAINER_PARTNER] = 1;
     gPartnerTrainerId = DynamaxAdventure_GetRivalPartnerId();
@@ -323,7 +441,7 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     gParties[B_TRAINER_OPPONENT_A][0] = sAdventure->encounter;
     enum Species species = GetMonData(&sAdventure->encounter, MON_DATA_SPECIES);
     enum Species gmax = GetGMaxTargetSpecies(species);
-    factor = gmax != species && gmax != SPECIES_NONE && IsSpeciesEnabled(gmax) && gSpeciesInfo[gmax].isGigantamax;
+    u8 factor = AdventureMegaStone(species) == ITEM_NONE && gmax != species && gmax != SPECIES_NONE && IsSpeciesEnabled(gmax) && gSpeciesInfo[gmax].isGigantamax;
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_GIGANTAMAX_FACTOR, &factor);
     gPartiesCount[B_TRAINER_OPPONENT_A] = 1;
     sAdventure->status.phase = DA_PHASE_BATTLE;
@@ -336,6 +454,24 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
         return FALSE;
     sAdventure->team[0] = gParties[B_TRAINER_PLAYER][0];
     sAdventure->team[1] = gParties[B_TRAINER_PARTNER][0];
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+    {
+        enum Species species = GetMonData(&sAdventure->team[i], MON_DATA_SPECIES);
+        if (gSpeciesInfo[species].isMegaEvolution || gSpeciesInfo[species].isGigantamax)
+        {
+            const struct FormChange *forms = GetSpeciesFormChanges(species);
+            for (u32 j = 0; forms != NULL && forms[j].method != FORM_CHANGE_TERMINATOR; j++)
+                if (forms[j].method == FORM_CHANGE_END_BATTLE)
+                {
+                    species = forms[j].targetSpecies;
+                    SetMonData(&sAdventure->team[i], MON_DATA_SPECIES, &species);
+                    break;
+                }
+        }
+        SetMonData(&sAdventure->team[i], MON_DATA_ABILITY_NUM, &sAdventure->rentalAbilities[i]);
+        SetMonData(&sAdventure->team[i], MON_DATA_HELD_ITEM, &sAdventure->rentalItems[i]);
+        CalculateMonStats(&sAdventure->team[i]);
+    }
     memcpy(gParties[B_TRAINER_PLAYER], sAdventure->originalParty, sizeof(sAdventure->originalParty));
     gPartiesCount[B_TRAINER_PLAYER] = sAdventure->originalPartyCount;
     memcpy(gParties[B_TRAINER_PARTNER], sAdventure->originalPartnerParty, sizeof(sAdventure->originalPartnerParty));
@@ -389,9 +525,7 @@ bool32 DynamaxAdventure_Catch(bool32 accept)
     if (accept)
     {
         struct Pokemon *mon = &sAdventure->caught[sAdventure->status.caughtCount++];
-        u8 shiny = NextRandom() % 300 == 0;
         *mon = sAdventure->encounter;
-        SetMonData(mon, MON_DATA_IS_SHINY, &shiny);
         HealRental(mon);
         if (sAdventure->status.stage < DA_ENCOUNTERS - 1)
         {
@@ -410,9 +544,11 @@ bool32 DynamaxAdventure_SwapRental(u32 slot)
         return FALSE;
     if (slot != DA_RENTAL_KEEP)
     {
-        // Use the pre-shiny encounter for the rental; reveal shinies at rewards.
+        // Keep the same encounter, including its original shiny roll.
         sAdventure->team[slot] = sAdventure->encounter;
         HealRental(&sAdventure->team[slot]);
+        sAdventure->rentalItems[slot] = GetMonData(&sAdventure->team[slot], MON_DATA_HELD_ITEM);
+        sAdventure->rentalAbilities[slot] = GetMonData(&sAdventure->team[slot], MON_DATA_ABILITY_NUM);
     }
     Advance();
     return TRUE;
@@ -483,7 +619,24 @@ void RunDynamaxAdventure(void)
     }
     case DA_OP_RENTAL_INFO: gSpecialVar_Result = BufferMon(DynamaxAdventure_GetRental(arg)); break;
     case DA_OP_CHOOSE_RENTAL: gSpecialVar_Result = DynamaxAdventure_ChooseRental(arg); break;
-    case DA_OP_PATH_INFO: gSpecialVar_Result = BufferMon(DynamaxAdventure_GetPath(arg)); break;
+    case DA_OP_PATH_INFO:
+    {
+        struct Pokemon *mon = DynamaxAdventure_GetPath(arg);
+        if (mon != NULL)
+        {
+            enum Species species = AdventureBattleSpecies(GetMonData(mon, MON_DATA_SPECIES));
+            u32 a = gSpeciesInfo[species].types[0], b = gSpeciesInfo[species].types[1];
+            StringCopy(gStringVar1, gTypesInfo[a].name);
+            if (a != b)
+            {
+                static const u8 slash[] = _(" / ");
+                StringAppend(gStringVar1, slash);
+                StringAppend(gStringVar1, gTypesInfo[b].name);
+            }
+            gSpecialVar_Result = TRUE;
+        }
+        break;
+    }
     case DA_OP_CHOOSE_PATH: gSpecialVar_Result = DynamaxAdventure_ChoosePath(arg); break;
     case DA_OP_START_BATTLE: gSpecialVar_Result = BattleSetup_StartDynamaxAdventureBattle(); break;
     case DA_OP_CATCH: gSpecialVar_Result = DynamaxAdventure_Catch(arg != 0); break;
@@ -502,7 +655,7 @@ void RunDynamaxAdventure(void)
     case DA_OP_BOSS_HINT:
         if (sAdventure != NULL)
         {
-            StringCopy(gStringVar1, gTypesInfo[gSpeciesInfo[sAdventure->bossSpecies].types[0]].name);
+            StringCopy(gStringVar1, gTypesInfo[gSpeciesInfo[AdventureBattleSpecies(sAdventure->bossSpecies)].types[0]].name);
             gSpecialVar_Result = TRUE;
         }
         break;
@@ -511,4 +664,18 @@ void RunDynamaxAdventure(void)
                          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE);
         break;
     }
+}
+
+u32 DynamaxAdventure_ScaleMaxHP(struct Pokemon *mon, u32 hp)
+{
+    if (sAdventure == NULL)
+        return hp;
+    bool32 rental = mon == &sAdventure->team[0] || mon == &sAdventure->team[1]
+        || (IsDynamaxAdventureBattle() && (mon == &gParties[B_TRAINER_PLAYER][0] || mon == &gParties[B_TRAINER_PARTNER][0]));
+    if (rental)
+        return max(1, hp * sAdventure->hpNumerator / sAdventure->hpDenominator);
+    if (IsDynamaxAdventureBattle() && mon == &gParties[B_TRAINER_OPPONENT_A][0]
+     && gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].isMegaEvolution)
+        return hp * DynamaxAdventure_GetBossHPMultiplier();
+    return hp;
 }

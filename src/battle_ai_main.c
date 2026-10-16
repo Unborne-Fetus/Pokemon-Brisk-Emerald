@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "main.h"
 #include "malloc.h"
@@ -260,6 +261,8 @@ static bool32 IsSmartBattle(void)
 static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
 {
     u64 flags = 0;
+    if (IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)
+        return AI_FLAG_BASIC_TRAINER | AI_FLAG_DOUBLE_BATTLE | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES;
 
     if (!IsSmartBattle())
     {

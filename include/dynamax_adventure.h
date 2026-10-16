@@ -15,6 +15,7 @@ struct DynamaxAdventureStatus
 };
 
 u32 DynamaxAdventure_GetBossHPMultiplier(void);
+u32 DynamaxAdventure_ScaleMaxHP(struct Pokemon *mon, u32 hp);
 u16 DynamaxAdventure_GetRivalPartnerId(void);
 u32 DynamaxAdventure_GetRentalPoolCount(void);
 enum Species DynamaxAdventure_GetRentalPoolSpecies(u32 index);

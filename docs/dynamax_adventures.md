@@ -18,33 +18,35 @@ flags or add SaveBlock fields.
   Each encounter is a true **two-versus-one** wild multi battle, with exactly
   one opposing Pokémon and no opposing support. Names and trainer back sprites
   use dedicated rival partner identities.
-- **48 shared rental/regular-encounter sets**, retaining the original species
-  and adding competitive attackers and doubles supports. All rentals, regular
-  encounters, rival rentals, and legendary bosses are **level 100**.
-- Curated four-move doubles sets include Fake Out, redirection, Tailwind,
-  screens, weather/terrain, priority, recovery, and Protect. Rentals have chosen
-  species abilities, 31 IVs, 508 EVs, and matching offensive/support natures.
-  These preparations are independent of the selected difficulty mode.
-- Three ordinary encounters offer two distinct primary route choices each.
-  The fourth encounter is a legendary boss, identical on both final branches.
-- The final pool currently contains **97 species**, derived from all enabled species marked restricted
-  legendary, sub-legendary, or mythical. It includes every canonical species
-  in those categories plus regional forms, including the Galarian birds.
-  Battle-only Mega, Primal, Ultra Burst, Gigantamax, Tera, and duplicate
-  alternate forms are excluded. Ultra Beasts and ordinary Paradox species
-  are not classified as legendary by this pool.
-- Legendary moves and abilities use the existing strong loadout scorer without
-  changing difficulty or global flags. Passive Cosmog/Cosmoem get an explicit
-  Psychic/Shadow Ball/Light Screen/Protect boss set so every entry can fight.
-- The sole opponent automatically **Gigantamaxes when its species has an
-  enabled G-Max form**, or Dynamaxes otherwise, and keeps that transformation
-  for the encounter. This also applies to bosses such as Zacian, Zamazenta,
-  and Eternatus through an adventure-only exception to their ordinary ban.
-- **Both the player and rival rentals remain regular Pokémon.** They cannot
-  Dynamax, Gigantamax, Mega Evolve, or Terastallize during an adventure. Boss
-  G-Max eligibility is installed only on the temporary enemy copy; catching
-  and swapping that species still supplies its regular form. Other battle
-  modes retain their existing gimmick restrictions.
+- Rental offers are drawn from the Mega/G-Max-capable subset of **74 curated
+  doubles sets**. All rentals, route encounters, rival rentals, and bosses are
+  **level 100**. The rival uses Basic + Doubles + Omniscient + Smart Mon Choices
+  AI flags, independent of difficulty.
+- Every set has four selected moves, an ability from its species' slots, a
+  held item, 508 EVs, and a role-based nature. Special-only sets have 0 Attack
+  IVs; slow sets have 0 Speed IVs. Other IVs are 31. Mega-capable species carry
+  their matching Mega Stone. G-Max-only species carry beneficial items such
+  as Life Orb, Sitrus Berry, Light Clay, Focus Sash, or a damage/type booster.
+  Rental consumables are replenished between encounters.
+- Three route choices offer a **Mega encounter versus a G-Max encounter**.
+  The selection menu shows only each battle form's typing, with no names or
+  Pokémon icons. Rental and reward menus still show names and icons.
+- The final pool contains **97 canonical legendary/mythical species and
+  regional forms**, each with an explicit competitive set. Battle-only and
+  duplicate alternate forms are excluded. Ultra Beasts and ordinary Paradox
+  species are not classified as legendary by this pool.
+- Opponents automatically Mega Evolve when carrying a matching stone, or
+  Gigantamax if eligible. Final legendaries without either form use Dynamax,
+  preserving the full legendary pool. Boss G-Max/Dynamax remains active for
+  the encounter. Ordinary trainer/wild gimmick restrictions are unchanged.
+- Both player and rival can use their rental's **Mega or G-Max** form. The
+  player activates theirs normally; the rival activates automatically. Each
+  participant has an independent gimmick allowance. Player/rival G-Max uses
+  the usual three-turn duration; Terastallization remains unavailable.
+- Difficulty is captured at the start of the run and scales **both rental HP
+  totals**, including through form changes: Easy 4×, Normal 2×, Hard 1×,
+  Extreme ½× (minimum 1 HP). G-Max does not add another HP multiplier on top.
+  The real party, offered/caught Pokémon, and final rewards are not scaled.
 - Four lives. A whole-team loss spends one life, heals both rentals, and allows
   a retry. Four losses or running away finish the run. A partner that faints
   during a victory is revived at half HP for the next double battle. Other
@@ -54,8 +56,10 @@ flags or add SaveBlock fields.
 - After victory, the primary encounter is an optional guaranteed catch without
   spending a ball. For ordinary catches, only the player's rental
   can be replaced with a healed version of the encounter.
-- Catch shininess rolls at 1/300 when accepted and remains hidden on battle
-  opponents and replacement rentals. Reward previews can reveal it.
+- Every generated rental or encounter rolls shiny odds once at **1/100**.
+  That same roll survives battling, catching, and replacing a rental; no extra
+  catch-time reroll occurs. Adventure odds are independent of the Options
+  shiny setting. Reward labels identify Shiny/Regular catches.
 - At the end, choose exactly one caught Pokémon, including after a failed run.
   It goes to the real party or PC with seen/caught Pokédex registration.
   Full party and PC storage retains the reward until space becomes available.
@@ -68,7 +72,7 @@ resumption from a save remain future work.
 
 Intermediate enemies have **5× their normal max HP**; the final boss has
 **7×**. These replace the ordinary Dynamax HP multiplier rather than stacking
-with it. Catches and rentals retain their normal stats. Healthboxes use doubles
+with it. Catches retain their normal stats; rental HP uses the difficulty rule above. Healthboxes use doubles
 geometry throughout, matching the allocated graphics for the two-versus-one
 battle. If the player rental faints, the rival continues against the boss;
 a loss is counted only when neither player nor rival has a battle-ready rental.
@@ -77,7 +81,8 @@ After every battle (victory, loss, or escape), the caller moves to an enclosed
 placeholder cave with just the scientist and the correct rival. It has no
 warp events, no doorway, and disallows Escape Rope/Dig. The scientist continues
 catch, swap, and path choices there. Finishing, deferring a reward, or taking a
-break returns the player to the Route 146 research cave. The initial scientist
+break returns the player to the Route 146 research cave. The opening-room rival explains the research behind the expeditions and their
+goal of becoming a professor. The initial scientist
 hint reveals only the final boss's primary type; the final path menu does not
 name or show an icon of that legendary before battle.
 
@@ -167,3 +172,18 @@ successful launch and then query status to decide what to display next. The inst
 
 The scientist script supplies the rental, path, catch, swap, and reward menus
 using these operations.
+
+## Dormant four-player foundation
+
+`include/dynamax_adventure_coop.h` and `src/dynamax_adventure_coop.c` define an
+isolated four-player session with four rental snapshots, one shared boss,
+per-player move/target submissions, duplicate/stale-round rejection, and a
+barrier that collects one action from every living player. Fainted slots are
+excluded from the barrier. The caller supplies storage; no persistent global
+state is allocated.
+
+`DA_COOP_AVAILABLE` is FALSE. Nothing in map scripts, menus, battle setup,
+or networking invokes this layer. It does not execute damage or provide a
+playable four-player fight. A future adapter must extend the four-battler
+engine for four allies plus a boss, execute the collected actions, and add
+transport, ownership/authentication, and disconnect handling before enabling it.

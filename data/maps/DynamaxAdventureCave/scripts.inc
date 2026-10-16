@@ -1,4 +1,5 @@
 DynamaxAdventureCave_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, DynamaxAdventureRestCave_SetRival
 	.byte 0
 
 DynamaxAdventureCave_EventScript_Scientist::
@@ -11,6 +12,7 @@ DynamaxAdventureCave_EventScript_Scientist::
 	goto_if_eq VAR_RESULT, NO, DynamaxAdventureCave_Leave
 	goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Welcome::
+    msgbox DynamaxAdventureCave_Text_RivalResearch, MSGBOX_DEFAULT
 	msgbox DynamaxAdventureCave_Text_Welcome, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DynamaxAdventureCave_Leave
 	setvar VAR_0x8004, DA_OP_BEGIN
@@ -69,7 +71,7 @@ DynamaxAdventureCave_Path::
 	setvar VAR_0x8005, 1
 	special RunDynamaxAdventure
 	dynmultipush DynamaxAdventureCave_Text_Mon, 1
-	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
+	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Pause
 	setvar VAR_0x8004, DA_OP_CHOOSE_PATH
 	copyvar VAR_0x8005, VAR_RESULT
@@ -193,7 +195,7 @@ DynamaxAdventureCave_Text_Welcome:
 	.string "Your rival chooses their own rental.\p"
 	.string "Face four giant POKéMON at Lv. 100!\n"
 	.string "The last one is a legendary POKéMON.\p"
-	.string "Your rentals stay their normal size.\n"
+	.string "Your rentals can use MEGA or G-MAX.\n"
 	.string "You share four chances to win.\p"
 	.string "Catches are free. At the end, you may\n"
 	.string "keep one of the POKéMON you caught.\p"
@@ -214,7 +216,7 @@ DynamaxAdventureCave_Text_RivalRental:
 
 DynamaxAdventureCave_Text_Path:
 	.string "Choose the next POKéMON to face.\n"
-	.string "Every encounter will DYNAMAX!$"
+	.string "Choose a MEGA or G-MAX route!$"
 
 DynamaxAdventureCave_Text_Ready:
 	.string "You have {STR_VAR_1} chances left.\n"
@@ -283,3 +285,14 @@ DynamaxAdventureCave_Text_BossHint:
 DynamaxAdventureCave_Text_FinalPath:
     .string "We have reached the deepest chamber.\n"
     .string "The powerful POKéMON is just ahead!$"
+
+DynamaxAdventureCave_RivalResearch::
+    msgbox DynamaxAdventureCave_Text_RivalResearch, MSGBOX_NPC
+    end
+DynamaxAdventureCave_Text_RivalResearch:
+    .string "RIVAL: These adventures are part of\n"
+    .string "my research as a future professor!\p"
+    .string "I want to study how MEGA EVOLUTION\n"
+    .string "and GIGANTAMAX affect POKéMON.\p"
+    .string "Your help means a lot. Let's make\n"
+    .string "some discoveries together!$"
