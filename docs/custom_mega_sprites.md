@@ -5,9 +5,8 @@ Meganium, Feraligatr, Excadrill, Pyroar and Darkrai Megas are preserved; their
 custom counterparts use `SPECIES_*_MEGA_M` identifiers. Their distinct stone names are
 **Meganiumite M**, **Feraligite M**, **Excadrite M**, **Pyroarite M**, and
 **Darkranite M**. Each custom form has its own held Mega Stone and evolution trigger. All 24
-stones are sold with the existing Mega Stones at Lilycove Department Store
-4F (top-right clerk) for ₽500 each. Existing item IDs and original stones are
-preserved. New stone icons and palettes are copies of existing stone assets;
+stones are sold by Orange City's Poké Mart clerk for a base price of ₽500
+each. Existing item IDs and original stones are preserved. New stone icons and palettes are copies of existing stone assets;
 `manifest.json` records each source.
 
 Stats, types and abilities match the supplied reference cards for all 24 forms.
@@ -97,7 +96,7 @@ with the supplied normal/shiny palettes applied to both views.
 | Torterra Mega | 95/139/145/85/115/46 | Solid Rock | Torterrite |
 
 All fourteen stones have individually named copies of existing stone icon
-and palette files, and are stocked by the Lilycove 4F Mega Stone clerk at
+and palette files, and are stocked by the Orange City Poké Mart clerk at
 the same base price of ₽500. Difficulty price scaling still applies.
 `added_manifest.json` records sources, stats, stones, and palette availability.
 Roserade, Slaking and Torterra use shiny palettes adapted from their base
@@ -132,7 +131,7 @@ inherit the base species. Arboliva gains level-one Dazzling Gleam and Haxorus
 gains level-one Iron Head in the active Gen 9 learnsets, so the summary
 relearner can prepare them for their new secondary types before battle.
 Each has its own stone, copied from an existing stone asset and sold by
-the Lilycove 4F Mega Stone clerk at the standard base price of ₽500.
+the Orange City Poké Mart clerk at the standard base price of ₽500.
 `spectralmallow_manifest.json` records source sheets and battle data.
 
 ### Additional SpectralMallow forms
@@ -152,7 +151,7 @@ the first five imports. Each gains 100 base stat points, with unchanged HP.
 Moves inherit each base species. Reuniclus additionally gains level-one
 Drain Punch in the active Gen 9 learnset, available through the summary
 relearner before Mega Evolution; Hammer Arm remains in its existing learnset.
-All three stones are stocked by the Lilycove 4F Mega Stone clerk.
+All three stones are stocked by the Orange City Poké Mart clerk.
 
 ## EndlessTGX sheets
 
@@ -178,4 +177,4 @@ the JPEG sheet's misaligned pixels corrupting white fur and outlines.
 Each gains 100 base stat points, with unchanged HP. Rapidash gains relearnable
 Brave Bird and Ninetales gains Shadow Ball in the active Gen 9 learnsets.
 Other moves inherit base learnsets. Each has a separate named stone with a
-duplicated stone icon and palette, stocked at Lilycove 4F.
+duplicated stone icon and palette, stocked at Orange City's Poké Mart.

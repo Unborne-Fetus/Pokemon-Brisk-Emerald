@@ -280,6 +280,10 @@ def interiors(city):
 \trelease
 \tend
 '''
+                # Preserve the clerk's curated stock and dialogue when rebuilding maps.
+                existing_script = ROOT / 'data/maps' / name / 'scripts.inc'
+                if existing_script.exists():
+                    scripts = existing_script.read_text()
             else:
                 data['object_events']=[person('WOMAN_3' if name.endswith('1') else 'MAN_3',6,3,name+'_EventScript_Resident')]
                 text='The coast is peaceful, even for a\\nCHAMPION. Make yourself at home!' if name.endswith('1') else 'The lookout on Route 146 is my\\nfavorite spot to watch the waves.'
