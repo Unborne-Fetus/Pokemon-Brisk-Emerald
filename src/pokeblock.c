@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
 #include "battle_controllers.h"
@@ -683,7 +684,7 @@ static void HandleInitWindows(void)
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(0, 1, BG_PLTT_ID(14));
     LoadMessageBoxGfx(0, 0xA, BG_PLTT_ID(13));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 
     for (i = 0; i < ARRAY_COUNT(sWindowTemplates) - 1; i++)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));

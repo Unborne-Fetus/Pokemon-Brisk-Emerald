@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle_main.h"
 #include "contest.h"
@@ -711,7 +712,7 @@ void InitMoveRelearnerWindows(bool32 useContestWindow)
     InitWindows(sMoveRelearnerWindowTemplates);
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(0, 1, BG_PLTT_ID(14));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 
     for (i = 0; i < ARRAY_COUNT(sMoveRelearnerWindowTemplates) - 1; i++)
         FillWindowPixelBuffer(i, PIXEL_FILL(1));

@@ -953,7 +953,7 @@ static bool8 AllocPartyMenuBgGfx(void)
         }
         break;
     case 2:
-        LoadPalette(gPartyMenuBg_Pal, BG_PLTT_ID(0), 11 * PLTT_SIZE_4BPP);
+        LoadBriskMenuPalette(gPartyMenuBg_Pal, BG_PLTT_ID(0), 11 * PLTT_SIZE_4BPP);
         CpuCopy16(gPlttBufferUnfaded, sPartyMenuInternal->palBuffer, 11 * PLTT_SIZE_4BPP);
         sPartyMenuInternal->data[0]++;
         break;
@@ -2427,7 +2427,7 @@ static void LoadPartyMenuWindows(void)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
     LoadUserWindowBorderGfx(0, 0x4F, BG_PLTT_ID(13));
     LoadPalette(GetOverworldTextboxPalettePtr(), BG_PLTT_ID(14), PLTT_SIZE_4BPP);
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 }
 
 static void CreateCancelConfirmWindows(bool8 chooseHalf)

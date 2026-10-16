@@ -63,7 +63,7 @@ enum
     MENUITEM_COUNT_PG2,
 };
 
-enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_EXPSHARE, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
+enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_EXPSHARE, MENUITEM_THEME, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
 
 enum
 {
@@ -172,7 +172,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 
 static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
 {
-    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("EXP SHARE"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
+    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("EXP SHARE"), COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
 };
 
 enum { MENUITEM_DIFFICULTY, MENUITEM_RANDOM_WILD, MENUITEM_RANDOM_TRAINERS, MENUITEM_RANDOM_ITEMS, MENUITEM_RANDOM_IMPORTANT, MENUITEM_RANDOM_ALL, MENUITEM_CANCEL_PG4, MENUITEM_COUNT_PG4 };
@@ -187,6 +187,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nMenus and dialogue change;\nPOKéMON keep their colors.")},
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
     {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("No level caps; prices x1.\nBasic AI; items allowed.\nSHIFT style; shared EXP 200%.\nOver-level freely.")},
     {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Prices x2; original AI.\nBattle items are allowed.\nChoose SHIFT or SET style.\nShared EXP remains 100%.")},
@@ -269,6 +270,15 @@ static const struct BgTemplate sOptionMenuBgTemplates[] =
 };
 
 static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
+static const u16 sOptionMenuDarkBg_Pal[] = {RGB(2, 3, 5)};
+
+static void LoadOptionTheme(u8 frame)
+{
+    LoadPalette(BriskDarkMode() ? sOptionMenuDarkBg_Pal : sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
+    LoadPalette(GetWindowFrameTilesPal(frame)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+}
+
 
 static void MainCB2(void)
 {
@@ -433,12 +443,12 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 4:
-        LoadPalette(sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
+        LoadPalette(BriskDarkMode() ? sOptionMenuDarkBg_Pal : sOptionMenuBg_Pal, BG_PLTT_ID(0), sizeof(sOptionMenuBg_Pal));
         LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         gMain.state++;
         break;
     case 5:
-        LoadPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
+        LoadBriskMenuPalette(sOptionMenuText_Pal, BG_PLTT_ID(1), sizeof(sOptionMenuText_Pal));
         gMain.state++;
         break;
     case 6:
@@ -1167,12 +1177,28 @@ static void ExpShare_DrawChoices(u8 modern)
     DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}MODERN"), 155, MENUITEM_EXPSHARE * 16, modern);
 }
 
+static void Theme_DrawChoices(void)
+{
+    u8 y = MENUITEM_THEME * 16;
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}LIGHT"), 104, y, !BriskDarkMode());
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}DARK"), 158, y, BriskDarkMode());
+}
+
+static void ToggleTheme(u8 taskId)
+{
+    VarSet(VAR_BRISK_DARK_MODE, !BriskDarkMode());
+    LoadOptionTheme(gTasks[taskId].tWindowFrameType);
+    Theme_DrawChoices();
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
+}
+
 static void DrawOptionsPg3(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
     ShinyOdds_DrawChoices(gTasks[taskId].tShinyOdds);
     DrawToggle(!gTasks[taskId].tShinyHunt, 16);
     ExpShare_DrawChoices(gTasks[taskId].tExpShare);
+    Theme_DrawChoices();
     HighlightOptionMenuItem(0);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -1189,6 +1215,8 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
     }
     else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG3))
         gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_THEME)
+        ToggleTheme(taskId);
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_HELP)
     {
         StoreAllCurrentSettings(taskId);
@@ -1220,6 +1248,8 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
             gTasks[taskId].tExpShare ^= 1;
             ExpShare_DrawChoices(gTasks[taskId].tExpShare);
         }
+        else if (gTasks[taskId].tMenuSelection == MENUITEM_THEME)
+            ToggleTheme(taskId);
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
     }
 }
@@ -1310,3 +1340,29 @@ static void Task_OptionMenuProcessInput_Help(u8 taskId)
         DrawHelpPage();
     }
 }
+
+#if TESTING
+u8 Test_OpenBriskThemeOption(void)
+{
+    ResetTasks();
+    InitBgsFromTemplates(0, sOptionMenuBgTemplates, ARRAY_COUNT(sOptionMenuBgTemplates));
+    InitWindows(sOptionMenuWinTemplates);
+    DeactivateAllTextPrinters();
+    sCurrPage = 2;
+    u8 taskId = CreateTask(Task_OptionMenuProcessInput_Pg3, 0);
+    DrawOptionMenuTexts();
+    DrawOptionsPg3(taskId);
+    gTasks[taskId].tMenuSelection = MENUITEM_THEME;
+    HighlightOptionMenuItem(MENUITEM_THEME);
+    LoadOptionTheme(gTasks[taskId].tWindowFrameType);
+    gPaletteFade.active = FALSE;
+    return taskId;
+}
+
+void Test_CloseBriskThemeOption(u8 taskId)
+{
+    DestroyTask(taskId);
+    FreeAllWindowBuffers();
+    sCurrPage = 0;
+}
+#endif

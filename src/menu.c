@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "bg.h"
 #include "blit.h"
 #include "decompress.h"
@@ -353,12 +354,12 @@ void LoadMessageBoxAndFrameGfx(u8 windowId, bool8 copyToVram)
 
 void Menu_LoadStdPal(void)
 {
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM), STD_WINDOW_PALETTE_SIZE);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM), STD_WINDOW_PALETTE_SIZE);
 }
 
 void Menu_LoadStdPalAt(u16 offset)
 {
-    LoadPalette(gStandardMenuPalette, offset, STD_WINDOW_PALETTE_SIZE);
+    LoadBriskMenuPalette(gStandardMenuPalette, offset, STD_WINDOW_PALETTE_SIZE);
 }
 
 static UNUSED const u16 *Menu_GetStdPal(void)

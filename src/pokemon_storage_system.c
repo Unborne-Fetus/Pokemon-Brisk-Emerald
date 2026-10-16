@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "bg.h"
 #include "data.h"
@@ -4220,7 +4221,7 @@ static void UpdateWaveformAnimation(void)
 static void InitSupplementalTilemaps(void)
 {
     DecompressDataWithHeaderWram(gStorageSystemPartyMenu_Tilemap, sStorage->partyMenuTilemapBuffer);
-    LoadPalette(gStorageSystemPartyMenu_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStorageSystemPartyMenu_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
     TilemapUtil_SetMap(TILEMAPID_PARTY_MENU, 1, sStorage->partyMenuTilemapBuffer, 12, 22);
     TilemapUtil_SetMap(TILEMAPID_CLOSE_BUTTON, 1, sCloseBoxButton_Tilemap, 9, 4);
     TilemapUtil_SetPos(TILEMAPID_PARTY_MENU, 10, 0);

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "m4a.h"
 #include "malloc.h"
 #include "reload_save.h"
@@ -1574,7 +1575,7 @@ void CB2_LinkError(void)
         SetGpuReg(REG_OFFSET_BG1HOFS, 0);
         SetGpuReg(REG_OFFSET_BG1VOFS, 0);
         ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON | DISPCNT_OBJWIN_ON);
-        LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
         gSoftResetDisabled = FALSE;
         CreateTask(Task_DestroySelf, 0);
         StopMapMusic();

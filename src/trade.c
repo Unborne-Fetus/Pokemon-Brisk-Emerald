@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle_anim.h"
 #include "battle_interface.h"
@@ -404,8 +405,8 @@ static void InitTradeMenu(void)
     gPaletteFade.bufferTransferDisabled = TRUE;
 
     SetVBlankCallback(VBlankCB_TradeMenu);
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZEOF(10));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(13), PLTT_SIZEOF(10));
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZEOF(10));
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(13), PLTT_SIZEOF(10));
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
     SetBgTilemapBuffer(1, sTradeMenu->tilemapBuffer);

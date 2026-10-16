@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "malloc.h"
 #include "battle.h"
 #include "bg.h"
@@ -714,7 +715,7 @@ static void HandleInitWindows(void)
     InitWindows(sWindowTemplates);
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(0, 1, BG_PLTT_ID(14));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     FillWindowPixelBuffer(0, PIXEL_FILL(0));
     PutWindowTilemap(0);
     ScheduleBgCopyTilemapToVram(0);

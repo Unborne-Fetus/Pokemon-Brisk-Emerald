@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "main.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -1463,8 +1464,8 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LoadPalette(gSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
-        LoadPalette(&gPPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1));
+        LoadBriskMenuPalette(gSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
+        LoadBriskMenuPalette(&gPPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1));
         sMonSummaryScreen->switchCounter++;
         break;
     case 7:

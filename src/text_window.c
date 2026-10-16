@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "text.h"
 #include "text_window.h"
 #include "window.h"
@@ -87,13 +88,22 @@ static const struct TilesPal sWindowFrames[WINDOW_FRAMES_COUNT] =
 static const u16 sTextWindowDexNavFrame[] = INCGFX_U16("graphics/text_window/dexnav_pal.pal", ".gbapal");
 static const struct TilesPal sDexNavWindowFrame = {gTextWindowFrame1_Gfx, sTextWindowDexNavFrame};
 
+static EWRAM_DATA u16 sDarkWindowPalettes[5][16] = {0};
+static EWRAM_DATA u16 sDarkMessagePalette[16] = {0};
+static EWRAM_DATA u16 sDarkFramePalettes[WINDOW_FRAMES_COUNT][16] = {0};
+static EWRAM_DATA struct TilesPal sDarkWindowFrames[WINDOW_FRAMES_COUNT] = {0};
+
 // code
 const struct TilesPal *GetWindowFrameTilesPal(u8 id)
 {
     if (id >= WINDOW_FRAMES_COUNT)
-        return &sWindowFrames[0];
-    else
+        id = 0;
+    if (!BriskDarkMode())
         return &sWindowFrames[id];
+    BriskCopyMenuPalette(sDarkFramePalettes[id], sWindowFrames[id].pal, 16, 0);
+    sDarkWindowFrames[id].tiles = sWindowFrames[id].tiles;
+    sDarkWindowFrames[id].pal = sDarkFramePalettes[id];
+    return &sDarkWindowFrames[id];
 }
 
 void LoadMessageBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
@@ -122,7 +132,7 @@ void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset)
 void LoadWindowGfx(u8 windowId, u8 frameId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sWindowFrames[frameId].tiles, 0x120, destOffset);
-    LoadPalette(sWindowFrames[frameId].pal, palOffset, PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(sWindowFrames[frameId].pal, palOffset, PLTT_SIZE_4BPP);
 }
 
 void LoadUserWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
@@ -199,12 +209,19 @@ const u16 *GetTextWindowPalette(u8 id)
         break;
     }
 
-    return (const u16 *)(sTextWindowPalettes) + id;
+    const u16 *source = (const u16 *)(sTextWindowPalettes) + id;
+    if (!BriskDarkMode())
+        return source;
+    BriskCopyMenuPalette(sDarkWindowPalettes[id / 16], source, 16, 0);
+    return sDarkWindowPalettes[id / 16];
 }
 
 const u16 *GetOverworldTextboxPalettePtr(void)
 {
-    return gMessageBox_Pal;
+    if (!BriskDarkMode())
+        return gMessageBox_Pal;
+    BriskCopyMenuPalette(sDarkMessagePalette, gMessageBox_Pal, 16, 0);
+    return sDarkMessagePalette;
 }
 
 // Effectively LoadUserWindowBorderGfx but specifying the bg directly instead of a window from that bg

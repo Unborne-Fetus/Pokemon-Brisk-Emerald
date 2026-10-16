@@ -339,6 +339,7 @@
 #define VAR_BRISK_RANDOMIZER VAR_UNUSED_0x40DB
 // 0: held Gen 3, 1: modern on, 2: modern off.
 #define VAR_BRISK_EXP_SHARE VAR_UNUSED_0x40DC
+#define VAR_BRISK_DARK_MODE VAR_UNUSED_0x40E5
 
 #if TESTING
 #define TESTING_VARS_START                  0x9000

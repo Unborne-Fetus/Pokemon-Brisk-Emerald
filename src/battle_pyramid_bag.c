@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "battle_controllers.h"
 #include "battle_pyramid_bag.h"
@@ -1461,7 +1462,7 @@ static void InitPyramidBagWindows(void)
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(0, 0x1, BG_PLTT_ID(14));
     LoadMessageBoxGfx(0, 0xA, BG_PLTT_ID(13));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadBriskMenuPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 
     for (i = 0; i < ARRAY_COUNT(sWindowTemplates); i++)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
