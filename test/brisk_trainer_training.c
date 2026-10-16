@@ -70,7 +70,7 @@ TEST("Brisk Extreme training invests in physical, special and defensive strength
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HP_EV), 252);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_SPDEF_EV), 252);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_ATK_EV), 0);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_SPATK_EV), 0);
+    EXPECT_LE(GetMonData(&mon, MON_DATA_SPATK_EV), 6); // New special coverage may use the spare EVs.
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
 }
 
@@ -86,7 +86,10 @@ TEST("Brisk Extreme training preserves slow strategies and keeps every spread le
         entry.species = species[i];
         entry.moves[0] = MOVE_TRICK_ROOM;
         entry.moves[1] = MOVE_BODY_PRESS;
-        GenerateTrainingMon(&mon, &entry);
+        CreateMonWithIVs(&mon, entry.species, 50, 0, OTID_STRUCT_PRESET(0), 0);
+        SetMonMoveSlot(&mon, MOVE_TRICK_ROOM, 0);
+        SetMonMoveSlot(&mon, MOVE_BODY_PRESS, 1);
+        Test_ApplyBriskTrainerTraining(&mon);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_IVS), 0x3FFFFFFF);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_SPEED_EV), 0);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_ATK_EV), 0);

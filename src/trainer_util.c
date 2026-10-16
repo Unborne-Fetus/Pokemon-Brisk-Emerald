@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_modes.h"
+#include "brisk_trainer_moves.h"
 #include "main.h"
 #include "data.h"
 #include "move.h"
@@ -136,9 +137,15 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon)
     u8 evs[NUM_STATS] = {0};
     if (mode == BRISK_MODE_EXTREME)
     {
-        const struct SpeciesInfo *info = &gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)];
-        u16 scores[NUM_STATS] = {info->baseHP, info->baseAttack, info->baseDefense,
-            info->baseSpeed, info->baseSpAttack, info->baseSpDefense};
+        enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+        u16 scores[NUM_STATS];
+        for (u32 stat = 0; stat < NUM_STATS; stat++)
+            scores[stat] = GetSpeciesBaseStat(species, stat);
+        enum Ability ability = GetMonAbility(mon);
+        if (ability == ABILITY_HUGE_POWER || ability == ABILITY_PURE_POWER) scores[STAT_ATK] *= 2;
+        if (ability == ABILITY_HUSTLE) scores[STAT_ATK] = scores[STAT_ATK] * 3 / 2;
+        if (ability == ABILITY_FUR_COAT) scores[STAT_DEF] *= 2;
+        if (ability == ABILITY_ICE_SCALES) scores[STAT_SPDEF] *= 2;
         bool32 physical = FALSE, special = FALSE, slow = FALSE;
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
         {
@@ -155,7 +162,7 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon)
         if (!physical) scores[STAT_ATK] = 0;
         if (!special) scores[STAT_SPATK] = 0;
         if (slow) scores[STAT_SPEED] = 0;
-        if (info->baseHP == 1) scores[STAT_HP] = 0;
+        if (GetSpeciesBaseHP(species) == 1) scores[STAT_HP] = 0;
         // Stable tie order; no random rolls and no EVs above 252 or 510 total.
         static const u8 amounts[] = {252, 252, 6};
         for (u32 i = 0; i < ARRAY_COUNT(amounts); i++)
@@ -294,10 +301,20 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     }
 
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
+    {
+        ApplyBriskTrainerLoadout(mon);
         ApplyBriskTrainerTraining(mon);
+    }
 
     CalculateMonStats(mon);
     SetMonData(mon, MON_DATA_OT_NAME, trainer->name);
     data = trainer->gender;
     SetMonData(mon, MON_DATA_OT_GENDER, &data);
 }
+
+#if TESTING
+void Test_ApplyBriskTrainerTraining(struct Pokemon *mon)
+{
+    ApplyBriskTrainerTraining(mon);
+}
+#endif

@@ -19,4 +19,8 @@ u32 GeneratePersonalityForGender(u32 gender, u32 species);
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer);
 void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *partner);
 
+#if TESTING
+void Test_ApplyBriskTrainerTraining(struct Pokemon *mon);
+#endif
+
 #endif // GUARD_TRAINER_UTIL_H
