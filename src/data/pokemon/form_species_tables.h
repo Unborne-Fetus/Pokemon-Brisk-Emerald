@@ -1,3 +1,6 @@
+static const u16 sReuniclusAddedMegaFormSpeciesIdTable[] = { SPECIES_REUNICLUS, SPECIES_REUNICLUS_MEGA, FORM_SPECIES_END };
+static const u16 sSigilyphAddedMegaFormSpeciesIdTable[] = { SPECIES_SIGILYPH, SPECIES_SIGILYPH_MEGA, FORM_SPECIES_END };
+static const u16 sDodrioAddedMegaFormSpeciesIdTable[] = { SPECIES_DODRIO, SPECIES_DODRIO_MEGA, FORM_SPECIES_END };
 static const u16 sHaxorusAddedMegaFormSpeciesIdTable[] = { SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA, FORM_SPECIES_END };
 static const u16 sCryogonalAddedMegaFormSpeciesIdTable[] = { SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA, FORM_SPECIES_END };
 static const u16 sArbolivaAddedMegaFormSpeciesIdTable[] = { SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA, FORM_SPECIES_END };

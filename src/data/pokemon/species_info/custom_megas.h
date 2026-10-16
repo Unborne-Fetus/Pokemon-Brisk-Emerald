@@ -3153,3 +3153,231 @@
         .frontPic80 = gMonFrontPic80_HaxorusMega,
         .backPic80 = gMonBackPic80_HaxorusMega,
     },
+
+    [SPECIES_DODRIO_MEGA] =
+    {
+        .baseHP = 60,
+        .baseAttack = 140,
+        .baseDefense = 90,
+        .baseSpeed = 140,
+        .baseSpAttack = 60,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 165,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 161,
+    #else
+        .expYield = 158,
+    #endif
+        .evYield_Attack = 2,
+        .itemRare = ITEM_SHARP_BEAK,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_RECKLESS, ABILITY_RECKLESS, ABILITY_RECKLESS },
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = TRUE,
+        .speciesName = _("Dodrio"),
+        .cryId = CRY_DODRIO,
+        .natDexNum = NATIONAL_DEX_DODRIO,
+        .categoryName = _("Triple Bird"),
+        .height = 18,
+        .weight = 852,
+        .description = COMPOUND_STRING(
+            "A peculiar Pokémon species with three\n"
+            "heads. It vigorously races across grassy\n"
+            "plains even in arid seasons with little\n"
+            "rainfall."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 268,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Dodrio,
+        .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .frontPicFemale = gMonFrontPic_DodrioF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_DodrioF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 12, SHADOW_SIZE_L)
+        FOOTPRINT(Dodrio)
+        OVERWORLD(
+            sPicTable_Dodrio,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Dodrio,
+            gShinyOverworldPalette_Dodrio
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_DodrioF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .isSkyBattleBanned = B_SKY_BATTLE_STRICT_ELIGIBILITY,
+        .levelUpLearnset = sDodrioLevelUpLearnset,
+        .teachableLearnset = sDodrioTeachableLearnset,
+        .frontPic = gMonFrontPic_DodrioMega,
+        .backPic = gMonBackPic_DodrioMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_DodrioMega,
+        .shinyPalette = gMonShinyPalette_DodrioMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sDodrioAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sDodrioAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_DodrioMega,
+        .backPic80 = gMonBackPic80_DodrioMega,
+    },
+
+    [SPECIES_SIGILYPH_MEGA] =
+    {
+        .baseHP = 72,
+        .baseAttack = 58,
+        .baseDefense = 100,
+        .baseSpeed = 117,
+        .baseSpAttack = 143,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FLYING),
+        .catchRate = 45,
+        .expYield = 172,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_TINTED_LENS, ABILITY_TINTED_LENS, ABILITY_TINTED_LENS },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Sigilyph"),
+        .cryId = CRY_SIGILYPH,
+        .natDexNum = NATIONAL_DEX_SIGILYPH,
+        .categoryName = _("Avianoid"),
+        .height = 14,
+        .weight = 140,
+        .description = COMPOUND_STRING(
+            "The guardians of an ancient city, they\n"
+            "always fly the same route while keeping\n"
+            "watch for invaders. They use their\n"
+            "psychic power to attack enemies."),
+        .pokemonScale = 265,
+        .pokemonOffset = 2,
+        .trainerScale = 262,
+        .trainerOffset = 0,
+
+        .enemyMonElevation = 7,
+
+        .iconSprite = gMonIcon_Sigilyph,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 18, SHADOW_SIZE_S)
+        FOOTPRINT(Sigilyph)
+        OVERWORLD(
+            sPicTable_Sigilyph,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Sigilyph,
+            gShinyOverworldPalette_Sigilyph
+        )
+        .levelUpLearnset = sSigilyphLevelUpLearnset,
+        .teachableLearnset = sSigilyphTeachableLearnset,
+        .eggMoveLearnset = sSigilyphEggMoveLearnset,
+        .frontPic = gMonFrontPic_SigilyphMega,
+        .backPic = gMonBackPic_SigilyphMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_SigilyphMega,
+        .shinyPalette = gMonShinyPalette_SigilyphMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sSigilyphAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sSigilyphAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_SigilyphMega,
+        .backPic80 = gMonBackPic80_SigilyphMega,
+    },
+
+    [SPECIES_REUNICLUS_MEGA] =
+    {
+        .baseHP = 110,
+        .baseAttack = 125,
+        .baseDefense = 105,
+        .baseSpeed = 30,
+        .baseSpAttack = 125,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
+        .catchRate = 50,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 245 : 221,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_IRON_FIST, ABILITY_IRON_FIST, ABILITY_IRON_FIST },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Reuniclus"),
+        .cryId = CRY_REUNICLUS,
+        .natDexNum = NATIONAL_DEX_REUNICLUS,
+        .categoryName = _("Multiplying"),
+        .height = 10,
+        .weight = 201,
+        .description = COMPOUND_STRING(
+            "They use psychic power to control their\n"
+            "arms, which are made of a special liquid.\n"
+            "When Reuniclus shake hands, a network\n"
+            "forms between their brains."),
+        .pokemonScale = 305,
+        .pokemonOffset = 7,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+
+        .enemyMonElevation = 8,
+
+        .iconSprite = gMonIcon_Reuniclus,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 8, SHADOW_SIZE_M)
+        FOOTPRINT(Reuniclus)
+        OVERWORLD(
+            sPicTable_Reuniclus,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Reuniclus,
+            gShinyOverworldPalette_Reuniclus
+        )
+        .levelUpLearnset = sReuniclusLevelUpLearnset,
+        .teachableLearnset = sReuniclusTeachableLearnset,
+        .frontPic = gMonFrontPic_ReuniclusMega,
+        .backPic = gMonBackPic_ReuniclusMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_ReuniclusMega,
+        .shinyPalette = gMonShinyPalette_ReuniclusMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sReuniclusAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sReuniclusAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_ReuniclusMega,
+        .backPic80 = gMonBackPic80_ReuniclusMega,
+    },

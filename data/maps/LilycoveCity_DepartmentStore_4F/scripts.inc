@@ -274,6 +274,9 @@ LilycoveCity_DepartmentStore_4F_Pokemart_TOPRIGHT:
 	.2byte ITEM_ARBOLIVITE
 	.2byte ITEM_CRYOGONALITE
 	.2byte ITEM_HAXORITE
+	.2byte ITEM_DODRIONITE
+	.2byte ITEM_SIGILYPHITE
+	.2byte ITEM_REUNICLUSITE
 	.2byte ITEM_WHIMSICOTTITE
 	pokemartlistend
 

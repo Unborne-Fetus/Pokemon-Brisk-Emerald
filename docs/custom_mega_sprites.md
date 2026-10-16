@@ -134,3 +134,22 @@ relearner can prepare them for their new secondary types before battle.
 Each has its own stone, copied from an existing stone asset and sold by
 the Lilycove 4F Mega Stone clerk at the standard base price of ₽500.
 `spectralmallow_manifest.json` records source sheets and battle data.
+
+### Additional SpectralMallow forms
+
+Three more forms (IDs 1616–1618) follow the same native 80×80 normal/shiny
+sprite import and duplicated Mega Stone setup. Design and sprite sheets:
+[SpectralMallow](https://www.deviantart.com/spectralmallow/gallery).
+The original sheets and individual source credits are preserved alongside
+the first five imports. Each gains 100 base stat points, with unchanged HP.
+
+| Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe | Stone |
+|---|---|---|---|---|
+| Dodrio | Normal/Flying | Reckless | 60/140/90/60/80/140 | Dodrionite |
+| Sigilyph | Psychic/Flying | Tinted Lens | 72/58/100/143/100/117 | Sigilyphite |
+| Reuniclus | Psychic/Fighting | Iron Fist | 110/125/105/125/95/30 | Reuniclusite |
+
+Moves inherit each base species. Reuniclus additionally gains level-one
+Drain Punch in the active Gen 9 learnset, available through the summary
+relearner before Mega Evolution; Hammer Arm remains in its existing learnset.
+All three stones are stocked by the Lilycove 4F Mega Stone clerk.

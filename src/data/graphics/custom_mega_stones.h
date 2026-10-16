@@ -104,3 +104,12 @@ const u16 gItemIconPalette_Cryogonalite[] = INCGFX_U16("graphics/items/icon_pale
 
 const u32 gItemIcon_Haxorite[] = INCGFX_U32("graphics/items/icons/haxorite.png", ".4bpp.smol");
 const u16 gItemIconPalette_Haxorite[] = INCGFX_U16("graphics/items/icon_palettes/haxorite.pal", ".gbapal");
+
+const u32 gItemIcon_Dodrionite[] = INCGFX_U32("graphics/items/icons/dodrionite.png", ".4bpp.smol");
+const u16 gItemIconPalette_Dodrionite[] = INCGFX_U16("graphics/items/icon_palettes/dodrionite.pal", ".gbapal");
+
+const u32 gItemIcon_Sigilyphite[] = INCGFX_U32("graphics/items/icons/sigilyphite.png", ".4bpp.smol");
+const u16 gItemIconPalette_Sigilyphite[] = INCGFX_U16("graphics/items/icon_palettes/sigilyphite.pal", ".gbapal");
+
+const u32 gItemIcon_Reuniclusite[] = INCGFX_U32("graphics/items/icons/reuniclusite.png", ".4bpp.smol");
+const u16 gItemIconPalette_Reuniclusite[] = INCGFX_U16("graphics/items/icon_palettes/reuniclusite.pal", ".gbapal");

@@ -13352,6 +13352,7 @@ static const struct LevelUpMove sDuosionLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sReuniclusLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_DRAIN_PUNCH),
     LEVEL_UP_MOVE( 0, MOVE_HAMMER_ARM),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
     LEVEL_UP_MOVE( 1, MOVE_RECOVER),

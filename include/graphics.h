@@ -3598,4 +3598,13 @@ extern const u16 gItemIconPalette_Cryogonalite[];
 extern const u32 gItemIcon_Haxorite[];
 extern const u16 gItemIconPalette_Haxorite[];
 
+extern const u32 gItemIcon_Dodrionite[];
+extern const u16 gItemIconPalette_Dodrionite[];
+
+extern const u32 gItemIcon_Sigilyphite[];
+extern const u16 gItemIconPalette_Sigilyphite[];
+
+extern const u32 gItemIcon_Reuniclusite[];
+extern const u16 gItemIconPalette_Reuniclusite[];
+
 #endif //GUARD_GRAPHICS_H

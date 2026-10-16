@@ -1,6 +1,6 @@
 # SpectralMallow Mega sprite sheets
 
-All five original sheets in this folder are by
+All eight original sheets in this folder are by
 [SpectralMallow](https://www.deviantart.com/spectralmallow/gallery).
 They are retained as the source for the imports under
 `graphics/pokemon/custom_megas/`. Preserve this credit when redistributing.

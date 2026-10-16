@@ -152,5 +152,98 @@
       80,
       80
     ]
+  },
+  {
+    "base_species": "SPECIES_DODRIO",
+    "species": "SPECIES_DODRIO_MEGA",
+    "id": 1616,
+    "asset_path": "graphics/pokemon/custom_megas/dodrio/mega",
+    "stats": [
+      60,
+      140,
+      90,
+      140,
+      60,
+      80
+    ],
+    "ability": "ABILITY_RECKLESS",
+    "stone_name": "Dodrionite",
+    "stone_item": "ITEM_DODRIONITE",
+    "stone_asset_source": "pidgeotite",
+    "source_pack": "SpectralMallow/dodrio",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "NORMAL",
+      "FLYING"
+    ],
+    "source_sheet": "resources/spectralmallow/dodrio.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_SIGILYPH",
+    "species": "SPECIES_SIGILYPH_MEGA",
+    "id": 1617,
+    "asset_path": "graphics/pokemon/custom_megas/sigilyph/mega",
+    "stats": [
+      72,
+      58,
+      100,
+      117,
+      143,
+      100
+    ],
+    "ability": "ABILITY_TINTED_LENS",
+    "stone_name": "Sigilyphite",
+    "stone_item": "ITEM_SIGILYPHITE",
+    "stone_asset_source": "alakazite",
+    "source_pack": "SpectralMallow/sigilyph",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "PSYCHIC",
+      "FLYING"
+    ],
+    "source_sheet": "resources/spectralmallow/sigilyph.png",
+    "native_size": [
+      80,
+      80
+    ]
+  },
+  {
+    "base_species": "SPECIES_REUNICLUS",
+    "species": "SPECIES_REUNICLUS_MEGA",
+    "id": 1618,
+    "asset_path": "graphics/pokemon/custom_megas/reuniclus/mega",
+    "stats": [
+      110,
+      125,
+      105,
+      30,
+      125,
+      95
+    ],
+    "ability": "ABILITY_IRON_FIST",
+    "stone_name": "Reuniclusite",
+    "stone_item": "ITEM_REUNICLUSITE",
+    "stone_asset_source": "medichamite",
+    "source_pack": "SpectralMallow/reuniclus",
+    "shiny": "Supplied palette",
+    "artist": "SpectralMallow",
+    "artist_url": "https://www.deviantart.com/spectralmallow/gallery",
+    "types": [
+      "PSYCHIC",
+      "FIGHTING"
+    ],
+    "source_sheet": "resources/spectralmallow/reuniclus.png",
+    "native_size": [
+      80,
+      80
+    ]
   }
 ]

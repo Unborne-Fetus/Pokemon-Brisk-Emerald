@@ -772,3 +772,57 @@
         .iconPic = gItemIcon_Haxorite,
         .iconPalette = gItemIconPalette_Haxorite,
     },
+
+    [ITEM_DODRIONITE] =
+    {
+        .name = ITEM_NAME("Dodrionite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Dodrio to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Dodrionite,
+        .iconPalette = gItemIconPalette_Dodrionite,
+    },
+
+    [ITEM_SIGILYPHITE] =
+    {
+        .name = ITEM_NAME("Sigilyphite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Sigilyph to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Sigilyphite,
+        .iconPalette = gItemIconPalette_Sigilyphite,
+    },
+
+    [ITEM_REUNICLUSITE] =
+    {
+        .name = ITEM_NAME("Reuniclusite"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Reuniclus to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Reuniclusite,
+        .iconPalette = gItemIconPalette_Reuniclusite,
+    },

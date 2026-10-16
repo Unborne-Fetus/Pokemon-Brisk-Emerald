@@ -198,7 +198,7 @@ Imported from [Pokéngine](https://pokengine.org/) under its [Free to Use With C
 ### SpectralMallow custom Mega Evolutions
 
 [SpectralMallow](https://www.deviantart.com/spectralmallow/gallery): Mega
-Clawitzer, Tinkaton, Arboliva, Cryogonal and Haxorus designs and sprite
+Clawitzer, Tinkaton, Arboliva, Cryogonal, Haxorus, Dodrio, Sigilyph and Reuniclus designs and sprite
 sheets, including normal/shiny battle artwork, party icons and stone art.
 Original sheets are preserved in `resources/spectralmallow/`; individual
 source links are recorded alongside the imported battle assets.

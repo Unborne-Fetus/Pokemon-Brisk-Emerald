@@ -248,3 +248,24 @@ const u8 gMonFrontPic80_CryogonalMega[] = INCGFX_U8("graphics/pokemon/custom_meg
 const u8 gMonBackPic80_CryogonalMega[] = INCGFX_U8("graphics/pokemon/custom_megas/cryogonal/mega/back_tiles.png", ".4bpp");
 const u8 gMonFrontPic80_HaxorusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/haxorus/mega/front_tiles.png", ".4bpp");
 const u8 gMonBackPic80_HaxorusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/haxorus/mega/back_tiles.png", ".4bpp");
+
+const u32 gMonFrontPic_DodrioMega[] = INCGFX_U32("graphics/pokemon/custom_megas/dodrio/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_DodrioMega[] = INCGFX_U32("graphics/pokemon/custom_megas/dodrio/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_DodrioMega[] = INCGFX_U16("graphics/pokemon/custom_megas/dodrio/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_DodrioMega[] = INCGFX_U16("graphics/pokemon/custom_megas/dodrio/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_SigilyphMega[] = INCGFX_U32("graphics/pokemon/custom_megas/sigilyph/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_SigilyphMega[] = INCGFX_U32("graphics/pokemon/custom_megas/sigilyph/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_SigilyphMega[] = INCGFX_U16("graphics/pokemon/custom_megas/sigilyph/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_SigilyphMega[] = INCGFX_U16("graphics/pokemon/custom_megas/sigilyph/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_ReuniclusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/reuniclus/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_ReuniclusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/reuniclus/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_ReuniclusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/reuniclus/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_ReuniclusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/reuniclus/mega/shiny.pal", ".gbapal");
+const u8 gMonFrontPic80_DodrioMega[] = INCGFX_U8("graphics/pokemon/custom_megas/dodrio/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_DodrioMega[] = INCGFX_U8("graphics/pokemon/custom_megas/dodrio/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_SigilyphMega[] = INCGFX_U8("graphics/pokemon/custom_megas/sigilyph/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_SigilyphMega[] = INCGFX_U8("graphics/pokemon/custom_megas/sigilyph/mega/back_tiles.png", ".4bpp");
+const u8 gMonFrontPic80_ReuniclusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/reuniclus/mega/front_tiles.png", ".4bpp");
+const u8 gMonBackPic80_ReuniclusMega[] = INCGFX_U8("graphics/pokemon/custom_megas/reuniclus/mega/back_tiles.png", ".4bpp");

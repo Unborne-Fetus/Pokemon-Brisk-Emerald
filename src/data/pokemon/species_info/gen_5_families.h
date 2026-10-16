@@ -5948,6 +5948,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sSigilyphLevelUpLearnset,
         .teachableLearnset = sSigilyphTeachableLearnset,
         .eggMoveLearnset = sSigilyphEggMoveLearnset,
+        .formSpeciesIdTable = sSigilyphAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sSigilyphAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_SIGILYPH
 
@@ -7579,6 +7581,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sReuniclusLevelUpLearnset,
         .teachableLearnset = sReuniclusTeachableLearnset,
+        .formSpeciesIdTable = sReuniclusAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sReuniclusAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_SOLOSIS
 

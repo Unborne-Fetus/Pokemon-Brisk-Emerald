@@ -54,6 +54,9 @@ static const struct CustomMegaStoneCase
     {SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA, ITEM_ARBOLIVITE},
     {SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA, ITEM_CRYOGONALITE},
     {SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA, ITEM_HAXORITE},
+    {SPECIES_DODRIO, SPECIES_DODRIO_MEGA, ITEM_DODRIONITE},
+    {SPECIES_SIGILYPH, SPECIES_SIGILYPH_MEGA, ITEM_SIGILYPHITE},
+    {SPECIES_REUNICLUS, SPECIES_REUNICLUS_MEGA, ITEM_REUNICLUSITE},
 };
 
 TEST("Custom Mega stones select the correct form and keep it when switching")
@@ -115,6 +118,9 @@ TEST("Custom Mega stones preserve the five original Mega stone targets")
 TEST("Custom Mega additions have stable stats, palettes and distinct stones")
 {
     static const enum Species additions[][2] = {
+        {SPECIES_REUNICLUS, SPECIES_REUNICLUS_MEGA},
+        {SPECIES_SIGILYPH, SPECIES_SIGILYPH_MEGA},
+        {SPECIES_DODRIO, SPECIES_DODRIO_MEGA},
         {SPECIES_HAXORUS, SPECIES_HAXORUS_MEGA},
         {SPECIES_CRYOGONAL, SPECIES_CRYOGONAL_MEGA},
         {SPECIES_ARBOLIVA, SPECIES_ARBOLIVA_MEGA},
