@@ -547,7 +547,7 @@ bool32 BattleSetup_StartDynamaxAdventureBattle(void)
         return FALSE;
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndDynamaxAdventureBattle;
-    gBattleTypeFlags = 0;
+    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     return TRUE;
 }

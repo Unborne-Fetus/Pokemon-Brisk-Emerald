@@ -11,8 +11,14 @@ struct DynamaxAdventureStatus
     u8 lives;
     u8 caughtCount;
     bool8 cleared;
+    u8 rentalsChosen;
 };
 
+u32 DynamaxAdventure_GetRentalPoolCount(void);
+enum Species DynamaxAdventure_GetRentalPoolSpecies(u32 index);
+u32 DynamaxAdventure_GetBossPoolCount(void);
+enum Species DynamaxAdventure_GetBossPoolSpecies(u32 index);
+bool32 DynamaxAdventure_IsBossSpecies(enum Species species);
 bool32 DynamaxAdventure_Begin(u32 seed);
 struct DynamaxAdventureStatus DynamaxAdventure_GetStatus(void);
 struct Pokemon *DynamaxAdventure_GetRental(u32 choice);
@@ -24,9 +30,14 @@ bool32 DynamaxAdventure_PrepareBattle(void);
 bool32 DynamaxAdventure_FinishBattle(u32 outcome);
 bool32 DynamaxAdventure_Catch(bool32 accept);
 bool32 DynamaxAdventure_Swap(bool32 accept);
+bool32 DynamaxAdventure_SwapRental(u32 slot);
 bool32 DynamaxAdventure_Claim(u32 choice);
 bool32 DynamaxAdventure_Quit(void);
 bool32 IsDynamaxAdventureBattle(void);
 void RunDynamaxAdventure(void);
+
+#if TESTING
+bool32 Test_DynamaxAdventure_CreateBoss(struct Pokemon *mon, enum Species species);
+#endif
 
 #endif

@@ -241,9 +241,8 @@ static void SelectAbility(struct Pokemon *mon, bool32 easy)
     SetMonData(mon, MON_DATA_ABILITY_NUM, &best);
 }
 
-void ApplyBriskTrainerLoadout(struct Pokemon *mon)
+static void ApplyLoadout(struct Pokemon *mon, u32 mode)
 {
-    u32 mode = GetBriskDifficulty();
     if (mode == BRISK_MODE_NORMAL)
         return;
     bool32 easy = mode == BRISK_MODE_EASY;
@@ -292,6 +291,21 @@ void ApplyBriskTrainerLoadout(struct Pokemon *mon)
     if (support != MOVE_NONE) selected[count++] = support;
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, selected[i], i);
+}
+
+void ApplyBriskTrainerLoadout(struct Pokemon *mon)
+{
+    ApplyLoadout(mon, GetBriskDifficulty());
+}
+
+void ApplyBriskStrongLoadout(struct Pokemon *mon)
+{
+    ApplyLoadout(mon, BRISK_MODE_EXTREME);
+}
+
+void BriskSetBestAbility(struct Pokemon *mon)
+{
+    SelectAbility(mon, FALSE);
 }
 
 #if TESTING

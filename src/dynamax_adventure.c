@@ -2,6 +2,9 @@
 #include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_setup.h"
+#include "brisk_trainer_moves.h"
+#include "data.h"
+#include "move.h"
 #include "event_data.h"
 #include "main.h"
 #include "pokemon_storage_system.h"
@@ -13,37 +16,52 @@ struct AdventureSet
 {
     u16 species;
     u16 moves[MAX_MON_MOVES];
+    u16 ability;
+    bool8 support;
 };
 
-static const struct AdventureSet sRentals[] =
-{
-    {SPECIES_CHARIZARD, {MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_DRAGON_PULSE, MOVE_PROTECT}},
-    {SPECIES_BLASTOISE, {MOVE_SURF, MOVE_ICE_BEAM, MOVE_AURA_SPHERE, MOVE_PROTECT}},
-    {SPECIES_VENUSAUR, {MOVE_ENERGY_BALL, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_PROTECT}},
-    {SPECIES_RAICHU, {MOVE_THUNDERBOLT, MOVE_GRASS_KNOT, MOVE_LIGHT_SCREEN, MOVE_PROTECT}},
-    {SPECIES_MACHAMP, {MOVE_DRAIN_PUNCH, MOVE_ROCK_SLIDE, MOVE_KNOCK_OFF, MOVE_BULK_UP}},
-    {SPECIES_GENGAR, {MOVE_SHADOW_BALL, MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_PROTECT}},
-    {SPECIES_CLEFABLE, {MOVE_MOONBLAST, MOVE_FLAMETHROWER, MOVE_LIFE_DEW, MOVE_PROTECT}},
-    {SPECIES_FLYGON, {MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_PROTECT}},
-    {SPECIES_SCIZOR, {MOVE_BULLET_PUNCH, MOVE_X_SCISSOR, MOVE_SWORDS_DANCE, MOVE_ROOST}},
-    {SPECIES_LAPRAS, {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_LIFE_DEW}},
-    {SPECIES_LYCANROC, {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_ACCELEROCK, MOVE_PROTECT}},
-    {SPECIES_GARDEVOIR, {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MYSTICAL_FIRE, MOVE_LIFE_DEW}},
-    {SPECIES_SNORLAX, {MOVE_BODY_SLAM, MOVE_CRUNCH, MOVE_HIGH_HORSEPOWER, MOVE_REST}},
-    {SPECIES_TORKOAL, {MOVE_LAVA_PLUME, MOVE_BODY_PRESS, MOVE_SOLAR_BEAM, MOVE_PROTECT}},
-    {SPECIES_LUDICOLO, {MOVE_SURF, MOVE_GIGA_DRAIN, MOVE_ICE_BEAM, MOVE_RAIN_DANCE}},
-    {SPECIES_WEAVILE, {MOVE_ICE_PUNCH, MOVE_NIGHT_SLASH, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE}},
-};
+#include "data/dynamax_adventure.h"
 
-static const struct AdventureSet sBosses[] =
+u32 DynamaxAdventure_GetRentalPoolCount(void)
 {
-    {SPECIES_ARTICUNO, {MOVE_ICE_BEAM, MOVE_HURRICANE, MOVE_ANCIENT_POWER, MOVE_REFLECT}},
-    {SPECIES_ZAPDOS, {MOVE_THUNDERBOLT, MOVE_DRILL_PECK, MOVE_HEAT_WAVE, MOVE_LIGHT_SCREEN}},
-    {SPECIES_MOLTRES, {MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_ANCIENT_POWER, MOVE_SAFEGUARD}},
-    {SPECIES_RAIKOU, {MOVE_THUNDERBOLT, MOVE_EXTRASENSORY, MOVE_SHADOW_BALL, MOVE_CALM_MIND}},
-    {SPECIES_ENTEI, {MOVE_SACRED_FIRE, MOVE_CRUNCH, MOVE_STONE_EDGE, MOVE_IRON_HEAD}},
-    {SPECIES_SUICUNE, {MOVE_SURF, MOVE_ICE_BEAM, MOVE_EXTRASENSORY, MOVE_CALM_MIND}},
-};
+    return ARRAY_COUNT(sRentals);
+}
+
+enum Species DynamaxAdventure_GetRentalPoolSpecies(u32 index)
+{
+    return index < ARRAY_COUNT(sRentals) ? sRentals[index].species : SPECIES_NONE;
+}
+
+bool32 DynamaxAdventure_IsBossSpecies(enum Species species)
+{
+    if (species == SPECIES_NONE || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
+        return FALSE;
+    const struct SpeciesInfo *info = &gSpeciesInfo[species];
+    if (!(info->isRestrictedLegendary || info->isSubLegendary || info->isMythical))
+        return FALSE;
+    // One ordinary form per species, plus independently catchable regional forms.
+    return !info->isMegaEvolution && !info->isPrimalReversion && !info->isUltraBurst
+        && !info->isGigantamax && !info->isTeraForm
+        && (GET_BASE_SPECIES_ID(species) == species || info->isGalarianForm
+            || info->isHisuianForm || info->isAlolanForm || info->isPaldeanForm);
+}
+
+u32 DynamaxAdventure_GetBossPoolCount(void)
+{
+    u32 count = 0;
+    for (enum Species species = 1; species < NUM_SPECIES; species++)
+        if (DynamaxAdventure_IsBossSpecies(species))
+            count++;
+    return count;
+}
+
+enum Species DynamaxAdventure_GetBossPoolSpecies(u32 index)
+{
+    for (enum Species species = 1; species < NUM_SPECIES; species++)
+        if (DynamaxAdventure_IsBossSpecies(species) && index-- == 0)
+            return species;
+    return SPECIES_NONE;
+}
 
 struct DynamaxAdventure
 {
@@ -51,12 +69,14 @@ struct DynamaxAdventure
     u32 rng;
     struct Pokemon rentals[DA_RENTAL_CHOICES];
     struct Pokemon paths[DA_PATH_CHOICES];
-    struct Pokemon rental;
+    struct Pokemon team[DA_TEAM_SIZE];
+    u8 selectedOffers;
     struct Pokemon encounter;
+    struct Pokemon support;
     struct Pokemon caught[DA_ENCOUNTERS];
     struct Pokemon originalParty[PARTY_SIZE];
     u8 originalPartyCount;
-    u8 boss;
+    u16 bossSpecies;
 };
 
 // Transient by design: no SaveBlock fields, story flags, or facility records.
@@ -81,6 +101,33 @@ static void HealRental(struct Pokemon *mon)
     MonRestorePP(mon);
 }
 
+static void TrainMon(struct Pokemon *mon, bool32 support)
+{
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+    bool32 physical = GetSpeciesBaseAttack(species) >= GetSpeciesBaseSpAttack(species);
+    bool32 slow = GetSpeciesBaseSpeed(species) <= 60;
+    u8 evs[NUM_STATS] = {0};
+    u8 nature;
+    if (support)
+    {
+        bool32 defense = GetSpeciesBaseDefense(species) <= GetSpeciesBaseSpDefense(species);
+        evs[STAT_HP] = 252;
+        evs[defense ? STAT_DEF : STAT_SPDEF] = 252;
+        evs[defense ? STAT_SPDEF : STAT_DEF] = 4;
+        nature = defense ? (physical ? NATURE_IMPISH : NATURE_BOLD) : (physical ? NATURE_CAREFUL : NATURE_CALM);
+    }
+    else
+    {
+        evs[physical ? STAT_ATK : STAT_SPATK] = 252;
+        evs[slow ? STAT_HP : STAT_SPEED] = 252;
+        evs[slow ? STAT_SPDEF : STAT_HP] = 4;
+        nature = physical ? (slow ? NATURE_ADAMANT : NATURE_JOLLY) : (slow ? NATURE_MODEST : NATURE_TIMID);
+    }
+    for (u32 stat = 0; stat < NUM_STATS; stat++)
+        SetMonData(mon, MON_DATA_HP_EV + stat, &evs[stat]);
+    SetMonData(mon, MON_DATA_HIDDEN_NATURE, &nature);
+}
+
 static void CreateRental(struct Pokemon *mon, const struct AdventureSet *set, u32 level)
 {
     u32 personality = NextRandom() << 16;
@@ -88,19 +135,60 @@ static void CreateRental(struct Pokemon *mon, const struct AdventureSet *set, u3
     u8 dynamaxLevel = 10;
     u8 shiny = FALSE;
     CreateMonWithIVs(mon, set->species, level, personality, OTID_STRUCT_PLAYER_ID, 31);
-    for (u32 i = 0; i < MAX_MON_MOVES; i++)
-        SetMonMoveSlot(mon, set->moves[i], i);
+    if (set->moves[0] != MOVE_NONE)
+        for (u32 i = 0; i < MAX_MON_MOVES; i++)
+            SetMonMoveSlot(mon, set->moves[i], i);
+    BriskSetBestAbility(mon);
+    for (u32 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+        if (set->ability != ABILITY_NONE && GetAbilityBySpecies(set->species, slot) == set->ability)
+            SetMonData(mon, MON_DATA_ABILITY_NUM, &slot);
+    TrainMon(mon, set->support);
     SetMonData(mon, MON_DATA_DYNAMAX_LEVEL, &dynamaxLevel);
     // Shininess is rolled only after winning, never previewed on a rental/boss.
     SetMonData(mon, MON_DATA_IS_SHINY, &shiny);
     HealRental(mon);
 }
 
+static void CreateBoss(struct Pokemon *mon)
+{
+    const struct AdventureSet set = {.species = sAdventure->bossSpecies};
+    CreateRental(mon, &set, DA_BOSS_LEVEL);
+    ApplyBriskStrongLoadout(mon);
+    // Cosmog and Cosmoem have no damaging learnset; give them a usable raid set.
+    bool32 hasAttack = FALSE;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        if (move != MOVE_NONE && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS)
+            hasAttack = TRUE;
+    }
+    if (!hasAttack)
+    {
+        static const u16 moves[] = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_LIGHT_SCREEN, MOVE_PROTECT};
+        for (u32 i = 0; i < MAX_MON_MOVES; i++)
+            SetMonMoveSlot(mon, moves[i], i);
+    }
+    HealRental(mon);
+}
+
+#if TESTING
+bool32 Test_DynamaxAdventure_CreateBoss(struct Pokemon *mon, enum Species species)
+{
+    if (sAdventure == NULL || !DynamaxAdventure_IsBossSpecies(species))
+        return FALSE;
+    u16 previous = sAdventure->bossSpecies;
+    sAdventure->bossSpecies = species;
+    CreateBoss(mon);
+    sAdventure->bossSpecies = previous;
+    return TRUE;
+}
+#endif
+
 static void GeneratePaths(void)
 {
     if (sAdventure->status.stage == DA_ENCOUNTERS - 1)
     {
-        CreateRental(&sAdventure->paths[0], &sBosses[sAdventure->boss], DA_BOSS_LEVEL);
+        CreateBoss(&sAdventure->paths[0]);
         sAdventure->paths[1] = sAdventure->paths[0];
     }
     else
@@ -118,12 +206,15 @@ bool32 DynamaxAdventure_Begin(u32 seed)
     u32 first;
     if (sAdventure != NULL || gMain.inBattle)
         return FALSE;
+    u32 bossCount = DynamaxAdventure_GetBossPoolCount();
+    if (bossCount == 0)
+        return FALSE;
     memset(&sAdventureData, 0, sizeof(sAdventureData));
     sAdventure = &sAdventureData;
     sAdventure->rng = seed;
     sAdventure->status.phase = DA_PHASE_RENTAL;
     sAdventure->status.lives = DA_STARTING_LIVES;
-    sAdventure->boss = NextRandom() % ARRAY_COUNT(sBosses);
+    sAdventure->bossSpecies = DynamaxAdventure_GetBossPoolSpecies(NextRandom() % bossCount);
     first = NextRandom() % ARRAY_COUNT(sRentals);
     // Distinct offers, with deterministic run generation from the supplied seed.
     for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
@@ -140,7 +231,8 @@ struct DynamaxAdventureStatus DynamaxAdventure_GetStatus(void)
 
 struct Pokemon *DynamaxAdventure_GetRental(u32 choice)
 {
-    if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_RENTAL || choice >= DA_RENTAL_CHOICES)
+    if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_RENTAL || choice >= DA_RENTAL_CHOICES
+     || (sAdventure->selectedOffers & (1u << choice)))
         return NULL;
     return &sAdventure->rentals[choice];
 }
@@ -164,8 +256,10 @@ bool32 DynamaxAdventure_ChooseRental(u32 choice)
     struct Pokemon *mon = DynamaxAdventure_GetRental(choice);
     if (mon == NULL)
         return FALSE;
-    sAdventure->rental = *mon;
-    GeneratePaths();
+    sAdventure->team[sAdventure->status.rentalsChosen++] = *mon;
+    sAdventure->selectedOffers |= 1u << choice;
+    if (sAdventure->status.rentalsChosen == DA_TEAM_SIZE)
+        GeneratePaths();
     return TRUE;
 }
 
@@ -175,6 +269,10 @@ bool32 DynamaxAdventure_ChoosePath(u32 choice)
     if (mon == NULL)
         return FALSE;
     sAdventure->encounter = *mon;
+    u32 support = NextRandom() % ARRAY_COUNT(sRentals);
+    if (sRentals[support].species == GetMonData(mon, MON_DATA_SPECIES))
+        support = (support + 1) % ARRAY_COUNT(sRentals);
+    CreateRental(&sAdventure->support, &sRentals[support], DA_RENTAL_LEVEL);
     sAdventure->status.phase = DA_PHASE_READY;
     return TRUE;
 }
@@ -191,11 +289,13 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     memcpy(sAdventure->originalParty, gParties[B_TRAINER_PLAYER], sizeof(sAdventure->originalParty));
     sAdventure->originalPartyCount = gPartiesCount[B_TRAINER_PLAYER];
     memset(gParties[B_TRAINER_PLAYER], 0, sizeof(sAdventure->originalParty));
-    gParties[B_TRAINER_PLAYER][0] = sAdventure->rental;
-    gPartiesCount[B_TRAINER_PLAYER] = 1;
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        gParties[B_TRAINER_PLAYER][i] = sAdventure->team[i];
+    gPartiesCount[B_TRAINER_PLAYER] = DA_TEAM_SIZE;
     ZeroEnemyPartyMons();
     gParties[B_TRAINER_OPPONENT_A][0] = sAdventure->encounter;
-    gPartiesCount[B_TRAINER_OPPONENT_A] = 1;
+    gParties[B_TRAINER_OPPONENT_A][1] = sAdventure->support;
+    gPartiesCount[B_TRAINER_OPPONENT_A] = DA_TEAM_SIZE;
     sAdventure->status.phase = DA_PHASE_BATTLE;
     return TRUE;
 }
@@ -204,17 +304,26 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
 {
     if (!IsDynamaxAdventureBattle())
         return FALSE;
-    sAdventure->rental = gParties[B_TRAINER_PLAYER][0];
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        sAdventure->team[i] = gParties[B_TRAINER_PLAYER][i];
     memcpy(gParties[B_TRAINER_PLAYER], sAdventure->originalParty, sizeof(sAdventure->originalParty));
     gPartiesCount[B_TRAINER_PLAYER] = sAdventure->originalPartyCount;
     if (outcome == B_OUTCOME_WON)
     {
+        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+            if (GetMonData(&sAdventure->team[i], MON_DATA_HP) == 0)
+            {
+                HealRental(&sAdventure->team[i]);
+                u16 hp = GetMonData(&sAdventure->team[i], MON_DATA_MAX_HP) / 2;
+                SetMonData(&sAdventure->team[i], MON_DATA_HP, &hp);
+            }
         sAdventure->status.phase = DA_PHASE_CATCH;
     }
     else if (outcome == B_OUTCOME_LOST || outcome == B_OUTCOME_DREW)
     {
         sAdventure->status.lives--;
-        HealRental(&sAdventure->rental);
+        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+            HealRental(&sAdventure->team[i]);
         sAdventure->status.phase = sAdventure->status.lives ? DA_PHASE_READY : DA_PHASE_FINISHED;
     }
     else
@@ -260,18 +369,24 @@ bool32 DynamaxAdventure_Catch(bool32 accept)
     return TRUE;
 }
 
-bool32 DynamaxAdventure_Swap(bool32 accept)
+bool32 DynamaxAdventure_SwapRental(u32 slot)
 {
-    if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_SWAP)
+    if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_SWAP
+     || (slot >= DA_TEAM_SIZE && slot != DA_RENTAL_KEEP))
         return FALSE;
-    if (accept)
+    if (slot != DA_RENTAL_KEEP)
     {
         // Use the pre-shiny encounter for the rental; reveal shinies at rewards.
-        sAdventure->rental = sAdventure->encounter;
-        HealRental(&sAdventure->rental);
+        sAdventure->team[slot] = sAdventure->encounter;
+        HealRental(&sAdventure->team[slot]);
     }
     Advance();
     return TRUE;
+}
+
+bool32 DynamaxAdventure_Swap(bool32 accept)
+{
+    return DynamaxAdventure_SwapRental(accept ? 0 : DA_RENTAL_KEEP);
 }
 
 bool32 DynamaxAdventure_Claim(u32 choice)
@@ -325,6 +440,7 @@ void RunDynamaxAdventure(void)
         gSpecialVar_0x8002 = status.lives;
         gSpecialVar_0x8003 = status.caughtCount;
         gSpecialVar_0x8006 = status.cleared;
+        gSpecialVar_0x8007 = status.rentalsChosen;
         gSpecialVar_Result = TRUE;
         break;
     }
@@ -334,7 +450,7 @@ void RunDynamaxAdventure(void)
     case DA_OP_CHOOSE_PATH: gSpecialVar_Result = DynamaxAdventure_ChoosePath(arg); break;
     case DA_OP_START_BATTLE: gSpecialVar_Result = BattleSetup_StartDynamaxAdventureBattle(); break;
     case DA_OP_CATCH: gSpecialVar_Result = DynamaxAdventure_Catch(arg != 0); break;
-    case DA_OP_SWAP: gSpecialVar_Result = DynamaxAdventure_Swap(arg != 0); break;
+    case DA_OP_SWAP: gSpecialVar_Result = DynamaxAdventure_SwapRental(arg == 0 ? DA_RENTAL_KEEP : arg - 1); break;
     case DA_OP_REWARD_INFO:
         if (DynamaxAdventure_GetStatus().phase == DA_PHASE_FINISHED)
             gSpecialVar_Result = BufferMon(DynamaxAdventure_GetCaught(arg));

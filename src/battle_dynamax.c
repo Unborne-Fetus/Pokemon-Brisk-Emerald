@@ -80,6 +80,11 @@ bool32 CanDynamax(enum BattlerId battler)
     bool32 canGigantamax = GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR)
                          && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE;
 
+    // Only the primary encounter is a raid boss; its support never Dynamaxes.
+    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler)
+     && GetBattlerPosition(battler) != B_POSITION_OPPONENT_LEFT)
+        return FALSE;
+
     // Player-controlled Pokémon may Gigantamax, but may never use ordinary Dynamax.
     // Trainer Pokémon may Dynamax only when their trainer data explicitly marks
     // that Pokémon to use Dynamax (checked by ShouldTrainerBattlerUseGimmick below).

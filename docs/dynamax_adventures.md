@@ -6,39 +6,58 @@ SaveBlock fields.
 
 ## Implemented run
 
-- Three distinct level-65 rentals, selected from 16 curated four-move sets.
-- Three ordinary encounters with two distinct route choices at each step,
-  followed by a level-70 legendary encounter. The final route offers the same
-  boss on both branches. Six legendary sets are available initially.
-- Four lives. In this solo foundation, losing one battle spends one life,
-  heals the rental, and permits a retry of that encounter. Four losses finish
-  the run. Running away also finishes it.
-- Every opponent automatically Dynamaxes before its first move and remains
-  Dynamaxed for the encounter. Rentals may Dynamax for the usual three turns,
-  without a Band or world Dynamax flag. Other gimmicks are excluded here.
-  Normal battles retain Brisk's existing Dynamax restrictions.
+- Choose **two distinct rentals** from three offers. Both are player-controlled
+  in ordinary double battles, against the primary encounter plus one support.
+- **48 shared rental/regular-encounter sets**, retaining the original species
+  and adding competitive attackers and doubles supports. All rentals, regular
+  encounters, support Pokémon, and legendary bosses are **level 100**.
+- Curated four-move doubles sets include Fake Out, redirection, Tailwind,
+  screens, weather/terrain, priority, recovery, and Protect. Rentals have chosen
+  species abilities, 31 IVs, 508 EVs, and matching offensive/support natures.
+  These preparations are independent of the selected difficulty mode.
+- Three ordinary encounters offer two distinct primary route choices each.
+  The fourth encounter is a legendary boss, identical on both final branches.
+- The final pool currently contains **97 species**, derived from all enabled species marked restricted
+  legendary, sub-legendary, or mythical. It includes every canonical species
+  in those categories plus regional forms, including the Galarian birds.
+  Battle-only Mega, Primal, Ultra Burst, Gigantamax, Tera, and duplicate
+  alternate forms are excluded. Ultra Beasts and ordinary Paradox species
+  are not classified as legendary by this pool.
+- Legendary moves and abilities use the existing strong loadout scorer without
+  changing difficulty or global flags. Passive Cosmog/Cosmoem get an explicit
+  Psychic/Shadow Ball/Light Screen/Protect boss set so every entry can fight.
+- Only the primary opponent Dynamaxes automatically and stays Dynamaxed.
+  Its support does not Dynamax. The player can Dynamax one rental for the
+  normal three turns, without a Band or world flag. Zacian, Zamazenta, and
+  Eternatus retain their existing inability to Dynamax and fight normally.
+- Four lives. A whole-team loss spends one life, heals both rentals, and allows
+  a retry. Four losses or running away finish the run. A partner that faints
+  during a victory is revived at half HP for the next double battle. Other
+  surviving rental HP, PP, and status persist.
 - No battle EXP, bag items (including balls), or Pay Day money. Rentals obey
   regardless of badges and difficulty caps.
-- Guaranteed optional catches after victory, without spending bag balls.
-  Ordinary catches offer a rental swap. Keeping the existing rental preserves
-  its HP, PP, and status; swapping gives a healed version of the encounter.
-- Catch shininess rolls at 1/300 when accepted and is hidden on the battle
-  opponent and the replacement rental. Reward previews can reveal it.
+- After victory, the primary encounter is an optional guaranteed catch without
+  spending a ball. The support is not catchable. For ordinary catches, either
+  rental can be replaced with a healed version of the primary encounter.
+- Catch shininess rolls at 1/300 when accepted and remains hidden on battle
+  opponents and replacement rentals. Reward previews can reveal it.
 - At the end, choose exactly one caught Pokémon, including after a failed run.
-  It goes to the real party or PC and receives seen/caught Pokédex registration.
-  Full party and PC storage returns failure and retains the selectable reward.
+  It goes to the real party or PC with seen/caught Pokédex registration.
+  Full party and PC storage retains the reward until space becomes available.
   Quitting instead discards all temporary catches.
 
-This version uses **one rental versus one boss**, through the existing wild
-battle engine. Four-person teams, AI allies, networking, shields, a shared
-team faint counter, a ten-turn limit, route graphics, reward UI, scientists,
-backpackers, persistent legendary completion records, and adventure resumption
-from a save are future work.
+This is a **two-versus-two** backend. Four-person teams, AI allies, networking,
+shields, individual-faint life counting, a ten-turn limit, route graphics,
+menus, scientists, backpackers, legendary completion records, and adventure
+resumption from a save remain future work. No world entrance is installed.
+
+Pool definitions are in `src/data/dynamax_adventure.h`. The C pool-query
+functions expose the exact active species lists for a future UI or tooling.
 
 ## Party and state safety
 
 The real party remains in place between encounters. `PrepareBattle` backs up
-all six party slots and the party count before installing the rental. The
+all six party slots and the party count before installing the two rentals. The
 battle return callback restores that exact party before resuming the script,
 including on defeat or escape; it does not white out the player. A second
 battle preparation, reward claim, or quit is rejected during battle.
@@ -66,12 +85,15 @@ also used by the tests; calling `PrepareBattle` alone does not launch a battle.
 
 Lifecycle:
 
-1. `Begin` → RENTAL; inspect offers and `ChooseRental` → PATH.
+1. `Begin` → RENTAL; choose two different offers with `ChooseRental`. The
+   first selection remains in RENTAL; the second advances to PATH.
 2. Inspect paths and `ChoosePath` → READY.
 3. Start battle → BATTLE; return callback → CATCH on victory, READY for a
    surviving loss, or FINISHED for exhaustion/escape.
 4. `Catch(FALSE)` advances directly. `Catch(TRUE)` → SWAP for an ordinary
-   encounter; `Swap(TRUE/FALSE)` advances. The final catch decision finishes.
+   encounter; `SwapRental(slot)` advances, replacing slot 0/1 or keeping both with
+   `DA_RENTAL_KEEP`. The compatibility `Swap(TRUE/FALSE)` replaces slot 0 or
+   keeps both. The final catch decision finishes.
 5. FINISHED → inspect caught Pokémon and `Claim(index)`, or `Quit()`.
 
 ## Script bridge
@@ -82,14 +104,14 @@ argument from `VAR_0x8005`. `VAR_RESULT` reports success/failure.
 | Operation | Argument | Result beyond VAR_RESULT |
 | --- | --- | --- |
 | `DA_OP_BEGIN` | None | Starts a run |
-| `DA_OP_STATUS` | None | 8000=phase, 8001=stage, 8002=lives, 8003=catches, 8006=cleared |
+| `DA_OP_STATUS` | None | 8000=phase, 8001=stage, 8002=lives, 8003=catches, 8006=cleared, 8007=rentals chosen |
 | `DA_OP_RENTAL_INFO` | Offer 0–2 | STR_VAR_1=name, 8000=species, 8001=level |
-| `DA_OP_CHOOSE_RENTAL` | Offer 0–2 | Selects rental and generates paths |
+| `DA_OP_CHOOSE_RENTAL` | Offer 0–2 | Selects one rental; the second pick generates paths |
 | `DA_OP_PATH_INFO` | Branch 0–1 | STR_VAR_1=name, 8000=species, 8001=level |
 | `DA_OP_CHOOSE_PATH` | Branch 0–1 | Prepares that encounter |
 | `DA_OP_START_BATTLE` | None | Launches battle if READY |
 | `DA_OP_CATCH` | 0=skip, nonzero=catch | Catch or advance |
-| `DA_OP_SWAP` | 0=keep rental, nonzero=swap | Swap or advance |
+| `DA_OP_SWAP` | 0=keep both, 1=replace first, 2=replace second | Swap or advance |
 | `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, only when FINISHED |
 | `DA_OP_CLAIM` | Caught index | Gives one reward and closes run |
 | `DA_OP_QUIT` | None | Discards the run outside battle |

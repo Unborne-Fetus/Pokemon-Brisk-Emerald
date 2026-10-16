@@ -4,6 +4,8 @@
 struct Pokemon;
 
 void ApplyBriskTrainerLoadout(struct Pokemon *mon);
+void ApplyBriskStrongLoadout(struct Pokemon *mon);
+void BriskSetBestAbility(struct Pokemon *mon);
 #if TESTING
 s32 Test_BriskTrainerMoveScore(struct Pokemon *mon, enum Move move);
 bool32 Test_BriskTrainerMoveLegal(enum Species species, u32 level, enum Move move);
