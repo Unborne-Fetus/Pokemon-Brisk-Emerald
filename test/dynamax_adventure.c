@@ -14,6 +14,10 @@
 #include "move.h"
 #include "pokemon_storage_system.h"
 #include "save.h"
+#include "string_util.h"
+#include "overworld.h"
+#include "constants/maps.h"
+#include "constants/event_objects.h"
 #include "test/test.h"
 
 static void StartRental(void)
@@ -208,6 +212,33 @@ TEST("Adventure: script bridge reports state and rejects invalid operations")
     gSpecialVar_0x8004 = 0xFFFF;
     RunDynamaxAdventure();
     EXPECT_EQ(gSpecialVar_Result, FALSE);
+    EXPECT(DynamaxAdventure_Quit());
+}
+
+TEST("Adventure: reward menu identifies regular and shiny catches without revealing rentals")
+{
+    static const u8 shinyText[] = _("Shiny");
+    static const u8 regularText[] = _("Regular");
+    StartRental();
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+    EXPECT(DynamaxAdventure_Catch(TRUE));
+    EXPECT(DynamaxAdventure_Swap(FALSE));
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
+    struct Pokemon *mon = DynamaxAdventure_GetCaught(0);
+    for (u8 shiny = 0; shiny <= 1; shiny++)
+    {
+        SetMonData(mon, MON_DATA_IS_SHINY, &shiny);
+        gSpecialVar_0x8004 = DA_OP_REWARD_INFO;
+        gSpecialVar_0x8005 = 0;
+        RunDynamaxAdventure();
+        EXPECT_EQ(gSpecialVar_Result, TRUE);
+        EXPECT_EQ(StringCompare(gStringVar2, shiny ? shinyText : regularText), 0);
+        EXPECT_EQ(GetMonData(mon, MON_DATA_IS_SHINY), shiny);
+    }
     EXPECT(DynamaxAdventure_Quit());
 }
 
@@ -529,4 +560,28 @@ TEST("Adventure: boss preparation prefers G-Max without giving that factor to re
         found = TRUE;
     }
     EXPECT(found);
+}
+
+extern const u8 DynamaxAdventureCave_EventScript_Scientist[];
+
+TEST("Adventure: Route 146 cave has walkable reciprocal warps and an unconditional scientist")
+{
+    const struct MapHeader *route = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_ROUTE146), MAP_NUM(MAP_ROUTE146));
+    const struct MapHeader *cave = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_DYNAMAX_ADVENTURE_CAVE), MAP_NUM(MAP_DYNAMAX_ADVENTURE_CAVE));
+    EXPECT_EQ(route->events->warpCount, 1);
+    EXPECT_EQ(cave->events->warpCount, 1);
+    const struct WarpEvent *entrance = &route->events->warps[0];
+    const struct WarpEvent *exit = &cave->events->warps[0];
+    EXPECT_EQ(entrance->mapGroup, MAP_GROUP(MAP_DYNAMAX_ADVENTURE_CAVE));
+    EXPECT_EQ(entrance->mapNum, MAP_NUM(MAP_DYNAMAX_ADVENTURE_CAVE));
+    EXPECT_EQ(entrance->warpId, 0);
+    EXPECT_EQ(exit->mapGroup, MAP_GROUP(MAP_ROUTE146));
+    EXPECT_EQ(exit->mapNum, MAP_NUM(MAP_ROUTE146));
+    EXPECT_EQ(exit->warpId, 0);
+    EXPECT_EQ((route->mapLayout->map[entrance->y * route->mapLayout->width + entrance->x] >> 10) & 3, 0);
+    EXPECT_EQ((cave->mapLayout->map[exit->y * cave->mapLayout->width + exit->x] >> 10) & 3, 0);
+    EXPECT_EQ(cave->events->objectEventCount, 1);
+    EXPECT_EQ(cave->events->objectEvents[0].graphicsId, OBJ_EVENT_GFX_SCIENTIST_1);
+    EXPECT_EQ(cave->events->objectEvents[0].flagId, 0);
+    EXPECT_EQ(cave->events->objectEvents[0].script, DynamaxAdventureCave_EventScript_Scientist);
 }

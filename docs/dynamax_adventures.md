@@ -1,8 +1,14 @@
 # Dynamax Adventures foundation
 
-The initial backend is callable from C or event scripts. **No map, NPC, warp,
-menu entry, or world location invokes it.** It does not use story flags or add
-SaveBlock fields.
+Enter the cave on Route 146 (entrance at 27, 12) and speak to the scientist
+in the research chamber to start. The chamber has a return warp to Route 146.
+Rental, route, catch, swap, and reward choices use field menus. Press B on a
+rental/path menu or decline the next battle to pause; speak to the scientist
+to resume. Runs and unclaimed catches are lost on reset. Full storage retains
+the reward so you can make room and return before resetting.
+
+The backend remains callable from C or event scripts. It does not use story
+flags or add SaveBlock fields.
 
 ## Implemented run
 
@@ -57,8 +63,8 @@ SaveBlock fields.
 
 This is a **two-versus-one** backend with an AI rival. Four-person teams,
 networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
-menus, scientists, backpackers, legendary completion records, and adventure
-resumption from a save remain future work. No world entrance is installed.
+backpackers, legendary completion records, and adventure
+resumption from a save remain future work.
 
 Pool definitions are in `src/data/dynamax_adventure.h`. The C pool-query
 functions expose the exact active species lists for a future UI or tooling.
@@ -124,13 +130,13 @@ argument from `VAR_0x8005`. `VAR_RESULT` reports success/failure.
 | `DA_OP_START_BATTLE` | None | Launches battle if READY |
 | `DA_OP_CATCH` | 0=skip, nonzero=catch | Catch or advance |
 | `DA_OP_SWAP` | 0=keep both, 1=replace player rental, 2=replace rival rental | Swap or advance |
-| `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, only when FINISHED |
+| `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, STR_VAR_2=Shiny/Regular, only when FINISHED |
 | `DA_OP_CLAIM` | Caught index | Gives one reward and closes run |
 | `DA_OP_QUIT` | None | Discards the run outside battle |
 
 Only `DA_OP_START_BATTLE` is asynchronous. The caller must `waitstate` after a
-successful launch and then query status to decide what to display next. An
-example **for a future caller**, deliberately not installed in the game:
+successful launch and then query status to decide what to display next. The installed caller is
+`data/maps/DynamaxAdventureCave/scripts.inc`; a minimal battle example:
 
 ```asm
     setvar VAR_0x8004, DA_OP_START_BATTLE
@@ -142,5 +148,5 @@ example **for a future caller**, deliberately not installed in the game:
     // Display catch/retry/end choices based on VAR_0x8000.
 ```
 
-No operation opens a rental, path, catch, or reward menu. A future UI supplies
-those choices using these operations.
+The scientist script supplies the rental, path, catch, swap, and reward menus
+using these operations.

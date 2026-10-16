@@ -436,6 +436,9 @@ bool32 DynamaxAdventure_Quit(void)
     return TRUE;
 }
 
+static const u8 sRewardShiny[] = _("Shiny");
+static const u8 sRewardRegular[] = _("Regular");
+
 static bool32 BufferMon(struct Pokemon *mon)
 {
     if (mon == NULL)
@@ -477,7 +480,12 @@ void RunDynamaxAdventure(void)
     case DA_OP_SWAP: gSpecialVar_Result = DynamaxAdventure_SwapRental(arg == 0 ? DA_RENTAL_KEEP : arg - 1); break;
     case DA_OP_REWARD_INFO:
         if (DynamaxAdventure_GetStatus().phase == DA_PHASE_FINISHED)
-            gSpecialVar_Result = BufferMon(DynamaxAdventure_GetCaught(arg));
+        {
+            struct Pokemon *mon = DynamaxAdventure_GetCaught(arg);
+            gSpecialVar_Result = BufferMon(mon);
+            if (mon != NULL)
+                StringCopy(gStringVar2, GetMonData(mon, MON_DATA_IS_SHINY) ? sRewardShiny : sRewardRegular);
+        }
         break;
     case DA_OP_CLAIM: gSpecialVar_Result = DynamaxAdventure_Claim(arg); break;
     case DA_OP_QUIT: gSpecialVar_Result = DynamaxAdventure_Quit(); break;

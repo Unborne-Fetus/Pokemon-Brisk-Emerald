@@ -1785,6 +1785,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route145/scripts.inc"
 
 	.include "data/maps/Route146/scripts.inc"
+	.include "data/maps/DynamaxAdventureCave/scripts.inc"
 
 	.include "data/maps/OrangeCity_PokemonCenter_1F/scripts.inc"
 
