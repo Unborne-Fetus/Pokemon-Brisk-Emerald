@@ -32,5 +32,7 @@
 #define DA_OP_REWARD_INFO 9
 #define DA_OP_CLAIM 10
 #define DA_OP_QUIT 11
+#define DA_OP_BOSS_HINT 12
+#define DA_OP_IN_REST_CAVE 13
 
 #endif

@@ -18,6 +18,7 @@
 #include "util.h"
 #include "item_icon.h"
 #include "pokemon_icon.h"
+#include "dynamax_adventure.h"
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/script_menu.h"
@@ -71,8 +72,17 @@ static void MultichoiceDynamicEventShowItem_OnSelectionChanged(struct DynamicLis
 static void MultichoiceDynamicEventShowPkmn_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs);
 static void MultichoiceDynamicEventShowSprite_OnDestroy(struct DynamicListMenuEventArgs *eventArgs);
 
+static void AdventureIcons_Init(struct DynamicListMenuEventArgs *args);
+static void AdventureIcons_Destroy(struct DynamicListMenuEventArgs *args);
+static void AdventureIcons_Print(u8 windowId, u32 choice, u8 y);
+
 static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollections[] =
 {
+    [DYN_MULTICHOICE_CB_ADVENTURE_PKMN] =
+    {
+        .OnInit = AdventureIcons_Init,
+        .OnDestroy = AdventureIcons_Destroy,
+    },
     [DYN_MULTICHOICE_CB_DEBUG] =
     {
         .OnInit = MultichoiceDynamicEventDebug_OnInit,
@@ -92,6 +102,73 @@ static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollecti
         .OnDestroy = MultichoiceDynamicEventShowSprite_OnDestroy
     }
 };
+
+#define ADVENTURE_ICON_TAG 0xDA10
+#define ADVENTURE_VISIBLE_CHOICES 3
+
+static void AdventureIcons_Init(struct DynamicListMenuEventArgs *args)
+{
+    for (u32 i = 0; i < ADVENTURE_VISIBLE_CHOICES; i++)
+        sDynamicMenuEventScratchPad[i] = MAX_SPRITES;
+}
+
+static void AdventureIcons_FreeRow(u32 row)
+{
+    u32 sprite = sDynamicMenuEventScratchPad[row];
+    if (sprite < MAX_SPRITES)
+    {
+        if (gSprites[sprite].oam.affineMode != ST_OAM_AFFINE_OFF)
+            FreeOamMatrix(gSprites[sprite].oam.matrixNum);
+        DestroySprite(&gSprites[sprite]);
+    }
+    FreeSpriteTilesByTag(ADVENTURE_ICON_TAG + row);
+    FreeSpritePaletteByTag(ADVENTURE_ICON_TAG + row);
+    sDynamicMenuEventScratchPad[row] = MAX_SPRITES;
+}
+
+static void AdventureIcons_Destroy(struct DynamicListMenuEventArgs *args)
+{
+    for (u32 i = 0; i < ADVENTURE_VISIBLE_CHOICES; i++)
+        AdventureIcons_FreeRow(i);
+}
+
+static void AdventureIcons_Print(u8 windowId, u32 choice, u8 y)
+{
+    u32 row = y / 16;
+    if (row >= ADVENTURE_VISIBLE_CHOICES)
+        return;
+    AdventureIcons_FreeRow(row);
+    struct DynamaxAdventureStatus status = DynamaxAdventure_GetStatus();
+    struct Pokemon *mon = status.phase == DA_PHASE_RENTAL ? DynamaxAdventure_GetRental(choice)
+                        : status.phase == DA_PHASE_PATH ? DynamaxAdventure_GetPath(choice)
+                        : DynamaxAdventure_GetCaught(choice);
+    if (mon == NULL)
+        return;
+    u32 freeSprite;
+    for (freeSprite = 0; freeSprite < MAX_SPRITES; freeSprite++)
+        if (!gSprites[freeSprite].inUse)
+            break;
+    if (freeSprite == MAX_SPRITES)
+        return;
+    u32 sprite = CreateTaggedMonIcon(ADVENTURE_ICON_TAG + row, ADVENTURE_ICON_TAG + row, GetMonData(mon, MON_DATA_SPECIES));
+    sDynamicMenuEventScratchPad[row] = sprite;
+    if (sprite < MAX_SPRITES)
+    {
+        const struct WindowTemplate *window = &gWindows[windowId].window;
+        u32 matrix = AllocOamMatrix();
+        if (matrix == 0xFF)
+        {
+            AdventureIcons_FreeRow(row);
+            return;
+        }
+        gSprites[sprite].oam.affineMode = ST_OAM_AFFINE_NORMAL;
+        gSprites[sprite].oam.matrixNum = matrix;
+        SetOamMatrix(matrix, 0x200, 0, 0, 0x200); // 16px icon beside each 16px text row.
+        gSprites[sprite].x = window->tilemapLeft * 8 + 20;
+        gSprites[sprite].y = window->tilemapTop * 8 + y + 8;
+        gSprites[sprite].oam.priority = 0;
+    }
+}
 
 static const struct ListMenuTemplate sScriptableListMenuTemplate =
 {
@@ -390,6 +467,13 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     }
     LoadMessageBoxAndBorderGfx();
     windowHeight = (argc < maxBeforeScroll) ? argc * 2 : maxBeforeScroll * 2;
+    bool32 adventureIcons = callbackSet == DYN_MULTICHOICE_CB_ADVENTURE_PKMN;
+    if (adventureIcons)
+    {
+        width += 24;
+        windowHeight = min(argc, ADVENTURE_VISIBLE_CHOICES) * 2;
+        maxBeforeScroll = ADVENTURE_VISIBLE_CHOICES;
+    }
     newWidth = ConvertPixelWidthToTileWidth(width);
     left = ScriptMenu_AdjustLeftCoordFromWidth(left, newWidth);
     windowId = CreateWindowFromRect(left, top, newWidth, windowHeight);
@@ -412,6 +496,11 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     gMultiuseListMenuTemplate.totalItems = argc;
     gMultiuseListMenuTemplate.maxShowed = maxBeforeScroll;
     gMultiuseListMenuTemplate.moveCursorFunc = MultichoiceDynamic_MoveCursor;
+    if (adventureIcons)
+    {
+        gMultiuseListMenuTemplate.item_X = 32;
+        gMultiuseListMenuTemplate.itemPrintFunc = AdventureIcons_Print;
+    }
 
     taskId = CreateTask(Task_HandleScrollingMultichoiceInput, 80);
     gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);

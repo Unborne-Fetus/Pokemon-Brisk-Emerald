@@ -9565,6 +9565,17 @@
       "border_filepath": "data/layouts/DynamaxAdventureCave/border.bin",
       "blockdata_filepath": "data/layouts/DynamaxAdventureCave/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_DYNAMAX_ADVENTURE_REST_CAVE",
+      "name": "DynamaxAdventureRestCave_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DynamaxAdventureRestCave/border.bin",
+      "blockdata_filepath": "data/layouts/DynamaxAdventureRestCave/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

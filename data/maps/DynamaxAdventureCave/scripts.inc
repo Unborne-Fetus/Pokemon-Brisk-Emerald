@@ -16,7 +16,10 @@ DynamaxAdventureCave_Welcome::
 	setvar VAR_0x8004, DA_OP_BEGIN
 	special RunDynamaxAdventure
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Error
-	goto DynamaxAdventureCave_Dispatch
+    setvar VAR_0x8004, DA_OP_BOSS_HINT
+    special RunDynamaxAdventure
+    msgbox DynamaxAdventureCave_Text_BossHint, MSGBOX_DEFAULT
+    goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Dispatch::
 	setvar VAR_0x8004, DA_OP_STATUS
 	special RunDynamaxAdventure
@@ -28,11 +31,7 @@ DynamaxAdventureCave_Dispatch::
 	goto_if_eq VAR_0x8000, DA_PHASE_FINISHED, DynamaxAdventureCave_Finished
 	goto DynamaxAdventureCave_Error
 DynamaxAdventureCave_Rental::
-	goto_if_eq VAR_0x8007, 0, DynamaxAdventureCave_PlayerRental
-	msgbox DynamaxAdventureCave_Text_RivalRental, MSGBOX_DEFAULT
-	goto DynamaxAdventureCave_RentalChoices
-DynamaxAdventureCave_PlayerRental::
-	msgbox DynamaxAdventureCave_Text_PlayerRental, MSGBOX_DEFAULT
+    msgbox DynamaxAdventureCave_Text_PlayerRental, MSGBOX_DEFAULT
 DynamaxAdventureCave_RentalChoices::
 	setvar VAR_0x8004, DA_OP_RENTAL_INFO
 	setvar VAR_0x8005, 0
@@ -52,7 +51,7 @@ DynamaxAdventureCave_RentalNext1::
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext2
 	dynmultipush DynamaxAdventureCave_Text_Mon, 2
 DynamaxAdventureCave_RentalNext2::
-	dynmultistack 1, 1, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Pause
 	setvar VAR_0x8004, DA_OP_CHOOSE_RENTAL
 	copyvar VAR_0x8005, VAR_RESULT
@@ -60,6 +59,7 @@ DynamaxAdventureCave_RentalNext2::
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Error
 	goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Path::
+    goto_if_eq VAR_0x8001, 3, DynamaxAdventureCave_FinalPath
 	msgbox DynamaxAdventureCave_Text_Path, MSGBOX_DEFAULT
 	setvar VAR_0x8004, DA_OP_PATH_INFO
 	setvar VAR_0x8005, 0
@@ -69,13 +69,19 @@ DynamaxAdventureCave_Path::
 	setvar VAR_0x8005, 1
 	special RunDynamaxAdventure
 	dynmultipush DynamaxAdventureCave_Text_Mon, 1
-	dynmultistack 1, 1, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Pause
 	setvar VAR_0x8004, DA_OP_CHOOSE_PATH
 	copyvar VAR_0x8005, VAR_RESULT
 	special RunDynamaxAdventure
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Error
 	goto DynamaxAdventureCave_Dispatch
+DynamaxAdventureCave_FinalPath::
+    msgbox DynamaxAdventureCave_Text_FinalPath, MSGBOX_DEFAULT
+    setvar VAR_0x8004, DA_OP_CHOOSE_PATH
+    setvar VAR_0x8005, 0
+    special RunDynamaxAdventure
+    goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Ready::
 	buffernumberstring STR_VAR_1, VAR_0x8002
 	msgbox DynamaxAdventureCave_Text_Ready, MSGBOX_YESNO
@@ -84,8 +90,11 @@ DynamaxAdventureCave_Ready::
 	setvar VAR_0x8004, DA_OP_START_BATTLE
 	special RunDynamaxAdventure
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Error
-	waitstate
-	goto DynamaxAdventureCave_Dispatch
+    waitstate
+    warp MAP_DYNAMAX_ADVENTURE_REST_CAVE, 7, 7
+    waitstate
+    lockall
+    goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Catch::
 	msgbox DynamaxAdventureCave_Text_Catch, MSGBOX_YESNO
 	setvar VAR_0x8004, DA_OP_CATCH
@@ -97,8 +106,7 @@ DynamaxAdventureCave_Swap::
 	msgbox DynamaxAdventureCave_Text_Swap, MSGBOX_DEFAULT
 	dynmultipush DynamaxAdventureCave_Text_Keep, 0
 	dynmultipush DynamaxAdventureCave_Text_ReplacePlayer, 1
-	dynmultipush DynamaxAdventureCave_Text_ReplaceRival, 2
-	dynmultistack 1, 1, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Keep
 	setvar VAR_0x8004, DA_OP_SWAP
 	copyvar VAR_0x8005, VAR_RESULT
@@ -134,7 +142,7 @@ DynamaxAdventureCave_Finished::
 	special RunDynamaxAdventure
 	dynmultipush DynamaxAdventureCave_Text_RewardMon, 3
 DynamaxAdventureCave_RewardMenu::
-	dynmultistack 1, 1, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_RewardLater
 	copyvar VAR_0x8009, VAR_RESULT
 	setvar VAR_0x8004, DA_OP_REWARD_INFO
@@ -168,14 +176,21 @@ DynamaxAdventureCave_Pause::
 DynamaxAdventureCave_Error::
 	msgbox DynamaxAdventureCave_Text_Error, MSGBOX_DEFAULT
 DynamaxAdventureCave_Leave::
-	release
+    closemessage
+    setvar VAR_0x8004, DA_OP_IN_REST_CAVE
+    special RunDynamaxAdventure
+    goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Release
+    warp MAP_DYNAMAX_ADVENTURE_CAVE, 7, 7
+    waitstate
+DynamaxAdventureCave_Release::
+    releaseall
 	end
 
 DynamaxAdventureCave_Text_Welcome:
 	.string "Welcome to our DYNAMAX research cave!\n"
 	.string "Care to join an adventure?\p"
 	.string "Your rival will partner with you.\n"
-	.string "Choose a rental for each of you.\p"
+	.string "Your rival chooses their own rental.\p"
 	.string "Face four giant POKéMON at Lv. 100!\n"
 	.string "The last one is a legendary POKéMON.\p"
 	.string "Your rentals stay their normal size.\n"
@@ -261,3 +276,10 @@ DynamaxAdventureCave_Text_ReplacePlayer:
 
 DynamaxAdventureCave_Text_ReplaceRival:
 	.string "Replace rival's rental$"
+
+DynamaxAdventureCave_Text_BossHint:
+    .string "My readings indicate a strong\n"
+    .string "{STR_VAR_1}-type POKéMON deep inside!$"
+DynamaxAdventureCave_Text_FinalPath:
+    .string "We have reached the deepest chamber.\n"
+    .string "The powerful POKéMON is just ahead!$"

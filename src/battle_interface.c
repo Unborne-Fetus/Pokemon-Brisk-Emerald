@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "malloc.h"
 #include "battle.h"
 #include "pokemon.h"
@@ -601,6 +602,9 @@ static const union TextColor sHealthBoxTextColor =
 // The same goes for a 2 vs 1 where opponent has only one Pokémon.
 enum BattleCoordTypes GetBattlerCoordsIndex(enum BattlerId battler)
 {
+    // Adventure graphics allocate doubles healthboxes even with one enemy.
+    if (IsDynamaxAdventureBattle())
+        return BATTLE_COORDS_DOUBLES;
     if (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT && gPartiesCount[B_TRAINER_PLAYER] == 1 && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
         return BATTLE_COORDS_SINGLES;
     else if (GetBattlerPosition(battler) == B_POSITION_OPPONENT_LEFT && gPartiesCount[B_TRAINER_OPPONENT_A] == 1 && !(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
@@ -788,6 +792,13 @@ void SetHealthboxSpriteInvisible(u8 healthboxSpriteId)
 
 void SetHealthboxSpriteVisible(u8 healthboxSpriteId)
 {
+    // The wild-double intro can ask to show the empty fourth battler's box.
+    if (IsDynamaxAdventureBattle()
+     && (gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler)))
+    {
+        SetHealthboxSpriteInvisible(healthboxSpriteId);
+        return;
+    }
     gSprites[healthboxSpriteId].invisible = FALSE;
     gSprites[gSprites[healthboxSpriteId].hMain_HealthBarSpriteId].invisible = FALSE;
     gSprites[gSprites[healthboxSpriteId].oam.affineParam].invisible = FALSE;

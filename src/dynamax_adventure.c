@@ -1,6 +1,7 @@
 #include "global.h"
 #include "dynamax_adventure.h"
 #include "battle.h"
+#include "battle_main.h"
 #include "battle_setup.h"
 #include "battle_partner.h"
 #include "constants/opponents.h"
@@ -13,6 +14,7 @@
 #include "random.h"
 #include "string_util.h"
 #include "constants/pokedex.h"
+#include "constants/maps.h"
 
 struct AdventureSet
 {
@@ -261,10 +263,13 @@ bool32 DynamaxAdventure_ChooseRental(u32 choice)
     struct Pokemon *mon = DynamaxAdventure_GetRental(choice);
     if (mon == NULL)
         return FALSE;
-    sAdventure->team[sAdventure->status.rentalsChosen++] = *mon;
-    sAdventure->selectedOffers |= 1u << choice;
-    if (sAdventure->status.rentalsChosen == DA_TEAM_SIZE)
-        GeneratePaths();
+    sAdventure->team[0] = *mon;
+    // The rival chooses independently from the remaining offers.
+    u32 rival = (choice + 1 + NextRandom() % (DA_RENTAL_CHOICES - 1)) % DA_RENTAL_CHOICES;
+    sAdventure->team[1] = sAdventure->rentals[rival];
+    sAdventure->status.rentalsChosen = DA_TEAM_SIZE;
+    sAdventure->selectedOffers = (1u << choice) | (1u << rival);
+    GeneratePaths();
     return TRUE;
 }
 
@@ -276,6 +281,11 @@ bool32 DynamaxAdventure_ChoosePath(u32 choice)
     sAdventure->encounter = *mon;
     sAdventure->status.phase = DA_PHASE_READY;
     return TRUE;
+}
+
+u32 DynamaxAdventure_GetBossHPMultiplier(void)
+{
+    return IsDynamaxAdventureBattle() ? (sAdventure->status.stage == DA_ENCOUNTERS - 1 ? 7 : 5) : 1;
 }
 
 bool32 IsDynamaxAdventureBattle(void)
@@ -396,7 +406,7 @@ bool32 DynamaxAdventure_Catch(bool32 accept)
 bool32 DynamaxAdventure_SwapRental(u32 slot)
 {
     if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_SWAP
-     || (slot >= DA_TEAM_SIZE && slot != DA_RENTAL_KEEP))
+     || (slot != 0 && slot != DA_RENTAL_KEEP))
         return FALSE;
     if (slot != DA_RENTAL_KEEP)
     {
@@ -489,5 +499,16 @@ void RunDynamaxAdventure(void)
         break;
     case DA_OP_CLAIM: gSpecialVar_Result = DynamaxAdventure_Claim(arg); break;
     case DA_OP_QUIT: gSpecialVar_Result = DynamaxAdventure_Quit(); break;
+    case DA_OP_BOSS_HINT:
+        if (sAdventure != NULL)
+        {
+            StringCopy(gStringVar1, gTypesInfo[gSpeciesInfo[sAdventure->bossSpecies].types[0]].name);
+            gSpecialVar_Result = TRUE;
+        }
+        break;
+    case DA_OP_IN_REST_CAVE:
+        gSpecialVar_Result = gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_DYNAMAX_ADVENTURE_REST_CAVE)
+                         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE);
+        break;
     }
 }

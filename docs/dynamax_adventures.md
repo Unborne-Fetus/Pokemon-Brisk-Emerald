@@ -12,8 +12,8 @@ flags or add SaveBlock fields.
 
 ## Implemented run
 
-- Choose **two distinct rentals** from three offers. The player controls the
-  first; their rival controls the second through the normal partner AI.
+- Choose **one rental** from three offers, shown with Pokémon icons. The rival
+  independently takes a different remaining offer and controls it through AI.
   **May partners with a male player; Brendan partners with a female player.**
   Each encounter is a true **two-versus-one** wild multi battle, with exactly
   one opposing Pokémon and no opposing support. Names and trainer back sprites
@@ -52,7 +52,7 @@ flags or add SaveBlock fields.
 - No battle EXP, bag items (including balls), or Pay Day money. Rentals obey
   regardless of badges and difficulty caps.
 - After victory, the primary encounter is an optional guaranteed catch without
-  spending a ball. For ordinary catches, either the player's or rival's rental
+  spending a ball. For ordinary catches, only the player's rental
   can be replaced with a healed version of the encounter.
 - Catch shininess rolls at 1/300 when accepted and remains hidden on battle
   opponents and replacement rentals. Reward previews can reveal it.
@@ -65,6 +65,21 @@ This is a **two-versus-one** backend with an AI rival. Four-person teams,
 networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
 backpackers, legendary completion records, and adventure
 resumption from a save remain future work.
+
+Intermediate enemies have **5× their normal max HP**; the final boss has
+**7×**. These replace the ordinary Dynamax HP multiplier rather than stacking
+with it. Catches and rentals retain their normal stats. Healthboxes use doubles
+geometry throughout, matching the allocated graphics for the two-versus-one
+battle. If the player rental faints, the rival continues against the boss;
+a loss is counted only when neither player nor rival has a battle-ready rental.
+
+After every battle (victory, loss, or escape), the caller moves to an enclosed
+placeholder cave with just the scientist and the correct rival. It has no
+warp events, no doorway, and disallows Escape Rope/Dig. The scientist continues
+catch, swap, and path choices there. Finishing, deferring a reward, or taking a
+break returns the player to the Route 146 research cave. The initial scientist
+hint reveals only the final boss's primary type; the final path menu does not
+name or show an icon of that legendary before battle.
 
 Pool definitions are in `src/data/dynamax_adventure.h`. The C pool-query
 functions expose the exact active species lists for a future UI or tooling.
@@ -103,13 +118,13 @@ also used by the tests; calling `PrepareBattle` alone does not launch a battle.
 
 Lifecycle:
 
-1. `Begin` → RENTAL; choose two different offers with `ChooseRental`. The
-   first selection remains in RENTAL; the second advances to PATH.
+1. `Begin` → RENTAL; `ChooseRental` picks the player rental, automatically
+   gives the rival a distinct offer, and advances to PATH.
 2. Inspect paths and `ChoosePath` → READY.
 3. Start battle → BATTLE; return callback → CATCH on victory, READY for a
    surviving loss, or FINISHED for exhaustion/escape.
 4. `Catch(FALSE)` advances directly. `Catch(TRUE)` → SWAP for an ordinary
-   encounter; `SwapRental(slot)` advances, replacing slot 0/1 or keeping both with
+   encounter; `SwapRental(slot)` advances, replacing only slot 0 or keeping both with
    `DA_RENTAL_KEEP`. The compatibility `Swap(TRUE/FALSE)` replaces slot 0 or
    keeps both. The final catch decision finishes.
 5. FINISHED → inspect caught Pokémon and `Claim(index)`, or `Quit()`.
@@ -124,15 +139,17 @@ argument from `VAR_0x8005`. `VAR_RESULT` reports success/failure.
 | `DA_OP_BEGIN` | None | Starts a run |
 | `DA_OP_STATUS` | None | 8000=phase, 8001=stage, 8002=lives, 8003=catches, 8006=cleared, 8007=rentals chosen |
 | `DA_OP_RENTAL_INFO` | Offer 0–2 | STR_VAR_1=name, 8000=species, 8001=level |
-| `DA_OP_CHOOSE_RENTAL` | Offer 0–2 | Selects one rental; the second pick generates paths |
+| `DA_OP_CHOOSE_RENTAL` | Offer 0–2 | Selects player rental, assigns rival, generates paths |
 | `DA_OP_PATH_INFO` | Branch 0–1 | STR_VAR_1=name, 8000=species, 8001=level |
 | `DA_OP_CHOOSE_PATH` | Branch 0–1 | Prepares that encounter |
 | `DA_OP_START_BATTLE` | None | Launches battle if READY |
 | `DA_OP_CATCH` | 0=skip, nonzero=catch | Catch or advance |
-| `DA_OP_SWAP` | 0=keep both, 1=replace player rental, 2=replace rival rental | Swap or advance |
+| `DA_OP_SWAP` | 0=keep both, 1=replace player rental (other values rejected) | Swap or advance |
 | `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, STR_VAR_2=Shiny/Regular, only when FINISHED |
 | `DA_OP_CLAIM` | Caught index | Gives one reward and closes run |
 | `DA_OP_QUIT` | None | Discards the run outside battle |
+| `DA_OP_BOSS_HINT` | None | STR_VAR_1=final boss primary type |
+| `DA_OP_IN_REST_CAVE` | None | VAR_RESULT=whether player is in the staging cave |
 
 Only `DA_OP_START_BATTLE` is asynchronous. The caller must `waitstate` after a
 successful launch and then query status to decide what to display next. The installed caller is

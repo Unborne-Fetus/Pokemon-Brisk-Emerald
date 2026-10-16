@@ -147,13 +147,23 @@ bool32 IsGigantamaxed(enum BattlerId battler)
     return FALSE;
 }
 
+static uq4_12_t AdventureDynamaxHPMultiplier(struct Pokemon *mon, bool32 inverse)
+{
+    if (IsDynamaxAdventureBattle() && mon == &gParties[B_TRAINER_OPPONENT_A][0])
+    {
+        u32 scale = DynamaxAdventure_GetBossHPMultiplier();
+        return inverse ? UQ_4_12(1.0) / scale : UQ_4_12(1.0) * scale;
+    }
+    return GetDynamaxLevelHPMultiplier(GetMonData(mon, MON_DATA_DYNAMAX_LEVEL), inverse);
+}
+
 // Applies the HP Multiplier for Dynamaxed Pokemon and Raid Bosses.
 void ApplyDynamaxHPMultiplier(struct Pokemon* mon)
 {
     if (HasShedinjaHPHandling(GetMonData(mon, MON_DATA_SPECIES)))
         return;
 
-    uq4_12_t multiplier = GetDynamaxLevelHPMultiplier(GetMonData(mon, MON_DATA_DYNAMAX_LEVEL), FALSE);
+    uq4_12_t multiplier = AdventureDynamaxHPMultiplier(mon, FALSE);
     u32 hp = UQ_4_12_TO_INT((GetMonData(mon, MON_DATA_HP) * multiplier) + UQ_4_12_ROUND);
     u32 maxHP = UQ_4_12_TO_INT((GetMonData(mon, MON_DATA_MAX_HP) * multiplier) + UQ_4_12_ROUND);
     SetMonData(mon, MON_DATA_HP, &hp);
@@ -167,7 +177,7 @@ u32 GetNonDynamaxHP(enum BattlerId battler)
         return gBattleMons[battler].hp;
 
     struct Pokemon *mon = GetBattlerMon(battler);
-    uq4_12_t mult = GetDynamaxLevelHPMultiplier(GetMonData(mon, MON_DATA_DYNAMAX_LEVEL), TRUE);
+    uq4_12_t mult = AdventureDynamaxHPMultiplier(mon, TRUE);
     u32 hp = UQ_4_12_TO_INT((gBattleMons[battler].hp * mult) + UQ_4_12_ROUND);
     return hp;
 }
@@ -179,7 +189,7 @@ u32 GetNonDynamaxMaxHP(enum BattlerId battler)
         return gBattleMons[battler].maxHP;
 
     struct Pokemon *mon = GetBattlerMon(battler);
-    uq4_12_t mult = GetDynamaxLevelHPMultiplier(GetMonData(mon, MON_DATA_DYNAMAX_LEVEL), TRUE);
+    uq4_12_t mult = AdventureDynamaxHPMultiplier(mon, TRUE);
     u32 maxHP = UQ_4_12_TO_INT((gBattleMons[battler].maxHP * mult) + UQ_4_12_ROUND);
     return maxHP;
 }
@@ -213,7 +223,7 @@ void UndoDynamax(enum BattlerId battler)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
     {
         struct Pokemon *mon = GetBattlerMon(battler);
-        uq4_12_t mult = GetDynamaxLevelHPMultiplier(GetMonData(mon, MON_DATA_DYNAMAX_LEVEL), TRUE);
+        uq4_12_t mult = AdventureDynamaxHPMultiplier(mon, TRUE);
         gBattleMons[battler].hp = UQ_4_12_TO_INT((GetMonData(mon, MON_DATA_HP) * mult + 1) + UQ_4_12_ROUND); // round up
         SetMonData(mon, MON_DATA_HP, &gBattleMons[battler].hp);
         CalculateMonStats(mon);

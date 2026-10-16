@@ -2521,6 +2521,8 @@ bool32 NoAliveMonsForPlayer(void)
 
     if (!DoesPartyHaveBattleReadyMons(B_TRAINER_PARTNER))
         return TRUE;
+    if (IsDynamaxAdventureBattle())
+        return FALSE; // Spectate the rival until both rentals are defeated.
     return WillPlayerWhiteOutIfPartnerWinsAlone();
 }
 
