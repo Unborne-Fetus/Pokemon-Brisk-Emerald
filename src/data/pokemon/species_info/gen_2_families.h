@@ -6593,6 +6593,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sMamoswineLevelUpLearnset,
         .teachableLearnset = sMamoswineTeachableLearnset,
+        .formSpeciesIdTable = sMamoswineCustomMegaForms,
+        .formChangeTable = sMamoswineCustomMegaChanges,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SWINUB

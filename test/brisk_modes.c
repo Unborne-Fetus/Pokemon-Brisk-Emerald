@@ -185,7 +185,7 @@ TEST("Brisk capsule editor text fits and stays visible while idle")
     gMain.newAndRepeatedKeys = 0;
     gMain.newKeys = A_BUTTON;
     RunTasks();
-    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_BALL_CAPSULE), 1);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_BALL_CAPSULE_SEALS), 1);
     gMain.newKeys = 0;
     Test_CloseBriskCapsuleEditor();
 }

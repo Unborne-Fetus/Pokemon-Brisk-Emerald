@@ -5426,6 +5426,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sNinetalesLevelUpLearnset,
         .teachableLearnset = sNinetalesTeachableLearnset,
         .formSpeciesIdTable = sNinetalesFormSpeciesIdTable,
+        .formChangeTable = sNinetalesCustomMegaChanges,
     },
 
 #if P_ALOLAN_FORMS
@@ -10266,6 +10267,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sRapidashLevelUpLearnset,
         .teachableLearnset = sRapidashTeachableLearnset,
         .formSpeciesIdTable = sRapidashFormSpeciesIdTable,
+        .formChangeTable = sRapidashCustomMegaChanges,
     },
 
 #if P_GALARIAN_FORMS

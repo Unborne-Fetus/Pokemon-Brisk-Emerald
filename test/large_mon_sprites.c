@@ -28,7 +28,7 @@ static void CreateTestMonSprite(enum BattlerId battler, enum Species species)
 TEST("Native Mega sprites support all native forms and both battle views")
 {
     InitLargeSpriteTest();
-    for (u32 species = SPECIES_AMOONGUSS_MEGA; species <= SPECIES_REUNICLUS_MEGA; species++)
+    for (u32 species = SPECIES_AMOONGUSS_MEGA; species <= SPECIES_NINETALES_MEGA; species++)
     {
         if (species > SPECIES_WHIMSICOTT_MEGA && species < SPECIES_CLAWITZER_MEGA)
             continue;

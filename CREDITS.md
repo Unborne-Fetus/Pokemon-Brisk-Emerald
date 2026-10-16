@@ -202,3 +202,11 @@ Clawitzer, Tinkaton, Arboliva, Cryogonal, Haxorus, Dodrio, Sigilyph and Reuniclu
 sheets, including normal/shiny battle artwork, party icons and stone art.
 Original sheets are preserved in `resources/spectralmallow/`; individual
 source links are recorded alongside the imported battle assets.
+
+### EndlessTGX Mega sprite sheets
+
+[EndlessTGX](https://www.deviantart.com/endlesstgx): Mega Rapidash,
+Vespiquen, Exploud, Mamoswine, Tsareena, Breloom and Ninetales artwork.
+The supplied JPEG sheets are preserved in `resources/endlesstgx/`.
+Backgrounds and compression noise were cleaned before palette conversion;
+each imported form retains a source credit alongside its graphics.

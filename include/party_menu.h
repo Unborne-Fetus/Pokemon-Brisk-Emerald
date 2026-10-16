@@ -159,6 +159,7 @@ bool32 Test_ResumeBriskCandyAfterLearnedMove(void);
 bool32 Test_ChangeMonBall(struct Pokemon *mon, enum PokeBall ball);
 u8 Test_OpenBriskBallEditor(void);
 u8 Test_OpenBriskCapsuleEditor(void);
+u8 Test_OpenBriskSendOutEditor(void);
 void Test_CloseBriskCapsuleEditor(void);
 #endif
 

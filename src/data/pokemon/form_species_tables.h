@@ -1,3 +1,8 @@
+static const u16 sBreloomCustomMegaForms[] = { SPECIES_BRELOOM, SPECIES_BRELOOM_MEGA, FORM_SPECIES_END };
+static const u16 sTsareenaCustomMegaForms[] = { SPECIES_TSAREENA, SPECIES_TSAREENA_MEGA, FORM_SPECIES_END };
+static const u16 sMamoswineCustomMegaForms[] = { SPECIES_MAMOSWINE, SPECIES_MAMOSWINE_MEGA, FORM_SPECIES_END };
+static const u16 sExploudCustomMegaForms[] = { SPECIES_EXPLOUD, SPECIES_EXPLOUD_MEGA, FORM_SPECIES_END };
+static const u16 sVespiquenCustomMegaForms[] = { SPECIES_VESPIQUEN, SPECIES_VESPIQUEN_MEGA, FORM_SPECIES_END };
 static const u16 sReuniclusAddedMegaFormSpeciesIdTable[] = { SPECIES_REUNICLUS, SPECIES_REUNICLUS_MEGA, FORM_SPECIES_END };
 static const u16 sSigilyphAddedMegaFormSpeciesIdTable[] = { SPECIES_SIGILYPH, SPECIES_SIGILYPH_MEGA, FORM_SPECIES_END };
 static const u16 sDodrioAddedMegaFormSpeciesIdTable[] = { SPECIES_DODRIO, SPECIES_DODRIO_MEGA, FORM_SPECIES_END };
@@ -213,6 +218,7 @@ static const u16 sNinetalesFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_NINETALES_ALOLA,
 #endif
+    SPECIES_NINETALES_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_VULPIX
@@ -349,6 +355,7 @@ static const u16 sRapidashFormSpeciesIdTable[] = {
 #if P_GALARIAN_FORMS
     SPECIES_RAPIDASH_GALAR,
 #endif
+    SPECIES_RAPIDASH_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_PONYTA

@@ -3444,6 +3444,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sBreloomLevelUpLearnset,
         .teachableLearnset = sBreloomTeachableLearnset,
+        .formSpeciesIdTable = sBreloomCustomMegaForms,
+        .formChangeTable = sBreloomCustomMegaChanges,
     },
 #endif //P_FAMILY_SHROOMISH
 
@@ -4124,6 +4126,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sExploudLevelUpLearnset,
         .teachableLearnset = sExploudTeachableLearnset,
+        .formSpeciesIdTable = sExploudCustomMegaForms,
+        .formChangeTable = sExploudCustomMegaChanges,
     },
 #endif //P_FAMILY_WHISMUR
 

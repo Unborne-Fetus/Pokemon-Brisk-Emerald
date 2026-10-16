@@ -3607,4 +3607,25 @@ extern const u16 gItemIconPalette_Sigilyphite[];
 extern const u32 gItemIcon_Reuniclusite[];
 extern const u16 gItemIconPalette_Reuniclusite[];
 
+extern const u32 gItemIcon_Rapidashite[];
+extern const u16 gItemIconPalette_Rapidashite[];
+
+extern const u32 gItemIcon_Vespiquenite[];
+extern const u16 gItemIconPalette_Vespiquenite[];
+
+extern const u32 gItemIcon_Exploudite[];
+extern const u16 gItemIconPalette_Exploudite[];
+
+extern const u32 gItemIcon_Mamoswinite[];
+extern const u16 gItemIconPalette_Mamoswinite[];
+
+extern const u32 gItemIcon_Tsareenite[];
+extern const u16 gItemIconPalette_Tsareenite[];
+
+extern const u32 gItemIcon_Breloomite[];
+extern const u16 gItemIconPalette_Breloomite[];
+
+extern const u32 gItemIcon_Ninetalite[];
+extern const u16 gItemIconPalette_Ninetalite[];
+
 #endif //GUARD_GRAPHICS_H

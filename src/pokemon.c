@@ -2417,8 +2417,22 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = GetSubstruct3(boxMon)->gigantamaxFactor;
             break;
         case MON_DATA_BALL_CAPSULE_TEXT:
-            retVal = GetSubstruct0(boxMon)->ballCapsuleText;
+            retVal = GetSubstruct0(boxMon)->ballCapsuleText | (GetSubstruct3(boxMon)->sendOutTextHigh << 3);
             break;
+        case MON_DATA_BALL_CAPSULE_SEALS:
+        {
+            u32 raw = GetSubstruct0(boxMon)->ballCapsule
+                | (GetSubstruct0(boxMon)->capsuleHigh1 << 6)
+                | (GetSubstruct1(boxMon)->capsuleHigh2 << 8)
+                | (GetSubstruct1(boxMon)->capsuleHigh3 << 13);
+            if (raw >= 64)
+                retVal = raw - 64;
+            else
+                retVal = (raw & 3) + ((raw >> 2) & 3) * 39 + ((raw >> 4) & 3) * 39 * 39;
+            if (retVal >= 39 * 39 * 39)
+                retVal = 0;
+            break;
+        }
         case MON_DATA_BALL_CAPSULE:
             retVal = GetSubstruct0(boxMon)->ballCapsule;
             break;
@@ -2874,8 +2888,22 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_BALL_CAPSULE_TEXT:
             SET8(GetSubstruct0(boxMon)->ballCapsuleText);
+            GetSubstruct3(boxMon)->sendOutTextHigh = (*(const u8 *)data >> 3) & 1;
             break;
+        case MON_DATA_BALL_CAPSULE_SEALS:
+        {
+            u32 value = *(const u16 *)data;
+            value = (value < 39 * 39 * 39 ? value : 0) + 64;
+            GetSubstruct0(boxMon)->ballCapsule = value;
+            GetSubstruct0(boxMon)->capsuleHigh1 = value >> 6;
+            GetSubstruct1(boxMon)->capsuleHigh2 = value >> 8;
+            GetSubstruct1(boxMon)->capsuleHigh3 = value >> 13;
+            break;
+        }
         case MON_DATA_BALL_CAPSULE:
+            GetSubstruct0(boxMon)->capsuleHigh1 = 0;
+            GetSubstruct1(boxMon)->capsuleHigh2 = 0;
+            GetSubstruct1(boxMon)->capsuleHigh3 = 0;
             SET8(GetSubstruct0(boxMon)->ballCapsule);
             break;
         case MON_DATA_TERA_TYPE:

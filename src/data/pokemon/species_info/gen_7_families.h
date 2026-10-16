@@ -3909,6 +3909,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sTsareenaLevelUpLearnset,
         .teachableLearnset = sTsareenaTeachableLearnset,
+        .formSpeciesIdTable = sTsareenaCustomMegaForms,
+        .formChangeTable = sTsareenaCustomMegaChanges,
     },
 #endif //P_FAMILY_BOUNSWEET
 

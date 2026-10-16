@@ -128,6 +128,7 @@ enum MonData {
     MON_DATA_EVOLUTION_TRACKER,
     MON_DATA_BALL_CAPSULE,
     MON_DATA_BALL_CAPSULE_TEXT,
+    MON_DATA_BALL_CAPSULE_SEALS,
 };
 
 #define BLOCK_AI_DYNAMAX 15 // Used as dynamax level value by the AI to indicate this mon shouldn't dynamax
@@ -137,15 +138,15 @@ struct PokemonSubstruct0
     enum Species species:11; // 2047 species.
     enum Type teraType:5; // 30 types.
     enum Item heldItem:10; // 1023 items.
-    u16 ballCapsule:6; // Three 2-bit seals; uses previously unused save bits.
+    u16 ballCapsule:6; // Low bits of capsule encoding; values below 64 are legacy seals.
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
-    u32 ballCapsuleText:3;
+    u32 ballCapsuleText:3; // Low bits of independent send-out text choice.
     u8 ppBonuses;
     u8 friendship;
     u16 pokeball:6; // 63 balls.
     u16 nickname12:8; // 12th character of nickname.
-    u16 unused_0A:2;
+    u16 capsuleHigh1:2;
 };
 
 struct PokemonSubstruct1
@@ -155,9 +156,9 @@ struct PokemonSubstruct1
     enum Move move2:11; // 2047 moves.
     u16 evolutionTracker2:5;
     enum Move move3:11; // 2047 moves.
-    u16 unused_04:5;
+    u16 capsuleHigh2:5;
     enum Move move4:11; // 2047 moves.
-    u16 unused_06:3;
+    u16 capsuleHigh3:3;
     u16 hyperTrainedHP:1;
     u16 hyperTrainedAttack:1;
     u8 pp1:7; // 127 PP.
@@ -220,7 +221,7 @@ struct PokemonSubstruct3
     u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
     u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
     u32 isShadow:1;
-    u32 unused_0B:1;
+    u32 sendOutTextHigh:1;
     u32 abilityNum:2;
 
     // The functionality of this bit changed in FRLG:

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "ball_capsule.h"
+#include "naming_screen.h"
 #include "pokeball.h"
 #include "item_icon.h"
 #include "brisk_options.h"
@@ -117,6 +118,7 @@ enum {
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
     MENU_BALL_CAPSULE,
+    MENU_SEND_OUT_TEXT,
     MENU_CHANGE_BALL,
     MENU_FIELD_MOVES
 };
@@ -468,6 +470,8 @@ static void CB2_ReturnToPartyMenuFromStatEditor(void);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_BallCapsule(u8);
+static void CursorCb_SendOutText(u8);
+static void Task_EditSendOutText(u8);
 static void CursorCb_ChangeBall(u8);
 static void Task_ChangeBall(u8);
 static void Task_EditBallCapsule(u8);
@@ -9049,24 +9053,9 @@ static void Task_ChangeBall(u8 taskId)
     }
 }
 
-// Three two-bit seal slots live in unused boxed-Pokemon bits, preserving save layout.
-static void DrawBallCapsuleEditor(u8 taskId)
+// Visual seals and send-out phrases have independent editors and save fields.
+static void DrawCapsuleMessage(void)
 {
-    static const u8 *const names[] = {COMPOUND_STRING("NONE"), COMPOUND_STRING("HEARTS"), COMPOUND_STRING("STARS"), COMPOUND_STRING("BUBBLES")};
-    if (gTasks[taskId].data[13] == BALL_CAPSULE_SLOTS)
-    {
-        StringCopy(gStringVar1, COMPOUND_STRING("Text"));
-        StringCopy(gStringVar2, GetBallCapsuleText(gTasks[taskId].data[14]));
-    }
-    else
-    {
-        StringCopy(gStringVar1, COMPOUND_STRING("Seal "));
-        ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
-        StringAppend(gStringVar1, gStringVar3);
-        StringCopy(gStringVar2, names[GetBallCapsuleSeal(gTasks[taskId].data[12], gTasks[taskId].data[13])]);
-    }
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}: {STR_VAR_2}  Up/Down: Row\nLeft/Right: Edit  A: Save  B: Back"));
-    // This editor owns the message window: no scrolling or auto-clearing task.
     FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(TEXT_COLOR_WHITE));
     DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
     AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, gStringVar4, TEXT_SKIP_DRAW, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
@@ -9074,14 +9063,28 @@ static void DrawBallCapsuleEditor(u8 taskId)
     ScheduleBgCopyTilemapToVram(2);
 }
 
+static void CloseCapsuleEditor(u8 taskId)
+{
+    ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
+    ClearWindowTilemap(WIN_MSG);
+    CursorCb_Cancel1(taskId);
+}
+
+static void DrawBallCapsuleEditor(u8 taskId)
+{
+    ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[13] + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+    StringCopy(gStringVar2, GetBallCapsuleSealName(GetBallCapsuleSeal((u16)gTasks[taskId].data[12], gTasks[taskId].data[13])));
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Seal {STR_VAR_1}: {STR_VAR_2}  Up/Down: Slot\nLeft/Right: Edit  A: Save  B: Back"));
+    DrawCapsuleMessage();
+}
+
 static void CursorCb_BallCapsule(u8 taskId)
 {
     PlaySE(SE_SELECT);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
-    gTasks[taskId].data[12] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE);
+    gTasks[taskId].data[12] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_SEALS);
     gTasks[taskId].data[13] = 0;
-    gTasks[taskId].data[14] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT);
     DrawBallCapsuleEditor(taskId);
     gTasks[taskId].func = Task_EditBallCapsule;
 }
@@ -9089,41 +9092,100 @@ static void CursorCb_BallCapsule(u8 taskId)
 static void Task_EditBallCapsule(u8 taskId)
 {
     u32 slot = gTasks[taskId].data[13];
-    u32 capsule = gTasks[taskId].data[12];
+    u16 capsule = gTasks[taskId].data[12];
     if (JOY_NEW(A_BUTTON))
     {
-        u8 value = capsule;
-        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE, &value);
-        value = gTasks[taskId].data[14];
-        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT, &value);
-        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
-        ClearWindowTilemap(WIN_MSG);
-        CursorCb_Cancel1(taskId);
+        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_SEALS, &capsule);
+        CloseCapsuleEditor(taskId);
         return;
     }
     if (JOY_NEW(B_BUTTON))
     {
-        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
-        ClearWindowTilemap(WIN_MSG);
-        CursorCb_Cancel1(taskId);
+        CloseCapsuleEditor(taskId);
         return;
     }
     if (JOY_REPEAT(DPAD_UP))
-        slot = (slot + BALL_CAPSULE_SLOTS) % (BALL_CAPSULE_SLOTS + 1);
+        slot = (slot + BALL_CAPSULE_SLOTS - 1) % BALL_CAPSULE_SLOTS;
     else if (JOY_REPEAT(DPAD_DOWN))
-        slot = (slot + 1) % (BALL_CAPSULE_SLOTS + 1);
-    else if (slot == BALL_CAPSULE_SLOTS && JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
-        gTasks[taskId].data[14] = (gTasks[taskId].data[14] + (JOY_REPEAT(DPAD_RIGHT) ? 1 : BALL_CAPSULE_TEXT_COUNT - 1)) % BALL_CAPSULE_TEXT_COUNT;
-    else if (JOY_REPEAT(DPAD_LEFT))
-        capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + 3) % BALL_CAPSULE_STYLES);
-    else if (JOY_REPEAT(DPAD_RIGHT))
-        capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + 1) % BALL_CAPSULE_STYLES);
+        slot = (slot + 1) % BALL_CAPSULE_SLOTS;
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+        capsule = SetBallCapsuleSeal(capsule, slot, (GetBallCapsuleSeal(capsule, slot) + (JOY_REPEAT(DPAD_RIGHT) ? 1 : BALL_CAPSULE_STYLES - 1)) % BALL_CAPSULE_STYLES);
     else
         return;
     PlaySE(SE_SELECT);
     gTasks[taskId].data[12] = capsule;
     gTasks[taskId].data[13] = slot;
     DrawBallCapsuleEditor(taskId);
+}
+
+static EWRAM_DATA u8 sSendOutTextBuffer[SEND_OUT_TEXT_LENGTH + 1] = {0};
+static EWRAM_DATA u8 sSendOutTextMon = 0;
+static EWRAM_DATA u8 sSendOutCustomSlot = 0;
+
+static void DrawSendOutTextEditor(u8 taskId)
+{
+    u32 text = gTasks[taskId].data[14];
+    StringCopy(gStringVar1, GetBallCapsuleText(text));
+    if (text >= SEND_OUT_CUSTOM_FIRST)
+    {
+        ConvertIntToDecimalStringN(gStringVar2, text - SEND_OUT_CUSTOM_FIRST + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Custom {STR_VAR_2} (shared): {STR_VAR_1}\nL/R: Pick  START: Edit  A: Save  B: Back"));
+    }
+    else
+        StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Send-out text: {STR_VAR_1}\nLeft/Right: Pick  A: Save  B: Back"));
+    DrawCapsuleMessage();
+}
+
+static void CB2_ReturnFromSendOutNaming(void)
+{
+    StringCopyN(GetCustomSendOutText(sSendOutCustomSlot), sSendOutTextBuffer, SEND_OUT_TEXT_LENGTH + 1);
+    u8 value = SEND_OUT_CUSTOM_FIRST + sSendOutCustomSlot;
+    SetMonData(&gParties[B_TRAINER_PLAYER][sSendOutTextMon], MON_DATA_BALL_CAPSULE_TEXT, &value);
+    gLastViewedMonIndex = sSendOutTextMon;
+    CB2_ReturnToPartyMenuFromSummaryScreen();
+}
+
+static void CB2_EditCustomSendOutText(void)
+{
+    DoNamingScreen(NAMING_SCREEN_SEND_OUT_TEXT, sSendOutTextBuffer, 0, 0, 0, CB2_ReturnFromSendOutNaming);
+}
+
+static void CursorCb_SendOutText(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    gTasks[taskId].data[14] = GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT);
+    if (gTasks[taskId].data[14] >= BALL_CAPSULE_TEXT_COUNT)
+        gTasks[taskId].data[14] = 0;
+    DrawSendOutTextEditor(taskId);
+    gTasks[taskId].func = Task_EditSendOutText;
+}
+
+static void Task_EditSendOutText(u8 taskId)
+{
+    u8 text = gTasks[taskId].data[14];
+    if (JOY_NEW(B_BUTTON))
+        CloseCapsuleEditor(taskId);
+    else if (JOY_NEW(A_BUTTON))
+    {
+        SetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_BALL_CAPSULE_TEXT, &text);
+        CloseCapsuleEditor(taskId);
+    }
+    else if (JOY_NEW(START_BUTTON) && text >= SEND_OUT_CUSTOM_FIRST)
+    {
+        sSendOutCustomSlot = text - SEND_OUT_CUSTOM_FIRST;
+        sSendOutTextMon = gPartyMenu.slotId;
+        StringCopyN(sSendOutTextBuffer, GetCustomSendOutText(sSendOutCustomSlot), sizeof(sSendOutTextBuffer));
+        sPartyMenuInternal->exitCallback = CB2_EditCustomSendOutText;
+        Task_ClosePartyMenu(taskId);
+    }
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+    {
+        gTasks[taskId].data[14] = (text + (JOY_REPEAT(DPAD_RIGHT) ? 1 : BALL_CAPSULE_TEXT_COUNT - 1)) % BALL_CAPSULE_TEXT_COUNT;
+        PlaySE(SE_SELECT);
+        DrawSendOutTextEditor(taskId);
+    }
 }
 
 #if TESTING
@@ -9164,6 +9226,13 @@ u8 Test_OpenBriskCapsuleEditor(void)
     u8 taskId = CreateTask(Task_EditBallCapsule, 0);
     CursorCb_BallCapsule(taskId);
     return taskId;
+}
+
+u8 Test_OpenBriskSendOutEditor(void)
+{
+    u8 task = Test_OpenBriskCapsuleEditor();
+    CursorCb_SendOutText(task);
+    return task;
 }
 
 u8 Test_OpenBriskBallEditor(void)

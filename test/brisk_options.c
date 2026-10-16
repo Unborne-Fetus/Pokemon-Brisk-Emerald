@@ -91,12 +91,11 @@ TEST("Brisk Ball Capsules survive boxing and preserve held items and checksums")
         u32 encoded = 0;
         for (u32 slot = 0; slot < BALL_CAPSULE_SLOTS; slot++)
             encoded = SetBallCapsuleSeal(encoded, slot, (layout >> (slot * 2)) & 3);
-        EXPECT_EQ(encoded, layout);
-        u8 capsule = encoded;
-        SetMonData(&mon, MON_DATA_BALL_CAPSULE, &capsule);
+        u16 capsule = encoded;
+        SetMonData(&mon, MON_DATA_BALL_CAPSULE_SEALS, &capsule);
         struct BoxPokemon boxed = mon.box;
         BoxMonToMon(&boxed, &restored);
-        EXPECT_EQ(GetMonData(&restored, MON_DATA_BALL_CAPSULE), layout);
+        EXPECT_EQ(GetMonData(&restored, MON_DATA_BALL_CAPSULE_SEALS), encoded);
         EXPECT_EQ(GetMonData(&restored, MON_DATA_HELD_ITEM), item);
         EXPECT_EQ(GetMonData(&restored, MON_DATA_SANITY_IS_BAD_EGG), FALSE);
         EXPECT_EQ(GetMonData(&restored, MON_DATA_SPECIES), SPECIES_PIKACHU);

@@ -153,3 +153,29 @@ Moves inherit each base species. Reuniclus additionally gains level-one
 Drain Punch in the active Gen 9 learnset, available through the summary
 relearner before Mega Evolution; Hammer Arm remains in its existing learnset.
 All three stones are stocked by the Lilycove 4F Mega Stone clerk.
+
+## EndlessTGX sheets
+
+Seven forms (1619–1625) import Mega Rapidash, Vespiquen, Exploud, Mamoswine,
+Tsareena, Breloom and Ninetales. Credit: EndlessTGX. Source JPEGs are retained
+in `resources/endlesstgx/`; white backgrounds and JPEG noise were cleaned,
+then art was fitted to the native 80×80 renderer and 16-color palettes.
+Existing Megas (including Starmie, Froslass and Chimecho) and Golem were
+skipped as requested. Normal and shiny views are supplied for every form.
+Ninetales' orange/blue shiny colors were mapped by color family to avoid
+the JPEG sheet's misaligned pixels corrupting white fur and outlines.
+
+| Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe |
+|---|---|---|---|
+| Rapidash | Fire/Flying | Tough Claws | 65/120/90/100/100/125 |
+| Vespiquen | Bug/Flying | Queenly Majesty | 70/100/132/110/122/40 |
+| Exploud | Normal/Steel | Punk Rock | 104/111/88/131/78/78 |
+| Mamoswine | Ice/Ground | Thick Fat | 110/160/110/70/80/100 |
+| Tsareena | Grass/Fighting | Tough Claws | 72/150/118/50/118/102 |
+| Breloom | Grass/Fighting | Technician | 60/160/110/60/80/90 |
+| Ninetales | Fire/Ghost | Drought | 73/76/95/131/110/120 |
+
+Each gains 100 base stat points, with unchanged HP. Rapidash gains relearnable
+Brave Bird and Ninetales gains Shadow Ball in the active Gen 9 learnsets.
+Other moves inherit base learnsets. Each has a separate named stone with a
+duplicated stone icon and palette, stocked at Lilycove 4F.

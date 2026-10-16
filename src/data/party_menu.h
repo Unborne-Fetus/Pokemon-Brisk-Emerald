@@ -592,12 +592,12 @@ static const struct WindowTemplate sOrderWhichApplianceMsgWindowTemplate =
 static const struct WindowTemplate sItemGiveTakeWindowTemplate =
 {
     .bg = 2,
-    .tilemapLeft = 19,
-    .tilemapTop = 7,
-    .width = 10,
-    .height = 12,
+    .tilemapLeft = 17,
+    .tilemapTop = 5,
+    .width = 12,
+    .height = 14,
     .paletteNum = 14,
-    .baseBlock = 0x380,
+    .baseBlock = 0x340,
 };
 
 static const struct WindowTemplate sMailReadTakeWindowTemplate =
@@ -805,6 +805,7 @@ struct
 } static const sCursorOptions[MENU_FIELD_MOVES] =
 {
     [MENU_CHANGE_BALL]     = {COMPOUND_STRING("CHANGE BALL"), CursorCb_ChangeBall},
+    [MENU_SEND_OUT_TEXT]   = {COMPOUND_STRING("SEND-OUT TEXT"), CursorCb_SendOutText},
     [MENU_BALL_CAPSULE]    = {COMPOUND_STRING("BALL CAPSULE"), CursorCb_BallCapsule},
     [MENU_SUMMARY]         = {COMPOUND_STRING("SUMMARY"),         CursorCb_Summary},
     [MENU_STAT_EDIT]       = {COMPOUND_STRING("STAT EDIT"),       CursorCb_StatEdit},
@@ -849,7 +850,7 @@ static const u8 sPartyMenuAction_SummaryCancel[] = {MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_EnterSummaryCancel[] = {MENU_ENTER, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_NoEntrySummaryCancel[] = {MENU_NO_ENTRY, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_StoreSummaryCancel[] = {MENU_STORE, MENU_SUMMARY, MENU_CANCEL1};
-static const u8 sPartyMenuAction_GiveTakeItemCancel[] = {MENU_GIVE, MENU_TAKE_ITEM, MENU_MOVE_ITEM, MENU_BALL_CAPSULE, MENU_CHANGE_BALL, MENU_CANCEL2};
+static const u8 sPartyMenuAction_GiveTakeItemCancel[] = {MENU_GIVE, MENU_TAKE_ITEM, MENU_MOVE_ITEM, MENU_BALL_CAPSULE, MENU_SEND_OUT_TEXT, MENU_CHANGE_BALL, MENU_CANCEL2};
 static const u8 sPartyMenuAction_ReadTakeMailCancel[] = {MENU_READ, MENU_TAKE_MAIL, MENU_CANCEL2};
 static const u8 sPartyMenuAction_RegisterSummaryCancel[] = {MENU_REGISTER, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_TradeSummaryCancel1[] = {MENU_TRADE1, MENU_SUMMARY, MENU_CANCEL1};

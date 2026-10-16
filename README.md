@@ -29,3 +29,6 @@ Phantomy
 # [Documentation](https://rh-hideout.github.io/pokeemerald-expansion/)
 
 For detailed documentation, visit the [pokeemerald-expansion documentation page](https://rh-hideout.github.io/pokeemerald-expansion/).
+
+Custom Mega Rapidash, Vespiquen, Exploud, Mamoswine, Tsareena, Breloom and
+Ninetales sprite sheets by [EndlessTGX](https://www.deviantart.com/endlesstgx).

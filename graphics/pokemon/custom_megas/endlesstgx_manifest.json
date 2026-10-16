@@ -1,0 +1,170 @@
+[
+  {
+    "base_species": "SPECIES_RAPIDASH",
+    "species": "SPECIES_RAPIDASH_MEGA",
+    "id": 1619,
+    "asset_path": "graphics/pokemon/custom_megas/rapidash/mega",
+    "stats": [
+      65,
+      120,
+      90,
+      125,
+      100,
+      100
+    ],
+    "types": [
+      "FIRE",
+      "FLYING"
+    ],
+    "ability": "TOUGH_CLAWS",
+    "stone_name": "Rapidashite",
+    "stone_item": "ITEM_RAPIDASHITE",
+    "stone_asset_source": "charizardite_y",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_v_2_by_endlesstgx_dd4mhhi-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_VESPIQUEN",
+    "species": "SPECIES_VESPIQUEN_MEGA",
+    "id": 1620,
+    "asset_path": "graphics/pokemon/custom_megas/vespiquen/mega",
+    "stats": [
+      70,
+      100,
+      132,
+      40,
+      110,
+      122
+    ],
+    "types": [
+      "BUG",
+      "FLYING"
+    ],
+    "ability": "QUEENLY_MAJESTY",
+    "stone_name": "Vespiquenite",
+    "stone_item": "ITEM_VESPIQUENITE",
+    "stone_asset_source": "beedrillite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_v_2_by_endlesstgx_dd4mhhi-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_EXPLOUD",
+    "species": "SPECIES_EXPLOUD_MEGA",
+    "id": 1621,
+    "asset_path": "graphics/pokemon/custom_megas/exploud/mega",
+    "stats": [
+      104,
+      111,
+      88,
+      78,
+      131,
+      78
+    ],
+    "types": [
+      "NORMAL",
+      "STEEL"
+    ],
+    "ability": "PUNK_ROCK",
+    "stone_name": "Exploudite",
+    "stone_item": "ITEM_EXPLOUDITE",
+    "stone_asset_source": "metagrossite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_v_2_by_endlesstgx_dd4mhhi-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_MAMOSWINE",
+    "species": "SPECIES_MAMOSWINE_MEGA",
+    "id": 1622,
+    "asset_path": "graphics/pokemon/custom_megas/mamoswine/mega",
+    "stats": [
+      110,
+      160,
+      110,
+      100,
+      70,
+      80
+    ],
+    "types": [
+      "ICE",
+      "GROUND"
+    ],
+    "ability": "THICK_FAT",
+    "stone_name": "Mamoswinite",
+    "stone_item": "ITEM_MAMOSWINITE",
+    "stone_asset_source": "abomasite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_TSAREENA",
+    "species": "SPECIES_TSAREENA_MEGA",
+    "id": 1623,
+    "asset_path": "graphics/pokemon/custom_megas/tsareena/mega",
+    "stats": [
+      72,
+      150,
+      118,
+      102,
+      50,
+      118
+    ],
+    "types": [
+      "GRASS",
+      "FIGHTING"
+    ],
+    "ability": "TOUGH_CLAWS",
+    "stone_name": "Tsareenite",
+    "stone_item": "ITEM_TSAREENITE",
+    "stone_asset_source": "lopunnite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_BRELOOM",
+    "species": "SPECIES_BRELOOM_MEGA",
+    "id": 1624,
+    "asset_path": "graphics/pokemon/custom_megas/breloom/mega",
+    "stats": [
+      60,
+      160,
+      110,
+      90,
+      60,
+      80
+    ],
+    "types": [
+      "GRASS",
+      "FIGHTING"
+    ],
+    "ability": "TECHNICIAN",
+    "stone_name": "Breloomite",
+    "stone_item": "ITEM_BRELOOMITE",
+    "stone_asset_source": "sceptilite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg"
+  },
+  {
+    "base_species": "SPECIES_NINETALES",
+    "species": "SPECIES_NINETALES_MEGA",
+    "id": 1625,
+    "asset_path": "graphics/pokemon/custom_megas/ninetales/mega",
+    "stats": [
+      73,
+      76,
+      95,
+      120,
+      131,
+      110
+    ],
+    "types": [
+      "FIRE",
+      "GHOST"
+    ],
+    "ability": "DROUGHT",
+    "stone_name": "Ninetalite",
+    "stone_item": "ITEM_NINETALITE",
+    "stone_asset_source": "houndoominite",
+    "artist": "EndlessTGX",
+    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg"
+  }
+]

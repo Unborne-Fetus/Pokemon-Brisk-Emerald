@@ -2518,6 +2518,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sVespiquenLevelUpLearnset,
         .teachableLearnset = sVespiquenTeachableLearnset,
+        .formSpeciesIdTable = sVespiquenCustomMegaForms,
+        .formChangeTable = sVespiquenCustomMegaChanges,
     },
 #endif //P_FAMILY_COMBEE
 

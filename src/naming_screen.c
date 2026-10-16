@@ -1795,6 +1795,7 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_CODE]       = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_SEND_OUT_TEXT] = DrawNormalTextEntryBox,
     [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox
 };
 
@@ -2212,6 +2213,16 @@ static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
     .title = sText_RivalsName,
 };
 
+static const struct NamingScreenTemplate sSendOutTextTemplate =
+{
+    .copyExistingString = TRUE,
+    .maxChars = 15,
+    .iconFunction = 5,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .title = COMPOUND_STRING("SEND-OUT TEXT"),
+};
+
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2220,6 +2231,7 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
     [NAMING_SCREEN_CODE]       = &sCodeScreenTemplate,
+    [NAMING_SCREEN_SEND_OUT_TEXT] = &sSendOutTextTemplate,
     [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
 };
 
