@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "battle.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -349,6 +350,8 @@ static void InitBtlControllersInternal(void)
             gBattlerPartyIndexes[1] = 0;
             gBattlerPartyIndexes[2] = BattleSideHasTwoTrainers(B_SIDE_PLAYER) ? 0 : 1;
             gBattlerPartyIndexes[3] = BattleSideHasTwoTrainers(B_SIDE_OPPONENT) ? 0 : 1;
+            if (IsDynamaxAdventureBattle())
+                gBattlerPartyIndexes[3] = 1;
         }
     }
     else
@@ -2841,7 +2844,7 @@ bool32 TwoPlayerIntroMons(enum BattlerId battler) // Double battle with both pla
 
 bool32 TwoOpponentIntroMons(enum BattlerId battler) // Double battle with both opponent Pokémon active.
 {
-    return (IsDoubleBattle()
+    return (!IsDynamaxAdventureBattle() && IsDoubleBattle()
             && IsValidForBattle(GetBattlerMon(battler))
             && IsValidForBattle(GetBattlerMon(GetPartnerBattler(battler))));
 }

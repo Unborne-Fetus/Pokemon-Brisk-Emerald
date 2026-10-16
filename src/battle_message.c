@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "ball_capsule.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -2448,6 +2449,12 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
         gBattleTextBuff3[i] = gBattleMsgDataPtr->textBuffs[2][i];
     }
 
+    if (stringID == STRINGID_MEGAEVOREACTING && IsDynamaxAdventureBattle() && !IsOnPlayerSide(gBattlerAttacker))
+    {
+        BattleStringExpandPlaceholdersToDisplayedString(COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} is radiating energy!"));
+        return;
+    }
+
     switch (stringID)
     {
     case STRINGID_INTROMSG: // first battle msg
@@ -3027,7 +3034,11 @@ static const u8 *BattleStringGetPlayerName(u8 *text, enum BattlerId battler)
             toCpy = gSaveBlock2Ptr->playerName;
         break;
     case B_POSITION_PLAYER_RIGHT:
-        if (((gBattleTypeFlags & BATTLE_TYPE_RECORDED) && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)))
+        if (IsDynamaxAdventureBattle())
+        {
+            toCpy = DynamaxAdventure_GetPartnerName(gBattlerPartyIndexes[battler]);
+        }
+        else if (((gBattleTypeFlags & BATTLE_TYPE_RECORDED) && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)))
             || gTestRunnerEnabled)
         {
             toCpy = gLinkPlayers[0].name;

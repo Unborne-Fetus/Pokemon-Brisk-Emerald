@@ -53,6 +53,24 @@ DynamaxAdventureCave_RentalNext1::
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext2
 	dynmultipush DynamaxAdventureCave_Text_Mon, 2
 DynamaxAdventureCave_RentalNext2::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 3
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext3
+	dynmultipush DynamaxAdventureCave_Text_Mon, 3
+DynamaxAdventureCave_RentalNext3::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 4
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext4
+	dynmultipush DynamaxAdventureCave_Text_Mon, 4
+DynamaxAdventureCave_RentalNext4::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 5
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext5
+	dynmultipush DynamaxAdventureCave_Text_Mon, 5
+DynamaxAdventureCave_RentalNext5::
 	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Pause
 	setvar VAR_0x8004, DA_OP_CHOOSE_RENTAL
@@ -191,10 +209,10 @@ DynamaxAdventureCave_Release::
 DynamaxAdventureCave_Text_Welcome:
 	.string "Welcome to our DYNAMAX research cave!\n"
 	.string "Care to join an adventure?\p"
-	.string "Your rival will partner with you.\n"
-	.string "Your rival chooses their own rental.\p"
-	.string "Face four giant POKéMON at Lv. 100!\n"
-	.string "The last one is a legendary POKéMON.\p"
+	.string "Your rival and BIRCH will join us.\n"
+	.string "We will pick our own rentals.\p"
+	.string "Rentals and route POKéMON are Lv. 70!\n"
+	.string "The final legendary is Lv. 100.\p"
 	.string "Your rentals can use MEGA or G-MAX.\n"
 	.string "You share four chances to win.\p"
 	.string "Catches are free. At the end, you may\n"
@@ -271,7 +289,7 @@ DynamaxAdventureCave_Text_RewardMon:
 	.string "{STR_VAR_1} ({STR_VAR_2})$"
 
 DynamaxAdventureCave_Text_Keep:
-	.string "Keep both rentals$"
+	.string "Keep my rental$"
 
 DynamaxAdventureCave_Text_ReplacePlayer:
 	.string "Replace my rental$"

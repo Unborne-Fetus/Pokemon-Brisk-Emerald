@@ -15,6 +15,9 @@ struct DynamaxAdventureStatus
 };
 
 u32 DynamaxAdventure_GetBossHPMultiplier(void);
+u32 DynamaxAdventure_GetBossDamageMultiplier(void);
+const u8 *DynamaxAdventure_GetPartnerName(u32 slot);
+void DynamaxAdventure_SwitchPartner(enum BattlerId battler, u32 newSlot);
 u32 DynamaxAdventure_ScaleMaxHP(struct Pokemon *mon, u32 hp);
 u16 DynamaxAdventure_GetRivalPartnerId(void);
 u32 DynamaxAdventure_GetRentalPoolCount(void);

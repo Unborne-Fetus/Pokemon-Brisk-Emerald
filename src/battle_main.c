@@ -1,4 +1,5 @@
 #include "global.h"
+#include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -3210,6 +3211,14 @@ static void DoBattleIntro(void)
     case BATTLE_INTRO_STATE_DRAW_SPRITES:
         for (battler = 0; battler < gBattlersCount; battler++)
         {
+            if (IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
+            {
+                // There is one shared boss, never a second wild Pokemon.
+                memset(&gBattleMons[battler], 0, sizeof(gBattleMons[battler]));
+                gAbsentBattlerFlags |= 1u << battler;
+                continue;
+            }
+
             if ((gBattleTypeFlags & BATTLE_TYPE_SAFARI) && IsOnPlayerSide(battler))
             {
                 memset(&gBattleMons[battler], 0, sizeof(struct BattlePokemon));

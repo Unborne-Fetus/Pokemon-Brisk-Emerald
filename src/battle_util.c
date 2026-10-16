@@ -8114,13 +8114,18 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
     else
         damage = DoMoveDamageCalc(ctx);
 
+    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
+        damage *= DynamaxAdventure_GetBossDamageMultiplier();
     return GetAdjustedDamage(ctx, damage);
 }
 
 // for AI so that typeEffectivenessModifier, weather, abilities and holdEffects are calculated only once
 s32 CalculateMoveDamageVars(struct DamageContext *ctx)
 {
-    return DoMoveDamageCalcVars(ctx);
+    s32 damage = DoMoveDamageCalcVars(ctx);
+    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
+        damage *= DynamaxAdventure_GetBossDamageMultiplier();
+    return damage;
 }
 
 static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *modifier, enum Type defType)

@@ -148,8 +148,14 @@ bool32 IsGigantamaxed(enum BattlerId battler)
 
 static uq4_12_t AdventureDynamaxHPMultiplier(struct Pokemon *mon, bool32 inverse)
 {
-    if (IsDynamaxAdventureBattle() && (mon == &gParties[B_TRAINER_PLAYER][0] || mon == &gParties[B_TRAINER_PARTNER][0]))
-        return UQ_4_12(1.0); // Difficulty already supplies each rental's total HP.
+    if (IsDynamaxAdventureBattle())
+    {
+        if (mon == &gParties[B_TRAINER_PLAYER][0])
+            return UQ_4_12(1.0);
+        for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
+            if (mon == &gParties[B_TRAINER_PARTNER][i])
+                return UQ_4_12(1.0); // Difficulty already supplies total HP.
+    }
     if (IsDynamaxAdventureBattle() && mon == &gParties[B_TRAINER_OPPONENT_A][0])
     {
         u32 scale = DynamaxAdventure_GetBossHPMultiplier();

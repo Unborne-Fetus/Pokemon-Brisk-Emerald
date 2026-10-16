@@ -107,7 +107,7 @@ TEST("Adventure: battle isolation restores the entire original party and blocks 
     EXPECT(DynamaxAdventure_PrepareBattle());
     EXPECT(IsDynamaxAdventureBattle());
     EXPECT_EQ(gPartiesCount[B_TRAINER_PLAYER], 1);
-    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], DA_TEAM_SIZE - 1);
     EXPECT_EQ(gPartiesCount[B_TRAINER_OPPONENT_A], 1);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PARTNER][0], MON_DATA_LEVEL), DA_RENTAL_LEVEL);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_SPECIES), SPECIES_NONE);
@@ -388,7 +388,7 @@ TEST("Adventure: every canonical legendary and mythical is in the boss pool")
     Test_MgbaPrintf("Adventure boss pool: %d species", count);
 }
 
-TEST("Adventure: competitive rental pool has level 100 moves abilities and full training")
+TEST("Adventure: competitive rental pool has level 70 moves abilities and full training")
 {
     bool8 seen[NUM_SPECIES] = {0};
     u32 found = 0;
@@ -401,7 +401,7 @@ TEST("Adventure: competitive rental pool has level 100 moves abilities and full 
         {
             struct Pokemon *mon = DynamaxAdventure_GetRental(i);
             enum Species species = GetMonData(mon, MON_DATA_SPECIES);
-            EXPECT_EQ(GetMonData(mon, MON_DATA_LEVEL), 100);
+            EXPECT_EQ(GetMonData(mon, MON_DATA_LEVEL), DA_RENTAL_LEVEL);
             EXPECT_NE(GetMonData(mon, MON_DATA_HELD_ITEM), ITEM_NONE);
             u32 evs = 0;
             for (u32 stat = 0; stat < NUM_STATS; stat++)
@@ -476,14 +476,15 @@ TEST("Adventure: every boss generates at level 100 with usable attacks")
         EXPECT(Test_DynamaxAdventure_CreateBoss(&mon, species));
         EXPECT_EQ(GetMonData(&mon, MON_DATA_SPECIES), species);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), 100);
-        bool32 attack = FALSE;
+        u32 attacks = 0;
         for (u32 slot = 0; slot < MAX_MON_MOVES; slot++)
         {
             enum Move move = GetMonData(&mon, MON_DATA_MOVE1 + slot);
             if (move != MOVE_NONE && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS)
-                attack = TRUE;
+                attacks++;
         }
-        EXPECT(attack);
+        if (attacks < 3) Test_MgbaPrintf("Boss lacking attacks: %d", species);
+        EXPECT_GE(attacks, 3);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_HP), GetMonData(&mon, MON_DATA_MAX_HP));
     }
     EXPECT(DynamaxAdventure_Quit());
@@ -518,7 +519,7 @@ TEST("Adventure: previous partner party identity and opponent context are restor
     EXPECT(DynamaxAdventure_ChoosePath(0));
     EXPECT(DynamaxAdventure_PrepareBattle());
     EXPECT_EQ(gPartiesCount[B_TRAINER_PLAYER], 1);
-    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
+    EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], DA_TEAM_SIZE - 1);
     EXPECT_EQ(gPartiesCount[B_TRAINER_OPPONENT_A], 1);
     EXPECT_EQ(gPartnerTrainerId, DynamaxAdventure_GetRivalPartnerId());
     EXPECT_EQ(TRAINER_BATTLE_PARAM.opponentB, 0xFFFF);
@@ -559,7 +560,7 @@ TEST("Adventure: Route 146 cave has walkable reciprocal warps and an uncondition
     EXPECT_EQ(exit->warpId, 0);
     EXPECT_EQ((route->mapLayout->map[entrance->y * route->mapLayout->width + entrance->x] >> 10) & 3, 0);
     EXPECT_EQ((cave->mapLayout->map[exit->y * cave->mapLayout->width + exit->x] >> 10) & 3, 0);
-    EXPECT_EQ(cave->events->objectEventCount, 2);
+    EXPECT_EQ(cave->events->objectEventCount, 3);
     EXPECT_EQ(cave->events->objectEvents[0].graphicsId, OBJ_EVENT_GFX_SCIENTIST_1);
     EXPECT_EQ(cave->events->objectEvents[0].flagId, 0);
     EXPECT_EQ(cave->events->objectEvents[0].script, DynamaxAdventureCave_EventScript_Scientist);
@@ -601,7 +602,7 @@ TEST("Adventure: staging chamber has no warps, blocks escape and contains the ri
     const struct MapHeader *room = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_DYNAMAX_ADVENTURE_REST_CAVE), MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE));
     EXPECT_EQ(room->events->warpCount, 0);
     EXPECT(!room->allowEscaping);
-    EXPECT_EQ(room->events->objectEventCount, 2);
+    EXPECT_EQ(room->events->objectEventCount, 3);
     EXPECT_EQ(room->events->objectEvents[0].graphicsId, OBJ_EVENT_GFX_SCIENTIST_1);
     EXPECT_EQ(room->events->objectEvents[1].graphicsId, OBJ_EVENT_GFX_VAR_0);
     EXPECT_NE((room->mapLayout->map[3 * room->mapLayout->width + 7] >> 10) & 3, 0);
@@ -765,6 +766,8 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: Mega enemies retain boosted HP through their 
         OPPONENT(SPECIES_GARCHOMP) { Item(ITEM_GARCHOMPITE); Moves(MOVE_CELEBRATE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("The wild Garchomp's Garchompite is radiating energy!");
     } THEN {
         EXPECT_EQ(opponentLeft->species, SPECIES_GARCHOMP_MEGA);
         struct Pokemon base = *GetBattlerMon(B_BATTLER_1);
@@ -798,12 +801,6 @@ TEST("Adventure: type-only route hints use the battle form and shiny rolls survi
         EXPECT_EQ(gSpecialVar_Result, TRUE);
         u8 expected[64];
         StringCopy(expected, gTypesInfo[gSpeciesInfo[species].types[0]].name);
-        if (gSpeciesInfo[species].types[0] != gSpeciesInfo[species].types[1])
-        {
-            static const u8 slash[] = _(" / ");
-            StringAppend(expected, slash);
-            StringAppend(expected, gTypesInfo[gSpeciesInfo[species].types[1]].name);
-        }
         EXPECT_EQ(StringCompare(expected, gStringVar1), 0);
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
@@ -843,4 +840,177 @@ TEST("Adventure: rental forms abilities and consumed held items reset between en
     EXPECT_EQ(GetMonData(mon, MON_DATA_ABILITY_NUM), ability);
     EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
     EXPECT(DynamaxAdventure_Quit());
+}
+
+TEST("Adventure: all four members recover HP and PP according to the starting difficulty")
+{
+    u32 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
+    for (u32 mode = BRISK_MODE_EASY; mode <= BRISK_MODE_EXTREME; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 3);
+        u16 maxima[DA_TEAM_SIZE];
+        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        {
+            struct Pokemon *mon = i == 0 ? &gParties[B_TRAINER_PLAYER][0] : &gParties[B_TRAINER_PARTNER][i - 1];
+            maxima[i] = GetMonData(mon, MON_DATA_MAX_HP);
+            u16 hp = 1;
+            u32 status = STATUS1_POISON;
+            u8 pp = 0;
+            SetMonData(mon, MON_DATA_HP, &hp);
+            SetMonData(mon, MON_DATA_STATUS, &status);
+            SetMonData(mon, MON_DATA_PP1, &pp);
+            for (u32 j = 0; j < i; j++)
+            {
+                struct Pokemon *other = j == 0 ? &gParties[B_TRAINER_PLAYER][0] : &gParties[B_TRAINER_PARTNER][j - 1];
+                EXPECT_NE(GetMonData(mon, MON_DATA_SPECIES), GetMonData(other, MON_DATA_SPECIES));
+            }
+        }
+        EXPECT_EQ(DynamaxAdventure_GetBossDamageMultiplier(), mode == BRISK_MODE_EXTREME ? 2 : 1);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        EXPECT(DynamaxAdventure_Catch(FALSE));
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        // The lead researcher rotates each round: old slots 1,2,0 become 0,1,2.
+        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        {
+            u32 old = i == 0 ? 0 : 1 + i % 3;
+            struct Pokemon *mon = i == 0 ? &gParties[B_TRAINER_PLAYER][0] : &gParties[B_TRAINER_PARTNER][i - 1];
+            u32 maxHP = maxima[old];
+            u32 heal = mode <= BRISK_MODE_NORMAL ? maxHP : maxHP / (mode == BRISK_MODE_HARD ? 2 : 4);
+            EXPECT_EQ(GetMonData(mon, MON_DATA_HP), min(maxHP, 1 + heal));
+            EXPECT_EQ(GetMonData(mon, MON_DATA_STATUS), mode == BRISK_MODE_EASY ? 0 : STATUS1_POISON);
+            EXPECT_GT(GetMonData(mon, MON_DATA_PP1), 0);
+        }
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
+        EXPECT(DynamaxAdventure_Quit());
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+}
+
+TEST("Adventure: six offers are selectable and rentals and routes have at least three damaging moves")
+{
+    EXPECT_EQ(DA_RENTAL_CHOICES, 6);
+    for (u32 choice = 0; choice < DA_RENTAL_CHOICES; choice++)
+    {
+        EXPECT(DynamaxAdventure_Begin(17));
+        struct Pokemon *mon = DynamaxAdventure_GetRental(choice);
+        EXPECT(mon != NULL);
+        EXPECT_EQ(GetMonData(mon, MON_DATA_LEVEL), 70);
+        EXPECT(DynamaxAdventure_ChooseRental(choice));
+        for (u32 branch = 0; branch < DA_PATH_CHOICES; branch++)
+        {
+            mon = DynamaxAdventure_GetPath(branch);
+            u32 attacks = 0;
+            for (u32 i = 0; i < MAX_MON_MOVES; i++)
+            {
+                enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+                attacks += move != MOVE_NONE && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS;
+            }
+            EXPECT_GE(attacks, 3);
+            EXPECT_EQ(GetMonData(mon, MON_DATA_LEVEL), 70);
+        }
+        EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+TEST("Adventure: researchers sometimes accept a declined catch without replacing the player's rental")
+{
+    bool32 sawSwap = FALSE, sawKeep = FALSE;
+    for (u32 seed = 0; seed < 64 && !(sawSwap && sawKeep); seed++)
+    {
+        EXPECT(DynamaxAdventure_Begin(seed));
+        EXPECT(DynamaxAdventure_ChooseRental(0));
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        struct Pokemon original[DA_TEAM_SIZE];
+        original[0] = gParties[B_TRAINER_PLAYER][0];
+        for (u32 i = 1; i < DA_TEAM_SIZE; i++)
+            original[i] = gParties[B_TRAINER_PARTNER][i - 1];
+        u32 encounter = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_PERSONALITY);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        EXPECT(DynamaxAdventure_Catch(TRUE));
+        EXPECT(DynamaxAdventure_Swap(FALSE));
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        EXPECT_EQ(GetMonData(&original[0], MON_DATA_PERSONALITY), GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_PERSONALITY));
+        u32 changed = 0;
+        for (u32 i = 0; i < 3; i++)
+        {
+            u32 old = 1 + (i + 1) % 3;
+            u32 pid = GetMonData(&gParties[B_TRAINER_PARTNER][i], MON_DATA_PERSONALITY);
+            if (pid != GetMonData(&original[old], MON_DATA_PERSONALITY))
+            {
+                EXPECT_EQ(pid, encounter);
+                changed++;
+            }
+        }
+        EXPECT_LE(changed, 1);
+        sawSwap |= changed == 1;
+        sawKeep |= changed == 0;
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
+        EXPECT(DynamaxAdventure_Quit());
+    }
+    EXPECT(sawSwap && sawKeep);
+}
+
+TWO_VS_ONE_BATTLE_TEST("Adventure: each researcher can Mega evolve independently when taking the relay position")
+{
+    GIVEN {
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GARCHOMP) { Item(ITEM_GARCHOMPITE); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_Y); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
+        TURN { SWITCH(playerRight, 1); }
+        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
+        TURN { SWITCH(playerRight, 2); }
+        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
+    } THEN {
+        EXPECT_EQ(playerRight->species, SPECIES_VENUSAUR_MEGA);
+        EXPECT_EQ(StringCompare(DynamaxAdventure_GetPartnerName(2), COMPOUND_STRING("BIRCH")), 0);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+TWO_VS_ONE_BATTLE_TEST("Adventure: only Extreme doubles boss move damage")
+{
+    u32 mode;
+    u32 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
+    PARAMETRIZE { mode = BRISK_MODE_NORMAL; }
+    PARAMETRIZE { mode = BRISK_MODE_HARD; }
+    PARAMETRIZE { mode = BRISK_MODE_EXTREME; }
+    GIVEN {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { HP(500); MaxHP(500); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE); }
+    } WHEN {
+        TURN { MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: playerLeft); }
+    } THEN {
+        EXPECT_EQ(playerLeft->hp, mode == BRISK_MODE_EXTREME ? 420 : 460);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
+        VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    }
 }

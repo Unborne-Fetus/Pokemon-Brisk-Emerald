@@ -12,15 +12,17 @@ flags or add SaveBlock fields.
 
 ## Implemented run
 
-- Choose **one rental** from three offers, shown with Pokémon icons. The rival
-  independently takes a different remaining offer and controls it through AI.
+- Choose **one rental** from six offers, shown with Pokémon icons. The rival, scientist,
+  and Birch independently choose different remaining offers. One researcher
+  fights beside the player; the other two are AI relay reserves. The lead
+  researcher rotates each round.
   **May partners with a male player; Brendan partners with a female player.**
   Each encounter is a true **two-versus-one** wild multi battle, with exactly
   one opposing Pokémon and no opposing support. Names and trainer back sprites
   use dedicated rival partner identities.
 - Rental offers are drawn from the Mega/G-Max-capable subset of **74 curated
-  doubles sets**. All rentals, route encounters, rival rentals, and bosses are
-  **level 100**. The rival uses Basic + Doubles + Omniscient + Smart Mon Choices
+  doubles sets**. Rentals, researchers, and intermediate encounters are **level 70**;
+  the final legendary is **level 100**. The rival uses Basic + Doubles + Omniscient + Smart Mon Choices
   AI flags, independent of difficulty.
 - Every set has four selected moves, an ability from its species' slots, a
   held item, 508 EVs, and a role-based nature. Special-only sets have 0 Attack
@@ -29,7 +31,7 @@ flags or add SaveBlock fields.
   as Life Orb, Sitrus Berry, Light Clay, Focus Sash, or a damage/type booster.
   Rental consumables are replenished between encounters.
 - Three route choices offer a **Mega encounter versus a G-Max encounter**.
-  The selection menu shows only each battle form's typing, with no names or
+  The selection menu shows only each battle form's primary type, with no names or
   Pokémon icons. Rental and reward menus still show names and icons.
 - The final pool contains **97 canonical legendary/mythical species and
   regional forms**, each with an explicit competitive set. Battle-only and
@@ -43,19 +45,21 @@ flags or add SaveBlock fields.
   player activates theirs normally; the rival activates automatically. Each
   participant has an independent gimmick allowance. Player/rival G-Max uses
   the usual three-turn duration; Terastallization remains unavailable.
-- Difficulty is captured at the start of the run and scales **both rental HP
+- Difficulty is captured at the start of the run and scales **all four rental HP
   totals**, including through form changes: Easy 4×, Normal 2×, Hard 1×,
   Extreme ½× (minimum 1 HP). G-Max does not add another HP multiplier on top.
   The real party, offered/caught Pokémon, and final rewards are not scaled.
-- Four lives. A whole-team loss spends one life, heals both rentals, and allows
-  a retry. Four losses or running away finish the run. A partner that faints
-  during a victory is revived at half HP for the next double battle. Other
-  surviving rental HP, PP, and status persist.
+- Four lives. A whole-team loss spends one life and allows a retry. Four
+  losses or running away finish the run. All four rentals recover PP after
+  every battle. Easy restores full HP and cures status; Normal restores full
+  HP without curing status; Hard adds half max HP; Extreme adds a quarter
+  max HP. Healing caps at max HP and revives fainted rentals. Extreme bosses
+  deal double direct move damage, including fixed-damage moves.
 - No battle EXP, bag items (including balls), or Pay Day money. Rentals obey
   regardless of badges and difficulty caps.
 - After victory, the primary encounter is an optional guaranteed catch without
-  spending a ball. For ordinary catches, only the player's rental
-  can be replaced with a healed version of the encounter.
+  spending a ball. For ordinary catches, the player can replace their rental. If declined, a randomly chosen researcher
+  has a 50% chance to take the encounter instead.
 - Every generated rental or encounter rolls shiny odds once at **1/100**.
   That same roll survives battling, catching, and replacing a rental; no extra
   catch-time reroll occurs. Adventure odds are independent of the Options
@@ -65,7 +69,7 @@ flags or add SaveBlock fields.
   Full party and PC storage retains the reward until space becomes available.
   Quitting instead discards all temporary catches.
 
-This is a **two-versus-one** backend with an AI rival. Four-person teams,
+This is a **two-versus-one** backend with an AI rival. Simultaneous four-allies-versus-one combat,
 networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
 backpackers, legendary completion records, and adventure
 resumption from a save remain future work.
@@ -78,7 +82,7 @@ battle. If the player rental faints, the rival continues against the boss;
 a loss is counted only when neither player nor rival has a battle-ready rental.
 
 After every battle (victory, loss, or escape), the caller moves to an enclosed
-placeholder cave with just the scientist and the correct rival. It has no
+placeholder cave with the scientist, the correct rival, and Professor Birch. It has no
 warp events, no doorway, and disallows Escape Rope/Dig. The scientist continues
 catch, swap, and path choices there. Finishing, deferring a reward, or taking a
 break returns the player to the Route 146 research cave. The opening-room rival explains the research behind the expeditions and their
@@ -93,7 +97,7 @@ functions expose the exact active species lists for a future UI or tooling.
 
 The real party remains in place between encounters. `PrepareBattle` backs up
 all six party slots and the party count before installing the player's rental.
-The rival rental lives in its own partner party. The previous partner party,
+The three researcher rentals live in the partner party, with a stable ownership mapping. The previous partner party,
 count, trainer identity, and opponent context are also backed up, and ordinary
 follower setup cannot overwrite this temporary rival.
 The battle return callback restores those parties and identities before resuming the script,
@@ -129,9 +133,9 @@ Lifecycle:
 3. Start battle → BATTLE; return callback → CATCH on victory, READY for a
    surviving loss, or FINISHED for exhaustion/escape.
 4. `Catch(FALSE)` advances directly. `Catch(TRUE)` → SWAP for an ordinary
-   encounter; `SwapRental(slot)` advances, replacing only slot 0 or keeping both with
+   encounter; `SwapRental(slot)` advances, replacing only slot 0 or keeping the player rental with
    `DA_RENTAL_KEEP`. The compatibility `Swap(TRUE/FALSE)` replaces slot 0 or
-   keeps both. The final catch decision finishes.
+   keeps the player rental. The final catch decision finishes.
 5. FINISHED → inspect caught Pokémon and `Claim(index)`, or `Quit()`.
 
 ## Script bridge
@@ -149,7 +153,7 @@ argument from `VAR_0x8005`. `VAR_RESULT` reports success/failure.
 | `DA_OP_CHOOSE_PATH` | Branch 0–1 | Prepares that encounter |
 | `DA_OP_START_BATTLE` | None | Launches battle if READY |
 | `DA_OP_CATCH` | 0=skip, nonzero=catch | Catch or advance |
-| `DA_OP_SWAP` | 0=keep both, 1=replace player rental (other values rejected) | Swap or advance |
+| `DA_OP_SWAP` | 0=keep player rental, 1=replace player rental (other values rejected) | Swap or advance |
 | `DA_OP_REWARD_INFO` | Caught index 0–count-1 | Name/species/level, STR_VAR_2=Shiny/Regular, only when FINISHED |
 | `DA_OP_CLAIM` | Caught index | Gives one reward and closes run |
 | `DA_OP_QUIT` | None | Discards the run outside battle |
@@ -187,3 +191,16 @@ or networking invokes this layer. It does not execute damage or provide a
 playable four-player fight. A future adapter must extend the four-battler
 engine for four allies plus a boss, execute the collected actions, and add
 transport, ownership/authentication, and disconnect handling before enabling it.
+
+## Four-person combat limitation
+
+The live expedition has four participants but still uses the engine's two
+allied battle positions. It is a relay, not simultaneous 4v1 combat. The dormant
+`dynamax_adventure_coop` command collector remains separate and unavailable;
+it does not execute a five-battler battle. Supporting four allies on the field
+requires expanding battler positions, targeting, controllers, animations, and
+healthbox layouts beyond the engine's four total slots.
+
+Defensive curated sets with fewer than three attacks are filled using Brisk's
+legal move scorer (offensive stats, STAB, coverage, accuracy and secondary
+effects). Existing sets with three attacks retain their curated moves.

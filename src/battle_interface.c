@@ -794,7 +794,8 @@ void SetHealthboxSpriteVisible(u8 healthboxSpriteId)
 {
     // The wild-double intro can ask to show the empty fourth battler's box.
     if (IsDynamaxAdventureBattle()
-     && (gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler)))
+     && ((gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler))
+      || GetBattlerPosition(gSprites[healthboxSpriteId].hMain_Battler) == B_POSITION_OPPONENT_RIGHT))
     {
         SetHealthboxSpriteInvisible(healthboxSpriteId);
         return;

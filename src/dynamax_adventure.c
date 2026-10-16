@@ -1,6 +1,7 @@
 #include "global.h"
 #include "dynamax_adventure.h"
 #include "battle.h"
+#include "battle_controllers.h"
 #include "battle_main.h"
 #include "brisk_modes.h"
 #include "constants/form_change_types.h"
@@ -135,6 +136,9 @@ struct DynamaxAdventure
     u16 originalPartnerId;
     u16 originalOpponentB;
     u16 bossSpecies;
+    u8 difficulty;
+    u8 partnerOrder[DA_TEAM_SIZE - 1];
+    u8 partnerGimmicks[DA_TEAM_SIZE - 1];
     u8 hpNumerator;
     u8 hpDenominator;
     u16 rentalItems[DA_TEAM_SIZE];
@@ -228,12 +232,21 @@ static void CreateRental(struct Pokemon *mon, const struct AdventureSet *set, u3
     if (set->moves[0] != MOVE_NONE)
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
             SetMonMoveSlot(mon, set->moves[i], i);
+    u32 attacks = 0;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        if (move != MOVE_NONE && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS)
+            attacks++;
+    }
+    if (attacks < 3)
+        ApplyBriskStrongLoadout(mon);
     BriskSetBestAbility(mon);
     for (u32 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
         if (set->ability != ABILITY_NONE && GetAbilityBySpecies(set->species, slot) == set->ability)
             SetMonData(mon, MON_DATA_ABILITY_NUM, &slot);
     SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
-    TrainMon(mon, set->support);
+    TrainMon(mon, FALSE);
     u16 stone = AdventureMegaStone(set->species);
     u16 item = stone != ITEM_NONE ? stone : set->item != ITEM_NONE ? set->item : set->support ? ITEM_SITRUS_BERRY : ITEM_LIFE_ORB;
     SetMonData(mon, MON_DATA_HELD_ITEM, &item);
@@ -263,9 +276,9 @@ static void CreateBoss(struct Pokemon *mon)
         if (move != MOVE_NONE && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS)
             hasAttack = TRUE;
     }
-    if (!hasAttack)
+    if (!hasAttack || sAdventure->bossSpecies == SPECIES_COSMOG || sAdventure->bossSpecies == SPECIES_COSMOEM)
     {
-        static const u16 moves[] = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_LIGHT_SCREEN, MOVE_PROTECT};
+        static const u16 moves[] = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_ENERGY_BALL, MOVE_PROTECT};
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
             SetMonMoveSlot(mon, moves[i], i);
     }
@@ -332,6 +345,7 @@ bool32 DynamaxAdventure_Begin(u32 seed)
     memset(&sAdventureData, 0, sizeof(sAdventureData));
     sAdventure = &sAdventureData;
     sAdventure->rng = seed;
+    sAdventure->difficulty = GetBriskDifficulty();
     sAdventure->hpNumerator = GetBriskDifficulty() == BRISK_MODE_EASY ? 4 : GetBriskDifficulty() == BRISK_MODE_NORMAL ? 2 : 1;
     sAdventure->hpDenominator = GetBriskDifficulty() == BRISK_MODE_EXTREME ? 2 : 1;
     sAdventure->status.phase = DA_PHASE_RENTAL;
@@ -379,11 +393,17 @@ bool32 DynamaxAdventure_ChooseRental(u32 choice)
     if (mon == NULL)
         return FALSE;
     sAdventure->team[0] = *mon;
-    // The rival chooses independently from the remaining offers.
-    u32 rival = (choice + 1 + NextRandom() % (DA_RENTAL_CHOICES - 1)) % DA_RENTAL_CHOICES;
-    sAdventure->team[1] = sAdventure->rentals[rival];
+    sAdventure->selectedOffers = 1u << choice;
+    // Each researcher selects a different rental without player input.
+    for (u32 member = 1; member < DA_TEAM_SIZE; member++)
+    {
+        u32 offer = NextRandom() % DA_RENTAL_CHOICES;
+        while (sAdventure->selectedOffers & (1u << offer))
+            offer = (offer + 1) % DA_RENTAL_CHOICES;
+        sAdventure->team[member] = sAdventure->rentals[offer];
+        sAdventure->selectedOffers |= 1u << offer;
+    }
     sAdventure->status.rentalsChosen = DA_TEAM_SIZE;
-    sAdventure->selectedOffers = (1u << choice) | (1u << rival);
     for (u32 i = 0; i < DA_TEAM_SIZE; i++)
     {
         HealRental(&sAdventure->team[i]);
@@ -432,9 +452,17 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     ZeroPartyMons(gParties[B_TRAINER_PLAYER]);
     ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
     gParties[B_TRAINER_PLAYER][0] = sAdventure->team[0];
-    gParties[B_TRAINER_PARTNER][0] = sAdventure->team[1];
+    memset(sAdventure->partnerGimmicks, 0, sizeof(sAdventure->partnerGimmicks));
+    // The existing engine has two allied positions. Rotate the lead researcher
+    // each round and retain the other two as independently owned relay rentals.
+    for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
+    {
+        u32 member = 1 + (sAdventure->status.stage + i) % (DA_TEAM_SIZE - 1);
+        sAdventure->partnerOrder[i] = member;
+        gParties[B_TRAINER_PARTNER][i] = sAdventure->team[member];
+    }
     gPartiesCount[B_TRAINER_PLAYER] = 1;
-    gPartiesCount[B_TRAINER_PARTNER] = 1;
+    gPartiesCount[B_TRAINER_PARTNER] = DA_TEAM_SIZE - 1;
     gPartnerTrainerId = DynamaxAdventure_GetRivalPartnerId();
     TRAINER_BATTLE_PARAM.opponentB = 0xFFFF;
     ZeroEnemyPartyMons();
@@ -453,7 +481,8 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
     if (!IsDynamaxAdventureBattle())
         return FALSE;
     sAdventure->team[0] = gParties[B_TRAINER_PLAYER][0];
-    sAdventure->team[1] = gParties[B_TRAINER_PARTNER][0];
+    for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
+        sAdventure->team[sAdventure->partnerOrder[i]] = gParties[B_TRAINER_PARTNER][i];
     for (u32 i = 0; i < DA_TEAM_SIZE; i++)
     {
         enum Species species = GetMonData(&sAdventure->team[i], MON_DATA_SPECIES);
@@ -478,22 +507,29 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
     gPartiesCount[B_TRAINER_PARTNER] = sAdventure->originalPartnerCount;
     gPartnerTrainerId = sAdventure->originalPartnerId;
     TRAINER_BATTLE_PARAM.opponentB = sAdventure->originalOpponentB;
+    // Recover after every completed battle; only Easy cures status conditions.
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+    {
+        struct Pokemon *mon = &sAdventure->team[i];
+        u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+        u32 heal = sAdventure->difficulty <= BRISK_MODE_NORMAL ? maxHP
+                 : max(1, maxHP / (sAdventure->difficulty == BRISK_MODE_HARD ? 2 : 4));
+        u16 hp = min(maxHP, GetMonData(mon, MON_DATA_HP) + heal);
+        SetMonData(mon, MON_DATA_HP, &hp);
+        if (sAdventure->difficulty == BRISK_MODE_EASY)
+        {
+            u32 status = 0;
+            SetMonData(mon, MON_DATA_STATUS, &status);
+        }
+        MonRestorePP(mon);
+    }
     if (outcome == B_OUTCOME_WON)
     {
-        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
-            if (GetMonData(&sAdventure->team[i], MON_DATA_HP) == 0)
-            {
-                HealRental(&sAdventure->team[i]);
-                u16 hp = GetMonData(&sAdventure->team[i], MON_DATA_MAX_HP) / 2;
-                SetMonData(&sAdventure->team[i], MON_DATA_HP, &hp);
-            }
         sAdventure->status.phase = DA_PHASE_CATCH;
     }
     else if (outcome == B_OUTCOME_LOST || outcome == B_OUTCOME_DREW)
     {
         sAdventure->status.lives--;
-        for (u32 i = 0; i < DA_TEAM_SIZE; i++)
-            HealRental(&sAdventure->team[i]);
         sAdventure->status.phase = sAdventure->status.lives ? DA_PHASE_READY : DA_PHASE_FINISHED;
     }
     else
@@ -542,6 +578,9 @@ bool32 DynamaxAdventure_SwapRental(u32 slot)
     if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_SWAP
      || (slot != 0 && slot != DA_RENTAL_KEEP))
         return FALSE;
+    // If the player declines, one randomly selected teammate may take it.
+    if (slot == DA_RENTAL_KEEP && NextRandom() % 2 == 0)
+        slot = 1 + NextRandom() % (DA_TEAM_SIZE - 1);
     if (slot != DA_RENTAL_KEEP)
     {
         // Keep the same encounter, including its original shiny roll.
@@ -625,14 +664,7 @@ void RunDynamaxAdventure(void)
         if (mon != NULL)
         {
             enum Species species = AdventureBattleSpecies(GetMonData(mon, MON_DATA_SPECIES));
-            u32 a = gSpeciesInfo[species].types[0], b = gSpeciesInfo[species].types[1];
-            StringCopy(gStringVar1, gTypesInfo[a].name);
-            if (a != b)
-            {
-                static const u8 slash[] = _(" / ");
-                StringAppend(gStringVar1, slash);
-                StringAppend(gStringVar1, gTypesInfo[b].name);
-            }
+            StringCopy(gStringVar1, gTypesInfo[gSpeciesInfo[species].types[0]].name);
             gSpecialVar_Result = TRUE;
         }
         break;
@@ -670,12 +702,51 @@ u32 DynamaxAdventure_ScaleMaxHP(struct Pokemon *mon, u32 hp)
 {
     if (sAdventure == NULL)
         return hp;
-    bool32 rental = mon == &sAdventure->team[0] || mon == &sAdventure->team[1]
-        || (IsDynamaxAdventureBattle() && (mon == &gParties[B_TRAINER_PLAYER][0] || mon == &gParties[B_TRAINER_PARTNER][0]));
+    bool32 rental = FALSE;
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        rental |= mon == &sAdventure->team[i];
+    if (IsDynamaxAdventureBattle())
+    {
+        rental |= mon == &gParties[B_TRAINER_PLAYER][0];
+        for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
+            rental |= mon == &gParties[B_TRAINER_PARTNER][i];
+    }
     if (rental)
         return max(1, hp * sAdventure->hpNumerator / sAdventure->hpDenominator);
     if (IsDynamaxAdventureBattle() && mon == &gParties[B_TRAINER_OPPONENT_A][0]
      && gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].isMegaEvolution)
         return hp * DynamaxAdventure_GetBossHPMultiplier();
     return hp;
+}
+
+u32 DynamaxAdventure_GetBossDamageMultiplier(void)
+{
+    return IsDynamaxAdventureBattle() && sAdventure->difficulty == BRISK_MODE_EXTREME ? 2 : 1;
+}
+
+const u8 *DynamaxAdventure_GetPartnerName(u32 slot)
+{
+    if (!IsDynamaxAdventureBattle() || slot >= DA_TEAM_SIZE - 1)
+        return NULL;
+    switch (sAdventure->partnerOrder[slot])
+    {
+    case 2: return COMPOUND_STRING("SCIENTIST");
+    case 3: return COMPOUND_STRING("BIRCH");
+    default: return gSaveBlock2Ptr->playerGender == FEMALE ? COMPOUND_STRING("BRENDAN") : COMPOUND_STRING("MAY");
+    }
+}
+
+void DynamaxAdventure_SwitchPartner(enum BattlerId battler, u32 newSlot)
+{
+    if (!IsDynamaxAdventureBattle() || GetBattlerPosition(battler) != B_POSITION_PLAYER_RIGHT)
+        return;
+    u32 oldSlot = gBattlerPartyIndexes[battler];
+    if (oldSlot >= DA_TEAM_SIZE - 1 || newSlot >= DA_TEAM_SIZE - 1)
+        return;
+    for (u32 gimmick = 0; gimmick < GIMMICKS_COUNT; gimmick++)
+    {
+        if (gBattleStruct->gimmick.activated[battler][gimmick])
+            sAdventure->partnerGimmicks[oldSlot] |= 1u << gimmick;
+        gBattleStruct->gimmick.activated[battler][gimmick] = (sAdventure->partnerGimmicks[newSlot] & (1u << gimmick)) != 0;
+    }
 }
