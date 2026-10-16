@@ -3667,6 +3667,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sSlakingLevelUpLearnset,
         .teachableLearnset = sSlakingTeachableLearnset,
+        .formSpeciesIdTable = sSlakingAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sSlakingAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_SLAKOTH
 
@@ -6214,6 +6216,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
+        .formSpeciesIdTable = sRoseradeAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sRoseradeAddedMegaFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ROSELIA
@@ -10084,6 +10088,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sDusknoirLevelUpLearnset,
         .teachableLearnset = sDusknoirTeachableLearnset,
+        .formSpeciesIdTable = sDusknoirAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sDusknoirAddedMegaFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_DUSKULL
@@ -10161,6 +10167,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sTropiusLevelUpLearnset,
         .teachableLearnset = sTropiusTeachableLearnset,
         .eggMoveLearnset = sTropiusEggMoveLearnset,
+        .formSpeciesIdTable = sTropiusAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sTropiusAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_TROPIUS
 

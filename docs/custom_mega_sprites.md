@@ -63,3 +63,46 @@ make -j8 check TESTS='Native Mega sprites'
 ```
 
 Full visual playtesting of battle animations is still needed before release.
+
+## Additional sprite packs
+
+Fourteen additional Mega forms (IDs 1597–1610) use the supplied 64×64
+artwork from ThunderRainbow, SpiritsUndead and iriv24. Raichu and Milotic
+from these packs are excluded; the previously installed Milotic is unchanged.
+Nidoqueen uses the newer `mega_v2` revision. The two Empoleon designs are
+separate X/Y forms, with separate stones. Original Rillaboom Gigantamax and
+Samurott regional form tables are preserved.
+
+Each form gains 100 base stat points with unchanged HP. All forms retain Brisk's existing base typing, including
+Electric/Dark Luxray and Grass/Rock Rillaboom. Luxray's stats build on
+Brisk's existing buffs. Slaking uses Slow Start to balance its 770 total stats.
+All new backs sit four pixels lower. Original pixel indices are preserved,
+with the supplied normal/shiny palettes applied to both views.
+
+| Mega | HP / Atk / Def / SpA / SpD / Spe | Ability | Stone |
+|---|---|---|---|
+| Nidoqueen Mega | 90/112/127/95/105/76 | Sheer Force | Nidoqueenite |
+| Nidoking Mega | 81/132/97/115/75/105 | Sheer Force | Nidokingite |
+| Tropius Mega | 99/88/113/122/77/61 | Thick Fat | Tropiusite |
+| Rillaboom Mega | 100/155/120/60/100/95 | Grassy Surge | Rillaboomite |
+| Samurott Hisui Mega | 90/148/100/100/75/115 | Sharpness | Samurottite H |
+| Skeledirge Mega | 104/75/130/150/105/66 | Punk Rock | Skeledirgite |
+| Dusknoir Mega | 45/140/165/65/165/45 | Levitate | Dusknoirite |
+| Empoleon Mega X | 84/86/108/151/121/80 | Competitive | Empoleonite X |
+| Empoleon Mega Y | 84/126/128/111/121/60 | Defiant | Empoleonite Y |
+| Infernape Mega | 76/134/81/124/81/138 | Iron Fist | Infernite |
+| Luxray Mega | 90/175/110/75/110/140 | Strong Jaw | Luxrayite |
+| Roserade Mega | 60/70/85/155/125/120 | Technician | Roseradite |
+| Slaking Mega | 150/180/140/105/95/100 | Slow Start | Slakingite |
+| Torterra Mega | 95/139/145/85/115/46 | Solid Rock | Torterrite |
+
+All fourteen stones have individually named copies of existing stone icon
+and palette files, and are stocked by the Lilycove 4F Mega Stone clerk at
+the same base price of ₽500. Difficulty price scaling still applies.
+`added_manifest.json` records sources, stats, stones, and palette availability.
+Roserade, Slaking and Torterra lack separate shiny palettes in the uploads,
+so they currently use their normal palette for shiny individuals.
+Artist credits from each pack are retained in each asset folder's `CREDITS.md`;
+ThunderRainbow credits its spritework; SpiritsUndead credits Yogurcomics,
+Max S and PhatmonMonstr. iriv24 credits camioftargon, IridescentMirage,
+Rachel T, Pokets and X.

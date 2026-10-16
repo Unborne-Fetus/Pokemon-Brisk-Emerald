@@ -1,0 +1,282 @@
+[
+  {
+    "base_species": "SPECIES_NIDOQUEEN",
+    "species": "SPECIES_NIDOQUEEN_MEGA",
+    "id": 1597,
+    "asset_path": "graphics/pokemon/custom_megas/nidoqueen/mega",
+    "stats": [
+      90,
+      112,
+      127,
+      76,
+      95,
+      105
+    ],
+    "ability": "ABILITY_SHEER_FORCE",
+    "stone_name": "Nidoqueenite",
+    "stone_item": "ITEM_NIDOQUEENITE",
+    "stone_asset_source": "kangaskhanite",
+    "source_pack": "ThunderRainbow/nidoqueen/mega_v2",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_NIDOKING",
+    "species": "SPECIES_NIDOKING_MEGA",
+    "id": 1598,
+    "asset_path": "graphics/pokemon/custom_megas/nidoking/mega",
+    "stats": [
+      81,
+      132,
+      97,
+      105,
+      115,
+      75
+    ],
+    "ability": "ABILITY_SHEER_FORCE",
+    "stone_name": "Nidokingite",
+    "stone_item": "ITEM_NIDOKINGITE",
+    "stone_asset_source": "gengarite",
+    "source_pack": "ThunderRainbow/nidoking/mega",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_TROPIUS",
+    "species": "SPECIES_TROPIUS_MEGA",
+    "id": 1599,
+    "asset_path": "graphics/pokemon/custom_megas/tropius/mega",
+    "stats": [
+      99,
+      88,
+      113,
+      61,
+      122,
+      77
+    ],
+    "ability": "ABILITY_THICK_FAT",
+    "stone_name": "Tropiusite",
+    "stone_item": "ITEM_TROPIUSITE",
+    "stone_asset_source": "venusaurite",
+    "source_pack": "ThunderRainbow/tropius/mega",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_RILLABOOM",
+    "species": "SPECIES_RILLABOOM_MEGA",
+    "id": 1600,
+    "asset_path": "graphics/pokemon/custom_megas/rillaboom/mega",
+    "stats": [
+      100,
+      155,
+      120,
+      95,
+      60,
+      100
+    ],
+    "ability": "ABILITY_GRASSY_SURGE",
+    "stone_name": "Rillaboomite",
+    "stone_item": "ITEM_RILLABOOMITE",
+    "stone_asset_source": "sceptilite",
+    "source_pack": "SpiritsUndead/rillaboom",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_SAMUROTT_HISUI",
+    "species": "SPECIES_SAMUROTT_HISUI_MEGA",
+    "id": 1601,
+    "asset_path": "graphics/pokemon/custom_megas/samurott_hisui/mega",
+    "stats": [
+      90,
+      148,
+      100,
+      115,
+      100,
+      75
+    ],
+    "ability": "ABILITY_SHARPNESS",
+    "stone_name": "Samurottite H",
+    "stone_item": "ITEM_SAMUROTTITE_H",
+    "stone_asset_source": "gyaradosite",
+    "source_pack": "SpiritsUndead/samurott-h",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_SKELEDIRGE",
+    "species": "SPECIES_SKELEDIRGE_MEGA",
+    "id": 1602,
+    "asset_path": "graphics/pokemon/custom_megas/skeledirge/mega",
+    "stats": [
+      104,
+      75,
+      130,
+      66,
+      150,
+      105
+    ],
+    "ability": "ABILITY_PUNK_ROCK",
+    "stone_name": "Skeledirgite",
+    "stone_item": "ITEM_SKELEDIRGITE",
+    "stone_asset_source": "banettite",
+    "source_pack": "SpiritsUndead/skeledirge",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_DUSKNOIR",
+    "species": "SPECIES_DUSKNOIR_MEGA",
+    "id": 1603,
+    "asset_path": "graphics/pokemon/custom_megas/dusknoir/mega",
+    "stats": [
+      45,
+      140,
+      165,
+      45,
+      65,
+      165
+    ],
+    "ability": "ABILITY_LEVITATE",
+    "stone_name": "Dusknoirite",
+    "stone_item": "ITEM_DUSKNOIRITE",
+    "stone_asset_source": "banettite",
+    "source_pack": "iriv24/dusknoir",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_EMPOLEON",
+    "species": "SPECIES_EMPOLEON_MEGA_X",
+    "id": 1604,
+    "asset_path": "graphics/pokemon/custom_megas/empoleon/mega_x",
+    "stats": [
+      84,
+      86,
+      108,
+      80,
+      151,
+      121
+    ],
+    "ability": "ABILITY_COMPETITIVE",
+    "stone_name": "Empoleonite X",
+    "stone_item": "ITEM_EMPOLEONITE_X",
+    "stone_asset_source": "metagrossite",
+    "source_pack": "iriv24/empoleon1",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_EMPOLEON",
+    "species": "SPECIES_EMPOLEON_MEGA_Y",
+    "id": 1605,
+    "asset_path": "graphics/pokemon/custom_megas/empoleon/mega_y",
+    "stats": [
+      84,
+      126,
+      128,
+      60,
+      111,
+      121
+    ],
+    "ability": "ABILITY_DEFIANT",
+    "stone_name": "Empoleonite Y",
+    "stone_item": "ITEM_EMPOLEONITE_Y",
+    "stone_asset_source": "aggronite",
+    "source_pack": "iriv24/empoleon2",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_INFERNAPE",
+    "species": "SPECIES_INFERNAPE_MEGA",
+    "id": 1606,
+    "asset_path": "graphics/pokemon/custom_megas/infernape/mega",
+    "stats": [
+      76,
+      134,
+      81,
+      138,
+      124,
+      81
+    ],
+    "ability": "ABILITY_IRON_FIST",
+    "stone_name": "Infernite",
+    "stone_item": "ITEM_INFERNITE",
+    "stone_asset_source": "blazikenite",
+    "source_pack": "iriv24/infernape",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_LUXRAY",
+    "species": "SPECIES_LUXRAY_MEGA",
+    "id": 1607,
+    "asset_path": "graphics/pokemon/custom_megas/luxray/mega",
+    "stats": [
+      90,
+      175,
+      110,
+      140,
+      75,
+      110
+    ],
+    "ability": "ABILITY_STRONG_JAW",
+    "stone_name": "Luxrayite",
+    "stone_item": "ITEM_LUXRAYITE",
+    "stone_asset_source": "manectite",
+    "source_pack": "iriv24/luxray",
+    "shiny": "Supplied palette"
+  },
+  {
+    "base_species": "SPECIES_ROSERADE",
+    "species": "SPECIES_ROSERADE_MEGA",
+    "id": 1608,
+    "asset_path": "graphics/pokemon/custom_megas/roserade/mega",
+    "stats": [
+      60,
+      70,
+      85,
+      120,
+      155,
+      125
+    ],
+    "ability": "ABILITY_TECHNICIAN",
+    "stone_name": "Roseradite",
+    "stone_item": "ITEM_ROSERADITE",
+    "stone_asset_source": "gardevoirite",
+    "source_pack": "iriv24/roserade",
+    "shiny": "Normal palette; no shiny supplied"
+  },
+  {
+    "base_species": "SPECIES_SLAKING",
+    "species": "SPECIES_SLAKING_MEGA",
+    "id": 1609,
+    "asset_path": "graphics/pokemon/custom_megas/slaking/mega",
+    "stats": [
+      150,
+      180,
+      140,
+      100,
+      105,
+      95
+    ],
+    "ability": "ABILITY_SLOW_START",
+    "stone_name": "Slakingite",
+    "stone_item": "ITEM_SLAKINGITE",
+    "stone_asset_source": "kangaskhanite",
+    "source_pack": "iriv24/slaking",
+    "shiny": "Normal palette; no shiny supplied"
+  },
+  {
+    "base_species": "SPECIES_TORTERRA",
+    "species": "SPECIES_TORTERRA_MEGA",
+    "id": 1610,
+    "asset_path": "graphics/pokemon/custom_megas/torterra/mega",
+    "stats": [
+      95,
+      139,
+      145,
+      46,
+      85,
+      115
+    ],
+    "ability": "ABILITY_SOLID_ROCK",
+    "stone_name": "Torterrite",
+    "stone_item": "ITEM_TORTERRITE",
+    "stone_asset_source": "steelixite",
+    "source_pack": "iriv24/torterra",
+    "shiny": "Normal palette; no shiny supplied"
+  }
+]

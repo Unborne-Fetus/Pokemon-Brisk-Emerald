@@ -214,6 +214,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sTorterraLevelUpLearnset,
         .teachableLearnset = sTorterraTeachableLearnset,
+        .formSpeciesIdTable = sTorterraAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sTorterraAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_TURTWIG
 
@@ -436,6 +438,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sInfernapeLevelUpLearnset,
         .teachableLearnset = sInfernapeTeachableLearnset,
+        .formSpeciesIdTable = sInfernapeAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sInfernapeAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_CHIMCHAR
 
@@ -666,6 +670,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sEmpoleonLevelUpLearnset,
         .teachableLearnset = sEmpoleonTeachableLearnset,
+        .formSpeciesIdTable = sEmpoleonAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sEmpoleonAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_PIPLUP
 
@@ -1594,6 +1600,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sLuxrayLevelUpLearnset,
         .teachableLearnset = sLuxrayTeachableLearnset,
+        .formSpeciesIdTable = sLuxrayAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sLuxrayAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_SHINX
 

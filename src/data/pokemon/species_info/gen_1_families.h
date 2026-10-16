@@ -4746,6 +4746,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sNidoqueenLevelUpLearnset,
         .teachableLearnset = sNidoqueenTeachableLearnset,
+        .formSpeciesIdTable = sNidoqueenAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sNidoqueenAddedMegaFormChangeTable,
     },
 
     [SPECIES_NIDORAN_M] =
@@ -4972,6 +4974,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sNidokingLevelUpLearnset,
         .teachableLearnset = sNidokingTeachableLearnset,
+        .formSpeciesIdTable = sNidokingAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sNidokingAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_NIDORAN
 

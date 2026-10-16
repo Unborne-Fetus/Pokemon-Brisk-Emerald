@@ -388,6 +388,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sSkeledirgeLevelUpLearnset,
         .teachableLearnset = sSkeledirgeTeachableLearnset,
+        .formSpeciesIdTable = sSkeledirgeAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeAddedMegaFormChangeTable,
     },
 #endif //P_FAMILY_FUECOCO
 

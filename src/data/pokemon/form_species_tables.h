@@ -1,3 +1,14 @@
+static const u16 sTorterraAddedMegaFormSpeciesIdTable[] = { SPECIES_TORTERRA, SPECIES_TORTERRA_MEGA, FORM_SPECIES_END };
+static const u16 sSlakingAddedMegaFormSpeciesIdTable[] = { SPECIES_SLAKING, SPECIES_SLAKING_MEGA, FORM_SPECIES_END };
+static const u16 sRoseradeAddedMegaFormSpeciesIdTable[] = { SPECIES_ROSERADE, SPECIES_ROSERADE_MEGA, FORM_SPECIES_END };
+static const u16 sLuxrayAddedMegaFormSpeciesIdTable[] = { SPECIES_LUXRAY, SPECIES_LUXRAY_MEGA, FORM_SPECIES_END };
+static const u16 sInfernapeAddedMegaFormSpeciesIdTable[] = { SPECIES_INFERNAPE, SPECIES_INFERNAPE_MEGA, FORM_SPECIES_END };
+static const u16 sEmpoleonAddedMegaFormSpeciesIdTable[] = { SPECIES_EMPOLEON, SPECIES_EMPOLEON_MEGA_X, SPECIES_EMPOLEON_MEGA_Y, FORM_SPECIES_END };
+static const u16 sDusknoirAddedMegaFormSpeciesIdTable[] = { SPECIES_DUSKNOIR, SPECIES_DUSKNOIR_MEGA, FORM_SPECIES_END };
+static const u16 sSkeledirgeAddedMegaFormSpeciesIdTable[] = { SPECIES_SKELEDIRGE, SPECIES_SKELEDIRGE_MEGA, FORM_SPECIES_END };
+static const u16 sTropiusAddedMegaFormSpeciesIdTable[] = { SPECIES_TROPIUS, SPECIES_TROPIUS_MEGA, FORM_SPECIES_END };
+static const u16 sNidokingAddedMegaFormSpeciesIdTable[] = { SPECIES_NIDOKING, SPECIES_NIDOKING_MEGA, FORM_SPECIES_END };
+static const u16 sNidoqueenAddedMegaFormSpeciesIdTable[] = { SPECIES_NIDOQUEEN, SPECIES_NIDOQUEEN_MEGA, FORM_SPECIES_END };
 static const u16 sAmoongussCustomMegaFormSpeciesIdTable[] = { SPECIES_AMOONGUSS, SPECIES_AMOONGUSS_MEGA, FORM_SPECIES_END };
 static const u16 sAzumarillCustomMegaFormSpeciesIdTable[] = { SPECIES_AZUMARILL, SPECIES_AZUMARILL_MEGA, FORM_SPECIES_END };
 static const u16 sConkeldurrCustomMegaFormSpeciesIdTable[] = { SPECIES_CONKELDURR, SPECIES_CONKELDURR_MEGA, FORM_SPECIES_END };
@@ -1312,6 +1323,7 @@ static const u16 sSamurottFormSpeciesIdTable[] = {
 #if P_HISUIAN_FORMS
     SPECIES_SAMUROTT_HISUI,
 #endif
+    SPECIES_SAMUROTT_HISUI_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_OSHAWOTT
@@ -2121,6 +2133,7 @@ static const u16 sRillaboomFormSpeciesIdTable[] = {
 #if P_GIGANTAMAX_FORMS
     SPECIES_RILLABOOM_GMAX,
 #endif
+    SPECIES_RILLABOOM_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GROOKEY

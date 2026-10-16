@@ -35,6 +35,20 @@ static const struct CustomMegaStoneCase
     {SPECIES_TORKOAL, SPECIES_TORKOAL_MEGA, ITEM_TORKOALITE},
     {SPECIES_TYPHLOSION, SPECIES_TYPHLOSION_MEGA, ITEM_TYPHLOSIONITE},
     {SPECIES_WHIMSICOTT, SPECIES_WHIMSICOTT_MEGA, ITEM_WHIMSICOTTITE},
+    {SPECIES_NIDOQUEEN, SPECIES_NIDOQUEEN_MEGA, ITEM_NIDOQUEENITE},
+    {SPECIES_NIDOKING, SPECIES_NIDOKING_MEGA, ITEM_NIDOKINGITE},
+    {SPECIES_TROPIUS, SPECIES_TROPIUS_MEGA, ITEM_TROPIUSITE},
+    {SPECIES_RILLABOOM, SPECIES_RILLABOOM_MEGA, ITEM_RILLABOOMITE},
+    {SPECIES_SAMUROTT_HISUI, SPECIES_SAMUROTT_HISUI_MEGA, ITEM_SAMUROTTITE_H},
+    {SPECIES_SKELEDIRGE, SPECIES_SKELEDIRGE_MEGA, ITEM_SKELEDIRGITE},
+    {SPECIES_DUSKNOIR, SPECIES_DUSKNOIR_MEGA, ITEM_DUSKNOIRITE},
+    {SPECIES_EMPOLEON, SPECIES_EMPOLEON_MEGA_X, ITEM_EMPOLEONITE_X},
+    {SPECIES_EMPOLEON, SPECIES_EMPOLEON_MEGA_Y, ITEM_EMPOLEONITE_Y},
+    {SPECIES_INFERNAPE, SPECIES_INFERNAPE_MEGA, ITEM_INFERNITE},
+    {SPECIES_LUXRAY, SPECIES_LUXRAY_MEGA, ITEM_LUXRAYITE},
+    {SPECIES_ROSERADE, SPECIES_ROSERADE_MEGA, ITEM_ROSERADITE},
+    {SPECIES_SLAKING, SPECIES_SLAKING_MEGA, ITEM_SLAKINGITE},
+    {SPECIES_TORTERRA, SPECIES_TORTERRA_MEGA, ITEM_TORTERRITE},
 };
 
 TEST("Custom Mega stones select the correct form and keep it when switching")
@@ -60,7 +74,7 @@ TEST("Custom Mega stones select the correct form and keep it when switching")
     }
 }
 
-SINGLE_BATTLE_TEST("Custom Mega stones enable all 24 forms in battle")
+SINGLE_BATTLE_TEST("Custom Mega stones enable every custom form in battle")
 {
     enum Species base = SPECIES_NONE, mega = SPECIES_NONE;
     enum Item stone = ITEM_NONE;
@@ -91,4 +105,51 @@ TEST("Custom Mega stones preserve the five original Mega stone targets")
         struct FormChangeContext ctx = {.currentSpecies = original[i].base, .heldItem = original[i].stone, .method = FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM};
         EXPECT_EQ(GetFormChangeTargetSpecies_Internal(ctx), original[i].mega);
     }
+}
+
+TEST("Custom Mega additions have stable stats, palettes and distinct stones")
+{
+    static const enum Species additions[][2] = {
+        {SPECIES_NIDOQUEEN, SPECIES_NIDOQUEEN_MEGA},
+        {SPECIES_NIDOKING, SPECIES_NIDOKING_MEGA},
+        {SPECIES_TROPIUS, SPECIES_TROPIUS_MEGA},
+        {SPECIES_RILLABOOM, SPECIES_RILLABOOM_MEGA},
+        {SPECIES_SAMUROTT_HISUI, SPECIES_SAMUROTT_HISUI_MEGA},
+        {SPECIES_SKELEDIRGE, SPECIES_SKELEDIRGE_MEGA},
+        {SPECIES_DUSKNOIR, SPECIES_DUSKNOIR_MEGA},
+        {SPECIES_EMPOLEON, SPECIES_EMPOLEON_MEGA_X},
+        {SPECIES_EMPOLEON, SPECIES_EMPOLEON_MEGA_Y},
+        {SPECIES_INFERNAPE, SPECIES_INFERNAPE_MEGA},
+        {SPECIES_LUXRAY, SPECIES_LUXRAY_MEGA},
+        {SPECIES_ROSERADE, SPECIES_ROSERADE_MEGA},
+        {SPECIES_SLAKING, SPECIES_SLAKING_MEGA},
+        {SPECIES_TORTERRA, SPECIES_TORTERRA_MEGA},
+    };
+    for (u32 i = 0; i < ARRAY_COUNT(additions); i++)
+    {
+        const struct SpeciesInfo *base = &gSpeciesInfo[additions[i][0]];
+        const struct SpeciesInfo *mega = &gSpeciesInfo[additions[i][1]];
+        u32 baseTotal = base->baseHP + base->baseAttack + base->baseDefense + base->baseSpAttack + base->baseSpDefense + base->baseSpeed;
+        u32 megaTotal = mega->baseHP + mega->baseAttack + mega->baseDefense + mega->baseSpAttack + mega->baseSpDefense + mega->baseSpeed;
+        EXPECT_EQ(megaTotal, baseTotal + 100);
+        EXPECT_EQ(mega->baseHP, base->baseHP);
+        EXPECT(mega->isMegaEvolution);
+        EXPECT(mega->frontPic != base->frontPic);
+        EXPECT(mega->backPic != base->backPic);
+        EXPECT(mega->palette != NULL);
+        EXPECT(mega->shinyPalette != NULL);
+        EXPECT_EQ(mega->levelUpLearnset, base->levelUpLearnset);
+        EXPECT_EQ(mega->teachableLearnset, base->teachableLearnset);
+        EXPECT_EQ(mega->backPicYOffset, 4);
+    }
+}
+
+TEST("Custom Mega additions preserve existing regional and Gigantamax form indexes")
+{
+    EXPECT_EQ(GetFormSpeciesId(SPECIES_SAMUROTT, 0), SPECIES_SAMUROTT);
+    EXPECT_EQ(GetFormSpeciesId(SPECIES_SAMUROTT, 1), SPECIES_SAMUROTT_HISUI);
+    EXPECT_EQ(GetFormSpeciesId(SPECIES_RILLABOOM, 0), SPECIES_RILLABOOM);
+    EXPECT_EQ(GetFormSpeciesId(SPECIES_RILLABOOM, 1), SPECIES_RILLABOOM_GMAX);
+    struct FormChangeContext ctx = {.currentSpecies = SPECIES_RILLABOOM, .method = FORM_CHANGE_BATTLE_GIGANTAMAX, .gmaxFactor = TRUE};
+    EXPECT_EQ(GetFormChangeTargetSpecies_Internal(ctx), SPECIES_RILLABOOM_GMAX);
 }

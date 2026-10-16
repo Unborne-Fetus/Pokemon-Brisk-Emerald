@@ -119,3 +119,73 @@ const u8 gMonFrontPic80_WhimsicottMega[] = INCGFX_U8("graphics/pokemon/custom_me
 const u32 gMonBackPic_WhimsicottMega[] = INCGFX_U32("graphics/pokemon/custom_megas/whimsicott/mega/back.png", ".4bpp.smol");
 const u8 gMonBackPic80_WhimsicottMega[] = INCGFX_U8("graphics/pokemon/custom_megas/whimsicott/mega/back_tiles.png", ".4bpp");
 const u16 gMonPalette_WhimsicottMega[] = INCGFX_U16("graphics/pokemon/custom_megas/whimsicott/mega/normal.pal", ".gbapal");
+
+const u32 gMonFrontPic_NidoqueenMega[] = INCGFX_U32("graphics/pokemon/custom_megas/nidoqueen/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_NidoqueenMega[] = INCGFX_U32("graphics/pokemon/custom_megas/nidoqueen/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_NidoqueenMega[] = INCGFX_U16("graphics/pokemon/custom_megas/nidoqueen/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_NidoqueenMega[] = INCGFX_U16("graphics/pokemon/custom_megas/nidoqueen/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_NidokingMega[] = INCGFX_U32("graphics/pokemon/custom_megas/nidoking/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_NidokingMega[] = INCGFX_U32("graphics/pokemon/custom_megas/nidoking/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_NidokingMega[] = INCGFX_U16("graphics/pokemon/custom_megas/nidoking/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_NidokingMega[] = INCGFX_U16("graphics/pokemon/custom_megas/nidoking/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_TropiusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/tropius/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_TropiusMega[] = INCGFX_U32("graphics/pokemon/custom_megas/tropius/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_TropiusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/tropius/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_TropiusMega[] = INCGFX_U16("graphics/pokemon/custom_megas/tropius/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_RillaboomMega[] = INCGFX_U32("graphics/pokemon/custom_megas/rillaboom/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_RillaboomMega[] = INCGFX_U32("graphics/pokemon/custom_megas/rillaboom/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_RillaboomMega[] = INCGFX_U16("graphics/pokemon/custom_megas/rillaboom/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_RillaboomMega[] = INCGFX_U16("graphics/pokemon/custom_megas/rillaboom/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_SamurottHisuiMega[] = INCGFX_U32("graphics/pokemon/custom_megas/samurott_hisui/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_SamurottHisuiMega[] = INCGFX_U32("graphics/pokemon/custom_megas/samurott_hisui/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_SamurottHisuiMega[] = INCGFX_U16("graphics/pokemon/custom_megas/samurott_hisui/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_SamurottHisuiMega[] = INCGFX_U16("graphics/pokemon/custom_megas/samurott_hisui/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_SkeledirgeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/skeledirge/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_SkeledirgeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/skeledirge/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_SkeledirgeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/skeledirge/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_SkeledirgeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/skeledirge/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/custom_megas/dusknoir/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/custom_megas/dusknoir/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/custom_megas/dusknoir/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/custom_megas/dusknoir/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_EmpoleonMegaX[] = INCGFX_U32("graphics/pokemon/custom_megas/empoleon/mega_x/front.png", ".4bpp.smol");
+const u32 gMonBackPic_EmpoleonMegaX[] = INCGFX_U32("graphics/pokemon/custom_megas/empoleon/mega_x/back.png", ".4bpp.smol");
+const u16 gMonPalette_EmpoleonMegaX[] = INCGFX_U16("graphics/pokemon/custom_megas/empoleon/mega_x/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_EmpoleonMegaX[] = INCGFX_U16("graphics/pokemon/custom_megas/empoleon/mega_x/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_EmpoleonMegaY[] = INCGFX_U32("graphics/pokemon/custom_megas/empoleon/mega_y/front.png", ".4bpp.smol");
+const u32 gMonBackPic_EmpoleonMegaY[] = INCGFX_U32("graphics/pokemon/custom_megas/empoleon/mega_y/back.png", ".4bpp.smol");
+const u16 gMonPalette_EmpoleonMegaY[] = INCGFX_U16("graphics/pokemon/custom_megas/empoleon/mega_y/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_EmpoleonMegaY[] = INCGFX_U16("graphics/pokemon/custom_megas/empoleon/mega_y/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_InfernapeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/infernape/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_InfernapeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/infernape/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/infernape/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/infernape/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/custom_megas/luxray/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/custom_megas/luxray/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/custom_megas/luxray/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/custom_megas/luxray/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/roserade/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/custom_megas/roserade/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/roserade/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/custom_megas/roserade/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_SlakingMega[] = INCGFX_U32("graphics/pokemon/custom_megas/slaking/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_SlakingMega[] = INCGFX_U32("graphics/pokemon/custom_megas/slaking/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_SlakingMega[] = INCGFX_U16("graphics/pokemon/custom_megas/slaking/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_SlakingMega[] = INCGFX_U16("graphics/pokemon/custom_megas/slaking/mega/shiny.pal", ".gbapal");
+
+const u32 gMonFrontPic_TorterraMega[] = INCGFX_U32("graphics/pokemon/custom_megas/torterra/mega/front.png", ".4bpp.smol");
+const u32 gMonBackPic_TorterraMega[] = INCGFX_U32("graphics/pokemon/custom_megas/torterra/mega/back.png", ".4bpp.smol");
+const u16 gMonPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/custom_megas/torterra/mega/normal.pal", ".gbapal");
+const u16 gMonShinyPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/custom_megas/torterra/mega/shiny.pal", ".gbapal");
