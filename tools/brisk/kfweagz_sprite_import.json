@@ -1,0 +1,497 @@
+{
+  "drifblim_mega": {
+    "source": "dhw5723-7213f69d-2e84-44b2-ba61-a0ff30c1e0e4.png",
+    "crops": [
+      [
+        4,
+        4,
+        200,
+        200
+      ],
+      [
+        204,
+        4,
+        400,
+        200
+      ],
+      [
+        4,
+        204,
+        200,
+        400
+      ],
+      [
+        204,
+        204,
+        400,
+        400
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 49,
+    "shiny_supplied": true
+  },
+  "lapras_mega": {
+    "source": "dhw4bbq-09926aa8-95fb-4410-bec2-b0e2ec520223.png",
+    "crops": [
+      [
+        500,
+        4,
+        744,
+        252
+      ],
+      [
+        500,
+        508,
+        744,
+        756
+      ],
+      [
+        500,
+        256,
+        744,
+        504
+      ],
+      [
+        500,
+        760,
+        744,
+        1008
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 15,
+    "shiny_supplied": true
+  },
+  "seviper_mega": {
+    "source": "dhwoudr-b7fbec6f-f768-4660-a37c-8255875039f9.png",
+    "crops": [
+      [
+        6,
+        6,
+        300,
+        300
+      ],
+      [
+        306,
+        6,
+        600,
+        300
+      ],
+      [
+        6,
+        306,
+        300,
+        600
+      ],
+      [
+        306,
+        306,
+        600,
+        600
+      ]
+    ],
+    "enlargement": 3,
+    "native_size": 80,
+    "palette_pairs": 85,
+    "shiny_supplied": true
+  },
+  "hydreigon_mega": {
+    "source": "djhq9r3-2df6bd4c-fa7d-49e1-9171-bc2c4edb70fe.png",
+    "crops": [
+      [
+        317,
+        2,
+        420,
+        99
+      ],
+      [
+        317,
+        200,
+        420,
+        297
+      ],
+      [
+        317,
+        101,
+        420,
+        198
+      ],
+      [
+        317,
+        299,
+        420,
+        396
+      ]
+    ],
+    "enlargement": 1,
+    "native_size": 80,
+    "palette_pairs": 34,
+    "shiny_supplied": true
+  },
+  "regigigas_mega": {
+    "source": "djqxex0-ff1f775f-04b7-4ef5-9554-52cb2e06b53c.png",
+    "crops": [
+      [
+        4,
+        4,
+        474,
+        434
+      ],
+      [
+        478,
+        4,
+        948,
+        434
+      ],
+      [
+        4,
+        438,
+        474,
+        868
+      ],
+      [
+        478,
+        438,
+        948,
+        868
+      ]
+    ],
+    "enlargement": 4,
+    "native_size": 80,
+    "palette_pairs": 129,
+    "shiny_supplied": true
+  },
+  "noivern_mega": {
+    "source": "mega_noivern_the_super_sonic_fiend_by_kfweagz_djpcy1l-fullview.png",
+    "crops": [
+      [
+        3,
+        3,
+        321,
+        281
+      ],
+      [
+        325,
+        3,
+        643,
+        281
+      ],
+      [
+        3,
+        285,
+        321,
+        564
+      ],
+      [
+        325,
+        285,
+        643,
+        564
+      ]
+    ],
+    "enlargement": 4,
+    "native_size": 80,
+    "palette_pairs": 1039,
+    "shiny_supplied": true
+  },
+  "iron_furnace": {
+    "source": "dki1mam-e38b9bf0-ffc1-4bcc-8cd5-bd6164e63cce.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        202
+      ],
+      [
+        192,
+        2,
+        380,
+        202
+      ],
+      [
+        2,
+        204,
+        190,
+        404
+      ],
+      [
+        192,
+        204,
+        380,
+        404
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 53,
+    "shiny_supplied": true
+  },
+  "steam_shell": {
+    "source": "dkgciql-65bb1404-dc77-48cd-9a53-a4f36bf07426.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 44,
+    "shiny_supplied": true
+  },
+  "kingdra_mega": {
+    "source": "dkgwqi5-17f2a58b-36f9-47fa-8282-20e4c818d91e.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 40,
+    "shiny_supplied": true
+  },
+  "fearow_mega": {
+    "source": "dkig96i-d7029690-602a-4daa-af20-bfeeb2982e42.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 34,
+    "shiny_supplied": true
+  },
+  "togekiss_mega": {
+    "source": "dkig6tc-af0d12ed-45df-411d-9c9b-fc419f8c6bc7.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 26,
+    "shiny_supplied": true
+  },
+  "volcarona_mega": {
+    "source": "dkjif1v-fd57e8c4-ffd5-4fd0-a795-83b9549de5ff.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 45,
+    "shiny_supplied": true
+  },
+  "zangoose_mega": {
+    "source": "dmiyyys-a7379144-3ff0-40ad-8ef3-7f35d544befd.png",
+    "crops": [
+      [
+        2,
+        2,
+        190,
+        190
+      ],
+      [
+        2,
+        192,
+        190,
+        380
+      ],
+      [
+        192,
+        2,
+        380,
+        190
+      ],
+      [
+        192,
+        192,
+        380,
+        380
+      ]
+    ],
+    "enlargement": 2,
+    "native_size": 80,
+    "palette_pairs": 29,
+    "shiny_supplied": true
+  },
+  "quagsire_mega": {
+    "source": "dhwxyq7-cb0d100b-84db-46ed-be65-494a1dd9f7bb.png",
+    "crops": [
+      [
+        6,
+        6,
+        300,
+        300
+      ],
+      [
+        306,
+        6,
+        600,
+        300
+      ],
+      [
+        6,
+        306,
+        300,
+        600
+      ],
+      [
+        306,
+        306,
+        600,
+        600
+      ]
+    ],
+    "enlargement": 3,
+    "native_size": 80,
+    "palette_pairs": 44,
+    "shiny_supplied": true
+  },
+  "xatu_mega": {
+    "source": "dhwu1tg-9b5d66fc-b48c-43fb-9b3e-695d2925ec80.png",
+    "crops": [
+      [
+        6,
+        6,
+        300,
+        300
+      ],
+      [
+        306,
+        6,
+        600,
+        300
+      ],
+      [
+        6,
+        306,
+        300,
+        600
+      ],
+      [
+        306,
+        306,
+        600,
+        600
+      ]
+    ],
+    "enlargement": 3,
+    "native_size": 80,
+    "palette_pairs": 93,
+    "shiny_supplied": true
+  }
+}

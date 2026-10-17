@@ -3628,4 +3628,32 @@ extern const u16 gItemIconPalette_Breloomite[];
 extern const u32 gItemIcon_Ninetalite[];
 extern const u16 gItemIconPalette_Ninetalite[];
 
+// KFWeagz Mega Stone icon copies.
+extern const u32 gItemIcon_Drifblimite[];
+extern const u16 gItemIconPalette_Drifblimite[];
+extern const u32 gItemIcon_Laprasite[];
+extern const u16 gItemIconPalette_Laprasite[];
+extern const u32 gItemIcon_Seviprite[];
+extern const u16 gItemIconPalette_Seviprite[];
+extern const u32 gItemIcon_Hydreigonite[];
+extern const u16 gItemIconPalette_Hydreigonite[];
+extern const u32 gItemIcon_Regigigite[];
+extern const u16 gItemIconPalette_Regigigite[];
+extern const u32 gItemIcon_Noivernite[];
+extern const u16 gItemIconPalette_Noivernite[];
+extern const u32 gItemIcon_Kingdrite[];
+extern const u16 gItemIconPalette_Kingdrite[];
+extern const u32 gItemIcon_Fearowite[];
+extern const u16 gItemIconPalette_Fearowite[];
+extern const u32 gItemIcon_Togekissite[];
+extern const u16 gItemIconPalette_Togekissite[];
+extern const u32 gItemIcon_Volcaronite[];
+extern const u16 gItemIconPalette_Volcaronite[];
+extern const u32 gItemIcon_Zangoosite[];
+extern const u16 gItemIconPalette_Zangoosite[];
+extern const u32 gItemIcon_Quagsirite[];
+extern const u16 gItemIconPalette_Quagsirite[];
+extern const u32 gItemIcon_Xatunite[];
+extern const u16 gItemIconPalette_Xatunite[];
+
 #endif //GUARD_GRAPHICS_H

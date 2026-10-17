@@ -585,6 +585,7 @@ static const u16 sLaprasFormSpeciesIdTable[] = {
 #if P_GIGANTAMAX_FORMS
     SPECIES_LAPRAS_GMAX,
 #endif
+    SPECIES_LAPRAS_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_LAPRAS
@@ -2644,3 +2645,27 @@ static const u16 sGurdurrFormSpeciesIdTable[] = {SPECIES_GURDURR, SPECIES_GURDUR
 static const u16 sEmolgaFormSpeciesIdTable[] = {SPECIES_EMOLGA, SPECIES_EMOLGA_HALLOWEEN, FORM_SPECIES_END};
 
 static const u16 sSnoruntFormSpeciesIdTable[] = {SPECIES_SNORUNT, SPECIES_SNORUNT_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sDrifblimFormSpeciesIdTable[] = { SPECIES_DRIFBLIM, SPECIES_DRIFBLIM_MEGA, FORM_SPECIES_END };
+
+static const u16 sSeviperFormSpeciesIdTable[] = { SPECIES_SEVIPER, SPECIES_SEVIPER_MEGA, FORM_SPECIES_END };
+
+static const u16 sHydreigonFormSpeciesIdTable[] = { SPECIES_HYDREIGON, SPECIES_HYDREIGON_MEGA, FORM_SPECIES_END };
+
+static const u16 sRegigigasFormSpeciesIdTable[] = { SPECIES_REGIGIGAS, SPECIES_REGIGIGAS_MEGA, FORM_SPECIES_END };
+
+static const u16 sNoivernFormSpeciesIdTable[] = { SPECIES_NOIVERN, SPECIES_NOIVERN_MEGA, FORM_SPECIES_END };
+
+static const u16 sKingdraFormSpeciesIdTable[] = { SPECIES_KINGDRA, SPECIES_KINGDRA_MEGA, FORM_SPECIES_END };
+
+static const u16 sFearowFormSpeciesIdTable[] = { SPECIES_FEAROW, SPECIES_FEAROW_MEGA, FORM_SPECIES_END };
+
+static const u16 sTogekissFormSpeciesIdTable[] = { SPECIES_TOGEKISS, SPECIES_TOGEKISS_MEGA, FORM_SPECIES_END };
+
+static const u16 sVolcaronaFormSpeciesIdTable[] = { SPECIES_VOLCARONA, SPECIES_VOLCARONA_MEGA, FORM_SPECIES_END };
+
+static const u16 sZangooseFormSpeciesIdTable[] = { SPECIES_ZANGOOSE, SPECIES_ZANGOOSE_MEGA, FORM_SPECIES_END };
+
+static const u16 sQuagsireFormSpeciesIdTable[] = { SPECIES_QUAGSIRE, SPECIES_QUAGSIRE_MEGA, FORM_SPECIES_END };
+
+static const u16 sXatuFormSpeciesIdTable[] = { SPECIES_XATU, SPECIES_XATU_MEGA, FORM_SPECIES_END };

@@ -210,3 +210,7 @@ Vespiquen, Exploud, Mamoswine, Tsareena, Breloom and Ninetales artwork.
 The supplied JPEG sheets are preserved in `resources/endlesstgx/`.
 Backgrounds and compression noise were cleaned before palette conversion;
 each imported form retains a source credit alongside its graphics.
+
+### KFWeagz additions
+
+Supplied Mega and paradox designs, front/back sprites and shiny colors by [KFWeagz](https://www.deviantart.com/kfweagz). Brisk supplies the gameplay adaptation. See [source sheets and form details](docs/kfweagz_forms.md).

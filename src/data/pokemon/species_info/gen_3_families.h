@@ -8027,9 +8027,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Zangoose,
             gShinyOverworldPalette_Zangoose
         )
-        .levelUpLearnset = sZangooseLevelUpLearnset,
+        .levelUpLearnset = sKFZangooseLevelUpLearnset,
         .teachableLearnset = sZangooseTeachableLearnset,
         .eggMoveLearnset = sZangooseEggMoveLearnset,
+        .formSpeciesIdTable = sZangooseFormSpeciesIdTable,
+        .formChangeTable = sZangooseFormChangeTable,
     },
 #endif //P_FAMILY_ZANGOOSE
 
@@ -8104,9 +8106,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Seviper,
             gShinyOverworldPalette_Seviper
         )
-        .levelUpLearnset = sSeviperLevelUpLearnset,
+        .levelUpLearnset = sKFSeviperLevelUpLearnset,
         .teachableLearnset = sSeviperTeachableLearnset,
         .eggMoveLearnset = sSeviperEggMoveLearnset,
+        .formSpeciesIdTable = sSeviperFormSpeciesIdTable,
+        .formChangeTable = sSeviperFormChangeTable,
     },
 #endif //P_FAMILY_SEVIPER
 

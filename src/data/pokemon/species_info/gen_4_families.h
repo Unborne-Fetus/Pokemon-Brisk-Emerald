@@ -3403,6 +3403,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sDrifblimLevelUpLearnset,
         .teachableLearnset = sDrifblimTeachableLearnset,
+        .formSpeciesIdTable = sDrifblimFormSpeciesIdTable,
+        .formChangeTable = sDrifblimFormChangeTable,
     },
 #endif //P_FAMILY_DRIFLOON
 
@@ -7107,6 +7109,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sRegigigasLevelUpLearnset,
         .teachableLearnset = sRegigigasTeachableLearnset,
+        .formSpeciesIdTable = sRegigigasFormSpeciesIdTable,
+        .formChangeTable = sRegigigasFormChangeTable,
     },
 #endif //P_FAMILY_REGIGIGAS
 

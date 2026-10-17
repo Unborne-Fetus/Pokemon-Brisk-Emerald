@@ -12435,6 +12435,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sHydreigonLevelUpLearnset,
         .teachableLearnset = sHydreigonTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_JUGULIS}),
+        .formSpeciesIdTable = sHydreigonFormSpeciesIdTable,
+        .formChangeTable = sHydreigonFormChangeTable,
     },
 #endif //P_FAMILY_DEINO
 
@@ -12589,6 +12591,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             {EVO_ITEM, ITEM_METAL_COAT, SPECIES_IRON_MOTH},
             {EVO_ITEM, ITEM_SUN_STONE, SPECIES_SLITHER_WING}
         ),
+        .formSpeciesIdTable = sVolcaronaFormSpeciesIdTable,
+        .formChangeTable = sVolcaronaFormChangeTable,
     },
 #endif //P_FAMILY_LARVESTA
 

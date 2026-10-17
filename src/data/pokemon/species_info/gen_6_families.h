@@ -6537,6 +6537,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sNoivernLevelUpLearnset,
         .teachableLearnset = sNoivernTeachableLearnset,
+        .formSpeciesIdTable = sNoivernFormSpeciesIdTable,
+        .formChangeTable = sNoivernFormChangeTable,
     },
 #endif //P_FAMILY_NOIBAT
 

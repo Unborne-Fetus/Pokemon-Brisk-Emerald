@@ -1833,6 +1833,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sTogekissLevelUpLearnset,
         .teachableLearnset = sTogekissTeachableLearnset,
+        .formSpeciesIdTable = sTogekissFormSpeciesIdTable,
+        .formChangeTable = sTogekissFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_TOGEPI
@@ -1992,6 +1994,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sXatuLevelUpLearnset,
         .teachableLearnset = sXatuTeachableLearnset,
+        .formSpeciesIdTable = sXatuFormSpeciesIdTable,
+        .formChangeTable = sXatuFormChangeTable,
     },
 #endif //P_FAMILY_NATU
 
@@ -3594,8 +3598,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
-        .levelUpLearnset = sQuagsireLevelUpLearnset,
+        .levelUpLearnset = sKFQuagsireLevelUpLearnset,
         .teachableLearnset = sQuagsireTeachableLearnset,
+        .formSpeciesIdTable = sQuagsireFormSpeciesIdTable,
+        .formChangeTable = sQuagsireFormChangeTable,
     },
 
 #if P_PALDEAN_FORMS

@@ -1,0 +1,370 @@
+[
+  {
+    "id": "DRIFBLIM_MEGA",
+    "base": "DRIFBLIM",
+    "name": "Drifblim",
+    "stone": "Drifblimite",
+    "types": [
+      "GHOST",
+      "FLYING"
+    ],
+    "ability": "FLUFFY",
+    "stats": [
+      150,
+      80,
+      79,
+      100,
+      110,
+      79
+    ],
+    "stone_source": "gengarite",
+    "ability_reason": "Its thick cloud cushions physical blows.",
+    "kind": "mega",
+    "symbol": "KFDrifblimMega",
+    "species_id": 1668
+  },
+  {
+    "id": "LAPRAS_MEGA",
+    "base": "LAPRAS",
+    "name": "Lapras",
+    "stone": "Laprasite",
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "ability": "SHELL_ARMOR",
+    "stats": [
+      130,
+      95,
+      110,
+      70,
+      115,
+      115
+    ],
+    "stone_source": "blastoisinite",
+    "ability_reason": "The armored shell protects its vulnerable body.",
+    "kind": "mega",
+    "symbol": "KFLaprasMega",
+    "species_id": 1669
+  },
+  {
+    "id": "SEVIPER_MEGA",
+    "base": "SEVIPER",
+    "name": "Seviper",
+    "stone": "Seviprite",
+    "types": [
+      "POISON",
+      "STEEL"
+    ],
+    "ability": "SHARPNESS",
+    "stats": [
+      73,
+      135,
+      80,
+      90,
+      100,
+      80
+    ],
+    "stone_source": "steelixite",
+    "ability_reason": "Its bladed tail and sharpened scales power slicing attacks.",
+    "kind": "mega",
+    "symbol": "KFSeviperMega",
+    "species_id": 1670
+  },
+  {
+    "id": "HYDREIGON_MEGA",
+    "base": "HYDREIGON",
+    "name": "Hydreigon",
+    "stone": "Hydreigonite",
+    "types": [
+      "DARK",
+      "DRAGON"
+    ],
+    "ability": "INTIMIDATE",
+    "stats": [
+      92,
+      120,
+      105,
+      108,
+      165,
+      110
+    ],
+    "stone_source": "garchompite",
+    "ability_reason": "The three-headed serpent frightens opposing attackers.",
+    "kind": "mega",
+    "symbol": "KFHydreigonMega",
+    "species_id": 1671
+  },
+  {
+    "id": "REGIGIGAS_MEGA",
+    "base": "REGIGIGAS",
+    "name": "Regigigas",
+    "stone": "Regigigite",
+    "types": [
+      "NORMAL",
+      "ROCK"
+    ],
+    "ability": "SOLID_ROCK",
+    "stats": [
+      110,
+      180,
+      140,
+      100,
+      100,
+      140
+    ],
+    "stone_source": "tyranitarite",
+    "ability_reason": "Its ancient stone armor softens super-effective hits.",
+    "kind": "mega",
+    "symbol": "KFRegigigasMega",
+    "species_id": 1672
+  },
+  {
+    "id": "NOIVERN_MEGA",
+    "base": "NOIVERN",
+    "name": "Noivern",
+    "stone": "Noivernite",
+    "types": [
+      "FLYING",
+      "DRAGON"
+    ],
+    "ability": "PUNK_ROCK",
+    "stats": [
+      85,
+      70,
+      100,
+      143,
+      137,
+      100
+    ],
+    "stone_source": "salamencite",
+    "ability_reason": "Amplified ultrasonic cries strengthen its sound moves.",
+    "kind": "mega",
+    "symbol": "KFNoivernMega",
+    "species_id": 1673
+  },
+  {
+    "id": "KINGDRA_MEGA",
+    "base": "KINGDRA",
+    "name": "Kingdra",
+    "stone": "Kingdrite",
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "ability": "MULTISCALE",
+    "stats": [
+      75,
+      95,
+      115,
+      105,
+      135,
+      115
+    ],
+    "stone_source": "ampharosite",
+    "ability_reason": "Overlapping dragon scales protect it at full health.",
+    "kind": "mega",
+    "symbol": "KFKingdraMega",
+    "species_id": 1674
+  },
+  {
+    "id": "FEAROW_MEGA",
+    "base": "FEAROW",
+    "name": "Fearow",
+    "stone": "Fearowite",
+    "types": [
+      "NORMAL",
+      "FLYING"
+    ],
+    "ability": "SNIPER",
+    "stats": [
+      65,
+      130,
+      85,
+      130,
+      61,
+      71
+    ],
+    "stone_source": "pidgeotite",
+    "ability_reason": "Its long precision beak makes critical strikes devastating.",
+    "kind": "mega",
+    "symbol": "KFFearowMega",
+    "species_id": 1675
+  },
+  {
+    "id": "TOGEKISS_MEGA",
+    "base": "TOGEKISS",
+    "name": "Togekiss",
+    "stone": "Togekissite",
+    "types": [
+      "FAIRY",
+      "FLYING"
+    ],
+    "ability": "SERENE_GRACE",
+    "stats": [
+      85,
+      50,
+      115,
+      100,
+      160,
+      135
+    ],
+    "stone_source": "gardevoirite",
+    "ability_reason": "The gentle herald keeps its characteristic lucky secondary effects.",
+    "kind": "mega",
+    "symbol": "KFTogekissMega",
+    "species_id": 1676
+  },
+  {
+    "id": "VOLCARONA_MEGA",
+    "base": "VOLCARONA",
+    "name": "Volcarona",
+    "stone": "Volcaronite",
+    "types": [
+      "BUG",
+      "FIRE"
+    ],
+    "ability": "DROUGHT",
+    "stats": [
+      85,
+      60,
+      75,
+      120,
+      175,
+      135
+    ],
+    "stone_source": "charizardite_y",
+    "ability_reason": "Its blazing solar wings summon harsh sunlight.",
+    "kind": "mega",
+    "symbol": "KFVolcaronaMega",
+    "species_id": 1677
+  },
+  {
+    "id": "ZANGOOSE_MEGA",
+    "base": "ZANGOOSE",
+    "name": "Zangoose",
+    "stone": "Zangoosite",
+    "types": [
+      "NORMAL",
+      "STEEL"
+    ],
+    "ability": "SHARPNESS",
+    "stats": [
+      73,
+      145,
+      90,
+      110,
+      60,
+      80
+    ],
+    "stone_source": "aggronite",
+    "ability_reason": "The steel blades along its arms and back enhance cutting moves.",
+    "kind": "mega",
+    "symbol": "KFZangooseMega",
+    "species_id": 1678
+  },
+  {
+    "id": "QUAGSIRE_MEGA",
+    "base": "QUAGSIRE",
+    "name": "Quagsire",
+    "stone": "Quagsirite",
+    "types": [
+      "WATER",
+      "GRASS"
+    ],
+    "ability": "WATER_ABSORB",
+    "stats": [
+      95,
+      95,
+      115,
+      35,
+      105,
+      85
+    ],
+    "stone_source": "venusaurite",
+    "ability_reason": "Its aquatic vegetation absorbs water to restore health.",
+    "kind": "mega",
+    "symbol": "KFQuagsireMega",
+    "species_id": 1679
+  },
+  {
+    "id": "XATU_MEGA",
+    "base": "XATU",
+    "name": "Xatu",
+    "stone": "Xatunite",
+    "types": [
+      "PSYCHIC",
+      "FLYING"
+    ],
+    "ability": "MAGIC_BOUNCE",
+    "stats": [
+      65,
+      75,
+      95,
+      115,
+      125,
+      95
+    ],
+    "stone_source": "alakazite",
+    "ability_reason": "Its mystic halo reflects hostile status moves.",
+    "kind": "mega",
+    "symbol": "KFXatuMega",
+    "species_id": 1680
+  },
+  {
+    "id": "IRON_FURNACE",
+    "base": "GARGANACL",
+    "name": "Iron Furnace",
+    "types": [
+      "FIRE",
+      "STEEL"
+    ],
+    "ability": "PROTOSYNTHESIS",
+    "stats": [
+      110,
+      120,
+      130,
+      35,
+      75,
+      100
+    ],
+    "height": 25,
+    "weight": 4800,
+    "kind": "paradox",
+    "description": [
+      "An ancient furnace-like creature.",
+      "Molten ore glows beneath its armor.",
+      "It feeds on minerals buried in lava."
+    ],
+    "symbol": "KFIronFurnace",
+    "species_id": 1681
+  },
+  {
+    "id": "STEAM_SHELL",
+    "base": "BLASTOISE",
+    "name": "Steam Shell",
+    "types": [
+      "WATER",
+      "FIRE"
+    ],
+    "ability": "PROTOSYNTHESIS",
+    "stats": [
+      100,
+      75,
+      110,
+      65,
+      130,
+      90
+    ],
+    "height": 23,
+    "weight": 1800,
+    "kind": "paradox",
+    "description": [
+      "A primeval relative of Blastoise.",
+      "Boiling springs heat its rocky shell.",
+      "It blasts scalding vapor at its foes."
+    ],
+    "symbol": "KFSteamShell",
+    "species_id": 1682
+  }
+]

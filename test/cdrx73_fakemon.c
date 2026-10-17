@@ -39,7 +39,7 @@ TEST("CDRX73 and Phoenix Dex flags remain independent without changing save layo
     memset(gSaveBlock1Ptr->customDexSeen, 0xFF, 2);
     memset(gSaveBlock1Ptr->customDexCaught, 0xFF, 2);
     gSaveBlock2Ptr->pokedex.unknown3 = 0xFFFFFFFF;
-    for (u32 dex = NATIONAL_DEX_HISSIORITE; dex <= NATIONAL_DEX_TENTACROWN; dex++)
+    for (u32 dex = NATIONAL_DEX_HISSIORITE; dex <= NATIONAL_DEX_STEAM_SHELL; dex++)
     {
         EXPECT_EQ(GetSetPokedexFlag(dex, FLAG_GET_SEEN), FALSE);
         EXPECT_EQ(GetSetPokedexFlag(dex, FLAG_GET_CAUGHT), FALSE);
@@ -48,7 +48,7 @@ TEST("CDRX73 and Phoenix Dex flags remain independent without changing save layo
         EXPECT_EQ(GetSetPokedexFlag(dex, FLAG_GET_CAUGHT), FALSE);
         GetSetPokedexFlag(dex, FLAG_SET_CAUGHT);
     }
-    for (u32 dex = NATIONAL_DEX_HISSIORITE; dex <= NATIONAL_DEX_TENTACROWN; dex++)
+    for (u32 dex = NATIONAL_DEX_HISSIORITE; dex <= NATIONAL_DEX_STEAM_SHELL; dex++)
     {
         EXPECT_EQ(GetSetPokedexFlag(dex, FLAG_GET_SEEN), TRUE);
         EXPECT_EQ(GetSetPokedexFlag(dex, FLAG_GET_CAUGHT), TRUE);

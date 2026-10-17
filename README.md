@@ -44,3 +44,5 @@ Brisk supplies the gameplay data. See [the species notes](docs/phoenix_fakemon.m
 for IDs, evolution levels, source attribution, and asset conversion details.
 
 - Additional Fakémon, Halloween forms and alternate Mega Dragonite sprites: [CDRX73](https://www.reddit.com/user/CDRX73/). See [import details](docs/cdrx73_fakemon.md).
+
+- Additional Mega designs, paradox Blastoise/Garganacl and supplied normal/shiny sprites: [KFWeagz](https://www.deviantart.com/kfweagz). See [forms and stones](docs/kfweagz_forms.md).
