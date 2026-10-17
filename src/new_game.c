@@ -113,6 +113,8 @@ static void ClearPokedexFlags(void)
 {
     memset(&gSaveBlock1Ptr->dexCaught, 0, sizeof(gSaveBlock1Ptr->dexCaught));
     memset(&gSaveBlock1Ptr->dexSeen, 0, sizeof(gSaveBlock1Ptr->dexSeen));
+    memset(gSaveBlock1Ptr->customDexSeen, 0, sizeof(gSaveBlock1Ptr->customDexSeen));
+    memset(gSaveBlock1Ptr->customDexCaught, 0, sizeof(gSaveBlock1Ptr->customDexCaught));
 }
 
 void ClearAllContestWinnerPics(void)

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_fakemon.h"
 #include "battle_main.h"
 #include "battle_util.h"
 #include "bg.h"
@@ -1783,6 +1784,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
         description = GetSpeciesPokedexDescription(species);
     else
         description = sExpandedPlaceholder_PokedexDescription;
+    if (!BriskFakemon_PrintDescription(owned ? species : SPECIES_NONE))
     PrintInfoScreenText(description, GetStringCenterAlignXOffset(FONT_NORMAL, description, 0xF0), 93);
 
     //Type Icon(s)

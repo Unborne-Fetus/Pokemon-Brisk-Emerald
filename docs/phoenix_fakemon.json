@@ -1,0 +1,336 @@
+[
+  {
+    "name": "Hissiorite",
+    "species_id": 1626,
+    "national_dex": 1026,
+    "types": [
+      "FIRE"
+    ],
+    "stats": [
+      45,
+      50,
+      50,
+      65,
+      60,
+      40
+    ],
+    "abilities": [
+      "BLAZE",
+      "WHITE_SMOKE",
+      "LEVITATE"
+    ],
+    "evolution": "Cobarett",
+    "evolution_level": 16,
+    "description": "The base of its neck emits super-heated gas that envelopes its body and causes it to hover a few inches off the ground, similar to a hot air balloon. Because of this it can travel quickly, even over water.",
+    "height_dm": 5,
+    "weight_hg": 65,
+    "cry": "EKANS"
+  },
+  {
+    "name": "Cobarett",
+    "species_id": 1627,
+    "national_dex": 1027,
+    "types": [
+      "FIRE"
+    ],
+    "stats": [
+      65,
+      70,
+      65,
+      80,
+      85,
+      55
+    ],
+    "abilities": [
+      "BLAZE",
+      "WHITE_SMOKE",
+      "LEVITATE"
+    ],
+    "evolution": "Pythonova",
+    "evolution_level": 36,
+    "description": "It covers itself in thick, billowing smoke so that it can slide easily through thick brush. The source of the smoke is its molten body temperature, which is such that tongues of flame shoot from its mouth.",
+    "height_dm": 12,
+    "weight_hg": 235,
+    "cry": "ARBOK"
+  },
+  {
+    "name": "Pythonova",
+    "species_id": 1628,
+    "national_dex": 1028,
+    "types": [
+      "FIRE",
+      "DRAGON"
+    ],
+    "stats": [
+      85,
+      90,
+      80,
+      100,
+      115,
+      65
+    ],
+    "abilities": [
+      "BLAZE",
+      "WHITE_SMOKE",
+      "LEVITATE"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": "It is short tempered and when enraged, the flames on its back burn hotter and its smoke tail becomes thicker and longer. It uses its smoke tail to coil around and smother its target.",
+    "height_dm": 24,
+    "weight_hg": 780,
+    "cry": "SERPERIOR"
+  },
+  {
+    "name": "Baoby",
+    "species_id": 1629,
+    "national_dex": 1029,
+    "types": [
+      "GRASS",
+      "WATER"
+    ],
+    "stats": [
+      65,
+      45,
+      60,
+      35,
+      55,
+      60
+    ],
+    "abilities": [
+      "WATER_ABSORB",
+      "SAP_SIPPER",
+      "CHLOROPHYLL"
+    ],
+    "evolution": "Baobaraffe",
+    "evolution_level": 32,
+    "description": "They travel from river to river in search of water to drink and store. The leafy ossicones on its head conceal movable points that act similar to a dowsing rod. Many creatures follow Baoby in droughts.",
+    "height_dm": 8,
+    "weight_hg": 240,
+    "cry": "GIRAFARIG"
+  },
+  {
+    "name": "Baobaraffe",
+    "species_id": 1630,
+    "national_dex": 1030,
+    "types": [
+      "GRASS",
+      "WATER"
+    ],
+    "stats": [
+      110,
+      75,
+      105,
+      40,
+      90,
+      100
+    ],
+    "abilities": [
+      "WATER_ABSORB",
+      "SAP_SIPPER",
+      "HARVEST"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": "It stores mass amounts of water in its huge body so that it can travel long distances across hot, dry deserts. It will also share water with thirsty creatures. When it has no water stored it is skinny.",
+    "height_dm": 36,
+    "weight_hg": 4200,
+    "cry": "FARIGIRAF"
+  },
+  {
+    "name": "Drashimi",
+    "species_id": 1631,
+    "national_dex": 1031,
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "stats": [
+      55,
+      65,
+      60,
+      35,
+      40,
+      45
+    ],
+    "abilities": [
+      "BATTLE_ARMOR",
+      "GLUTTONY",
+      "SWIFT_SWIM"
+    ],
+    "evolution": "Tsushimi",
+    "evolution_level": 30,
+    "description": null,
+    "height_dm": 3,
+    "weight_hg": 28,
+    "cry": "TATSUGIRI_CURLY"
+  },
+  {
+    "name": "Tsushimi",
+    "species_id": 1632,
+    "national_dex": 1032,
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "stats": [
+      75,
+      90,
+      80,
+      55,
+      55,
+      65
+    ],
+    "abilities": [
+      "BATTLE_ARMOR",
+      "GLUTTONY",
+      "SWIFT_SWIM"
+    ],
+    "evolution": "Tobishimi",
+    "evolution_level": 55,
+    "description": null,
+    "height_dm": 9,
+    "weight_hg": 185,
+    "cry": "TATSUGIRI_CURLY"
+  },
+  {
+    "name": "Tobishimi",
+    "species_id": 1633,
+    "national_dex": 1033,
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "stats": [
+      96,
+      126,
+      100,
+      80,
+      100,
+      98
+    ],
+    "abilities": [
+      "BATTLE_ARMOR",
+      "GLUTTONY",
+      "SWIFT_SWIM"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": null,
+    "height_dm": 18,
+    "weight_hg": 960,
+    "cry": "DREDNAW"
+  },
+  {
+    "name": "Merlicun",
+    "species_id": 1634,
+    "national_dex": 1034,
+    "types": [
+      "BUG",
+      "DRAGON"
+    ],
+    "stats": [
+      75,
+      85,
+      100,
+      35,
+      35,
+      70
+    ],
+    "abilities": [
+      "SHELL_ARMOR",
+      "SHIELD_DUST",
+      "COMPOUND_EYES"
+    ],
+    "evolution": "Firomenis",
+    "evolution_level": 45,
+    "description": null,
+    "height_dm": 6,
+    "weight_hg": 180,
+    "cry": "SHELGON"
+  },
+  {
+    "name": "Firomenis",
+    "species_id": 1635,
+    "national_dex": 1035,
+    "types": [
+      "BUG",
+      "DRAGON"
+    ],
+    "stats": [
+      95,
+      125,
+      90,
+      85,
+      55,
+      90
+    ],
+    "abilities": [
+      "STRONG_JAW",
+      "TINTED_LENS",
+      "INTIMIDATE"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": null,
+    "height_dm": 18,
+    "weight_hg": 300,
+    "cry": "VOLCARONA"
+  },
+  {
+    "name": "Anu",
+    "species_id": 1636,
+    "national_dex": 1036,
+    "types": [
+      "PSYCHIC",
+      "FLYING"
+    ],
+    "stats": [
+      70,
+      65,
+      70,
+      105,
+      115,
+      95
+    ],
+    "abilities": [
+      "SYNCHRONIZE",
+      "INFILTRATOR",
+      "MAGIC_BOUNCE"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": null,
+    "height_dm": 9,
+    "weight_hg": 115,
+    "cry": "ESPEON"
+  },
+  {
+    "name": "Nuenflu",
+    "species_id": 1637,
+    "national_dex": 1037,
+    "types": [
+      "ICE",
+      "POISON"
+    ],
+    "stats": [
+      85,
+      60,
+      75,
+      95,
+      110,
+      95
+    ],
+    "abilities": [
+      "SNOW_CLOAK",
+      "POISON_POINT",
+      "REGENERATOR"
+    ],
+    "evolution": null,
+    "evolution_level": null,
+    "description": null,
+    "height_dm": 5,
+    "weight_hg": 86,
+    "cry": "MINCCINO"
+  }
+]

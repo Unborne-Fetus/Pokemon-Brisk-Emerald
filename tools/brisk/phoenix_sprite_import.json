@@ -1,0 +1,62 @@
+{
+  "Hissiorite": {
+    "icon_palette": 3,
+    "native_size": 64,
+    "palette_pairs": 10
+  },
+  "Cobarett": {
+    "icon_palette": 5,
+    "native_size": 64,
+    "palette_pairs": 14
+  },
+  "Pythonova": {
+    "icon_palette": 5,
+    "native_size": 64,
+    "palette_pairs": 18
+  },
+  "Baoby": {
+    "icon_palette": 5,
+    "native_size": 64,
+    "palette_pairs": 12
+  },
+  "Baobaraffe": {
+    "icon_palette": 5,
+    "native_size": 64,
+    "palette_pairs": 13
+  },
+  "Drashimi": {
+    "icon_palette": 2,
+    "native_size": 64,
+    "palette_pairs": 19
+  },
+  "Tsushimi": {
+    "icon_palette": 0,
+    "native_size": 80,
+    "palette_pairs": 14
+  },
+  "Tobishimi": {
+    "icon_palette": 0,
+    "native_size": 80,
+    "palette_pairs": 19
+  },
+  "Merlicun": {
+    "icon_palette": 5,
+    "native_size": 64,
+    "palette_pairs": 14
+  },
+  "Firomenis": {
+    "icon_palette": 3,
+    "native_size": 80,
+    "palette_pairs": 23
+  },
+  "Anu": {
+    "icon_palette": 0,
+    "native_size": 64,
+    "palette_pairs": 13
+  },
+  "Nuenflu": {
+    "icon_palette": 3,
+    "native_size": 64,
+    "palette_pairs": 10
+  }
+}

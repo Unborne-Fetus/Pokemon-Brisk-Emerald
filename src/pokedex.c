@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_fakemon.h"
 #include "battle_main.h"
 #include "battle_script_commands.h"
 #include "bg.h"
@@ -1388,6 +1389,8 @@ void ResetPokedex(void)
     gSaveBlock2Ptr->pokedex.spindaPersonality = 0;
     gSaveBlock2Ptr->pokedex.unknown3 = 0;
     DisableNationalPokedex();
+    memset(gSaveBlock1Ptr->customDexSeen, 0, sizeof(gSaveBlock1Ptr->customDexSeen));
+    memset(gSaveBlock1Ptr->customDexCaught, 0, sizeof(gSaveBlock1Ptr->customDexCaught));
     for (i = 0; i < NUM_DEX_FLAG_BYTES; i++)
     {
         gSaveBlock1Ptr->dexCaught[i] = 0;
@@ -3314,6 +3317,8 @@ void FreeInfoScreenWindowAndBgBuffers(void)
 
 void Task_HandleInfoScreenInput(u8 taskId)
 {
+    if (JOY_NEW(START_BUTTON) && BriskFakemon_NextDexPage())
+        return;
 
     if (gTasks[taskId].tScrolling)
     {
@@ -4054,6 +4059,8 @@ static void Task_DisplayCaughtMonDexPage(u8 taskId)
 
 void Task_HandleCaughtMonPageInput(u8 taskId)
 {
+    if (JOY_NEW(START_BUTTON) && BriskFakemon_NextDexPage())
+        return;
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
         BeginNormalPaletteFade(PALETTES_BG, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
@@ -4162,6 +4169,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
         description = GetSpeciesPokedexDescription(species);
     else
         description = sExpandedPlaceholder_PokedexDescription;
+    if (!BriskFakemon_PrintDescription(owned ? species : SPECIES_NONE))
     PrintInfoScreenText(description, GetStringCenterAlignXOffset(FONT_NORMAL, description, DISPLAY_WIDTH), 95);
 }
 
@@ -4455,6 +4463,26 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     u32 index, bit, mask;
     s8 retVal = 0;
 
+    if (nationalDexNo == NATIONAL_DEX_NONE || nationalDexNo > NATIONAL_DEX_COUNT)
+        return 0;
+    u8 *seen = gSaveBlock1Ptr->dexSeen;
+    u8 *caught = gSaveBlock1Ptr->dexCaught;
+    if (nationalDexNo > NATIONAL_DEX_PECHARUNT)
+    {
+        // Old saves used these four bytes as padding. Initialize their bits
+        // once; the unused high nibbles identify the custom-Dex layout.
+        if ((gSaveBlock1Ptr->customDexSeen[1] & 0xF0) != 0xA0
+         || (gSaveBlock1Ptr->customDexCaught[1] & 0xF0) != 0x50)
+        {
+            gSaveBlock1Ptr->customDexSeen[0] = 0;
+            gSaveBlock1Ptr->customDexSeen[1] = 0xA0;
+            gSaveBlock1Ptr->customDexCaught[0] = 0;
+            gSaveBlock1Ptr->customDexCaught[1] = 0x50;
+        }
+        nationalDexNo -= NATIONAL_DEX_PECHARUNT;
+        seen = gSaveBlock1Ptr->customDexSeen;
+        caught = gSaveBlock1Ptr->customDexCaught;
+    }
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;
@@ -4463,16 +4491,16 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     switch (caseID)
     {
     case FLAG_GET_SEEN:
-        retVal = ((gSaveBlock1Ptr->dexSeen[index] & mask) != 0);
+        retVal = ((seen[index] & mask) != 0);
         break;
     case FLAG_GET_CAUGHT:
-         retVal = ((gSaveBlock1Ptr->dexCaught[index] & mask) != 0);
+         retVal = ((caught[index] & mask) != 0);
         break;
     case FLAG_SET_SEEN:
-        gSaveBlock1Ptr->dexSeen[index] |= mask;
+        seen[index] |= mask;
         break;
     case FLAG_SET_CAUGHT:
-        gSaveBlock1Ptr->dexCaught[index] |= mask;
+        caught[index] |= mask;
         break;
     }
 

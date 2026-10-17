@@ -32,3 +32,13 @@ For detailed documentation, visit the [pokeemerald-expansion documentation page]
 
 Custom Mega Rapidash, Vespiquen, Exploud, Mamoswine, Tsareena, Breloom and
 Ninetales sprite sheets by [EndlessTGX](https://www.deviantart.com/endlesstgx).
+
+### princess-phoenix Fakémon
+
+Hissiorite, Cobarett, Pythonova, Baoby, Baobaraffe, Drashimi, Tsushimi,
+Tobishimi, Merlicun, Firomenis, Anu, and Nuenflu designs and supplied sprites,
+shiny colors, and Pokédex text are by
+[princess-phoenix](https://www.deviantart.com/princess-phoenix).
+Sushi-line name assistance is additionally credited to Tenrio.
+Brisk supplies the gameplay data. See [the species notes](docs/phoenix_fakemon.md)
+for IDs, evolution levels, source attribution, and asset conversion details.

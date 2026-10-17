@@ -45,6 +45,7 @@ TEST("Native Mega sprites support all native forms and both battle views")
         }
     }
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites reserve tiles for all four battlers and return to normal graphics")
@@ -75,6 +76,7 @@ TEST("Native Mega sprites reserve tiles for all four battlers and return to norm
         DestroySprite(&gSprites[gBattlerSpriteIds[battler]]);
     }
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites keep affine pieces centered without matrix-number flips")
@@ -103,6 +105,7 @@ TEST("Native Mega sprites keep affine pieces centered without matrix-number flip
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites erase every packed row on faint without modifying ROM")
@@ -120,6 +123,7 @@ TEST("Native Mega sprites erase every packed row on faint without modifying ROM"
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites rotate, reflect and shrink around the shared origin")
@@ -150,6 +154,7 @@ TEST("Native Mega sprites rotate, reflect and shrink around the shared origin")
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites use compatibility graphics in the summary template")
@@ -164,4 +169,5 @@ TEST("Native Mega sprites use compatibility graphics in the summary template")
     FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[B_BATTLER_1]]);
     DestroySprite(&gSprites[gBattlerSpriteIds[B_BATTLER_1]]);
     FreeMonSpritesGfx();
+    gMain.inBattle = FALSE;
 }
