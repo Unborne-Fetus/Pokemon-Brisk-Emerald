@@ -8,6 +8,9 @@ void DynamaxAdventure_ResetRaidHud(void);
 #include "pokemon.h"
 #include "constants/dynamax_adventure.h"
 
+bool32 DynamaxAdventure_IsDamageHealthboxVisible(enum BattlerId battler);
+void DynamaxAdventure_ShowDamageHealthbox(enum BattlerId battler);
+
 struct DynamaxAdventureStatus
 {
     u8 phase;

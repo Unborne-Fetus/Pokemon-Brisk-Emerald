@@ -19,9 +19,20 @@ DynamaxAdventureRestCave_Text_Rival:
     .string "If you go down, I will keep fighting.$"
 
 DynamaxAdventureRestCave_EventScript_Birch::
-    msgbox DynamaxAdventureRestCave_Text_Birch, MSGBOX_NPC
+    checkplayergender
+    goto_if_eq VAR_RESULT, FEMALE, DynamaxAdventureRestCave_BirchBrendan
+    msgbox DynamaxAdventureRestCave_Text_BirchMay, MSGBOX_NPC
     end
-DynamaxAdventureRestCave_Text_Birch:
-    .string "The four of us will explore together!\n"
-    .string "All four of us will fight together,\l"
-    .string "each with our own rental!$"
+DynamaxAdventureRestCave_BirchBrendan:
+    msgbox DynamaxAdventureRestCave_Text_BirchBrendan, MSGBOX_NPC
+    end
+DynamaxAdventureRestCave_Text_BirchMay:
+    .string "I'm here to shadow MAY and see how\n"
+    .string "she's doing with her research.\p"
+    .string "She's working toward becoming a\n"
+    .string "professor. I'm excited to see her grow!$"
+DynamaxAdventureRestCave_Text_BirchBrendan:
+    .string "I'm here to shadow BRENDAN and see how\n"
+    .string "he's doing with his research.\p"
+    .string "He's working toward becoming a\n"
+    .string "professor. I'm excited to see him grow!$"

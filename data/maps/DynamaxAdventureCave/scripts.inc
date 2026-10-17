@@ -71,6 +71,42 @@ DynamaxAdventureCave_RentalNext4::
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext5
 	dynmultipush DynamaxAdventureCave_Text_Mon, 5
 DynamaxAdventureCave_RentalNext5::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 6
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext6
+	dynmultipush DynamaxAdventureCave_Text_Mon, 6
+DynamaxAdventureCave_RentalNext6::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 7
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext7
+	dynmultipush DynamaxAdventureCave_Text_Mon, 7
+DynamaxAdventureCave_RentalNext7::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 8
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext8
+	dynmultipush DynamaxAdventureCave_Text_Mon, 8
+DynamaxAdventureCave_RentalNext8::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 9
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext9
+	dynmultipush DynamaxAdventureCave_Text_Mon, 9
+DynamaxAdventureCave_RentalNext9::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 10
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext10
+	dynmultipush DynamaxAdventureCave_Text_Mon, 10
+DynamaxAdventureCave_RentalNext10::
+	setvar VAR_0x8004, DA_OP_RENTAL_INFO
+	setvar VAR_0x8005, 11
+	special RunDynamaxAdventure
+	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_RentalNext11
+	dynmultipush DynamaxAdventureCave_Text_Mon, 11
+DynamaxAdventureCave_RentalNext11::
 	dynmultistack 1, 1, FALSE, 3, FALSE, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN
 	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, DynamaxAdventureCave_Pause
 	setvar VAR_0x8004, DA_OP_CHOOSE_RENTAL

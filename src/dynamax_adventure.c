@@ -126,7 +126,7 @@ struct DynamaxAdventure
     struct Pokemon rentals[DA_RENTAL_CHOICES];
     struct Pokemon paths[DA_PATH_CHOICES];
     struct Pokemon team[DA_TEAM_SIZE];
-    u8 selectedOffers;
+    u16 selectedOffers;
     struct Pokemon encounter;
     struct Pokemon caught[DA_ENCOUNTERS];
     struct Pokemon originalParty[PARTY_SIZE];
@@ -336,7 +336,7 @@ static void GeneratePaths(void)
 
 bool32 DynamaxAdventure_Begin(u32 seed)
 {
-    u32 first;
+    bool8 used[ARRAY_COUNT(sRentals)] = {0};
     if (sAdventure != NULL || gMain.inBattle)
         return FALSE;
     u32 bossCount = DynamaxAdventure_GetBossPoolCount();
@@ -351,10 +351,17 @@ bool32 DynamaxAdventure_Begin(u32 seed)
     sAdventure->status.phase = DA_PHASE_RENTAL;
     sAdventure->status.lives = DA_STARTING_LIVES;
     sAdventure->bossSpecies = DynamaxAdventure_GetBossPoolSpecies(NextRandom() % bossCount);
-    first = NextRandom() % DynamaxAdventure_GetRentalPoolCount();
-    // Distinct offers, with deterministic run generation from the supplied seed.
+    // Sample across the entire eligible pool, rather than a contiguous block.
+    // The run seed still makes the full choice list deterministic.
+    u32 poolCount = DynamaxAdventure_GetRentalPoolCount();
     for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
-        CreateRental(&sAdventure->rentals[i], GetRentalSet((first + i) % DynamaxAdventure_GetRentalPoolCount()), DA_RENTAL_LEVEL);
+    {
+        u32 choice = NextRandom() % poolCount;
+        while (used[choice])
+            choice = (choice + 1) % poolCount;
+        used[choice] = TRUE;
+        CreateRental(&sAdventure->rentals[i], GetRentalSet(choice), DA_RENTAL_LEVEL);
+    }
     return TRUE;
 }
 

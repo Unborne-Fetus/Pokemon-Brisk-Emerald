@@ -12,7 +12,7 @@ flags or add SaveBlock fields.
 
 ## Implemented run
 
-- Choose **one rental** from six offers, shown with Pokémon icons. The rival, scientist,
+- Choose **one rental** from twelve offers, shown with Pokémon icons. The rival, scientist,
   and Birch independently choose different remaining offers. All four allies
   fight on the field simultaneously, each with their own move and target.
   **May partners with a male player; Brendan partners with a female player.**
@@ -74,14 +74,16 @@ resumption from a save remain future work.
 
 Intermediate enemies have **5× their normal max HP**; the final boss has
 **7×**. These replace the ordinary Dynamax HP multiplier rather than stacking
-with it. Catches retain their normal stats; rental HP uses the difficulty rule above. A compact top panel shows all four allies, labeled P (player), R (rival),
-S (scientist), and B (Birch), with separate HP and status displays. The boss has its own
-healthbox. If an ally faints, the remaining allies continue. A loss is counted only
-when no allied rental remains. All four rentals are active, so there are no in-battle reserves.
+with it. Catches retain their normal stats; rental HP uses the difficulty rule above. Healthboxes stay hidden until a Pokémon takes damage. Only that Pokémon's
+healthbox appears while HP drops and briefly afterward, then hides again. No
+extra background window or top menu is allocated. If an ally faints, the remaining
+allies continue. A loss is counted only when no allied rental remains. All four
+rentals are active, so there are no in-battle reserves.
 
 Raid battles allocate six storage slots, with five active participants and one empty
 sentinel for legacy partner queries. Singles and ordinary doubles retain two/four active
-battlers. Raid intros load the Pokémon directly to fit GBA sprite memory. Recorded
+battlers. Raid intros load the Pokémon directly to fit GBA sprite memory, including the
+live player controller (which cannot reuse a trainer sprite in this layout). Recorded
 raid videos are disabled; existing four-slot saved videos retain their original format.
 
 After every battle (victory, loss, or escape), the caller moves to an enclosed

@@ -1911,6 +1911,12 @@ static void PrintLinkStandbyMsg(void)
 
 static void PlayerHandleLoadMonSprite(enum BattlerId battler)
 {
+    if (IsAdventureRaid())
+    {
+        // Raids load Pokémon directly, without an earlier player/trainer sprite.
+        BtlController_HandleLoadMonSprite(battler);
+        return;
+    }
     BattleLoadMonSpriteGfx(GetBattlerMon(battler), battler);
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
     gBattlerControllerFuncs[battler] = CompleteOnBattlerSpritePosX_0;

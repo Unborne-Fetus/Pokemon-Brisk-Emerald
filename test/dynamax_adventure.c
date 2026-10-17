@@ -891,9 +891,9 @@ TEST("Adventure: all four members recover HP and PP according to the starting di
     VarSet(VAR_BRISK_DIFFICULTY, savedMode);
 }
 
-TEST("Adventure: six offers are selectable and rentals and routes have at least three damaging moves")
+TEST("Adventure: twelve offers are selectable and rentals and routes have at least three damaging moves")
 {
-    EXPECT_EQ(DA_RENTAL_CHOICES, 6);
+    EXPECT_EQ(DA_RENTAL_CHOICES, 12);
     for (u32 choice = 0; choice < DA_RENTAL_CHOICES; choice++)
     {
         EXPECT(DynamaxAdventure_Begin(17));
@@ -1340,5 +1340,87 @@ ADVENTURE_RAID_BATTLE_TEST("Adventure raid: Helping Hand preserves the selected 
         MESSAGE("Wobbuffet is ready to help Gengar!");
     } THEN {
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: live player intro creates the missing Gyarados without touching healthboxes")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_COALOSSAL) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_DURALUDON) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_CAMERUPT) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_DURALUDON) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        u16 healthboxTiles[MAX_BATTLERS_COUNT];
+        for (u32 i = 0; i < 5; i++) healthboxTiles[i] = gSprites[gHealthboxSpriteIds[i]].oam.tileNum;
+        FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[0]]);
+        DestroySprite(&gSprites[gBattlerSpriteIds[0]]);
+        gBattlerSpriteIds[0] = MAX_SPRITES;
+        SetControllerToPlayer(0);
+        BtlController_EmitLoadMonSprite(0, B_COMM_TO_CONTROLLER);
+        MarkBattlerForControllerExec(0);
+        gBattlerControllerFuncs[0](0);
+        EXPECT_LT(gBattlerSpriteIds[0], MAX_SPRITES);
+        EXPECT(gSprites[gBattlerSpriteIds[0]].inUse);
+        EXPECT_EQ((u32)gSprites[gBattlerSpriteIds[0]].oam.paletteNum, 0);
+        EXPECT_EQ(gSprites[gBattlerSpriteIds[0]].data[2], SPECIES_GYARADOS);
+        for (u32 i = 0; i < 5; i++)
+        {
+            EXPECT_NE(gBattlerSpriteIds[0], gHealthboxSpriteIds[i]);
+            EXPECT_EQ((u32)gSprites[gHealthboxSpriteIds[i]].oam.tileNum, healthboxTiles[i]);
+            if (i != 0) EXPECT_NE(gBattlerSpriteIds[0], gBattlerSpriteIds[i]);
+        }
+        for (u32 frame = 0; frame < 400 && IsBattlerMarkedForControllerExec(0); frame++)
+        {
+            AnimateSprites();
+            gBattlerControllerFuncs[0](0);
+        }
+        EXPECT(!IsBattlerMarkedForControllerExec(0));
+        EXPECT_EQ(gSprites[gBattlerSpriteIds[0]].x2, 0);
+        EXPECT(!gSprites[gBattlerSpriteIds[0]].invisible);
+        SetControllerToRecordedPlayer(0);
+        DynamaxAdventure_InitRaidHud();
+        for (u32 i = 0; i < 5; i++) EXPECT(gSprites[gHealthboxSpriteIds[i]].invisible);
+        // Damage shows only the current recipient and expires after a short hold.
+        DynamaxAdventure_ShowDamageHealthbox(4);
+        EXPECT(!gSprites[gHealthboxSpriteIds[4]].invisible);
+        EXPECT(gSprites[gHealthboxSpriteIds[0]].invisible);
+        DynamaxAdventure_ShowDamageHealthbox(0);
+        EXPECT(gSprites[gHealthboxSpriteIds[4]].invisible);
+        EXPECT(!gSprites[gHealthboxSpriteIds[0]].invisible);
+        for (u32 frame = 0; frame < 60; frame++) DynamaxAdventure_UpdateRaidHud();
+        EXPECT(gSprites[gHealthboxSpriteIds[0]].invisible);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+TEST("Adventure: twelve offers include selectable high indexes and distinct researcher rentals")
+{
+    EXPECT_EQ(DA_RENTAL_CHOICES, 12);
+    EXPECT(DynamaxAdventure_GetRentalPoolCount() >= DA_RENTAL_CHOICES);
+    for (u32 choice = 8; choice < DA_RENTAL_CHOICES; choice++)
+    {
+        EXPECT(DynamaxAdventure_Begin(200 + choice));
+        enum Species selected = GetMonData(DynamaxAdventure_GetRental(choice), MON_DATA_SPECIES);
+        EXPECT(DynamaxAdventure_ChooseRental(choice));
+        EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES), selected);
+        for (u32 i = 0; i < 3; i++)
+        {
+            enum Species ally = GetMonData(&gParties[B_TRAINER_PARTNER][i], MON_DATA_SPECIES);
+            EXPECT_NE(ally, selected);
+            for (u32 j = 0; j < i; j++) EXPECT_NE(ally, GetMonData(&gParties[B_TRAINER_PARTNER][j], MON_DATA_SPECIES));
+        }
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN)); EXPECT(DynamaxAdventure_Quit());
     }
 }

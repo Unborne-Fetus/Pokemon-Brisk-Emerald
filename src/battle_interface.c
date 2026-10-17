@@ -799,6 +799,11 @@ void SetHealthboxSpriteInvisible(u8 healthboxSpriteId)
 
 void SetHealthboxSpriteVisible(u8 healthboxSpriteId)
 {
+    if (IsAdventureRaid() && !DynamaxAdventure_IsDamageHealthboxVisible(gSprites[healthboxSpriteId].hMain_Battler))
+    {
+        SetHealthboxSpriteInvisible(healthboxSpriteId);
+        return;
+    }
     // The wild-double intro can ask to show the empty fourth battler's box.
     if (IsDynamaxAdventureBattle()
      && ((gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler))
@@ -879,8 +884,8 @@ void GetBattlerHealthboxCoords(enum BattlerId battler, s16 *x, s16 *y)
 {
     if (IsAdventureRaid())
     {
-        *x = battler == 1 ? 44 : -200;
-        *y = battler == 1 ? 44 : -100;
+        *x = battler == 1 ? 44 : 112;
+        *y = battler == 1 ? 24 : 76;
         return;
     }
     enum BattlerPosition position = GetBattlerPosition(battler);
