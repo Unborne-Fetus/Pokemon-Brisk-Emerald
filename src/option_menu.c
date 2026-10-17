@@ -21,6 +21,7 @@
 #include "event_data.h"
 #include "constants/rgb.h"
 #include "string_util.h"
+#include "player_name.h"
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
@@ -63,7 +64,7 @@ enum
     MENUITEM_COUNT_PG2,
 };
 
-enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_EXPSHARE, MENUITEM_THEME, MENUITEM_HELP, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
+enum { MENUITEM_SHINYODDS, MENUITEM_SHINYHUNT, MENUITEM_EXPSHARE, MENUITEM_THEME, MENUITEM_HELP, MENUITEM_RENAME, MENUITEM_CANCEL_PG3, MENUITEM_COUNT_PG3 };
 
 enum
 {
@@ -87,6 +88,7 @@ enum
 #define PAGE_COUNT 5
 
 static void Task_OptionMenuFadeIn(u8 taskId);
+static void Task_OptionMenuRename(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuFadeIn_Pg2(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg2(u8 taskId);
@@ -172,7 +174,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 
 static const u8 *const sOptionMenuItemsNames_Pg3[MENUITEM_COUNT_PG3] =
 {
-    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("EXP SHARE"), COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("HELP"), gText_OptionMenuCancel,
+    COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("EXP SHARE"), COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("HELP"), COMPOUND_STRING("CHANGE NAME"), gText_OptionMenuCancel,
 };
 
 enum { MENUITEM_DIFFICULTY, MENUITEM_RANDOM_WILD, MENUITEM_RANDOM_TRAINERS, MENUITEM_RANDOM_ITEMS, MENUITEM_RANDOM_IMPORTANT, MENUITEM_RANDOM_ALL, MENUITEM_CANCEL_PG4, MENUITEM_COUNT_PG4 };
@@ -187,6 +189,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
     {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nMenus and dialogue change;\nPOKéMON keep their colors.")},
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
     {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("No level caps; prices x1.\nBasic AI; items allowed.\nSHIFT style; shared EXP 200%.\nOver-level freely.")},
@@ -1216,6 +1219,12 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
     }
     else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG3))
         gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_RENAME)
+    {
+        StoreAllCurrentSettings(taskId);
+        BeginNormalPaletteFade(PALETTES_ALL, MENU_FADE_DELAY, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_OptionMenuRename;
+    }
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_THEME)
         ToggleTheme(taskId);
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == MENUITEM_HELP)
@@ -1314,6 +1323,15 @@ static void DrawHelpPage(void)
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_SMALL, sHelpControls, 8, 88, TEXT_SKIP_DRAW, NULL);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_SMALL, sHelpExit, 8, 100, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_OptionMenuRename(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    FreeAllWindowBuffers();
+    DestroyTask(taskId);
+    OpenPlayerNameEditor(CB2_InitOptionMenu);
 }
 
 static void Task_OptionMenuProcessInput_Help(u8 taskId)

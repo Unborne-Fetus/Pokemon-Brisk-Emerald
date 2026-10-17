@@ -1790,6 +1790,7 @@ static void DrawMonTextEntryBox(void)
 static void (*const sDrawTextEntryBoxFuncs[])(void) =
 {
     [NAMING_SCREEN_PLAYER]     = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_PLAYER_RENAME] = DrawNormalTextEntryBox,
     [NAMING_SCREEN_BOX]        = DrawNormalTextEntryBox,
     [NAMING_SCREEN_CAUGHT_MON] = DrawMonTextEntryBox,
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
@@ -2159,6 +2160,17 @@ static const struct NamingScreenTemplate sPlayerNamingScreenTemplate =
     .title = COMPOUND_STRING("YOUR NAME?"),
 };
 
+static const struct NamingScreenTemplate sPlayerRenameTemplate =
+{
+    .copyExistingString = TRUE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 1,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = COMPOUND_STRING("CHANGE YOUR NAME"),
+};
+
 static const struct NamingScreenTemplate sPCBoxNamingTemplate =
 {
     .copyExistingString = FALSE,
@@ -2226,6 +2238,7 @@ static const struct NamingScreenTemplate sSendOutTextTemplate =
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
+    [NAMING_SCREEN_PLAYER_RENAME] = &sPlayerRenameTemplate,
     [NAMING_SCREEN_BOX]        = &sPCBoxNamingTemplate,
     [NAMING_SCREEN_CAUGHT_MON] = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,

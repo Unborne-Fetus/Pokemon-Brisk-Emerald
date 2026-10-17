@@ -11,6 +11,8 @@ void DynamaxAdventure_ResetRaidHud(void);
 bool32 DynamaxAdventure_IsDamageHealthboxVisible(enum BattlerId battler);
 void DynamaxAdventure_ShowDamageHealthbox(enum BattlerId battler);
 
+void DynamaxAdventure_UpdatePlayerName(const u8 *oldName, const u8 *newName);
+
 struct DynamaxAdventureStatus
 {
     u8 phase;

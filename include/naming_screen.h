@@ -13,6 +13,7 @@ enum {
     NAMING_SCREEN_CODE,
     NAMING_SCREEN_RIVAL,
     NAMING_SCREEN_SEND_OUT_TEXT,
+    NAMING_SCREEN_PLAYER_RENAME,
 };
 
 extern void BattleMainCB2(void);

@@ -15,6 +15,7 @@
 #include "event_data.h"
 #include "main.h"
 #include "pokemon_storage_system.h"
+#include "player_name.h"
 #include "random.h"
 #include "string_util.h"
 #include "constants/pokedex.h"
@@ -306,6 +307,27 @@ bool32 Test_DynamaxAdventure_CreateBoss(struct Pokemon *mon, enum Species specie
     return TRUE;
 }
 #endif
+
+// Temporary rentals and rewards must retain the same ownership as the real party.
+void DynamaxAdventure_UpdatePlayerName(const u8 *oldName, const u8 *newName)
+{
+    if (sAdventure == NULL)
+        return;
+    for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
+        RenamePlayerOwnedBoxMon(&sAdventure->rentals[i].box, oldName, newName);
+    for (u32 i = 0; i < DA_PATH_CHOICES; i++)
+        RenamePlayerOwnedBoxMon(&sAdventure->paths[i].box, oldName, newName);
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        RenamePlayerOwnedBoxMon(&sAdventure->team[i].box, oldName, newName);
+    for (u32 i = 0; i < DA_ENCOUNTERS; i++)
+        RenamePlayerOwnedBoxMon(&sAdventure->caught[i].box, oldName, newName);
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        RenamePlayerOwnedBoxMon(&sAdventure->originalParty[i].box, oldName, newName);
+        RenamePlayerOwnedBoxMon(&sAdventure->originalPartnerParty[i].box, oldName, newName);
+    }
+    RenamePlayerOwnedBoxMon(&sAdventure->encounter.box, oldName, newName);
+}
 
 static void GeneratePaths(void)
 {
