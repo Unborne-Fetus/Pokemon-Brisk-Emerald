@@ -23,13 +23,14 @@
     "abilities": [
       "INSOMNIA",
       "TINTED_LENS",
-      "COMPETITIVE"
+      "FOREWARN"
     ],
     "evolution_level": 42,
     "species_id": 1638,
     "national_dex": 1038,
     "icon_palette": 5,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "An alert nocturnal owl uses its psychic senses to anticipate threats."
   },
   {
     "id": "ALPHAYENA",
@@ -116,15 +117,16 @@
       85
     ],
     "abilities": [
-      "ROCK_HEAD",
       "BATTLE_ARMOR",
-      "TECHNICIAN"
+      "CURSED_BODY",
+      "SCRAPPY"
     ],
     "evolution_level": 42,
     "species_id": 1641,
     "national_dex": 1041,
     "icon_palette": 5,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "Its skull armor and ancestral bone weapon support protection, curses and striking spirits."
   },
   {
     "id": "RHYFORTRESS",
@@ -150,13 +152,14 @@
     "abilities": [
       "SOLID_ROCK",
       "STURDY",
-      "SHEER_FORCE"
+      "BULLETPROOF"
     ],
     "evolution_level": 60,
     "species_id": 1642,
     "national_dex": 1042,
     "icon_palette": 1,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "The plated rock fortress withstands impacts and projectiles."
   },
   {
     "id": "DUNESHRED",
@@ -214,13 +217,14 @@
     "abilities": [
       "STURDY",
       "KEEN_EYE",
-      "TOUGH_CLAWS"
+      "WIND_RIDER"
     ],
     "evolution_level": 48,
     "species_id": 1644,
     "national_dex": 1044,
     "icon_palette": 5,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "Its armored avian body and enlarged wings exploit wind rather than relying on claws."
   },
   {
     "id": "SHARKAISER",
@@ -309,14 +313,15 @@
     ],
     "abilities": [
       "INTIMIDATE",
-      "GUTS",
-      "STRONG_JAW"
+      "IRON_FIST",
+      "GUARD_DOG"
     ],
     "evolution_level": 42,
     "species_id": 1647,
     "national_dex": 1047,
     "icon_palette": 3,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "A muscular guard dog uses its large fists and protective instincts."
   },
   {
     "id": "SUDOSYLVAN",
@@ -341,14 +346,15 @@
     ],
     "abilities": [
       "STURDY",
-      "ROCK_HEAD",
-      "SAP_SIPPER"
+      "WATER_ABSORB",
+      "HARVEST"
     ],
     "evolution_level": 42,
     "species_id": 1648,
     "national_dex": 1048,
     "icon_palette": 1,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "The potted tree drinks through its roots and bears fruit; its rock body remains sturdy."
   },
   {
     "id": "PARASOUL",
@@ -374,13 +380,14 @@
     "abilities": [
       "DRY_SKIN",
       "EFFECT_SPORE",
-      "TINTED_LENS"
+      "CURSED_BODY"
     ],
     "evolution_level": 40,
     "species_id": 1649,
     "national_dex": 1049,
     "icon_palette": 2,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "Its fungal body retains spores and moisture sensitivity while gaining a haunting curse."
   },
   {
     "id": "LINEVOLVER",
@@ -468,14 +475,15 @@
       125
     ],
     "abilities": [
-      "SHARPNESS",
-      "SHARPNESS",
-      "SHARPNESS"
+      "SWIFT_SWIM",
+      "SWIFT_SWIM",
+      "SWIFT_SWIM"
     ],
     "species_id": 1652,
     "national_dex": 149,
     "icon_palette": 5,
-    "shiny_supplied": true
+    "shiny_supplied": true,
+    "ability_reason": "Its streamlined aquatic form uses its fins for fast swimming."
   },
   {
     "id": "LITWICK_HALLOWEEN",
@@ -492,15 +500,16 @@
     ],
     "abilities": [
       "FLASH_FIRE",
-      "HARVEST",
-      "CHLOROPHYLL"
+      "INSOMNIA",
+      "HARVEST"
     ],
     "evolution_level": 25,
     "species_id": 1653,
     "icon_palette": 1,
     "shiny_supplied": false,
     "formtable": "sLitwickFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/litwick/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/litwick/shiny.pal",
+    "ability_reason": "A pumpkin lantern burns through the night and grows harvest fruit."
   },
   {
     "id": "LAMPENT_HALLOWEEN",
@@ -517,15 +526,16 @@
     ],
     "abilities": [
       "FLASH_FIRE",
-      "HARVEST",
-      "CHLOROPHYLL"
+      "INSOMNIA",
+      "HARVEST"
     ],
     "evolution_level": 41,
     "species_id": 1654,
     "icon_palette": 5,
     "shiny_supplied": false,
     "formtable": "sLampentFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/lampent/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/lampent/shiny.pal",
+    "ability_reason": "The lantern and harvest theme persists as it evolves."
   },
   {
     "id": "CHANDELURE_HALLOWEEN",
@@ -542,15 +552,16 @@
     ],
     "abilities": [
       "FLASH_FIRE",
-      "HARVEST",
-      "CHLOROPHYLL"
+      "INSOMNIA",
+      "HARVEST"
     ],
     "evolution_level": 0,
     "species_id": 1655,
     "icon_palette": 5,
     "shiny_supplied": false,
     "formtable": "sChandelureFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/chandelure/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/chandelure/shiny.pal",
+    "ability_reason": "The cluster of pumpkin lanterns stays alight throughout the night."
   },
   {
     "id": "SINISTEA_HALLOWEEN",
@@ -567,15 +578,16 @@
     ],
     "abilities": [
       "LIQUID_OOZE",
-      "CURSED_BODY",
-      "POISON_TOUCH"
+      "WEAK_ARMOR",
+      "CURSED_BODY"
     ],
     "evolution_level": 30,
     "species_id": 1656,
     "icon_palette": 4,
     "shiny_supplied": false,
     "formtable": "sSinisteaFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/sinistea/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/sinistea/shiny.pal",
+    "ability_reason": "A haunted fragile vessel holds noxious liquid; contact poisoning poorly suited its special moves."
   },
   {
     "id": "POLTEAGEIST_HALLOWEEN",
@@ -592,15 +604,16 @@
     ],
     "abilities": [
       "LIQUID_OOZE",
-      "CURSED_BODY",
-      "POISON_TOUCH"
+      "WEAK_ARMOR",
+      "CURSED_BODY"
     ],
     "evolution_level": 0,
     "species_id": 1657,
     "icon_palette": 4,
     "shiny_supplied": false,
     "formtable": "sPolteageistFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/polteageist/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/polteageist/shiny.pal",
+    "ability_reason": "Its fragile haunted cauldron contains poisonous liquid."
   },
   {
     "id": "PONYTA_HALLOWEEN",
@@ -617,15 +630,16 @@
     ],
     "abilities": [
       "SWEET_VEIL",
-      "PASTEL_VEIL",
-      "CORROSION"
+      "AROMA_VEIL",
+      "STICKY_HOLD"
     ],
     "evolution_level": 40,
     "species_id": 1658,
     "icon_palette": 3,
     "shiny_supplied": false,
     "formtable": "sPonytaFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/ponyta/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/ponyta/shiny.pal",
+    "ability_reason": "Candy scent and sticky icing suit the confectionery horse better than corrosive chemicals."
   },
   {
     "id": "RAPIDASH_HALLOWEEN",
@@ -642,15 +656,16 @@
     ],
     "abilities": [
       "SWEET_VEIL",
-      "PASTEL_VEIL",
-      "CORROSION"
+      "AROMA_VEIL",
+      "STICKY_HOLD"
     ],
     "evolution_level": 0,
     "species_id": 1659,
     "icon_palette": 3,
     "shiny_supplied": false,
     "formtable": "sRapidashFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/rapidash/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/rapidash/shiny.pal",
+    "ability_reason": "Retain the sweet scent and sticky confectionery traits through evolution."
   },
   {
     "id": "TANGELA_HALLOWEEN",
@@ -667,15 +682,16 @@
     ],
     "abilities": [
       "CURSED_BODY",
-      "REGENERATOR",
-      "GOOEY"
+      "MUMMY",
+      "WANDERING_SPIRIT"
     ],
     "evolution_level": 36,
     "species_id": 1660,
     "icon_palette": 3,
     "shiny_supplied": false,
     "formtable": "sTangelaFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/tangela/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/tangela/shiny.pal",
+    "ability_reason": "Its visible mummy wrappings and spectral body spread a curse on contact."
   },
   {
     "id": "TANGROWTH_HALLOWEEN",
@@ -692,15 +708,16 @@
     ],
     "abilities": [
       "CURSED_BODY",
-      "REGENERATOR",
-      "GOOEY"
+      "MUMMY",
+      "WANDERING_SPIRIT"
     ],
     "evolution_level": 0,
     "species_id": 1661,
     "icon_palette": 2,
     "shiny_supplied": false,
     "formtable": "sTangrowthFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/tangrowth/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/tangrowth/shiny.pal",
+    "ability_reason": "The larger bandaged mummy keeps the same possession and curse traits."
   },
   {
     "id": "TIMBURR_HALLOWEEN",
@@ -717,7 +734,7 @@
     ],
     "abilities": [
       "IRON_FIST",
-      "GUTS",
+      "PICKUP",
       "CURSED_BODY"
     ],
     "evolution_level": 25,
@@ -725,7 +742,8 @@
     "icon_palette": 4,
     "shiny_supplied": false,
     "formtable": "sTimburrFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/timburr/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/timburr/shiny.pal",
+    "ability_reason": "The grave worker has fists and uncovers buried objects."
   },
   {
     "id": "GURDURR_HALLOWEEN",
@@ -742,7 +760,7 @@
     ],
     "abilities": [
       "IRON_FIST",
-      "GUTS",
+      "PICKUP",
       "CURSED_BODY"
     ],
     "evolution_level": 40,
@@ -750,7 +768,8 @@
     "icon_palette": 4,
     "shiny_supplied": false,
     "formtable": "sGurdurrFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/gurdurr/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/gurdurr/shiny.pal",
+    "ability_reason": "The grave worker retains its fists and buried-object scavenging."
   },
   {
     "id": "CONKELDURR_HALLOWEEN",
@@ -767,7 +786,7 @@
     ],
     "abilities": [
       "IRON_FIST",
-      "GUTS",
+      "STURDY",
       "CURSED_BODY"
     ],
     "evolution_level": 0,
@@ -775,7 +794,8 @@
     "icon_palette": 3,
     "shiny_supplied": false,
     "formtable": "sConkeldurrCustomMegaFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/conkeldurr/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/conkeldurr/shiny.pal",
+    "ability_reason": "Its heavy tombstone armor and physical labor suit resilience and fists."
   },
   {
     "id": "EMOLGA_HALLOWEEN",
@@ -793,14 +813,15 @@
     "abilities": [
       "STATIC",
       "INFILTRATOR",
-      "COMPETITIVE"
+      "UNNERVE"
     ],
     "evolution_level": 0,
     "species_id": 1665,
     "icon_palette": 2,
     "shiny_supplied": false,
     "formtable": "sEmolgaFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/emolga/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/emolga/shiny.pal",
+    "ability_reason": "The vampire-like glider slips past defenses and unnerves prey."
   },
   {
     "id": "SNORUNT_HALLOWEEN",
@@ -818,14 +839,15 @@
     "abilities": [
       "SNOW_CLOAK",
       "CURSED_BODY",
-      "ICE_BODY"
+      "INFILTRATOR"
     ],
     "evolution_level": 42,
     "species_id": 1666,
     "icon_palette": 2,
     "shiny_supplied": false,
     "formtable": "sSnoruntFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/snorunt/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/snorunt/shiny.pal",
+    "ability_reason": "The spectral shroud slips through defenses while retaining its icy disguise."
   },
   {
     "id": "GLALIE_HALLOWEEN",
@@ -843,13 +865,14 @@
     "abilities": [
       "SNOW_CLOAK",
       "CURSED_BODY",
-      "ICE_BODY"
+      "INFILTRATOR"
     ],
     "evolution_level": 0,
     "species_id": 1667,
     "icon_palette": 5,
     "shiny_supplied": false,
     "formtable": "sGlalieFormSpeciesIdTable",
-    "shiny_palette_source": "graphics/pokemon/glalie/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/glalie/shiny.pal",
+    "ability_reason": "The haunting mask retains the shroud line's spectral traits."
   }
 ]

@@ -22,7 +22,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = {ABILITY_INSOMNIA, ABILITY_TINTED_LENS, ABILITY_COMPETITIVE},
+        .abilities = { ABILITY_INSOMNIA, ABILITY_TINTED_LENS, ABILITY_FOREWARN },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Noctarch"),
         .cryId = CRY_NOCTOWL,
@@ -219,7 +219,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
-        .abilities = {ABILITY_ROCK_HEAD, ABILITY_BATTLE_ARMOR, ABILITY_TECHNICIAN},
+        .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_CURSED_BODY, ABILITY_SCRAPPY },
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .speciesName = _("Marrowak"),
@@ -287,7 +287,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
-        .abilities = {ABILITY_SOLID_ROCK, ABILITY_STURDY, ABILITY_SHEER_FORCE},
+        .abilities = { ABILITY_SOLID_ROCK, ABILITY_STURDY, ABILITY_BULLETPROOF },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Rhyfortress"),
         .cryId = CRY_RHYPERIOR,
@@ -420,7 +420,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = {ABILITY_STURDY, ABILITY_KEEN_EYE, ABILITY_TOUGH_CLAWS},
+        .abilities = { ABILITY_STURDY, ABILITY_KEEN_EYE, ABILITY_WIND_RIDER },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Skarmagedn"),
         .cryId = CRY_SKARMORY,
@@ -617,9 +617,9 @@
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_GUTS, ABILITY_STRONG_JAW},
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_IRON_FIST, ABILITY_GUARD_DOG },
     #else
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_GUTS, ABILITY_STRONG_JAW},
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_IRON_FIST, ABILITY_GUARD_DOG },
     #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Grandbully"),
@@ -681,7 +681,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_SAP_SIPPER},
+        .abilities = { ABILITY_STURDY, ABILITY_WATER_ABSORB, ABILITY_HARVEST },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Sudosylvan"),
         .cryId = CRY_SUDOWOODO,
@@ -756,9 +756,9 @@
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = {ABILITY_DRY_SKIN, ABILITY_EFFECT_SPORE, ABILITY_TINTED_LENS},
+        .abilities = { ABILITY_DRY_SKIN, ABILITY_EFFECT_SPORE, ABILITY_CURSED_BODY },
     #else
-        .abilities = {ABILITY_DRY_SKIN, ABILITY_EFFECT_SPORE, ABILITY_TINTED_LENS},
+        .abilities = { ABILITY_DRY_SKIN, ABILITY_EFFECT_SPORE, ABILITY_CURSED_BODY },
     #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Parasoul"),
@@ -951,7 +951,7 @@
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_DRAGON),
-        .abilities = {ABILITY_SHARPNESS, ABILITY_SHARPNESS, ABILITY_SHARPNESS},
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Dragonite"),
     #if P_MODIFIED_MEGA_CRIES
@@ -1007,9 +1007,9 @@
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #else
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #endif
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
@@ -1076,9 +1076,9 @@
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #else
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #endif
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Lampent"),
@@ -1144,9 +1144,9 @@
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #else
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_HARVEST, ABILITY_CHLOROPHYLL},
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_INSOMNIA, ABILITY_HARVEST },
     #endif
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Chandelure"),
@@ -1210,7 +1210,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS),
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_CURSED_BODY, ABILITY_POISON_TOUCH},
+        .abilities = { ABILITY_LIQUID_OOZE, ABILITY_WEAK_ARMOR, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Sinistea"),
         .cryId = CRY_SINISTEA,
@@ -1275,7 +1275,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS),
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_CURSED_BODY, ABILITY_POISON_TOUCH},
+        .abilities = { ABILITY_LIQUID_OOZE, ABILITY_WEAK_ARMOR, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Polteageist"),
         .cryId = CRY_POLTEAGEIST,
@@ -1339,7 +1339,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_PASTEL_VEIL, ABILITY_CORROSION},
+        .abilities = { ABILITY_SWEET_VEIL, ABILITY_AROMA_VEIL, ABILITY_STICKY_HOLD },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Ponyta"),
         .cryId = CRY_PONYTA,
@@ -1404,7 +1404,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_PASTEL_VEIL, ABILITY_CORROSION},
+        .abilities = { ABILITY_SWEET_VEIL, ABILITY_AROMA_VEIL, ABILITY_STICKY_HOLD },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Rapidash"),
         .cryId = CRY_RAPIDASH,
@@ -1467,9 +1467,9 @@
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = {ABILITY_CURSED_BODY, ABILITY_REGENERATOR, ABILITY_GOOEY},
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_MUMMY, ABILITY_WANDERING_SPIRIT },
     #else
-        .abilities = {ABILITY_CURSED_BODY, ABILITY_REGENERATOR, ABILITY_GOOEY},
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_MUMMY, ABILITY_WANDERING_SPIRIT },
     #endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Tangela"),
@@ -1536,7 +1536,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = {ABILITY_CURSED_BODY, ABILITY_REGENERATOR, ABILITY_GOOEY},
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_MUMMY, ABILITY_WANDERING_SPIRIT },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Tangrowth"),
         .cryId = CRY_TANGROWTH,
@@ -1607,7 +1607,7 @@
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = {ABILITY_IRON_FIST, ABILITY_GUTS, ABILITY_CURSED_BODY},
+        .abilities = { ABILITY_IRON_FIST, ABILITY_PICKUP, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Timburr"),
         .cryId = CRY_TIMBURR,
@@ -1671,7 +1671,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = {ABILITY_IRON_FIST, ABILITY_GUTS, ABILITY_CURSED_BODY},
+        .abilities = { ABILITY_IRON_FIST, ABILITY_PICKUP, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Gurdurr"),
         .cryId = CRY_GURDURR,
@@ -1734,7 +1734,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = {ABILITY_IRON_FIST, ABILITY_GUTS, ABILITY_CURSED_BODY},
+        .abilities = { ABILITY_IRON_FIST, ABILITY_STURDY, ABILITY_CURSED_BODY },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Conkeldurr"),
         .cryId = CRY_CONKELDURR,
@@ -1796,7 +1796,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_STATIC, ABILITY_INFILTRATOR, ABILITY_COMPETITIVE},
+        .abilities = { ABILITY_STATIC, ABILITY_INFILTRATOR, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Emolga"),
         .cryId = CRY_EMOLGA,
@@ -1862,9 +1862,9 @@
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = {ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_ICE_BODY},
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
     #else
-        .abilities = {ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_ICE_BODY},
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
     #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Snorunt"),
@@ -1931,9 +1931,9 @@
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = {ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_ICE_BODY},
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
     #else
-        .abilities = {ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_ICE_BODY},
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_CURSED_BODY, ABILITY_INFILTRATOR },
     #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Glalie"),

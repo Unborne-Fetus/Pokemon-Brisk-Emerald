@@ -140,12 +140,14 @@
       "GROUND",
       "FIGHTING"
     ],
-    "ability": "ABILITY_UNSEEN_FIST",
+    "ability": "ABILITY_SAND_FORCE",
     "base_stat_total": 525,
     "stone_name": "Dugtrioite",
     "stone_item": "ITEM_DUGTRIOITE",
     "stone_asset_source": "steelixite",
-    "shiny_palette_source": "graphics/pokemon/dugtrio/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/dugtrio/shiny.pal",
+    "source_ability": "ABILITY_UNSEEN_FIST",
+    "ability_reason": "The burrowing trio channels strength from sand."
   },
   {
     "base_species": "SPECIES_ELECTIVIRE",
@@ -315,12 +317,14 @@
       "ROCK",
       "WATER"
     ],
-    "ability": "ABILITY_INTREPID_SWORD",
+    "ability": "ABILITY_SHARPNESS",
     "base_stat_total": 595,
     "stone_name": "Kabutopsite",
     "stone_item": "ITEM_KABUTOPSITE",
     "stone_asset_source": "tyranitarite",
-    "shiny_palette_source": "graphics/pokemon/kabutops/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/kabutops/shiny.pal",
+    "source_ability": "ABILITY_INTREPID_SWORD",
+    "ability_reason": "Its scythe arms strengthen cutting attacks."
   },
   {
     "base_species": "SPECIES_MAGMORTAR",
@@ -339,12 +343,14 @@
     "types": [
       "FIRE"
     ],
-    "ability": "ABILITY_STEAM_ENGINE",
+    "ability": "ABILITY_FLAME_BODY",
     "base_stat_total": 640,
     "stone_name": "Magmortarite",
     "stone_item": "ITEM_MAGMORTARITE",
     "stone_asset_source": "cameruptite",
-    "shiny_palette_source": "graphics/pokemon/magmortar/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/magmortar/shiny.pal",
+    "source_ability": "ABILITY_STEAM_ENGINE",
+    "ability_reason": "Its furnace-like body burns attackers on contact."
   },
   {
     "base_species": "SPECIES_MEGANIUM",
@@ -586,11 +592,13 @@
       "GRASS",
       "FAIRY"
     ],
-    "ability": "ABILITY_HOSPITALITY",
+    "ability": "ABILITY_PRANKSTER",
     "base_stat_total": 580,
     "stone_name": "Whimsicottite",
     "stone_item": "ITEM_WHIMSICOTTITE",
     "stone_asset_source": "altarianite",
-    "shiny_palette_source": "graphics/pokemon/whimsicott/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/whimsicott/shiny.pal",
+    "source_ability": "ABILITY_HOSPITALITY",
+    "ability_reason": "A mischievous cotton fairy uses tricks rather than a hospitality theme."
   }
 ]

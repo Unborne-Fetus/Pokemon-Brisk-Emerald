@@ -52,12 +52,14 @@
       122,
       77
     ],
-    "ability": "ABILITY_THICK_FAT",
+    "ability": "ABILITY_SOLAR_POWER",
     "stone_name": "Tropiusite",
     "stone_item": "ITEM_TROPIUSITE",
     "stone_asset_source": "venusaurite",
     "source_pack": "ThunderRainbow/tropius/mega",
-    "shiny": "Supplied palette"
+    "shiny": "Supplied palette",
+    "source_ability": "ABILITY_THICK_FAT",
+    "ability_reason": "Its broad tropical leaves convert strong sunlight into attacking energy."
   },
   {
     "base_species": "SPECIES_RILLABOOM",
@@ -232,13 +234,15 @@
       155,
       125
     ],
-    "ability": "ABILITY_TECHNICIAN",
+    "ability": "ABILITY_AROMA_VEIL",
     "stone_name": "Roseradite",
     "stone_item": "ITEM_ROSERADITE",
     "stone_asset_source": "gardevoirite",
     "source_pack": "iriv24/roserade",
     "shiny": "Base-form shiny colors adapted to Mega palette indexes",
-    "shiny_palette_source": "graphics/pokemon/roserade/shiny.pal"
+    "shiny_palette_source": "graphics/pokemon/roserade/shiny.pal",
+    "source_ability": "ABILITY_TECHNICIAN",
+    "ability_reason": "Its enlarged bouquets produce a protective fragrance."
   },
   {
     "base_species": "SPECIES_SLAKING",

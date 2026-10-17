@@ -16,12 +16,14 @@
       "FIRE",
       "FLYING"
     ],
-    "ability": "TOUGH_CLAWS",
+    "ability": "GALE_WINGS",
     "stone_name": "Rapidashite",
     "stone_item": "ITEM_RAPIDASHITE",
     "stone_asset_source": "charizardite_y",
     "artist": "EndlessTGX",
-    "source_sheet": "custom_mega_evolutions_v_2_by_endlesstgx_dd4mhhi-fullview.jpg"
+    "source_sheet": "custom_mega_evolutions_v_2_by_endlesstgx_dd4mhhi-fullview.jpg",
+    "source_ability": "TOUGH_CLAWS",
+    "ability_reason": "The winged horse gains an aerial advantage and can use its existing Brave Bird; it has hooves, not claws."
   },
   {
     "base_species": "SPECIES_VESPIQUEN",
@@ -112,12 +114,14 @@
       "GRASS",
       "FIGHTING"
     ],
-    "ability": "TOUGH_CLAWS",
+    "ability": "DANCER",
     "stone_name": "Tsareenite",
     "stone_item": "ITEM_TSAREENITE",
     "stone_asset_source": "lopunnite",
     "artist": "EndlessTGX",
-    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg"
+    "source_sheet": "custom_mega_evolutions_2_by_endlesstgx_de9bvh4-fullview.jpg",
+    "source_ability": "TOUGH_CLAWS",
+    "ability_reason": "Its skirt, poise and kicking style suit a dancer, not a clawed attacker."
   },
   {
     "base_species": "SPECIES_BRELOOM",

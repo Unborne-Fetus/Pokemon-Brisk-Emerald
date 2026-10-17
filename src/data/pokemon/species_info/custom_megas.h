@@ -1,4 +1,5 @@
-// Stats, types and abilities match the supplied custom Mega reference cards.
+// Stats and types match the supplied custom Mega reference cards.
+// Brisk ability revisions: docs/custom_ability_review.md.
 // Each form is activated by its distinct held Mega Stone.
     [SPECIES_AMOONGUSS_MEGA] =
     {
@@ -394,7 +395,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_UNSEEN_FIST, ABILITY_UNSEEN_FIST, ABILITY_UNSEEN_FIST },
+        .abilities = { ABILITY_SAND_FORCE, ABILITY_SAND_FORCE, ABILITY_SAND_FORCE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Dugtrio"),
         .cryId = CRY_DUGTRIO,
@@ -908,7 +909,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_3),
-        .abilities = { ABILITY_INTREPID_SWORD, ABILITY_INTREPID_SWORD, ABILITY_INTREPID_SWORD },
+        .abilities = { ABILITY_SHARPNESS, ABILITY_SHARPNESS, ABILITY_SHARPNESS },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Kabutops"),
         .cryId = CRY_KABUTOPS,
@@ -981,7 +982,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STEAM_ENGINE, ABILITY_STEAM_ENGINE, ABILITY_STEAM_ENGINE },
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_FLAME_BODY, ABILITY_FLAME_BODY },
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
         .speciesName = _("Magmortar"),
@@ -1724,7 +1725,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HOSPITALITY, ABILITY_HOSPITALITY, ABILITY_HOSPITALITY },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_PRANKSTER, ABILITY_PRANKSTER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Whimsicott"),
         .cryId = CRY_WHIMSICOTT,
@@ -1947,9 +1948,9 @@
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
+        .abilities = { ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER },
     #else
-        .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
+        .abilities = { ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER },
     #endif
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Tropius"),
@@ -2606,7 +2607,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_TECHNICIAN, ABILITY_TECHNICIAN, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_AROMA_VEIL, ABILITY_AROMA_VEIL, ABILITY_AROMA_VEIL },
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("Roserade"),
@@ -2894,7 +2895,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
+        .abilities = { ABILITY_STEELWORKER, ABILITY_STEELWORKER, ABILITY_STEELWORKER },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Tinkaton"),
         .cryId = CRY_TINKATON,
@@ -2961,7 +2962,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE },
+        .abilities = { ABILITY_SEED_SOWER, ABILITY_SEED_SOWER, ABILITY_SEED_SOWER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Arboliva"),
         .cryId = CRY_ARBOLIVA,
@@ -3251,7 +3252,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_TINTED_LENS, ABILITY_TINTED_LENS, ABILITY_TINTED_LENS },
+        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Sigilyph"),
         .cryId = CRY_SIGILYPH,
@@ -3390,7 +3391,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
+        .abilities = { ABILITY_GALE_WINGS, ABILITY_GALE_WINGS, ABILITY_GALE_WINGS },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Rapidash"),
         .cryId = CRY_RAPIDASH,
@@ -3688,7 +3689,7 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS },
+        .abilities = { ABILITY_DANCER, ABILITY_DANCER, ABILITY_DANCER },
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = TRUE,
         .speciesName = _("Tsareena"),

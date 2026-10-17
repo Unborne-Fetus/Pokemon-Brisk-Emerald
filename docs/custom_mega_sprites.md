@@ -9,7 +9,9 @@ stones are sold by Orange City's Poké Mart clerk for a base price of ₽500
 each. Existing item IDs and original stones are preserved. New stone icons and palettes are copies of existing stone assets;
 `manifest.json` records each source.
 
-Stats, types and abilities match the supplied reference cards for all 24 forms.
+Stats and types match the supplied reference cards for all 24 forms. Brisk ability
+changes and their design rationale are recorded in `custom_ability_review.md`;
+manifest `source_ability` fields retain the original reference choices.
 Their learnsets, icons and overworld graphics inherit Brisk's base species data.
 All listed abilities use the existing battle implementations, including Dragonize,
 Piercing Drill and Fire Mane. Flygon's six individual stats total 610; these values
@@ -82,7 +84,7 @@ with the supplied normal/shiny palettes applied to both views.
 |---|---|---|---|
 | Nidoqueen Mega | 90/112/127/95/105/76 | Sheer Force | Nidoqueenite |
 | Nidoking Mega | 81/132/97/115/75/105 | Sheer Force | Nidokingite |
-| Tropius Mega | 99/88/113/122/77/61 | Thick Fat | Tropiusite |
+| Tropius Mega | 99/88/113/122/77/61 | Solar Power | Tropiusite |
 | Rillaboom Mega | 100/155/120/60/100/95 | Grassy Surge | Rillaboomite |
 | Samurott Hisui Mega | 90/148/100/100/75/115 | Sharpness | Samurottite H |
 | Skeledirge Mega | 104/75/130/150/105/66 | Punk Rock | Skeledirgite |
@@ -91,7 +93,7 @@ with the supplied normal/shiny palettes applied to both views.
 | Empoleon Mega Y | 84/126/128/111/121/60 | Defiant | Empoleonite Y |
 | Infernape Mega | 76/134/81/124/81/138 | Iron Fist | Infernite |
 | Luxray Mega | 90/175/110/75/110/140 | Strong Jaw | Luxrayite |
-| Roserade Mega | 60/70/85/155/125/120 | Technician | Roseradite |
+| Roserade Mega | 60/70/85/155/125/120 | Aroma Veil | Roseradite |
 | Slaking Mega | 150/180/140/105/95/100 | Slow Start | Slakingite |
 | Torterra Mega | 95/139/145/85/115/46 | Solid Rock | Torterrite |
 
@@ -121,8 +123,8 @@ All forms gain 100 base stat points without changing HP.
 | Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe | Stone |
 |---|---|---|---|---|
 | Clawitzer | Water/Dragon | Mega Launcher | 71/83/108/170/89/79 | Clawitzerite |
-| Tinkaton | Fairy/Steel | Tough Claws | 85/115/107/70/115/114 | Tinkatonite |
-| Arboliva | Grass/Fairy | Grassy Surge | 78/69/120/165/129/49 | Arbolivite |
+| Tinkaton | Fairy/Steel | Steelworker | 85/115/107/70/115/114 | Tinkatonite |
+| Arboliva | Grass/Fairy | Seed Sower | 78/69/120/165/129/49 | Arbolivite |
 | Cryogonal | Ice | Levitate | 80/50/90/125/145/125 | Cryogonalite |
 | Haxorus | Dragon/Steel | Sharpness | 76/177/120/60/90/117 | Haxorite |
 
@@ -145,7 +147,7 @@ the first five imports. Each gains 100 base stat points, with unchanged HP.
 | Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe | Stone |
 |---|---|---|---|---|
 | Dodrio | Normal/Flying | Reckless | 60/140/90/60/80/140 | Dodrionite |
-| Sigilyph | Psychic/Flying | Tinted Lens | 72/58/100/143/100/117 | Sigilyphite |
+| Sigilyph | Psychic/Flying | Magic Guard | 72/58/100/143/100/117 | Sigilyphite |
 | Reuniclus | Psychic/Fighting | Iron Fist | 110/125/105/125/95/30 | Reuniclusite |
 
 Moves inherit each base species. Reuniclus additionally gains level-one
@@ -166,11 +168,11 @@ the JPEG sheet's misaligned pixels corrupting white fur and outlines.
 
 | Mega | Type | Ability | HP/Atk/Def/SpA/SpD/Spe |
 |---|---|---|---|
-| Rapidash | Fire/Flying | Tough Claws | 65/120/90/100/100/125 |
+| Rapidash | Fire/Flying | Gale Wings | 65/120/90/100/100/125 |
 | Vespiquen | Bug/Flying | Queenly Majesty | 70/100/132/110/122/40 |
 | Exploud | Normal/Steel | Punk Rock | 104/111/88/131/78/78 |
 | Mamoswine | Ice/Ground | Thick Fat | 110/160/110/70/80/100 |
-| Tsareena | Grass/Fighting | Tough Claws | 72/150/118/50/118/102 |
+| Tsareena | Grass/Fighting | Dancer | 72/150/118/50/118/102 |
 | Breloom | Grass/Fighting | Technician | 60/160/110/60/80/90 |
 | Ninetales | Fire/Ghost | Drought | 73/76/95/131/110/120 |
 

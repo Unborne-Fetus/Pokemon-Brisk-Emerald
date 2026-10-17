@@ -43,7 +43,7 @@
       70,
       115
     ],
-    "ability": "ABILITY_TOUGH_CLAWS",
+    "ability": "ABILITY_STEELWORKER",
     "stone_name": "Tinkatonite",
     "stone_item": "ITEM_TINKATONITE",
     "stone_asset_source": "mawilite",
@@ -59,7 +59,9 @@
     "native_size": [
       80,
       80
-    ]
+    ],
+    "source_ability": "ABILITY_TOUGH_CLAWS",
+    "ability_reason": "Its weapon is a giant forged steel hammer, not claws."
   },
   {
     "base_species": "SPECIES_ARBOLIVA",
@@ -74,7 +76,7 @@
       165,
       129
     ],
-    "ability": "ABILITY_GRASSY_SURGE",
+    "ability": "ABILITY_SEED_SOWER",
     "stone_name": "Arbolivite",
     "stone_item": "ITEM_ARBOLIVITE",
     "stone_asset_source": "gardevoirite",
@@ -90,7 +92,9 @@
     "native_size": [
       80,
       80
-    ]
+    ],
+    "source_ability": "ABILITY_GRASSY_SURGE",
+    "ability_reason": "Its fruit-laden branches scatter seeds when struck, growing protective terrain."
   },
   {
     "base_species": "SPECIES_CRYOGONAL",
@@ -197,7 +201,7 @@
       143,
       100
     ],
-    "ability": "ABILITY_TINTED_LENS",
+    "ability": "ABILITY_MAGIC_GUARD",
     "stone_name": "Sigilyphite",
     "stone_item": "ITEM_SIGILYPHITE",
     "stone_asset_source": "alakazite",
@@ -213,7 +217,9 @@
     "native_size": [
       80,
       80
-    ]
+    ],
+    "source_ability": "ABILITY_TINTED_LENS",
+    "ability_reason": "A mystical guardian is protected by its psychic wards."
   },
   {
     "base_species": "SPECIES_REUNICLUS",

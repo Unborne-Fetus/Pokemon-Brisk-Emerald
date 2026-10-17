@@ -128,14 +128,15 @@
     "abilities": [
       "WATER_ABSORB",
       "SAP_SIPPER",
-      "HARVEST"
+      "FRIEND_GUARD"
     ],
     "evolution": null,
     "evolution_level": null,
     "description": "It stores mass amounts of water in its huge body so that it can travel long distances across hot, dry deserts. It will also share water with thirsty creatures. When it has no water stored it is skinny.",
     "height_dm": 36,
     "weight_hg": 4200,
-    "cry": "FARIGIRAF"
+    "cry": "FARIGIRAF",
+    "ability_reason": "Its supplied entry describes sharing stored water with thirsty creatures."
   },
   {
     "name": "Drashimi",
@@ -154,16 +155,17 @@
       45
     ],
     "abilities": [
-      "BATTLE_ARMOR",
+      "STICKY_HOLD",
       "GLUTTONY",
-      "SWIFT_SWIM"
+      "STORM_DRAIN"
     ],
     "evolution": "Tsushimi",
     "evolution_level": 30,
     "description": null,
     "height_dm": 3,
     "weight_hg": 28,
-    "cry": "TATSUGIRI_CURLY"
+    "cry": "TATSUGIRI_CURLY",
+    "ability_reason": "Sticky rice and seaweed hold the sushi together; its fish body draws water."
   },
   {
     "name": "Tsushimi",
@@ -182,16 +184,17 @@
       65
     ],
     "abilities": [
-      "BATTLE_ARMOR",
+      "STICKY_HOLD",
       "GLUTTONY",
-      "SWIFT_SWIM"
+      "STORM_DRAIN"
     ],
     "evolution": "Tobishimi",
     "evolution_level": 55,
     "description": null,
     "height_dm": 9,
     "weight_hg": 185,
-    "cry": "TATSUGIRI_CURLY"
+    "cry": "TATSUGIRI_CURLY",
+    "ability_reason": "Keep the sticky-rice and water-drawing traits through the sushi evolution line."
   },
   {
     "name": "Tobishimi",
@@ -210,16 +213,17 @@
       98
     ],
     "abilities": [
-      "BATTLE_ARMOR",
+      "STICKY_HOLD",
       "GLUTTONY",
-      "SWIFT_SWIM"
+      "STORM_DRAIN"
     ],
     "evolution": null,
     "evolution_level": null,
     "description": null,
     "height_dm": 18,
     "weight_hg": 960,
-    "cry": "DREDNAW"
+    "cry": "DREDNAW",
+    "ability_reason": "The large sushi platter retains the line's food and fish traits, rather than unexplained battle armor."
   },
   {
     "name": "Merlicun",
@@ -238,16 +242,17 @@
       70
     ],
     "abilities": [
+      "SHED_SKIN",
       "SHELL_ARMOR",
-      "SHIELD_DUST",
-      "COMPOUND_EYES"
+      "OVERCOAT"
     ],
     "evolution": "Firomenis",
     "evolution_level": 45,
     "description": null,
     "height_dm": 6,
     "weight_hg": 180,
-    "cry": "SHELGON"
+    "cry": "SHELGON",
+    "ability_reason": "The enclosed insect molts, with its carapace shielding it from weather and powders."
   },
   {
     "name": "Firomenis",
@@ -267,15 +272,16 @@
     ],
     "abilities": [
       "STRONG_JAW",
-      "TINTED_LENS",
-      "INTIMIDATE"
+      "COMPOUND_EYES",
+      "TINTED_LENS"
     ],
     "evolution": null,
     "evolution_level": null,
     "description": null,
     "height_dm": 18,
     "weight_hg": 300,
-    "cry": "VOLCARONA"
+    "cry": "VOLCARONA",
+    "ability_reason": "The adult insect combines mandibles with insect vision."
   },
   {
     "name": "Anu",
@@ -295,7 +301,7 @@
     ],
     "abilities": [
       "SYNCHRONIZE",
-      "INFILTRATOR",
+      "FOREWARN",
       "MAGIC_BOUNCE"
     ],
     "evolution": null,
@@ -303,7 +309,8 @@
     "description": null,
     "height_dm": 9,
     "weight_hg": 115,
-    "cry": "ESPEON"
+    "cry": "ESPEON",
+    "ability_reason": "Its mystical guardian theme supports psychic perception and protection."
   },
   {
     "name": "Nuenflu",
@@ -324,13 +331,14 @@
     "abilities": [
       "SNOW_CLOAK",
       "POISON_POINT",
-      "REGENERATOR"
+      "CORROSION"
     ],
     "evolution": null,
     "evolution_level": null,
     "description": null,
     "height_dm": 5,
     "weight_hg": 86,
-    "cry": "MINCCINO"
+    "cry": "MINCCINO",
+    "ability_reason": "Its virulent toxins overcome normally poison-resistant targets, complementing its existing Toxic move."
   }
 ]
