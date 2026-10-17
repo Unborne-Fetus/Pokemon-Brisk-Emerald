@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bike.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -1662,6 +1663,10 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     CancelSignPostMessageBox(&inputStruct);
     if (!ArePlayerFieldControlsLocked())
     {
+        // Switching is instantaneous, not a script that locks field controls.
+        // Consume L here before its optional L=A mapping can start dialogue.
+        if (TrySwitchBikeMode(newKeys))
+            return;
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
         {
             LockPlayerFieldControls();

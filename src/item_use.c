@@ -311,7 +311,7 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
 static void ItemUseOnFieldCB_Bike(u8 taskId)
 {
     if (GetItemSecondaryId(gSpecialVar_ItemId) == STANDARD_BIKE)
-        GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE);
+        GetOnOffBike(IS_FRLG ? PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE : PLAYER_AVATAR_FLAG_MACH_BIKE);
     else if (GetItemSecondaryId(gSpecialVar_ItemId) == MACH_BIKE)
         GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE);
     else // ACRO_BIKE

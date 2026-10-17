@@ -88,6 +88,8 @@ void MovePlayerOnBike(enum Direction direction, u16 newKeys, u16 heldKeys);
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys);
 bool8 IsBikingDisallowedByPlayer(void);
 bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void);
+u8 GetBikeSwitchTarget(u16 newKeys, u8 tileBehavior);
+bool32 TrySwitchBikeMode(u16 newKeys);
 void GetOnOffBike(u8 transitionFlags);
 void BikeClearState(int newDirHistory, int newAbStartHistory);
 void Bike_UpdateBikeCounterSpeed(u8 counter);

@@ -4,6 +4,7 @@
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "field_specials.h"
+#include "follower_npc.h"
 #include "metatile_behavior.h"
 #include "oras_dowse.h"
 #include "overworld.h"
@@ -1275,6 +1276,48 @@ bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
         return FALSE;
     else
         return TRUE;
+}
+
+// Both legacy bike items work as a two-in-one bike. Only switch at rest:
+// changing movement state halfway through a rail hop or slope can strand players.
+u8 GetBikeSwitchTarget(u16 newKeys, u8 tileBehavior)
+{
+    if (IS_FRLG || !(newKeys & L_BUTTON)
+     || !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
+     || gPlayerAvatar.runningState != NOT_MOVING
+     || (gPlayerAvatar.tileTransitionState != T_NOT_MOVING && gPlayerAvatar.tileTransitionState != T_TILE_CENTER)
+     || gPlayerAvatar.acroBikeState != ACRO_STATE_NORMAL
+     || MetatileBehavior_IsBumpySlope(tileBehavior)
+     || MetatileBehavior_IsCyclingRoadPullDownTile(tileBehavior))
+        return 0;
+
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    {
+        if (MetatileBehavior_IsVerticalRail(tileBehavior)
+         || MetatileBehavior_IsHorizontalRail(tileBehavior)
+         || MetatileBehavior_IsIsolatedVerticalRail(tileBehavior)
+         || MetatileBehavior_IsIsolatedHorizontalRail(tileBehavior))
+            return 0;
+        return PLAYER_AVATAR_FLAG_MACH_BIKE;
+    }
+    return PLAYER_AVATAR_FLAG_ACRO_BIKE;
+}
+
+bool32 TrySwitchBikeMode(u16 newKeys)
+{
+    if (gPlayerAvatar.objectEventId >= OBJECT_EVENTS_COUNT)
+        return FALSE;
+    struct ObjectEvent *object = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (object->heldMovementActive && !object->heldMovementFinished)
+        return FALSE;
+    u8 target = GetBikeSwitchTarget(newKeys, object->currentMetatileBehavior);
+    if (target == 0)
+        return FALSE;
+    ObjectEventClearHeldMovementIfFinished(object);
+    SetPlayerAvatarTransitionFlags(target);
+    FollowerNPC_HandleBike();
+    PlaySE(SE_SELECT);
+    return TRUE;
 }
 
 void GetOnOffBike(u8 transitionFlags)

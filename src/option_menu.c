@@ -189,6 +189,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
     {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
     {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nMenus and dialogue change;\nPOKéMON keep their colors.")},
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
