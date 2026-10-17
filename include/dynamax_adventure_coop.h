@@ -3,8 +3,8 @@
 
 #include "pokemon.h"
 
-// Dormant four-player command layer. No map, battle setup or network transport
-// calls this yet; the current engine supports four battlers, not four + a boss.
+// Dormant four-human network command collector. Local adventures use a separate
+// five-battler engine with the rival, scientist, and Birch as NPC allies.
 #define DA_COOP_PLAYERS 4
 #define DA_COOP_TARGET_BOSS DA_COOP_PLAYERS
 #define DA_COOP_AVAILABLE FALSE

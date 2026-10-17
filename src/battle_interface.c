@@ -227,7 +227,7 @@ static const struct OamData sOamData_64x32 =
     .affineParam = 0,
 };
 
-static const struct SpriteTemplate sHealthboxPlayerSpriteTemplates[2] =
+static const struct SpriteTemplate sHealthboxPlayerSpriteTemplates[4] =
 {
     {
         .tileTag = TAG_HEALTHBOX_PLAYER1_TILE,
@@ -238,7 +238,9 @@ static const struct SpriteTemplate sHealthboxPlayerSpriteTemplates[2] =
         .tileTag = TAG_HEALTHBOX_PLAYER2_TILE,
         .paletteTag = TAG_HEALTHBOX_PAL,
         .oam = &sOamData_64x32,
-    }
+    },
+    {.tileTag = TAG_HEALTHBOX_RAID3_TILE, .paletteTag = TAG_HEALTHBOX_PAL, .oam = &sOamData_64x32},
+    {.tileTag = TAG_HEALTHBOX_RAID4_TILE, .paletteTag = TAG_HEALTHBOX_PAL, .oam = &sOamData_64x32}
 };
 
 static const struct SpriteTemplate sHealthboxOpponentSpriteTemplates[2] =
@@ -304,7 +306,9 @@ static const struct SpriteTemplate sHealthbarSpriteTemplates[MAX_BATTLERS_COUNT]
         .paletteTag = TAG_HEALTHBAR_PAL,
         .oam = &sOamData_Healthbar,
         .callback = SpriteCB_HealthBar
-    }
+    },
+    {.tileTag = TAG_HEALTHBAR_RAID4_TILE, .paletteTag = TAG_HEALTHBAR_PAL, .oam = &sOamData_Healthbar, .callback = SpriteCB_HealthBar},
+    {.tileTag = TAG_HEALTHBAR_OPPONENT2_TILE, .paletteTag = TAG_HEALTHBAR_PAL, .oam = &sOamData_Healthbar, .callback = SpriteCB_HealthBar}
 };
 
 /*  v-- Origin
@@ -664,8 +668,8 @@ u8 CreateBattlerHealthboxSprites(enum BattlerId battler)
     {
         if (IsOnPlayerSide(battler))
         {
-            healthboxLeftSpriteId = CreateSprite(&sHealthboxPlayerSpriteTemplates[GetBattlerPosition(battler) / 2], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
-            healthboxRightSpriteId = CreateSpriteAtEnd(&sHealthboxPlayerSpriteTemplates[GetBattlerPosition(battler) / 2], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
+            healthboxLeftSpriteId = CreateSprite(&sHealthboxPlayerSpriteTemplates[IsAdventureRaid() && battler >= 3 ? battler - 1 : GetBattlerPosition(battler) / 2], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
+            healthboxRightSpriteId = CreateSpriteAtEnd(&sHealthboxPlayerSpriteTemplates[IsAdventureRaid() && battler >= 3 ? battler - 1 : GetBattlerPosition(battler) / 2], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
             data6 = 1;
         }
         else
@@ -683,7 +687,10 @@ u8 CreateBattlerHealthboxSprites(enum BattlerId battler)
     }
     }
 
-    healthbarSpriteId = CreateSpriteAtEnd(&sHealthbarSpriteTemplates[gBattlerPositions[battler]], 140, 60, 0);
+    struct SpriteTemplate barTemplate = sHealthbarSpriteTemplates[gBattlerPositions[battler]];
+    if (IsAdventureRaid() && battler == 3)
+        barTemplate.tileTag = TAG_HEALTHBAR_RAID3_TILE;
+    healthbarSpriteId = CreateSpriteAtEnd(&barTemplate, 140, 60, 0);
     healthBarSpritePtr = &gSprites[healthbarSpriteId];
     SetSubspriteTables(healthBarSpritePtr, &sHealthBar_SubspriteTables[GetBattlerSide(battler)]);
     healthBarSpritePtr->subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
@@ -795,7 +802,7 @@ void SetHealthboxSpriteVisible(u8 healthboxSpriteId)
     // The wild-double intro can ask to show the empty fourth battler's box.
     if (IsDynamaxAdventureBattle()
      && ((gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler))
-      || GetBattlerPosition(gSprites[healthboxSpriteId].hMain_Battler) == B_POSITION_OPPONENT_RIGHT))
+      || (!IsAdventureRaid() && GetBattlerPosition(gSprites[healthboxSpriteId].hMain_Battler) == B_POSITION_OPPONENT_RIGHT)))
     {
         SetHealthboxSpriteInvisible(healthboxSpriteId);
         return;
@@ -870,6 +877,12 @@ static const s16 sBattlerHealthboxCoords[BATTLE_COORDS_COUNT][MAX_BATTLERS_COUNT
 
 void GetBattlerHealthboxCoords(enum BattlerId battler, s16 *x, s16 *y)
 {
+    if (IsAdventureRaid())
+    {
+        *x = battler == 1 ? 44 : -200;
+        *y = battler == 1 ? 44 : -100;
+        return;
+    }
     enum BattlerPosition position = GetBattlerPosition(battler);
     enum BattleCoordTypes index = GetBattlerCoordsIndex(battler);
 

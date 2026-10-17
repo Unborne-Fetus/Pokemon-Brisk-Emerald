@@ -1,6 +1,10 @@
 #ifndef GUARD_DYNAMAX_ADVENTURE_H
 #define GUARD_DYNAMAX_ADVENTURE_H
 
+void DynamaxAdventure_InitRaidHud(void);
+void DynamaxAdventure_UpdateRaidHud(void);
+void DynamaxAdventure_ResetRaidHud(void);
+
 #include "pokemon.h"
 #include "constants/dynamax_adventure.h"
 

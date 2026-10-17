@@ -727,6 +727,9 @@ BattleScript_JungleHealingTryRestoreAlly:
 
 BattleScript_EffectLifeDew::
 	attackcanceler
+	jumpifbyte CMP_EQUAL, gBattlerAttacker, B_BATTLER_1, BattleScript_EffectLifeDewNormal
+	jumpifbattletype BATTLE_TYPE_ADVENTURE_RAID, BattleScript_RaidLifeDew
+BattleScript_EffectLifeDewNormal:
 	jumpiffullhp BS_ATTACKER, BattleScript_EffectLifeDewCheckPartner
 	copybyte gBattlerTarget, gBattlerAttacker
 	attackanimation
@@ -754,6 +757,36 @@ BattleScript_EffectLifeDewHealing:
 	printstring STRINGID_PKMNREGAINEDHEALTH
 	waitmessage B_WAIT_TIME_LONG
 	return
+
+@ Four active rentals share this healing effect; slot 1 is the sole boss.
+BattleScript_RaidLifeDew:
+	setbyte gBattlerTarget, 0
+BattleScript_RaidLifeDewCheck:
+	jumpifbyte CMP_EQUAL, gBattlerTarget, 1, BattleScript_RaidLifeDewCheckNext
+	jumpifabsent BS_TARGET, BattleScript_RaidLifeDewCheckNext
+	jumpiffullhp BS_TARGET, BattleScript_RaidLifeDewCheckNext
+	goto BattleScript_RaidLifeDewAnimate
+BattleScript_RaidLifeDewCheckNext:
+	addbyte gBattlerTarget, 1
+	jumpifbyte CMP_LESS_THAN, gBattlerTarget, 5, BattleScript_RaidLifeDewCheck
+	goto BattleScript_ButItFailed
+BattleScript_RaidLifeDewAnimate:
+	attackanimation
+	waitanimation
+	setbyte gBattlerTarget, 0
+BattleScript_RaidLifeDewHeal:
+	jumpifbyte CMP_EQUAL, gBattlerTarget, 1, BattleScript_RaidLifeDewNext
+	jumpifabsent BS_TARGET, BattleScript_RaidLifeDewNext
+	tryhealquarterhealth BS_TARGET, BattleScript_RaidLifeDewNext
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET, ASSURANCE_DOUBLE
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_RaidLifeDewNext:
+	addbyte gBattlerTarget, 1
+	jumpifbyte CMP_LESS_THAN, gBattlerTarget, 5, BattleScript_RaidLifeDewHeal
+	copybyte gBattlerTarget, gBattlerAttacker
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectAllySwitch::
 	attackcanceler

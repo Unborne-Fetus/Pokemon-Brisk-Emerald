@@ -572,11 +572,13 @@ enum {
     BATTLE_TEST_GHOST,
     BATTLE_TEST_MULTI,
     BATTLE_TEST_TWO_VS_ONE,
+    BATTLE_TEST_ADVENTURE_RAID,
     BATTLE_TEST_ONE_VS_TWO,
     BATTLE_TEST_AI_SINGLES,
     BATTLE_TEST_AI_DOUBLES,
     BATTLE_TEST_AI_MULTI,
     BATTLE_TEST_AI_TWO_VS_ONE,
+    BATTLE_TEST_AI_ADVENTURE_RAID,
     BATTLE_TEST_AI_ONE_VS_TWO
 };
 
@@ -732,7 +734,7 @@ struct ExpectedAiScore
     // We can compare AI's move score to a value or to another move's score.
     u8 moveSlot1:2;
     u8 moveSlot2:2;
-    u8 target:2;
+    u8 target:3;
     s8 value; // value
     u8 cmp:3; // Uses battle script command's CMP_ macros
     u8 toValue:1; // compare to value, not to move
@@ -786,7 +788,7 @@ struct BattleTestData
     u8 explicitSpeeds[MAX_BATTLE_TRAINERS];
     u32 slowerThan[MAX_BATTLE_TRAINERS][PARTY_SIZE];
     enum BattleTrainer battlerParty;
-    u8 battlerTrainers;
+    u16 battlerTrainers;
     u8 currentPartyIndex;
     struct Pokemon *currentMon;
     u8 gender;
@@ -984,6 +986,10 @@ bool32 IsAITest(void);
 
 #define MULTI_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_MULTI(_name, BATTLE_TEST_MULTI, __VA_ARGS__)
 #define AI_MULTI_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_MULTI(_name, BATTLE_TEST_AI_MULTI, __VA_ARGS__)
+
+
+#define ADVENTURE_RAID_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_TWO_VS_ONE(_name, BATTLE_TEST_ADVENTURE_RAID, __VA_ARGS__)
+#define AI_ADVENTURE_RAID_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_TWO_VS_ONE(_name, BATTLE_TEST_AI_ADVENTURE_RAID, __VA_ARGS__)
 
 #define TWO_VS_ONE_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_TWO_VS_ONE(_name, BATTLE_TEST_TWO_VS_ONE, __VA_ARGS__)
 #define AI_TWO_VS_ONE_BATTLE_TEST(_name, ...) BATTLE_TEST_ARGS_TWO_VS_ONE(_name, BATTLE_TEST_AI_TWO_VS_ONE, __VA_ARGS__)

@@ -413,7 +413,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
 void HandleInputChooseTarget(enum BattlerId battler)
 {
     enum BattlerId i;
-    static const enum BattlerPosition identities[MAX_BATTLERS_COUNT] =
+    static const enum BattlerPosition identities[] =
     {
         B_POSITION_PLAYER_LEFT,
         B_POSITION_PLAYER_RIGHT,
@@ -422,6 +422,33 @@ void HandleInputChooseTarget(enum BattlerId battler)
     };
     enum Move move = GetMonData(GetBattlerMon(battler), MON_DATA_MOVE1 + gMoveSelectionCursor[battler]);
     enum MoveTarget moveTarget = GetBattlerMoveSelectionTargetType(battler, move);
+
+    if (IsAdventureRaid() && JOY_REPEAT(DPAD_ANY) && !JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        s32 step = JOY_REPEAT(DPAD_LEFT | DPAD_UP) ? -1 : 1;
+        enum BattlerId previous = gMultiUsePlayerCursor;
+        for (u32 attempt = 0; attempt < gBattlersCount; attempt++)
+        {
+            gMultiUsePlayerCursor = (gMultiUsePlayerCursor + gBattlersCount + step) % gBattlersCount;
+            if (!CanTargetBattler(battler, gMultiUsePlayerCursor, move))
+                continue;
+            if (moveTarget == TARGET_OPPONENT && IsBattlerAlly(battler, gMultiUsePlayerCursor))
+                continue;
+            if ((moveTarget == TARGET_ALLY || moveTarget == TARGET_USER_OR_ALLY)
+             && !IsBattlerAlly(battler, gMultiUsePlayerCursor))
+                continue;
+            if (gMultiUsePlayerCursor == battler && moveTarget != TARGET_USER_OR_ALLY)
+                continue;
+            break;
+        }
+        gSprites[gBattlerSpriteIds[previous]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(previous, BOUNCE_HEALTHBOX);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
+        if (B_SHOW_EFFECTIVENESS)
+            MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(battler, gMultiUsePlayerCursor), battler);
+        PlaySE(SE_SELECT);
+        return;
+    }
 
     DoBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX, 15, 1);
     for (i = 0; i < gBattlersCount; i++)
@@ -480,7 +507,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
             {
                 enum BattlerPosition currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
 
-                for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+                for (i = 0; i < ARRAY_COUNT(identities); i++)
                 {
                     if (currSelIdentity == identities[i])
                         break;
@@ -488,7 +515,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
                 do
                 {
                     if (i == 0)
-                        i = MAX_BATTLERS_COUNT - 1;
+                        i = ARRAY_COUNT(identities) - 1;
                     else
                         i--;
                     gMultiUsePlayerCursor = GetBattlerAtPosition(identities[i]);
@@ -535,7 +562,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
             {
                 enum BattlerPosition currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
 
-                for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+                for (i = 0; i < ARRAY_COUNT(identities); i++)
                 {
                     if (currSelIdentity == identities[i])
                         break;
@@ -745,6 +772,19 @@ void HandleInputChooseMove(enum BattlerId battler)
             }
         }
 
+        if (IsAdventureRaid() && (moveTarget == TARGET_ALLY || moveTarget == TARGET_USER_OR_ALLY)
+         && moveInfo->currentPP[gMoveSelectionCursor[battler]] != 0)
+        {
+            for (u32 ally = 0; ally < gBattlersCount; ally++)
+            {
+                if (ally != battler && IsBattlerAlly(battler, ally) && IsBattlerAlive(ally))
+                {
+                    canSelectTarget = 1;
+                    break;
+                }
+            }
+        }
+
         switch (canSelectTarget)
         {
         case 0:
@@ -760,7 +800,16 @@ void HandleInputChooseMove(enum BattlerId battler)
         case 1:
             gBattlerControllerFuncs[battler] = HandleInputChooseTarget;
 
-            if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
+            if (IsAdventureRaid() && moveTarget == TARGET_ALLY)
+            {
+                for (u32 ally = 0; ally < gBattlersCount; ally++)
+                    if (ally != battler && IsBattlerAlly(battler, ally) && IsBattlerAlive(ally))
+                    {
+                        gMultiUsePlayerCursor = ally;
+                        break;
+                    }
+            }
+            else if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
                 gMultiUsePlayerCursor = battler;
             else if (!IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
                 gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);

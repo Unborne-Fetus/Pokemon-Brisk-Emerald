@@ -874,10 +874,10 @@ TEST("Adventure: all four members recover HP and PP according to the starting di
         EXPECT(DynamaxAdventure_Catch(FALSE));
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
-        // The lead researcher rotates each round: old slots 1,2,0 become 0,1,2.
+        // Researcher ownership remains stable between raid rounds.
         for (u32 i = 0; i < DA_TEAM_SIZE; i++)
         {
-            u32 old = i == 0 ? 0 : 1 + i % 3;
+            u32 old = i;
             struct Pokemon *mon = i == 0 ? &gParties[B_TRAINER_PLAYER][0] : &gParties[B_TRAINER_PARTNER][i - 1];
             u32 maxHP = maxima[old];
             u32 heal = mode <= BRISK_MODE_NORMAL ? maxHP : maxHP / (mode == BRISK_MODE_HARD ? 2 : 4);
@@ -940,7 +940,7 @@ TEST("Adventure: researchers sometimes accept a declined catch without replacing
         u32 changed = 0;
         for (u32 i = 0; i < 3; i++)
         {
-            u32 old = 1 + (i + 1) % 3;
+            u32 old = 1 + i;
             u32 pid = GetMonData(&gParties[B_TRAINER_PARTNER][i], MON_DATA_PERSONALITY);
             if (pid != GetMonData(&original[old], MON_DATA_PERSONALITY))
             {
@@ -1012,5 +1012,333 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: only Extreme doubles boss move damage")
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());
         VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: every ally acts and the boss can target Birch")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
+        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
+        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
+        PARTNER(SPECIES_GENGAR) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE); MaxHP(1000); HP(1000); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(birch, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: birch);
+        }
+    } THEN {
+        EXPECT_EQ(gBattlersCount, 5);
+        EXPECT_EQ(opponentLeft->hp, 840);
+        EXPECT_EQ(birch->hp, 60);
+        EXPECT_EQ(GetBattlerTrainer(3), B_TRAINER_PARTNER);
+        EXPECT_EQ(GetBattlerTrainer(4), B_TRAINER_PARTNER);
+        EXPECT_EQ(gBattlerPartyIndexes[3], 1);
+        EXPECT_EQ(gBattlerPartyIndexes[4], 2);
+        // The real input cursor reaches every ally, including the new slots.
+        u16 supportMove = MOVE_HEAL_PULSE;
+        SetMonData(GetBattlerMon(0), MON_DATA_MOVE1, &supportMove);
+        gMoveSelectionCursor[0] = 0;
+        gMultiUsePlayerCursor = 2;
+        gMain.newKeys = 0;
+        gMain.newAndRepeatedKeys = DPAD_RIGHT;
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 3);
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 4);
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 1);
+        gMain.newAndRepeatedKeys = 0;
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: fainted Birch stays absent while the other allies continue")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Speed(100); Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_GARCHOMP) { Speed(90); Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_VENUSAUR) { Speed(80); Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); HP(1); Speed(1); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE, MOVE_CELEBRATE); MaxHP(1000); HP(1000); Speed(999); }
+    } WHEN {
+        TURN {
+            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: birch);
+            MOVE(birch, MOVE_CELEBRATE);
+            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+        }
+        TURN {
+            MOVE(opponentLeft, MOVE_CELEBRATE);
+            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+        }
+    } THEN {
+        EXPECT_EQ(birch->hp, 0);
+        EXPECT(gAbsentBattlerFlags & (1u << 4));
+        EXPECT_EQ(opponentLeft->hp, 760);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: a boss spread move hits all four allies")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SURF); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE);
+            MOVE(opponentLeft, MOVE_SURF);
+        }
+    } THEN {
+        EXPECT_LT(playerLeft->hp, 1000); EXPECT_LT(playerRight->hp, 1000);
+        EXPECT_LT(opponentRight->hp, 1000); EXPECT_LT(birch->hp, 1000);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+AI_ADVENTURE_RAID_BATTLE_TEST("Adventure raid: all three researchers independently attack the boss")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        AI_FLAGS(AI_FLAG_BASIC_TRAINER | AI_FLAG_DOUBLE_BATTLE | AI_FLAG_OMNISCIENT);
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_DRAGON_RAGE); }
+        PARTNER(SPECIES_GENGAR) { Moves(MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft); EXPECT_MOVE(opponentLeft, MOVE_CELEBRATE);
+            EXPECT_MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            EXPECT_MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
+            EXPECT_MOVE(birch, MOVE_DRAGON_RAGE, target: opponentLeft);
+        }
+    } THEN {
+        EXPECT_EQ(opponentLeft->hp, 840);
+        BattleAI_SetupFlags();
+        for (u32 i = 2; i <= 4; i++) EXPECT(gAiThinkingStruct->aiFlags[i] & AI_FLAG_OMNISCIENT);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: all four allies Mega evolve against a G-Max boss")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_Y); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GARCHOMP) { Item(ITEM_GARCHOMPITE); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GENGAR) { Item(ITEM_GENGARITE); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_LAPRAS) { Moves(MOVE_CELEBRATE); GigantamaxFactor(TRUE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
+            MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
+            MOVE(opponentRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
+            MOVE(birch, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
+            MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        EXPECT_EQ(playerLeft->species, SPECIES_CHARIZARD_MEGA_Y);
+        EXPECT_EQ(playerRight->species, SPECIES_GARCHOMP_MEGA);
+        EXPECT_EQ(opponentRight->species, SPECIES_VENUSAUR_MEGA);
+        EXPECT_EQ(birch->species, SPECIES_GENGAR_MEGA);
+        EXPECT_EQ(opponentLeft->species, SPECIES_LAPRAS_GMAX);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: the final legendary battle has four valid allies")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental();
+        for (u32 stage = 0; stage < 3; stage++)
+        {
+            EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+            EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); EXPECT(DynamaxAdventure_Catch(FALSE));
+        }
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_SHAYMIN) { Moves(MOVE_CELEBRATE); MaxHP(200); HP(200); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        EXPECT_EQ(gBattlersCount, 5); EXPECT_EQ(opponentLeft->maxHP, 1400);
+        for (u32 i = 0; i < 5; i++) { EXPECT_NE(gBattleMons[i].species, SPECIES_NONE); EXPECT_GT(gBattleMons[i].level, 0); }
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: Life Dew heals all four allies")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LIFE_DEW); MaxHP(1000); HP(100); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_LIFE_DEW); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        EXPECT_EQ(playerLeft->hp, 350); EXPECT_EQ(playerRight->hp, 350);
+        EXPECT_EQ(opponentRight->hp, 350); EXPECT_EQ(birch->hp, 350);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: allied spread attacks spare the other three allies")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SURF, MOVE_ROCK_SLIDE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_ROCK_SLIDE); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        EXPECT_LT(opponentLeft->hp, 1000);
+        EXPECT_EQ(playerRight->hp, 1000); EXPECT_EQ(opponentRight->hp, 1000); EXPECT_EQ(birch->hp, 1000);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: support moves can heal the scientist and Birch")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HEAL_PULSE); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_HEAL_PULSE, target: opponentRight); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+        TURN {
+            MOVE(playerLeft, MOVE_HEAL_PULSE, target: birch); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } THEN {
+        EXPECT_EQ(playerRight->hp, 100); EXPECT_EQ(opponentRight->hp, 600); EXPECT_EQ(birch->hp, 600);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+DOUBLE_BATTLE_TEST("Battle targets: ordinary doubles cursor wraps left across all four slots")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HEAL_PULSE); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_HEAL_PULSE, target: playerRight); }
+    } THEN {
+        gMoveSelectionCursor[0] = 0;
+        gMultiUsePlayerCursor = 0;
+        gMain.newKeys = 0;
+        gMain.newAndRepeatedKeys = DPAD_LEFT;
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 1);
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 3);
+        HandleInputChooseTarget(0);
+        EXPECT_EQ(gMultiUsePlayerCursor, 2);
+        gMain.newAndRepeatedKeys = 0;
+    }
+}
+
+ADVENTURE_RAID_BATTLE_TEST("Adventure raid: Helping Hand preserves the selected scientist or Birch")
+{
+    struct BattlePokemon *birch = &gBattleMons[4];
+    GIVEN {
+        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HELPING_HAND); }
+        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_HELPING_HAND, target: opponentRight); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+        TURN {
+            MOVE(playerLeft, MOVE_HELPING_HAND, target: birch); MOVE(playerRight, MOVE_CELEBRATE);
+            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
+        }
+    } SCENE {
+        MESSAGE("Wobbuffet is ready to help Venusaur!");
+        MESSAGE("Wobbuffet is ready to help Gengar!");
+    } THEN {
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
     }
 }

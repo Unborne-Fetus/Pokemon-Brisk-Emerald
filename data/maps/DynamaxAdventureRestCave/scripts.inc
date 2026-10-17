@@ -23,5 +23,5 @@ DynamaxAdventureRestCave_EventScript_Birch::
     end
 DynamaxAdventureRestCave_Text_Birch:
     .string "The four of us will explore together!\n"
-    .string "We researchers will take turns backing\l"
-    .string "you up with our own rentals.$"
+    .string "All four of us will fight together,\l"
+    .string "each with our own rental!$"

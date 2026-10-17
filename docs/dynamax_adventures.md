@@ -13,16 +13,14 @@ flags or add SaveBlock fields.
 ## Implemented run
 
 - Choose **one rental** from six offers, shown with Pokémon icons. The rival, scientist,
-  and Birch independently choose different remaining offers. One researcher
-  fights beside the player; the other two are AI relay reserves. The lead
-  researcher rotates each round.
+  and Birch independently choose different remaining offers. All four allies
+  fight on the field simultaneously, each with their own move and target.
   **May partners with a male player; Brendan partners with a female player.**
-  Each encounter is a true **two-versus-one** wild multi battle, with exactly
-  one opposing Pokémon and no opposing support. Names and trainer back sprites
-  use dedicated rival partner identities.
+  Each encounter is a true **four-versus-one** wild multi battle, with exactly
+  one opposing Pokémon and no opposing support.
 - Rental offers are drawn from the Mega/G-Max-capable subset of **74 curated
   doubles sets**. Rentals, researchers, and intermediate encounters are **level 70**;
-  the final legendary is **level 100**. The rival uses Basic + Doubles + Omniscient + Smart Mon Choices
+  the final legendary is **level 100**. All three researchers use Basic + Doubles + Omniscient + Smart Mon Choices
   AI flags, independent of difficulty.
 - Every set has four selected moves, an ability from its species' slots, a
   held item, 508 EVs, and a role-based nature. Special-only sets have 0 Attack
@@ -41,9 +39,9 @@ flags or add SaveBlock fields.
   Gigantamax if eligible. Final legendaries without either form use Dynamax,
   preserving the full legendary pool. Boss G-Max/Dynamax remains active for
   the encounter. Ordinary trainer/wild gimmick restrictions are unchanged.
-- Both player and rival can use their rental's **Mega or G-Max** form. The
-  player activates theirs normally; the rival activates automatically. Each
-  participant has an independent gimmick allowance. Player/rival G-Max uses
+- All four allies can use their rental's **Mega or G-Max** form. The
+  player activates theirs normally; the researchers activate automatically. Each
+  participant has an independent gimmick allowance. Allied G-Max uses
   the usual three-turn duration; Terastallization remains unavailable.
 - Difficulty is captured at the start of the run and scales **all four rental HP
   totals**, including through form changes: Easy 4×, Normal 2×, Hard 1×,
@@ -69,17 +67,22 @@ flags or add SaveBlock fields.
   Full party and PC storage retains the reward until space becomes available.
   Quitting instead discards all temporary catches.
 
-This is a **two-versus-one** backend with an AI rival. Simultaneous four-allies-versus-one combat,
+The local adventure supports **four allies versus one boss**. Human multiplayer
 networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
 backpackers, legendary completion records, and adventure
 resumption from a save remain future work.
 
 Intermediate enemies have **5× their normal max HP**; the final boss has
 **7×**. These replace the ordinary Dynamax HP multiplier rather than stacking
-with it. Catches retain their normal stats; rental HP uses the difficulty rule above. Healthboxes use doubles
-geometry throughout, matching the allocated graphics for the two-versus-one
-battle. If the player rental faints, the rival continues against the boss;
-a loss is counted only when neither player nor rival has a battle-ready rental.
+with it. Catches retain their normal stats; rental HP uses the difficulty rule above. A compact top panel shows all four allies, labeled P (player), R (rival),
+S (scientist), and B (Birch), with separate HP and status displays. The boss has its own
+healthbox. If an ally faints, the remaining allies continue. A loss is counted only
+when no allied rental remains. All four rentals are active, so there are no in-battle reserves.
+
+Raid battles allocate six storage slots, with five active participants and one empty
+sentinel for legacy partner queries. Singles and ordinary doubles retain two/four active
+battlers. Raid intros load the Pokémon directly to fit GBA sprite memory. Recorded
+raid videos are disabled; existing four-slot saved videos retain their original format.
 
 After every battle (victory, loss, or escape), the caller moves to an enclosed
 placeholder cave with the scientist, the correct rival, and Professor Birch. It has no

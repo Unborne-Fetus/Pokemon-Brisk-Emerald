@@ -63,7 +63,8 @@ void PrepareBattleMonSpriteImages(enum Species species, enum BattlerPosition pos
 
     species = SanitizeSpeciesId(species);
     if (!IsContest())
-        native = (position == B_POSITION_PLAYER_LEFT || position == B_POSITION_PLAYER_RIGHT)
+        native = (position == B_POSITION_PLAYER_LEFT || position == B_POSITION_PLAYER_RIGHT
+                  || (IsAdventureRaid() && position != B_POSITION_OPPONENT_LEFT))
                ? gSpeciesInfo[species].backPic80 : gSpeciesInfo[species].frontPic80;
 
     for (u32 frame = 0; frame < MAX_MON_PIC_FRAMES; frame++)
@@ -799,6 +800,25 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
             LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
             CategoryIcons_LoadSpritesGfx();
         }
+        else if (IsAdventureRaid())
+        {
+            static const u16 boxTags[] = {TAG_HEALTHBOX_PLAYER1_TILE, TAG_HEALTHBOX_OPPONENT1_TILE, TAG_HEALTHBOX_PLAYER2_TILE, TAG_HEALTHBOX_RAID3_TILE, TAG_HEALTHBOX_RAID4_TILE};
+            static const u16 barTags[] = {TAG_HEALTHBAR_PLAYER1_TILE, TAG_HEALTHBAR_OPPONENT1_TILE, TAG_HEALTHBAR_PLAYER2_TILE, TAG_HEALTHBAR_RAID3_TILE, TAG_HEALTHBAR_RAID4_TILE};
+            if (state <= 6)
+            {
+                u32 slot = state - 2;
+                struct CompressedSpriteSheet sheet = {slot == 1 ? gHealthboxDoublesOpponentGfx : gHealthboxDoublesPlayerGfx, 0x800, boxTags[slot]};
+                LoadCompressedSpriteSheet(&sheet);
+            }
+            else if (state <= 11)
+            {
+                u32 slot = state - 7;
+                struct CompressedSpriteSheet sheet = {gBlankGfxCompressed, slot == 1 ? 0x120 : 0x100, barTags[slot]};
+                LoadCompressedSpriteSheet(&sheet);
+            }
+            else
+                retVal = TRUE;
+        }
         else if (!IsDoubleBattle())
         {
             if (state == 2)
@@ -1465,12 +1485,13 @@ void AllocateMonSpritesGfx(void)
 {
     gMonSpritesGfxPtr = NULL;
     gMonSpritesGfxPtr = AllocZeroed(sizeof(*gMonSpritesGfxPtr));
-    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(BATTLE_MON_GFX_BUFFER_SIZE * MAX_BATTLERS_COUNT);
+    u32 slots = IsAdventureRaid() ? 5 : 4;
+    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(BATTLE_MON_GFX_BUFFER_SIZE * slots);
 
-    for (u32 i = 0; i < MAX_BATTLERS_COUNT; i++)
+    for (u32 i = 0; i < slots; i++)
     {
         gMonSpritesGfxPtr->spritesGfx[i] = gMonSpritesGfxPtr->firstDecompressed + (i * BATTLE_MON_GFX_BUFFER_SIZE);
-        gMonSpritesGfxPtr->templates[i] = gBattlerSpriteTemplates[i];
+        gMonSpritesGfxPtr->templates[i] = gBattlerSpriteTemplates[IsAdventureRaid() && i == 3 ? 2 : i];
 
         for (u32 j = 0; j < MAX_MON_PIC_FRAMES; j++)
         {

@@ -694,7 +694,8 @@ static bool32 IsSmartTarget(enum BattlerId battlerAtk, enum BattlerId battlerDef
 
 static bool32 IsTargetingBothFoes(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
-    if (battlerDef == GetPartnerBattler(battlerAtk) || battlerAtk == battlerDef)
+    if ((IsAdventureRaid() && IsBattlerAlly(battlerAtk, battlerDef))
+     || battlerDef == GetPartnerBattler(battlerAtk) || battlerAtk == battlerDef)
     {
         gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_DOESNT_AFFECT_FOE;
         return skipFailure;
@@ -709,6 +710,14 @@ static bool32 IsTargetingSelf(enum BattlerId battlerAtk, enum BattlerId battlerD
 
 static bool32 IsTargetingAlly(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
+    if (IsAdventureRaid())
+    {
+        if (battlerDef == gBattlerTarget && battlerDef != battlerAtk && IsBattlerAlly(battlerAtk, battlerDef))
+            return checkFailure;
+        gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_DOESNT_AFFECT_FOE;
+        return skipFailure;
+    }
+
     if (battlerDef != GetPartnerBattler(battlerAtk))
     {
         gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_DOESNT_AFFECT_FOE;
@@ -719,6 +728,15 @@ static bool32 IsTargetingAlly(enum BattlerId battlerAtk, enum BattlerId battlerD
 
 static bool32 IsTargetingSelfAndAlly(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
+    if (IsAdventureRaid())
+    {
+        if (battlerDef != battlerAtk && IsBattlerAlly(battlerAtk, battlerDef))
+            return checkFailure;
+        if (battlerDef != battlerAtk)
+            gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_DOESNT_AFFECT_FOE;
+        return skipFailure;
+    }
+
     if (battlerDef != GetPartnerBattler(battlerAtk))
     {
         if (battlerDef != battlerAtk) // Don't set result flags for user
@@ -3865,10 +3883,21 @@ static enum MoveEndResult MoveEndNextTarget(struct BattleCalcValues *cv)
     {
         // unable to use move
     }
-    else if (moveTarget == TARGET_USER_AND_ALLY)
+    else if (moveTarget == TARGET_USER_AND_ALLY && !(IsAdventureRaid() && GetMoveEffect(cv->move) == EFFECT_LIFE_DEW))
     {
         enum BattlerId partner = GetPartnerBattler(gBattlerAttacker);
-        if (partner != gBattlerTarget && IsBattlerAlive(partner))
+        if (IsAdventureRaid())
+        {
+            partner = MAX_BATTLERS_COUNT;
+            for (u32 ally = 0; ally < gBattlersCount; ally++)
+                if (IsBattlerAlive(ally) && IsBattlerAlly(gBattlerAttacker, ally)
+                 && !gBattleStruct->battlerState[gBattlerAttacker].targetsDone[ally])
+                {
+                    partner = ally;
+                    break;
+                }
+        }
+        if (partner < gBattlersCount && partner != gBattlerTarget && IsBattlerAlive(partner))
         {
             gBattleStruct->moveTarget[gBattlerAttacker] = gBattlerTarget = partner;
             gBattleScripting.moveendState = 0;
@@ -4690,7 +4719,7 @@ static enum MoveEndResult MoveEndEmergencyExit(struct BattleCalcValues *cv)
     for (enum BattlerId i = 0; i < gBattlersCount; i++)
         gBattleMons[i].volatiles.tryEjectPack = FALSE;
 
-    enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3};
+    enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3, 4, 5};
     if (numEmergencyExitBattlers > 1)
         SortBattlersBySpeed(battlers, FALSE);
 
@@ -4806,7 +4835,7 @@ static enum MoveEndResult MoveEndPickpocket(struct BattleCalcValues *cv)
 
     if (itemToSteal != ITEM_NONE) // valid item to steal
     {
-        enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3};
+        enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3, 4, 5};
         SortBattlersBySpeed(battlers, FALSE); // Pickpocket activates for fastest mon without item
         for (u32 i = 0; i < gBattlersCount; i++)
         {

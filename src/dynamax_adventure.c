@@ -443,6 +443,7 @@ bool32 DynamaxAdventure_PrepareBattle(void)
 {
     if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_READY || gMain.inBattle)
         return FALSE;
+    DynamaxAdventure_ResetRaidHud();
     memcpy(sAdventure->originalParty, gParties[B_TRAINER_PLAYER], sizeof(sAdventure->originalParty));
     sAdventure->originalPartyCount = gPartiesCount[B_TRAINER_PLAYER];
     memcpy(sAdventure->originalPartnerParty, gParties[B_TRAINER_PARTNER], sizeof(sAdventure->originalPartnerParty));
@@ -453,11 +454,10 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
     gParties[B_TRAINER_PLAYER][0] = sAdventure->team[0];
     memset(sAdventure->partnerGimmicks, 0, sizeof(sAdventure->partnerGimmicks));
-    // The existing engine has two allied positions. Rotate the lead researcher
-    // each round and retain the other two as independently owned relay rentals.
+    // All three researchers are active, with stable party slots across rounds.
     for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
     {
-        u32 member = 1 + (sAdventure->status.stage + i) % (DA_TEAM_SIZE - 1);
+        u32 member = 1 + i;
         sAdventure->partnerOrder[i] = member;
         gParties[B_TRAINER_PARTNER][i] = sAdventure->team[member];
     }

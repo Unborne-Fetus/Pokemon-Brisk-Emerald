@@ -414,6 +414,8 @@ static const s8 sIndicatorPositions[][2] =
     [B_POSITION_OPPONENT_LEFT] = {40, -9},
     [B_POSITION_PLAYER_RIGHT] = {48, -9},
     [B_POSITION_OPPONENT_RIGHT] = {40, -9},
+    [B_POSITION_RAID_BIRCH] = {48, -9},
+    [B_POSITION_RAID_EMPTY] = {40, -9},
 };
 
 void CreateIndicatorSprite(enum BattlerId battler)

@@ -205,7 +205,14 @@ static void InitBtlControllersInternal(void)
     if (!isDouble)
         gBattlersCount = 2;
     else
-        gBattlersCount = MAX_BATTLERS_COUNT;
+        gBattlersCount = IsAdventureRaid() ? 5 : 4;
+
+    for (u32 slot = gBattlersCount; slot < MAX_BATTLERS_COUNT; slot++)
+    {
+        memset(&gBattleMons[slot], 0, sizeof(gBattleMons[slot]));
+        gBattlerPositions[slot] = B_POSITION_ABSENT;
+        gBattlerPartyIndexes[slot] = 1;
+    }
 
     if ((gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
         || !isMulti
@@ -388,6 +395,23 @@ static void InitBtlControllersInternal(void)
             gBattlerPositions[gLinkPlayers[i].id] = gLinkPlayers[i].id & BIT_FLANK ? linkPositionRight : linkPositionLeft;
             BufferBattlePartyCurrentOrderBySide(gLinkPlayers[i].id, gLinkPlayers[i].id & BIT_FLANK);
             gBattlerPartyIndexes[gLinkPlayers[i].id] = 0;
+        }
+    }
+    if (IsAdventureRaid())
+    {
+        gBattlerPositions[4] = B_POSITION_RAID_BIRCH;
+        gBattlerPositions[5] = B_POSITION_RAID_EMPTY;
+        gBattlerPartyIndexes[3] = 1;
+        gBattlerPartyIndexes[4] = 2;
+        gBattlerPartyIndexes[5] = 1;
+        for (u32 member = 3; member <= 4; member++)
+        {
+            bool32 useAI = !isRecorded;
+            #if TESTING
+            if (gTestRunnerEnabled && gBattleTestRunnerState->data.expectedAiActions[member][0].actionSet)
+                useAI = TRUE;
+            #endif
+            gBattlerControllerFuncs[member] = useAI ? SetControllerToPlayerPartner : SetControllerToRecordedPartner;
         }
     }
 }
@@ -2372,7 +2396,7 @@ void BtlController_HandleLoadMonSprite(enum BattlerId battler)
                                                GetBattlerSpriteSubpriority(battler));
 
     UpdateBattleMonSubsprites(battler, species);
-    gSprites[gBattlerSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
+    gSprites[gBattlerSpriteIds[battler]].x2 = IsAdventureRaid() && IsOnPlayerSide(battler) ? DISPLAY_WIDTH : -DISPLAY_WIDTH;
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
@@ -3180,7 +3204,14 @@ void TryShinyAnimAfterMonAnim(enum BattlerId battler)
 void WaitForMonAnimAfterLoad(enum BattlerId battler)
 {
     if (gSprites[gBattlerSpriteIds[battler]].animEnded && gSprites[gBattlerSpriteIds[battler]].x2 == 0)
+    {
+        if (IsAdventureRaid())
+        {
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_ALL);
+            SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
+        }
         BtlController_Complete(battler);
+    }
 }
 
 void BtlController_HandleSwitchInShowSubstitute(enum BattlerId battler)
@@ -3354,6 +3385,8 @@ void FreeShinyStars(void)
 
 enum BattleTrainer GetBattlerTrainer(enum BattlerId battler)
 {
+    if (IsAdventureRaid())
+        return battler == 0 ? B_TRAINER_PLAYER : (battler == 1 || battler == 5) ? B_TRAINER_OPPONENT_A : B_TRAINER_PARTNER;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
         switch (gBattlerBattleController[battler])

@@ -78,6 +78,15 @@ static const struct SpriteSheet sSpriteSheets_MoveEffectMons[] =
 
 u8 GetBattlerSpriteCoord(enum BattlerId battler, u8 coordType)
 {
+    if (IsAdventureRaid())
+    {
+        static const u8 x[] = {28, 190, 78, 128, 178, 190};
+        if (coordType == BATTLER_COORD_X || coordType == BATTLER_COORD_X_2)
+            return x[battler];
+        if (coordType == BATTLER_COORD_Y)
+            return battler == 1 ? 56 : 96;
+    }
+
     u8 retVal;
     enum Species species;
     struct Pokemon *mon, *illusionMon;
@@ -196,7 +205,7 @@ u8 GetBattlerSpriteFinal_Y(enum BattlerId battler, enum Species species, bool32 
         offset = GetBattlerYDelta(battler, species);
         offset -= GetBattlerElevation(battler, species);
     }
-    y = offset + sBattlerCoords[GetBattlerCoordsIndex(battler)][GetBattlerPosition(battler)].y;
+    y = offset + (IsAdventureRaid() ? (battler == 1 ? 56 : 96) : sBattlerCoords[GetBattlerCoordsIndex(battler)][GetBattlerPosition(battler)].y);
     if (a3)
     {
         if (IsOnPlayerSide(battler))
