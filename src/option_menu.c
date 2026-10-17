@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_battle_format.h"
 #include "brisk_options.h"
 #include "brisk_modes.h"
 #include "battle.h"
@@ -85,7 +86,7 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 5
+#define PAGE_COUNT 6
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuRename(u8 taskId);
@@ -97,6 +98,8 @@ static void StoreAllCurrentSettings(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg3(u8 taskId);
 static void DrawOptionsPg3(u8 taskId);
 static void DrawOptionsPg4(u8 taskId);
+static void DrawBattleOptions(void);
+static void Task_BattleOptions(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg4(u8 taskId);
 static void Task_OptionMenuProcessInput_Help(u8 taskId);
 static void DrawHelpPage(void);
@@ -189,6 +192,8 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
+    {COMPOUND_STRING("FOLLOWERS"), COMPOUND_STRING("Options 5: FOLLOWERS ON/OFF.\nYour lead returns when switched on.\nStory companions stay available.\nMap restrictions still apply.")},
     {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
     {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
     {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nMenus and dialogue change;\nPOKéMON keep their colors.")},
@@ -391,6 +396,12 @@ static void Task_ChangePage(u8 taskId)
         gTasks[taskId].func = Task_OptionMenuProcessInput_Pg4;
         break;
     case 4:
+        gTasks[taskId].tMenuSelection = 0;
+        DrawBattleOptions();
+        HighlightOptionMenuItem(0);
+        gTasks[taskId].func = Task_BattleOptions;
+        break;
+    case 5:
         DrawHelpPage();
         gTasks[taskId].func = Task_OptionMenuProcessInput_Help;
         break;
@@ -493,6 +504,12 @@ void CB2_InitOptionMenu(void)
             DrawOptionsPg4(taskId);
             break;
         case 4:
+            taskId = CreateTask(Task_BattleOptions, 0);
+            ReadAllCurrentSettings(taskId);
+            DrawBattleOptions();
+            HighlightOptionMenuItem(0);
+            break;
+        case 5:
             taskId = CreateTask(Task_OptionMenuProcessInput_Help, 0);
             DrawHelpPage();
             break;
@@ -1232,7 +1249,7 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
     {
         StoreAllCurrentSettings(taskId);
         sHelpTopic = 0;
-        sCurrPage = 4;
+        sCurrPage = 5;
         gTasks[taskId].func = Task_ChangePage;
     }
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
@@ -1384,5 +1401,67 @@ void Test_CloseBriskThemeOption(u8 taskId)
     DestroyTask(taskId);
     FreeAllWindowBuffers();
     sCurrPage = 0;
+}
+#endif
+
+// New settings use persistent variables, like difficulty/theme, since the task's
+// sixteen data slots are already occupied by the original option pages.
+static void DrawBattleOptions(void)
+{
+    static const u8 *const choices[] = {
+        COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}Regular"),
+        COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}Singles"),
+        COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}Doubles"),
+    };
+    FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("FORMAT"), 8, 1, TEXT_SKIP_DRAW, NULL);
+    for (u32 i = 0; i < ARRAY_COUNT(choices); i++)
+        DrawOptionMenuChoice(choices[i], 65 + i * 45, 0, GetBriskBattleFormat() == i);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("FOLLOWERS"), 8, 17, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskPokemonFollowersEnabled(), 16);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 33, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_BattleOptions(u8 taskId)
+{
+    if (gPaletteFade.active) return;
+    u32 row = gTasks[taskId].tMenuSelection;
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 2))
+        gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
+    {
+        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 2)) % 3;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT) || JOY_NEW(A_BUTTON))
+    {
+        if (row == 0)
+            VarSet(VAR_BRISK_BATTLE_FORMAT, (GetBriskBattleFormat() + (JOY_REPEAT(DPAD_LEFT) ? 2 : 1)) % 3);
+        else if (row == 1)
+            VarSet(VAR_BRISK_FOLLOWERS_DISABLED, BriskPokemonFollowersEnabled());
+        DrawBattleOptions();
+    }
+}
+
+#if TESTING
+u8 Test_OpenBriskBattleOptions(void)
+{
+    ResetTasks();
+    InitBgsFromTemplates(0, sOptionMenuBgTemplates, ARRAY_COUNT(sOptionMenuBgTemplates));
+    InitWindows(sOptionMenuWinTemplates);
+    DeactivateAllTextPrinters();
+    sCurrPage = 4;
+    u8 taskId = CreateTask(Task_ChangePage, 0);
+    ReadAllCurrentSettings(taskId);
+    Task_ChangePage(taskId);
+    gPaletteFade.active = FALSE;
+    return taskId;
 }
 #endif

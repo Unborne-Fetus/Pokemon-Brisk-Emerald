@@ -688,6 +688,7 @@ static const struct FormChange sSnorlaxFormChangeTable[] =
 #if P_FAMILY_DRATINI
 static const struct FormChange sDragoniteFormChangeTable[] =
 {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM, SPECIES_DRAGONITE_MEGA_CDRX, ITEM_DRAGONINITE_CDRX},
 #if P_GEN_9_MEGA_EVOLUTIONS
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DRAGONITE_MEGA, ITEM_DRAGONINITE},
 #endif

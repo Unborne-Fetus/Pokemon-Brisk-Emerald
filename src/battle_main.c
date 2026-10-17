@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_battle_format.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "battle.h"
@@ -509,6 +510,7 @@ void CB2_InitBattle(void)
 
 static void CB2_InitBattleInternal(void)
 {
+    BriskPrepareBattleFormat();
     s32 i;
 
     SetHBlankCallback(NULL);
@@ -579,6 +581,7 @@ static void CB2_InitBattleInternal(void)
     gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
     SetVBlankCallback(VBlankCB_Battle);
     SetUpBattleVarsAndBirchZigzagoon();
+    BriskPrepareBattleParties();
 
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI
      && (TESTING || gBattleTypeFlags & (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_INGAME_PARTNER)))
@@ -3212,9 +3215,12 @@ static void DoBattleIntro(void)
     case BATTLE_INTRO_STATE_DRAW_SPRITES:
         for (battler = 0; battler < gBattlersCount; battler++)
         {
-            if (IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
+            if ((IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
+             || (GetBriskBattleFormat() == BRISK_BATTLE_DOUBLES
+              && (GetBattlerPosition(battler) & BIT_FLANK)
+              && !IsValidForBattle(GetBattlerMon(battler))))
             {
-                // There is one shared boss, never a second wild Pokemon.
+                // A raid has one boss; a short party also leaves its flank empty.
                 memset(&gBattleMons[battler], 0, sizeof(gBattleMons[battler]));
                 gAbsentBattlerFlags |= 1u << battler;
                 continue;

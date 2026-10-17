@@ -3116,6 +3116,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sTimburrTeachableLearnset,
         .eggMoveLearnset = sTimburrEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GURDURR}),
+        .formSpeciesIdTable = sTimburrFormSpeciesIdTable,
     },
 
     [SPECIES_GURDURR] =
@@ -3188,6 +3189,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sGurdurrLevelUpLearnset,
         .teachableLearnset = sGurdurrTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_LINKING_CORD, SPECIES_CONKELDURR}),
+        .formSpeciesIdTable = sGurdurrFormSpeciesIdTable,
     },
 
     [SPECIES_CONKELDURR] =
@@ -8544,6 +8546,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sEmolgaLevelUpLearnset,
         .teachableLearnset = sEmolgaTeachableLearnset,
         .eggMoveLearnset = sEmolgaEggMoveLearnset,
+        .formSpeciesIdTable = sEmolgaFormSpeciesIdTable,
     },
 #endif //P_FAMILY_EMOLGA
 
@@ -10097,6 +10100,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sLitwickTeachableLearnset,
         .eggMoveLearnset = sLitwickEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_LAMPENT}),
+        .formSpeciesIdTable = sLitwickFormSpeciesIdTable,
     },
 
     [SPECIES_LAMPENT] =
@@ -10171,6 +10175,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sLampentLevelUpLearnset,
         .teachableLearnset = sLampentTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_CHANDELURE}),
+        .formSpeciesIdTable = sLampentFormSpeciesIdTable,
     },
 
     [SPECIES_CHANDELURE] =

@@ -24,7 +24,7 @@ static const u16 sNidokingAddedMegaFormSpeciesIdTable[] = { SPECIES_NIDOKING, SP
 static const u16 sNidoqueenAddedMegaFormSpeciesIdTable[] = { SPECIES_NIDOQUEEN, SPECIES_NIDOQUEEN_MEGA, FORM_SPECIES_END };
 static const u16 sAmoongussCustomMegaFormSpeciesIdTable[] = { SPECIES_AMOONGUSS, SPECIES_AMOONGUSS_MEGA, FORM_SPECIES_END };
 static const u16 sAzumarillCustomMegaFormSpeciesIdTable[] = { SPECIES_AZUMARILL, SPECIES_AZUMARILL_MEGA, FORM_SPECIES_END };
-static const u16 sConkeldurrCustomMegaFormSpeciesIdTable[] = { SPECIES_CONKELDURR, SPECIES_CONKELDURR_MEGA, FORM_SPECIES_END };
+static const u16 sConkeldurrCustomMegaFormSpeciesIdTable[] = { SPECIES_CONKELDURR, SPECIES_CONKELDURR_MEGA, SPECIES_CONKELDURR_HALLOWEEN, FORM_SPECIES_END };
 static const u16 sElectivireCustomMegaFormSpeciesIdTable[] = { SPECIES_ELECTIVIRE, SPECIES_ELECTIVIRE_MEGA, FORM_SPECIES_END };
 static const u16 sFlygonCustomMegaFormSpeciesIdTable[] = { SPECIES_FLYGON, SPECIES_FLYGON_MEGA, FORM_SPECIES_END };
 static const u16 sJumpluffCustomMegaFormSpeciesIdTable[] = { SPECIES_JUMPLUFF, SPECIES_JUMPLUFF_MEGA, FORM_SPECIES_END };
@@ -347,6 +347,7 @@ static const u16 sPonytaFormSpeciesIdTable[] = {
 #if P_GALARIAN_FORMS
     SPECIES_PONYTA_GALAR,
 #endif
+    SPECIES_PONYTA_HALLOWEEN,
     FORM_SPECIES_END,
 };
 
@@ -356,6 +357,7 @@ static const u16 sRapidashFormSpeciesIdTable[] = {
     SPECIES_RAPIDASH_GALAR,
 #endif
     SPECIES_RAPIDASH_MEGA,
+    SPECIES_RAPIDASH_HALLOWEEN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_PONYTA
@@ -655,6 +657,7 @@ static const u16 sDragoniteFormSpeciesIdTable[] = {
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_DRAGONITE_MEGA,
 #endif
+    SPECIES_DRAGONITE_MEGA_CDRX,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_DRATINI
@@ -1040,6 +1043,7 @@ static const u16 sGlalieFormSpeciesIdTable[] = {
 #if P_MEGA_EVOLUTIONS
     SPECIES_GLALIE_MEGA,
 #endif
+    SPECIES_GLALIE_HALLOWEEN,
     FORM_SPECIES_END,
 };
 
@@ -1501,6 +1505,7 @@ static const u16 sChandelureFormSpeciesIdTable[] = {
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_CHANDELURE_MEGA,
 #endif
+    SPECIES_CHANDELURE_HALLOWEEN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_LITWICK
@@ -2278,12 +2283,14 @@ static const u16 sCentiskorchFormSpeciesIdTable[] = {
 static const u16 sSinisteaFormSpeciesIdTable[] = {
     SPECIES_SINISTEA_PHONY,
     SPECIES_SINISTEA_ANTIQUE,
+    SPECIES_SINISTEA_HALLOWEEN,
     FORM_SPECIES_END,
 };
 
 static const u16 sPolteageistFormSpeciesIdTable[] = {
     SPECIES_POLTEAGEIST_PHONY,
     SPECIES_POLTEAGEIST_ANTIQUE,
+    SPECIES_POLTEAGEIST_HALLOWEEN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_SINISTEA
@@ -2621,3 +2628,19 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+static const u16 sLitwickFormSpeciesIdTable[] = {SPECIES_LITWICK, SPECIES_LITWICK_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sLampentFormSpeciesIdTable[] = {SPECIES_LAMPENT, SPECIES_LAMPENT_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sTangelaFormSpeciesIdTable[] = {SPECIES_TANGELA, SPECIES_TANGELA_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sTangrowthFormSpeciesIdTable[] = {SPECIES_TANGROWTH, SPECIES_TANGROWTH_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sTimburrFormSpeciesIdTable[] = {SPECIES_TIMBURR, SPECIES_TIMBURR_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sGurdurrFormSpeciesIdTable[] = {SPECIES_GURDURR, SPECIES_GURDURR_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sEmolgaFormSpeciesIdTable[] = {SPECIES_EMOLGA, SPECIES_EMOLGA_HALLOWEEN, FORM_SPECIES_END};
+
+static const u16 sSnoruntFormSpeciesIdTable[] = {SPECIES_SNORUNT, SPECIES_SNORUNT_HALLOWEEN, FORM_SPECIES_END};

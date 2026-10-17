@@ -1076,6 +1076,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sMightyenaLevelUpLearnset,
         .teachableLearnset = sMightyenaTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_ALPHAYENA}),
     },
 #endif //P_FAMILY_POOCHYENA
 
@@ -1238,6 +1239,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sLinooneLevelUpLearnset,
         .teachableLearnset = sLinooneTeachableLearnset,
         .formSpeciesIdTable = sLinooneFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_LINEVOLVER}),
     },
 
 #if P_GALARIAN_FORMS
@@ -6548,6 +6550,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sSharpedoTeachableLearnset,
         .formSpeciesIdTable = sSharpedoFormSpeciesIdTable,
         .formChangeTable = sSharpedoFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_SHARKAISER}),
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -10706,6 +10709,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
                                 ,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_FROSLASS}
                             #endif
                             ),
+        .formSpeciesIdTable = sSnoruntFormSpeciesIdTable,
     },
 
     [SPECIES_GLALIE] =

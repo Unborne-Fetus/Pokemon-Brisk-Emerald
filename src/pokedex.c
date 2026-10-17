@@ -4474,10 +4474,26 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         if ((gSaveBlock1Ptr->customDexSeen[1] & 0xF0) != 0xA0
          || (gSaveBlock1Ptr->customDexCaught[1] & 0xF0) != 0x50)
         {
+            gSaveBlock2Ptr->pokedex.unknown3 = 0;
             gSaveBlock1Ptr->customDexSeen[0] = 0;
             gSaveBlock1Ptr->customDexSeen[1] = 0xA0;
             gSaveBlock1Ptr->customDexCaught[0] = 0;
             gSaveBlock1Ptr->customDexCaught[1] = 0x50;
+        }
+        // The additional evolutions use a previously unused Pokedex word.
+        // Keep both save blocks and all established flag offsets unchanged.
+        STATIC_ASSERT(BRISK_FAKEMON_COUNT <= 28, CustomDexCapacity);
+        if (nationalDexNo > NATIONAL_DEX_NUENFLU)
+        {
+            u32 shift = nationalDexNo - NATIONAL_DEX_NUENFLU - 1;
+            if (caseID == FLAG_GET_CAUGHT || caseID == FLAG_SET_CAUGHT)
+                shift += 16;
+            u32 flag = 1u << shift;
+            if (caseID == FLAG_SET_SEEN || caseID == FLAG_SET_CAUGHT)
+                gSaveBlock2Ptr->pokedex.unknown3 |= flag;
+            else if (caseID == FLAG_GET_SEEN || caseID == FLAG_GET_CAUGHT)
+                return (gSaveBlock2Ptr->pokedex.unknown3 & flag) != 0;
+            return 0;
         }
         nationalDexNo -= NATIONAL_DEX_PECHARUNT;
         seen = gSaveBlock1Ptr->customDexSeen;

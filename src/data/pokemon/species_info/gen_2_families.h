@@ -1145,6 +1145,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_NOCTARCH}),
     },
 #endif //P_FAMILY_HOOTHOOT
 
@@ -2686,6 +2687,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSudowoodoLevelUpLearnset,
         .teachableLearnset = sSudowoodoTeachableLearnset,
         .eggMoveLearnset = sSudowoodoEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_SUDOSYLVAN}),
     },
 #endif //P_FAMILY_SUDOWOODO
 
@@ -5120,6 +5122,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sGranbullLevelUpLearnset,
         .teachableLearnset = sGranbullTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_GRANDBULLY}),
     },
 #endif //P_FAMILY_SNUBBULL
 
@@ -7267,6 +7270,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .eggMoveLearnset = sSkarmoryEggMoveLearnset,
         .formSpeciesIdTable = sSkarmoryFormSpeciesIdTable,
         .formChangeTable = sSkarmoryFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_SKARMAGEDN}),
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS

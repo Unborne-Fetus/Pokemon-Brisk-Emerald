@@ -162,6 +162,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     #include "species_info/custom_megas.h"
     #include "species_info/phoenix_fakemon.h"
+    #include "species_info/cdrx73_fakemon.h"
 
     [SPECIES_EGG] =
     {

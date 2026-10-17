@@ -1,0 +1,840 @@
+[
+  {
+    "id": "NOCTARCH",
+    "name": "Noctarch",
+    "base": "NOCTOWL",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "NOCTOWL",
+    "back": "NOCTOWL",
+    "icon": "NOCTOWL",
+    "types": [
+      "PSYCHIC",
+      "FLYING"
+    ],
+    "stats": [
+      105,
+      65,
+      85,
+      85,
+      110,
+      110
+    ],
+    "abilities": [
+      "INSOMNIA",
+      "TINTED_LENS",
+      "COMPETITIVE"
+    ],
+    "evolution_level": 42,
+    "species_id": 1638,
+    "national_dex": 1038,
+    "icon_palette": 5,
+    "shiny_supplied": true
+  },
+  {
+    "id": "ALPHAYENA",
+    "name": "Alphayena",
+    "base": "MIGHTYENA",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "MIGHTY",
+    "back": "ALPHAYENA",
+    "icon": "MIGHTYENA",
+    "types": [
+      "DARK"
+    ],
+    "stats": [
+      95,
+      115,
+      85,
+      105,
+      55,
+      80
+    ],
+    "abilities": [
+      "INTIMIDATE",
+      "STRONG_JAW",
+      "MOXIE"
+    ],
+    "evolution_level": 38,
+    "species_id": 1639,
+    "national_dex": 1039,
+    "icon_palette": 3,
+    "shiny_supplied": true
+  },
+  {
+    "id": "BRUTICATE",
+    "name": "Bruticate",
+    "base": "RATICATE",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "BRUTICATE",
+    "back": "BRUTICATE",
+    "icon": "RATICATE",
+    "types": [
+      "NORMAL",
+      "FIGHTING"
+    ],
+    "stats": [
+      85,
+      120,
+      85,
+      100,
+      50,
+      75
+    ],
+    "abilities": [
+      "GUTS",
+      "STRONG_JAW",
+      "HUSTLE"
+    ],
+    "evolution_level": 36,
+    "species_id": 1640,
+    "national_dex": 1040,
+    "icon_palette": 3,
+    "shiny_supplied": true
+  },
+  {
+    "id": "MARROWAK",
+    "name": "Marrowak",
+    "base": "MAROWAK",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "MAROWAK",
+    "back": "MAROWAK",
+    "icon": "MAROWAK",
+    "types": [
+      "GROUND",
+      "FIGHTING"
+    ],
+    "stats": [
+      85,
+      115,
+      120,
+      65,
+      50,
+      85
+    ],
+    "abilities": [
+      "ROCK_HEAD",
+      "BATTLE_ARMOR",
+      "TECHNICIAN"
+    ],
+    "evolution_level": 42,
+    "species_id": 1641,
+    "national_dex": 1041,
+    "icon_palette": 5,
+    "shiny_supplied": true
+  },
+  {
+    "id": "RHYFORTRESS",
+    "name": "Rhyfortress",
+    "base": "RHYPERIOR",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "RHYPERIOR",
+    "back": "RHYPERIOR",
+    "icon": "RHYPERIOR",
+    "types": [
+      "GROUND",
+      "STEEL"
+    ],
+    "stats": [
+      125,
+      145,
+      140,
+      30,
+      55,
+      75
+    ],
+    "abilities": [
+      "SOLID_ROCK",
+      "STURDY",
+      "SHEER_FORCE"
+    ],
+    "evolution_level": 60,
+    "species_id": 1642,
+    "national_dex": 1042,
+    "icon_palette": 1,
+    "shiny_supplied": true
+  },
+  {
+    "id": "DUNESHRED",
+    "name": "Duneshred",
+    "base": "SANDSLASH",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "SANDSLASH",
+    "back": "SANDSLASH",
+    "icon": "SANDSLASH",
+    "types": [
+      "GROUND",
+      "DARK"
+    ],
+    "stats": [
+      90,
+      120,
+      115,
+      100,
+      35,
+      65
+    ],
+    "abilities": [
+      "SAND_RUSH",
+      "SAND_VEIL",
+      "TOUGH_CLAWS"
+    ],
+    "evolution_level": 42,
+    "species_id": 1643,
+    "national_dex": 1043,
+    "icon_palette": 2,
+    "shiny_supplied": true
+  },
+  {
+    "id": "SKARMAGEDN",
+    "name": "Skarmagedn",
+    "base": "SKARMORY",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "SKARMORY",
+    "back": "SKARMORY",
+    "icon": "SKARMORY",
+    "types": [
+      "STEEL",
+      "FLYING"
+    ],
+    "stats": [
+      85,
+      115,
+      145,
+      80,
+      45,
+      75
+    ],
+    "abilities": [
+      "STURDY",
+      "KEEN_EYE",
+      "TOUGH_CLAWS"
+    ],
+    "evolution_level": 48,
+    "species_id": 1644,
+    "national_dex": 1044,
+    "icon_palette": 5,
+    "shiny_supplied": true
+  },
+  {
+    "id": "SHARKAISER",
+    "name": "Sharkaiser",
+    "base": "SHARPEDO",
+    "kind": "evolution",
+    "archive": "FAKEMON",
+    "front": "SHARPEDO",
+    "back": "SHARPEDO",
+    "icon": "SHARPEDO",
+    "types": [
+      "WATER",
+      "DARK"
+    ],
+    "stats": [
+      90,
+      140,
+      70,
+      115,
+      80,
+      60
+    ],
+    "abilities": [
+      "STRONG_JAW",
+      "ROUGH_SKIN",
+      "SPEED_BOOST"
+    ],
+    "evolution_level": 48,
+    "species_id": 1645,
+    "national_dex": 1045,
+    "icon_palette": 5,
+    "shiny_supplied": true
+  },
+  {
+    "id": "ELECTITAN",
+    "name": "Electitan",
+    "base": "ELECTIVIRE",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "ELECTIVIRE",
+    "back": "ELECTIVIRE",
+    "icon": "ELECTIVIRE",
+    "types": [
+      "ELECTRIC",
+      "FIGHTING"
+    ],
+    "stats": [
+      90,
+      135,
+      90,
+      85,
+      95,
+      95
+    ],
+    "abilities": [
+      "MOTOR_DRIVE",
+      "IRON_FIST",
+      "VITAL_SPIRIT"
+    ],
+    "evolution_level": 60,
+    "species_id": 1646,
+    "national_dex": 1046,
+    "icon_palette": 1,
+    "shiny_supplied": true
+  },
+  {
+    "id": "GRANDBULLY",
+    "name": "Grandbully",
+    "base": "GRANBULL",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "GRANBULL",
+    "back": "GRANBULL",
+    "icon": "GRANBULL",
+    "types": [
+      "FAIRY",
+      "FIGHTING"
+    ],
+    "stats": [
+      100,
+      130,
+      100,
+      50,
+      60,
+      90
+    ],
+    "abilities": [
+      "INTIMIDATE",
+      "GUTS",
+      "STRONG_JAW"
+    ],
+    "evolution_level": 42,
+    "species_id": 1647,
+    "national_dex": 1047,
+    "icon_palette": 3,
+    "shiny_supplied": true
+  },
+  {
+    "id": "SUDOSYLVAN",
+    "name": "Sudosylvan",
+    "base": "SUDOWOODO",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "SUDOWOODO",
+    "back": "SUDOWOODO",
+    "icon": "SUDOWOODO",
+    "types": [
+      "ROCK",
+      "GRASS"
+    ],
+    "stats": [
+      90,
+      115,
+      125,
+      40,
+      55,
+      95
+    ],
+    "abilities": [
+      "STURDY",
+      "ROCK_HEAD",
+      "SAP_SIPPER"
+    ],
+    "evolution_level": 42,
+    "species_id": 1648,
+    "national_dex": 1048,
+    "icon_palette": 1,
+    "shiny_supplied": true
+  },
+  {
+    "id": "PARASOUL",
+    "name": "Parasoul",
+    "base": "PARASECT",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "PARASECT",
+    "back": "PARASECT",
+    "icon": "PARASECT",
+    "types": [
+      "BUG",
+      "GHOST"
+    ],
+    "stats": [
+      80,
+      105,
+      100,
+      50,
+      90,
+      95
+    ],
+    "abilities": [
+      "DRY_SKIN",
+      "EFFECT_SPORE",
+      "TINTED_LENS"
+    ],
+    "evolution_level": 40,
+    "species_id": 1649,
+    "national_dex": 1049,
+    "icon_palette": 2,
+    "shiny_supplied": true
+  },
+  {
+    "id": "LINEVOLVER",
+    "name": "Linevolver",
+    "base": "LINOONE",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "LINOONE",
+    "back": "LINOONE",
+    "icon": "LINOONE",
+    "types": [
+      "NORMAL",
+      "GROUND"
+    ],
+    "stats": [
+      90,
+      105,
+      85,
+      115,
+      55,
+      75
+    ],
+    "abilities": [
+      "GLUTTONY",
+      "PICKUP",
+      "QUICK_FEET"
+    ],
+    "evolution_level": 40,
+    "species_id": 1650,
+    "national_dex": 1050,
+    "icon_palette": 2,
+    "shiny_supplied": true
+  },
+  {
+    "id": "TENTACROWN",
+    "name": "Tentacrown",
+    "base": "TENTACRUEL",
+    "kind": "evolution",
+    "archive": "SPRITES 2",
+    "front": "TENTACRUEL",
+    "back": "TENTACRUEL",
+    "icon": "TENTACRUEL",
+    "types": [
+      "WATER",
+      "POISON"
+    ],
+    "stats": [
+      95,
+      85,
+      85,
+      105,
+      105,
+      120
+    ],
+    "abilities": [
+      "CLEAR_BODY",
+      "LIQUID_OOZE",
+      "REGENERATOR"
+    ],
+    "evolution_level": 50,
+    "species_id": 1651,
+    "national_dex": 1051,
+    "icon_palette": 2,
+    "shiny_supplied": true
+  },
+  {
+    "id": "DRAGONITE_MEGA_CDRX",
+    "name": "Dragonite",
+    "base": "DRAGONITE_MEGA",
+    "kind": "mega",
+    "archive": "FAKEMON",
+    "front": "MEGA DRAGONITE",
+    "back": "DRAGONITE MEGA",
+    "icon": "DRAGONITE",
+    "types": [
+      "DRAGON",
+      "WATER"
+    ],
+    "stats": [
+      91,
+      144,
+      115,
+      100,
+      125,
+      125
+    ],
+    "abilities": [
+      "SHARPNESS",
+      "SHARPNESS",
+      "SHARPNESS"
+    ],
+    "species_id": 1652,
+    "national_dex": 149,
+    "icon_palette": 5,
+    "shiny_supplied": true
+  },
+  {
+    "id": "LITWICK_HALLOWEEN",
+    "name": "Litwick",
+    "base": "LITWICK",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "LITWICK",
+    "back": "LITWICK BACK",
+    "icon": "LITWICK MENU",
+    "types": [
+      "GRASS",
+      "FIRE"
+    ],
+    "abilities": [
+      "FLASH_FIRE",
+      "HARVEST",
+      "CHLOROPHYLL"
+    ],
+    "evolution_level": 25,
+    "species_id": 1653,
+    "icon_palette": 1,
+    "shiny_supplied": false,
+    "formtable": "sLitwickFormSpeciesIdTable"
+  },
+  {
+    "id": "LAMPENT_HALLOWEEN",
+    "name": "Lampent",
+    "base": "LAMPENT",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "LAMPENT",
+    "back": "LAMPENT BACK",
+    "icon": "LAMPENT MENU",
+    "types": [
+      "GRASS",
+      "FIRE"
+    ],
+    "abilities": [
+      "FLASH_FIRE",
+      "HARVEST",
+      "CHLOROPHYLL"
+    ],
+    "evolution_level": 41,
+    "species_id": 1654,
+    "icon_palette": 5,
+    "shiny_supplied": false,
+    "formtable": "sLampentFormSpeciesIdTable"
+  },
+  {
+    "id": "CHANDELURE_HALLOWEEN",
+    "name": "Chandelure",
+    "base": "CHANDELURE",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "CHANDELURE",
+    "back": "CHANDELURE BACK",
+    "icon": "CHANDELURE MENU",
+    "types": [
+      "GRASS",
+      "FIRE"
+    ],
+    "abilities": [
+      "FLASH_FIRE",
+      "HARVEST",
+      "CHLOROPHYLL"
+    ],
+    "evolution_level": 0,
+    "species_id": 1655,
+    "icon_palette": 5,
+    "shiny_supplied": false,
+    "formtable": "sChandelureFormSpeciesIdTable"
+  },
+  {
+    "id": "SINISTEA_HALLOWEEN",
+    "name": "Sinistea",
+    "base": "SINISTEA",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "SINESTEA",
+    "back": "SINESTEA BACK",
+    "icon": "SINISTEA",
+    "types": [
+      "GHOST",
+      "POISON"
+    ],
+    "abilities": [
+      "LIQUID_OOZE",
+      "CURSED_BODY",
+      "POISON_TOUCH"
+    ],
+    "evolution_level": 30,
+    "species_id": 1656,
+    "icon_palette": 4,
+    "shiny_supplied": false,
+    "formtable": "sSinisteaFormSpeciesIdTable"
+  },
+  {
+    "id": "POLTEAGEIST_HALLOWEEN",
+    "name": "Polteageist",
+    "base": "POLTEAGEIST",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "POLTEGIEST",
+    "back": "POLTEGIEST BACK",
+    "icon": "POLTEAGEIST",
+    "types": [
+      "GHOST",
+      "POISON"
+    ],
+    "abilities": [
+      "LIQUID_OOZE",
+      "CURSED_BODY",
+      "POISON_TOUCH"
+    ],
+    "evolution_level": 0,
+    "species_id": 1657,
+    "icon_palette": 4,
+    "shiny_supplied": false,
+    "formtable": "sPolteageistFormSpeciesIdTable"
+  },
+  {
+    "id": "PONYTA_HALLOWEEN",
+    "name": "Ponyta",
+    "base": "PONYTA",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "PONYTA",
+    "back": "PONYTA BACK",
+    "icon": "PONYTA MENU",
+    "types": [
+      "FAIRY",
+      "POISON"
+    ],
+    "abilities": [
+      "SWEET_VEIL",
+      "PASTEL_VEIL",
+      "CORROSION"
+    ],
+    "evolution_level": 40,
+    "species_id": 1658,
+    "icon_palette": 3,
+    "shiny_supplied": false,
+    "formtable": "sPonytaFormSpeciesIdTable"
+  },
+  {
+    "id": "RAPIDASH_HALLOWEEN",
+    "name": "Rapidash",
+    "base": "RAPIDASH",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "RAPIDASH",
+    "back": "RAPIDASH BACK",
+    "icon": "RAPIDASH",
+    "types": [
+      "FAIRY",
+      "POISON"
+    ],
+    "abilities": [
+      "SWEET_VEIL",
+      "PASTEL_VEIL",
+      "CORROSION"
+    ],
+    "evolution_level": 0,
+    "species_id": 1659,
+    "icon_palette": 3,
+    "shiny_supplied": false,
+    "formtable": "sRapidashFormSpeciesIdTable"
+  },
+  {
+    "id": "TANGELA_HALLOWEEN",
+    "name": "Tangela",
+    "base": "TANGELA",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "TANGELA",
+    "back": "TANGELA BACK",
+    "icon": "TANGELA MENU",
+    "types": [
+      "GHOST",
+      "NORMAL"
+    ],
+    "abilities": [
+      "CURSED_BODY",
+      "REGENERATOR",
+      "GOOEY"
+    ],
+    "evolution_level": 36,
+    "species_id": 1660,
+    "icon_palette": 3,
+    "shiny_supplied": false,
+    "formtable": "sTangelaFormSpeciesIdTable"
+  },
+  {
+    "id": "TANGROWTH_HALLOWEEN",
+    "name": "Tangrowth",
+    "base": "TANGROWTH",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "TANGROWTH",
+    "back": "TANGROWTH BACK",
+    "icon": "TANGROWTH MENU",
+    "types": [
+      "GHOST",
+      "NORMAL"
+    ],
+    "abilities": [
+      "CURSED_BODY",
+      "REGENERATOR",
+      "GOOEY"
+    ],
+    "evolution_level": 0,
+    "species_id": 1661,
+    "icon_palette": 2,
+    "shiny_supplied": false,
+    "formtable": "sTangrowthFormSpeciesIdTable"
+  },
+  {
+    "id": "TIMBURR_HALLOWEEN",
+    "name": "Timburr",
+    "base": "TIMBURR",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "TIMBURR",
+    "back": "TIMBURR BACK",
+    "icon": "TIMBURR MENU",
+    "types": [
+      "FIGHTING",
+      "GHOST"
+    ],
+    "abilities": [
+      "IRON_FIST",
+      "GUTS",
+      "CURSED_BODY"
+    ],
+    "evolution_level": 25,
+    "species_id": 1662,
+    "icon_palette": 4,
+    "shiny_supplied": false,
+    "formtable": "sTimburrFormSpeciesIdTable"
+  },
+  {
+    "id": "GURDURR_HALLOWEEN",
+    "name": "Gurdurr",
+    "base": "GURDURR",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "GURDURR",
+    "back": "GURDURR BACK",
+    "icon": "GURDURR MENU",
+    "types": [
+      "FIGHTING",
+      "GHOST"
+    ],
+    "abilities": [
+      "IRON_FIST",
+      "GUTS",
+      "CURSED_BODY"
+    ],
+    "evolution_level": 40,
+    "species_id": 1663,
+    "icon_palette": 4,
+    "shiny_supplied": false,
+    "formtable": "sGurdurrFormSpeciesIdTable"
+  },
+  {
+    "id": "CONKELDURR_HALLOWEEN",
+    "name": "Conkeldurr",
+    "base": "CONKELDURR",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "CONKELDUR",
+    "back": "CONKELDUR BACK",
+    "icon": "CONKELDUR MENU",
+    "types": [
+      "FIGHTING",
+      "GHOST"
+    ],
+    "abilities": [
+      "IRON_FIST",
+      "GUTS",
+      "CURSED_BODY"
+    ],
+    "evolution_level": 0,
+    "species_id": 1664,
+    "icon_palette": 3,
+    "shiny_supplied": false,
+    "formtable": "sConkeldurrCustomMegaFormSpeciesIdTable"
+  },
+  {
+    "id": "EMOLGA_HALLOWEEN",
+    "name": "Emolga",
+    "base": "EMOLGA",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "EMOLGA",
+    "back": "EMOLGA BACK",
+    "icon": "EMOLGA MENU",
+    "types": [
+      "ELECTRIC",
+      "DARK"
+    ],
+    "abilities": [
+      "STATIC",
+      "INFILTRATOR",
+      "COMPETITIVE"
+    ],
+    "evolution_level": 0,
+    "species_id": 1665,
+    "icon_palette": 2,
+    "shiny_supplied": false,
+    "formtable": "sEmolgaFormSpeciesIdTable"
+  },
+  {
+    "id": "SNORUNT_HALLOWEEN",
+    "name": "Snorunt",
+    "base": "SNORUNT",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "SNORUNT",
+    "back": "SNORUNT BACK",
+    "icon": "SNORUNT MENU",
+    "types": [
+      "ICE",
+      "GHOST"
+    ],
+    "abilities": [
+      "SNOW_CLOAK",
+      "CURSED_BODY",
+      "ICE_BODY"
+    ],
+    "evolution_level": 42,
+    "species_id": 1666,
+    "icon_palette": 2,
+    "shiny_supplied": false,
+    "formtable": "sSnoruntFormSpeciesIdTable"
+  },
+  {
+    "id": "GLALIE_HALLOWEEN",
+    "name": "Glalie",
+    "base": "GLALIE",
+    "kind": "halloween",
+    "archive": "HALLOWEEN/HALLOWEEN",
+    "front": "GLALIE",
+    "back": "GLALIE BACK",
+    "icon": "GLALIE MENU",
+    "types": [
+      "ICE",
+      "GHOST"
+    ],
+    "abilities": [
+      "SNOW_CLOAK",
+      "CURSED_BODY",
+      "ICE_BODY"
+    ],
+    "evolution_level": 0,
+    "species_id": 1667,
+    "icon_palette": 5,
+    "shiny_supplied": false,
+    "formtable": "sGlalieFormSpeciesIdTable"
+  }
+]

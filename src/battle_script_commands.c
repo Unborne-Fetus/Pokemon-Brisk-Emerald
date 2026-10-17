@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_battle_format.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
@@ -2528,6 +2529,7 @@ bool32 NoAliveMonsForPlayer(void)
 
 static bool32 NoAliveMonsForOpponent(void)
 {
+    BriskRefillSinglesOpponent();
     if (DoesPartyHaveBattleReadyMons(B_TRAINER_OPPONENT_A))
         return FALSE;
 
@@ -4039,7 +4041,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
         trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
 
-        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        if (BriskBattleHadTwoOpponents())
             moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
         else if (IsDoubleBattle())
             moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
@@ -4060,7 +4062,7 @@ static void Cmd_getmoneyreward(void)
     if (gBattleOutcome == B_OUTCOME_WON)
     {
         money = GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentA);
-        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+        if (BriskBattleHadTwoOpponents())
             money += GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentB);
         AddMoney(&gSaveBlock1Ptr->money, money);
     }

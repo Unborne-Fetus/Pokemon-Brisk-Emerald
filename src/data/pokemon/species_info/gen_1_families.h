@@ -2278,6 +2278,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sRaticateLevelUpLearnset,
         .teachableLearnset = sRaticateTeachableLearnset,
         .formSpeciesIdTable = sRaticateFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_BRUTICATE}),
     },
 
 #if P_ALOLAN_FORMS
@@ -4369,6 +4370,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sSandslashLevelUpLearnset,
         .teachableLearnset = sSandslashTeachableLearnset,
         .formSpeciesIdTable = sSandslashFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_DUNESHRED}),
     },
 
 #if P_ALOLAN_FORMS
@@ -6625,6 +6627,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sParasectLevelUpLearnset,
         .teachableLearnset = sParasectTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_PARASOUL}),
     },
 #endif //P_FAMILY_PARAS
 
@@ -9677,6 +9680,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sTentacruelLevelUpLearnset,
         .teachableLearnset = sTentacruelTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_TENTACROWN}),
     },
 #endif //P_FAMILY_TENTACOOL
 
@@ -13789,6 +13793,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sMarowakLevelUpLearnset,
         .teachableLearnset = sMarowakTeachableLearnset,
         .formSpeciesIdTable = sMarowakFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_MARROWAK}),
     },
 
 #if P_ALOLAN_FORMS
@@ -14857,6 +14862,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sRhyperiorLevelUpLearnset,
         .teachableLearnset = sRhyperiorTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_RHYFORTRESS}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RHYHORN
@@ -15157,6 +15163,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     #if P_GEN_4_CROSS_EVOS
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_TANGROWTH}),
     #endif
+        .formSpeciesIdTable = sTangelaFormSpeciesIdTable,
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -15240,6 +15247,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sTangrowthLevelUpLearnset,
         .teachableLearnset = sTangrowthTeachableLearnset,
+        .formSpeciesIdTable = sTangrowthFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_TANGELA
@@ -17017,6 +17025,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sElectivireTeachableLearnset,
         .formSpeciesIdTable = sElectivireCustomMegaFormSpeciesIdTable,
         .formChangeTable = sElectivireCustomMegaFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_ELECTITAN}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_ELECTABUZZ
