@@ -54,10 +54,17 @@ static void FaintFromFieldPoison(u8 partyIdx)
     StringGet_Nickname(gStringVar1);
 }
 
+static bool32 AbilityPreventsFieldPoisonDamage(enum Ability ability)
+{
+    return ability == ABILITY_POISON_HEAL || ability == ABILITY_MAGIC_GUARD
+        || ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL
+        || ability == ABILITY_COMATOSE;
+}
+
 static bool32 MonFaintedFromPoison(u8 partyIdx)
 {
     struct Pokemon *pokemon = &gParties[B_TRAINER_PLAYER][partyIdx];
-    if (IsMonValidSpecies(pokemon) && GetMonData(pokemon, MON_DATA_HP) == ((OW_POISON_DAMAGE < GEN_4) ? 0 : 1) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
+    if (IsMonValidSpecies(pokemon) && !AbilityPreventsFieldPoisonDamage(GetMonAbility(pokemon)) && GetMonData(pokemon, MON_DATA_HP) == ((OW_POISON_DAMAGE < GEN_4) ? 0 : 1) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
         return TRUE;
 
     return FALSE;
@@ -130,13 +137,36 @@ s32 DoPoisonFieldEffect(void)
     u32 numPoisoned = 0;
     u32 numFainted = 0;
 
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0; i < PARTY_SIZE; i++, pokemon++)
     {
-        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
+        hp = GetMonData(pokemon, MON_DATA_HP);
+        u32 status = GetMonData(pokemon, MON_DATA_STATUS);
+        if (IsMonValidSpecies(pokemon) && hp != 0 && (status & STATUS1_PSN_ANY))
         {
-            // Apply poison damage
-            hp = GetMonData(pokemon, MON_DATA_HP);
-            if (OW_POISON_DAMAGE < GEN_4 && (hp == 0 || --hp == 0))
+            enum Ability ability = GetMonAbility(pokemon);
+            if (ability == ABILITY_POISON_HEAL)
+            {
+                // Mirror the one-HP walking tick without reviving or overhealing.
+                u32 maxHp = GetMonData(pokemon, MON_DATA_MAX_HP);
+                if (hp < maxHp)
+                {
+                    hp++;
+                    SetMonData(pokemon, MON_DATA_HP, &hp);
+                }
+                continue;
+            }
+            if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL || ability == ABILITY_COMATOSE)
+            {
+                status &= ~(STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER);
+                SetMonData(pokemon, MON_DATA_STATUS, &status);
+                continue;
+            }
+            if (ability == ABILITY_MAGIC_GUARD)
+            {
+                continue;
+            }
+            // Apply ordinary poison damage; healing/protection causes no poison flash.
+            if (OW_POISON_DAMAGE < GEN_4 && (--hp == 0))
             {
                 TryFormChange(&gParties[B_TRAINER_PLAYER][i], FORM_CHANGE_FAINT, B_TRAINER_PLAYER);
                 numFainted++;
@@ -147,7 +177,6 @@ s32 DoPoisonFieldEffect(void)
             SetMonData(pokemon, MON_DATA_HP, &hp);
             numPoisoned++;
         }
-        pokemon++;
     }
 
     // Do screen flash effect

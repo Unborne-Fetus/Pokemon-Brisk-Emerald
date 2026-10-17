@@ -10,8 +10,10 @@ changed to place these additions. The alternate Dragonite Mega uses
 
 All battle art uses native 80×80 sprites. Normal/shiny front and back colors
 share the GBA's 15 visible palette indices. Icons use the engine's shared icon
-palettes. The Halloween archive supplies no separate shiny sprites, so those
-forms deliberately use their supplied normal colors for both palettes.
+palettes. The Halloween archive supplies no separate shiny sprites. These forms use their
+standard species' shiny color schemes, mapped to the Halloween artwork's materials
+without changing its pixels. `tools/brisk/update_halloween_shinies.py --check`
+validates their palettes and front/back previews.
 
 | Species | Constant | Types | Evolution |
 | --- | --- | --- | --- |
@@ -65,3 +67,11 @@ demonstrations retain their dedicated formats.
 FOLLOWERS defaults to ON. OFF removes the following Pokémon when returning to
 the field; ON restores it when the usual map/story conditions permit. This
 setting does not disable story NPC companions. Both options persist in saves.
+
+## Walking poison
+
+Every four walking steps, Poison Heal restores 1 HP while the Pokémon is poisoned
+or badly poisoned, up to its maximum HP. Magic Guard prevents walking poison
+damage. Immunity, Pastel Veil and Comatose clear poison and its toxic counter
+from their owner. These effects do not play the poison damage flash. Fainted
+Pokémon and eggs are skipped; ordinary poison still damages and can faint mons.

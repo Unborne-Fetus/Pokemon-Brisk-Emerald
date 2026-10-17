@@ -499,7 +499,8 @@
     "species_id": 1653,
     "icon_palette": 1,
     "shiny_supplied": false,
-    "formtable": "sLitwickFormSpeciesIdTable"
+    "formtable": "sLitwickFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/litwick/shiny.pal"
   },
   {
     "id": "LAMPENT_HALLOWEEN",
@@ -523,7 +524,8 @@
     "species_id": 1654,
     "icon_palette": 5,
     "shiny_supplied": false,
-    "formtable": "sLampentFormSpeciesIdTable"
+    "formtable": "sLampentFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/lampent/shiny.pal"
   },
   {
     "id": "CHANDELURE_HALLOWEEN",
@@ -547,7 +549,8 @@
     "species_id": 1655,
     "icon_palette": 5,
     "shiny_supplied": false,
-    "formtable": "sChandelureFormSpeciesIdTable"
+    "formtable": "sChandelureFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/chandelure/shiny.pal"
   },
   {
     "id": "SINISTEA_HALLOWEEN",
@@ -571,7 +574,8 @@
     "species_id": 1656,
     "icon_palette": 4,
     "shiny_supplied": false,
-    "formtable": "sSinisteaFormSpeciesIdTable"
+    "formtable": "sSinisteaFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/sinistea/shiny.pal"
   },
   {
     "id": "POLTEAGEIST_HALLOWEEN",
@@ -595,7 +599,8 @@
     "species_id": 1657,
     "icon_palette": 4,
     "shiny_supplied": false,
-    "formtable": "sPolteageistFormSpeciesIdTable"
+    "formtable": "sPolteageistFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/polteageist/shiny.pal"
   },
   {
     "id": "PONYTA_HALLOWEEN",
@@ -619,7 +624,8 @@
     "species_id": 1658,
     "icon_palette": 3,
     "shiny_supplied": false,
-    "formtable": "sPonytaFormSpeciesIdTable"
+    "formtable": "sPonytaFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/ponyta/shiny.pal"
   },
   {
     "id": "RAPIDASH_HALLOWEEN",
@@ -643,7 +649,8 @@
     "species_id": 1659,
     "icon_palette": 3,
     "shiny_supplied": false,
-    "formtable": "sRapidashFormSpeciesIdTable"
+    "formtable": "sRapidashFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/rapidash/shiny.pal"
   },
   {
     "id": "TANGELA_HALLOWEEN",
@@ -667,7 +674,8 @@
     "species_id": 1660,
     "icon_palette": 3,
     "shiny_supplied": false,
-    "formtable": "sTangelaFormSpeciesIdTable"
+    "formtable": "sTangelaFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/tangela/shiny.pal"
   },
   {
     "id": "TANGROWTH_HALLOWEEN",
@@ -691,7 +699,8 @@
     "species_id": 1661,
     "icon_palette": 2,
     "shiny_supplied": false,
-    "formtable": "sTangrowthFormSpeciesIdTable"
+    "formtable": "sTangrowthFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/tangrowth/shiny.pal"
   },
   {
     "id": "TIMBURR_HALLOWEEN",
@@ -715,7 +724,8 @@
     "species_id": 1662,
     "icon_palette": 4,
     "shiny_supplied": false,
-    "formtable": "sTimburrFormSpeciesIdTable"
+    "formtable": "sTimburrFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/timburr/shiny.pal"
   },
   {
     "id": "GURDURR_HALLOWEEN",
@@ -739,7 +749,8 @@
     "species_id": 1663,
     "icon_palette": 4,
     "shiny_supplied": false,
-    "formtable": "sGurdurrFormSpeciesIdTable"
+    "formtable": "sGurdurrFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/gurdurr/shiny.pal"
   },
   {
     "id": "CONKELDURR_HALLOWEEN",
@@ -763,7 +774,8 @@
     "species_id": 1664,
     "icon_palette": 3,
     "shiny_supplied": false,
-    "formtable": "sConkeldurrCustomMegaFormSpeciesIdTable"
+    "formtable": "sConkeldurrCustomMegaFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/conkeldurr/shiny.pal"
   },
   {
     "id": "EMOLGA_HALLOWEEN",
@@ -787,7 +799,8 @@
     "species_id": 1665,
     "icon_palette": 2,
     "shiny_supplied": false,
-    "formtable": "sEmolgaFormSpeciesIdTable"
+    "formtable": "sEmolgaFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/emolga/shiny.pal"
   },
   {
     "id": "SNORUNT_HALLOWEEN",
@@ -811,7 +824,8 @@
     "species_id": 1666,
     "icon_palette": 2,
     "shiny_supplied": false,
-    "formtable": "sSnoruntFormSpeciesIdTable"
+    "formtable": "sSnoruntFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/snorunt/shiny.pal"
   },
   {
     "id": "GLALIE_HALLOWEEN",
@@ -835,6 +849,7 @@
     "species_id": 1667,
     "icon_palette": 5,
     "shiny_supplied": false,
-    "formtable": "sGlalieFormSpeciesIdTable"
+    "formtable": "sGlalieFormSpeciesIdTable",
+    "shiny_palette_source": "graphics/pokemon/glalie/shiny.pal"
   }
 ]
