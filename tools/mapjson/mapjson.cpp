@@ -56,7 +56,19 @@ string read_text_file(string filepath) {
     return text;
 }
 
-void write_text_file(string filepath, string text) {
+void write_text_file(string filepath, string text, bool only_if_changed = false) {
+    // Preserve timestamps when revalidating generated map data. Otherwise an
+    // unchanged constants header would cause a full rebuild on every make.
+    if (only_if_changed) {
+        ifstream existing(filepath, std::ifstream::binary);
+        if (existing.is_open()) {
+            ostringstream contents;
+            contents << existing.rdbuf();
+            if (contents.str() == text)
+                return;
+        }
+    }
+
     ofstream out_file(filepath, std::ofstream::binary);
 
     if (!out_file.is_open())
@@ -690,7 +702,7 @@ string generate_map_constants_text(string groups_filepath, Json groups_data, vec
         mapCountText << map_count_vec[i] << ", ";            //DEBUG
     }                                                        //DEBUG
     mapCountText << "0};\n";                                 //DEBUG
-    write_text_file(file_dir + ".." + s + ".." + s + "src" + s + "data" + s + "map_group_count.h", mapCountText.str());
+    write_text_file(file_dir + ".." + s + ".." + s + "src" + s + "data" + s + "map_group_count.h", mapCountText.str(), true);
 
     return text.str();
 }
@@ -720,7 +732,7 @@ void clean_heal_locations(vector<string> &valid_map_ids)
         }
     }
 
-    write_text_file("src/data/heal_locations.json", new_json.str());
+    write_text_file("src/data/heal_locations.json", new_json.str(), true);
 }
 
 // Output paths are directories with trailing path separators
@@ -766,11 +778,11 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
     string map_header_text = generate_map_constants_text(groups_filepath, groups_data, valid_map_ids);
 
     clean_heal_locations(valid_map_ids);
-    write_text_file(output_asm + sep + "groups.inc", groups_text);
-    write_text_file(output_asm + sep + "connections.inc", connections_text);
-    write_text_file(output_asm + sep + "headers.inc", headers_text);
-    write_text_file(output_asm + sep + "events.inc", events_text);
-    write_text_file(output_c + sep + "map_groups.h", map_header_text);
+    write_text_file(output_asm + sep + "groups.inc", groups_text, true);
+    write_text_file(output_asm + sep + "connections.inc", connections_text, true);
+    write_text_file(output_asm + sep + "headers.inc", headers_text, true);
+    write_text_file(output_asm + sep + "events.inc", events_text, true);
+    write_text_file(output_c + sep + "map_groups.h", map_header_text, true);
 }
 
 string generate_layout_headers_text(Json layouts_data) {
