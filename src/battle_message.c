@@ -3023,8 +3023,6 @@ static const u8 *BattleStringGetOpponentName(u8 *text, u8 multiplayerId, enum Ba
 
 static const u8 *BattleStringGetPlayerName(u8 *text, enum BattlerId battler)
 {
-    if (IsAdventureRaid() && IsOnPlayerSide(battler) && battler != B_BATTLER_0)
-        return DynamaxAdventure_GetPartnerName(gBattlerPartyIndexes[battler]);
     const u8 *toCpy = NULL;
 
     switch (GetBattlerPosition(battler))

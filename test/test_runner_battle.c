@@ -220,13 +220,9 @@ static void InvokeTestFunction(const struct BattleTest *test)
         DATA.battlerTrainers |= (B_TRAINER_PARTNER << 4 | B_TRAINER_OPPONENT_B << 6);
         InvokeMultiTestFunctionWithStack(STATE->results, STATE->runParameter, &gBattleMons[B_POSITION_PLAYER_LEFT], &gBattleMons[B_POSITION_OPPONENT_LEFT], &gBattleMons[B_POSITION_PLAYER_RIGHT], &gBattleMons[B_POSITION_OPPONENT_RIGHT], test->function.multi, &DATA.stack[BATTLE_TEST_STACK_SIZE]);
         break;
-    case BATTLE_TEST_ADVENTURE_RAID:
     case BATTLE_TEST_TWO_VS_ONE:
-    case BATTLE_TEST_AI_ADVENTURE_RAID:
     case BATTLE_TEST_AI_TWO_VS_ONE:
         DATA.battlerTrainers |= (B_TRAINER_PARTNER << 4 | B_TRAINER_OPPONENT_A << 6);
-        if (test->type == BATTLE_TEST_ADVENTURE_RAID || test->type == BATTLE_TEST_AI_ADVENTURE_RAID)
-            DATA.battlerTrainers = B_TRAINER_OPPONENT_A << 2 | B_TRAINER_PARTNER << 4 | B_TRAINER_PARTNER << 6 | B_TRAINER_PARTNER << 8;
         InvokeTwoVsOneTestFunctionWithStack(STATE->results, STATE->runParameter, &gBattleMons[B_POSITION_PLAYER_LEFT], &gBattleMons[B_POSITION_OPPONENT_LEFT], &gBattleMons[B_POSITION_PLAYER_RIGHT], &gBattleMons[B_POSITION_OPPONENT_RIGHT], test->function.two_vs_one, &DATA.stack[BATTLE_TEST_STACK_SIZE]);
         break;
     case BATTLE_TEST_ONE_VS_TWO:
@@ -250,7 +246,6 @@ bool32 IsAITest(void)
     case BATTLE_TEST_AI_SINGLES:
     case BATTLE_TEST_AI_DOUBLES:
     case BATTLE_TEST_AI_MULTI:
-    case BATTLE_TEST_AI_ADVENTURE_RAID:
     case BATTLE_TEST_AI_TWO_VS_ONE:
     case BATTLE_TEST_AI_ONE_VS_TWO:
         return TRUE;
@@ -287,18 +282,13 @@ static void InitTestBattlers(const struct BattleTest *test)
     case BATTLE_TEST_AI_DOUBLES:
     case BATTLE_TEST_MULTI:
     case BATTLE_TEST_AI_MULTI:
-    case BATTLE_TEST_ADVENTURE_RAID:
     case BATTLE_TEST_TWO_VS_ONE:
-    case BATTLE_TEST_AI_ADVENTURE_RAID:
     case BATTLE_TEST_AI_TWO_VS_ONE:
     case BATTLE_TEST_ONE_VS_TWO:
     case BATTLE_TEST_AI_ONE_VS_TWO:
-        STATE->battlersCount = 4;
+        STATE->battlersCount = MAX_BATTLERS_COUNT;
         break;
     }
-
-    if (test->type == BATTLE_TEST_ADVENTURE_RAID || test->type == BATTLE_TEST_AI_ADVENTURE_RAID)
-        STATE->battlersCount = 5;
 
     gBattlersCount = STATE->battlersCount;
     for (enum BattlerId battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
@@ -477,7 +467,6 @@ static void BattleTest_Run(void *data)
         DATA.currentMonIndexes[2] = 0; // Player partner first mon
         DATA.currentMonIndexes[3] = 0; // Opponent B first mon
         break;
-    case BATTLE_TEST_AI_ADVENTURE_RAID:
     case BATTLE_TEST_AI_TWO_VS_ONE:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI;
         DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN_TEST);
@@ -522,7 +511,6 @@ static void BattleTest_Run(void *data)
         DATA.currentMonIndexes[2] = 0; // Player partner first mon
         DATA.currentMonIndexes[3] = 0; // Opponent B first mon
         break;
-    case BATTLE_TEST_ADVENTURE_RAID:
     case BATTLE_TEST_TWO_VS_ONE:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_RECORDED_IS_MASTER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI;
         DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN_TEST);
@@ -542,13 +530,6 @@ static void BattleTest_Run(void *data)
         DATA.currentMonIndexes[2] = 1; // Player second mon
         DATA.currentMonIndexes[3] = 0; // Opponent B first mon
         break;
-    }
-
-    if (test->type == BATTLE_TEST_ADVENTURE_RAID || test->type == BATTLE_TEST_AI_ADVENTURE_RAID)
-    {
-        DATA.recordedBattle.battleFlags |= BATTLE_TYPE_ADVENTURE_RAID;
-        DATA.currentMonIndexes[3] = 1;
-        DATA.currentMonIndexes[4] = 2;
     }
 
     gBattleTypeFlags = DATA.recordedBattle.battleFlags;
@@ -571,12 +552,10 @@ static void BattleTest_Run(void *data)
     STATE->runWhen = FALSE;
     STATE->runScene = FALSE;
 
-
     for (i = 0; i < STATE->battlersCount; i++)
     {
         // A wild multi battle may have a single enemy; its right slot is absent.
-        if (!(test->type == BATTLE_TEST_ADVENTURE_RAID || test->type == BATTLE_TEST_AI_ADVENTURE_RAID)
-         && i == B_POSITION_OPPONENT_RIGHT
+        if (i == B_POSITION_OPPONENT_RIGHT
          && (DATA.recordedBattle.battleFlags & BATTLE_TYPE_MULTI)
          && !(DATA.recordedBattle.battleFlags & BATTLE_TYPE_TRAINER)
          && DATA.partySizes[B_TRAINER_OPPONENT_A] == 1)
@@ -2795,7 +2774,7 @@ static const char *const sBattlerIdentifiersDoubles[] =
     "playerLeft",
     "opponentLeft",
     "playerRight",
-    "opponentRight", "birch", "absent",
+    "opponentRight",
 };
 
 static const char *BattlerIdentifier(enum BattlerId battlerId)
@@ -2812,9 +2791,7 @@ static const char *BattlerIdentifier(enum BattlerId battlerId)
     case BATTLE_TEST_AI_DOUBLES:
     case BATTLE_TEST_MULTI:
     case BATTLE_TEST_AI_MULTI:
-    case BATTLE_TEST_ADVENTURE_RAID:
     case BATTLE_TEST_TWO_VS_ONE:
-    case BATTLE_TEST_AI_ADVENTURE_RAID:
     case BATTLE_TEST_AI_TWO_VS_ONE:
     case BATTLE_TEST_ONE_VS_TWO:
     case BATTLE_TEST_AI_ONE_VS_TWO:

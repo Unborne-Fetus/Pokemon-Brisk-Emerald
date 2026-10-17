@@ -423,7 +423,7 @@ bool32 DynamaxAdventure_ChooseRental(u32 choice)
         return FALSE;
     sAdventure->team[0] = *mon;
     sAdventure->selectedOffers = 1u << choice;
-    // Each researcher selects a different rental without player input.
+    // The rival selects a different rental without player input.
     for (u32 member = 1; member < DA_TEAM_SIZE; member++)
     {
         u32 offer = NextRandom() % DA_RENTAL_CHOICES;
@@ -483,7 +483,7 @@ bool32 DynamaxAdventure_PrepareBattle(void)
     ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
     gParties[B_TRAINER_PLAYER][0] = sAdventure->team[0];
     memset(sAdventure->partnerGimmicks, 0, sizeof(sAdventure->partnerGimmicks));
-    // All three researchers are active, with stable party slots across rounds.
+    // The rival keeps the same partner party slot across rounds.
     for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
     {
         u32 member = 1 + i;
@@ -757,12 +757,7 @@ const u8 *DynamaxAdventure_GetPartnerName(u32 slot)
 {
     if (!IsDynamaxAdventureBattle() || slot >= DA_TEAM_SIZE - 1)
         return NULL;
-    switch (sAdventure->partnerOrder[slot])
-    {
-    case 2: return COMPOUND_STRING("SCIENTIST");
-    case 3: return COMPOUND_STRING("BIRCH");
-    default: return gSaveBlock2Ptr->playerGender == FEMALE ? COMPOUND_STRING("BRENDAN") : COMPOUND_STRING("MAY");
-    }
+    return gSaveBlock2Ptr->playerGender == FEMALE ? COMPOUND_STRING("BRENDAN") : COMPOUND_STRING("MAY");
 }
 
 void DynamaxAdventure_SwitchPartner(enum BattlerId battler, u32 newSlot)

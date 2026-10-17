@@ -12,15 +12,14 @@ flags or add SaveBlock fields.
 
 ## Implemented run
 
-- Choose **one rental** from twelve offers, shown with Pokémon icons. The rival, scientist,
-  and Birch independently choose different remaining offers. All four allies
-  fight on the field simultaneously, each with their own move and target.
-  **May partners with a male player; Brendan partners with a female player.**
-  Each encounter is a true **four-versus-one** wild multi battle, with exactly
-  one opposing Pokémon and no opposing support.
+- Choose **one rental** from twelve offers, with six compact icon rows visible
+  at once. Icons refresh across the whole viewport when scrolling either way.
+  May (male player) or Brendan (female player) chooses a different rental.
+  Each encounter is **two-versus-one**, with one boss and no opposing support.
+  Birch stays in the starting cave; the scientist facilitates the run between fights.
 - Rental offers are drawn from the Mega/G-Max-capable subset of **74 curated
-  doubles sets**. Rentals, researchers, and intermediate encounters are **level 70**;
-  the final legendary is **level 100**. All three researchers use Basic + Doubles + Omniscient + Smart Mon Choices
+  doubles sets**. Rentals, the rival, and intermediate encounters are **level 70**;
+  the final legendary is **level 100**. The rival uses Basic + Doubles + Omniscient + Smart Mon Choices
   AI flags, independent of difficulty.
 - Every set has four selected moves, an ability from its species' slots, a
   held item, 508 EVs, and a role-based nature. Special-only sets have 0 Attack
@@ -39,16 +38,16 @@ flags or add SaveBlock fields.
   Gigantamax if eligible. Final legendaries without either form use Dynamax,
   preserving the full legendary pool. Boss G-Max/Dynamax remains active for
   the encounter. Ordinary trainer/wild gimmick restrictions are unchanged.
-- All four allies can use their rental's **Mega or G-Max** form. The
-  player activates theirs normally; the researchers activate automatically. Each
+- Both allies can use their rental's **Mega or G-Max** form. The
+  player activates theirs normally; the rival activates automatically. Each
   participant has an independent gimmick allowance. Allied G-Max uses
   the usual three-turn duration; Terastallization remains unavailable.
-- Difficulty is captured at the start of the run and scales **all four rental HP
+- Difficulty is captured at the start of the run and scales **both rental HP
   totals**, including through form changes: Easy 4×, Normal 2×, Hard 1×,
   Extreme ½× (minimum 1 HP). G-Max does not add another HP multiplier on top.
   The real party, offered/caught Pokémon, and final rewards are not scaled.
 - Four lives. A whole-team loss spends one life and allows a retry. Four
-  losses or running away finish the run. All four rentals recover PP after
+  losses or running away finish the run. Both rentals recover PP after
   every battle. Easy restores full HP and cures status; Normal restores full
   HP without curing status; Hard adds half max HP; Extreme adds a quarter
   max HP. Healing caps at max HP and revives fainted rentals. Extreme bosses
@@ -56,7 +55,7 @@ flags or add SaveBlock fields.
 - No battle EXP, bag items (including balls), or Pay Day money. Rentals obey
   regardless of badges and difficulty caps.
 - After victory, the primary encounter is an optional guaranteed catch without
-  spending a ball. For ordinary catches, the player can replace their rental. If declined, a randomly chosen researcher
+  spending a ball. For ordinary catches, the player can replace their rental. If declined, the rival
   has a 50% chance to take the encounter instead.
 - Every generated rental or encounter rolls shiny odds once at **1/100**.
   That same roll survives battling, catching, and replacing a rental; no extra
@@ -67,27 +66,22 @@ flags or add SaveBlock fields.
   Full party and PC storage retains the reward until space becomes available.
   Quitting instead discards all temporary catches.
 
-The local adventure supports **four allies versus one boss**. Human multiplayer
+The local adventure supports **two allies versus one boss**. Human multiplayer
 networking, shields, individual-faint life counting, a ten-turn limit, route graphics,
 backpackers, legendary completion records, and adventure
 resumption from a save remain future work.
 
 Intermediate enemies have **5× their normal max HP**; the final boss has
 **7×**. These replace the ordinary Dynamax HP multiplier rather than stacking
-with it. Catches retain their normal stats; rental HP uses the difficulty rule above. Healthboxes stay hidden until a Pokémon takes damage. Only that Pokémon's
-healthbox appears while HP drops and briefly afterward, then hides again. No
-extra background window or top menu is allocated. If an ally faints, the remaining
-allies continue. A loss is counted only when no allied rental remains. All four
-rentals are active, so there are no in-battle reserves.
-
-Raid battles allocate six storage slots, with five active participants and one empty
-sentinel for legacy partner queries. Singles and ordinary doubles retain two/four active
-battlers. Raid intros load the Pokémon directly to fit GBA sprite memory, including the
-live player controller (which cannot reuse a trainer sprite in this layout). Recorded
-raid videos are disabled; existing four-slot saved videos retain their original format.
+with it. Catches retain their normal stats; rental HP uses the difficulty rule above.
+A persistent 220-pixel boss HP bar occupies the top of the screen on all battle
+menu pages. Allied healthboxes appear during damage and briefly afterward.
+Gimmick indicators follow their healthboxes' visibility. The standard four-slot
+engine and graphics buffers are used, avoiding the expanded raid allocations.
+If the player faints, the rival continues; the run loses a life only when both faint.
 
 After every battle (victory, loss, or escape), the caller moves to an enclosed
-placeholder cave with the scientist, the correct rival, and Professor Birch. It has no
+placeholder cave with the scientist and the correct rival. It has no
 warp events, no doorway, and disallows Escape Rope/Dig. The scientist continues
 catch, swap, and path choices there. Finishing, deferring a reward, or taking a
 break returns the player to the Route 146 research cave. The opening-room rival explains the research behind the expeditions and their
@@ -102,7 +96,7 @@ functions expose the exact active species lists for a future UI or tooling.
 
 The real party remains in place between encounters. `PrepareBattle` backs up
 all six party slots and the party count before installing the player's rental.
-The three researcher rentals live in the partner party, with a stable ownership mapping. The previous partner party,
+The rival rental lives in the partner party, with a stable ownership mapping. The previous partner party,
 count, trainer identity, and opponent context are also backed up, and ordinary
 follower setup cannot overwrite this temporary rival.
 The battle return callback restores those parties and identities before resuming the script,
@@ -197,14 +191,11 @@ playable four-player fight. A future adapter must extend the four-battler
 engine for four allies plus a boss, execute the collected actions, and add
 transport, ownership/authentication, and disconnect handling before enabling it.
 
-## Four-person combat limitation
+## Combat scope
 
-The live expedition has four participants but still uses the engine's two
-allied battle positions. It is a relay, not simultaneous 4v1 combat. The dormant
-`dynamax_adventure_coop` command collector remains separate and unavailable;
-it does not execute a five-battler battle. Supporting four allies on the field
-requires expanding battler positions, targeting, controllers, animations, and
-healthbox layouts beyond the engine's four total slots.
+The live expedition is player plus rival against one boss. The dormant
+`dynamax_adventure_coop` collector remains separate and unavailable; it does
+not expand the battle engine or add extra participants.
 
 Defensive curated sets with fewer than three attacks are filled using Brisk's
 legal move scorer (offensive stats, STAB, coverage, accuracy and secondary

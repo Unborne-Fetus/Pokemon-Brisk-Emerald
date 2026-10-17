@@ -5,7 +5,6 @@
 #include "link.h"
 #include "random.h"
 
-#define RECORDED_SAVE_BATTLERS (TESTING ? MAX_BATTLERS_COUNT : 4)
 #define BATTLER_RECORD_SIZE 388
 
 struct RecordedBattleSave
@@ -26,7 +25,7 @@ struct RecordedBattleSave
     u16 textSpeed:3;
     u16 playersGender:4; // 1 bit per player; please don't hate me
     u16 padding:1;
-    u64 AI_scripts[RECORDED_SAVE_BATTLERS];
+    u64 AI_scripts[MAX_BATTLERS_COUNT];
     u8 recordMixFriendName[PLAYER_NAME_LENGTH + 1];
     u8 recordMixFriendClass;
     u8 apprenticeId;
@@ -35,7 +34,7 @@ struct RecordedBattleSave
     u8 multiplayerId:2;
     u8 playersBattlers; // Setup so player 2/3 battler and player 0/1 second battler occupy same bits
     u16 easyChatSpeech[EASY_CHAT_BATTLE_WORDS_COUNT];
-    u8 battleRecord[RECORDED_SAVE_BATTLERS][BATTLER_RECORD_SIZE];
+    u8 battleRecord[MAX_BATTLERS_COUNT][BATTLER_RECORD_SIZE];
     u32 checksum;
 };
 

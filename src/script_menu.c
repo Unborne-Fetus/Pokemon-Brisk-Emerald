@@ -104,7 +104,7 @@ static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollecti
 };
 
 #define ADVENTURE_ICON_TAG 0xDA10
-#define ADVENTURE_VISIBLE_CHOICES 3
+#define ADVENTURE_VISIBLE_CHOICES 6
 
 static void AdventureIcons_Init(struct DynamicListMenuEventArgs *args)
 {
@@ -155,18 +155,45 @@ static void AdventureIcons_Print(u8 windowId, u32 choice, u8 y)
     if (sprite < MAX_SPRITES)
     {
         const struct WindowTemplate *window = &gWindows[windowId].window;
-        u32 matrix = AllocOamMatrix();
-        if (matrix == 0xFF)
-        {
-            AdventureIcons_FreeRow(row);
-            return;
-        }
-        gSprites[sprite].oam.affineMode = ST_OAM_AFFINE_NORMAL;
-        gSprites[sprite].oam.matrixNum = matrix;
-        SetOamMatrix(matrix, 0x200, 0, 0, 0x200); // 16px icon beside each 16px text row.
+        // Bake a 16px thumbnail. Affine animation can reset a manually
+        // assigned matrix, so these compact rows use ordinary OBJ tiles.
+        ALIGNED(4) u8 thumbnail[4 * TILE_SIZE_4BPP] = {0};
+        const u8 *tiles = GetMonIconTilesIsEgg(GetMonData(mon, MON_DATA_SPECIES), 0, FALSE);
+        for (u32 py = 0; py < 16; py++)
+            for (u32 px = 0; px < 16; px++)
+            {
+                u32 x = px * 2, y = py * 2;
+                u32 src = ((y / 8) * 4 + x / 8) * 32 + (y % 8) * 4 + (x % 8) / 2;
+                u32 dst = ((py / 8) * 2 + px / 8) * 32 + (py % 8) * 4 + (px % 8) / 2;
+                u8 color = (tiles[src] >> ((x & 1) * 4)) & 15;
+                thumbnail[dst] |= color << ((px & 1) * 4);
+            }
+        gSprites[sprite].oam.affineMode = ST_OAM_AFFINE_OFF;
+        gSprites[sprite].oam.size = ST_OAM_SIZE_1;
+        gSprites[sprite].centerToCornerVecX = -8;
+        gSprites[sprite].centerToCornerVecY = -8;
+        CpuCopy32(thumbnail, (void *)(OBJ_VRAM0 + gSprites[sprite].oam.tileNum * TILE_SIZE_4BPP), sizeof(thumbnail));
         gSprites[sprite].x = window->tilemapLeft * 8 + 20;
         gSprites[sprite].y = window->tilemapTop * 8 + y + 8;
         gSprites[sprite].oam.priority = 0;
+    }
+}
+
+static void AdventureIcons_Refresh(u8 taskId)
+{
+    u16 offset;
+    struct ListMenuItem *items;
+    ListMenuGetScrollAndRow(gTasks[taskId].data[0], &offset, NULL);
+    if (gTasks[taskId].data[8] == offset)
+        return;
+    gTasks[taskId].data[8] = offset;
+    LoadWordFromTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32 *)&items);
+    for (u32 row = 0; row < ADVENTURE_VISIBLE_CHOICES; row++)
+    {
+        if (offset + row < gTasks[taskId].data[5])
+            AdventureIcons_Print(gTasks[taskId].data[2], items[offset + row].id, row * 16);
+        else
+            AdventureIcons_FreeRow(row);
     }
 }
 
@@ -499,7 +526,7 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     if (adventureIcons)
     {
         gMultiuseListMenuTemplate.item_X = 32;
-        gMultiuseListMenuTemplate.itemPrintFunc = AdventureIcons_Print;
+        gMultiuseListMenuTemplate.itemPrintFunc = NULL;
     }
 
     taskId = CreateTask(Task_HandleScrollingMultichoiceInput, 80);
@@ -518,6 +545,11 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
         sDynamicListMenuEventCollections[sDynamicMenuEventId].OnSelectionChanged(&eventArgs);
     }
     ListMenuGetScrollAndRow(gTasks[taskId].data[0], &gScrollableMultichoice_ScrollOffset, NULL);
+    if (adventureIcons)
+    {
+        gTasks[taskId].data[8] = -1;
+        AdventureIcons_Refresh(taskId);
+    }
     if (argc > maxBeforeScroll)
     {
         // Create Scrolling Arrows
@@ -607,6 +639,8 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
 {
     bool32 done = FALSE;
     s32 input = ListMenu_ProcessInput(gTasks[taskId].data[0]);
+    if (sDynamicMenuEventId == DYN_MULTICHOICE_CB_ADVENTURE_PKMN)
+        AdventureIcons_Refresh(taskId);
 
     switch (input)
     {

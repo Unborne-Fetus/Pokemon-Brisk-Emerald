@@ -5,6 +5,8 @@
 #include "battle_main.h"
 #include "battle_script_commands.h"
 #include "battle_setup.h"
+#include "battle_util2.h"
+#include "reshow_battle_screen.h"
 #include "battle_partner.h"
 #include "battle_controllers.h"
 #include "trainer_util.h"
@@ -23,6 +25,8 @@
 #include "constants/event_objects.h"
 #include "test/test.h"
 #include "script_menu.h"
+#include "field_specials.h"
+#include "pokemon_icon.h"
 #include "malloc.h"
 #include "sprite.h"
 #include "task.h"
@@ -277,6 +281,24 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: player Mega and rival G-Max activate independ
         EXPECT_EQ(opponentLeft->maxHP, 1000);
         EXPECT_EQ(playerRight->maxHP, 200);
         EXPECT_EQ(GetBattlerCoordsIndex(B_BATTLER_1), BATTLE_COORDS_DOUBLES);
+        // Returning from the party/summary screen destroys and recreates all
+        // windows. The dedicated boss bar must own a fresh buffer afterward.
+        CloseMainBattleScreen();
+        ReshowBattleScreenAfterMenu();
+        for (u32 frame = 0; frame < 100 && gMain.callback2 != BattleMainCB2; frame++)
+            gMain.callback2();
+        EXPECT(gMain.callback2 == BattleMainCB2);
+        DynamaxAdventure_UpdateRaidHud();
+        bool32 foundBossBar = FALSE;
+        for (u32 window = 0; window < WINDOWS_MAX; window++)
+            if (gWindows[window].tileData != NULL && gWindows[window].window.baseBlock == 0x50)
+            {
+                EXPECT_EQ(gWindows[window].window.width, 28);
+                EXPECT_EQ(gWindows[window].window.height, 2);
+                foundBossBar = TRUE;
+            }
+        EXPECT(foundBossBar);
+
         BattleAI_SetupFlags();
         EXPECT(gAiThinkingStruct->aiFlags[B_BATTLER_2] & AI_FLAG_OMNISCIENT);
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
@@ -602,7 +624,7 @@ TEST("Adventure: staging chamber has no warps, blocks escape and contains the ri
     const struct MapHeader *room = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_DYNAMAX_ADVENTURE_REST_CAVE), MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE));
     EXPECT_EQ(room->events->warpCount, 0);
     EXPECT(!room->allowEscaping);
-    EXPECT_EQ(room->events->objectEventCount, 3);
+    EXPECT_EQ(room->events->objectEventCount, 2);
     EXPECT_EQ(room->events->objectEvents[0].graphicsId, OBJ_EVENT_GFX_SCIENTIST_1);
     EXPECT_EQ(room->events->objectEvents[1].graphicsId, OBJ_EVENT_GFX_VAR_0);
     EXPECT_NE((room->mapLayout->map[3 * room->mapLayout->width + 7] >> 10) & 3, 0);
@@ -657,36 +679,57 @@ TEST("Adventure: hint names only the final boss type")
     EXPECT(DynamaxAdventure_Quit());
 }
 
-TEST("Adventure: choice menus create three inline icons and release their graphics on cancel")
+static void ExpectAdventureIconRows(void)
+{
+    for (u32 row = 0; row < 6; row++)
+    {
+        u32 tile = GetSpriteTileStartByTag(0xDA10 + row);
+        EXPECT_NE(tile, 0xFFFF);
+        const u8 *actual = (const u8 *)(OBJ_VRAM0 + tile * TILE_SIZE_4BPP);
+        struct Pokemon *mon = DynamaxAdventure_GetRental(gScrollableMultichoice_ScrollOffset + row);
+        const u8 *tiles = GetMonIconTilesIsEgg(GetMonData(mon, MON_DATA_SPECIES), 0, FALSE);
+        for (u32 py = 0; py < 16; py++)
+            for (u32 px = 0; px < 16; px++)
+            {
+                u32 x = px * 2, y = py * 2;
+                u32 src = ((y / 8) * 4 + x / 8) * 32 + (y % 8) * 4 + (x % 8) / 2;
+                u32 dst = ((py / 8) * 2 + px / 8) * 32 + (py % 8) * 4 + (px % 8) / 2;
+                EXPECT_EQ((actual[dst] >> ((px & 1) * 4)) & 15, (tiles[src] >> ((x & 1) * 4)) & 15);
+            }
+    }
+}
+
+TEST("Adventure: six rental rows keep every icon synchronized scrolling both directions and release graphics")
 {
     static const struct WindowTemplate windows[] = {DUMMY_WIN_TEMPLATE};
     static const u8 name[] = _("Rental");
     EXPECT(DynamaxAdventure_Begin(42));
-    ResetTasks();
-    ResetSpriteData();
-    FreeAllSpritePalettes();
-    InitWindows(windows);
-    struct ListMenuItem *items = AllocZeroed(3 * sizeof(*items));
-    for (u32 i = 0; i < 3; i++)
+    ResetTasks(); ResetSpriteData(); FreeAllSpritePalettes(); InitWindows(windows);
+    struct ListMenuItem *items = AllocZeroed(DA_RENTAL_CHOICES * sizeof(*items));
+    for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
     {
         u8 *text = Alloc(sizeof(name));
         StringCopy(text, name);
         items[i].name = text;
         items[i].id = i;
     }
-    EXPECT(ScriptMenu_MultichoiceDynamic(1, 1, 3, items, FALSE, 3, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN));
-    for (u32 i = 0; i < 3; i++)
+    EXPECT(ScriptMenu_MultichoiceDynamic(1, 1, DA_RENTAL_CHOICES, items, FALSE, 3, 0, DYN_MULTICHOICE_CB_ADVENTURE_PKMN));
+    ExpectAdventureIconRows();
+    for (u32 direction = 0; direction < 2; direction++)
     {
-        EXPECT_NE(GetSpriteTileStartByTag(0xDA10 + i), 0xFFFF);
-        EXPECT_NE(IndexOfSpritePaletteTag(0xDA10 + i), 0xFF);
+        for (u32 step = 0; step < DA_RENTAL_CHOICES - 1; step++)
+        {
+            gMain.newKeys = gMain.newAndRepeatedKeys = direction == 0 ? DPAD_DOWN : DPAD_UP;
+            RunTasks();
+            ExpectAdventureIconRows();
+        }
+        EXPECT_EQ(gScrollableMultichoice_ScrollOffset, direction == 0 ? DA_RENTAL_CHOICES - 6 : 0);
     }
-    gMain.newKeys = B_BUTTON;
-    gMain.newAndRepeatedKeys = B_BUTTON;
+    gMain.newKeys = gMain.newAndRepeatedKeys = B_BUTTON;
     RunTasks();
-    gMain.newKeys = 0;
-    gMain.newAndRepeatedKeys = 0;
+    gMain.newKeys = gMain.newAndRepeatedKeys = 0;
     EXPECT_EQ(gSpecialVar_Result, MULTI_B_PRESSED);
-    for (u32 i = 0; i < 3; i++)
+    for (u32 i = 0; i < 6; i++)
     {
         EXPECT_EQ(GetSpriteTileStartByTag(0xDA10 + i), 0xFFFF);
         EXPECT_EQ(IndexOfSpritePaletteTag(0xDA10 + i), 0xFF);
@@ -842,7 +885,7 @@ TEST("Adventure: rental forms abilities and consumed held items reset between en
     EXPECT(DynamaxAdventure_Quit());
 }
 
-TEST("Adventure: all four members recover HP and PP according to the starting difficulty")
+TEST("Adventure: both teammates recover HP and PP according to the starting difficulty")
 {
     u32 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
     for (u32 mode = BRISK_MODE_EASY; mode <= BRISK_MODE_EXTREME; mode++)
@@ -851,7 +894,7 @@ TEST("Adventure: all four members recover HP and PP according to the starting di
         StartRental();
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
-        EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 3);
+        EXPECT_EQ(gPartiesCount[B_TRAINER_PARTNER], 1);
         u16 maxima[DA_TEAM_SIZE];
         for (u32 i = 0; i < DA_TEAM_SIZE; i++)
         {
@@ -874,7 +917,7 @@ TEST("Adventure: all four members recover HP and PP according to the starting di
         EXPECT(DynamaxAdventure_Catch(FALSE));
         EXPECT(DynamaxAdventure_ChoosePath(0));
         EXPECT(DynamaxAdventure_PrepareBattle());
-        // Researcher ownership remains stable between raid rounds.
+        // Both teammates keep their own rentals across rounds.
         for (u32 i = 0; i < DA_TEAM_SIZE; i++)
         {
             u32 old = i;
@@ -917,7 +960,7 @@ TEST("Adventure: twelve offers are selectable and rentals and routes have at lea
     }
 }
 
-TEST("Adventure: researchers sometimes accept a declined catch without replacing the player's rental")
+TEST("Adventure: the rival sometimes accepts a declined catch without replacing the player's rental")
 {
     bool32 sawSwap = FALSE, sawKeep = FALSE;
     for (u32 seed = 0; seed < 64 && !(sawSwap && sawKeep); seed++)
@@ -938,7 +981,7 @@ TEST("Adventure: researchers sometimes accept a declined catch without replacing
         EXPECT(DynamaxAdventure_PrepareBattle());
         EXPECT_EQ(GetMonData(&original[0], MON_DATA_PERSONALITY), GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_PERSONALITY));
         u32 changed = 0;
-        for (u32 i = 0; i < 3; i++)
+        for (u32 i = 0; i < DA_TEAM_SIZE - 1; i++)
         {
             u32 old = 1 + i;
             u32 pid = GetMonData(&gParties[B_TRAINER_PARTNER][i], MON_DATA_PERSONALITY);
@@ -955,35 +998,6 @@ TEST("Adventure: researchers sometimes accept a declined catch without replacing
         EXPECT(DynamaxAdventure_Quit());
     }
     EXPECT(sawSwap && sawKeep);
-}
-
-TWO_VS_ONE_BATTLE_TEST("Adventure: each researcher can Mega evolve independently when taking the relay position")
-{
-    GIVEN {
-        StartRental();
-        EXPECT(DynamaxAdventure_ChoosePath(0));
-        EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GARCHOMP) { Item(ITEM_GARCHOMPITE); Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_Y); Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-    } WHEN {
-        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
-        TURN { SWITCH(playerRight, 1); }
-        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
-        TURN { SWITCH(playerRight, 2); }
-        TURN { MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); }
-    } THEN {
-        EXPECT_EQ(playerRight->species, SPECIES_VENUSAUR_MEGA);
-        EXPECT_EQ(StringCompare(DynamaxAdventure_GetPartnerName(2), COMPOUND_STRING("BIRCH")), 0);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
-        gMain.inBattle = FALSE;
-        EXPECT(DynamaxAdventure_Quit());
-    }
 }
 
 TWO_VS_ONE_BATTLE_TEST("Adventure: only Extreme doubles boss move damage")
@@ -1012,415 +1026,5 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: only Extreme doubles boss move damage")
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());
         VarSet(VAR_BRISK_DIFFICULTY, savedMode);
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: every ally acts and the boss can target Birch")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental();
-        EXPECT(DynamaxAdventure_ChoosePath(0));
-        EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
-        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
-        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
-        PARTNER(SPECIES_GENGAR) { Moves(MOVE_DRAGON_RAGE); MaxHP(100); HP(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE); MaxHP(1000); HP(1000); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(birch, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: birch);
-        }
-    } THEN {
-        EXPECT_EQ(gBattlersCount, 5);
-        EXPECT_EQ(opponentLeft->hp, 840);
-        EXPECT_EQ(birch->hp, 60);
-        EXPECT_EQ(GetBattlerTrainer(3), B_TRAINER_PARTNER);
-        EXPECT_EQ(GetBattlerTrainer(4), B_TRAINER_PARTNER);
-        EXPECT_EQ(gBattlerPartyIndexes[3], 1);
-        EXPECT_EQ(gBattlerPartyIndexes[4], 2);
-        // The real input cursor reaches every ally, including the new slots.
-        u16 supportMove = MOVE_HEAL_PULSE;
-        SetMonData(GetBattlerMon(0), MON_DATA_MOVE1, &supportMove);
-        gMoveSelectionCursor[0] = 0;
-        gMultiUsePlayerCursor = 2;
-        gMain.newKeys = 0;
-        gMain.newAndRepeatedKeys = DPAD_RIGHT;
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 3);
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 4);
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 1);
-        gMain.newAndRepeatedKeys = 0;
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
-        gMain.inBattle = FALSE;
-        EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: fainted Birch stays absent while the other allies continue")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_CHARIZARD) { Speed(100); Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_GARCHOMP) { Speed(90); Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_VENUSAUR) { Speed(80); Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); HP(1); Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE, MOVE_CELEBRATE); MaxHP(1000); HP(1000); Speed(999); }
-    } WHEN {
-        TURN {
-            MOVE(opponentLeft, MOVE_DRAGON_RAGE, target: birch);
-            MOVE(birch, MOVE_CELEBRATE);
-            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-        }
-        TURN {
-            MOVE(opponentLeft, MOVE_CELEBRATE);
-            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-        }
-    } THEN {
-        EXPECT_EQ(birch->hp, 0);
-        EXPECT(gAbsentBattlerFlags & (1u << 4));
-        EXPECT_EQ(opponentLeft->hp, 760);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: a boss spread move hits all four allies")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SURF); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE);
-            MOVE(opponentLeft, MOVE_SURF);
-        }
-    } THEN {
-        EXPECT_LT(playerLeft->hp, 1000); EXPECT_LT(playerRight->hp, 1000);
-        EXPECT_LT(opponentRight->hp, 1000); EXPECT_LT(birch->hp, 1000);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-AI_ADVENTURE_RAID_BATTLE_TEST("Adventure raid: all three researchers independently attack the boss")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        AI_FLAGS(AI_FLAG_BASIC_TRAINER | AI_FLAG_DOUBLE_BATTLE | AI_FLAG_OMNISCIENT);
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_DRAGON_RAGE); }
-        PARTNER(SPECIES_GENGAR) { Moves(MOVE_DRAGON_RAGE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft); EXPECT_MOVE(opponentLeft, MOVE_CELEBRATE);
-            EXPECT_MOVE(playerRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            EXPECT_MOVE(opponentRight, MOVE_DRAGON_RAGE, target: opponentLeft);
-            EXPECT_MOVE(birch, MOVE_DRAGON_RAGE, target: opponentLeft);
-        }
-    } THEN {
-        EXPECT_EQ(opponentLeft->hp, 840);
-        BattleAI_SetupFlags();
-        for (u32 i = 2; i <= 4; i++) EXPECT(gAiThinkingStruct->aiFlags[i] & AI_FLAG_OMNISCIENT);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: all four allies Mega evolve against a G-Max boss")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_Y); Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GARCHOMP) { Item(ITEM_GARCHOMPITE); Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GENGAR) { Item(ITEM_GENGARITE); Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_LAPRAS) { Moves(MOVE_CELEBRATE); GigantamaxFactor(TRUE); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
-            MOVE(playerRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
-            MOVE(opponentRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
-            MOVE(birch, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA);
-            MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        EXPECT_EQ(playerLeft->species, SPECIES_CHARIZARD_MEGA_Y);
-        EXPECT_EQ(playerRight->species, SPECIES_GARCHOMP_MEGA);
-        EXPECT_EQ(opponentRight->species, SPECIES_VENUSAUR_MEGA);
-        EXPECT_EQ(birch->species, SPECIES_GENGAR_MEGA);
-        EXPECT_EQ(opponentLeft->species, SPECIES_LAPRAS_GMAX);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: the final legendary battle has four valid allies")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental();
-        for (u32 stage = 0; stage < 3; stage++)
-        {
-            EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-            EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); EXPECT(DynamaxAdventure_Catch(FALSE));
-        }
-        EXPECT(DynamaxAdventure_ChoosePath(0));
-        EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_CHARIZARD) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GARCHOMP) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_SHAYMIN) { Moves(MOVE_CELEBRATE); MaxHP(200); HP(200); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        EXPECT_EQ(gBattlersCount, 5); EXPECT_EQ(opponentLeft->maxHP, 1400);
-        for (u32 i = 0; i < 5; i++) { EXPECT_NE(gBattleMons[i].species, SPECIES_NONE); EXPECT_GT(gBattleMons[i].level, 0); }
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: Life Dew heals all four allies")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LIFE_DEW); MaxHP(1000); HP(100); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_LIFE_DEW); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        EXPECT_EQ(playerLeft->hp, 350); EXPECT_EQ(playerRight->hp, 350);
-        EXPECT_EQ(opponentRight->hp, 350); EXPECT_EQ(birch->hp, 350);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: allied spread attacks spare the other three allies")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SURF, MOVE_ROCK_SLIDE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(1000); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_ROCK_SLIDE); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        EXPECT_LT(opponentLeft->hp, 1000);
-        EXPECT_EQ(playerRight->hp, 1000); EXPECT_EQ(opponentRight->hp, 1000); EXPECT_EQ(birch->hp, 1000);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: support moves can heal the scientist and Birch")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HEAL_PULSE); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); MaxHP(1000); HP(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_HEAL_PULSE, target: opponentRight); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-        TURN {
-            MOVE(playerLeft, MOVE_HEAL_PULSE, target: birch); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        EXPECT_EQ(playerRight->hp, 100); EXPECT_EQ(opponentRight->hp, 600); EXPECT_EQ(birch->hp, 600);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-DOUBLE_BATTLE_TEST("Battle targets: ordinary doubles cursor wraps left across all four slots")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HEAL_PULSE); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-    } WHEN {
-        TURN { MOVE(playerLeft, MOVE_HEAL_PULSE, target: playerRight); }
-    } THEN {
-        gMoveSelectionCursor[0] = 0;
-        gMultiUsePlayerCursor = 0;
-        gMain.newKeys = 0;
-        gMain.newAndRepeatedKeys = DPAD_LEFT;
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 1);
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 3);
-        HandleInputChooseTarget(0);
-        EXPECT_EQ(gMultiUsePlayerCursor, 2);
-        gMain.newAndRepeatedKeys = 0;
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: Helping Hand preserves the selected scientist or Birch")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_HELPING_HAND); }
-        PARTNER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_VENUSAUR) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_GENGAR) { Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_HELPING_HAND, target: opponentRight); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-        TURN {
-            MOVE(playerLeft, MOVE_HELPING_HAND, target: birch); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } SCENE {
-        MESSAGE("Wobbuffet is ready to help Venusaur!");
-        MESSAGE("Wobbuffet is ready to help Gengar!");
-    } THEN {
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-ADVENTURE_RAID_BATTLE_TEST("Adventure raid: live player intro creates the missing Gyarados without touching healthboxes")
-{
-    struct BattlePokemon *birch = &gBattleMons[4];
-    GIVEN {
-        StartRental(); EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
-        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
-        PLAYER(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_COALOSSAL) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_DURALUDON) { Moves(MOVE_CELEBRATE); }
-        PARTNER(SPECIES_CAMERUPT) { Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_DURALUDON) { Moves(MOVE_CELEBRATE); }
-    } WHEN {
-        TURN {
-            MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE);
-            MOVE(opponentRight, MOVE_CELEBRATE); MOVE(birch, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE);
-        }
-    } THEN {
-        u16 healthboxTiles[MAX_BATTLERS_COUNT];
-        for (u32 i = 0; i < 5; i++) healthboxTiles[i] = gSprites[gHealthboxSpriteIds[i]].oam.tileNum;
-        FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[0]]);
-        DestroySprite(&gSprites[gBattlerSpriteIds[0]]);
-        gBattlerSpriteIds[0] = MAX_SPRITES;
-        SetControllerToPlayer(0);
-        BtlController_EmitLoadMonSprite(0, B_COMM_TO_CONTROLLER);
-        MarkBattlerForControllerExec(0);
-        gBattlerControllerFuncs[0](0);
-        EXPECT_LT(gBattlerSpriteIds[0], MAX_SPRITES);
-        EXPECT(gSprites[gBattlerSpriteIds[0]].inUse);
-        EXPECT_EQ((u32)gSprites[gBattlerSpriteIds[0]].oam.paletteNum, 0);
-        EXPECT_EQ(gSprites[gBattlerSpriteIds[0]].data[2], SPECIES_GYARADOS);
-        for (u32 i = 0; i < 5; i++)
-        {
-            EXPECT_NE(gBattlerSpriteIds[0], gHealthboxSpriteIds[i]);
-            EXPECT_EQ((u32)gSprites[gHealthboxSpriteIds[i]].oam.tileNum, healthboxTiles[i]);
-            if (i != 0) EXPECT_NE(gBattlerSpriteIds[0], gBattlerSpriteIds[i]);
-        }
-        for (u32 frame = 0; frame < 400 && IsBattlerMarkedForControllerExec(0); frame++)
-        {
-            AnimateSprites();
-            gBattlerControllerFuncs[0](0);
-        }
-        EXPECT(!IsBattlerMarkedForControllerExec(0));
-        EXPECT_EQ(gSprites[gBattlerSpriteIds[0]].x2, 0);
-        EXPECT(!gSprites[gBattlerSpriteIds[0]].invisible);
-        SetControllerToRecordedPlayer(0);
-        DynamaxAdventure_InitRaidHud();
-        for (u32 i = 0; i < 5; i++) EXPECT(gSprites[gHealthboxSpriteIds[i]].invisible);
-        // Damage shows only the current recipient and expires after a short hold.
-        DynamaxAdventure_ShowDamageHealthbox(4);
-        EXPECT(!gSprites[gHealthboxSpriteIds[4]].invisible);
-        EXPECT(gSprites[gHealthboxSpriteIds[0]].invisible);
-        DynamaxAdventure_ShowDamageHealthbox(0);
-        EXPECT(gSprites[gHealthboxSpriteIds[4]].invisible);
-        EXPECT(!gSprites[gHealthboxSpriteIds[0]].invisible);
-        for (u32 frame = 0; frame < 60; frame++) DynamaxAdventure_UpdateRaidHud();
-        EXPECT(gSprites[gHealthboxSpriteIds[0]].invisible);
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON)); gMain.inBattle = FALSE; EXPECT(DynamaxAdventure_Quit());
-    }
-}
-
-TEST("Adventure: twelve offers include selectable high indexes and distinct researcher rentals")
-{
-    EXPECT_EQ(DA_RENTAL_CHOICES, 12);
-    EXPECT(DynamaxAdventure_GetRentalPoolCount() >= DA_RENTAL_CHOICES);
-    for (u32 choice = 8; choice < DA_RENTAL_CHOICES; choice++)
-    {
-        EXPECT(DynamaxAdventure_Begin(200 + choice));
-        enum Species selected = GetMonData(DynamaxAdventure_GetRental(choice), MON_DATA_SPECIES);
-        EXPECT(DynamaxAdventure_ChooseRental(choice));
-        EXPECT(DynamaxAdventure_ChoosePath(0)); EXPECT(DynamaxAdventure_PrepareBattle());
-        EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES), selected);
-        for (u32 i = 0; i < 3; i++)
-        {
-            enum Species ally = GetMonData(&gParties[B_TRAINER_PARTNER][i], MON_DATA_SPECIES);
-            EXPECT_NE(ally, selected);
-            for (u32 j = 0; j < i; j++) EXPECT_NE(ally, GetMonData(&gParties[B_TRAINER_PARTNER][j], MON_DATA_SPECIES));
-        }
-        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN)); EXPECT(DynamaxAdventure_Quit());
     }
 }

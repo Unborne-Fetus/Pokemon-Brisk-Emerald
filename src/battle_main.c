@@ -576,7 +576,7 @@ static void CB2_InitBattleInternal(void)
     if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
         DrawBattleEntryBackground();
     FreeAllSpritePalettes();
-    gReservedSpritePaletteCount = IsAdventureRaid() ? 5 : 4;
+    gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
     SetVBlankCallback(VBlankCB_Battle);
     SetUpBattleVarsAndBirchZigzagoon();
 
@@ -1369,7 +1369,7 @@ static void CB2_PreInitMultiBattle(void)
 {
     s32 i;
     u8 playerMultiplierId;
-    s32 numPlayers = MAX_LINK_PLAYERS;
+    s32 numPlayers = MAX_BATTLERS_COUNT;
     u8 blockMask = 0xF;
     u32 *savedBattleTypeFlags;
     void (**savedCallback)(void);
@@ -1730,28 +1730,10 @@ static void CB2_HandleStartMultiBattle(void)
 }
 
 
-static void InitBattleSpeedTies(void)
-{
-    if (!IsAdventureRaid())
-    {
-        gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, 23);
-        return;
-    }
-    for (u32 i = 0; i < gBattlersCount; i++)
-        gBattleStruct->raidSpeedTieOrder[i] = i;
-    for (u32 i = gBattlersCount - 1; i > 0; i--)
-    {
-        u32 j = RandomUniform(RNG_SPEED_TIE, 0, i);
-        u8 temp = gBattleStruct->raidSpeedTieOrder[i];
-        gBattleStruct->raidSpeedTieOrder[i] = gBattleStruct->raidSpeedTieOrder[j];
-        gBattleStruct->raidSpeedTieOrder[j] = temp;
-    }
-}
-
 void BattleMainCB2(void)
 {
-    DynamaxAdventure_UpdateRaidHud();
     u32 speedScale = Rogue_GetBattleSpeedScale(FALSE);
+    DynamaxAdventure_UpdateRaidHud();
 
     // If we are processing a palette fade we need to temporarily fall back to 1x speed otherwise there is graphical corruption
     if(PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
@@ -2032,7 +2014,7 @@ void CB2_InitEndLinkBattle(void)
         DrawBattleEntryBackground();
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
         FreeAllSpritePalettes();
-        gReservedSpritePaletteCount = IsAdventureRaid() ? 5 : 4;
+        gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
         SetVBlankCallback(VBlankCB_Battle);
 
         // Show end Vs screen with battle results
@@ -2236,7 +2218,7 @@ static void CB2_InitAskRecordBattle(void)
     ResetSpriteData();
     ResetTasks();
     FreeAllSpritePalettes();
-    gReservedSpritePaletteCount = IsAdventureRaid() ? 5 : 4;
+    gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
     SetVBlankCallback(VBlankCB_Battle);
     SetMainCallback2(CB2_AskRecordBattle);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
@@ -3230,7 +3212,7 @@ static void DoBattleIntro(void)
     case BATTLE_INTRO_STATE_DRAW_SPRITES:
         for (battler = 0; battler < gBattlersCount; battler++)
         {
-            if (!IsAdventureRaid() && IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
+            if (IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT)
             {
                 // There is one shared boss, never a second wild Pokemon.
                 memset(&gBattleMons[battler], 0, sizeof(gBattleMons[battler]));
@@ -3262,13 +3244,6 @@ static void DoBattleIntro(void)
                         gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(trainer, partyIndex);
                 }
                 #endif
-            }
-
-            if (IsAdventureRaid())
-            {
-                BtlController_EmitLoadMonSprite(battler, B_COMM_TO_CONTROLLER);
-                MarkBattlerForControllerExec(battler);
-                continue;
             }
 
             // Draw sprite.
@@ -3355,7 +3330,7 @@ static void DoBattleIntro(void)
                 }
             }
 
-            for (enum BattlerPosition position = B_POSITION_PLAYER_LEFT; position <= B_POSITION_OPPONENT_RIGHT; position++)
+            for (enum BattlerPosition position = B_POSITION_PLAYER_LEFT; position < MAX_POSITION_COUNT; position++)
             {
                 if (position > B_POSITION_OPPONENT_LEFT && !BattleSideHasTwoTrainers(position & BIT_SIDE))
                     continue;
@@ -3381,11 +3356,6 @@ static void DoBattleIntro(void)
     case BATTLE_INTRO_STATE_WAIT_FOR_INTRO_TEXT:
         if (!IsBattlerMarkedForControllerExec(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)))
         {
-            if (IsAdventureRaid())
-            {
-                gBattleStruct->eventState.battleIntro = BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
-                break;
-            }
             if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             {
                 gBattleStruct->eventState.battleIntro++;
@@ -3514,8 +3484,6 @@ static void DoBattleIntro(void)
             gBattleStruct->eventState.beforeFirstTurn = 0;
             gBattleStruct->switchInBattlerCounter = 0;
             Ai_InitPartyStruct(); // Save mons party counts, and first 2/4 mons on the battlefield.
-            if (IsAdventureRaid())
-                DynamaxAdventure_InitRaidHud();
 
             // mark all battlers as sent out
             for (battler = 0; battler < gBattlersCount; battler++)
@@ -3534,6 +3502,8 @@ static void DoBattleIntro(void)
                     statusesOpponentB = GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentB);
             }
             STARTING_STATUS_DEFINITIONS(UNPACK_STARTING_STATUS_TO_BATTLE);
+            if (IsDynamaxAdventureBattle())
+                DynamaxAdventure_InitRaidHud();
             gBattleMainFunc = TryDoEventsBeforeFirstTurn;
         }
         break;
@@ -3577,7 +3547,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
         #endif // TESTING
 
-        InitBattleSpeedTies();
+        gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
         gBattleTurnCounter = 0;
         gBattleStruct->eventState.beforeFirstTurn++;
         break;
@@ -3727,7 +3697,7 @@ void BattleTurnPassed(void)
 
 bool32 EndTurnEvents(void) // Called from Battle Script
 {
-    InitBattleSpeedTies();
+    gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
 
     TurnValuesCleanUp(TRUE);
 
@@ -3914,7 +3884,7 @@ static void HandleTurnActionSelectionState(void)
 {
     s32 i;
 
-    gAiLogicData->reverseBattlerLogicOrder = RandomPercentage(RNG_AI_REVERSE_BATTLER_LOGIC_ORDER, GetConfig(AI_REVERSE_BATTLER_LOGIC_ORDER_CHANCE)) && IsDoubleBattle() && !IsAdventureRaid();
+    gAiLogicData->reverseBattlerLogicOrder = RandomPercentage(RNG_AI_REVERSE_BATTLER_LOGIC_ORDER, GetConfig(AI_REVERSE_BATTLER_LOGIC_ORDER_CHANCE)) && IsDoubleBattle();
 
     gBattleCommunication[ACTIONS_CONFIRMED_COUNT] = 0;
     for (enum BattlerId battlerIndex = 0; battlerIndex < gBattlersCount; battlerIndex++)
@@ -4739,8 +4709,6 @@ s32 GetWhichBattlerFaster(struct BattleCalcValues *calcValues, bool32 ignoreChos
     s32 strikesFirst = GetWhichBattlerFasterOrTies(calcValues, ignoreChosenMoves);
     if (strikesFirst == 0)
     {
-        if (IsAdventureRaid())
-            return gBattleStruct->raidSpeedTieOrder[calcValues->battlerAtk] < gBattleStruct->raidSpeedTieOrder[calcValues->battlerDef] ? 1 : -1;
         s32 order1 = sBattlerOrders[gBattleStruct->speedTieBreaks][calcValues->battlerAtk];
         s32 order2 = sBattlerOrders[gBattleStruct->speedTieBreaks][calcValues->battlerDef];
         if (order1 < order2)

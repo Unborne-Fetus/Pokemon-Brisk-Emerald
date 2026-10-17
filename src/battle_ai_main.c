@@ -261,7 +261,7 @@ static bool32 IsSmartBattle(void)
 static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
 {
     u64 flags = 0;
-    if (IsDynamaxAdventureBattle() && IsOnPlayerSide(battler) && battler != B_BATTLER_0)
+    if (IsDynamaxAdventureBattle() && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)
         return AI_FLAG_BASIC_TRAINER | AI_FLAG_DOUBLE_BATTLE | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES;
 
     if (!IsSmartBattle())
@@ -315,14 +315,6 @@ static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
 
 void BattleAI_SetupFlags(void)
 {
-    if (IsAdventureRaid())
-    {
-        gAiThinkingStruct->aiFlags[0] = 0;
-        gAiThinkingStruct->aiFlags[1] = GetAiFlags(0xFFFF, 1);
-        for (u32 member = 2; member <= 4; member++)
-            gAiThinkingStruct->aiFlags[member] = GetAiFlags(gPartnerTrainerId, member);
-        return;
-    }
     if (IsAiVsAiBattle())
         gAiThinkingStruct->aiFlags[B_BATTLER_0] = GetAiFlags(gPartnerTrainerId, B_BATTLER_0);
     else
@@ -519,11 +511,6 @@ static void SetupRandomRollsForAIMoveSelection(enum BattlerId battler)
 
 void AI_TrySwitchOrUseItem(enum BattlerId battler)
 {
-    if (IsAdventureRaid())
-    {
-        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, GetOppositeBattler(battler) << 8);
-        return;
-    }
     struct Pokemon *party;
     enum BattlerId battlerIn1, battlerIn2;
     s32 lastId = GetAILastPartyIndex(battler); // + 1
@@ -1137,10 +1124,6 @@ static struct ChosenAction ChooseMoveOrAction_Doubles(enum BattlerId battlerAtk)
 
 static inline bool32 ShouldConsiderMoveForBattler(enum BattlerId battlerAi, enum BattlerId battlerDef, enum Move move)
 {
-    if (IsAdventureRaid() && IsBattlerAlly(battlerAi, battlerDef)
-     && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS
-     && GetMoveEffect(move) != EFFECT_HIT_ENEMY_HEAL_ALLY)
-        return FALSE;
     enum MoveTarget target = AI_GetBattlerMoveTargetType(battlerAi, move);
     if (battlerAi == GetPartnerBattler(battlerDef))
     {

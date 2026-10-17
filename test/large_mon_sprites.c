@@ -10,8 +10,8 @@ static void InitLargeSpriteTest(void)
 {
     gMain.inBattle = TRUE;
     gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
-    gBattlersCount = 4;
-    for (u32 i = 0; i < gBattlersCount; i++)
+    gBattlersCount = MAX_BATTLERS_COUNT;
+    for (u32 i = 0; i < MAX_BATTLERS_COUNT; i++)
         gBattlerPositions[i] = i;
     ResetSpriteData();
     AllocateMonSpritesGfx();
@@ -35,7 +35,7 @@ TEST("Native Mega sprites support all native forms and both battle views")
         EXPECT(gSpeciesInfo[species].isMegaEvolution);
         EXPECT(gSpeciesInfo[species].frontPic80 != NULL);
         EXPECT(gSpeciesInfo[species].backPic80 != NULL);
-        for (u32 position = 0; position < gBattlersCount; position++)
+        for (u32 position = 0; position < MAX_BATTLERS_COUNT; position++)
         {
             PrepareBattleMonSpriteImages(species, position);
             EXPECT_EQ(gMonSpritesGfxPtr->frameImages[position][0].size, LARGE_MON_PIC_SIZE);
@@ -45,13 +45,12 @@ TEST("Native Mega sprites support all native forms and both battle views")
         }
     }
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites reserve tiles for all four battlers and return to normal graphics")
 {
     InitLargeSpriteTest();
-    for (u32 battler = 0; battler < gBattlersCount; battler++)
+    for (u32 battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
     {
         CreateTestMonSprite(battler, SPECIES_BUTTERFREE);
         struct Sprite *sprite = &gSprites[gBattlerSpriteIds[battler]];
@@ -70,13 +69,12 @@ TEST("Native Mega sprites reserve tiles for all four battlers and return to norm
         }
         UpdateBattleMonSubsprites(battler, SPECIES_BUTTERFREE_MEGA);
     }
-    for (u32 battler = 0; battler < gBattlersCount; battler++)
+    for (u32 battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
     {
         FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[battler]]);
         DestroySprite(&gSprites[gBattlerSpriteIds[battler]]);
     }
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites keep affine pieces centered without matrix-number flips")
@@ -105,7 +103,6 @@ TEST("Native Mega sprites keep affine pieces centered without matrix-number flip
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites erase every packed row on faint without modifying ROM")
@@ -123,7 +120,6 @@ TEST("Native Mega sprites erase every packed row on faint without modifying ROM"
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites rotate, reflect and shrink around the shared origin")
@@ -154,7 +150,6 @@ TEST("Native Mega sprites rotate, reflect and shrink around the shared origin")
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }
 
 TEST("Native Mega sprites use compatibility graphics in the summary template")
@@ -169,30 +164,4 @@ TEST("Native Mega sprites use compatibility graphics in the summary template")
     FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[B_BATTLER_1]]);
     DestroySprite(&gSprites[gBattlerSpriteIds[B_BATTLER_1]]);
     FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
-}
-
-TEST("Native Mega sprites allocate five raid slots with four back views")
-{
-    gMain.inBattle = TRUE;
-    gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_ADVENTURE_RAID;
-    gBattlersCount = 5;
-    for (u32 i = 0; i < gBattlersCount; i++)
-        gBattlerPositions[i] = i;
-    ResetSpriteData();
-    AllocateMonSpritesGfx();
-    for (u32 battler = 0; battler < gBattlersCount; battler++)
-    {
-        CreateTestMonSprite(battler, SPECIES_BUTTERFREE_MEGA);
-        const void *image = gSprites[gBattlerSpriteIds[battler]].images[0].data;
-        EXPECT_EQ(image, battler == 1 ? gSpeciesInfo[SPECIES_BUTTERFREE_MEGA].frontPic80 : gSpeciesInfo[SPECIES_BUTTERFREE_MEGA].backPic80);
-        EXPECT_EQ((u32)gSprites[gBattlerSpriteIds[battler]].subspriteMode, SUBSPRITES_MON_80x80);
-    }
-    for (u32 battler = 0; battler < gBattlersCount; battler++)
-    {
-        FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[battler]]);
-        DestroySprite(&gSprites[gBattlerSpriteIds[battler]]);
-    }
-    FreeMonSpritesGfx();
-    gMain.inBattle = FALSE;
 }

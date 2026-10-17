@@ -12,7 +12,7 @@ DynamaxAdventureCave_EventScript_Scientist::
 	goto_if_eq VAR_RESULT, NO, DynamaxAdventureCave_Leave
 	goto DynamaxAdventureCave_Dispatch
 DynamaxAdventureCave_Welcome::
-    msgbox DynamaxAdventureCave_Text_RivalResearch, MSGBOX_DEFAULT
+    msgbox DynamaxAdventureCave_Text_ScientistResearch, MSGBOX_DEFAULT
 	msgbox DynamaxAdventureCave_Text_Welcome, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DynamaxAdventureCave_Leave
 	setvar VAR_0x8004, DA_OP_BEGIN
@@ -245,8 +245,8 @@ DynamaxAdventureCave_Release::
 DynamaxAdventureCave_Text_Welcome:
 	.string "Welcome to our DYNAMAX research cave!\n"
 	.string "Care to join an adventure?\p"
-	.string "Your rival and BIRCH will join us.\n"
-	.string "We will pick our own rentals.\p"
+	.string "{RIVAL} will battle beside you.\n"
+	.string "BIRCH will stay here to observe.\p"
 	.string "Rentals and route POKéMON are Lv. 70!\n"
 	.string "The final legendary is Lv. 100.\p"
 	.string "Your rentals can use MEGA or G-MAX.\n"
@@ -265,7 +265,7 @@ DynamaxAdventureCave_Text_PlayerRental:
 	.string "Your own party will be kept safe.$"
 
 DynamaxAdventureCave_Text_RivalRental:
-	.string "Now choose your rival's rental.\n"
+	.string "{RIVAL} chooses a separate rental.\n"
 	.string "It must be a different POKéMON.$"
 
 DynamaxAdventureCave_Text_Path:
@@ -331,7 +331,7 @@ DynamaxAdventureCave_Text_ReplacePlayer:
 	.string "Replace my rental$"
 
 DynamaxAdventureCave_Text_ReplaceRival:
-	.string "Replace rival's rental$"
+	.string "Replace {RIVAL}'s rental$"
 
 DynamaxAdventureCave_Text_BossHint:
     .string "My readings indicate a strong\n"
@@ -344,9 +344,15 @@ DynamaxAdventureCave_RivalResearch::
     msgbox DynamaxAdventureCave_Text_RivalResearch, MSGBOX_NPC
     end
 DynamaxAdventureCave_Text_RivalResearch:
-    .string "RIVAL: These adventures are part of\n"
+    .string "{RIVAL}: These adventures are part of\n"
     .string "my research as a future professor!\p"
     .string "I want to study how MEGA EVOLUTION\n"
     .string "and GIGANTAMAX affect POKéMON.\p"
     .string "Your help means a lot. Let's make\n"
     .string "some discoveries together!$"
+
+DynamaxAdventureCave_Text_ScientistResearch:
+    .string "I monitor the energy in these caves.\n"
+    .string "My equipment detects powerful POKéMON!\p"
+    .string "You and {RIVAL} will explore together.\n"
+    .string "I'll analyze your findings between fights.$"

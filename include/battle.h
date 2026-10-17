@@ -624,7 +624,7 @@ struct BattleStruct
     u8 stateIdAfterSelScript[MAX_BATTLERS_COUNT];
     u8 prevSelectedPartySlot;
     u8 stringMoveType;
-    u16 palaceFlags; // First 4 bits are "is <= 50% HP and not asleep" for each battler, last 4 bits are selected moves to pass to AI
+    u8 palaceFlags; // First 4 bits are "is <= 50% HP and not asleep" for each battler, last 4 bits are selected moves to pass to AI
     u8 recordedActionSet; // related to choosing Pokémon?
     u8 wallyBattleState;
     u8 wallyMovesState;
@@ -703,7 +703,6 @@ struct BattleStruct
     s32 aiDelayFrames; // Number of frames it took to choose an action.
     s32 aiDelayCycles; // Number of cycles it took to choose an action.
     u8 shellSideArmCategory[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT];
-    u8 raidSpeedTieOrder[MAX_BATTLERS_COUNT];
     u8 speedTieBreaks; // MAX_BATTLERS_COUNT! values.
     u32 stellarBoostFlags[MAX_BATTLE_TRAINERS]; // bitfield
     struct SleepClause monCausingSleepClause[NUM_BATTLE_SIDES]; // Stores which Pokémon on a given side is causing Sleep Clause to be active as the mon's index in the party
@@ -1165,14 +1164,7 @@ static inline enum BattlerPosition GetBattlerPosition(enum BattlerId battler)
 
 static inline enum BattleSide GetBattlerSide(enum BattlerId battler)
 {
-    if ((gBattleTypeFlags & BATTLE_TYPE_ADVENTURE_RAID) && battler == B_BATTLER_3)
-        return B_SIDE_PLAYER;
     return GetBattlerPosition(battler) & BIT_SIDE;
-}
-
-static inline bool32 IsAdventureRaid(void)
-{
-    return (gBattleTypeFlags & BATTLE_TYPE_ADVENTURE_RAID) != 0;
 }
 
 static inline bool32 IsOnPlayerSide(enum BattlerId battler)

@@ -321,6 +321,8 @@ static void SpriteCb_GimmickIndicator(struct Sprite *sprite)
     sprite->x = gSprites[gHealthboxSpriteIds[battler]].x + sprite->tPosX + sprite->tLevelXDelta;
     sprite->x2 = gSprites[gHealthboxSpriteIds[battler]].x2;
     sprite->y2 = gSprites[gHealthboxSpriteIds[battler]].y2;
+    if (IsDynamaxAdventureBattle())
+        sprite->invisible = gSprites[gHealthboxSpriteIds[battler]].invisible || GetIndicatorPalTag(battler) == TAG_NONE;
 }
 
 static inline u32 GetIndicatorSpriteId(u32 healthboxId)
@@ -414,8 +416,6 @@ static const s8 sIndicatorPositions[][2] =
     [B_POSITION_OPPONENT_LEFT] = {40, -9},
     [B_POSITION_PLAYER_RIGHT] = {48, -9},
     [B_POSITION_OPPONENT_RIGHT] = {40, -9},
-    [B_POSITION_RAID_BIRCH] = {48, -9},
-    [B_POSITION_RAID_EMPTY] = {40, -9},
 };
 
 void CreateIndicatorSprite(enum BattlerId battler)

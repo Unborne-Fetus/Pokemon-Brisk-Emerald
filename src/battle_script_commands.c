@@ -3415,7 +3415,7 @@ static void Cmd_openpartyscreen(void)
         {
             bool32 hasReplacement;
 
-            hitmarkerFaintBits = gHitMarker & ((1u << MAX_BATTLERS_COUNT) - 1);
+            hitmarkerFaintBits = gHitMarker >> 28;
             for (enum BattlerId i = 0; i < gBattlersCount; i++)
             {
                 if (((1u << i) & hitmarkerFaintBits))
@@ -3454,7 +3454,7 @@ static void Cmd_openpartyscreen(void)
                 }
             }
 
-            for (enum BattlerId i = 0; i < 2; i++)
+            for (enum BattlerId i = 0; i < MAX_BATTLERS_COUNT / 2; i++)
             {
                 if (!(gSpecialStatuses[i].faintedHasReplacement))
                 {
@@ -3480,8 +3480,8 @@ static void Cmd_openpartyscreen(void)
         {
             if (IsDoubleBattle())
             {
-                hitmarkerFaintBits = gHitMarker & ((1u << MAX_BATTLERS_COUNT) - 1);
-                for (enum BattlerId i = 0; i < 2; i++)
+                hitmarkerFaintBits = gHitMarker >> 28;
+                for (enum BattlerId i = 0; i < MAX_BATTLERS_COUNT / 2; i++)
                 {
                     if ((1 << GetPartnerBattler(i)) & hitmarkerFaintBits && (1 << i) & hitmarkerFaintBits)
                     {
@@ -3514,7 +3514,7 @@ static void Cmd_openpartyscreen(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
 
-        hitmarkerFaintBits = gHitMarker & ((1u << MAX_BATTLERS_COUNT) - 1);
+        hitmarkerFaintBits = gHitMarker >> 28;
 
         gBattlerFainted = 0;
         while (!((1u << gBattlerFainted) & hitmarkerFaintBits)
@@ -7020,8 +7020,7 @@ static void Cmd_trysethelpinghand(void)
         return;
     }
 
-    if (!IsAdventureRaid())
-        gBattlerTarget = GetBattlerAtPosition(GetPartnerPosition(GetBattlerPosition(gBattlerAttacker)));
+    gBattlerTarget = GetBattlerAtPosition(GetPartnerPosition(GetBattlerPosition(gBattlerAttacker)));
 
     if (IsBattlerAlive(gBattlerTarget) && !HasBattlerActedThisTurn(gBattlerTarget))
     {
@@ -10032,7 +10031,7 @@ void BS_CheckPokeFlute(void)
         }
     }
 
-    for (enum BattlerPosition position = B_POSITION_PLAYER_LEFT; position <= B_POSITION_OPPONENT_RIGHT; position++)
+    for (enum BattlerPosition position = B_POSITION_PLAYER_LEFT; position < MAX_POSITION_COUNT; position++)
     {
         enum BattleTrainer trainer = GetBattlerTrainer(GetBattlerAtPosition(position));
         UpdatePokeFlutePartyStatus(gParties[trainer], position);
@@ -11418,11 +11417,6 @@ void BS_HandleTrainerSlideMsg(void)
 void BS_TryTrainerSlideMsgFirstOff(void)
 {
     NATIVE_ARGS(u8 battler);
-    if (IsAdventureRaid())
-    {
-        gBattlescriptCurrInstr = cmd->nextInstr;
-        return;
-    }
     enum BattlerId battler = GetBattlerForBattleScript(cmd->battler);
     enum BattlerId tempBattler = gBattleScripting.battler;
 
@@ -11547,11 +11541,6 @@ void BS_TryTrainerSlideMsgFirstOff(void)
 void BS_TryTrainerSlideMsgLastOn(void)
 {
     NATIVE_ARGS(u8 battler);
-    if (IsAdventureRaid())
-    {
-        gBattlescriptCurrInstr = cmd->nextInstr;
-        return;
-    }
     enum BattlerId battler = GetBattlerForBattleScript(cmd->battler);
 
     if (battler >= MAX_BATTLERS_COUNT) // Edge case for double KO cases where gBattlerFainted == MAX_BATTLERS_COUNT so GetBattlerForBattleScript returns 6

@@ -93,15 +93,11 @@ enum BattlerId GetBattlerAtPosition(enum BattlerPosition position)
 
 enum BattlerPosition GetPartnerPosition(enum BattlerPosition position)
 {
-    if (IsAdventureRaid())
-        return position == B_POSITION_OPPONENT_LEFT ? B_POSITION_RAID_EMPTY : position >= B_POSITION_OPPONENT_RIGHT ? B_POSITION_PLAYER_LEFT : position ^ BIT_FLANK;
     return (position ^ BIT_FLANK);
 }
 
 enum BattlerPosition GetOppositePosition(enum BattlerPosition position)
 {
-    if (IsAdventureRaid() && position >= B_POSITION_PLAYER_RIGHT)
-        return B_POSITION_OPPONENT_LEFT;
     return (position ^ BIT_SIDE);
 }
 
@@ -1916,8 +1912,6 @@ bool32 HandleFaintedMonActions(void)
 
 bool32 HasNoMonsToSwitch(enum BattlerId battler, u8 partyIdBattlerOn1, u8 partyIdBattlerOn2)
 {
-    if (IsAdventureRaid())
-        return TRUE;
     u32 i, playerId, flankId;
     s32 lastId = GetAILastPartyIndex(battler); // + 1
     struct Pokemon *party = GetBattlerParty(battler);
@@ -4524,7 +4518,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 // For spread moves, Magician prioritizes opponents over allies.
                 u32 magicianTargets = (numFoeMagicianTargets != 0) ? foeMagicianTargets : allyMagicianTargets;
                 u32 numMagicianTargets = (numFoeMagicianTargets != 0) ? numFoeMagicianTargets : numAllyMagicianTargets;
-                enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3, 4, 5};
+                enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3};
 
                 if (numMagicianTargets > 1)
                     SortBattlersBySpeed(battlers, (gFieldStatuses & STATUS_FIELD_TRICK_ROOM) != 0);
@@ -5556,15 +5550,6 @@ void HandleAction_RunBattleScript(void)
 
 u32 SetRandomTarget(enum BattlerId battlerAtk)
 {
-    if (IsAdventureRaid())
-    {
-        enum BattlerId candidates[MAX_BATTLERS_COUNT];
-        u32 count = 0;
-        for (u32 i = 0; i < gBattlersCount; i++)
-            if (IsBattlerAlive(i) && !IsBattlerAlly(battlerAtk, i))
-                candidates[count++] = i;
-        return count ? candidates[RandomUniform(RNG_RANDOM_TARGET, 0, count - 1)] : B_BATTLER_0;
-    }
     enum BattlerId target;
     static const u8 targets[NUM_BATTLE_SIDES][MAX_BATTLERS_COUNT / 2] =
     {
@@ -9478,7 +9463,7 @@ bool32 CanTargetBattler(enum BattlerId battlerAtk, enum BattlerId battlerDef, en
 u32 GetNextTarget(u32 moveTarget, bool32 excludeCurrent)
 {
     enum BattlerId battler;
-    for (battler = B_BATTLER_0; battler < gBattlersCount; battler++)
+    for (battler = B_BATTLER_0; battler < MAX_BATTLERS_COUNT; battler++)
     {
         if (excludeCurrent && battler == gBattlerTarget)
             continue;
@@ -9488,7 +9473,7 @@ u32 GetNextTarget(u32 moveTarget, bool32 excludeCurrent)
             continue;
         break;
     }
-    return battler < gBattlersCount ? battler : MAX_BATTLERS_COUNT;
+    return battler;
 }
 
 void CopyMonLevelAndBaseStatsToBattleMon(enum BattlerId battler, struct Pokemon *mon, bool32 updateSpeedStat)
@@ -10058,7 +10043,7 @@ bool32 TrySwitchInEjectPack(enum EjectPackTiming timing)
     if (numEjectPackBattlers == 0)
         return FALSE;
 
-    enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3, 4, 5};
+    enum BattlerId battlers[MAX_BATTLERS_COUNT] = {0, 1, 2, 3};
     if (numEjectPackBattlers > 1)
         SortBattlersBySpeed(battlers, FALSE);
 
@@ -11034,8 +11019,6 @@ void SetOrClearRageVolatile(void)
 
 enum BattlerId GetTargetBySlot(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
-    if (battlerDef >= gBattlersCount || IsAdventureRaid())
-        return battlerDef;
     if (IsDoubleBattle())
         return GetTargetFromSlotId(battlerAtk, battlerDef);
     return battlerDef;

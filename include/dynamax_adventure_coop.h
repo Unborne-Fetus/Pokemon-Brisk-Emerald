@@ -4,7 +4,7 @@
 #include "pokemon.h"
 
 // Dormant four-human network command collector. Local adventures use a separate
-// five-battler engine with the rival, scientist, and Birch as NPC allies.
+// standard doubles engine with the rival as the only NPC battle partner.
 #define DA_COOP_PLAYERS 4
 #define DA_COOP_TARGET_BOSS DA_COOP_PLAYERS
 #define DA_COOP_AVAILABLE FALSE

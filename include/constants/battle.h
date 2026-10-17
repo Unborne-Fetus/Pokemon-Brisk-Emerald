@@ -62,8 +62,6 @@ enum BattlerPosition
     B_POSITION_OPPONENT_LEFT,
     B_POSITION_PLAYER_RIGHT,
     B_POSITION_OPPONENT_RIGHT,
-    B_POSITION_RAID_BIRCH,
-    B_POSITION_RAID_EMPTY,
     MAX_POSITION_COUNT,
     B_POSITION_ABSENT = 0xFF,
 };
@@ -74,8 +72,6 @@ enum __attribute__((packed)) BattlerId
     B_BATTLER_1,
     B_BATTLER_2,
     B_BATTLER_3,
-    B_BATTLER_4,
-    B_BATTLER_5,
     MAX_BATTLERS_COUNT,
 };
 
@@ -116,7 +112,6 @@ enum BattleSide
 #define BATTLE_TYPE_EREADER_TRAINER    (1 << 11)
 #define BATTLE_TYPE_RAID               (1 << 12)
 #define BATTLE_TYPE_LEGENDARY          (1 << 13)
-#define BATTLE_TYPE_ADVENTURE_RAID BATTLE_TYPE_14
 #define BATTLE_TYPE_14                 (1 << 14)
 #define BATTLE_TYPE_TWO_OPPONENTS      (1 << 15)
 #define BATTLE_TYPE_DOME               (1 << 16)
@@ -140,7 +135,7 @@ enum BattleSide
 #define BATTLE_TYPE_FRONTIER_NO_PYRAMID     (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE)
 #define BATTLE_TYPE_RECORDED_INVALID        ((BATTLE_TYPE_LINK | BATTLE_TYPE_SAFARI | BATTLE_TYPE_FIRST_BATTLE                  \
                                              | BATTLE_TYPE_CATCH_TUTORIAL | BATTLE_TYPE_ROAMER | BATTLE_TYPE_EREADER_TRAINER    \
-                                             | BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_ADVENTURE_RAID                                                            \
+                                             | BATTLE_TYPE_LEGENDARY                                                            \
                                              | BATTLE_TYPE_RECORDED | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
 
 #define WILD_DOUBLE_BATTLE                  ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER))))
@@ -390,7 +385,7 @@ enum QueuedSwitch
 #define HITMARKER_UNUSED_25             (1 << 25)
 #define HITMARKER_UNUSED_26             (1 << 26)
 #define HITMARKER_UNUSED_27             (1 << 27)
-#define HITMARKER_FAINTED(battler)      (1u << (battler)) // Low six bits are reserved for fainted battlers.
+#define HITMARKER_FAINTED(battler)      (1u << (battler + 28)) // Also uses bits 29, 30 and 31
 
 // Per-side statuses that affect an entire party.
 // These select from gSideStatuses[n], which is a u32.

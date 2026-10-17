@@ -31,9 +31,7 @@ struct PlayerInfo
 };
 
 // Save data using TryWriteSpecialSaveSector is allowed to exceed SECTOR_DATA_SIZE (up to the counter field)
-#if !TESTING
 STATIC_ASSERT(sizeof(struct RecordedBattleSave) <= SECTOR_COUNTER_OFFSET, RecordedBattleSaveFreeSpace);
-#endif
 
 EWRAM_DATA rng_value_t gRecordedBattleRngSeed = RNG_VALUE_EMPTY;
 EWRAM_DATA rng_value_t gBattlePalaceMoveSelectionRngValue = RNG_VALUE_EMPTY;
@@ -53,7 +51,7 @@ EWRAM_DATA static u8 sTextSpeed = 0;
 EWRAM_DATA static u32 sBattleFlags = 0;
 EWRAM_DATA static u64 sAI_Scripts[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA static struct Pokemon *sSavedParties = NULL;
-EWRAM_DATA static u16 sPlayerMonMoves[MAX_BATTLERS_COUNT][MAX_MON_MOVES] = {0};
+EWRAM_DATA static u16 sPlayerMonMoves[MAX_BATTLERS_COUNT / 2][MAX_MON_MOVES] = {0};
 EWRAM_DATA static struct PlayerInfo sPlayers[MAX_LINK_PLAYERS] = {0};
 EWRAM_DATA static bool8 sIsPlaybackFinished = 0;
 EWRAM_DATA static u8 sRecordMixFriendName[PLAYER_NAME_LENGTH + 1] = {0};
@@ -419,7 +417,7 @@ bool32 MoveRecordedBattleToSaveData(void)
         battleSave->apprenticeLanguage = gSaveBlock2Ptr->apprentices[gPartnerTrainerId - TRAINER_RECORD_MIXING_APPRENTICE].language;
     }
 
-    for (i = 0; i < ARRAY_COUNT(battleSave->battleRecord); i++)
+    for (i = 0; i < MAX_BATTLERS_COUNT; i++)
         for (j = 0; j < BATTLER_RECORD_SIZE; j++)
             battleSave->battleRecord[i][j] = sBattleRecords[i][j];
 
@@ -519,9 +517,6 @@ void SetVariablesForRecordedBattle(struct RecordedBattleSave *src)
             ConvertInternationalString(gLinkPlayers[i].name, gLinkPlayers[i].language);
     }
 
-    for (i = MAX_LINK_PLAYERS; i < ARRAY_COUNT(src->AI_scripts); i++)
-        sAI_Scripts[i] = src->AI_scripts[i];
-
     gRecordedBattleRngSeed = src->rngSeed;
     gBattleTypeFlags = src->battleFlags | BATTLE_TYPE_RECORDED;
     TRAINER_BATTLE_PARAM.opponentA = src->opponentA;
@@ -547,7 +542,7 @@ void SetVariablesForRecordedBattle(struct RecordedBattleSave *src)
 
     gSaveBlock2Ptr->frontier.lvlMode = src->lvlMode;
 
-    for (i = 0; i < ARRAY_COUNT(src->battleRecord); i++)
+    for (i = 0; i < MAX_BATTLERS_COUNT; i++)
         for (j = 0; j < BATTLER_RECORD_SIZE; j++)
             sBattleRecords[i][j] = src->battleRecord[i][j];
 }
@@ -659,7 +654,7 @@ void RecordedBattle_CopyBattlerMoves(enum BattlerId battler)
         return;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
-        sPlayerMonMoves[IsAdventureRaid() ? battler : battler / 2][i] = gBattleMons[battler].moves[i];
+        sPlayerMonMoves[battler / 2][i] = gBattleMons[battler].moves[i];
 }
 
 // This is a special battle action only used by this function
@@ -683,7 +678,7 @@ void RecordedBattle_CheckMovesetChanges(u8 mode)
                 // Check if any of the battler's moves have changed.
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    if (gBattleMons[battler].moves[j] != sPlayerMonMoves[IsAdventureRaid() ? battler : battler / 2][j])
+                    if (gBattleMons[battler].moves[j] != sPlayerMonMoves[battler / 2][j])
                         break;
                 }
                 if (j != MAX_MON_MOVES)
@@ -694,7 +689,7 @@ void RecordedBattle_CheckMovesetChanges(u8 mode)
                     {
                         for (k = 0; k < MAX_MON_MOVES; k++)
                         {
-                            if (gBattleMons[battler].moves[j] == sPlayerMonMoves[IsAdventureRaid() ? battler : battler / 2][k])
+                            if (gBattleMons[battler].moves[j] == sPlayerMonMoves[battler / 2][k])
                             {
                                 RecordedBattle_SetBattlerAction(battler, k);
                                 break;

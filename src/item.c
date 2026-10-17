@@ -511,6 +511,12 @@ void CompactPCItems(void)
 
 void SwapRegisteredBike(void)
 {
+    if (CheckBagHasItem(ITEM_BICYCLE, 1)
+     && (gSaveBlock1Ptr->registeredItem == ITEM_MACH_BIKE || gSaveBlock1Ptr->registeredItem == ITEM_ACRO_BIKE))
+    {
+        gSaveBlock1Ptr->registeredItem = ITEM_BICYCLE;
+        return;
+    }
     switch (gSaveBlock1Ptr->registeredItem)
     {
     case ITEM_MACH_BIKE:

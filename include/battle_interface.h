@@ -1,11 +1,6 @@
 #ifndef GUARD_BATTLE_INTERFACE_H
 #define GUARD_BATTLE_INTERFACE_H
 
-#define TAG_HEALTHBOX_RAID3_TILE 0xD780
-#define TAG_HEALTHBOX_RAID4_TILE 0xD781
-#define TAG_HEALTHBAR_RAID3_TILE 0xD782
-#define TAG_HEALTHBAR_RAID4_TILE 0xD783
-
 #include "battle_controllers.h"
 
 // used for sBattlerCoords and sBattlerHealthboxCoords
