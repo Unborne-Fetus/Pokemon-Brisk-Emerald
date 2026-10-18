@@ -357,6 +357,7 @@
 
 // Orange Islands encounter toggle and additional Dex flags (no save-layout changes).
 #define VAR_BRISK_ISLAND_SHINIES_DISABLED VAR_UNUSED_0x40F9
+#define VAR_BRISK_TYPES_DISABLED VAR_UNUSED_0x40FC
 #define VAR_BRISK_SACRED_DEX_SEEN VAR_UNUSED_0x40FA
 #define VAR_BRISK_SACRED_DEX_CAUGHT VAR_UNUSED_0x40FB
 

@@ -1,6 +1,9 @@
 #include "global.h"
 #include "dynamax_adventure.h"
 #include "battle.h"
+#include "battle_anim.h"
+#include "item_use.h"
+#include "type_icons.h"
 #include "battle_interface.h"
 #include "battle_main.h"
 #include "battle_script_commands.h"
@@ -298,6 +301,18 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: player Mega and rival G-Max activate independ
                 foundBossBar = TRUE;
             }
         EXPECT(foundBossBar);
+        // Damage-controller calls cannot resurrect any of the three native box sprites.
+        SetHealthboxSpriteVisible(gHealthboxSpriteIds[B_BATTLER_1]);
+        UpdateOamPriorityInAllHealthboxes(1, TRUE);
+        struct Sprite *box = &gSprites[gHealthboxSpriteIds[B_BATTLER_1]];
+        EXPECT(box->invisible);
+        EXPECT(gSprites[box->data[5]].invisible);
+        EXPECT(gSprites[box->oam.affineParam].invisible);
+        EXPECT(!CanThrowBall());
+        LoadTypeIcons(B_BATTLER_0);
+        EXPECT_EQ(GetSpriteTileStartByTag(TYPE_ICON_TAG), 0xFFFF);
+        EXPECT_EQ(GetBattlerSpriteCoord(B_BATTLER_1, BATTLER_COORD_X), 176);
+        EXPECT_EQ(GetBattlerSpriteCoord(B_BATTLER_1, BATTLER_COORD_Y), 68);
 
         BattleAI_SetupFlags();
         EXPECT(gAiThinkingStruct->aiFlags[B_BATTLER_2] & AI_FLAG_OMNISCIENT);
@@ -1026,5 +1041,45 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: only Extreme doubles boss move damage")
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());
         VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    }
+}
+
+TWO_VS_ONE_BATTLE_TEST("Adventure: G-Max boss remains transformed beyond three turns without HP-loss text")
+{
+    GIVEN {
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_CHARIZARD) { Level(100); MaxHP(999); HP(999); Item(ITEM_CHARIZARDITE_Y); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_SHUCKLE) { Level(100); MaxHP(999); HP(999); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_VENUSAUR) { Item(ITEM_LIFE_ORB); MaxHP(200); HP(200); Moves(MOVE_TACKLE); GigantamaxFactor(TRUE); }
+    } WHEN {
+        for (u32 i = 0; i < 4; i++)
+            TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); }
+    } SCENE {
+        NONE_OF { MESSAGE("The wild Venusaur lost some of its HP!"); }
+    } THEN {
+        EXPECT_EQ(opponentLeft->species, SPECIES_VENUSAUR_GMAX);
+        EXPECT_EQ(GetActiveGimmick(B_BATTLER_1), GIMMICK_DYNAMAX);
+        EXPECT_LT(opponentLeft->hp, opponentLeft->maxHP);
+        // The headless battle runner does not initialize the move-menu trigger.
+        gBattleStruct->gimmick.triggerSpriteId = 0xFF;
+        gBattleStruct->gimmick.usableGimmick[B_BATTLER_0] = GIMMICK_MEGA;
+        CreateGimmickTriggerSprite(B_BATTLER_0);
+        u32 trigger = gBattleStruct->gimmick.triggerSpriteId;
+        EXPECT_LT(trigger, MAX_SPRITES);
+        gSprites[trigger].callback(&gSprites[trigger]);
+        EXPECT_EQ(gSprites[trigger].x, 12);
+        EXPECT_EQ(gSprites[trigger].y, 72);
+        HideGimmickTriggerSprite();
+        gSprites[trigger].callback(&gSprites[trigger]);
+        EXPECT_EQ(gBattleStruct->gimmick.triggerSpriteId, 0xFF);
+        EXPECT_GT(opponentLeft->hp, 0);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
     }
 }

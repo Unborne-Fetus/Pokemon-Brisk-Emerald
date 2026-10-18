@@ -3,7 +3,8 @@
 Solo contests keep their registration, conditions, categories, ranks, ribbons,
 move selection, move animations and original contest effects. Immediately before
 an eligible player move, a short timing challenge appears in the existing lower
-left dialogue panel.
+left dialogue panel. The move-selection prompt also reminds you to press A
+on beat four; the timing challenge starts later, during your Pokémon's appeal.
 
 Listen to **three count-in clicks**, then tap **A on beat four** as the marker
 reaches the right-hand target. The cue has a fixed 30-frame beat interval (roughly

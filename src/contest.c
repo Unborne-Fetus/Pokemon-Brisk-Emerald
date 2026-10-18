@@ -367,6 +367,7 @@ COMMON_DATA rng_value_t gContestRngValue = {0};
 //Text
 const u8 gText_LinkStandby4[] = _("Link standby!");
 
+static const u8 sText_RhythmMovePrompt[] = _("Appeal no. {STR_VAR_1}!\nChoose move. A on beat 4!");
 const u8 gText_AppealNumWhichMoveWillBePlayed[] = _("Appeal no. {STR_VAR_1}!\nWhich move will be played?");
 const u8 gText_AppealNumButItCantParticipate[] = _("Appeal no. {STR_VAR_1}!\nBut it can't participate!");
 const u8 gText_MonAppealedWithMove[] = _("{STR_VAR_1} appealed with\n{STR_VAR_2}!");
@@ -1589,7 +1590,7 @@ static void Task_DisplayAppealNumberText(u8 taskId)
         DmaCopy32Defvars(3, gPlttBufferUnfaded, eContestTempSave.cachedPlttBufferUnfaded, PLTT_SIZE);
         ConvertIntToDecimalStringN(gStringVar1, eContest.appealNumber + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
         if (!Contest_IsMonsTurnDisabled(gContestPlayerMonIndex))
-            StringCopy(gDisplayedStringBattle, gText_AppealNumWhichMoveWillBePlayed);
+            StringCopy(gDisplayedStringBattle, (gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK) ? gText_AppealNumWhichMoveWillBePlayed : sText_RhythmMovePrompt);
         else
             StringCopy(gDisplayedStringBattle, gText_AppealNumButItCantParticipate);
         ContestClearGeneralTextWindow();
@@ -1691,7 +1692,7 @@ static void Task_HandleMoveSelectInput(u8 taskId)
             SetBottomSliderHeartsInvisibility(FALSE);
             ConvertIntToDecimalStringN(gStringVar1, eContest.appealNumber + 1, STR_CONV_MODE_LEFT_ALIGN, 1);
             if (!Contest_IsMonsTurnDisabled(gContestPlayerMonIndex))
-                StringCopy(gDisplayedStringBattle, gText_AppealNumWhichMoveWillBePlayed);
+                StringCopy(gDisplayedStringBattle, (gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK) ? gText_AppealNumWhichMoveWillBePlayed : sText_RhythmMovePrompt);
             else
                 StringCopy(gDisplayedStringBattle, gText_AppealNumButItCantParticipate);
             ContestClearGeneralTextWindow();

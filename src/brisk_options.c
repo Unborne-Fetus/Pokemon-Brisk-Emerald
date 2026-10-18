@@ -9,6 +9,11 @@
 
 static bool32 sWildShinyContext = FALSE;
 
+bool32 BriskDisplayTypes(void)
+{
+    return VarGet(VAR_BRISK_TYPES_DISABLED) == 0;
+}
+
 bool32 BriskIslandShiniesEnabled(void)
 {
     return VarGet(VAR_BRISK_ISLAND_SHINIES_DISABLED) == 0;

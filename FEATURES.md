@@ -100,3 +100,17 @@ beat four for up to two extra appeal hearts; missing preserves normal appeal.
 Higher ranks tighten timing, and NPC timing accuracy scales with rank. Existing
 move effects, combos, categories, ribbons and link contests are retained.
 See [controls and scoring](docs/contest_rhythm.md).
+
+## Adventure battle display
+
+Adventure bosses use only the large top health bar. Their native healthbox and
+floating type/active-gimmick indicators stay hidden, including while taking
+damage or returning from a menu. The usable gimmick trigger sits at the left
+edge. Boss sprites are shifted left and down to leave room below the bar.
+Boss Dynamax/Gigantamax lasts until the battle ends; rental duration is unchanged.
+Poké Balls cannot be thrown during Adventure battles. Post-battle recruitment
+remains available. The boss's Life Orb HP-loss message is suppressed while the
+item's damage and recoil still apply.
+
+Options page 5 includes DISPLAY TYPES. It defaults to ON for ordinary battles;
+Adventure battles always hide the floating type icons.

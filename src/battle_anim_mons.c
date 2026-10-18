@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "dynamax_adventure.h"
 #include "battle_anim.h"
 #include "battle_interface.h"
 #include "bg.h"
@@ -94,9 +95,13 @@ u8 GetBattlerSpriteCoord(enum BattlerId battler, u8 coordType)
     case BATTLER_COORD_X:
     case BATTLER_COORD_X_2:
         retVal = sBattlerCoords[GetBattlerCoordsIndex(battler)][GetBattlerPosition(battler)].x;
+        if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler))
+            retVal -= 24;
         break;
     case BATTLER_COORD_Y:
         retVal = sBattlerCoords[GetBattlerCoordsIndex(battler)][GetBattlerPosition(battler)].y;
+        if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler))
+            retVal += 28;
         break;
     case BATTLER_COORD_Y_PIC_OFFSET:
     case BATTLER_COORD_Y_PIC_OFFSET_DEFAULT:
@@ -197,6 +202,8 @@ u8 GetBattlerSpriteFinal_Y(enum BattlerId battler, enum Species species, bool32 
         offset -= GetBattlerElevation(battler, species);
     }
     y = offset + sBattlerCoords[GetBattlerCoordsIndex(battler)][GetBattlerPosition(battler)].y;
+    if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(battler))
+        y += 28;
     if (a3)
     {
         if (IsOnPlayerSide(battler))

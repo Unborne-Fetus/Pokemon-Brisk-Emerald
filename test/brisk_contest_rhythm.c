@@ -133,7 +133,8 @@ TEST("Real contest appeal waits for timing, adds two hearts once, resumes music 
     m4aSoundMain();
     gSpecialVar_ContestRank = CONTEST_RANK_NORMAL;
     gMain.newKeys = gMain.heldKeys = 0;
-    u8 task = Test_StartContestRhythmAppeal(0, FALSE, &status);
+    u8 task = Test_StartContestRhythmAppeal(3, FALSE, &status);
+    gContestPlayerMonIndex = 3;
     EXPECT(!Test_StepContestRhythmAppeal(task));
     EXPECT(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE);
     u32 frames;
@@ -144,8 +145,8 @@ TEST("Real contest appeal waits for timing, adds two hearts once, resumes music 
             break;
     }
     EXPECT(frames < 180);
-    EXPECT_EQ(eContestantStatus[0].appeal, 60);
-    EXPECT_EQ(eContestantStatus[0].baseAppeal, 40);
+    EXPECT_EQ(eContestantStatus[3].appeal, 60);
+    EXPECT_EQ(eContestantStatus[3].baseAppeal, 40);
     EXPECT(!(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE));
     Test_EndContestRhythmAppeal(task, &status);
     EXPECT_EQ(status.appeal, 60);

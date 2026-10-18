@@ -187,7 +187,9 @@ void CreateGimmickTriggerSprite(enum BattlerId battler)
 
     if (gBattleStruct->gimmick.triggerSpriteId == 0xFF)
     {
-        if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
+        if (IsDynamaxAdventureBattle())
+            gBattleStruct->gimmick.triggerSpriteId = CreateSprite(gimmick->triggerTemplate, 12, 72, 0);
+        else if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
             gBattleStruct->gimmick.triggerSpriteId = CreateSprite(gimmick->triggerTemplate,
                                                                   gSprites[gHealthboxSpriteIds[battler]].x - DOUBLES_GIMMICK_TRIGGER_POS_X_SLIDE,
                                                                   gSprites[gHealthboxSpriteIds[battler]].y - DOUBLES_GIMMICK_TRIGGER_POS_Y_DIFF, 0);
@@ -245,6 +247,20 @@ static void SpriteCb_GimmickTrigger(struct Sprite *sprite)
     s32 xSlide, xPriority, xOptimal;
     s32 yDiff;
     s32 xHealthbox = gSprites[gHealthboxSpriteIds[sprite->tBattler]].x;
+
+    if (IsDynamaxAdventureBattle())
+    {
+        if (sprite->tHide)
+            DestroyGimmickTriggerSprite();
+        else
+        {
+            sprite->x = 12;
+            sprite->y = 72;
+            sprite->x2 = sprite->y2 = 0;
+            sprite->oam.priority = 0;
+        }
+        return;
+    }
 
     if (GetBattlerCoordsIndex(sprite->tBattler) == BATTLE_COORDS_DOUBLES)
     {
@@ -322,7 +338,7 @@ static void SpriteCb_GimmickIndicator(struct Sprite *sprite)
     sprite->x2 = gSprites[gHealthboxSpriteIds[battler]].x2;
     sprite->y2 = gSprites[gHealthboxSpriteIds[battler]].y2;
     if (IsDynamaxAdventureBattle())
-        sprite->invisible = gSprites[gHealthboxSpriteIds[battler]].invisible || GetIndicatorPalTag(battler) == TAG_NONE;
+        sprite->invisible = TRUE;
 }
 
 static inline u32 GetIndicatorSpriteId(u32 healthboxId)
@@ -372,6 +388,12 @@ void UpdateIndicatorVisibilityAndType(u32 healthboxId, bool32 invisible)
 
     if (GetIndicatorSpriteId(healthboxId) == 0) // safari zone means the player doesn't have an indicator sprite id
         return;
+
+    if (IsDynamaxAdventureBattle())
+    {
+        sprite->invisible = TRUE;
+        return;
+    }
 
     if (palTag != TAG_NONE)
     {

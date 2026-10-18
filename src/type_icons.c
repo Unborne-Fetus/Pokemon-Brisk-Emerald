@@ -8,6 +8,8 @@
 #include "pokedex.h"
 #include "sprite.h"
 #include "type_icons.h"
+#include "brisk_options.h"
+#include "dynamax_adventure.h"
 
 static void LoadTypeSpritesAndPalettes(void);
 static void LoadTypeIconsPerBattler(enum BattlerId, u32);
@@ -239,7 +241,8 @@ void LoadTypeIcons(enum BattlerId battler)
     struct Pokemon* mon = GetBattlerMon(battler);
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
 
-    if (B_SHOW_TYPES == SHOW_TYPES_NEVER
+    if (IsDynamaxAdventureBattle() || !BriskDisplayTypes()
+        || B_SHOW_TYPES == SHOW_TYPES_NEVER
         || (B_SHOW_TYPES == SHOW_TYPES_SEEN && !GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN)))
         return;
 
@@ -426,7 +429,8 @@ static void SpriteCB_TypeIcon(struct Sprite *sprite)
     enum BattlerId battlerId = sprite->tBattlerId;
     bool32 useDoubleBattleCoords = UseDoubleBattleCoords(GetBattlerAtPosition(position));
 
-    if (sprite->tHideIconTimer == NUM_FRAMES_HIDE_TYPE_ICON)
+    if (IsDynamaxAdventureBattle() || !BriskDisplayTypes()
+     || sprite->tHideIconTimer == NUM_FRAMES_HIDE_TYPE_ICON)
     {
         DestroyTypeIcon(sprite);
         return;

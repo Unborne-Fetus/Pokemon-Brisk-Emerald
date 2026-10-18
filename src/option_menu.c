@@ -193,6 +193,7 @@ static const struct {
     const u8 *description;
 } sHelpTopics[] = {
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
+    {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
     {COMPOUND_STRING("FOLLOWERS"), COMPOUND_STRING("Options 5: FOLLOWERS ON/OFF.\nYour lead returns when switched on.\nStory companions stay available.\nMap restrictions still apply.")},
     {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
     {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
@@ -1422,7 +1423,9 @@ static void DrawBattleOptions(void)
     DrawToggle(!BriskPokemonFollowersEnabled(), 16);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("ISLAND SHINY"), 8, 33, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskIslandShiniesEnabled(), 32);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 49, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("DISPLAY TYPES"), 8, 49, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskDisplayTypes(), 48);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 65, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1436,11 +1439,11 @@ static void Task_BattleOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 3))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 4))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 3)) % 4;
+        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 4)) % 5;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT) || JOY_NEW(A_BUTTON))
@@ -1451,6 +1454,8 @@ static void Task_BattleOptions(u8 taskId)
             VarSet(VAR_BRISK_FOLLOWERS_DISABLED, BriskPokemonFollowersEnabled());
         else if (row == 2)
             VarSet(VAR_BRISK_ISLAND_SHINIES_DISABLED, BriskIslandShiniesEnabled());
+        else if (row == 3)
+            VarSet(VAR_BRISK_TYPES_DISABLED, BriskDisplayTypes());
         DrawBattleOptions();
     }
 }

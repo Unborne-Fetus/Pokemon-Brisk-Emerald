@@ -28,6 +28,7 @@
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
+#include "dynamax_adventure.h"
 #include "mail.h"
 #include "main.h"
 #include "menu.h"
@@ -1134,6 +1135,8 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
 
 static u32 GetBallThrowableState(void)
 {
+    if (IsDynamaxAdventureBattle())
+        return BALL_THROW_UNABLE_DISABLED_FLAG;
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
      && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
         return BALL_THROW_UNABLE_TWO_MONS;

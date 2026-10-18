@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_battle_format.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "battle_controllers.h"
 #include "event_data.h"
@@ -171,4 +172,28 @@ DOUBLE_BATTLE_TEST("Brisk forced Doubles initializes four occupied battlers from
         VarSet(VAR_BRISK_BATTLE_FORMAT, 0);
         Test_BriskConvertRecordedBattle(FALSE);
     }
+}
+
+TEST("Display types can be toggled and retained when reopening Options 5")
+{
+    u16 saved = VarGet(VAR_BRISK_TYPES_DISABLED);
+    VarSet(VAR_BRISK_TYPES_DISABLED, 0);
+    u8 task = Test_OpenBriskBattleOptions();
+    EXPECT(BriskDisplayTypes());
+    for (u32 i = 0; i < 3; i++)
+    {
+        gMain.newKeys = 0;
+        gMain.newAndRepeatedKeys = DPAD_DOWN;
+        RunTasks();
+    }
+    gMain.newAndRepeatedKeys = 0;
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT(!BriskDisplayTypes());
+    gMain.newKeys = 0;
+    Test_CloseBriskThemeOption(task);
+    task = Test_OpenBriskBattleOptions();
+    EXPECT(!BriskDisplayTypes());
+    Test_CloseBriskThemeOption(task);
+    VarSet(VAR_BRISK_TYPES_DISABLED, saved);
 }

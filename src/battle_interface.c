@@ -792,10 +792,10 @@ void SetHealthboxSpriteInvisible(u8 healthboxSpriteId)
 
 void SetHealthboxSpriteVisible(u8 healthboxSpriteId)
 {
-    // The wild-double intro can ask to show the empty fourth battler's box.
+    // Keep the native boss box hidden, including damage and menu restoration.
     if (IsDynamaxAdventureBattle()
      && ((gAbsentBattlerFlags & (1u << gSprites[healthboxSpriteId].hMain_Battler))
-      || GetBattlerPosition(gSprites[healthboxSpriteId].hMain_Battler) == B_POSITION_OPPONENT_RIGHT))
+      || !IsOnPlayerSide(gSprites[healthboxSpriteId].hMain_Battler)))
     {
         SetHealthboxSpriteInvisible(healthboxSpriteId);
         return;
@@ -825,6 +825,12 @@ static void TryToggleHealboxVisibility(u32 priority, u32 healthboxLeftSpriteId, 
         invisible = TRUE;
     else if (priority == 1) // end of anim -> make visible
         invisible = FALSE;
+
+    if (!invisible)
+    {
+        SetHealthboxSpriteVisible(healthboxLeftSpriteId);
+        return;
+    }
 
     gSprites[healthboxLeftSpriteId].invisible = invisible;
     gSprites[healthboxRightSpriteId].invisible = invisible;

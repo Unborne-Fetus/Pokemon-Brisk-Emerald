@@ -1482,6 +1482,12 @@ static void Cmd_printstring(void)
         u16 id = (cmd->id == 0 ? gBattleScripting.savedStringId : cmd->id);
 
         gBattlescriptCurrInstr = cmd->nextInstr;
+        if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(gBattlerAttacker)
+         && id == STRINGID_LOSTSOMEOFITSHP)
+        {
+            gBattleCommunication[MSG_DISPLAY] = MSG_DISPLAY_CONTINUE;
+            return;
+        }
         PrepareStringBattleWithWait(id, gBattlerAttacker);
     }
 }

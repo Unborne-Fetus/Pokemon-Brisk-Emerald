@@ -7,6 +7,7 @@ u32 GetBriskShinyDenominatorForSetting(u32 setting);
 u32 GetBriskShinyThreshold(void);
 u32 GetBriskWildShinyDenominator(u32 mapSection);
 bool32 BriskIslandShiniesEnabled(void);
+bool32 BriskDisplayTypes(void);
 void BriskSetWildShinyContext(bool32 active);
 bool32 BriskSkipMovePrompts(void);
 bool32 BriskInfiniteRematches(void);
