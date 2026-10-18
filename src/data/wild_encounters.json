@@ -64490,11 +64490,271 @@
         },
         {
           "map": "MAP_ROUTE145",
-          "base_label": "gRoute145"
+          "base_label": "gRoute145",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_PONYTA_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_RAPIDASH_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_TANGELA_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_TANGROWTH_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_SNORUNT_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_GLALIE_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_LITWICK_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_CHANDELURE_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_LAMPENT_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_TIMBURR_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_GURDURR_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_CONKELDURR_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_EMOLGA_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_SINISTEA_HALLOWEEN"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_POLTEAGEIST_HALLOWEEN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         },
         {
           "map": "MAP_ROUTE146",
-          "base_label": "gRoute146"
+          "base_label": "gRoute146",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NOCTARCH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ALPHAYENA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BRUTICATE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MARROWAK"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_RHYFORTRESS"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_DUNESHRED"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SKARMAGEDN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SHARKAISER"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ELECTITAN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_GRANDBULLY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SUDOSYLVAN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PARASOUL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_LINEVOLVER"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TENTACROWN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         }
       ]
     },
