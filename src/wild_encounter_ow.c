@@ -858,7 +858,8 @@ static void SetSpeciesInfoForOWE(struct InfoOWE *info, u32 x, u32 y)
     if (info->speciesId == SPECIES_UNOWN)
         info->speciesId = GetUnownSpeciesId(personality);
 
-    info->isShiny = ComputePlayerShinyOdds(personality, READ_OTID_FROM_SAVE);
+    // Keep the actual generated encounter's shiny roll, including island odds.
+    info->isShiny = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_IS_SHINY);
     if (GetGenderFromSpeciesAndPersonality(info->speciesId, personality) == MON_FEMALE)
         info->isFemale = TRUE;
     else

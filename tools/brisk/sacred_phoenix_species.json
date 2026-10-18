@@ -1,0 +1,526 @@
+[
+  {
+    "name": "Slugaqua",
+    "types": [
+      "WATER"
+    ],
+    "stats": [
+      50,
+      35,
+      50,
+      30,
+      55,
+      55
+    ],
+    "abilities": [
+      "HYDRATION",
+      "STORM_DRAIN",
+      "RAIN_DISH"
+    ],
+    "category": "Sea Slug",
+    "height": 3,
+    "weight": 28,
+    "cry": "SHELLOS",
+    "description": "Its blue feelers detect tiny changes in\nthe tide. It shelters young reef life\nbeneath the soft folds of its body.",
+    "moves": [
+      "POUND",
+      "WATER_GUN",
+      "HARDEN",
+      "WATER_PULSE",
+      "ACID_ARMOR",
+      "ANCIENT_POWER",
+      "BRINE",
+      "RECOVER",
+      "SURF",
+      "DRAGON_PULSE",
+      "MUDDY_WATER",
+      "ICE_BEAM",
+      "HYDRO_PUMP",
+      "CALM_MIND"
+    ],
+    "evolution": "Flabaqua",
+    "evolution_level": 20,
+    "evolution_gender": null
+  },
+  {
+    "name": "Flabaqua",
+    "types": [
+      "WATER"
+    ],
+    "stats": [
+      70,
+      45,
+      70,
+      45,
+      80,
+      75
+    ],
+    "abilities": [
+      "HYDRATION",
+      "STORM_DRAIN",
+      "RAIN_DISH"
+    ],
+    "category": "Reef Veil",
+    "height": 9,
+    "weight": 165,
+    "cry": "GASTRODON",
+    "description": "It drifts between reefs on flowing\nfins. Fish gather in its wake to feed\non the plankton stirred by its passage.",
+    "moves": [
+      "POUND",
+      "WATER_GUN",
+      "HARDEN",
+      "WATER_PULSE",
+      "ACID_ARMOR",
+      "ANCIENT_POWER",
+      "BRINE",
+      "RECOVER",
+      "SURF",
+      "DRAGON_PULSE",
+      "MUDDY_WATER",
+      "ICE_BEAM",
+      "HYDRO_PUMP",
+      "CALM_MIND"
+    ],
+    "evolution": "Glautilus",
+    "evolution_level": 40,
+    "evolution_gender": null
+  },
+  {
+    "name": "Glautilus",
+    "types": [
+      "WATER",
+      "DRAGON"
+    ],
+    "stats": [
+      95,
+      65,
+      95,
+      70,
+      110,
+      105
+    ],
+    "abilities": [
+      "WATER_ABSORB",
+      "STORM_DRAIN",
+      "MULTISCALE"
+    ],
+    "category": "Reef Dragon",
+    "height": 24,
+    "weight": 1250,
+    "cry": "KINGDRA",
+    "description": "Its shell records the history of ocean\ncurrents in spirals. It guides lost\nsea creatures toward sheltered reefs.",
+    "moves": [
+      "POUND",
+      "WATER_GUN",
+      "HARDEN",
+      "WATER_PULSE",
+      "ACID_ARMOR",
+      "ANCIENT_POWER",
+      "BRINE",
+      "RECOVER",
+      "SURF",
+      "DRAGON_PULSE",
+      "MUDDY_WATER",
+      "ICE_BEAM",
+      "HYDRO_PUMP",
+      "CALM_MIND"
+    ],
+    "evolution": null,
+    "evolution_level": 0,
+    "evolution_gender": null
+  },
+  {
+    "name": "Bulbent",
+    "types": [
+      "GRASS"
+    ],
+    "stats": [
+      45,
+      45,
+      50,
+      45,
+      55,
+      50
+    ],
+    "abilities": [
+      "OVERGROW",
+      "CHLOROPHYLL",
+      "EARLY_BIRD"
+    ],
+    "category": "Sapling",
+    "height": 4,
+    "weight": 42,
+    "cry": "SEEDOT",
+    "description": "It plants its feet in damp soil each\nnight. A healthy leaf on its head is\na sign that the forest is thriving.",
+    "moves": [
+      "TACKLE",
+      "ABSORB",
+      "GROWTH",
+      "MEGA_DRAIN",
+      "CONFUSION",
+      "MAGICAL_LEAF",
+      "LEECH_SEED",
+      "PSYBEAM",
+      "GIGA_DRAIN",
+      "EARTH_POWER",
+      "ENERGY_BALL",
+      "PSYCHIC",
+      "LEAF_STORM",
+      "SYNTHESIS"
+    ],
+    "evolution": "Maguorn",
+    "evolution_level": 18,
+    "evolution_gender": null
+  },
+  {
+    "name": "Maguorn",
+    "types": [
+      "GRASS"
+    ],
+    "stats": [
+      65,
+      60,
+      70,
+      55,
+      80,
+      75
+    ],
+    "abilities": [
+      "CHLOROPHYLL",
+      "HARVEST",
+      "FRISK"
+    ],
+    "category": "Root Keeper",
+    "height": 11,
+    "weight": 280,
+    "cry": "NUZLEAF",
+    "description": "It tends patches of young trees with\nits branching hands. Fallen leaves\nreturn nutrients to the soil it guards.",
+    "moves": [
+      "TACKLE",
+      "ABSORB",
+      "GROWTH",
+      "MEGA_DRAIN",
+      "CONFUSION",
+      "MAGICAL_LEAF",
+      "LEECH_SEED",
+      "PSYBEAM",
+      "GIGA_DRAIN",
+      "EARTH_POWER",
+      "ENERGY_BALL",
+      "PSYCHIC",
+      "LEAF_STORM",
+      "SYNTHESIS"
+    ],
+    "evolution": "Treewise",
+    "evolution_level": 38,
+    "evolution_gender": null
+  },
+  {
+    "name": "Treewise",
+    "types": [
+      "GRASS",
+      "PSYCHIC"
+    ],
+    "stats": [
+      95,
+      75,
+      100,
+      50,
+      110,
+      100
+    ],
+    "abilities": [
+      "NATURAL_CURE",
+      "HARVEST",
+      "SEED_SOWER"
+    ],
+    "category": "Forest Sage",
+    "height": 23,
+    "weight": 1800,
+    "cry": "TREVENANT",
+    "description": "Its roots sense footsteps throughout\nthe grove. It shares warnings with\nother trees through the living soil.",
+    "moves": [
+      "TACKLE",
+      "ABSORB",
+      "GROWTH",
+      "MEGA_DRAIN",
+      "CONFUSION",
+      "MAGICAL_LEAF",
+      "LEECH_SEED",
+      "PSYBEAM",
+      "GIGA_DRAIN",
+      "EARTH_POWER",
+      "ENERGY_BALL",
+      "PSYCHIC",
+      "LEAF_STORM",
+      "SYNTHESIS"
+    ],
+    "evolution": null,
+    "evolution_level": 0,
+    "evolution_gender": null
+  },
+  {
+    "name": "Larfae",
+    "types": [
+      "BUG",
+      "FAIRY"
+    ],
+    "stats": [
+      45,
+      30,
+      40,
+      45,
+      50,
+      45
+    ],
+    "abilities": [
+      "SHIELD_DUST",
+      "LEAF_GUARD",
+      "FRIEND_GUARD"
+    ],
+    "category": "Leaf Larva",
+    "height": 3,
+    "weight": 25,
+    "cry": "CATERPIE",
+    "description": "It folds tender leaves into a little\ncloak. Flowers bloom where groups of\nLarfae gather to share sweet pollen.",
+    "moves": [
+      "TACKLE",
+      "STRUGGLE_BUG",
+      "STRING_SHOT",
+      "FAIRY_WIND",
+      "BUG_BITE",
+      "PROTECT",
+      "DRAINING_KISS",
+      "SILVER_WIND",
+      "PSYBEAM",
+      "AROMATHERAPY",
+      "DAZZLING_GLEAM",
+      "BUG_BUZZ",
+      "QUIVER_DANCE",
+      "MOONBLAST"
+    ],
+    "evolution": "Chrysantle",
+    "evolution_level": 12,
+    "evolution_gender": null
+  },
+  {
+    "name": "Chrysantle",
+    "types": [
+      "BUG",
+      "FAIRY"
+    ],
+    "stats": [
+      60,
+      35,
+      80,
+      25,
+      60,
+      80
+    ],
+    "abilities": [
+      "SHED_SKIN",
+      "LEAF_GUARD",
+      "FRIEND_GUARD"
+    ],
+    "category": "Bloom Mantle",
+    "height": 7,
+    "weight": 95,
+    "cry": "SWADLOON",
+    "description": "Layers of fresh leaves protect its\nchanging body. It sways with the\nbreeze to resemble a flowering vine.",
+    "moves": [
+      "TACKLE",
+      "STRUGGLE_BUG",
+      "STRING_SHOT",
+      "FAIRY_WIND",
+      "BUG_BITE",
+      "PROTECT",
+      "DRAINING_KISS",
+      "SILVER_WIND",
+      "PSYBEAM",
+      "AROMATHERAPY",
+      "DAZZLING_GLEAM",
+      "BUG_BUZZ",
+      "QUIVER_DANCE",
+      "MOONBLAST"
+    ],
+    "evolution": "Druichy",
+    "evolution_level": 36,
+    "evolution_gender": "split"
+  },
+  {
+    "name": "Druichy",
+    "types": [
+      "BUG",
+      "FAIRY"
+    ],
+    "stats": [
+      75,
+      55,
+      75,
+      90,
+      115,
+      90
+    ],
+    "abilities": [
+      "COMPOUND_EYES",
+      "MAGIC_BOUNCE",
+      "TINTED_LENS"
+    ],
+    "category": "Grove Mystic",
+    "height": 13,
+    "weight": 220,
+    "cry": "BEAUTIFLY",
+    "description": "It scatters luminous pollen among\nancient trees. Its patterned wings\nconfuse creatures that harm the grove.",
+    "moves": [
+      "TACKLE",
+      "STRUGGLE_BUG",
+      "STRING_SHOT",
+      "FAIRY_WIND",
+      "BUG_BITE",
+      "PROTECT",
+      "DRAINING_KISS",
+      "SILVER_WIND",
+      "PSYBEAM",
+      "AROMATHERAPY",
+      "DAZZLING_GLEAM",
+      "BUG_BUZZ",
+      "QUIVER_DANCE",
+      "MOONBLAST"
+    ],
+    "evolution": null,
+    "evolution_level": 0,
+    "evolution_gender": null
+  },
+  {
+    "name": "Duchefly",
+    "types": [
+      "BUG",
+      "FAIRY"
+    ],
+    "stats": [
+      85,
+      45,
+      85,
+      75,
+      105,
+      110
+    ],
+    "abilities": [
+      "SWEET_VEIL",
+      "TRIAGE",
+      "FRIEND_GUARD"
+    ],
+    "category": "Duchess",
+    "height": 12,
+    "weight": 185,
+    "cry": "VIVILLON",
+    "description": "It nurses weakened creatures with\nnectar carried in its wing scales.\nWhole meadows brighten at its arrival.",
+    "moves": [
+      "TACKLE",
+      "STRUGGLE_BUG",
+      "STRING_SHOT",
+      "FAIRY_WIND",
+      "BUG_BITE",
+      "PROTECT",
+      "DRAINING_KISS",
+      "SILVER_WIND",
+      "PSYBEAM",
+      "AROMATHERAPY",
+      "DAZZLING_GLEAM",
+      "BUG_BUZZ",
+      "QUIVER_DANCE",
+      "MOONBLAST"
+    ],
+    "evolution": null,
+    "evolution_level": 0,
+    "evolution_gender": null
+  },
+  {
+    "name": "Furfang",
+    "types": [
+      "GROUND",
+      "DARK"
+    ],
+    "stats": [
+      60,
+      65,
+      50,
+      45,
+      30,
+      45
+    ],
+    "abilities": [
+      "THICK_FAT",
+      "STRONG_JAW",
+      "SAND_VEIL"
+    ],
+    "category": "Tusk Cub",
+    "height": 5,
+    "weight": 165,
+    "cry": "SWINUB",
+    "description": "Its coarse fur traps warm air during\ncold nights. It digs for roots with\ntiny tusks that sharpen as it grows.",
+    "moves": [
+      "TACKLE",
+      "LEER",
+      "MUD_SLAP",
+      "BITE",
+      "BULLDOZE",
+      "HORN_ATTACK",
+      "ASSURANCE",
+      "ROCK_TOMB",
+      "CRUNCH",
+      "STOMPING_TANTRUM",
+      "DOUBLE_EDGE",
+      "EARTHQUAKE",
+      "HEAD_SMASH",
+      "SWORDS_DANCE"
+    ],
+    "evolution": "Boarhorn",
+    "evolution_level": 34,
+    "evolution_gender": null
+  },
+  {
+    "name": "Boarhorn",
+    "types": [
+      "GROUND",
+      "DARK"
+    ],
+    "stats": [
+      100,
+      120,
+      90,
+      65,
+      45,
+      80
+    ],
+    "abilities": [
+      "ROCK_HEAD",
+      "INTIMIDATE",
+      "RECKLESS"
+    ],
+    "category": "Tusk Boar",
+    "height": 14,
+    "weight": 1150,
+    "cry": "PILOSWINE",
+    "description": "It clears fallen timber with mighty\ntusks. Herds carve trails that let\nsmaller creatures cross dense forests.",
+    "moves": [
+      "TACKLE",
+      "LEER",
+      "MUD_SLAP",
+      "BITE",
+      "BULLDOZE",
+      "HORN_ATTACK",
+      "ASSURANCE",
+      "ROCK_TOMB",
+      "CRUNCH",
+      "STOMPING_TANTRUM",
+      "DOUBLE_EDGE",
+      "EARTHQUAKE",
+      "HEAD_SMASH",
+      "SWORDS_DANCE"
+    ],
+    "evolution": null,
+    "evolution_level": 0,
+    "evolution_gender": null
+  }
+]

@@ -142,7 +142,8 @@ def pave_city(a):
 def polish():
     # Work on current map sizes/positions instead of recreating the old town.
     for a in current_areas():
-        if a.name not in ['OrangeCity','Route145','Route146']:continue
+        # Palm Cape has its own scenic trail pass; do not re-seed its grass.
+        if a.name not in ['OrangeCity','Route146']:continue
         protected={(w['x'],w['y']) for w in a.meta['warp_events']}
         protected|={(o['x'],o['y']) for o in a.meta['object_events']}
         protected|={(o['x'],o['y']) for o in a.meta['bg_events']}
@@ -250,6 +251,25 @@ def render(areas):
     for i,c in enumerate(cards):overview.paste(c,((i%3)*(max(k.width for k in cards)+12),(i//3)*(max(k.height for k in cards)+12)))
     overview.convert('P',palette=Image.Palette.ADAPTIVE,colors=256).save(ROOT/'docs/maps/orange-islands.png',optimize=True)
 
+def audit_palm_cape(a):
+    occupied={(o['x'],o['y']) for o in a.meta['object_events']}
+    def walk(x,y):
+        return 0<=x<a.w and 0<=y<a.h and (a.grid[y][x]>>10)&3==0 and a.grid[y][x]>>12==3 and (x,y) not in occupied
+    starts=[(0,y) for y in range(a.h) if walk(0,y)];assert starts
+    q=collections.deque([starts[0]]);seen={starts[0]}
+    while q:
+        x,y=q.popleft()
+        for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]:
+            pos=x+dx,y+dy
+            if pos not in seen and walk(*pos):seen.add(pos);q.append(pos)
+    assert any((a.w-1,y) in seen for y in range(a.h)), 'Palm Cape east exit blocked'
+    targets=[(o['x'],o['y']) for o in a.meta['object_events']+a.meta['bg_events']]
+    targets += [(x,y) for y,row in enumerate(a.grid) for x,v in enumerate(row) if v&1023 in (0x22E,0x22F)]
+    for x,y in targets:
+        assert any((x+dx,y+dy) in seen for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]),('Palm Cape inaccessible',x,y)
+    for obj in a.meta['object_events']:assert walk(obj['x'],obj['y']) or (a.grid[obj['y']][obj['x']]>>10)&3==0
+    print('PASS: Palm Cape exits, residents, signs, benches and fishing pier accessible.')
+
 def audit_current(areas):
     all_maps={load(str(p.relative_to(ROOT)))['id']:load(str(p.relative_to(ROOT))) for p in (ROOT/'data/maps').glob('*/map.json')}
     attrs=words(PRI/'metatile_attributes.bin')+words(SEC/'metatile_attributes.bin')
@@ -261,7 +281,10 @@ def audit_current(areas):
             value=a.grid[warp['y']][warp['x']]
             assert (value>>10)&3==0,(a.name,'blocked warp',warp)
             assert attrs[value&1023]&0xFF in [0x60,0x65,0x69],(a.name,'wrong warp tile',warp)
-    c=next(a for a in areas if a.name=='OrangeCity')
+    cape=next((a for a in areas if a.name=='Route145'),None)
+    if cape is not None:audit_palm_cape(cape)
+    c=next((a for a in areas if a.name=='OrangeCity'),None)
+    if c is None:return
     occupied={(o['x'],o['y']) for o in c.meta['object_events']}
     def walk(x,y):
         return 0<=x<c.w and 0<=y<c.h and (c.grid[y][x]>>10)&3==0 and c.grid[y][x]>>12==3 and (x,y) not in occupied

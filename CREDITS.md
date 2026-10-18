@@ -214,3 +214,11 @@ each imported form retains a source credit alongside its graphics.
 ### KFWeagz additions
 
 Supplied Mega and paradox designs, front/back sprites and shiny colors by [KFWeagz](https://www.deviantart.com/kfweagz). Brisk supplies the gameplay adaptation. See [source sheets and form details](docs/kfweagz_forms.md).
+
+### Sacred Phoenix Fakémon
+
+The **Sacred Phoenix team** supplied the twelve CuteCreature species added to
+Brisk. **FlorianDX, Amras Anárion / anarlaurendil, Dracoyan, eysselia,
+MikuGoya, frillecho, and splittygjaw** receive the design/art/sprite credits
+specified in the [original supplied credits](resources/sacred_phoenix/cutecreature_credit.txt).
+See [species and role details](docs/sacred_phoenix_fakemon.md).

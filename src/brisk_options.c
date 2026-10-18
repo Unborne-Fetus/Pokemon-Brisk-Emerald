@@ -4,6 +4,31 @@
 #include "palette.h"
 #include "menu.h"
 #include "constants/rgb.h"
+#include "constants/region_map_sections.h"
+#include "constants/map_types.h"
+
+static bool32 sWildShinyContext = FALSE;
+
+bool32 BriskIslandShiniesEnabled(void)
+{
+    return VarGet(VAR_BRISK_ISLAND_SHINIES_DISABLED) == 0;
+}
+
+void BriskSetWildShinyContext(bool32 active)
+{
+    sWildShinyContext = active;
+}
+
+u32 GetBriskWildShinyDenominator(u32 mapSection)
+{
+    // Only the tropical island maps; the forest approach and indoor caves
+    // retain the global setting, including the Adventure's independent odds.
+    if (BriskIslandShiniesEnabled()
+     && ((mapSection >= MAPSEC_ROUTE_143 && mapSection <= MAPSEC_ROUTE_146)
+      || mapSection == MAPSEC_ROUTE_149 || mapSection == MAPSEC_ROUTE_150))
+        return 50;
+    return GetBriskShinyDenominator();
+}
 
 u32 GetBriskShinyDenominatorForSetting(u32 setting)
 {
@@ -19,7 +44,8 @@ u32 GetBriskShinyDenominator(void)
 
 u32 GetBriskShinyThreshold(void)
 {
-    u32 denominator = GetBriskShinyDenominator();
+    bool32 exterior = gMapHeader.mapType == MAP_TYPE_ROUTE || gMapHeader.mapType == MAP_TYPE_CITY;
+    u32 denominator = sWildShinyContext && exterior ? GetBriskWildShinyDenominator(gMapHeader.regionMapSectionId) : GetBriskShinyDenominator();
     return (65536 + denominator / 2) / denominator;
 }
 

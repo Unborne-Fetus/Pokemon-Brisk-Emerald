@@ -45,3 +45,14 @@ features use metatile behaviors, so the existing bench and mailbox tiles work
 wherever they are placed with these tilesets. Lamps, flowers and rest areas
 match the player's Route 144 design. Current dimensions, building entrances,
 connection offsets and healing locations are retained by the cleanup tool.
+
+Route 145 now has a flower-lined grass trail, palms, a third bench and a Hex
+Maniac describing Lugia and the legendary birds' rescue of endangered species
+about twenty years ago. The original island outline, fishing pier, connections
+and encounter tables are retained.
+
+`ISLAND SHINY` on Options page 5 defaults to ON: wild encounters on Routes
+143–146, 149–150 and in Orange City use a base 1/50 shiny roll. OFF restores the
+player's global shiny setting. Gifts, eggs, trainer teams, the forest approach,
+indoor caves and Dynamax Adventures keep their existing odds. Existing Pokémon
+are never recolored; ordinary shiny bonuses and explicit force-shiny rules remain.

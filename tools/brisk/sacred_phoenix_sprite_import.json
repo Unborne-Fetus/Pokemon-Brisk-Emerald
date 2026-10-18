@@ -1,0 +1,206 @@
+{
+  "Slugaqua": {
+    "source": "slugaqua_full_sprite_set_by_anarlaurendil_dracoyan.png",
+    "sha256": "523cc83ab05340e0c8d9de0eda296f2850a12b6df2ba27b62505f44618f035b7",
+    "source_bounds": [
+      [
+        42,
+        28
+      ],
+      [
+        42,
+        33
+      ]
+    ],
+    "palette_pairs": 21,
+    "native_canvas": 80,
+    "icon_palette": 3
+  },
+  "Flabaqua": {
+    "source": "flabaqua___full_sprite_set_by_anarlaurendil_Dracoyan.png",
+    "sha256": "171653870d3af7ae83820b00ba6845891d13bfb61cd04f4090ed3e83be0a225f",
+    "source_bounds": [
+      [
+        69,
+        42
+      ],
+      [
+        53,
+        48
+      ]
+    ],
+    "palette_pairs": 21,
+    "native_canvas": 80,
+    "icon_palette": 3
+  },
+  "Glautilus": {
+    "source": "glautilus_full_sprite_set_by_anarlaurendil_dracoyan.png",
+    "sha256": "1ca563f4d66fac55767d3e75f1d15298d315aa770769156fd45d153b588cca7f",
+    "source_bounds": [
+      [
+        87,
+        84
+      ],
+      [
+        90,
+        71
+      ]
+    ],
+    "palette_pairs": 20,
+    "native_canvas": 80,
+    "icon_palette": 3
+  },
+  "Bulbent": {
+    "source": "bulbent___full_sprite_set_by_MikuGoya.png",
+    "sha256": "4027c1c96ba48c0690c74706ab7b761d52a9b9701cb8d01547922ae2090a758d",
+    "source_bounds": [
+      [
+        37,
+        56
+      ],
+      [
+        36,
+        44
+      ]
+    ],
+    "palette_pairs": 16,
+    "native_canvas": 80,
+    "icon_palette": 4
+  },
+  "Maguorn": {
+    "source": "maguorn___full_sprite_set_by_MikuGoya.png",
+    "sha256": "baef50b232ddd79d978647ac261ae86d1252273dea7845e80e0adfe31d1177ea",
+    "source_bounds": [
+      [
+        51,
+        69
+      ],
+      [
+        50,
+        66
+      ]
+    ],
+    "palette_pairs": 22,
+    "native_canvas": 80,
+    "icon_palette": 4
+  },
+  "Treewise": {
+    "source": "treewise___full_sprite_set_by_MikuGoya.png",
+    "sha256": "4c1d9f4ffcc85125f98e5f8b881f0fe309f0f5a6ff27ed214cbe6c1d8da81fe4",
+    "source_bounds": [
+      [
+        72,
+        88
+      ],
+      [
+        72,
+        88
+      ]
+    ],
+    "palette_pairs": 21,
+    "native_canvas": 80,
+    "icon_palette": 4
+  },
+  "Larfae": {
+    "source": "larfae___full_sprite_set_by_frillecho.png",
+    "sha256": "82798540a786ed581e54b73f16560d05ae2fd0907e25410035b2f96f286e498f",
+    "source_bounds": [
+      [
+        42,
+        32
+      ],
+      [
+        42,
+        32
+      ]
+    ],
+    "palette_pairs": 17,
+    "native_canvas": 80,
+    "icon_palette": 1
+  },
+  "Chrysantle": {
+    "source": "chrysantle___full_sprite_set_by_frillecho.png",
+    "sha256": "23001789fd1fcfd6a72f82ed97587c6471e775d8cd6bf9dcfd2af83bdb8d2b3f",
+    "source_bounds": [
+      [
+        51,
+        57
+      ],
+      [
+        51,
+        59
+      ]
+    ],
+    "palette_pairs": 26,
+    "native_canvas": 80,
+    "icon_palette": 5
+  },
+  "Druichy": {
+    "source": "druichy___full_sprite_set_by_frillecho.png",
+    "sha256": "f627110979b0903c8aebadb83ab257c8c572e2090071807a233fba8e5597ba2e",
+    "source_bounds": [
+      [
+        57,
+        76
+      ],
+      [
+        57,
+        76
+      ]
+    ],
+    "palette_pairs": 48,
+    "native_canvas": 80,
+    "icon_palette": 0
+  },
+  "Duchefly": {
+    "source": "duchefly___full_sprite_set_by_frillecho.png",
+    "sha256": "e0351857effdb39fccc7d6b1b4c6acebdda2e9f5191ee0a35aa0d99c3a0c47bf",
+    "source_bounds": [
+      [
+        55,
+        75
+      ],
+      [
+        55,
+        75
+      ]
+    ],
+    "palette_pairs": 45,
+    "native_canvas": 80,
+    "icon_palette": 4
+  },
+  "Furfang": {
+    "source": "furfang___full_sprite_set_by_frillecho.png",
+    "sha256": "4967a203de2c502e8e6ac022aeac1ff78a1399b25559dd59a7e9d53c8af9b27c",
+    "source_bounds": [
+      [
+        41,
+        39
+      ],
+      [
+        41,
+        39
+      ]
+    ],
+    "palette_pairs": 16,
+    "native_canvas": 80,
+    "icon_palette": 5
+  },
+  "Boarhorn": {
+    "source": "boarhorn___full_sprite_set_by_frillecho.png",
+    "sha256": "cc5e29c1b1f98892edf3c61fe8563898bf6bdb6aa39a986454c4e0dd7e8446fa",
+    "source_bounds": [
+      [
+        59,
+        52
+      ],
+      [
+        59,
+        52
+      ]
+    ],
+    "palette_pairs": 34,
+    "native_canvas": 80,
+    "icon_palette": 5
+  }
+}
