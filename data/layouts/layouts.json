@@ -9537,7 +9537,7 @@
       "id": "LAYOUT_ROUTE145",
       "name": "Route145_Layout",
       "width": 48,
-      "height": 56,
+      "height": 68,
       "primary_tileset": "gTileset_AquaOrangeIslands",
       "secondary_tileset": "gTileset_AquaValenciaIsland",
       "border_filepath": "data/layouts/Route145/border.bin",
