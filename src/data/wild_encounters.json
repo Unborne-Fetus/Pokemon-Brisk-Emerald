@@ -64356,7 +64356,137 @@
         },
         {
           "map": "MAP_ROUTE144",
-          "base_label": "gRoute144"
+          "base_label": "gRoute144",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_HISSIORITE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_BAOBY"
+              },
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_DRASHIMI"
+              },
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_MERLICUN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_ANU"
+              },
+              {
+                "min_level": 30,
+                "max_level": 50,
+                "species": "SPECIES_NUENFLU"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_FIROMENIS"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_BAOBARAFFE"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_COBARETT"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_PYTHONOVA"
+              },
+              {
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_TSUSHIMI"
+              },
+              {
+                "min_level": 75,
+                "max_level": 75,
+                "species": "SPECIES_TOBISHIMI"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          }
         },
         {
           "map": "MAP_ROUTE145",
