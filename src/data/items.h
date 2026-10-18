@@ -6558,13 +6558,13 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_DRAGONINITE_CDRX] =
     {
-        .name = ITEM_NAME("Dragoninite C"),
+        .name = ITEM_NAME("Dragoninite Y"),
         .price = 500,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
             "Dragonite to Mega\n"
-            "Evolve into its C form."),
+            "Evolve into its Y form."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,

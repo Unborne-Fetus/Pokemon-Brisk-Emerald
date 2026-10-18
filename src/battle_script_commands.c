@@ -2535,6 +2535,8 @@ bool32 NoAliveMonsForPlayer(void)
 
 static bool32 NoAliveMonsForOpponent(void)
 {
+    if (IsDynamaxAdventureBattle())
+        return gBattleMons[GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)].hp == 0;
     BriskRefillSinglesOpponent();
     if (DoesPartyHaveBattleReadyMons(B_TRAINER_OPPONENT_A))
         return FALSE;

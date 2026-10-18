@@ -1,4 +1,6 @@
 #include "global.h"
+#include "dynamax_adventure.h"
+#include "constants/maps.h"
 #include "config/save.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
@@ -344,6 +346,16 @@ static void AddStartMenuAction(u8 action)
     AppendToList(sCurrentStartMenuActions, &sNumStartMenuActions, action);
 }
 
+static bool32 AdventureBlocksFieldBag(void)
+{
+    if (DynamaxAdventure_GetStatus().phase == DA_PHASE_INACTIVE)
+        return FALSE;
+    u32 group = gSaveBlock1Ptr->location.mapGroup;
+    u32 map = gSaveBlock1Ptr->location.mapNum;
+    return (group == MAP_GROUP(MAP_DYNAMAX_ADVENTURE_CAVE) && map == MAP_NUM(MAP_DYNAMAX_ADVENTURE_CAVE))
+        || (group == MAP_GROUP(MAP_DYNAMAX_ADVENTURE_REST_CAVE) && map == MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE));
+}
+
 static void BuildNormalStartMenu(void)
 {
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
@@ -355,7 +367,8 @@ static void BuildNormalStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
-    AddStartMenuAction(MENU_ACTION_BAG);
+    if (!AdventureBlocksFieldBag())
+        AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
@@ -373,7 +386,8 @@ static void BuildDebugStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
+    if (!AdventureBlocksFieldBag())
+        AddStartMenuAction(MENU_ACTION_BAG);
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
     AddStartMenuAction(MENU_ACTION_PLAYER);
@@ -386,7 +400,8 @@ static void BuildSafariZoneStartMenu(void)
     AddStartMenuAction(MENU_ACTION_RETIRE_SAFARI);
     AddStartMenuAction(MENU_ACTION_POKEDEX);
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
+    if (!AdventureBlocksFieldBag())
+        AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_EXIT);
@@ -395,7 +410,8 @@ static void BuildSafariZoneStartMenu(void)
 static void BuildLinkModeStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
+    if (!AdventureBlocksFieldBag())
+        AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
@@ -410,7 +426,8 @@ static void BuildLinkModeStartMenu(void)
 static void BuildUnionRoomStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
+    if (!AdventureBlocksFieldBag())
+        AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {

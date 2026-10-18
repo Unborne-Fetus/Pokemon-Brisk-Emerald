@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "brisk_battle_format.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
@@ -4015,7 +4016,8 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if ((IsOnPlayerSide(battler) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER) && !BriskBattleItemsAllowed())
+                    if ((IsOnPlayerSide(battler) && !BriskBattleBagAllowed())
+                     || (IsOnPlayerSide(battler) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER) && !BriskBattleItemsAllowed())
                         || (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag()))
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);

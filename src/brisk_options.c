@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_options.h"
+#include "dynamax_adventure.h"
 #include "event_data.h"
 #include "palette.h"
 #include "menu.h"
@@ -8,6 +9,11 @@
 #include "constants/map_types.h"
 
 static bool32 sWildShinyContext = FALSE;
+
+bool32 BriskBattleBagAllowed(void)
+{
+    return !IsDynamaxAdventureBattle() && VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0;
+}
 
 bool32 BriskDisplayTypes(void)
 {

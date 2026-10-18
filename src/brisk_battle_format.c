@@ -41,6 +41,8 @@ void BriskPrepareBattleFormat(void)
     sQueuedSecondTrainer = FALSE;
     sFormatApplied = FALSE;
     sOriginallyTwoTrainers = FALSE;
+    if (IsDynamaxAdventureBattle())
+        return; // Rentals and the sole boss have a dedicated 2v1 format.
     // Network peers and saved recordings must agree on a format. Safari and
     // catching demonstrations use dedicated controllers rather than move combat.
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_SAFARI | BATTLE_TYPE_CATCH_TUTORIAL | BATTLE_TYPE_POKEDUDE)

@@ -2,6 +2,7 @@
 #include "contest_rhythm.h"
 #include "main.h"
 #include "menu.h"
+#include "random.h"
 #include "m4a.h"
 #include "sound.h"
 #include "text.h"
@@ -26,10 +27,11 @@ u32 ContestRhythm_GoodWindow(u32 rank)
     return windows[min(rank, CONTEST_RANK_MASTER)];
 }
 
-void ContestRhythm_Init(struct ContestRhythmState *state, u32 rank, bool32 aHeld)
+void ContestRhythm_Init(struct ContestRhythmState *state, u32 rank, bool32 aHeld, u32 targetBeat)
 {
     *state = (struct ContestRhythmState){
         .rank = min(rank, CONTEST_RANK_MASTER),
+        .targetBeat = min(4, max(2, targetBeat)),
         .grade = CONTEST_RHYTHM_PENDING,
         .released = !aHeld,
     };
@@ -46,7 +48,7 @@ bool32 ContestRhythm_Update(struct ContestRhythmState *state, bool32 aPressed, b
     // into the performance cannot hit the note, and mashing cannot retry it.
     if (aPressed && state->released && !state->attempted)
     {
-        s32 error = (s32)state->frame - CONTEST_RHYTHM_TARGET_FRAME;
+        s32 error = (s32)state->frame - state->targetBeat * CONTEST_RHYTHM_BEAT_FRAMES;
         if (error < 0)
             error = -error;
         state->attempted = TRUE;
@@ -54,7 +56,7 @@ bool32 ContestRhythm_Update(struct ContestRhythmState *state, bool32 aPressed, b
             ? CONTEST_RHYTHM_PERFECT : error <= ContestRhythm_GoodWindow(state->rank)
             ? CONTEST_RHYTHM_GOOD : CONTEST_RHYTHM_MISS;
     }
-    if (state->frame >= CONTEST_RHYTHM_TARGET_FRAME + ContestRhythm_GoodWindow(state->rank))
+    if (state->frame >= state->targetBeat * CONTEST_RHYTHM_BEAT_FRAMES + ContestRhythm_GoodWindow(state->rank))
     {
         if (!state->attempted)
             state->grade = CONTEST_RHYTHM_MISS;
@@ -66,9 +68,9 @@ bool32 ContestRhythm_Update(struct ContestRhythmState *state, bool32 aPressed, b
 u32 ContestRhythm_Bonus(u32 grade)
 {
     if (grade == CONTEST_RHYTHM_PERFECT)
-        return 20;
+        return 40;
     if (grade == CONTEST_RHYTHM_GOOD)
-        return 10;
+        return 20;
     return 0;
 }
 
@@ -103,19 +105,25 @@ static void PrintRhythmText(const u8 *text)
 static void DrawRhythm(void)
 {
     const s32 left = 8, target = 120;
-    s32 x = left + min(sRhythm.frame, CONTEST_RHYTHM_TARGET_FRAME + ContestRhythm_GoodWindow(sRhythm.rank)) * (target - left) / CONTEST_RHYTHM_TARGET_FRAME;
-    u32 good = ContestRhythm_GoodWindow(sRhythm.rank) * (target - left) / CONTEST_RHYTHM_TARGET_FRAME;
-    u32 perfect = max(1, ContestRhythm_PerfectWindow(sRhythm.rank) * (target - left) / CONTEST_RHYTHM_TARGET_FRAME);
+    const u32 targetFrame = sRhythm.targetBeat * CONTEST_RHYTHM_BEAT_FRAMES;
+    s32 x = left + min(sRhythm.frame, targetFrame + ContestRhythm_GoodWindow(sRhythm.rank)) * (target - left) / targetFrame;
+    u32 good = ContestRhythm_GoodWindow(sRhythm.rank) * (target - left) / targetFrame;
+    u32 perfect = max(1, ContestRhythm_PerfectWindow(sRhythm.rank) * (target - left) / targetFrame);
     FillWindowPixelBuffer(sWindow, PIXEL_FILL(0));
-    PrintRhythmText(COMPOUND_STRING("Press A on beat 4!"));
+    static const u8 *const prompts[] = {
+        COMPOUND_STRING("Press A on beat 2!"),
+        COMPOUND_STRING("Press A on beat 3!"),
+        COMPOUND_STRING("Press A on beat 4!"),
+    };
+    PrintRhythmText(prompts[sRhythm.targetBeat - 2]);
     FillWindowPixelRect(sWindow, PIXEL_FILL(8), left, 23, target - left + 1, 2);
     // Bounded target zone and a contrasting center line work without relying
-    // on color alone. Three tick marks match the audible count-in.
+    // on color alone. Tick marks match this appeal's audible count-in.
     FillWindowPixelRect(sWindow, PIXEL_FILL(8), target - good, 18, good * 2 + 1, 11);
     FillWindowPixelRect(sWindow, PIXEL_FILL(1), target - perfect, 19, perfect * 2 + 1, 9);
-    for (u32 beat = 1; beat <= 3; beat++)
+    for (u32 beat = 1; beat < sRhythm.targetBeat; beat++)
     {
-        s32 tick = left + beat * (target - left) / 4;
+        s32 tick = left + beat * (target - left) / sRhythm.targetBeat;
         FillWindowPixelRect(sWindow, PIXEL_FILL(1), tick, 20, 1, 7);
     }
     FillWindowPixelRect(sWindow, PIXEL_FILL(8), x - 2, 15, 5, 4);
@@ -141,7 +149,7 @@ void ContestRhythm_Start(u32 windowId, u32 rank)
     ContestRhythm_Stop();
     sWindow = windowId;
     sResultFrames = 0;
-    ContestRhythm_Init(&sRhythm, rank, JOY_HELD(A_BUTTON));
+    ContestRhythm_Init(&sRhythm, rank, JOY_HELD(A_BUTTON), 2 + Random() % 3);
     sResumeMusic = (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_TRACK)
         && !(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE);
     if (sResumeMusic)
@@ -156,10 +164,11 @@ bool32 ContestRhythm_Poll(void)
         return TRUE;
     if (!sRhythm.finished)
     {
+        u32 targetFrame = sRhythm.targetBeat * CONTEST_RHYTHM_BEAT_FRAMES;
         ContestRhythm_Update(&sRhythm, JOY_NEW(A_BUTTON), JOY_HELD(A_BUTTON));
         if (sRhythm.frame % CONTEST_RHYTHM_BEAT_FRAMES == 0
-         && sRhythm.frame <= CONTEST_RHYTHM_TARGET_FRAME)
-            PlaySE(sRhythm.frame == CONTEST_RHYTHM_TARGET_FRAME ? SE_PIN : SE_SELECT);
+         && sRhythm.frame <= targetFrame)
+            PlaySE(sRhythm.frame == targetFrame ? SE_PIN : SE_SELECT);
         DrawRhythm();
         if (!sRhythm.finished)
             return FALSE;
@@ -167,8 +176,8 @@ bool32 ContestRhythm_Poll(void)
     if (sResultFrames == 0)
     {
         const u8 *text = sRhythm.grade == CONTEST_RHYTHM_PERFECT
-            ? COMPOUND_STRING("PERFECT! +2 hearts") : sRhythm.grade == CONTEST_RHYTHM_GOOD
-            ? COMPOUND_STRING("GOOD! +1 heart") : COMPOUND_STRING("MISS - normal appeal");
+            ? COMPOUND_STRING("PERFECT! +4 hearts") : sRhythm.grade == CONTEST_RHYTHM_GOOD
+            ? COMPOUND_STRING("GOOD! +2 hearts") : COMPOUND_STRING("MISS - normal appeal");
         FillWindowPixelBuffer(sWindow, PIXEL_FILL(0));
         PrintRhythmText(text);
         CopyWindowToVram(sWindow, COPYWIN_GFX);
@@ -183,4 +192,9 @@ bool32 ContestRhythm_Poll(void)
 u32 ContestRhythm_Result(void)
 {
     return sRhythm.grade;
+}
+
+u32 ContestRhythm_TargetBeat(void)
+{
+    return sRhythm.targetBeat;
 }

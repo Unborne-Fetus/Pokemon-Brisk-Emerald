@@ -45,6 +45,8 @@ bool32 DynamaxAdventure_PrepareBattle(void);
 bool32 DynamaxAdventure_FinishBattle(u32 outcome);
 bool32 DynamaxAdventure_Catch(bool32 accept);
 bool32 DynamaxAdventure_Swap(bool32 accept);
+bool32 DynamaxAdventure_CanSelectCaught(u32 choice);
+bool32 DynamaxAdventure_SelectCaught(u32 choice);
 bool32 DynamaxAdventure_SwapRental(u32 slot);
 bool32 DynamaxAdventure_Claim(u32 choice);
 bool32 DynamaxAdventure_Quit(void);

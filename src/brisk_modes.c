@@ -1,6 +1,7 @@
 #include "global.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "event_data.h"
 #include "item.h"
@@ -62,7 +63,7 @@ bool32 BriskBattleItemsAllowed(void)
 
 bool32 BriskCanUseBattleItem(enum Item item)
 {
-    if (IsDynamaxAdventureBattle())
+    if (!BriskBattleBagAllowed())
         return FALSE;
     // The restriction applies to player-used consumables, not held items or catching.
     return BriskBattleItemsAllowed() || GetItemPocket(item) == POCKET_POKE_BALLS;

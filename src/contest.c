@@ -367,7 +367,7 @@ COMMON_DATA rng_value_t gContestRngValue = {0};
 //Text
 const u8 gText_LinkStandby4[] = _("Link standby!");
 
-static const u8 sText_RhythmMovePrompt[] = _("Appeal no. {STR_VAR_1}!\nChoose move. A on beat 4!");
+static const u8 sText_RhythmMovePrompt[] = _("Appeal no. {STR_VAR_1}!\nChoose move. Watch the beat!");
 const u8 gText_AppealNumWhichMoveWillBePlayed[] = _("Appeal no. {STR_VAR_1}!\nWhich move will be played?");
 const u8 gText_AppealNumButItCantParticipate[] = _("Appeal no. {STR_VAR_1}!\nBut it can't participate!");
 const u8 gText_MonAppealedWithMove[] = _("{STR_VAR_1} appealed with\n{STR_VAR_2}!");

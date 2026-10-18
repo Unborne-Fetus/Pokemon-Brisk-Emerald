@@ -193,6 +193,7 @@ static const struct {
     const u8 *description;
 } sHelpTopics[] = {
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
+    {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
     {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
     {COMPOUND_STRING("FOLLOWERS"), COMPOUND_STRING("Options 5: FOLLOWERS ON/OFF.\nYour lead returns when switched on.\nStory companions stay available.\nMap restrictions still apply.")},
     {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
@@ -208,7 +209,7 @@ static const struct {
     {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: original training.\nHARD: perfect IVs, old EVs.\nEXTREME: perfect IVs, new EVs.")},
     {COMPOUND_STRING("TRAINER LOADOUTS"), COMPOUND_STRING("EASY: weak attacks, abilities.\nNORMAL: original sets.\nHARD: better legal abilities.\nEXTREME: stronger moves too.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
-    {COMPOUND_STRING("CONTEST RHYTHM"), COMPOUND_STRING("Three clicks, then A on beat 4.\nPerfect: +2 hearts. Good: +1.\nMissing keeps normal appeal.\nHigher ranks tighten the timing.")},
+    {COMPOUND_STRING("CONTEST RHYTHM"), COMPOUND_STRING("Tap A on the shown beat: 2-4.\nPerfect: +4 hearts. Good: +2.\nMissing keeps normal appeal.\nHigher ranks tighten the timing.")},
     {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 sets global odds.\nOptions 5: ISLAND SHINY\ntoggles the Orange Islands\n1/50 wild shiny boost.")},
     {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},
     {COMPOUND_STRING("SPEED CONTROLS"), COMPOUND_STRING("Options 2: battle speed\nranges from 1x to 4x.\nOverworld speed has 1x,\n2x, 4x and 8x settings.")},
@@ -1425,7 +1426,9 @@ static void DrawBattleOptions(void)
     DrawToggle(!BriskIslandShiniesEnabled(), 32);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("DISPLAY TYPES"), 8, 49, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskDisplayTypes(), 48);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 65, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("BATTLE BAG"), 8, 65, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) != 0, 64);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 81, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1439,11 +1442,11 @@ static void Task_BattleOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 4))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 5))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 4)) % 5;
+        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 5)) % 6;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT) || JOY_NEW(A_BUTTON))
@@ -1456,6 +1459,8 @@ static void Task_BattleOptions(u8 taskId)
             VarSet(VAR_BRISK_ISLAND_SHINIES_DISABLED, BriskIslandShiniesEnabled());
         else if (row == 3)
             VarSet(VAR_BRISK_TYPES_DISABLED, BriskDisplayTypes());
+        else if (row == 4)
+            VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0);
         DrawBattleOptions();
     }
 }

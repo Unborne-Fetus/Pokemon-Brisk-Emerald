@@ -14,7 +14,7 @@ extern void Test_EndContestRhythmAppeal(u8 task, struct ContestantStatus *out);
 static u32 GradeAt(u32 rank, u32 pressFrame)
 {
     struct ContestRhythmState state;
-    ContestRhythm_Init(&state, rank, FALSE);
+    ContestRhythm_Init(&state, rank, FALSE, 4);
     for (u32 frame = 1; frame <= CONTEST_RHYTHM_TARGET_FRAME + 10; frame++)
         if (ContestRhythm_Update(&state, frame == pressFrame, frame == pressFrame))
             break;
@@ -44,16 +44,16 @@ TEST("Contest rhythm grades both edges of every rank's timing window")
 TEST("Contest rhythm ignores a held selection button and locks the first fresh press")
 {
     struct ContestRhythmState state;
-    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, TRUE);
+    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, TRUE, 4);
     for (u32 frame = 1; !state.finished; frame++)
         ContestRhythm_Update(&state, frame == 120, TRUE);
     EXPECT_EQ(state.grade, CONTEST_RHYTHM_MISS);
     EXPECT(!state.attempted);
-    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, TRUE);
+    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, TRUE, 4);
     for (u32 frame = 1; !state.finished; frame++)
         ContestRhythm_Update(&state, frame == 120, frame != 20);
     EXPECT_EQ(state.grade, CONTEST_RHYTHM_PERFECT);
-    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, FALSE);
+    ContestRhythm_Init(&state, CONTEST_RANK_NORMAL, FALSE, 4);
     for (u32 frame = 1; !state.finished; frame++)
         ContestRhythm_Update(&state, frame == 10 || frame == 120, frame == 10 || frame == 120);
     EXPECT_EQ(state.grade, CONTEST_RHYTHM_MISS);
@@ -73,17 +73,17 @@ TEST("Rhythm bonuses preserve base appeal, combinations, jam, condition and repe
     };
     struct ContestantStatus scored = original;
     ContestRhythm_ApplyBonus(&scored, CONTEST_RHYTHM_PERFECT, FALSE);
-    EXPECT_EQ(scored.appeal, 60);
+    EXPECT_EQ(scored.appeal, 80);
     scored.appeal = original.appeal;
     EXPECT_EQ(memcmp(&scored, &original, sizeof(original)), 0);
     ContestRhythm_ApplyBonus(&scored, CONTEST_RHYTHM_GOOD, FALSE);
-    EXPECT_EQ(scored.appeal, 50);
+    EXPECT_EQ(scored.appeal, 60);
     scored = original;
     ContestRhythm_ApplyBonus(&scored, CONTEST_RHYTHM_MISS, FALSE);
     EXPECT_EQ(memcmp(&scored, &original, sizeof(original)), 0);
     scored.appeal = -30;
     ContestRhythm_ApplyBonus(&scored, CONTEST_RHYTHM_GOOD, FALSE);
-    EXPECT_EQ(scored.appeal, -20);
+    EXPECT_EQ(scored.appeal, -10);
     scored.appeal = 32760;
     ContestRhythm_ApplyBonus(&scored, CONTEST_RHYTHM_PERFECT, FALSE);
     EXPECT_EQ(scored.appeal, 32767);
@@ -115,7 +115,7 @@ TEST("NPC rhythm accuracy improves by rank without exceeding the player's bonus"
         {
             u32 grade = ContestRhythm_NpcGrade(rank, roll);
             EXPECT(grade <= CONTEST_RHYTHM_PERFECT);
-            EXPECT(ContestRhythm_Bonus(grade) <= 20);
+            EXPECT(ContestRhythm_Bonus(grade) <= 40);
             total += ContestRhythm_Bonus(grade);
         }
         EXPECT_GT(total, previous);
@@ -124,7 +124,7 @@ TEST("NPC rhythm accuracy improves by rank without exceeding the player's bonus"
     EXPECT_EQ(ContestRhythm_PerfectWindow(255), ContestRhythm_PerfectWindow(CONTEST_RANK_MASTER));
 }
 
-TEST("Real contest appeal waits for timing, adds two hearts once, resumes music and proceeds to animation")
+TEST("Real contest appeal waits for timing, adds four hearts once, resumes music and proceeds to animation")
 {
     u8 flags = gLinkContestFlags, player = gContestPlayerMonIndex;
     u16 rank = gSpecialVar_ContestRank;
@@ -140,16 +140,16 @@ TEST("Real contest appeal waits for timing, adds two hearts once, resumes music 
     u32 frames;
     for (frames = 1; frames <= 180; frames++)
     {
-        gMain.newKeys = gMain.heldKeys = frames == 120 ? A_BUTTON : 0;
+        gMain.newKeys = gMain.heldKeys = frames == ContestRhythm_TargetBeat() * CONTEST_RHYTHM_BEAT_FRAMES ? A_BUTTON : 0;
         if (Test_StepContestRhythmAppeal(task))
             break;
     }
     EXPECT(frames < 180);
-    EXPECT_EQ(eContestantStatus[3].appeal, 60);
+    EXPECT_EQ(eContestantStatus[3].appeal, 80);
     EXPECT_EQ(eContestantStatus[3].baseAppeal, 40);
     EXPECT(!(gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE));
     Test_EndContestRhythmAppeal(task, &status);
-    EXPECT_EQ(status.appeal, 60);
+    EXPECT_EQ(status.appeal, 80);
     m4aMPlayStop(&gMPlayInfo_BGM);
     gMain.newKeys = gMain.heldKeys = 0;
     gLinkContestFlags = flags;
@@ -173,11 +173,28 @@ TEST("Real contest appeal times out without a penalty; NPC and link turns procee
     task = Test_StartContestRhythmAppeal(1, FALSE, &original);
     EXPECT(Test_StepContestRhythmAppeal(task));
     Test_EndContestRhythmAppeal(task, &status);
-    EXPECT(status.appeal >= 40 && status.appeal <= 60);
+    EXPECT(status.appeal >= 40 && status.appeal <= 80);
     task = Test_StartContestRhythmAppeal(0, TRUE, &original);
     EXPECT(Test_StepContestRhythmAppeal(task));
     Test_EndContestRhythmAppeal(task, &status);
     EXPECT_EQ(status.appeal, 40);
     gLinkContestFlags = flags;
     gContestPlayerMonIndex = player;
+}
+
+TEST("Contest targets allow beats 2, 3 and 4 and never beat 1")
+{
+    for (u32 rank = 0; rank <= CONTEST_RANK_MASTER; rank++)
+        for (u32 beat = 2; beat <= 4; beat++)
+        {
+            struct ContestRhythmState state;
+            ContestRhythm_Init(&state, rank, FALSE, beat);
+            for (u32 frame = 1; !state.finished; frame++)
+                ContestRhythm_Update(&state, frame == beat * CONTEST_RHYTHM_BEAT_FRAMES, frame == beat * CONTEST_RHYTHM_BEAT_FRAMES);
+            EXPECT_EQ(state.targetBeat, beat);
+            EXPECT_EQ(state.grade, CONTEST_RHYTHM_PERFECT);
+        }
+    struct ContestRhythmState state;
+    ContestRhythm_Init(&state, 0, FALSE, 1);
+    EXPECT_EQ(state.targetBeat, 2);
 }

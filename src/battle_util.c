@@ -2,6 +2,7 @@
 #include "dynamax_adventure.h"
 #include "caps.h"
 #include "brisk_modes.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_anim_scripts.h"
@@ -1915,6 +1916,10 @@ bool32 HasNoMonsToSwitch(enum BattlerId battler, u8 partyIdBattlerOn1, u8 partyI
     u32 i, playerId, flankId;
     s32 lastId = GetAILastPartyIndex(battler); // + 1
     struct Pokemon *party = GetBattlerParty(battler);
+
+    // Each Adventure trainer owns exactly one active rental/boss, no reserves.
+    if (IsDynamaxAdventureBattle())
+        return TRUE;
 
 
     if (!IsDoubleBattle())
@@ -10789,6 +10794,8 @@ bool32 IsBattlerInvalidForSpreadMove(enum BattlerId battlerAtk, enum BattlerId b
 
 bool32 IsAllowedToUseBag(void)
 {
+    if (!BriskBattleBagAllowed())
+        return FALSE;
     switch (VarGet(B_VAR_NO_BAG_USE))
     {
     case NO_BAG_RESTRICTION:

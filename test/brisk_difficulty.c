@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_util.h"
 #include "brisk_modes.h"
+#include "brisk_options.h"
 #include "data.h"
 #include "event_data.h"
 #include "item.h"
@@ -118,4 +119,20 @@ TEST("Brisk EXP Share recipient rules disable both versions on Extreme")
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
     VarSet(VAR_BRISK_EXP_SHARE, 0);
     ClearBag();
+}
+
+TEST("Battle Bag OFF blocks consumables and ball shortcuts in wild and trainer battles")
+{
+    u16 saved = VarGet(VAR_BRISK_BATTLE_BAG_DISABLED);
+    u32 flags = gBattleTypeFlags;
+    VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, 1);
+    for (u32 trainer = 0; trainer < 2; trainer++)
+    {
+        gBattleTypeFlags = trainer ? BATTLE_TYPE_TRAINER : 0;
+        EXPECT(!IsAllowedToUseBag());
+        EXPECT(!BriskCanUseBattleItem(ITEM_POTION));
+        EXPECT(!BriskCanUseBattleItem(ITEM_POKE_BALL));
+    }
+    VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, saved);
+    gBattleTypeFlags = flags;
 }

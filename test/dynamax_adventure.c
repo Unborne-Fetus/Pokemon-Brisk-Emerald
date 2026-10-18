@@ -17,6 +17,9 @@
 #include "constants/battle_ai.h"
 #include "data.h"
 #include "brisk_modes.h"
+#include "brisk_options.h"
+#include "brisk_battle_format.h"
+#include "battle_util.h"
 #include "event_data.h"
 #include "main.h"
 #include "move.h"
@@ -639,7 +642,8 @@ TEST("Adventure: staging chamber has no warps, blocks escape and contains the ri
     const struct MapHeader *room = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_DYNAMAX_ADVENTURE_REST_CAVE), MAP_NUM(MAP_DYNAMAX_ADVENTURE_REST_CAVE));
     EXPECT_EQ(room->events->warpCount, 0);
     EXPECT(!room->allowEscaping);
-    EXPECT_EQ(room->events->objectEventCount, 2);
+    EXPECT_EQ(room->events->objectEventCount, 3);
+    EXPECT_EQ(room->events->objectEvents[2].graphicsId, OBJ_EVENT_GFX_PROF_BIRCH);
     EXPECT_EQ(room->events->objectEvents[0].graphicsId, OBJ_EVENT_GFX_SCIENTIST_1);
     EXPECT_EQ(room->events->objectEvents[1].graphicsId, OBJ_EVENT_GFX_VAR_0);
     EXPECT_NE((room->mapLayout->map[3 * room->mapLayout->width + 7] >> 10) & 3, 0);
@@ -703,18 +707,13 @@ static void ExpectAdventureIconRows(void)
         const u8 *actual = (const u8 *)(OBJ_VRAM0 + tile * TILE_SIZE_4BPP);
         struct Pokemon *mon = DynamaxAdventure_GetRental(gScrollableMultichoice_ScrollOffset + row);
         const u8 *tiles = GetMonIconTilesIsEgg(GetMonData(mon, MON_DATA_SPECIES), 0, FALSE);
-        for (u32 py = 0; py < 16; py++)
-            for (u32 px = 0; px < 16; px++)
-            {
-                u32 x = px * 2, y = py * 2;
-                u32 src = ((y / 8) * 4 + x / 8) * 32 + (y % 8) * 4 + (x % 8) / 2;
-                u32 dst = ((py / 8) * 2 + px / 8) * 32 + (py % 8) * 4 + (px % 8) / 2;
-                EXPECT_EQ((actual[dst] >> ((px & 1) * 4)) & 15, (tiles[src] >> ((x & 1) * 4)) & 15);
-            }
+        // The grid retains every pixel of the original native icon frame.
+        EXPECT_EQ(memcmp(actual, tiles, 16 * TILE_SIZE_4BPP), 0);
+
     }
 }
 
-TEST("Adventure: six rental rows keep every icon synchronized scrolling both directions and release graphics")
+TEST("Adventure: six-cell rental grid preserves full native icons across pages and releases graphics")
 {
     static const struct WindowTemplate windows[] = {DUMMY_WIN_TEMPLATE};
     static const u8 name[] = _("Rental");
@@ -732,7 +731,7 @@ TEST("Adventure: six rental rows keep every icon synchronized scrolling both dir
     ExpectAdventureIconRows();
     for (u32 direction = 0; direction < 2; direction++)
     {
-        for (u32 step = 0; step < DA_RENTAL_CHOICES - 1; step++)
+        for (u32 step = 0; step < DA_RENTAL_CHOICES / 2; step++)
         {
             gMain.newKeys = gMain.newAndRepeatedKeys = direction == 0 ? DPAD_DOWN : DPAD_UP;
             RunTasks();
@@ -1082,4 +1081,116 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: G-Max boss remains transformed beyond three t
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());
     }
+}
+
+TWO_VS_ONE_BATTLE_TEST("Adventure: final Dynamax boss defeat ends combat without a blank replacement")
+{
+    static u16 savedFormat;
+    GIVEN {
+        StartRental();
+        for (u32 stage = 0; stage < DA_ENCOUNTERS - 1; stage++)
+        {
+            EXPECT(DynamaxAdventure_ChoosePath(0));
+            EXPECT(DynamaxAdventure_PrepareBattle());
+            EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+            EXPECT(DynamaxAdventure_Catch(FALSE));
+        }
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        savedFormat = VarGet(VAR_BRISK_BATTLE_FORMAT);
+        VarSet(VAR_BRISK_BATTLE_FORMAT, BRISK_BATTLE_SINGLES);
+        BriskPrepareBattleFormat();
+        EXPECT(gBattleTypeFlags & BATTLE_TYPE_DOUBLE);
+        EXPECT(!IsAllowedToUseBag());
+        EXPECT(HasNoMonsToSwitch(B_BATTLER_1, PARTY_SIZE, PARTY_SIZE));
+        PLAYER(SPECIES_HOUNDOOM) { Moves(MOVE_DRAGON_RAGE); Speed(300); }
+        PARTNER(SPECIES_DRAGONITE) { Moves(MOVE_CELEBRATE); Speed(200); }
+        OPPONENT(SPECIES_MANAPHY) { MaxHP(1); HP(1); Moves(MOVE_SCRATCH); Speed(100); }
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_DRAGON_RAGE, target: opponentLeft); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_SCRATCH, target: playerLeft); }
+    } THEN {
+        EXPECT_EQ(gBattleOutcome, B_OUTCOME_WON);
+        EXPECT_EQ(opponentLeft->hp, 0);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
+        VarSet(VAR_BRISK_BATTLE_FORMAT, savedFormat);
+    }
+}
+
+TEST("Adventure: every starting offer and selected route has a distinct species")
+{
+    for (u32 seed = 1; seed < 50; seed++)
+    {
+        EXPECT(DynamaxAdventure_Begin(seed));
+        u16 species[DA_RENTAL_CHOICES];
+        for (u32 i = 0; i < DA_RENTAL_CHOICES; i++)
+        {
+            species[i] = GetMonData(DynamaxAdventure_GetRental(i), MON_DATA_SPECIES);
+            for (u32 j = 0; j < i; j++)
+                EXPECT_NE(species[i], species[j]);
+        }
+        EXPECT(DynamaxAdventure_ChooseRental(0));
+        u16 seen[DA_ENCOUNTERS] = {0};
+        for (u32 stage = 0; stage < DA_ENCOUNTERS - 1; stage++)
+        {
+            seen[stage] = GetMonData(DynamaxAdventure_GetPath(0), MON_DATA_SPECIES);
+            EXPECT_NE(seen[stage], species[0]);
+            for (u32 i = 0; i < stage; i++)
+                EXPECT_NE(seen[stage], seen[i]);
+            EXPECT(DynamaxAdventure_ChoosePath(0));
+            EXPECT(DynamaxAdventure_PrepareBattle());
+            EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+            EXPECT(DynamaxAdventure_Catch(FALSE));
+        }
+        EXPECT(DynamaxAdventure_Quit());
+    }
+}
+
+TEST("Adventure: Birch swaps earlier catches without refreshing HP or changing reward snapshots")
+{
+    u16 difficulty = VarGet(VAR_BRISK_DIFFICULTY);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_HARD);
+    StartRental();
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+    EXPECT(DynamaxAdventure_Catch(TRUE));
+    EXPECT(DynamaxAdventure_SwapRental(0));
+    EXPECT(!DynamaxAdventure_CanSelectCaught(0));
+    struct Pokemon reward = *DynamaxAdventure_GetCaught(0);
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    u16 hp = 1;
+    u32 status = STATUS1_POISON;
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HP, &hp);
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_STATUS, &status);
+    u32 expectedHP = 1 + GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MAX_HP) / 2;
+    EXPECT(!DynamaxAdventure_SelectCaught(0));
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+    EXPECT(DynamaxAdventure_Catch(TRUE));
+    EXPECT(DynamaxAdventure_SwapRental(0));
+    EXPECT_EQ(DynamaxAdventure_GetStatus().stage, 2);
+    EXPECT_EQ(DynamaxAdventure_GetStatus().caughtCount, 2);
+    EXPECT(!DynamaxAdventure_CanSelectCaught(1));
+    EXPECT(!DynamaxAdventure_SelectCaught(DA_ENCOUNTERS));
+    EXPECT(DynamaxAdventure_SelectCaught(0));
+    EXPECT(DynamaxAdventure_SelectCaught(1));
+    EXPECT(DynamaxAdventure_SelectCaught(0));
+    EXPECT_EQ(DynamaxAdventure_GetStatus().phase, DA_PHASE_PATH);
+    EXPECT_EQ(memcmp(DynamaxAdventure_GetCaught(0), &reward, sizeof(reward)), 0);
+    EXPECT(DynamaxAdventure_ChoosePath(0));
+    EXPECT(DynamaxAdventure_PrepareBattle());
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_SPECIES), GetMonData(&reward, MON_DATA_SPECIES));
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_IS_SHINY), GetMonData(&reward, MON_DATA_IS_SHINY));
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HELD_ITEM), GetMonData(&reward, MON_DATA_HELD_ITEM));
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_HP), expectedHP);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_STATUS), status);
+    EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_RAN));
+    EXPECT(!DynamaxAdventure_SelectCaught(1));
+    EXPECT(DynamaxAdventure_Quit());
+    VarSet(VAR_BRISK_DIFFICULTY, difficulty);
 }

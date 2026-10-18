@@ -95,8 +95,8 @@ A lot of features listed below can be turned off as desired. Check which ones in
 
 ## Brisk rhythm contests
 
-Solo contest appeals now include a short four-beat timing challenge. Tap A on
-beat four for up to two extra appeal hearts; missing preserves normal appeal.
+Solo contest appeals now include a timing challenge. Tap A on
+the announced beat (randomly 2, 3 or 4) for up to four extra appeal hearts; missing preserves normal appeal.
 Higher ranks tighten timing, and NPC timing accuracy scales with rank. Existing
 move effects, combos, categories, ribbons and link contests are retained.
 See [controls and scoring](docs/contest_rhythm.md).
@@ -108,9 +108,22 @@ floating type/active-gimmick indicators stay hidden, including while taking
 damage or returning from a menu. The usable gimmick trigger sits at the left
 edge. Boss sprites are shifted left and down to leave room below the bar.
 Boss Dynamax/Gigantamax lasts until the battle ends; rental duration is unchanged.
-Poké Balls cannot be thrown during Adventure battles. Post-battle recruitment
+The Bag cannot be opened during Adventure battles. Post-battle recruitment
 remains available. The boss's Life Orb HP-loss message is suppressed while the
 item's damage and recoil still apply.
 
 Options page 5 includes DISPLAY TYPES. It defaults to ON for ordinary battles;
 Adventure battles always hide the floating type icons.
+
+Adventure rental choices use a six-cell, two-column grid with full native 32px
+icons. Routes avoid repeating either active rental or earlier encounters.
+The CDRX73 Dragonite form is Dragonite Y, using Dragoninite Y; its saved species
+and item numbers and the original Dragonite Mega form are retained.
+Options page 5 also has BATTLE BAG ON/OFF for ordinary battles. OFF blocks both
+consumables and catching; ON retains the existing difficulty and story rules.
+Adventures always disable the Bag and keep their dedicated 2v1 format.
+
+Birch accompanies the expedition into each rest room. Between rounds, talk to
+him to switch to a previously caught Pokémon that neither teammate is using.
+Benched Pokémon retain their battle HP/status/PP rather than resetting on each
+switch; end-of-run reward snapshots remain unchanged.

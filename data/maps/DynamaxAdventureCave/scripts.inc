@@ -157,7 +157,7 @@ DynamaxAdventureCave_Catch::
 	copyvar VAR_0x8005, VAR_RESULT
 	special RunDynamaxAdventure
 	goto_if_eq VAR_RESULT, FALSE, DynamaxAdventureCave_Error
-	goto DynamaxAdventureCave_Dispatch
+	goto DynamaxAdventureCave_AfterCatch
 DynamaxAdventureCave_Swap::
 	msgbox DynamaxAdventureCave_Text_Swap, MSGBOX_DEFAULT
 	dynmultipush DynamaxAdventureCave_Text_Keep, 0
@@ -167,12 +167,25 @@ DynamaxAdventureCave_Swap::
 	setvar VAR_0x8004, DA_OP_SWAP
 	copyvar VAR_0x8005, VAR_RESULT
 	special RunDynamaxAdventure
-	goto DynamaxAdventureCave_Dispatch
+	goto DynamaxAdventureCave_AfterCatch
 DynamaxAdventureCave_Keep::
 	setvar VAR_0x8004, DA_OP_SWAP
 	setvar VAR_0x8005, 0
 	special RunDynamaxAdventure
-	goto DynamaxAdventureCave_Dispatch
+	goto DynamaxAdventureCave_AfterCatch
+DynamaxAdventureCave_AfterCatch::
+    setvar VAR_0x8004, DA_OP_STATUS
+    special RunDynamaxAdventure
+    goto_if_ne VAR_0x8000, DA_PHASE_PATH, DynamaxAdventureCave_Dispatch
+    msgbox DynamaxAdventureCave_Text_RestBreak, MSGBOX_DEFAULT
+    releaseall
+    end
+DynamaxAdventureCave_Text_RestBreak:
+    .string "Take a moment before the next battle.\p"
+    .string "BIRCH can switch your rental for\n"
+    .string "a POKéMON caught on this adventure.\p"
+    .string "Talk to me when you're ready\n"
+    .string "to choose the next route.$"
 DynamaxAdventureCave_Finished::
 	goto_if_eq VAR_0x8003, 0, DynamaxAdventureCave_NoCatches
 	msgbox DynamaxAdventureCave_Text_Rewards, MSGBOX_DEFAULT
@@ -246,7 +259,7 @@ DynamaxAdventureCave_Text_Welcome:
 	.string "Welcome to our DYNAMAX research cave!\n"
 	.string "Care to join an adventure?\p"
 	.string "{RIVAL} will battle beside you.\n"
-	.string "BIRCH will stay here to observe.\p"
+	.string "BIRCH will help us between battles.\p"
 	.string "Rentals and route POKéMON are Lv. 70!\n"
 	.string "The final legendary is Lv. 100.\p"
 	.string "Your rentals can use MEGA or G-MAX.\n"

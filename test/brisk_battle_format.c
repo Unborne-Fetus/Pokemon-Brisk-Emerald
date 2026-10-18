@@ -197,3 +197,26 @@ TEST("Display types can be toggled and retained when reopening Options 5")
     Test_CloseBriskThemeOption(task);
     VarSet(VAR_BRISK_TYPES_DISABLED, saved);
 }
+
+TEST("Battle Bag preference can be toggled and retained in Options 5")
+{
+    u16 saved = VarGet(VAR_BRISK_BATTLE_BAG_DISABLED);
+    VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, 0);
+    u8 task = Test_OpenBriskBattleOptions();
+    for (u32 i = 0; i < 4; i++)
+    {
+        gMain.newKeys = 0;
+        gMain.newAndRepeatedKeys = DPAD_DOWN;
+        RunTasks();
+    }
+    gMain.newAndRepeatedKeys = 0;
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT(!BriskBattleBagAllowed());
+    gMain.newKeys = 0;
+    Test_CloseBriskThemeOption(task);
+    task = Test_OpenBriskBattleOptions();
+    EXPECT(!BriskBattleBagAllowed());
+    Test_CloseBriskThemeOption(task);
+    VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, saved);
+}

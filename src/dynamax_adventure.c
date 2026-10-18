@@ -128,8 +128,14 @@ struct DynamaxAdventure
     struct Pokemon paths[DA_PATH_CHOICES];
     struct Pokemon team[DA_TEAM_SIZE];
     u16 selectedOffers;
+    u16 encounteredSpecies[DA_ENCOUNTERS];
     struct Pokemon encounter;
     struct Pokemon caught[DA_ENCOUNTERS];
+    // Separate battle state keeps the reward snapshots intact and prevents
+    // repeatedly switching catches from refreshing HP, status or PP.
+    struct Pokemon benched[DA_ENCOUNTERS];
+    u8 benchedMask;
+    u8 teamCatchIds[DA_TEAM_SIZE];
     struct Pokemon originalParty[PARTY_SIZE];
     u8 originalPartyCount;
     struct Pokemon originalPartnerParty[PARTY_SIZE];
@@ -329,6 +335,17 @@ void DynamaxAdventure_UpdatePlayerName(const u8 *oldName, const u8 *newName)
     RenamePlayerOwnedBoxMon(&sAdventure->encounter.box, oldName, newName);
 }
 
+static bool32 AdventureSpeciesAlreadyUsed(enum Species species)
+{
+    for (u32 i = 0; i < DA_TEAM_SIZE; i++)
+        if (GetMonData(&sAdventure->team[i], MON_DATA_SPECIES) == species)
+            return TRUE;
+    for (u32 i = 0; i < DA_ENCOUNTERS; i++)
+        if (sAdventure->encounteredSpecies[i] == species)
+            return TRUE;
+    return FALSE;
+}
+
 static void GeneratePaths(void)
 {
     if (sAdventure->status.stage == DA_ENCOUNTERS - 1)
@@ -348,7 +365,7 @@ static void GeneratePaths(void)
             {
                 const struct AdventureSet *candidate = GetRentalSet((start + i) % count);
                 bool32 mega = AdventureMegaStone(candidate->species) != ITEM_NONE;
-                if (mega == (branch == 0)) { set = candidate; break; }
+                if (mega == (branch == 0) && !AdventureSpeciesAlreadyUsed(candidate->species)) { set = candidate; break; }
             }
             CreateRental(&sAdventure->paths[branch], set, DA_RENTAL_LEVEL);
         }
@@ -367,6 +384,7 @@ bool32 DynamaxAdventure_Begin(u32 seed)
     memset(&sAdventureData, 0, sizeof(sAdventureData));
     sAdventure = &sAdventureData;
     sAdventure->rng = seed;
+    memset(sAdventure->teamCatchIds, DA_RENTAL_KEEP, sizeof(sAdventure->teamCatchIds));
     sAdventure->difficulty = GetBriskDifficulty();
     sAdventure->hpNumerator = GetBriskDifficulty() == BRISK_MODE_EASY ? 4 : GetBriskDifficulty() == BRISK_MODE_NORMAL ? 2 : 1;
     sAdventure->hpDenominator = GetBriskDifficulty() == BRISK_MODE_EXTREME ? 2 : 1;
@@ -449,6 +467,7 @@ bool32 DynamaxAdventure_ChoosePath(u32 choice)
     if (mon == NULL)
         return FALSE;
     sAdventure->encounter = *mon;
+    sAdventure->encounteredSpecies[sAdventure->status.stage] = GetMonData(mon, MON_DATA_SPECIES);
     sAdventure->status.phase = DA_PHASE_READY;
     return TRUE;
 }
@@ -602,6 +621,46 @@ bool32 DynamaxAdventure_Catch(bool32 accept)
     return TRUE;
 }
 
+static void BenchAdventureTeamMember(u32 member)
+{
+    u32 caught = sAdventure->teamCatchIds[member];
+    if (caught < sAdventure->status.caughtCount)
+    {
+        sAdventure->benched[caught] = sAdventure->team[member];
+        sAdventure->benchedMask |= 1u << caught;
+    }
+}
+
+bool32 DynamaxAdventure_CanSelectCaught(u32 choice)
+{
+    if (sAdventure == NULL || gMain.inBattle
+     || (sAdventure->status.phase != DA_PHASE_PATH && sAdventure->status.phase != DA_PHASE_READY)
+     || choice >= sAdventure->status.caughtCount)
+        return FALSE;
+    for (u32 member = 0; member < DA_TEAM_SIZE; member++)
+        if (sAdventure->teamCatchIds[member] == choice)
+            return FALSE;
+    return TRUE;
+}
+
+bool32 DynamaxAdventure_SelectCaught(u32 choice)
+{
+    if (!DynamaxAdventure_CanSelectCaught(choice))
+        return FALSE;
+    BenchAdventureTeamMember(0);
+    if (sAdventure->benchedMask & (1u << choice))
+        sAdventure->team[0] = sAdventure->benched[choice];
+    else
+    {
+        sAdventure->team[0] = sAdventure->caught[choice];
+        HealRental(&sAdventure->team[0]);
+    }
+    sAdventure->teamCatchIds[0] = choice;
+    sAdventure->rentalItems[0] = GetMonData(&sAdventure->team[0], MON_DATA_HELD_ITEM);
+    sAdventure->rentalAbilities[0] = GetMonData(&sAdventure->team[0], MON_DATA_ABILITY_NUM);
+    return TRUE;
+}
+
 bool32 DynamaxAdventure_SwapRental(u32 slot)
 {
     if (sAdventure == NULL || sAdventure->status.phase != DA_PHASE_SWAP
@@ -612,6 +671,8 @@ bool32 DynamaxAdventure_SwapRental(u32 slot)
         slot = 1 + NextRandom() % (DA_TEAM_SIZE - 1);
     if (slot != DA_RENTAL_KEEP)
     {
+        BenchAdventureTeamMember(slot);
+        sAdventure->teamCatchIds[slot] = sAdventure->status.caughtCount - 1;
         // Keep the same encounter, including its original shiny roll.
         sAdventure->team[slot] = sAdventure->encounter;
         HealRental(&sAdventure->team[slot]);
@@ -702,6 +763,11 @@ void RunDynamaxAdventure(void)
     case DA_OP_START_BATTLE: gSpecialVar_Result = BattleSetup_StartDynamaxAdventureBattle(); break;
     case DA_OP_CATCH: gSpecialVar_Result = DynamaxAdventure_Catch(arg != 0); break;
     case DA_OP_SWAP: gSpecialVar_Result = DynamaxAdventure_SwapRental(arg == 0 ? DA_RENTAL_KEEP : arg - 1); break;
+    case DA_OP_BENCH_INFO:
+        if (DynamaxAdventure_CanSelectCaught(arg))
+            gSpecialVar_Result = BufferMon(DynamaxAdventure_GetCaught(arg));
+        break;
+    case DA_OP_SWAP_CAUGHT: gSpecialVar_Result = DynamaxAdventure_SelectCaught(arg); break;
     case DA_OP_REWARD_INFO:
         if (DynamaxAdventure_GetStatus().phase == DA_PHASE_FINISHED)
         {

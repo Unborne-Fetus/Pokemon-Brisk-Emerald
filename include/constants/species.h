@@ -1772,7 +1772,7 @@ enum __attribute__((packed)) Species
     SPECIES_PARASOUL = 1649,
     SPECIES_LINEVOLVER = 1650,
     SPECIES_TENTACROWN = 1651,
-    SPECIES_DRAGONITE_MEGA_CDRX = 1652,
+    SPECIES_DRAGONITE_MEGA_Y = 1652,
     SPECIES_LITWICK_HALLOWEEN = 1653,
     SPECIES_LAMPENT_HALLOWEEN = 1654,
     SPECIES_CHANDELURE_HALLOWEEN = 1655,
@@ -1824,5 +1824,8 @@ enum __attribute__((packed)) Species
 };
 
 #define SPECIES_SHINY_TAG 5000
+
+// Preserve the previous internal name without adding a duplicate species ID.
+#define SPECIES_DRAGONITE_MEGA_CDRX SPECIES_DRAGONITE_MEGA_Y
 
 #endif  // GUARD_CONSTANTS_SPECIES_H

@@ -52,6 +52,8 @@ static u8 sLilycoveSSTidalSelections[SSTIDAL_SELECTION_COUNT];
 
 static void FreeListMenuItems(struct ListMenuItem *items, u32 count);
 static void Task_HandleScrollingMultichoiceInput(u8 taskId);
+static void Task_AdventureGrid(u8 taskId);
+static void AdventureGrid_Open(u8 argc, struct ListMenuItem *items, bool8 ignoreBPress, u32 initialRow, u32 callbackSet);
 static void Task_HandleMultichoiceInput(u8 taskId);
 static void Task_HandleYesNoInput(u8 taskId);
 static void Task_HandleMultichoiceGridInput(u8 taskId);
@@ -78,6 +80,11 @@ static void AdventureIcons_Print(u8 windowId, u32 choice, u8 y);
 
 static const struct DynamicListMenuEventCollection sDynamicListMenuEventCollections[] =
 {
+    [DYN_MULTICHOICE_CB_ADVENTURE_CAUGHT] =
+    {
+        .OnInit = AdventureIcons_Init,
+        .OnDestroy = AdventureIcons_Destroy,
+    },
     [DYN_MULTICHOICE_CB_ADVENTURE_PKMN] =
     {
         .OnInit = AdventureIcons_Init,
@@ -132,68 +139,158 @@ static void AdventureIcons_Destroy(struct DynamicListMenuEventArgs *args)
         AdventureIcons_FreeRow(i);
 }
 
-static void AdventureIcons_Print(u8 windowId, u32 choice, u8 y)
+static void AdventureIcons_Print(u8 windowId, u32 choice, u8 cell)
 {
-    u32 row = y / 16;
-    if (row >= ADVENTURE_VISIBLE_CHOICES)
+    if (cell >= ADVENTURE_VISIBLE_CHOICES)
         return;
-    AdventureIcons_FreeRow(row);
+    AdventureIcons_FreeRow(cell);
     struct DynamaxAdventureStatus status = DynamaxAdventure_GetStatus();
-    struct Pokemon *mon = status.phase == DA_PHASE_RENTAL ? DynamaxAdventure_GetRental(choice)
+    struct Pokemon *mon = sDynamicMenuEventId == DYN_MULTICHOICE_CB_ADVENTURE_CAUGHT ? DynamaxAdventure_GetCaught(choice)
+                        : status.phase == DA_PHASE_RENTAL ? DynamaxAdventure_GetRental(choice)
                         : status.phase == DA_PHASE_PATH ? DynamaxAdventure_GetPath(choice)
                         : DynamaxAdventure_GetCaught(choice);
     if (mon == NULL)
         return;
-    u32 freeSprite;
-    for (freeSprite = 0; freeSprite < MAX_SPRITES; freeSprite++)
-        if (!gSprites[freeSprite].inUse)
-            break;
-    if (freeSprite == MAX_SPRITES)
-        return;
-    u32 sprite = CreateTaggedMonIcon(ADVENTURE_ICON_TAG + row, ADVENTURE_ICON_TAG + row, GetMonData(mon, MON_DATA_SPECIES));
-    sDynamicMenuEventScratchPad[row] = sprite;
+    u32 sprite = CreateTaggedMonIcon(ADVENTURE_ICON_TAG + cell, ADVENTURE_ICON_TAG + cell, GetMonData(mon, MON_DATA_SPECIES));
+    sDynamicMenuEventScratchPad[cell] = sprite;
     if (sprite < MAX_SPRITES)
     {
         const struct WindowTemplate *window = &gWindows[windowId].window;
-        // Bake a 16px thumbnail. Affine animation can reset a manually
-        // assigned matrix, so these compact rows use ordinary OBJ tiles.
-        ALIGNED(4) u8 thumbnail[4 * TILE_SIZE_4BPP] = {0};
-        const u8 *tiles = GetMonIconTilesIsEgg(GetMonData(mon, MON_DATA_SPECIES), 0, FALSE);
-        for (u32 py = 0; py < 16; py++)
-            for (u32 px = 0; px < 16; px++)
-            {
-                u32 x = px * 2, y = py * 2;
-                u32 src = ((y / 8) * 4 + x / 8) * 32 + (y % 8) * 4 + (x % 8) / 2;
-                u32 dst = ((py / 8) * 2 + px / 8) * 32 + (py % 8) * 4 + (px % 8) / 2;
-                u8 color = (tiles[src] >> ((x & 1) * 4)) & 15;
-                thumbnail[dst] |= color << ((px & 1) * 4);
-            }
-        gSprites[sprite].oam.affineMode = ST_OAM_AFFINE_OFF;
-        gSprites[sprite].oam.size = ST_OAM_SIZE_1;
-        gSprites[sprite].centerToCornerVecX = -8;
-        gSprites[sprite].centerToCornerVecY = -8;
-        CpuCopy32(thumbnail, (void *)(OBJ_VRAM0 + gSprites[sprite].oam.tileNum * TILE_SIZE_4BPP), sizeof(thumbnail));
-        gSprites[sprite].x = window->tilemapLeft * 8 + 20;
-        gSprites[sprite].y = window->tilemapTop * 8 + y + 8;
+        // Native 32x32 artwork: no decimation, rescaling or affine matrices.
+        gSprites[sprite].x = window->tilemapLeft * 8 + 20 + (cell % 2) * 108;
+        gSprites[sprite].y = window->tilemapTop * 8 + 16 + (cell / 2) * 32;
         gSprites[sprite].oam.priority = 0;
     }
 }
 
+static void AdventureGrid_PrintName(u8 window, const u8 *name, u32 cell)
+{
+    u8 label[64];
+    u32 lastSpace = 0;
+    bool32 wrapped = FALSE;
+    StringCopyN(label, name, sizeof(label) - 1);
+    label[sizeof(label) - 1] = EOS;
+    for (u32 i = 0; label[i] != EOS; i++)
+    {
+        u8 next = label[i + 1];
+        if (label[i] == CHAR_SPACE)
+            lastSpace = i;
+        label[i + 1] = EOS;
+        u32 width = GetStringWidth(FONT_SMALL, label, 0);
+        label[i + 1] = next;
+        if (width > 68)
+        {
+            label[lastSpace != 0 ? lastSpace : i] = CHAR_NEWLINE;
+            wrapped = TRUE;
+            break;
+        }
+    }
+    AddTextPrinterParameterized(window, FONT_SMALL, label,
+        (cell % 2) * 108 + 38, (cell / 2) * 32 + (wrapped ? 3 : 10), TEXT_SKIP_DRAW, NULL);
+}
+
 static void AdventureIcons_Refresh(u8 taskId)
 {
-    u16 offset;
+    struct Task *task = &gTasks[taskId];
     struct ListMenuItem *items;
-    ListMenuGetScrollAndRow(gTasks[taskId].data[0], &offset, NULL);
-    if (gTasks[taskId].data[8] == offset)
-        return;
-    gTasks[taskId].data[8] = offset;
-    LoadWordFromTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32 *)&items);
-    for (u32 row = 0; row < ADVENTURE_VISIBLE_CHOICES; row++)
+    LoadWordFromTwoHalfwords((u16 *)&task->data[3], (u32 *)&items);
+    u32 offset = task->data[0] / ADVENTURE_VISIBLE_CHOICES * ADVENTURE_VISIBLE_CHOICES;
+    u8 window = task->data[2];
+    FillWindowPixelBuffer(window, PIXEL_FILL(1));
+    for (u32 cell = 0; cell < ADVENTURE_VISIBLE_CHOICES; cell++)
     {
-        if (offset + row < gTasks[taskId].data[5])
-            AdventureIcons_Print(gTasks[taskId].data[2], items[offset + row].id, row * 16);
+        if (offset + cell < task->data[5])
+        {
+            if (task->data[8] != offset)
+                AdventureIcons_Print(window, items[offset + cell].id, cell);
+            AdventureGrid_PrintName(window, items[offset + cell].name, cell);
+            if (offset + cell == task->data[0])
+                AddTextPrinterParameterized(window, FONT_SMALL, COMPOUND_STRING(">"),
+                    (cell % 2) * 108, (cell / 2) * 32 + 10, TEXT_SKIP_DRAW, NULL);
+        }
         else
-            AdventureIcons_FreeRow(row);
+            AdventureIcons_FreeRow(cell);
+    }
+    task->data[8] = offset;
+    gScrollableMultichoice_ScrollOffset = offset;
+    CopyWindowToVram(window, COPYWIN_FULL);
+}
+
+static void Task_AdventureGrid(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u32 selected = task->data[0], count = task->data[5], next = selected;
+    bool32 done = FALSE;
+    if (JOY_NEW(A_BUTTON))
+    {
+        struct ListMenuItem *items;
+        LoadWordFromTwoHalfwords((u16 *)&task->data[3], (u32 *)&items);
+        gSpecialVar_Result = items[selected].id;
+        done = TRUE;
+    }
+    else if (JOY_NEW(B_BUTTON) && !task->data[1])
+    {
+        gSpecialVar_Result = MULTI_B_PRESSED;
+        done = TRUE;
+    }
+    else if (JOY_REPEAT(DPAD_DOWN) && selected + 2 < count)
+        next += 2;
+    else if (JOY_REPEAT(DPAD_UP) && selected >= 2)
+        next -= 2;
+    else if (JOY_REPEAT(DPAD_RIGHT) && !(selected & 1) && selected + 1 < count)
+        next++;
+    else if (JOY_REPEAT(DPAD_LEFT) && (selected & 1))
+        next--;
+    if (done)
+    {
+        struct ListMenuItem *items;
+        PlaySE(SE_SELECT);
+        if (count > ADVENTURE_VISIBLE_CHOICES)
+            RemoveScrollIndicatorArrowPair(task->data[6]);
+        AdventureIcons_Destroy(NULL);
+        sDynamicMenuEventId = DYN_MULTICHOICE_CB_NONE;
+        LoadWordFromTwoHalfwords((u16 *)&task->data[3], (u32 *)&items);
+        FreeListMenuItems(items, count);
+        TRY_FREE_AND_SET_NULL(sDynamicMenuEventScratchPad);
+        ClearStdWindowAndFrame(task->data[2], TRUE);
+        RemoveWindow(task->data[2]);
+        ScriptContext_Enable();
+        DestroyTask(taskId);
+    }
+    else if (selected != next)
+    {
+        task->data[0] = next;
+        PlaySE(SE_SELECT);
+        AdventureIcons_Refresh(taskId);
+    }
+}
+
+static void AdventureGrid_Open(u8 argc, struct ListMenuItem *items, bool8 ignoreBPress, u32 initialRow, u32 callbackSet)
+{
+    LoadMessageBoxAndBorderGfx();
+    u8 window = CreateWindowFromRect(1, 1, 27, 12);
+    SetStandardWindowBorderStyle(window, FALSE);
+    sDynamicMenuEventId = callbackSet;
+    sDynamicMenuEventScratchPad = AllocZeroed(100 * sizeof(u16));
+    AdventureIcons_Init(NULL);
+    u8 taskId = CreateTask(Task_AdventureGrid, 80);
+    gTasks[taskId].data[0] = min(initialRow, argc - 1);
+    gTasks[taskId].data[1] = ignoreBPress;
+    gTasks[taskId].data[2] = window;
+    StoreWordInTwoHalfwords((u16 *)&gTasks[taskId].data[3], (u32)items);
+    gTasks[taskId].data[5] = argc;
+    gTasks[taskId].data[8] = -1;
+    AdventureIcons_Refresh(taskId);
+    if (argc > ADVENTURE_VISIBLE_CHOICES)
+    {
+        struct ScrollArrowsTemplate arrows = {
+            .firstArrowType = SCROLL_ARROW_UP, .firstX = 232, .firstY = 24,
+            .secondArrowType = SCROLL_ARROW_DOWN, .secondX = 232, .secondY = 88,
+            .fullyUpThreshold = 0,
+            .fullyDownThreshold = (argc - 1) / ADVENTURE_VISIBLE_CHOICES * ADVENTURE_VISIBLE_CHOICES,
+            .tileTag = 0xDA30, .palTag = 0xDA30, .palNum = 0,
+        };
+        gTasks[taskId].data[6] = AddScrollIndicatorArrowPair(&arrows, &gScrollableMultichoice_ScrollOffset);
     }
 }
 
@@ -211,7 +308,7 @@ static const struct ListMenuTemplate sScriptableListMenuTemplate =
 
 bool8 ScriptMenu_MultichoiceDynamic(u8 left, u8 top, u8 argc, struct ListMenuItem *items, bool8 ignoreBPress, u8 maxBeforeScroll, u32 initialRow, u32 callbackSet)
 {
-    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE || FuncIsActiveTask(Task_AdventureGrid))
     {
         FreeListMenuItems(items, argc);
         return FALSE;
@@ -488,19 +585,18 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     u32 windowHeight;
     struct ListMenu *list;
 
+    if ((callbackSet == DYN_MULTICHOICE_CB_ADVENTURE_PKMN || callbackSet == DYN_MULTICHOICE_CB_ADVENTURE_CAUGHT) && argc != 0)
+    {
+        AdventureGrid_Open(argc, items, ignoreBPress, initialRow, callbackSet);
+        return;
+    }
+
     for (i = 0; i < argc; ++i)
     {
         width = DisplayTextAndGetWidth(items[i].name, width);
     }
     LoadMessageBoxAndBorderGfx();
     windowHeight = (argc < maxBeforeScroll) ? argc * 2 : maxBeforeScroll * 2;
-    bool32 adventureIcons = callbackSet == DYN_MULTICHOICE_CB_ADVENTURE_PKMN;
-    if (adventureIcons)
-    {
-        width += 24;
-        windowHeight = min(argc, ADVENTURE_VISIBLE_CHOICES) * 2;
-        maxBeforeScroll = ADVENTURE_VISIBLE_CHOICES;
-    }
     newWidth = ConvertPixelWidthToTileWidth(width);
     left = ScriptMenu_AdjustLeftCoordFromWidth(left, newWidth);
     windowId = CreateWindowFromRect(left, top, newWidth, windowHeight);
@@ -523,11 +619,6 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     gMultiuseListMenuTemplate.totalItems = argc;
     gMultiuseListMenuTemplate.maxShowed = maxBeforeScroll;
     gMultiuseListMenuTemplate.moveCursorFunc = MultichoiceDynamic_MoveCursor;
-    if (adventureIcons)
-    {
-        gMultiuseListMenuTemplate.item_X = 32;
-        gMultiuseListMenuTemplate.itemPrintFunc = NULL;
-    }
 
     taskId = CreateTask(Task_HandleScrollingMultichoiceInput, 80);
     gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);
@@ -545,11 +636,6 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
         sDynamicListMenuEventCollections[sDynamicMenuEventId].OnSelectionChanged(&eventArgs);
     }
     ListMenuGetScrollAndRow(gTasks[taskId].data[0], &gScrollableMultichoice_ScrollOffset, NULL);
-    if (adventureIcons)
-    {
-        gTasks[taskId].data[8] = -1;
-        AdventureIcons_Refresh(taskId);
-    }
     if (argc > maxBeforeScroll)
     {
         // Create Scrolling Arrows
@@ -639,8 +725,7 @@ static void Task_HandleScrollingMultichoiceInput(u8 taskId)
 {
     bool32 done = FALSE;
     s32 input = ListMenu_ProcessInput(gTasks[taskId].data[0]);
-    if (sDynamicMenuEventId == DYN_MULTICHOICE_CB_ADVENTURE_PKMN)
-        AdventureIcons_Refresh(taskId);
+
 
     switch (input)
     {
