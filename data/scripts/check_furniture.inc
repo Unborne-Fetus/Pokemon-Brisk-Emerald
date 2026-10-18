@@ -6,8 +6,7 @@ EventScript_RestBench::
 	lockall
 	call EventScript_RestBench_HealParty
 	callnative UpdateFollowingPokemon
-	playfanfare MUS_HEAL
-	waitfanfare
+	playse SE_USE_ITEM
 	msgbox Text_RestBench, MSGBOX_DEFAULT
 	releaseall
 	end

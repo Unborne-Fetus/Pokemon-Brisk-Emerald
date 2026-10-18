@@ -112,6 +112,33 @@ def current_areas():
         areas.append(a)
     return areas
 
+def pave_city(a):
+    """Join the current doors, route promenade and harbor without moving scenery."""
+    paving={0x138,0x139,0x13A,0x140,0x141,0x142,0x148,0x149,0x14A}
+    ground={GRASS,5,0x10}|paving
+    edges=[y for y in range(a.h) if a.grid[y][0]&1023 in [0x205,0x206,0x207]]
+    main=edges[len(edges)//2]
+    home=max(w['y'] for w in a.meta['warp_events'][2:])+2
+    mask=set()
+    def street(x0,y0,x1,y1):
+        for y in range(y0,y1):
+            for x in range(x0,x1):
+                if 0<=x<a.w and 0<=y<a.h and a.grid[y][x]&1023 in ground:
+                    mask.add((x,y))
+    street(5,main-1,a.w-5,main+2)
+    street(9,home-1,37,home+2)
+    street(22,main,26,home+4)
+    for w in a.meta['warp_events']:
+        street(w['x']-1,w['y']+1,w['x']+2,home+1 if w['y']>main else main+1)
+    for x,y in mask:
+        n,e,s,w=[(x+dx,y+dy) not in mask for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]]
+        tile=0x138 if n and w else 0x13A if n and e else 0x148 if s and w else 0x14A if s and e else 0x139 if n else 0x149 if s else 0x140 if w else 0x142 if e else 0x141
+        a.grid[y][x]=(a.grid[y][x]&~1023)|tile
+    # Tile 4 is flowers in this imported tileset; tile 3 is the wooden sign.
+    for event in a.meta['bg_events']:
+        if event.get('script')=='OrangeCity_EventScript_TownSign':
+            a.grid[event['y']][event['x']]=block(3,True)
+
 def polish():
     # Work on current map sizes/positions instead of recreating the old town.
     for a in current_areas():
@@ -119,7 +146,6 @@ def polish():
         protected={(w['x'],w['y']) for w in a.meta['warp_events']}
         protected|={(o['x'],o['y']) for o in a.meta['object_events']}
         protected|={(o['x'],o['y']) for o in a.meta['bg_events']}
-        paving={0x138,0x139,0x13A,0x13E,0x13F,0x140,0x141,0x142,0x146,0x147,0x148,0x149,0x14A}
         plain={GRASS,0x10,5}
         def safe(x,y):return 0<=x<a.w and 0<=y<a.h and (x,y) not in protected
         def flower(x,y,tile=5):
@@ -135,11 +161,7 @@ def polish():
             if all(safe(x+dx,y+dy) and a.grid[y+dy][x+dx]&1023 in plain for dy in range(2) for dx in range(2)):
                 a.stamp(x,y,[[0x14,0x15],[0x24,0x25]])
         if a.name=='OrangeCity':
-            # Route 144's grassy, flower-lined promenade replaces the wide gray
-            # paving while the service buildings, doors and harbor stay put.
-            for y,row in enumerate(a.grid):
-                for x,v in enumerate(row):
-                    if v&1023 in paving:a.grid[y][x]=block(GRASS)
+            # Retain the flower beds, palms and rest spots around paved streets.
             edges=[y for y in range(a.h) if a.grid[y][0]&1023 in [0x205,0x206,0x207]]
             main=edges[len(edges)//2]
             home=max(w['y'] for w in a.meta['warp_events'][2:])+2
@@ -180,6 +202,7 @@ def polish():
             for y,row in enumerate(a.grid):
                 for x,v in enumerate(row):
                     if v&1023==GRASS and (x*7+y*11)%43==0:flower(x,y,5)
+        if a.name=='OrangeCity':pave_city(a)
         write_words('data/layouts/'+a.name+'/map.bin',[v for row in a.grid for v in row])
     # Mailboxes should be solid at their bases, like the other street furniture.
     layouts=load('data/layouts/layouts.json')['layouts']

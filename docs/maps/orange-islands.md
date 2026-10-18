@@ -15,7 +15,7 @@ Orange City, and Routes 149–150. Routes 147–148 form the forest approach.
 | Route 149 | 46 × 36 | Return teleporter, beach paths and rocky sea passage |
 | Route 150 | 63 × 36 | Sea passage linking Route 149 to Route 143 |
 
-Orange City's grassy promenades connect both neighboring routes, the four building
+Orange City's paved streets and flower-lined rest areas connect both neighboring routes, the four building
 entrances, town square and harbor. Each interior returns to its own front door.
 The Center's healing, upper floor and respawn data are retained, with its outdoor
 arrival position updated to the new doorway. The mart retains its custom Mega
