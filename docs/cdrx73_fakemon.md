@@ -1,5 +1,8 @@
 # CDRX73 additions
 
+Species definitions live in `src/data/pokemon/species_info/gen_*_families.h`,
+beside the existing base family, including Halloween and Mega forms.
+
 Designs, front/back sprites, icons and supplied shiny colors: [CDRX73](https://www.reddit.com/user/CDRX73/).
 Names, lore and gameplay data: Brisk. Sources: FAKEMON.zip, SPRITES 2.zip and HALLOWEEN.rar supplied by the user.
 

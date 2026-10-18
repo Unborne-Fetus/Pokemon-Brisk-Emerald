@@ -1,5 +1,8 @@
 # princess-phoenix Fakémon
 
+Species definitions are grouped as independent Hoenn families in
+`src/data/pokemon/species_info/gen_3_families.h`.
+
 All twelve species are implemented as independent species. No wild encounter,
 map, gift, trainer team, or Adventure rental pool has been edited to place them.
 Use their `SPECIES_` constants below in your own maps or encounter tables.

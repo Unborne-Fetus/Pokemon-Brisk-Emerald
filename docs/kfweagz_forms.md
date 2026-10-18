@@ -1,5 +1,9 @@
 # KFWeagz forms and Orange City Mega Stones
 
+Species definitions live beside their base families in
+`src/data/pokemon/species_info/gen_*_families.h`. Steam Shell is in Gen 1
+with Blastoise; Iron Furnace is in Gen 9 with Garganacl.
+
 Supplied designs, front/back sprites and shiny colors: [KFWeagz](https://www.deviantart.com/kfweagz).
 Original uploaded sheets are retained in `resources/kfweagz/`; their DeviantArt
 deviation IDs are encoded in the `d...` filenames. All fifteen supplied sheets

@@ -1880,6 +1880,82 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formChangeTable = sPyroarFormChangeTable,
     },
 
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_PYROAR_MEGA_M] =
+    {
+        .baseHP        = 86,
+        .baseAttack    = 68,
+        .baseDefense   = 87,
+        .baseSpeed     = 126,
+        .baseSpAttack  = 134,
+        .baseSpDefense = 106,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_NORMAL),
+        .catchRate = 65,
+        .expYield = 177,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(87.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_FIRE_MANE, ABILITY_FIRE_MANE, ABILITY_FIRE_MANE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Pyroar"),
+        .cryId = CRY_PYROAR,
+        .natDexNum = NATIONAL_DEX_PYROAR,
+        .categoryName = _("Royal"),
+        .height = 15,
+        .weight = 815,
+        .description = COMPOUND_STRING(
+            "The male with the largest mane of fire\n"
+            "is the leader of the pride. The females\n"
+            "protect the pride's cubs. They viciously\n"
+            "threaten any challenger."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .iconSprite = gMonIcon_Pyroar,
+        .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES
+#endif //P_GENDER_DIFFERENCES
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Pyroar)
+        OVERWORLD(
+            sPicTable_Pyroar,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pyroar,
+            gShinyOverworldPalette_Pyroar
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_PyroarF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sPyroarLevelUpLearnset,
+        .teachableLearnset = sPyroarTeachableLearnset,
+        .formSpeciesIdTable = sPyroarFormSpeciesIdTable,
+        .formChangeTable = sPyroarCustomMegaFormChangeTable,
+        .frontPic = gMonFrontPic_PyroarMegaM,
+        .backPic = gMonBackPic_PyroarMegaM,
+        .frontPic80 = gMonFrontPic80_PyroarMegaM,
+        .backPic80 = gMonBackPic80_PyroarMegaM,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_PyroarMegaM,
+        .shinyPalette = gMonShinyPalette_PyroarMegaM,
+        .isMegaEvolution = TRUE,
+    },
+
 #if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_PYROAR_MEGA] =
     {
@@ -4369,6 +4445,75 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formSpeciesIdTable = sClawitzerAddedMegaFormSpeciesIdTable,
         .formChangeTable = sClawitzerAddedMegaFormChangeTable,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_CLAWITZER_MEGA] =
+    {
+        .baseHP = 71,
+        .baseAttack = 83,
+        .baseDefense = 108,
+        .baseSpeed = 79,
+        .baseSpAttack = 170,
+        .baseSpDefense = 89,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
+        .catchRate = 55,
+        .expYield = 100,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_3),
+        .abilities = { ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = TRUE,
+        .speciesName = _("Clawitzer"),
+        .cryId = CRY_CLAWITZER,
+        .natDexNum = NATIONAL_DEX_CLAWITZER,
+        .categoryName = _("Howitzer"),
+        .height = 13,
+        .weight = 353,
+        .description = COMPOUND_STRING(
+            "By expelling water from the nozzle in the\n"
+            "back of its enormous claw, it can move\n"
+            "at a speed of 60 knots. They launch\n"
+            "cannonballs made of water."),
+        .pokemonScale = 272,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Clawitzer,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 1, SHADOW_SIZE_L)
+        FOOTPRINT(Clawitzer)
+        OVERWORLD(
+            sPicTable_Clawitzer,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Clawitzer,
+            gShinyOverworldPalette_Clawitzer
+        )
+        .levelUpLearnset = sClawitzerLevelUpLearnset,
+        .teachableLearnset = sClawitzerTeachableLearnset,
+        .frontPic = gMonFrontPic_ClawitzerMega,
+        .backPic = gMonBackPic_ClawitzerMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_ClawitzerMega,
+        .shinyPalette = gMonShinyPalette_ClawitzerMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sClawitzerAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sClawitzerAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_ClawitzerMega,
+        .backPic80 = gMonBackPic80_ClawitzerMega,
+    },
 #endif //P_FAMILY_CLAUNCHER
 
 #if P_FAMILY_HELIOPTILE
@@ -6537,6 +6682,74 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sNoivernLevelUpLearnset,
         .teachableLearnset = sNoivernTeachableLearnset,
+        .formSpeciesIdTable = sNoivernFormSpeciesIdTable,
+        .formChangeTable = sNoivernFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/kfweagz_forms.md.
+    [SPECIES_NOIVERN_MEGA] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 70,
+        .baseDefense   = 100,
+        .baseSpeed     = 143,
+        .baseSpAttack  = 137,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_FLYING, TYPE_DRAGON),
+        .catchRate = 45,
+        .expYield = 187,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = NOIBAT_EGG_GROUPS,
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Noivern"),
+        .cryId = CRY_NOIVERN,
+        .natDexNum = NATIONAL_DEX_NOIVERN,
+        .categoryName = _("Sound Wave"),
+        .height = 15,
+        .weight = 850,
+        .description = COMPOUND_STRING(
+            "They fly around on moonless nights and\n"
+            "attack careless prey. The ultrasonic\n"
+            "waves it emits from its ears can reduce\n"
+            "a large boulder to pebbles."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_KFNoivernMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_KFNoivernMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_KFNoivernMega,
+        .shinyPalette = gMonShinyPalette_KFNoivernMega,
+        .iconSprite = gMonIcon_Noivern,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(5, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Noivern)
+        OVERWORLD(
+            sPicTable_Noivern,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Noivern,
+            gShinyOverworldPalette_Noivern
+        )
+        .levelUpLearnset = sNoivernLevelUpLearnset,
+        .teachableLearnset = sNoivernTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_KFNoivernMega,
+        .backPic80 = gMonBackPic80_KFNoivernMega,
+        .isMegaEvolution = TRUE,
         .formSpeciesIdTable = sNoivernFormSpeciesIdTable,
         .formChangeTable = sNoivernFormChangeTable,
     },

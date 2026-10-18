@@ -196,6 +196,72 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sRillaboomFormChangeTable,
     },
 
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_RILLABOOM_MEGA] =
+    {
+        .baseHP = 100,
+        .baseAttack = 155,
+        .baseDefense = 120,
+        .baseSpeed = 95,
+        .baseSpAttack = 60,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_ROCK),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Rillaboom"),
+        .cryId = CRY_RILLABOOM,
+        .natDexNum = NATIONAL_DEX_RILLABOOM,
+        .categoryName = _("Drummer"),
+        .height = 21,
+        .weight = 900,
+        .description = COMPOUND_STRING(
+            "By drumming, it taps into the power of\n"
+            "its special tree stump. The roots of the\n"
+            "stump follow its direction in battle."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+
+        .iconSprite = gMonIcon_Rillaboom,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 8, SHADOW_SIZE_L)
+        FOOTPRINT(Rillaboom)
+        OVERWORLD(
+            sPicTable_Rillaboom,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Rillaboom,
+            gShinyOverworldPalette_Rillaboom
+        )
+        .levelUpLearnset = sRillaboomLevelUpLearnset,
+        .teachableLearnset = sRillaboomTeachableLearnset,
+
+        .frontPic = gMonFrontPic_RillaboomMega,
+        .backPic = gMonBackPic_RillaboomMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 4,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_RillaboomMega,
+        .shinyPalette = gMonShinyPalette_RillaboomMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sRillaboomFormSpeciesIdTable,
+        .formChangeTable = sRillaboomFormChangeTable,
+    },
+
 #if P_GIGANTAMAX_FORMS
     [SPECIES_RILLABOOM_GMAX] =
     {
@@ -4086,6 +4152,73 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         ),
     },
 
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_SINISTEA_HALLOWEEN] =
+    {
+        .baseHP        = 40,
+        .baseAttack    = 45,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 74,
+        .baseSpDefense = 54,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_POISON),
+        .catchRate = 120,
+        .expYield = 62,
+        .evYield_SpAttack = 1,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LIQUID_OOZE, ABILITY_WEAK_ARMOR, ABILITY_CURSED_BODY },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Sinistea"),
+        .cryId = CRY_SINISTEA,
+        .natDexNum = NATIONAL_DEX_SINISTEA,
+        .categoryName = _("Black Tea"),
+        .height = 1,
+        .weight = 2,
+        .description = COMPOUND_STRING("This unusual Sinistea takes on\n"
+            "a haunting appearance. It is most\n"
+            "active on long autumn nights."),
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CDRXSinisteaHalloween,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 9,
+        .backPic = gMonBackPic_CDRXSinisteaHalloween,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CDRXSinisteaHalloween,
+        .shinyPalette = gMonShinyPalette_CDRXSinisteaHalloween,
+        .iconSprite = gMonIcon_CDRXSinisteaHalloween,
+        .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Sinistea)
+        OVERWORLD(
+            sPicTable_Sinistea,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Sinistea,
+            gShinyOverworldPalette_Sinistea
+        )
+        .levelUpLearnset = sCDRXSinisteaHalloweenLevelUpLearnset,
+        .teachableLearnset = sCDRXSinisteaHalloweenTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXSinisteaHalloween,
+        .backPic80 = gMonBackPic80_CDRXSinisteaHalloween,
+        .formSpeciesIdTable = sSinisteaFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_POLTEAGEIST_HALLOWEEN}),
+    },
+
     [SPECIES_SINISTEA_ANTIQUE] =
     {
         .baseHP        = 40,
@@ -4216,6 +4349,72 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sPolteageistLevelUpLearnset,
         .teachableLearnset = sPolteageistTeachableLearnset,
+        .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
+    },
+
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_POLTEAGEIST_HALLOWEEN] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 65,
+        .baseDefense   = 65,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 134,
+        .baseSpDefense = 114,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_POISON),
+        .catchRate = 60,
+        .expYield = 178,
+        .evYield_SpAttack = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LIQUID_OOZE, ABILITY_WEAK_ARMOR, ABILITY_CURSED_BODY },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Polteageist"),
+        .cryId = CRY_POLTEAGEIST,
+        .natDexNum = NATIONAL_DEX_POLTEAGEIST,
+        .categoryName = _("Black Tea"),
+        .height = 2,
+        .weight = 4,
+        .description = COMPOUND_STRING("This unusual Polteageist takes on\n"
+            "a haunting appearance. It is most\n"
+            "active on long autumn nights."),
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CDRXPolteageistHalloween,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 12,
+        .backPic = gMonBackPic_CDRXPolteageistHalloween,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CDRXPolteageistHalloween,
+        .shinyPalette = gMonShinyPalette_CDRXPolteageistHalloween,
+        .iconSprite = gMonIcon_CDRXPolteageistHalloween,
+        .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 12, SHADOW_SIZE_S)
+        FOOTPRINT(Polteageist)
+        OVERWORLD(
+            sPicTable_Polteageist,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Polteageist,
+            gShinyOverworldPalette_Polteageist
+        )
+        .levelUpLearnset = sCDRXPolteageistHalloweenLevelUpLearnset,
+        .teachableLearnset = sCDRXPolteageistHalloweenTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXPolteageistHalloween,
+        .backPic80 = gMonBackPic80_CDRXPolteageistHalloween,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 

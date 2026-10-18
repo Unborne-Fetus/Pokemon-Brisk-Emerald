@@ -229,6 +229,89 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formChangeTable = sMeganiumFormChangeTable,
     },
 
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_MEGANIUM_MEGA_M] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 102,
+        .baseDefense   = 140,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 103,
+        .baseSpDefense = 120,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 263,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 236,
+    #else
+        .expYield = 208,
+    #endif
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_TRIAGE, ABILITY_TRIAGE, ABILITY_TRIAGE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Meganium"),
+        .cryId = CRY_MEGANIUM,
+        .natDexNum = NATIONAL_DEX_MEGANIUM,
+        .categoryName = _("Herb"),
+        .height = 18,
+        .weight = 1005,
+        .description = COMPOUND_STRING(
+            "The fragrance of a Meganium's flower\n"
+            "soothes and calms emotions. In battle,\n"
+            "it gives off more of its becalming scent\n"
+            "to blunt the foe's fighting spirit."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 277,
+        .trainerOffset = 1,
+        .iconSprite = gMonIcon_Meganium,
+        .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 13, SHADOW_SIZE_M)
+        FOOTPRINT(Meganium)
+        OVERWORLD(
+            sPicTable_Meganium,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Meganium,
+            gShinyOverworldPalette_Meganium
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_MeganiumF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sMeganiumLevelUpLearnset,
+        .teachableLearnset = sMeganiumTeachableLearnset,
+        .formSpeciesIdTable = sMeganiumFormSpeciesIdTable,
+        .formChangeTable = sMeganiumCustomMegaFormChangeTable,
+        .frontPic = gMonFrontPic_MeganiumMegaM,
+        .backPic = gMonBackPic_MeganiumMegaM,
+        .frontPic80 = gMonFrontPic80_MeganiumMegaM,
+        .backPic80 = gMonBackPic80_MeganiumMegaM,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_MeganiumMegaM,
+        .shinyPalette = gMonShinyPalette_MeganiumMegaM,
+        .isMegaEvolution = TRUE,
+    },
+
 #if P_GEN_9_MEGA_EVOLUTIONS
     [SPECIES_MEGANIUM_MEGA] =
     {
@@ -505,6 +588,79 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sTyphlosionLevelUpLearnset,
         .teachableLearnset = sTyphlosionTeachableLearnset,
         .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionCustomMegaFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_TYPHLOSION_MEGA] =
+    {
+        .baseHP        = 78,
+        .baseAttack    = 89,
+        .baseDefense   = 108,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 144,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_FIRE),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 267,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 240,
+    #else
+        .expYield = 209,
+    #endif
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Typhlosion"),
+        .cryId = CRY_TYPHLOSION,
+        .natDexNum = NATIONAL_DEX_TYPHLOSION,
+        .categoryName = _("Volcano"),
+        .height = 17,
+        .weight = 795,
+        .description = COMPOUND_STRING(
+            "It can hide behind a shimmering heat haze\n"
+            "that it creates using its intense flames.\n"
+            "Typhlosion create blazing explosive\n"
+            "blasts that burn everything to cinders."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 268,
+        .trainerOffset = 1,
+        .iconSprite = gMonIcon_Typhlosion,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Typhlosion)
+        OVERWORLD(
+            sPicTable_Typhlosion,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Typhlosion,
+            gShinyOverworldPalette_Typhlosion
+        )
+        .levelUpLearnset = sTyphlosionLevelUpLearnset,
+        .teachableLearnset = sTyphlosionTeachableLearnset,
+        .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .frontPic = gMonFrontPic_TyphlosionMega,
+        .backPic = gMonBackPic_TyphlosionMega,
+        .frontPic80 = gMonFrontPic80_TyphlosionMega,
+        .backPic80 = gMonBackPic80_TyphlosionMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_TyphlosionMega,
+        .shinyPalette = gMonShinyPalette_TyphlosionMega,
+        .isMegaEvolution = TRUE,
         .formChangeTable = sTyphlosionCustomMegaFormChangeTable,
     },
 
@@ -794,6 +950,80 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sFeraligatrTeachableLearnset,
         .formSpeciesIdTable = sFeraligatrFormSpeciesIdTable,
         .formChangeTable = sFeraligatrFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_FERALIGATR_MEGA_M] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 150,
+        .baseDefense   = 130,
+        .baseSpeed     = 97,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 83,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 265,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 239,
+    #else
+        .expYield = 210,
+    #endif
+        .evYield_Attack = 2,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_DRAGONIZE, ABILITY_DRAGONIZE, ABILITY_DRAGONIZE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Feraligatr"),
+        .cryId = CRY_FERALIGATR,
+        .natDexNum = NATIONAL_DEX_FERALIGATR,
+        .categoryName = _("Big Jaw"),
+        .height = 23,
+        .weight = 888,
+        .description = COMPOUND_STRING(
+            "It opens its huge mouth to intimidate\n"
+            "enemies. In battle, it runs using its thick\n"
+            "and powerful hind legs to charge the\n"
+            "foe with incredible speed."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 342,
+        .trainerOffset = 7,
+        .iconSprite = gMonIcon_Feraligatr,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Feraligatr)
+        OVERWORLD(
+            sPicTable_Feraligatr,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Feraligatr,
+            gShinyOverworldPalette_Feraligatr
+        )
+        .levelUpLearnset = sFeraligatrLevelUpLearnset,
+        .teachableLearnset = sFeraligatrTeachableLearnset,
+        .formSpeciesIdTable = sFeraligatrFormSpeciesIdTable,
+        .formChangeTable = sFeraligatrCustomMegaFormChangeTable,
+        .frontPic = gMonFrontPic_FeraligatrMegaM,
+        .backPic = gMonBackPic_FeraligatrMegaM,
+        .frontPic80 = gMonFrontPic80_FeraligatrMegaM,
+        .backPic80 = gMonBackPic80_FeraligatrMegaM,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_FeraligatrMegaM,
+        .shinyPalette = gMonShinyPalette_FeraligatrMegaM,
+        .isMegaEvolution = TRUE,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -1146,6 +1376,75 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_NOCTARCH}),
+    },
+
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_NOCTARCH] =
+    {
+        .baseHP = 105,
+        .baseAttack = 65,
+        .baseDefense = 85,
+        .baseSpeed = 85,
+        .baseSpAttack = 110,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FLYING),
+        .catchRate = 90,
+    #if P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 158,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 155,
+    #else
+        .expYield = 162,
+    #endif
+        .evYield_HP = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_INSOMNIA, ABILITY_TINTED_LENS, ABILITY_FOREWARN },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Noctarch"),
+        .cryId = CRY_NOCTOWL,
+        .natDexNum = NATIONAL_DEX_NOCTARCH,
+        .categoryName = _("Owl"),
+        .height = 19,
+        .weight = 489,
+        .description = COMPOUND_STRING("Noctarch has adapted to a harsher\n"
+            "world. It protects its territory\n"
+            "with powerful attacks."),
+        .pokemonScale = 278,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CDRXNoctarch,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_CDRXNoctarch,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_CDRXNoctarch,
+        .shinyPalette = gMonShinyPalette_CDRXNoctarch,
+        .iconSprite = gMonIcon_CDRXNoctarch,
+        .iconPalIndex = 5,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Noctowl)
+        OVERWORLD(
+            sPicTable_Noctowl,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_Noctowl,
+            gShinyOverworldPalette_Noctowl
+        )
+        .levelUpLearnset = sCDRXNoctarchLevelUpLearnset,
+        .teachableLearnset = sCDRXNoctarchTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXNoctarch,
+        .backPic80 = gMonBackPic80_CDRXNoctarch,
     },
 #endif //P_FAMILY_HOOTHOOT
 
@@ -1836,6 +2135,83 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sTogekissFormSpeciesIdTable,
         .formChangeTable = sTogekissFormChangeTable,
     },
+
+// Brisk addition; creator credit: docs/kfweagz_forms.md.
+    [SPECIES_TOGEKISS_MEGA] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 50,
+        .baseDefense   = 115,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 160,
+        .baseSpDefense = 135,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_FLYING),
+        .catchRate = 30,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 273,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 245,
+    #else
+        .expYield = 220,
+    #endif
+        .evYield_SpAttack = 2,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SERENE_GRACE, ABILITY_SERENE_GRACE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .noFlip = TRUE,
+        .speciesName = _("Togekiss"),
+        .cryId = CRY_TOGEKISS,
+        .natDexNum = NATIONAL_DEX_TOGEKISS,
+        .categoryName = _("Jubilee"),
+        .height = 15,
+        .weight = 380,
+        .description = COMPOUND_STRING(
+            "As everyone knows, it visits peaceful\n"
+            "regions, bringing them gifts of kindness\n"
+            "and sweet blessings. It will never appear\n"
+            "where there is strife."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_KFTogekissMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .enemyMonElevation = 14,
+        .backPic = gMonBackPic_KFTogekissMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        .palette = gMonPalette_KFTogekissMega,
+        .shinyPalette = gMonShinyPalette_KFTogekissMega,
+        .iconSprite = gMonIcon_Togekiss,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 15, SHADOW_SIZE_M)
+        FOOTPRINT(Togekiss)
+        OVERWORLD(
+            sPicTable_Togekiss,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Togekiss,
+            gShinyOverworldPalette_Togekiss
+        )
+        .levelUpLearnset = sTogekissLevelUpLearnset,
+        .teachableLearnset = sTogekissTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_KFTogekissMega,
+        .backPic80 = gMonBackPic80_KFTogekissMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sTogekissFormSpeciesIdTable,
+        .formChangeTable = sTogekissFormChangeTable,
+    },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_TOGEPI
 
@@ -1994,6 +2370,84 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sXatuLevelUpLearnset,
         .teachableLearnset = sXatuTeachableLearnset,
+        .formSpeciesIdTable = sXatuFormSpeciesIdTable,
+        .formChangeTable = sXatuFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/kfweagz_forms.md.
+    [SPECIES_XATU_MEGA] =
+    {
+        .baseHP        = 65,
+        .baseAttack    = 75,
+        .baseDefense   = 95,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FLYING),
+        .catchRate = 75,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 165 : 171,
+        .evYield_Speed = 1,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Xatu"),
+        .cryId = CRY_XATU,
+        .natDexNum = NATIONAL_DEX_XATU,
+        .categoryName = _("Mystic"),
+        .height = 15,
+        .weight = 150,
+        .description = COMPOUND_STRING(
+            "It has the enigmatic power of foreseeing\n"
+            "the future. Some people in different lands\n"
+            "have long believed that Xatu are\n"
+            "emissaries from another world."),
+        .pokemonScale = 256,
+        .pokemonOffset = 6,
+        .trainerScale = 318,
+        .trainerOffset = 4,
+        .frontPic = gMonFrontPic_KFXatuMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_KFXatuMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_KFXatuMega,
+        .shinyPalette = gMonShinyPalette_KFXatuMega,
+        .iconSprite = gMonIcon_Xatu,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 1,
+#if P_GENDER_DIFFERENCES
+#endif //P_GENDER_DIFFERENCES
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 9, SHADOW_SIZE_S)
+        FOOTPRINT(Xatu)
+        OVERWORLD(
+            sPicTable_Xatu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Xatu,
+            gShinyOverworldPalette_Xatu
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_XatuF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sXatuLevelUpLearnset,
+        .teachableLearnset = sXatuTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_KFXatuMega,
+        .backPic80 = gMonBackPic80_KFXatuMega,
+        .isMegaEvolution = TRUE,
         .formSpeciesIdTable = sXatuFormSpeciesIdTable,
         .formChangeTable = sXatuFormChangeTable,
     },
@@ -2533,6 +2987,86 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sAzumarillCustomMegaFormSpeciesIdTable,
         .formChangeTable = sAzumarillCustomMegaFormChangeTable,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_AZUMARILL_MEGA] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 80,
+        .baseDefense   = 118,
+        .baseSpeed     = 42,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 120,
+    #if P_UPDATED_TYPES >= GEN_6
+        .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
+    #else
+        .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
+    #endif
+        .catchRate = 75,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 210,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_6
+        .expYield = 189,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 185,
+    #else
+        .expYield = 153,
+    #endif
+        .evYield_HP = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_HUGE_POWER, ABILITY_HUGE_POWER, ABILITY_HUGE_POWER },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = TRUE,
+        .speciesName = _("Azumarill"),
+        .cryId = CRY_AZUMARILL,
+        .natDexNum = NATIONAL_DEX_AZUMARILL,
+        .categoryName = _("Aqua Rabbit"),
+        .height = 8,
+        .weight = 285,
+        .description = COMPOUND_STRING(
+            "It lives in water virtually all day long.\n"
+            "Its body color and pattern act as\n"
+            "camouflage that makes it tough for\n"
+            "enemies to spot in water."),
+        .pokemonScale = 448,
+        .pokemonOffset = 16,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .iconSprite = gMonIcon_Azumarill,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-4, 8, SHADOW_SIZE_S)
+        FOOTPRINT(Azumarill)
+        OVERWORLD(
+            sPicTable_Azumarill,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Azumarill,
+            gShinyOverworldPalette_Azumarill
+        )
+        .levelUpLearnset = sAzumarillLevelUpLearnset,
+        .teachableLearnset = sAzumarillTeachableLearnset,
+        .frontPic = gMonFrontPic_AzumarillMega,
+        .backPic = gMonBackPic_AzumarillMega,
+        .frontPic80 = gMonFrontPic80_AzumarillMega,
+        .backPic80 = gMonBackPic80_AzumarillMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_AzumarillMega,
+        .shinyPalette = gMonShinyPalette_AzumarillMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sAzumarillCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sAzumarillCustomMegaFormChangeTable,
+    },
 #endif //P_FAMILY_MARILL
 
 #if P_FAMILY_SUDOWOODO
@@ -2692,6 +3226,79 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sSudowoodoTeachableLearnset,
         .eggMoveLearnset = sSudowoodoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_SUDOSYLVAN}),
+    },
+
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_SUDOSYLVAN] =
+    {
+        .baseHP = 90,
+        .baseAttack = 115,
+        .baseDefense = 125,
+        .baseSpeed = 40,
+        .baseSpAttack = 55,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_ROCK, TYPE_GRASS),
+        .catchRate = 65,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 144 : 135,
+        .evYield_Defense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_STURDY, ABILITY_WATER_ABSORB, ABILITY_HARVEST },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Sudosylvan"),
+        .cryId = CRY_SUDOWOODO,
+        .natDexNum = NATIONAL_DEX_SUDOSYLVAN,
+        .categoryName = _("Imitation"),
+        .height = 15,
+        .weight = 456,
+        .description = COMPOUND_STRING("Sudosylvan has adapted to a harsher\n"
+            "world. It protects its territory\n"
+            "with powerful attacks."),
+        .pokemonScale = 305,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CDRXSudosylvan,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_CDRXSudosylvan,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_H_SLIDE,
+        .palette = gMonPalette_CDRXSudosylvan,
+        .shinyPalette = gMonShinyPalette_CDRXSudosylvan,
+        .iconSprite = gMonIcon_CDRXSudosylvan,
+        .iconPalIndex = 1,
+#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 7, SHADOW_SIZE_S)
+        FOOTPRINT(Sudowoodo)
+        OVERWORLD(
+            sPicTable_Sudowoodo,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Sudowoodo,
+            gShinyOverworldPalette_Sudowoodo
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_SudowoodoF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sCDRXSudosylvanLevelUpLearnset,
+        .teachableLearnset = sCDRXSudosylvanTeachableLearnset,
+        .eggMoveLearnset = sSudowoodoEggMoveLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXSudosylvan,
+        .backPic80 = gMonBackPic80_CDRXSudosylvan,
     },
 #endif //P_FAMILY_SUDOWOODO
 
@@ -2930,6 +3537,86 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sJumpluffLevelUpLearnset,
         .teachableLearnset = sJumpluffTeachableLearnset,
+        .formSpeciesIdTable = sJumpluffCustomMegaFormSpeciesIdTable,
+        .formChangeTable = sJumpluffCustomMegaFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_JUMPLUFF_MEGA] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 65,
+        .baseDefense   = 120,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 230,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_6
+        .expYield = 207,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 203,
+    #else
+        .expYield = 176,
+    #endif
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_COTTON_DOWN, ABILITY_COTTON_DOWN, ABILITY_COTTON_DOWN },
+    #else
+        .abilities = { ABILITY_COTTON_DOWN, ABILITY_COTTON_DOWN, ABILITY_COTTON_DOWN },
+    #endif
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Jumpluff"),
+        .cryId = CRY_JUMPLUFF,
+        .natDexNum = NATIONAL_DEX_JUMPLUFF,
+        .categoryName = _("Cottonweed"),
+        .height = 8,
+        .weight = 30,
+        .description = COMPOUND_STRING(
+            "Jumpluff ride warm southern winds to\n"
+            "cross the sea and fly to foreign lands.\n"
+            "This Pokémon lands when it encounters\n"
+            "cold air while it is floating."),
+        .pokemonScale = 418,
+        .pokemonOffset = -4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .enemyMonElevation = 9,
+        .iconSprite = gMonIcon_Jumpluff,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 11, SHADOW_SIZE_S)
+        FOOTPRINT(Jumpluff)
+        OVERWORLD(
+            sPicTable_Jumpluff,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_Jumpluff,
+            gShinyOverworldPalette_Jumpluff
+        )
+        .levelUpLearnset = sJumpluffLevelUpLearnset,
+        .teachableLearnset = sJumpluffTeachableLearnset,
+        .frontPic = gMonFrontPic_JumpluffMega,
+        .backPic = gMonBackPic_JumpluffMega,
+        .frontPic80 = gMonFrontPic80_JumpluffMega,
+        .backPic80 = gMonBackPic80_JumpluffMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_JumpluffMega,
+        .shinyPalette = gMonShinyPalette_JumpluffMega,
+        .isMegaEvolution = TRUE,
         .formSpeciesIdTable = sJumpluffCustomMegaFormSpeciesIdTable,
         .formChangeTable = sJumpluffCustomMegaFormChangeTable,
     },
@@ -3600,6 +4287,83 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sKFQuagsireLevelUpLearnset,
         .teachableLearnset = sQuagsireTeachableLearnset,
+        .formSpeciesIdTable = sQuagsireFormSpeciesIdTable,
+        .formChangeTable = sQuagsireFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/kfweagz_forms.md.
+    [SPECIES_QUAGSIRE_MEGA] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 95,
+        .baseDefense   = 115,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_WATER, TYPE_GRASS),
+        .catchRate = 90,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 151 : 137,
+        .evYield_HP = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_WATER_ABSORB, ABILITY_WATER_ABSORB, ABILITY_WATER_ABSORB },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Quagsire"),
+        .cryId = CRY_QUAGSIRE,
+        .natDexNum = NATIONAL_DEX_QUAGSIRE,
+        .categoryName = _("Water Fish"),
+        .height = 14,
+        .weight = 750,
+        .description = COMPOUND_STRING(
+            "A Quagsire hunts by leaving its mouth wide\n"
+            "open in water and waiting for its prey to\n"
+            "blunder in. Because it doesn't move, it\n"
+            "does not get very hungry."),
+        .pokemonScale = 256,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_KFQuagsireMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_KFQuagsireMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_H_SLIDE,
+        .palette = gMonPalette_KFQuagsireMega,
+        .shinyPalette = gMonShinyPalette_KFQuagsireMega,
+        .iconSprite = gMonIcon_Quagsire,
+        .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+#endif //P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 8, SHADOW_SIZE_M)
+        FOOTPRINT(Quagsire)
+        OVERWORLD(
+            sPicTable_Quagsire,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Quagsire,
+            gShinyOverworldPalette_Quagsire
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_QuagsireF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sKFQuagsireLevelUpLearnset,
+        .teachableLearnset = sQuagsireTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_KFQuagsireMega,
+        .backPic80 = gMonBackPic80_KFQuagsireMega,
+        .isMegaEvolution = TRUE,
         .formSpeciesIdTable = sQuagsireFormSpeciesIdTable,
         .formChangeTable = sQuagsireFormChangeTable,
     },
@@ -5130,6 +5894,77 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sGranbullTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_GRANDBULLY}),
     },
+
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_GRANDBULLY] =
+    {
+        .baseHP = 100,
+        .baseAttack = 130,
+        .baseDefense = 100,
+        .baseSpeed = 50,
+        .baseSpAttack = 60,
+        .baseSpDefense = 90,
+    #if P_UPDATED_TYPES >= GEN_6
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_FIGHTING),
+    #else
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_FIGHTING),
+    #endif
+        .catchRate = 75,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 178,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_IRON_FIST, ABILITY_GUARD_DOG },
+    #else
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_IRON_FIST, ABILITY_GUARD_DOG },
+    #endif
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Grandbully"),
+        .cryId = CRY_GRANBULL,
+        .natDexNum = NATIONAL_DEX_GRANDBULLY,
+        .categoryName = _("Fairy"),
+        .height = 17,
+        .weight = 584,
+        .description = COMPOUND_STRING("Grandbully has adapted to a harsher\n"
+            "world. It protects its territory\n"
+            "with powerful attacks."),
+        .pokemonScale = 256,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CDRXGrandbully,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_CDRXGrandbully,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_CDRXGrandbully,
+        .shinyPalette = gMonShinyPalette_CDRXGrandbully,
+        .iconSprite = gMonIcon_CDRXGrandbully,
+        .iconPalIndex = 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Granbull)
+        OVERWORLD(
+            sPicTable_Granbull,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Granbull,
+            gShinyOverworldPalette_Granbull
+        )
+        .levelUpLearnset = sCDRXGrandbullyLevelUpLearnset,
+        .teachableLearnset = sCDRXGrandbullyTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXGrandbully,
+        .backPic80 = gMonBackPic80_CDRXGrandbully,
+    },
 #endif //P_FAMILY_SNUBBULL
 
 #if P_FAMILY_QWILFISH
@@ -6605,6 +7440,90 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sMamoswineCustomMegaForms,
         .formChangeTable = sMamoswineCustomMegaChanges,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_MAMOSWINE_MEGA] =
+    {
+        .baseHP = 110,
+        .baseAttack = 160,
+        .baseDefense = 110,
+        .baseSpeed = 100,
+        .baseSpAttack = 70,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_ICE, TYPE_GROUND),
+        .catchRate = 50,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 265,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 239,
+    #else
+        .expYield = 207,
+    #endif
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Mamoswine"),
+        .cryId = CRY_MAMOSWINE,
+        .natDexNum = NATIONAL_DEX_MAMOSWINE,
+        .categoryName = _("Twin Tusk"),
+        .height = 25,
+        .weight = 2910,
+        .description = COMPOUND_STRING(
+            "A frozen Mamoswine was dug from ice\n"
+            "dating back 10,000 years. It woke up to\n"
+            "much amazement. This Pokémon has been\n"
+            "around for a long, long, long time."),
+        .pokemonScale = 257,
+        .pokemonOffset = 6,
+        .trainerScale = 423,
+        .trainerOffset = 8,
+
+        .iconSprite = gMonIcon_Mamoswine,
+        .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES
+
+#endif //P_GENDER_DIFFERENCES
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(7, 7, SHADOW_SIZE_L)
+        FOOTPRINT(Mamoswine)
+        OVERWORLD(
+            sPicTable_Mamoswine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Mamoswine,
+            gShinyOverworldPalette_Mamoswine
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_MamoswineF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sMamoswineLevelUpLearnset,
+        .teachableLearnset = sMamoswineTeachableLearnset,
+        .frontPic = gMonFrontPic_MamoswineMega,
+        .backPic = gMonBackPic_MamoswineMega,
+        .frontPic80 = gMonFrontPic80_MamoswineMega,
+        .backPic80 = gMonBackPic80_MamoswineMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_MamoswineMega,
+        .shinyPalette = gMonShinyPalette_MamoswineMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sMamoswineCustomMegaForms,
+        .formChangeTable = sMamoswineCustomMegaChanges,
+    },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SWINUB
 
@@ -7277,6 +8196,71 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sSkarmoryFormSpeciesIdTable,
         .formChangeTable = sSkarmoryFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_SKARMAGEDN}),
+    },
+
+// Brisk addition; creator credit: docs/cdrx73_fakemon.md.
+    [SPECIES_SKARMAGEDN] =
+    {
+        .baseHP = 85,
+        .baseAttack = 115,
+        .baseDefense = 145,
+        .baseSpeed = 80,
+        .baseSpAttack = 45,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_FLYING),
+        .catchRate = 25,
+        .expYield = 163,
+        .evYield_Defense = 2,
+        .itemRare = ITEM_METAL_COAT,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_STURDY, ABILITY_KEEN_EYE, ABILITY_WIND_RIDER },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Skarmagedn"),
+        .cryId = CRY_SKARMORY,
+        .natDexNum = NATIONAL_DEX_SKARMAGEDN,
+        .categoryName = _("Armor Bird"),
+        .height = 20,
+        .weight = 606,
+        .description = COMPOUND_STRING("Skarmagedn has adapted to a harsher\n"
+            "world. It protects its territory\n"
+            "with powerful attacks."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 271,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_CDRXSkarmagedn,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_CDRXSkarmagedn,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_CDRXSkarmagedn,
+        .shinyPalette = gMonShinyPalette_CDRXSkarmagedn,
+        .iconSprite = gMonIcon_CDRXSkarmagedn,
+        .iconPalIndex = 5,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 9, SHADOW_SIZE_M)
+        FOOTPRINT(Skarmory)
+        OVERWORLD(
+            sPicTable_Skarmory,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Skarmory,
+            gShinyOverworldPalette_Skarmory
+        )
+        .levelUpLearnset = sCDRXSkarmagednLevelUpLearnset,
+        .teachableLearnset = sCDRXSkarmagednTeachableLearnset,
+        .eggMoveLearnset = sSkarmoryEggMoveLearnset,
+        .frontPic80 = gMonFrontPic80_CDRXSkarmagedn,
+        .backPic80 = gMonBackPic80_CDRXSkarmagedn,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS

@@ -1,5 +1,9 @@
 # Custom Mega sprite import
 
+Species definitions live beside their base families in
+`src/data/pokemon/species_info/gen_*_families.h`; there is no separate custom
+Mega species table. The palette helper reads these generation tables.
+
 The supplied pack adds 24 custom Mega species (IDs 1573–1596). The existing
 Meganium, Feraligatr, Excadrill, Pyroar and Darkrai Megas are preserved; their
 custom counterparts use `SPECIES_*_MEGA_M` identifiers. Their distinct stone names are

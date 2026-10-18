@@ -160,11 +160,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #include "species_info/gen_8_families.h"
     #include "species_info/gen_9_families.h"
 
-    #include "species_info/custom_megas.h"
-    #include "species_info/phoenix_fakemon.h"
-    #include "species_info/cdrx73_fakemon.h"
-    #include "species_info/kfweagz_forms.h"
-
     [SPECIES_EGG] =
     {
         .frontPic = gMonFrontPic_Egg,

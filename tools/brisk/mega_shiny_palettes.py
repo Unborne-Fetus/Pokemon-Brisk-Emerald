@@ -24,8 +24,11 @@ def lab(rgb):
 def main():
     graphics = ROOT / 'src/data/graphics/custom_megas.h'
     definitions = graphics.read_text()
-    info = ROOT / 'src/data/pokemon/species_info/custom_megas.h'
-    species_info = info.read_text()
+    # Custom forms live beside their base families in the generation tables.
+    species_info = {
+        path: path.read_text()
+        for path in sorted((ROOT / 'src/data/pokemon/species_info').glob('gen_*_families.h'))
+    }
     for filename in ('manifest.json', 'added_manifest.json'):
         manifest_path = ROOT / 'graphics/pokemon/custom_megas' / filename
         rows = json.loads(manifest_path.read_text())
@@ -52,13 +55,15 @@ def main():
             declaration = f'const u16 gMonShinyPalette_{symbol}[] = INCGFX_U16("{relative}/shiny.pal", ".gbapal");'
             if declaration not in definitions:
                 definitions += declaration + '\n'
-            species_info = species_info.replace(f'.shinyPalette = gMonPalette_{symbol},', f'.shinyPalette = gMonShinyPalette_{symbol},')
+            for path, source_info in species_info.items():
+                species_info[path] = source_info.replace(f'.shinyPalette = gMonPalette_{symbol},', f'.shinyPalette = gMonShinyPalette_{symbol},')
             row['shiny'] = 'Base-form shiny colors adapted to Mega palette indexes'
             row['shiny_palette_source'] = str((base_folder / 'shiny.pal').relative_to(ROOT))
             print(row['species'])
         manifest_path.write_text(json.dumps(rows, indent=2) + '\n')
     graphics.write_text(definitions)
-    info.write_text(species_info)
+    for path, source_info in species_info.items():
+        path.write_text(source_info)
 
 
 if __name__ == '__main__':

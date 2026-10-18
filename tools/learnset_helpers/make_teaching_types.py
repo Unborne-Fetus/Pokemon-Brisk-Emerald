@@ -42,6 +42,15 @@ def extract_repo_species_data() -> list:
     species_data = []
     pokemon_list = []
     teaching_type = "DEFAULT_LEARNING"
+    # Hand-authored learnsets are already defined by their included headers.
+    # Their species can live in any generation table without asking the
+    # canonical learnable-moves database to regenerate those arrays.
+    manual_learnsets = set()
+    for path in pathlib.Path("src/data/pokemon").glob("*_learnsets.h"):
+        if path.name != "teachable_learnsets.h":
+            manual_learnsets.update(re.findall(
+                r"static\s+const\s+u16\s+s(\w+)TeachableLearnset\[\]",
+                path.read_text()))
     file_list = sorted(glob.glob("src/data/pokemon/species_info/*_families.h"))
     file_list.append("./src/data/pokemon/species_info.h")
     for families_fname in file_list:
@@ -59,6 +68,9 @@ def extract_repo_species_data() -> list:
 
             match = re.match(LEARNSET_PAT, line)
             if match:
+                if match.group("name") in manual_learnsets:
+                    teaching_type = "DEFAULT_LEARNING"
+                    continue
                 if match.group("name") == "None":
                     continue
                 if match.group("name") not in pokemon_list:

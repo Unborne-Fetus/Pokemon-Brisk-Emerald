@@ -391,6 +391,72 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sSkeledirgeAddedMegaFormSpeciesIdTable,
         .formChangeTable = sSkeledirgeAddedMegaFormChangeTable,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_SKELEDIRGE_MEGA] =
+    {
+        .baseHP = 104,
+        .baseAttack = 75,
+        .baseDefense = 130,
+        .baseSpeed = 66,
+        .baseSpAttack = 150,
+        .baseSpDefense = 105,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GHOST),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Skeledirge"),
+        .cryId = CRY_SKELEDIRGE,
+        .natDexNum = NATIONAL_DEX_SKELEDIRGE,
+        .categoryName = _("Singer"),
+        .height = 16,
+        .weight = 3265,
+        .description = COMPOUND_STRING(
+            "Skeledirge's gentle singing\n"
+            "soothes the souls of all that hear it. It\n"
+            "burns its enemies to a crisp with\n"
+            "flames of over 5,400 degrees Fahrenheit."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Skeledirge,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 7, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Skeledirge)
+        OVERWORLD(
+            sPicTable_Skeledirge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Skeledirge,
+            gShinyOverworldPalette_Skeledirge
+        )
+        .levelUpLearnset = sSkeledirgeLevelUpLearnset,
+        .teachableLearnset = sSkeledirgeTeachableLearnset,
+        .frontPic = gMonFrontPic_SkeledirgeMega,
+        .backPic = gMonBackPic_SkeledirgeMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 4,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_SkeledirgeMega,
+        .shinyPalette = gMonShinyPalette_SkeledirgeMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sSkeledirgeAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeAddedMegaFormChangeTable,
+    },
 #endif //P_FAMILY_FUECOCO
 
 #if P_FAMILY_QUAXLY
@@ -1756,6 +1822,74 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sArbolivaAddedMegaFormSpeciesIdTable,
         .formChangeTable = sArbolivaAddedMegaFormChangeTable,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_ARBOLIVA_MEGA] =
+    {
+        .baseHP = 78,
+        .baseAttack = 69,
+        .baseDefense = 120,
+        .baseSpeed = 49,
+        .baseSpAttack = 165,
+        .baseSpDefense = 129,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = 255,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+        .abilities = { ABILITY_SEED_SOWER, ABILITY_SEED_SOWER, ABILITY_SEED_SOWER },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Arboliva"),
+        .cryId = CRY_ARBOLIVA,
+        .natDexNum = NATIONAL_DEX_ARBOLIVA,
+        .categoryName = _("Olive"),
+        .height = 14,
+        .weight = 482,
+        .description = COMPOUND_STRING(
+            "This Pokémon drives back enemies\n"
+            "by launching its rich, aromatic oil at\n"
+            "them with enough force to smash a\n"
+            "boulder."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Arboliva,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Arboliva)
+        OVERWORLD(
+            sPicTable_Arboliva,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Arboliva,
+            gShinyOverworldPalette_Arboliva
+        )
+        .levelUpLearnset = sArbolivaLevelUpLearnset,
+        .teachableLearnset = sArbolivaTeachableLearnset,
+        .frontPic = gMonFrontPic_ArbolivaMega,
+        .backPic = gMonBackPic_ArbolivaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_ArbolivaMega,
+        .shinyPalette = gMonShinyPalette_ArbolivaMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sArbolivaAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sArbolivaAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_ArbolivaMega,
+        .backPic80 = gMonBackPic80_ArbolivaMega,
+    },
 #endif //P_FAMILY_SMOLIV
 
 #if P_FAMILY_SQUAWKABILLY
@@ -2212,6 +2346,71 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sGarganaclLevelUpLearnset,
         .teachableLearnset = sGarganaclTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_IRON_FURNACE}),
+    },
+
+// Brisk addition; creator credit: docs/kfweagz_forms.md.
+    [SPECIES_IRON_FURNACE] =
+    {
+        .baseHP        = 110,
+        .baseAttack    = 120,
+        .baseDefense   = 130,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_STEEL),
+        .catchRate = 10,
+        .expYield = 285,
+        .evYield_Defense = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_PROTOSYNTHESIS, ABILITY_PROTOSYNTHESIS, ABILITY_PROTOSYNTHESIS },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Iron Furnace"),
+        .cryId = CRY_GARGANACL,
+        .natDexNum = NATIONAL_DEX_IRON_FURNACE,
+        .categoryName = _("Paradox"),
+        .height = 25,
+        .weight = 4800,
+        .description = COMPOUND_STRING("An ancient furnace-like creature.\n"
+            "Molten ore glows beneath its armor.\n"
+            "It feeds on minerals buried in lava."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_KFIronFurnace,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_KFIronFurnace,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_KFIronFurnace,
+        .shinyPalette = gMonShinyPalette_KFIronFurnace,
+        .iconSprite = gMonIcon_Garganacl,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Garganacl)
+        OVERWORLD(
+            sPicTable_Garganacl,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Garganacl,
+            gShinyOverworldPalette_Garganacl
+        )
+        .levelUpLearnset = sKFIronFurnaceLevelUpLearnset,
+        .teachableLearnset = sKFIronFurnaceTeachableLearnset,
+        .frontPic80 = gMonFrontPic80_KFIronFurnace,
+        .backPic80 = gMonBackPic80_KFIronFurnace,
+        .isParadox = TRUE,
     },
 #endif //P_FAMILY_NACLI
 
@@ -3916,6 +4115,74 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sTinkatonTeachableLearnset,
         .formSpeciesIdTable = sTinkatonAddedMegaFormSpeciesIdTable,
         .formChangeTable = sTinkatonAddedMegaFormChangeTable,
+    },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_TINKATON_MEGA] =
+    {
+        .baseHP = 85,
+        .baseAttack = 115,
+        .baseDefense = 107,
+        .baseSpeed = 114,
+        .baseSpAttack = 70,
+        .baseSpDefense = 115,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_STEEL),
+        .catchRate = 45,
+        .expYield = 253,
+        .evYield_SpDefense = 3,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_STEELWORKER, ABILITY_STEELWORKER, ABILITY_STEELWORKER },
+        .bodyColor = BODY_COLOR_PINK,
+        .speciesName = _("Tinkaton"),
+        .cryId = CRY_TINKATON,
+        .natDexNum = NATIONAL_DEX_TINKATON,
+        .categoryName = _("Hammer"),
+        .height = 7,
+        .weight = 1128,
+        .description = COMPOUND_STRING(
+            "The hammer tops 220 pounds, yet it\n"
+            "gets swung around easily by\n"
+            "Tinkaton as it steals whatever it pleases\n"
+            "and carries its plunder back home."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Tinkaton,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
+        SHADOW(-5, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Tinkaton)
+        OVERWORLD(
+            sPicTable_Tinkaton,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Tinkaton,
+            gShinyOverworldPalette_Tinkaton
+        )
+        .levelUpLearnset = sTinkatonLevelUpLearnset,
+        .teachableLearnset = sTinkatonTeachableLearnset,
+        .frontPic = gMonFrontPic_TinkatonMega,
+        .backPic = gMonBackPic_TinkatonMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_TinkatonMega,
+        .shinyPalette = gMonShinyPalette_TinkatonMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sTinkatonAddedMegaFormSpeciesIdTable,
+        .formChangeTable = sTinkatonAddedMegaFormChangeTable,
+        .frontPic80 = gMonFrontPic80_TinkatonMega,
+        .backPic80 = gMonBackPic80_TinkatonMega,
     },
 #endif //P_FAMILY_TINKATINK
 

@@ -3912,6 +3912,76 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sTsareenaCustomMegaForms,
         .formChangeTable = sTsareenaCustomMegaChanges,
     },
+
+// Brisk addition; creator credit: docs/custom_mega_sprites.md.
+    [SPECIES_TSAREENA_MEGA] =
+    {
+        .baseHP = 72,
+        .baseAttack = 150,
+        .baseDefense = 118,
+        .baseSpeed = 102,
+        .baseSpAttack = 50,
+        .baseSpDefense = 118,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 255 : 230,
+        .evYield_Attack = 3,
+        .itemCommon = ITEM_GRASSY_SEED,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+        .abilities = { ABILITY_DANCER, ABILITY_DANCER, ABILITY_DANCER },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = TRUE,
+        .speciesName = _("Tsareena"),
+        .cryId = CRY_TSAREENA,
+        .natDexNum = NATIONAL_DEX_TSAREENA,
+        .categoryName = _("Fruit"),
+        .height = 12,
+        .weight = 214,
+        .description = COMPOUND_STRING(
+            "Its long, striking legs aren't just for\n"
+            "show but to be used to kick with skill.\n"
+            "In victory, it shows off by kicking the\n"
+            "defeated, laughing boisterously."),
+        .pokemonScale = 282,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+
+        .iconSprite = gMonIcon_Tsareena,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 13, SHADOW_SIZE_M)
+        FOOTPRINT(Tsareena)
+        OVERWORLD(
+            sPicTable_Tsareena,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Tsareena,
+            gShinyOverworldPalette_Tsareena
+        )
+        .levelUpLearnset = sTsareenaLevelUpLearnset,
+        .teachableLearnset = sTsareenaTeachableLearnset,
+        .frontPic = gMonFrontPic_TsareenaMega,
+        .backPic = gMonBackPic_TsareenaMega,
+        .frontPic80 = gMonFrontPic80_TsareenaMega,
+        .backPic80 = gMonBackPic80_TsareenaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .palette = gMonPalette_TsareenaMega,
+        .shinyPalette = gMonShinyPalette_TsareenaMega,
+        .isMegaEvolution = TRUE,
+        .formSpeciesIdTable = sTsareenaCustomMegaForms,
+        .formChangeTable = sTsareenaCustomMegaChanges,
+    },
 #endif //P_FAMILY_BOUNSWEET
 
 #if P_FAMILY_COMFEY
