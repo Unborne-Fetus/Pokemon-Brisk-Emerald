@@ -14,5 +14,10 @@ Route143_EventScript_Landing::
 	end
 
 Route143_Text_Landing:
-	.string "These boardwalks keep our beaches\n"
-	.string "open to everyone. Enjoy the islands!$"
+	.string "The sea is closed for now.\p"
+	.string "There was a collision with a\n"
+	.string "boat called the KURAMA.\p"
+	.string "Heavy whirlpools have made\n"
+	.string "the surrounding waters unsafe.\p"
+	.string "Please stay on the island\n"
+	.string "until the sea is safe again.$"

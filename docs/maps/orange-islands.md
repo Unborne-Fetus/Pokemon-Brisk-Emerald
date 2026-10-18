@@ -6,8 +6,8 @@ Orange City, and Routes 149–150. Routes 147–148 form the forest approach.
 | Area | Dimensions | Features |
 | --- | --- | --- |
 | Route 143 | 63 × 36 | Rock-lined sea passage and grass island |
-| Route 144 | 48 × 36 | Two islands linked by a boardwalk |
-| Orange City | 48 × 40 | Center, Mega Stone mart, two homes, town square and harbor |
+| Route 144 | 48 × 46 | Two islands linked by a boardwalk |
+| Orange City | 48 × 78 | Center, Mega Stone mart, two homes, town square and harbor |
 | Route 145 | 48 × 36 | Coastal trail and fishing pier |
 | Route 146 | 40 × 44 | Crescent island, lookout and Dynamax Adventure cave |
 | Route 147 | 29 × 16 | Forest approach from Route 141 |
@@ -15,7 +15,7 @@ Orange City, and Routes 149–150. Routes 147–148 form the forest approach.
 | Route 149 | 46 × 36 | Return teleporter, beach paths and rocky sea passage |
 | Route 150 | 63 × 36 | Sea passage linking Route 149 to Route 143 |
 
-Orange City's streets connect both neighboring routes, the four building
+Orange City's grassy promenades connect both neighboring routes, the four building
 entrances, town square and harbor. Each interior returns to its own front door.
 The Center's healing, upper floor and respawn data are retained, with its outdoor
 arrival position updated to the new doorway. The mart retains its custom Mega
@@ -37,3 +37,11 @@ files and does not overwrite their layouts. Preview dots mark NPC positions.
 
 Tileset credits: [Orange Islands](../../resources/team_aqua/tilesets/orange_islands/README.md)
 and [Valencia Island](../../resources/team_aqua/tilesets/valencia_island/README.md).
+
+Benches fully restore the party's HP, PP and status, including fainted Pokemon,
+using the same healing routine as a Pokemon Center. They do not change the
+whiteout/Teleport destination. Mailboxes display a privacy reminder. Both
+features use metatile behaviors, so the existing bench and mailbox tiles work
+wherever they are placed with these tilesets. Lamps, flowers and rest areas
+match the player's Route 144 design. Current dimensions, building entrances,
+connection offsets and healing locations are retained by the cleanup tool.

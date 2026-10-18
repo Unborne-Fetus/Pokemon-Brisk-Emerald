@@ -14,5 +14,9 @@ Route144_EventScript_Tide::
 	end
 
 Route144_Text_Tide:
-	.string "The tide pools are full of life.\n"
-	.string "Please leave the shoreline as you found it.$"
+	.string "Beautiful life thrives here in\n"
+	.string "the ORANGE ISLANDS.\p"
+	.string "Some of it is found nowhere\n"
+	.string "else in the world!\p"
+	.string "At night, moonlight and stars\n"
+	.string "make the islands breathtaking.$"

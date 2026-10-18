@@ -479,6 +479,11 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 {
     s8 elevation;
 
+    if (metatileBehavior == MB_REST_BENCH)
+        return EventScript_RestBench;
+    if (metatileBehavior == MB_MAILBOX)
+        return EventScript_Mailbox;
+
     if (MetatileBehavior_IsPlayerFacingTVScreen(metatileBehavior, direction) == TRUE)
     {
         if (IS_FRLG)

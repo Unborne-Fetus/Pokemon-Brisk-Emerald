@@ -2,6 +2,25 @@ EventScript_PictureBookShelf::
 	msgbox Text_PictureBookShelf, MSGBOX_SIGN
 	end
 
+EventScript_RestBench::
+	lockall
+	call EventScript_RestBench_HealParty
+	callnative UpdateFollowingPokemon
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox Text_RestBench, MSGBOX_DEFAULT
+	releaseall
+	end
+
+@ Heal exactly as a Center does, without changing the last heal location.
+EventScript_RestBench_HealParty::
+	special HealPlayerParty
+	return
+
+EventScript_Mailbox::
+	msgbox Text_Mailbox, MSGBOX_SIGN
+	end
+
 EventScript_BookShelf::
 	msgbox Text_BookShelf, MSGBOX_SIGN
 	end

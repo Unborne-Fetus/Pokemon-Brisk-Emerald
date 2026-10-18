@@ -113,94 +113,82 @@ def current_areas():
     return areas
 
 def polish():
-    # A compact town square, service district, homes and harbor share one
-    # connected street network. Retain map/layout IDs and the existing rooms.
-    c=Area('OrangeCity',48,40)
-    ellipse(c.land,24,20,23,18);rect(c.land,6,8,43,32)
-    for y in range(c.h):
-        for x in range(c.w):
-            c.green[y][x]=all(c.has(c.land,x+dx,y+dy) for dx,dy in [(0,0),(0,2),(0,-2),(2,0),(-2,0)])
-    c.ground()
-    paving=[[False]*c.w for _ in range(c.h)]
-    for box in [(0,18,48,21),(13,11,16,21),(33,12,36,21),
-                (19,15,30,27),(9,28,38,31),(9,28,12,31),
-                (34,27,37,31),(23,26,26,33)]:rect(paving,*box)
-    for y in range(c.h):
-        for x in range(c.w):
-            if not paving[y][x]:continue
-            n,e,s,w=[not c.has(paving,x+dx,y+dy) for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]]
-            tile=0x138 if n and w else 0x13A if n and e else 0x148 if s and w else 0x14A if s and e else 0x139 if n else 0x149 if s else 0x140 if w else 0x142 if e else 0x141
-            c.grid[y][x]=block(tile)
-    # Wooden approaches join the neighboring island paths over the shore.
-    c.boardwalk(0,18,6,3);c.boardwalk(42,18,6,3);c.boardwalk(21,32,6,8)
-    center=[[0x40,0x41,0x42,0x43,GRASS],[0x48,0x49,0x4A,0x4B,0x4C],
-            [0x50,0x51,0x52,0x53,0x54],[0x58,0x59,0x5A,0x5B,0x5C]]
-    c.stamp(12,7,center,True,[(2,3),(4,0)])
-    c.stamp(32,8,[[0x2C,0x2D,0x2E,0x2F],[0x34,0x35,0x36,0x37],
-                   [0x3C,0x3D,0x3E,0x3F],[0x44,0x45,0x46,0x47]],True,[(2,3)])
-    c.stamp(9,25,[[0x280,0x281,0x281,0x283,0x284],[0x288,0x289,0x28A,0x28B,0x28C],
-                   [0x290,0x291,0x292,0x293,0x294],[0x298,0x299,0x29A,0x29B,0x29C]],True,[(1,3)])
-    c.stamp(34,25,[[0x28,0x29,0x29,0x2B],[0x30,0x31,0x31,0x33],[0x38,0x39,0x3A,0x3B]],True,[(1,2)])
-    # A planted pool sits below the through street, with room to walk around it.
-    c.stamp(23,22,[[0x10C,0x10D,0x10E],[0x114,WATER,0x116],[0x11C,0x11D,0x11E]],False)
-    c.grid[23][24]=block(WATER,elevation=1)
-    for x,y in [(20,22),(28,22),(20,25),(28,25)]:c.grid[y][x]=block(0x10)
-    for x,y in [(7,11),(19,8),(28,8),(40,12),(7,24),(40,25),
-                (14,32),(32,32),(18,31),(28,31)]:c.palm(x,y)
-    for x0,y0 in [(19,11),(27,11),(6,27),(39,28)]:
-        for y in range(y0,y0+2):
-            for x in range(x0,x0+2):
-                if c.grid[y][x]&1023==GRASS:c.grid[y][x]=block(0x10)
-    c.meta=load('data/maps/OrangeCity/map.json')
-    c.meta['warp_events']=[dict(x=x,y=y,elevation=0,dest_map=dest,dest_warp_id='0')
-        for x,y,dest in [(14,10,'MAP_ORANGE_CITY_POKEMON_CENTER_1F'),
-                         (34,11,'MAP_ORANGE_CITY_MART'),(10,28,'MAP_ORANGE_CITY_HOUSE1'),
-                         (35,27,'MAP_ORANGE_CITY_HOUSE2')]]
-    for obj,pos in zip(c.meta['object_events'],[(18,18),(24,33),(31,21)]):obj['x'],obj['y']=pos
-    c.meta['bg_events'][0]['x']=18;c.meta['bg_events'][0]['y']=16;c.grid[16][18]=block(4,True)
-    save('data/maps/OrangeCity/map.json',c.meta)
-    write_words('data/layouts/OrangeCity/map.bin',[v for row in c.grid for v in row])
-    # Each room returns to its own entrance; the duplicate mart entrance is gone.
-    for room,warp_id in [('OrangeCity_PokemonCenter_1F',0),('OrangeCity_Mart',1),('OrangeCity_House1',2),('OrangeCity_House2',3)]:
-        meta=load('data/maps/'+room+'/map.json')
-        for warp in meta['warp_events']:
-            if warp['dest_map']=='MAP_ORANGE_CITY':warp['dest_warp_id']=str(warp_id)
-        save('data/maps/'+room+'/map.json',meta)
-    heal=load('src/data/heal_locations.json')
-    for row in heal['heal_locations']:
-        if row['id']=='HEAL_LOCATION_ORANGE_CITY':row['x']=14;row['y']=11
-    save('src/data/heal_locations.json',heal)
-    # Normalize the four grass quadrants and remove disconnected grass fragments
-    # painted into open sea, retaining the hand-built rock lanes and shorelines.
+    # Work on current map sizes/positions instead of recreating the old town.
     for a in current_areas():
-        if a.name=='OrangeCity':continue
-        grass={(x,y) for y,row in enumerate(a.grid) for x,v in enumerate(row) if 0xA<=v&1023<=0xD}
-        for x,y in grass:
-            a.grid[y][x]=block([[0xA,0xB],[0xC,0xD]][y%2][x%2])
-        for x,y in grass:
-            # A grass-only island separated from every beach is a stray sea fragment.
-            todo=[(x,y)];seen=set();land=False
-            while todo and len(seen)<64:
-                xx,yy=todo.pop()
-                if (xx,yy) in seen:continue
-                seen.add((xx,yy))
-                for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]:
-                    nx,ny=xx+dx,yy+dy
-                    if not (0<=nx<a.w and 0<=ny<a.h):continue
-                    tile=a.grid[ny][nx]&1023
-                    if (nx,ny) in grass and (nx,ny) not in seen:todo.append((nx,ny))
-                    elif tile not in [WATER,0xA,0xB,0xC,0xD]:land=True
-            if not land and len(seen)<64:
-                for xx,yy in seen:a.grid[yy][xx]=block(WATER,elevation=1)
-        if a.name=='Route149':
-            for warp in a.meta['warp_events']:
-                if warp['dest_map']=='MAP_ROUTE148':a.grid[warp['y']][warp['x']]=block(0x3FF)
+        if a.name not in ['OrangeCity','Route145','Route146']:continue
+        protected={(w['x'],w['y']) for w in a.meta['warp_events']}
+        protected|={(o['x'],o['y']) for o in a.meta['object_events']}
+        protected|={(o['x'],o['y']) for o in a.meta['bg_events']}
+        paving={0x138,0x139,0x13A,0x13E,0x13F,0x140,0x141,0x142,0x146,0x147,0x148,0x149,0x14A}
+        plain={GRASS,0x10,5}
+        def safe(x,y):return 0<=x<a.w and 0<=y<a.h and (x,y) not in protected
+        def flower(x,y,tile=5):
+            if safe(x,y) and a.grid[y][x]&1023 in plain:a.grid[y][x]=block(tile)
+        def bench(x,y):
+            if all(safe(x+dx,y) and a.grid[y][x+dx]&1023 in plain for dx in range(2)):
+                a.stamp(x,y,[[0x22E,0x22F]],True)
+                flower(x-1,y);flower(x+2,y)
+        def lamp(x,y):
+            if all(safe(x,yy) and a.grid[yy][x]&1023 in plain for yy in [y-1,y]):
+                a.grid[y-1][x]=block(0xF7);a.grid[y][x]=block(0xFF,True)
+        def palm(x,y):
+            if all(safe(x+dx,y+dy) and a.grid[y+dy][x+dx]&1023 in plain for dy in range(2) for dx in range(2)):
+                a.stamp(x,y,[[0x14,0x15],[0x24,0x25]])
+        if a.name=='OrangeCity':
+            # Route 144's grassy, flower-lined promenade replaces the wide gray
+            # paving while the service buildings, doors and harbor stay put.
+            for y,row in enumerate(a.grid):
+                for x,v in enumerate(row):
+                    if v&1023 in paving:a.grid[y][x]=block(GRASS)
+            edges=[y for y in range(a.h) if a.grid[y][0]&1023 in [0x205,0x206,0x207]]
+            main=edges[len(edges)//2]
+            home=max(w['y'] for w in a.meta['warp_events'][2:])+2
+            for x in [9,20,27,38]:bench(x,main-2)
+            for x in [19,27]:bench(x,home-2)
+            for x in [8,17,29,39]:lamp(x,main+1)
+            for x in [20,28]:lamp(x,home+1)
+            for x in range(8,42,5):flower(x,main,0x10)
+            for x in range(11,37,5):flower(x,home,0x10)
+            for x,y in [(7,main-5),(19,main-9),(28,main-9),(40,main-5),
+                        (6,main+4),(40,main+4),(20,main+4),(27,main+4)]:palm(x,y)
+            for x0,y0 in [(18,main-5),(27,main-5),(6,home-3),(39,home-3)]:
+                for dy in range(2):
+                    for dx in range(3):flower(x0+dx,y0+dy,5 if (dx+dy)%2 else 0x10)
+        else:
+            # Rich grass and flowers frame a broad, clear trail as on 143/144.
+            points=[(0,19),(9,23),(18,21),(27,16),(38,16),(47,19)] if a.name=='Route145' else [(0,19),(12,18),(17,14),(23,16),(27,14)]
+            trail=set()
+            for (ax,ay),(bx,by) in zip(points,points[1:]):
+                steps=max(abs(bx-ax),abs(by-ay))
+                for i in range(steps+1):
+                    x=round(ax+(bx-ax)*i/max(1,steps));y=round(ay+(by-ay)*i/max(1,steps))
+                    for dy in range(-2,3):
+                        for dx in range(-2,3):trail.add((x+dx,y+dy))
+            # Keep the new resting spots clear of the encounter grass.
+            rests=[(11,18),(30,19)] if a.name=='Route145' else [(20,17)]
+            for x,y in rests:
+                for yy in range(y-1,y+3):
+                    for xx in range(x-1,x+4):trail.add((xx,yy))
+            for y,row in enumerate(a.grid):
+                for x,v in enumerate(row):
+                    if (x,y) in protected:continue
+                    tile=v&1023
+                    if tile==GRASS and (x,y) not in trail:a.grid[y][x]=block([[0xA,0xB],[0xC,0xD]][y%2][x%2])
+                    elif tile in [0xA,0xB,0xC,0xD] and (x,y) in trail:a.grid[y][x]=block(GRASS)
+            for x,y in rests:bench(x,y)
+            for x,y in ([(13,20),(32,20)] if a.name=='Route145' else [(20,19)]):lamp(x,y)
+            for y,row in enumerate(a.grid):
+                for x,v in enumerate(row):
+                    if v&1023==GRASS and (x*7+y*11)%43==0:flower(x,y,5)
         write_words('data/layouts/'+a.name+'/map.bin',[v for row in a.grid for v in row])
-    # The lookout's cave was painted solid and lost its warp in a map upload.
-    cave=load('data/maps/Route146/map.json');cave['warp_events']=[dict(x=27,y=12,elevation=0,dest_map='MAP_DYNAMAX_ADVENTURE_CAVE',dest_warp_id='0')]
-    cave['object_events'][0]['x']=23;cave['object_events'][0]['y']=16
-    save('data/maps/Route146/map.json',cave)
-    grid=words(ROOT/'data/layouts/Route146/map.bin');grid[12*40+27]=block(0x66,elevation=4);write_words('data/layouts/Route146/map.bin',grid)
+    # Mailboxes should be solid at their bases, like the other street furniture.
+    layouts=load('data/layouts/layouts.json')['layouts']
+    for layout in layouts:
+        if layout['primary_tileset']!='gTileset_AquaOrangeIslands':continue
+        data=words(ROOT/layout['blockdata_filepath'])
+        for i,v in enumerate(data):
+            if v&1023==0xFE:data[i]=v|0x400
+        write_words(layout['blockdata_filepath'],data)
 
 def render(areas):
     from PIL import Image,ImageDraw
@@ -254,14 +242,23 @@ def audit_current(areas):
     occupied={(o['x'],o['y']) for o in c.meta['object_events']}
     def walk(x,y):
         return 0<=x<c.w and 0<=y<c.h and (c.grid[y][x]>>10)&3==0 and c.grid[y][x]>>12==3 and (x,y) not in occupied
-    q=collections.deque([(0,19)]);seen={(0,19)}
+    left=[(0,y) for y in range(c.h) if walk(0,y)]
+    assert left,'No west approach to Orange City'
+    q=collections.deque([left[0]]);seen={left[0]}
     while q:
         x,y=q.popleft()
         for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]:
             pos=x+dx,y+dy
             if pos not in seen and walk(*pos):seen.add(pos);q.append(pos)
-    targets=[(47,19),(14,11),(24,38)]+[(w['x'],w['y']) for w in c.meta['warp_events']]
+    heal=next(h for h in load('src/data/heal_locations.json')['heal_locations'] if h['id']=='HEAL_LOCATION_ORANGE_CITY')
+    right=[(c.w-1,y) for y in range(c.h) if walk(c.w-1,y)]
+    assert right,'No east approach to Orange City'
+    targets=right+[(heal['x'],heal['y'])]+[(w['x'],w['y']) for w in c.meta['warp_events']]
     for target in targets:assert target in seen,('OrangeCity unreachable',target)
+    for y,row in enumerate(c.grid):
+        for x,v in enumerate(row):
+            if v&1023 in [0x22E,0x22F,0xFE]:
+                assert any((x+dx,y+dy) in seen for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)]),('Furniture inaccessible',x,y)
     for obj in c.meta['object_events']:
         assert (c.grid[obj['y']][obj['x']]>>10)&3==0,('NPC on solid tile',obj)
         assert any((obj['x']+dx,obj['y']+dy) in seen for dx,dy in [(0,-1),(1,0),(0,1),(-1,0)])

@@ -25,3 +25,10 @@ Text_ShopShelf:
 Text_Blueprint:
 	.string "A blueprint of some sort?\n"
 	.string "It's too complicated!$"
+Text_RestBench:
+	.string "You and your team rested here.\n"
+	.string "Your POKéMON are fully refreshed!$"
+
+Text_Mailbox:
+	.string "It's rude to read\n"
+	.string "people's mail.$"
