@@ -64,6 +64,7 @@ LilycoveCity_ContestLobby_EventScript_ContestInfo::
 	end
 
 LilycoveCity_ContestLobby_EventScript_ExplainContests::
+	msgbox LilycoveCity_ContestLobby_Text_RhythmAppeals, MSGBOX_DEFAULT
 	msgbox LilycoveCity_ContestLobby_Text_ExplainContests, MSGBOX_DEFAULT
 	goto LilycoveCity_ContestLobby_EventScript_ContestInfo
 	end
@@ -1783,3 +1784,19 @@ ContestHall_Text_SecondStageOfJudging:
 ContestHall_Text_LetsAppeal:
 	.string "Let's see a little enthusiasm!\n"
 	.string "Let's appeal!$"
+
+LilycoveCity_ContestLobby_Text_RhythmAppeals:
+	.string "Our solo CONTESTS now have\n"
+	.string "a rhythm challenge!\p"
+	.string "Listen to three clicks, then\n"
+	.string "press A on the fourth beat.\p"
+	.string "Watch the moving marker meet\n"
+	.string "the target at the right.\p"
+	.string "PERFECT timing adds two hearts.\n"
+	.string "GOOD timing adds one heart.\p"
+	.string "Miss a beat? Your move still\n"
+	.string "gets its normal appeal!\p"
+	.string "Release A between presses.\n"
+	.string "Only your first tap counts.\p"
+	.string "Higher ranks need finer timing.\n"
+	.string "LINK CONTESTS keep their rules.$"

@@ -207,6 +207,7 @@ static const struct {
     {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: original training.\nHARD: perfect IVs, old EVs.\nEXTREME: perfect IVs, new EVs.")},
     {COMPOUND_STRING("TRAINER LOADOUTS"), COMPOUND_STRING("EASY: weak attacks, abilities.\nNORMAL: original sets.\nHARD: better legal abilities.\nEXTREME: stronger moves too.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
+    {COMPOUND_STRING("CONTEST RHYTHM"), COMPOUND_STRING("Three clicks, then A on beat 4.\nPerfect: +2 hearts. Good: +1.\nMissing keeps normal appeal.\nHigher ranks tighten the timing.")},
     {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 sets global odds.\nOptions 5: ISLAND SHINY\ntoggles the Orange Islands\n1/50 wild shiny boost.")},
     {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},
     {COMPOUND_STRING("SPEED CONTROLS"), COMPOUND_STRING("Options 2: battle speed\nranges from 1x to 4x.\nOverworld speed has 1x,\n2x, 4x and 8x settings.")},

@@ -5,6 +5,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "contest.h"
+#include "contest_rhythm.h"
 #include "contest_link.h"
 #include "data.h"
 #include "decompress.h"
@@ -333,6 +334,7 @@ enum {
     APPEALSTATE_PRINT_CROWD_WATCHES_MSG,
     APPEALSTATE_PRINT_MON_MOVE_IGNORED_MSG,
     APPEALSTATE_WAIT_MON_MOVE_IGNORED_MSG,
+    APPEALSTATE_RHYTHM,
 };
 
 // EWRAM vars.
@@ -1257,6 +1259,7 @@ static void AllocContestResources(void)
 
 static void FreeContestResources(void)
 {
+    ContestRhythm_Stop();
     FREE_AND_SET_NULL(gContestResources->contest);
     FREE_AND_SET_NULL(gContestResources->status);
     FREE_AND_SET_NULL(gContestResources->appealResults);
@@ -1931,6 +1934,26 @@ static void Task_DoAppeals(u8 taskId)
         if (!Contest_RunTextPrinters())
         {
             eContest.moveAnimTurnCount = 0;
+            bool32 link = gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK;
+            if (ContestRhythm_IsEligible(&eContestantStatus[contestant], link))
+            {
+                if (contestant == gContestPlayerMonIndex)
+                {
+                    ContestRhythm_Start(WIN_GENERAL_TEXT, gSpecialVar_ContestRank);
+                    gTasks[taskId].tState = APPEALSTATE_RHYTHM;
+                    return;
+                }
+                ContestRhythm_ApplyBonus(&eContestantStatus[contestant],
+                    ContestRhythm_NpcGrade(gSpecialVar_ContestRank, Random() % 100), link);
+            }
+            gTasks[taskId].tState = APPEALSTATE_MOVE_ANIM;
+        }
+        return;
+    case APPEALSTATE_RHYTHM:
+        if (ContestRhythm_Poll())
+        {
+            ContestRhythm_ApplyBonus(&eContestantStatus[contestant], ContestRhythm_Result(), FALSE);
+            ContestClearGeneralTextWindow();
             gTasks[taskId].tState = APPEALSTATE_MOVE_ANIM;
         }
         return;
@@ -6144,3 +6167,44 @@ void StripPlayerAndMonNamesForLinkContest(struct ContestPokemon *mon, enum Langu
         name[PLAYER_NAME_LENGTH] = EOS;
     }
 }
+
+#if TESTING
+// Exercise the real appeal-state handoff and dialogue window in ROM tests.
+u8 Test_StartContestRhythmAppeal(u32 contestant, bool32 link, const struct ContestantStatus *status)
+{
+    ResetTasks();
+    AllocContestResources();
+    InitBgsFromTemplates(0, sContestBgTemplates, ARRAY_COUNT(sContestBgTemplates));
+    for (u32 i = 0; i < 4; i++)
+        SetBgTilemapBuffer(i, gContestResources->contestBgTilemaps[i]);
+    InitWindows(sContestWindowTemplates);
+    DeactivateAllTextPrinters();
+    eContest.currentContestant = contestant;
+    eContestantStatus[contestant] = *status;
+    gContestPlayerMonIndex = 0;
+    gLinkContestFlags = link ? LINK_CONTEST_FLAG_IS_LINK : 0;
+    u8 task = CreateTask(Task_DoAppeals, 10);
+    gTasks[task].tState = APPEALSTATE_WAIT_USED_MOVE_MSG;
+    return task;
+}
+
+bool32 Test_StepContestRhythmAppeal(u8 task)
+{
+    Task_DoAppeals(task);
+    ProcessDma3Requests();
+    return gTasks[task].tState == APPEALSTATE_MOVE_ANIM;
+}
+
+void Test_EndContestRhythmAppeal(u8 task, struct ContestantStatus *out)
+{
+    *out = eContestantStatus[eContest.currentContestant];
+    DestroyTask(task);
+    ContestRhythm_Stop();
+    ProcessDma3Requests();
+    ClearDma3Requests();
+    FreeAllWindowBuffers();
+    FreeContestResources();
+    for (u32 i = 0; i < 4; i++)
+        UnsetBgTilemapBuffer(i);
+}
+#endif

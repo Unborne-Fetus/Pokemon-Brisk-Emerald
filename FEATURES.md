@@ -92,3 +92,11 @@ A lot of features listed below can be turned off as desired. Check which ones in
 - ***Learnset Helper:*** Autogenerate movesets from your custom TM and Tutor data based on official compatibility data.
 - ***Configurable script flags:*** Disabling Wild encounters, Disabling Trainer battles, Forcing/Disabling Shinies.
 - ***Saveblock Cleansing*** ([feature branch](https://github.com/ghoulslash/pokeemerald/tree/saveblock) by @ghoulslash)
+
+## Brisk rhythm contests
+
+Solo contest appeals now include a short four-beat timing challenge. Tap A on
+beat four for up to two extra appeal hearts; missing preserves normal appeal.
+Higher ranks tighten timing, and NPC timing accuracy scales with rank. Existing
+move effects, combos, categories, ribbons and link contests are retained.
+See [controls and scoring](docs/contest_rhythm.md).
