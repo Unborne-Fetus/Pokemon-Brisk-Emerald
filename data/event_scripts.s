@@ -1797,3 +1797,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/OrangeCity_House1/scripts.inc"
 
 	.include "data/maps/OrangeCity_House2/scripts.inc"
+
+	.include "data/maps/Route147/scripts.inc"
+
+	.include "data/maps/Route148/scripts.inc"
+
+	.include "data/maps/Route149/scripts.inc"
+
+	.include "data/maps/Route150/scripts.inc"

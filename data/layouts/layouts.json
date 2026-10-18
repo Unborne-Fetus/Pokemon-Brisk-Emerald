@@ -9481,7 +9481,7 @@
     {
       "id": "LAYOUT_ROUTE143",
       "name": "Route143_Layout",
-      "width": 40,
+      "width": 63,
       "height": 36,
       "primary_tileset": "gTileset_AquaOrangeIslands",
       "secondary_tileset": "gTileset_AquaValenciaIsland",
@@ -9556,25 +9556,47 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_DYNAMAX_ADVENTURE_CAVE",
-      "name": "DynamaxAdventureCave_Layout",
-      "width": 15,
-      "height": 14,
+      "id": "LAYOUT_ROUTE147",
+      "name": "Route147_Layout",
+      "width": 29,
+      "height": 16,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/DynamaxAdventureCave/border.bin",
-      "blockdata_filepath": "data/layouts/DynamaxAdventureCave/map.bin",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route147/border.bin",
+      "blockdata_filepath": "data/layouts/Route147/map.bin",
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_DYNAMAX_ADVENTURE_REST_CAVE",
-      "name": "DynamaxAdventureRestCave_Layout",
-      "width": 15,
-      "height": 14,
+      "id": "LAYOUT_ROUTE148",
+      "name": "Route148_Layout",
+      "width": 29,
+      "height": 16,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/DynamaxAdventureRestCave/border.bin",
-      "blockdata_filepath": "data/layouts/DynamaxAdventureRestCave/map.bin",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route148/border.bin",
+      "blockdata_filepath": "data/layouts/Route148/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE149",
+      "name": "Route149_Layout",
+      "width": 46,
+      "height": 36,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/Route149/border.bin",
+      "blockdata_filepath": "data/layouts/Route149/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE150",
+      "name": "Route150_Layout",
+      "width": 63,
+      "height": 36,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/Route150/border.bin",
+      "blockdata_filepath": "data/layouts/Route150/map.bin",
       "layout_version": "emerald"
     }
   ]

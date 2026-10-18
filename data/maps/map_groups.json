@@ -148,7 +148,11 @@
     "Route144",
     "OrangeCity",
     "Route145",
-    "Route146"
+    "Route146",
+    "Route147",
+    "Route148",
+    "Route149",
+    "Route150"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -1191,8 +1195,6 @@
     "OrangeCity_PokemonCenter_2F",
     "OrangeCity_Mart",
     "OrangeCity_House1",
-    "OrangeCity_House2",
-    "DynamaxAdventureCave",
-    "DynamaxAdventureRestCave"
+    "OrangeCity_House2"
   ]
 }
