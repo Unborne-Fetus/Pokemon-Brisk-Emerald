@@ -1080,4 +1080,6 @@
 #define METATILE_RSMossdeepGym_Switch_Down           0x239
 #define METATILE_RSMossdeepGym_Switch_Up             0x238
 
+#define METATILE_AquaValenciaIsland_TeleportPad       0x3FF
+
 #endif // GUARD_METATILE_LABELS_H
