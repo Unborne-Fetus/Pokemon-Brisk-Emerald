@@ -8,7 +8,7 @@ Orange City, and Routes 149–150. Routes 147–148 form the forest approach.
 | Route 143 | 63 × 36 | Rock-lined sea passage and grass island |
 | Route 144 | 48 × 46 | Two islands linked by a boardwalk |
 | Orange City | 48 × 78 | Center, Mega Stone mart, two homes, town square and harbor |
-| Route 145 | 48 × 36 | Coastal trail and fishing pier |
+| Route 145 | 48 × 36 | Twin islands, channel bridge, resting gardens and fishing pier |
 | Route 146 | 40 × 44 | Crescent island, lookout and Dynamax Adventure cave |
 | Route 147 | 29 × 16 | Forest approach from Route 141 |
 | Route 148 | 29 × 16 | Forest clearing and teleporter to Route 149 |
@@ -46,10 +46,15 @@ wherever they are placed with these tilesets. Lamps, flowers and rest areas
 match the player's Route 144 design. Current dimensions, building entrances,
 connection offsets and healing locations are retained by the cleanup tool.
 
-Route 145 now has a flower-lined grass trail, palms, a third bench and a Hex
-Maniac describing Lugia and the legendary birds' rescue of endangered species
-about twenty years ago. The original island outline, fishing pier, connections
-and encounter tables are retained.
+Route 145 is rebuilt as two separate palm-covered islands joined by a boardwalk
+over an open sea channel. Flower-lined gardens and two healing benches border
+the encounter groves, while a T-shaped fishing pier extends from the eastern
+island. The Hex Maniac overlooks the channel and describes Lugia and the
+legendary birds' rescue of endangered species about twenty years ago. The map
+size, route connections, scripts and encounter tables are retained.
+
+Run `python tools/brisk/polish_palm_cape.py` explicitly to recreate this layout;
+normal checking/rendering never rebuilds it.
 
 `ISLAND SHINY` on Options page 5 defaults to ON: wild encounters on Routes
 143–146, 149–150 and in Orange City use a base 1/50 shiny roll. OFF restores the
