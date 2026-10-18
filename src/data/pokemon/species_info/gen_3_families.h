@@ -15596,6 +15596,447 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sNuenfluEggMoveLearnset,
     },
 
+// Sacred Phoenix species (native Hoenn table).
+    [SPECIES_SLUGAQUA] =
+    {
+        .baseHP = 50, .baseAttack = 35, .baseDefense = 50,
+        .baseSpeed = 30, .baseSpAttack = 55, .baseSpDefense = 55,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 190, .expYield = 65,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_HYDRATION, ABILITY_STORM_DRAIN, ABILITY_RAIN_DISH },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Slugaqua"), .cryId = CRY_SHELLOS,
+        .natDexNum = NATIONAL_DEX_SLUGAQUA, .categoryName = _("Sea Slug"),
+        .height = 3, .weight = 28,
+        .description = COMPOUND_STRING("Its blue feelers detect tiny changes in\n"
+            "the tide. It shelters young reef life\n"
+            "beneath the soft folds of its body."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Slugaqua, .backPic = gMonBackPic_Slugaqua,
+        .frontPic80 = gMonFrontPic80_Slugaqua, .backPic80 = gMonBackPic80_Slugaqua,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Slugaqua, .shinyPalette = gMonShinyPalette_Slugaqua,
+        .iconSprite = gMonIcon_Slugaqua, .iconPalIndex = 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Slugaqua, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Slugaqua, gShinyOverworldPalette_Slugaqua)
+        .levelUpLearnset = sSlugaquaLevelUpLearnset,
+        .teachableLearnset = sSlugaquaTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_FLABAQUA}),
+    },
+
+    [SPECIES_FLABAQUA] =
+    {
+        .baseHP = 70, .baseAttack = 45, .baseDefense = 70,
+        .baseSpeed = 45, .baseSpAttack = 80, .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 190, .expYield = 150,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_HYDRATION, ABILITY_STORM_DRAIN, ABILITY_RAIN_DISH },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Flabaqua"), .cryId = CRY_GASTRODON,
+        .natDexNum = NATIONAL_DEX_FLABAQUA, .categoryName = _("Reef Veil"),
+        .height = 9, .weight = 165,
+        .description = COMPOUND_STRING("It drifts between reefs on flowing\n"
+            "fins. Fish gather in its wake to feed\n"
+            "on the plankton stirred by its passage."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Flabaqua, .backPic = gMonBackPic_Flabaqua,
+        .frontPic80 = gMonFrontPic80_Flabaqua, .backPic80 = gMonBackPic80_Flabaqua,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Flabaqua, .shinyPalette = gMonShinyPalette_Flabaqua,
+        .iconSprite = gMonIcon_Flabaqua, .iconPalIndex = 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Flabaqua, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Flabaqua, gShinyOverworldPalette_Flabaqua)
+        .levelUpLearnset = sFlabaquaLevelUpLearnset,
+        .teachableLearnset = sFlabaquaTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_GLAUTILUS}),
+    },
+
+    [SPECIES_GLAUTILUS] =
+    {
+        .baseHP = 95, .baseAttack = 65, .baseDefense = 95,
+        .baseSpeed = 70, .baseSpAttack = 110, .baseSpDefense = 105,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
+        .catchRate = 45, .expYield = 240,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_WATER_ABSORB, ABILITY_STORM_DRAIN, ABILITY_MULTISCALE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Glautilus"), .cryId = CRY_KINGDRA,
+        .natDexNum = NATIONAL_DEX_GLAUTILUS, .categoryName = _("Reef Dragon"),
+        .height = 24, .weight = 1250,
+        .description = COMPOUND_STRING("Its shell records the history of ocean\n"
+            "currents in spirals. It guides lost\n"
+            "sea creatures toward sheltered reefs."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Glautilus, .backPic = gMonBackPic_Glautilus,
+        .frontPic80 = gMonFrontPic80_Glautilus, .backPic80 = gMonBackPic80_Glautilus,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Glautilus, .shinyPalette = gMonShinyPalette_Glautilus,
+        .iconSprite = gMonIcon_Glautilus, .iconPalIndex = 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Glautilus, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Glautilus, gShinyOverworldPalette_Glautilus)
+        .levelUpLearnset = sGlautilusLevelUpLearnset,
+        .teachableLearnset = sGlautilusTeachableLearnset,
+    },
+
+    [SPECIES_BULBENT] =
+    {
+        .baseHP = 45, .baseAttack = 45, .baseDefense = 50,
+        .baseSpeed = 45, .baseSpAttack = 55, .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 190, .expYield = 65,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Bulbent"), .cryId = CRY_SEEDOT,
+        .natDexNum = NATIONAL_DEX_BULBENT, .categoryName = _("Sapling"),
+        .height = 4, .weight = 42,
+        .description = COMPOUND_STRING("It plants its feet in damp soil each\n"
+            "night. A healthy leaf on its head is\n"
+            "a sign that the forest is thriving."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Bulbent, .backPic = gMonBackPic_Bulbent,
+        .frontPic80 = gMonFrontPic80_Bulbent, .backPic80 = gMonBackPic80_Bulbent,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Bulbent, .shinyPalette = gMonShinyPalette_Bulbent,
+        .iconSprite = gMonIcon_Bulbent, .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Bulbent, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Bulbent, gShinyOverworldPalette_Bulbent)
+        .levelUpLearnset = sBulbentLevelUpLearnset,
+        .teachableLearnset = sBulbentTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_MAGUORN}),
+    },
+
+    [SPECIES_MAGUORN] =
+    {
+        .baseHP = 65, .baseAttack = 60, .baseDefense = 70,
+        .baseSpeed = 55, .baseSpAttack = 80, .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 190, .expYield = 150,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_HARVEST, ABILITY_FRISK },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Maguorn"), .cryId = CRY_NUZLEAF,
+        .natDexNum = NATIONAL_DEX_MAGUORN, .categoryName = _("Root Keeper"),
+        .height = 11, .weight = 280,
+        .description = COMPOUND_STRING("It tends patches of young trees with\n"
+            "its branching hands. Fallen leaves\n"
+            "return nutrients to the soil it guards."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Maguorn, .backPic = gMonBackPic_Maguorn,
+        .frontPic80 = gMonFrontPic80_Maguorn, .backPic80 = gMonBackPic80_Maguorn,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Maguorn, .shinyPalette = gMonShinyPalette_Maguorn,
+        .iconSprite = gMonIcon_Maguorn, .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Maguorn, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Maguorn, gShinyOverworldPalette_Maguorn)
+        .levelUpLearnset = sMaguornLevelUpLearnset,
+        .teachableLearnset = sMaguornTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_TREEWISE}),
+    },
+
+    [SPECIES_TREEWISE] =
+    {
+        .baseHP = 95, .baseAttack = 75, .baseDefense = 100,
+        .baseSpeed = 50, .baseSpAttack = 110, .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_PSYCHIC),
+        .catchRate = 45, .expYield = 240,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+        .abilities = { ABILITY_NATURAL_CURE, ABILITY_HARVEST, ABILITY_SEED_SOWER },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Treewise"), .cryId = CRY_TREVENANT,
+        .natDexNum = NATIONAL_DEX_TREEWISE, .categoryName = _("Forest Sage"),
+        .height = 23, .weight = 1800,
+        .description = COMPOUND_STRING("Its roots sense footsteps throughout\n"
+            "the grove. It shares warnings with\n"
+            "other trees through the living soil."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Treewise, .backPic = gMonBackPic_Treewise,
+        .frontPic80 = gMonFrontPic80_Treewise, .backPic80 = gMonBackPic80_Treewise,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Treewise, .shinyPalette = gMonShinyPalette_Treewise,
+        .iconSprite = gMonIcon_Treewise, .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Treewise, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Treewise, gShinyOverworldPalette_Treewise)
+        .levelUpLearnset = sTreewiseLevelUpLearnset,
+        .teachableLearnset = sTreewiseTeachableLearnset,
+    },
+
+    [SPECIES_LARFAE] =
+    {
+        .baseHP = 45, .baseAttack = 30, .baseDefense = 40,
+        .baseSpeed = 45, .baseSpAttack = 50, .baseSpDefense = 45,
+        .types = MON_TYPES(TYPE_BUG, TYPE_FAIRY),
+        .catchRate = 190, .expYield = 65,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_LEAF_GUARD, ABILITY_FRIEND_GUARD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Larfae"), .cryId = CRY_CATERPIE,
+        .natDexNum = NATIONAL_DEX_LARFAE, .categoryName = _("Leaf Larva"),
+        .height = 3, .weight = 25,
+        .description = COMPOUND_STRING("It folds tender leaves into a little\n"
+            "cloak. Flowers bloom where groups of\n"
+            "Larfae gather to share sweet pollen."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Larfae, .backPic = gMonBackPic_Larfae,
+        .frontPic80 = gMonFrontPic80_Larfae, .backPic80 = gMonBackPic80_Larfae,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Larfae, .shinyPalette = gMonShinyPalette_Larfae,
+        .iconSprite = gMonIcon_Larfae, .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Larfae, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Larfae, gShinyOverworldPalette_Larfae)
+        .levelUpLearnset = sLarfaeLevelUpLearnset,
+        .teachableLearnset = sLarfaeTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 12, SPECIES_CHRYSANTLE}),
+    },
+
+    [SPECIES_CHRYSANTLE] =
+    {
+        .baseHP = 60, .baseAttack = 35, .baseDefense = 80,
+        .baseSpeed = 25, .baseSpAttack = 60, .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_BUG, TYPE_FAIRY),
+        .catchRate = 190, .expYield = 150,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_SHED_SKIN, ABILITY_LEAF_GUARD, ABILITY_FRIEND_GUARD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Chrysantle"), .cryId = CRY_SWADLOON,
+        .natDexNum = NATIONAL_DEX_CHRYSANTLE, .categoryName = _("Bloom Mantle"),
+        .height = 7, .weight = 95,
+        .description = COMPOUND_STRING("Layers of fresh leaves protect its\n"
+            "changing body. It sways with the\n"
+            "breeze to resemble a flowering vine."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Chrysantle, .backPic = gMonBackPic_Chrysantle,
+        .frontPic80 = gMonFrontPic80_Chrysantle, .backPic80 = gMonBackPic80_Chrysantle,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Chrysantle, .shinyPalette = gMonShinyPalette_Chrysantle,
+        .iconSprite = gMonIcon_Chrysantle, .iconPalIndex = 5,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Chrysantle, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Chrysantle, gShinyOverworldPalette_Chrysantle)
+        .levelUpLearnset = sChrysantleLevelUpLearnset,
+        .teachableLearnset = sChrysantleTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DRUICHY, CONDITIONS({IF_GENDER, MON_MALE})},
+                                {EVO_LEVEL, 36, SPECIES_DUCHEFLY, CONDITIONS({IF_GENDER, MON_FEMALE})}),
+    },
+
+    [SPECIES_DRUICHY] =
+    {
+        .baseHP = 75, .baseAttack = 55, .baseDefense = 75,
+        .baseSpeed = 90, .baseSpAttack = 115, .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_BUG, TYPE_FAIRY),
+        .catchRate = 45, .expYield = 240,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(0),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_COMPOUND_EYES, ABILITY_MAGIC_BOUNCE, ABILITY_TINTED_LENS },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Druichy"), .cryId = CRY_BEAUTIFLY,
+        .natDexNum = NATIONAL_DEX_DRUICHY, .categoryName = _("Grove Mystic"),
+        .height = 13, .weight = 220,
+        .description = COMPOUND_STRING("It scatters luminous pollen among\n"
+            "ancient trees. Its patterned wings\n"
+            "confuse creatures that harm the grove."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Druichy, .backPic = gMonBackPic_Druichy,
+        .frontPic80 = gMonFrontPic80_Druichy, .backPic80 = gMonBackPic80_Druichy,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Druichy, .shinyPalette = gMonShinyPalette_Druichy,
+        .iconSprite = gMonIcon_Druichy, .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Druichy, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Druichy, gShinyOverworldPalette_Druichy)
+        .levelUpLearnset = sDruichyLevelUpLearnset,
+        .teachableLearnset = sDruichyTeachableLearnset,
+    },
+
+    [SPECIES_DUCHEFLY] =
+    {
+        .baseHP = 85, .baseAttack = 45, .baseDefense = 85,
+        .baseSpeed = 75, .baseSpAttack = 105, .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_BUG, TYPE_FAIRY),
+        .catchRate = 45, .expYield = 240,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(100),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_SWEET_VEIL, ABILITY_TRIAGE, ABILITY_FRIEND_GUARD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Duchefly"), .cryId = CRY_VIVILLON,
+        .natDexNum = NATIONAL_DEX_DUCHEFLY, .categoryName = _("Duchess"),
+        .height = 12, .weight = 185,
+        .description = COMPOUND_STRING("It nurses weakened creatures with\n"
+            "nectar carried in its wing scales.\n"
+            "Whole meadows brighten at its arrival."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Duchefly, .backPic = gMonBackPic_Duchefly,
+        .frontPic80 = gMonFrontPic80_Duchefly, .backPic80 = gMonBackPic80_Duchefly,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Duchefly, .shinyPalette = gMonShinyPalette_Duchefly,
+        .iconSprite = gMonIcon_Duchefly, .iconPalIndex = 4,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Duchefly, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Duchefly, gShinyOverworldPalette_Duchefly)
+        .levelUpLearnset = sDucheflyLevelUpLearnset,
+        .teachableLearnset = sDucheflyTeachableLearnset,
+    },
+
+    [SPECIES_FURFANG] =
+    {
+        .baseHP = 60, .baseAttack = 65, .baseDefense = 50,
+        .baseSpeed = 45, .baseSpAttack = 30, .baseSpDefense = 45,
+        .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
+        .catchRate = 190, .expYield = 65,
+        .evYield_Attack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_THICK_FAT, ABILITY_STRONG_JAW, ABILITY_SAND_VEIL },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Furfang"), .cryId = CRY_SWINUB,
+        .natDexNum = NATIONAL_DEX_FURFANG, .categoryName = _("Tusk Cub"),
+        .height = 5, .weight = 165,
+        .description = COMPOUND_STRING("Its coarse fur traps warm air during\n"
+            "cold nights. It digs for roots with\n"
+            "tiny tusks that sharpen as it grows."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Furfang, .backPic = gMonBackPic_Furfang,
+        .frontPic80 = gMonFrontPic80_Furfang, .backPic80 = gMonBackPic80_Furfang,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Furfang, .shinyPalette = gMonShinyPalette_Furfang,
+        .iconSprite = gMonIcon_Furfang, .iconPalIndex = 5,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Furfang, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Furfang, gShinyOverworldPalette_Furfang)
+        .levelUpLearnset = sFurfangLevelUpLearnset,
+        .teachableLearnset = sFurfangTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_BOARHORN}),
+    },
+
+    [SPECIES_BOARHORN] =
+    {
+        .baseHP = 100, .baseAttack = 120, .baseDefense = 90,
+        .baseSpeed = 65, .baseSpAttack = 45, .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
+        .catchRate = 45, .expYield = 240,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20, .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ROCK_HEAD, ABILITY_INTIMIDATE, ABILITY_RECKLESS },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Boarhorn"), .cryId = CRY_PILOSWINE,
+        .natDexNum = NATIONAL_DEX_BOARHORN, .categoryName = _("Tusk Boar"),
+        .height = 14, .weight = 1150,
+        .description = COMPOUND_STRING("It clears fallen timber with mighty\n"
+            "tusks. Herds carve trails that let\n"
+            "smaller creatures cross dense forests."),
+        .pokemonScale = 256, .trainerScale = 256,
+        .frontPic = gMonFrontPic_Boarhorn, .backPic = gMonBackPic_Boarhorn,
+        .frontPic80 = gMonFrontPic80_Boarhorn, .backPic80 = gMonBackPic80_Boarhorn,
+        .frontPicSize = MON_COORDS_SIZE(64, 64), .backPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0, .backPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder, .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Boarhorn, .shinyPalette = gMonShinyPalette_Boarhorn,
+        .iconSprite = gMonIcon_Boarhorn, .iconPalIndex = 5,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(0, 0, SHADOW_SIZE_M)
+        FOOTPRINT(QuestionMark)
+        OVERWORLD(sPicTable_Boarhorn, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym,
+            gOverworldPalette_Boarhorn, gShinyOverworldPalette_Boarhorn)
+        .levelUpLearnset = sBoarhornLevelUpLearnset,
+        .teachableLearnset = sBoarhornTeachableLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

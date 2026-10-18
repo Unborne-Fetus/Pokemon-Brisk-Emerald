@@ -2923,6 +2923,8 @@ static void DebugAction_FlagsVars_PokedexFlags_Reset(u8 taskId)
     memset(&gSaveBlock1Ptr->dexSeen, 0, sizeof(gSaveBlock1Ptr->dexSeen));
     memset(gSaveBlock1Ptr->customDexSeen, 0, sizeof(gSaveBlock1Ptr->customDexSeen));
     memset(gSaveBlock1Ptr->customDexCaught, 0, sizeof(gSaveBlock1Ptr->customDexCaught));
+    VarSet(VAR_BRISK_SACRED_DEX_SEEN, 0);
+    VarSet(VAR_BRISK_SACRED_DEX_CAUGHT, 0);
 
     // Add party Pokemon to Pokedex
     for (partyId = 0; partyId < PARTY_SIZE; partyId++)

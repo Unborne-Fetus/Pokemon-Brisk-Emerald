@@ -207,7 +207,7 @@ static const struct {
     {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: original training.\nHARD: perfect IVs, old EVs.\nEXTREME: perfect IVs, new EVs.")},
     {COMPOUND_STRING("TRAINER LOADOUTS"), COMPOUND_STRING("EASY: weak attacks, abilities.\nNORMAL: original sets.\nHARD: better legal abilities.\nEXTREME: stronger moves too.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
-    {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 lets you choose\nshiny odds from 1/8192\nup to 1/50. The setting\naffects normal shiny rolls.")},
+    {COMPOUND_STRING("SHINY ODDS"), COMPOUND_STRING("Options 3 sets global odds.\nOptions 5: ISLAND SHINY\ntoggles the Orange Islands\n1/50 wild shiny boost.")},
     {COMPOUND_STRING("SHINY HUNT"), COMPOUND_STRING("Enable Shiny Hunt on\nOptions page 3 to speed up\nthe encounter-hunting\nprocess.")},
     {COMPOUND_STRING("SPEED CONTROLS"), COMPOUND_STRING("Options 2: battle speed\nranges from 1x to 4x.\nOverworld speed has 1x,\n2x, 4x and 8x settings.")},
     {COMPOUND_STRING("AUTO RUN"), COMPOUND_STRING("Auto Run is on by default.\nNo need to hold B to run.\nTurn it off on Options\npage 2 if you prefer.")},
@@ -1419,7 +1419,9 @@ static void DrawBattleOptions(void)
         DrawOptionMenuChoice(choices[i], 65 + i * 45, 0, GetBriskBattleFormat() == i);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("FOLLOWERS"), 8, 17, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskPokemonFollowersEnabled(), 16);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 33, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("ISLAND SHINY"), 8, 33, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskIslandShiniesEnabled(), 32);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 49, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1433,11 +1435,11 @@ static void Task_BattleOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 2))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 3))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 2)) % 3;
+        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 3)) % 4;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT) || JOY_NEW(A_BUTTON))
@@ -1446,6 +1448,8 @@ static void Task_BattleOptions(u8 taskId)
             VarSet(VAR_BRISK_BATTLE_FORMAT, (GetBriskBattleFormat() + (JOY_REPEAT(DPAD_LEFT) ? 2 : 1)) % 3);
         else if (row == 1)
             VarSet(VAR_BRISK_FOLLOWERS_DISABLED, BriskPokemonFollowersEnabled());
+        else if (row == 2)
+            VarSet(VAR_BRISK_ISLAND_SHINIES_DISABLED, BriskIslandShiniesEnabled());
         DrawBattleOptions();
     }
 }

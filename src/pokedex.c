@@ -1391,6 +1391,8 @@ void ResetPokedex(void)
     DisableNationalPokedex();
     memset(gSaveBlock1Ptr->customDexSeen, 0, sizeof(gSaveBlock1Ptr->customDexSeen));
     memset(gSaveBlock1Ptr->customDexCaught, 0, sizeof(gSaveBlock1Ptr->customDexCaught));
+    VarSet(VAR_BRISK_SACRED_DEX_SEEN, 0);
+    VarSet(VAR_BRISK_SACRED_DEX_CAUGHT, 0);
     for (i = 0; i < NUM_DEX_FLAG_BYTES; i++)
     {
         gSaveBlock1Ptr->dexCaught[i] = 0;
@@ -4467,6 +4469,20 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         return 0;
     u8 *seen = gSaveBlock1Ptr->dexSeen;
     u8 *caught = gSaveBlock1Ptr->dexCaught;
+    if (nationalDexNo > NATIONAL_DEX_STEAM_SHELL)
+    {
+        // Separate unused save variables hold these twelve species' bits.
+        // Existing Dex bits and both save-block layouts remain unchanged.
+        STATIC_ASSERT(NATIONAL_DEX_BOARHORN - NATIONAL_DEX_STEAM_SHELL <= 16, SacredDexCapacity);
+        u16 var = (caseID == FLAG_GET_CAUGHT || caseID == FLAG_SET_CAUGHT)
+            ? VAR_BRISK_SACRED_DEX_CAUGHT : VAR_BRISK_SACRED_DEX_SEEN;
+        u32 mask = 1u << (nationalDexNo - NATIONAL_DEX_STEAM_SHELL - 1);
+        if (caseID == FLAG_SET_SEEN || caseID == FLAG_SET_CAUGHT)
+            VarSet(var, VarGet(var) | mask);
+        else if (caseID == FLAG_GET_SEEN || caseID == FLAG_GET_CAUGHT)
+            return (VarGet(var) & mask) != 0;
+        return 0;
+    }
     if (nationalDexNo > NATIONAL_DEX_PECHARUNT)
     {
         // Old saves used these four bytes as padding. Initialize their bits
@@ -4482,7 +4498,7 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         }
         // The additional evolutions use a previously unused Pokedex word.
         // Keep both save blocks and all established flag offsets unchanged.
-        STATIC_ASSERT(BRISK_FAKEMON_COUNT <= 28, CustomDexCapacity);
+        STATIC_ASSERT(NATIONAL_DEX_STEAM_SHELL - NATIONAL_DEX_PECHARUNT <= 28, CustomDexCapacity);
         if (nationalDexNo > NATIONAL_DEX_NUENFLU)
         {
             u32 shift = nationalDexNo - NATIONAL_DEX_NUENFLU - 1;

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "brisk_battle_format.h"
 #include "battle.h"
 #include "battle_controllers.h"
@@ -79,7 +80,9 @@ void BriskPrepareBattleParties(void)
      && !IsValidForBattle(&gParties[B_TRAINER_OPPONENT_A][1]))
     {
         struct Pokemon *first = &gParties[B_TRAINER_OPPONENT_A][0];
+        BriskSetWildShinyContext(TRUE);
         CreateRandomMon(&gParties[B_TRAINER_OPPONENT_A][1], GetMonData(first, MON_DATA_SPECIES), GetMonData(first, MON_DATA_LEVEL));
+        BriskSetWildShinyContext(FALSE);
         CalculatePartyCount(B_TRAINER_OPPONENT_A);
     }
 }
