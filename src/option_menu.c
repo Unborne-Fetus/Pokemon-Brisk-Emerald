@@ -198,7 +198,7 @@ static const struct {
     {COMPOUND_STRING("FOLLOWERS"), COMPOUND_STRING("Options 5: FOLLOWERS ON/OFF.\nYour lead returns when switched on.\nStory companions stay available.\nMap restrictions still apply.")},
     {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
     {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
-    {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nMenus and dialogue change;\nPOKéMON keep their colors.")},
+    {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nSlate panels, cyan accents;\nPOKéMON keep their colors.")},
     {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nHARD adds 10-20 levels.\nEXTREME adds 40-50 levels.")},
     {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("No level caps; prices x1.\nBasic AI; items allowed.\nSHIFT style; shared EXP 200%.\nOver-level freely.")},
     {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Prices x2; original AI.\nBattle items are allowed.\nChoose SHIFT or SET style.\nShared EXP remains 100%.")},
@@ -774,7 +774,12 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
     for (i = 0; *text != EOS && i < ARRAY_COUNT(dst) - 1; i++)
         dst[i] = *(text++);
 
-    if (style != 0)
+    if (BriskDarkMode())
+    {
+        dst[2] = style ? TEXT_COLOR_RED : TEXT_COLOR_GREEN;
+        dst[5] = style ? TEXT_COLOR_LIGHT_RED : TEXT_COLOR_LIGHT_GREEN;
+    }
+    else if (style != 0)
     {
         dst[2] = TEXT_COLOR_RED;
         dst[5] = TEXT_COLOR_LIGHT_RED;

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "brisk_modes.h"
 #include "bg.h"
 #include "data.h"
@@ -976,7 +977,7 @@ static void BuyMenuDecompressBgGraphics(void)
 {
     DecompressAndCopyTileDataToVram(1, gShopMenu_Gfx, 0x3A0, 0x3E3, 0);
     DecompressDataWithHeaderWram(gShopMenu_Tilemap, sShopData->tilemapBuffers[0]);
-    LoadPalette(gShopMenu_Pal, BG_PLTT_ID(SHOP_MENU_PALETTE_ID), PLTT_SIZE_4BPP);
+    LoadBriskMenuPaletteStyled(gShopMenu_Pal, BG_PLTT_ID(SHOP_MENU_PALETTE_ID), PLTT_SIZE_4BPP, BRISK_PALETTE_SHOP);
 }
 
 static void BuyMenuInitWindows(void)

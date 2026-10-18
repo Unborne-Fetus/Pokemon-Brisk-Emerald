@@ -234,5 +234,5 @@ void LoadUserWindowBorderGfxOnBg(u8 bg, u16 destOffset, u8 palOffset)
 void LoadDexNavWindowGfx(u8 windowId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sDexNavWindowFrame.tiles, 0x120, destOffset);
-    LoadPalette(sDexNavWindowFrame.pal, palOffset, 32);
+    LoadBriskMenuPaletteStyled(sDexNavWindowFrame.pal, palOffset, 32, BRISK_PALETTE_FRAME);
 }

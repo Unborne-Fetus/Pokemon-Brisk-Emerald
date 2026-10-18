@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "brisk_fakemon.h"
 #include "battle_main.h"
 #include "battle_script_commands.h"
@@ -2225,13 +2226,13 @@ void CreatePokedexList(u8 dexMode, u8 order)
 
 static void PrintMonDexNum(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top)
 {
-    static const u8 color[3] = { TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_LIGHT_GRAY };
+    u8 color[3] = { TEXT_COLOR_TRANSPARENT, BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6, BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY };
     AddTextPrinterParameterized4(windowId, fontId, left * 8, (top * 8) + 1, 0, 0, color, TEXT_SKIP_DRAW, str);
 }
 
 static void PrintMonName(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top)
 {
-    static const u8 color[3] = { TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_LIGHT_GRAY };
+    u8 color[3] = { TEXT_COLOR_TRANSPARENT, BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6, BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY };
     fontId = GetFontIdToFit(str, fontId, 0, 50);
     AddTextPrinterParameterized4(windowId, fontId, left * 8, (top * 8) + 1, 0, 0, color, TEXT_SKIP_DRAW, str);
 }
@@ -3123,8 +3124,8 @@ void PrintInfoScreenText(const u8 *str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6;
+    color[2] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY;
 
     AddTextPrinterParameterized4(0, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
 }
@@ -4703,8 +4704,8 @@ static void PrintInfoSubMenuText(u8 windowId, const u8 *str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6;
+    color[2] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY;
 
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
 }

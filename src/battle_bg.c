@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_bg.h"
@@ -972,7 +973,7 @@ void LoadBattleMenuWindowGfx(void)
 {
     LoadUserWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
     LoadUserWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
-    LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
+    LoadBriskMenuPaletteStyled(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP, BRISK_PALETTE_BATTLE_TEXT);
 
     if ((gBattleTypeFlags & (BATTLE_TYPE_ARENA | BATTLE_TYPE_POKEDUDE))
     || (IS_FRLG && (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)))
@@ -995,7 +996,7 @@ void LoadBattleTextboxAndBackground(void)
     DecompressDataWithHeaderVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
-    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadBriskMenuPaletteStyled(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP, BRISK_PALETTE_BATTLE_BOX);
     LoadBattleMenuWindowGfx();
     if (B_TERRAIN_BG_CHANGE == TRUE)
         DrawTerrainTypeBattleBackground();
@@ -1335,7 +1336,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         CopyBgTilemapBufferToVram(0);
         break;
     case 2:
-        LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+        LoadBriskMenuPaletteStyled(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP, BRISK_PALETTE_BATTLE_BOX);
         break;
     case 3:
         DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tileset, (void *)(BG_CHAR_ADDR(2)));

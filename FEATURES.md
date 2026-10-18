@@ -133,3 +133,10 @@ boss/rental health, and the large boss bar displays the animation immediately.
 Team stat boosts skip absent partners. Mega Snorlax has 75 Defense and 120
 Special Defense. Orange Islands grass rates are 15 (formerly 7). Rhydon has a
 split evolution: Rhyfortress at level 60, or Rhyperior using a Protector.
+
+### Expanded dark appearance
+
+- Deliberate slate surfaces, raised panels, cyan selections, muted secondary text, and lifted window borders.
+- Dark battle message/command panels, shops, naming keyboard, trainer card, and the PC frame, text, and scrolling backdrop.
+- HGSS Pokédex now follows the saved appearance option, including dark information/list/search panels, separate navigation lettering, and brighter arrows.
+- Pokémon, box wallpapers, type colors, HP/PP warnings, badges, and item art retain their original colors. Light mode restores the original UI assets.

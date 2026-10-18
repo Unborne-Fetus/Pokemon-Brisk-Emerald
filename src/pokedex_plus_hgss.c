@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "brisk_fakemon.h"
 #include "battle_main.h"
 #include "battle_util.h"
@@ -585,30 +586,47 @@ bool32 TryOpenPokedexPage_HGSS(u8 taskId, u8 page)
 
 #define tLoadScreenTaskId data[0]
 
+// Baked navigation glyphs share index 1 with page fills. Give the logo
+// and header their own ink role; the footer uses black lettering instead.
+static void LoadDarkPokedexNavigationPalettes(void)
+{
+    u16 navigation[16];
+    memcpy(navigation, sPokedexPlusHGSS_Default_dark_Pal, sizeof(navigation));
+    navigation[1] = RGB(29, 30, 31);
+    LoadPalette(navigation, BG_PLTT_ID(6), sizeof(navigation));
+    navigation[1] = RGB(3, 4, 6);
+    navigation[15] = RGB(29, 30, 31);
+    LoadPalette(navigation, BG_PLTT_ID(7), sizeof(navigation));
+}
+
 bool32 TryLoadPokedexBgPalette_HGSS(bool8 isSearchResults)
 {
     if (!POKEDEX_PLUS_HGSS)
         return FALSE;
 
-    if (!HGSS_DARK_MODE)
+    if (!BriskDarkMode())
     {
         if (isSearchResults == TRUE)
-            LoadPalette(sPokedexPlusHGSS_SearchResults_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_SearchResults_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
         else if (!IsNationalPokedexEnabled())
-            LoadPalette(sPokedexPlusHGSS_Default_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_Default_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
         else
-            LoadPalette(sPokedexPlusHGSS_National_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_National_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
     }
     else
     {
         if (isSearchResults == TRUE)
-            LoadPalette(sPokedexPlusHGSS_SearchResults_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_SearchResults_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
         else if (!IsNationalPokedexEnabled())
-            LoadPalette(sPokedexPlusHGSS_Default_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_Default_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
         else
-            LoadPalette(sPokedexPlusHGSS_National_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(6 * 16 - 1));
+            LoadPalette(sPokedexPlusHGSS_National_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(3 * 16 - 1));
     }
 
+    if (BriskDarkMode())
+    {
+        LoadDarkPokedexNavigationPalettes();
+    }
     LoadPalette(GetOverworldTextboxPalettePtr(), BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     return TRUE;
 }
@@ -655,6 +673,20 @@ static bool8 LoadPokedexListPage(u8 page)
         else
             sPokedexView->isSearchResults = TRUE;
         LoadPokedexBgPalette(sPokedexView->isSearchResults);
+        if (BriskDarkMode())
+        {
+            u16 *map = GetBgTilemapBuffer(1);
+            if (map != NULL)
+            {
+                for (u32 y = 1; y <= 2; y++)
+                    for (u32 x = 15; x <= 21; x++)
+                        map[y * 32 + x] = (map[y * 32 + x] & 0x0FFF) | 0x6000;
+                for (u32 y = 18; y < 20; y++)
+                    for (u32 x = 14; x < 30; x++)
+                        map[y * 32 + x] = (map[y * 32 + x] & 0x0FFF) | 0x7000;
+            }
+        }
+
         InitWindows(sPokemonList_WindowTemplate);
         DeactivateAllTextPrinters();
         PutWindowTilemap(0);
@@ -666,7 +698,7 @@ static bool8 LoadPokedexListPage(u8 page)
         FreeAllSpritePalettes();
         gReservedSpritePaletteCount = 8;
         LoadCompressedSpriteSheet(&sInterfaceSpriteSheet[HGSS_DECAPPED]);
-        LoadSpritePalette(&sInterfaceSpritePalette[HGSS_DARK_MODE]);
+        LoadSpritePalette(&sInterfaceSpritePalette[BriskDarkMode()]);
         LoadSpritePalettes(sStatBarSpritePal);
         CreateInterfaceSprites(page);
         gMain.state++;
@@ -1635,7 +1667,7 @@ static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_COLOR_WHITE;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_COLOR_WHITE;
     color[2] = TEXT_DYNAMIC_COLOR_6;
 
     AddTextPrinterParameterized4(0, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
@@ -1644,8 +1676,8 @@ static void PrintInfoScreenTextSmall(const u8* str, u8 fontId, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6;
+    color[2] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY;
 
     AddTextPrinterParameterized4(0, fontId, left, top, 0, 0, color, 0, str);
 }
@@ -1655,8 +1687,8 @@ static void PrintStatsScreenTextSmall(u8 windowId, const u8* str, u8 left, u8 to
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6;
+    color[2] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY;
 
     AddTextPrinterParameterized4(windowId, 0, left, top, 0, 0, color, 0, str);
 }
@@ -1664,8 +1696,8 @@ static void PrintStatsScreenTextSmallNarrower(u8 windowId, const u8* str, u8 lef
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_DYNAMIC_COLOR_6;
+    color[2] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_6 : TEXT_COLOR_LIGHT_GRAY;
 
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, left, top, 0, 0, color, 0, str);
 }
@@ -1673,7 +1705,7 @@ static void PrintStatsScreenTextSmallWhite(u8 windowId, const u8* str, u8 left, 
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_COLOR_WHITE;
+    color[1] = BriskDarkMode() ? TEXT_DYNAMIC_COLOR_5 : TEXT_COLOR_WHITE;
     color[2] = TEXT_DYNAMIC_COLOR_6;
 
     AddTextPrinterParameterized4(windowId, 0, left, top, 0, 0, color, 0, str);
@@ -1820,6 +1852,17 @@ static u32 GetPokedexMonPersonality(enum Species species)
 //*        HGSS                      *
 //*                                  *
 //************************************
+static void ThemePokedexNavigation(void)
+{
+    if (BriskDarkMode())
+    {
+        LoadDarkPokedexNavigationPalettes();
+        u16 *map = GetBgTilemapBuffer(3);
+        for (u32 i = 0; i < 32 * 2; i++)
+            map[i] = (map[i] & 0x0FFF) | 0x6000;
+    }
+}
+
 static void LoadTilesetTilemapHGSS(u8 page)
 {
     switch (page)
@@ -1849,6 +1892,7 @@ static void LoadTilesetTilemapHGSS(u8 page)
         CopyToBgTilemapBuffer(3, sPokedexPlusHGSS_ScreenSize_Tilemap, 0, 0);
         break;
     }
+    ThemePokedexNavigation();
 }
 
 //Physical/Special/Status category
@@ -1874,7 +1918,9 @@ static void DestroyCategoryIcon(void)
 //*        STATS                     *
 //*                                  *
 //************************************
-static const u8 sStatsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
+static const u8 sLightNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
+static const u8 sDarkNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_5, TEXT_DYNAMIC_COLOR_6};
+#define sStatsPageNavigationTextColor (BriskDarkMode() ? sDarkNavigationTextColor : sLightNavigationTextColor)
 
 static void StatsPage_PrintNavigationButtons(void)
 {
@@ -4563,7 +4609,7 @@ bool32 TryLoadPlayArrowPalette_HGSS(bool8 cryPlaying)
 
     u16 color;
 
-    if (!HGSS_DARK_MODE)
+    if (!BriskDarkMode())
     {
         if (cryPlaying)
             color = RGB(29, 9, 4);
@@ -4573,9 +4619,9 @@ bool32 TryLoadPlayArrowPalette_HGSS(bool8 cryPlaying)
     else
     {
         if (cryPlaying)
-            color = RGB(9, 9, 9);
+            color = RGB(12, 26, 29);
         else
-            color = RGB(3, 3, 3);
+            color = RGB(18, 22, 26);
     }
 
     LoadPalette(&color, BG_PLTT_ID(0) + 11, PLTT_SIZEOF(1));
@@ -4655,7 +4701,7 @@ bool32 TryLoadSearchMenu_HGSS(u8 taskId)
                 CopyToBgTilemapBuffer(3, sPokedexPlusHGSS_ScreenSearchHoenn_Tilemap, 0, 0);
             else
                 CopyToBgTilemapBuffer(3, sPokedexPlusHGSS_ScreenSearchNational_Tilemap, 0, 0);
-            if (!HGSS_DARK_MODE)
+            if (!BriskDarkMode())
                 LoadPalette(sPokedexPlusHGSS_MenuSearch_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(4 * 16 - 1));
             else
                 LoadPalette(sPokedexPlusHGSS_MenuSearch_dark_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(4 * 16 - 1));
@@ -4664,7 +4710,7 @@ bool32 TryLoadSearchMenu_HGSS(u8 taskId)
         break;
     case 1:
         LoadCompressedSpriteSheet(&sInterfaceSpriteSheet[HGSS_DECAPPED]);
-        LoadSpritePalette(&sInterfaceSpritePalette[HGSS_DARK_MODE]);
+        LoadSpritePalette(&sInterfaceSpritePalette[BriskDarkMode()]);
         LoadSpritePalettes(sStatBarSpritePal);
         CreateSearchParameterScrollArrows(taskId);
         for (i = 0; i < NUM_TASK_DATA; i++)
@@ -4765,14 +4811,14 @@ bool32 TryHandleCaughtMonPageFlicker_HGSS(u8 taskId)
 
     // if (++gTasks[taskId].tPalTimer & 16)
     // {
-    //     if (!HGSS_DARK_MODE)
+    //     if (!BriskDarkMode())
     //         LoadPalette(sPokedexPlusHGSS_Default_Pal + 1, BG_PLTT_ID(3) + 1, PLTT_SIZEOF(7));
     //     else
     //         LoadPalette(sPokedexPlusHGSS_Default_dark_Pal + 1, BG_PLTT_ID(3) + 1, PLTT_SIZEOF(7));
     // }
     // else
     // {
-    //     if (!HGSS_DARK_MODE)
+    //     if (!BriskDarkMode())
     //         LoadPalette(sPokedexPlusHGSS_Default_Pal + 1, BG_PLTT_ID(3) + 1, PLTT_SIZEOF(7));
     //     else
     //         LoadPalette(sPokedexPlusHGSS_Default_dark_Pal + 1, BG_PLTT_ID(3) + 1, PLTT_SIZEOF(7));
@@ -4783,12 +4829,14 @@ bool32 TryHandleCaughtMonPageFlicker_HGSS(u8 taskId)
 
 static void TryLoadDarkModeArrowPalette(void)
 {
-    if (!HGSS_DARK_MODE)
+    if (!BriskDarkMode())
         return;
 
     u32 index = IndexOfSpritePaletteTag(gSpritePalette_Arrow.tag);
-    u32 colorArrow = RGB2GBA(72, 72, 72);
-    u32 colorOutline = RGB2GBA(24, 24, 24);
+    if (index == 0xFF)
+        return;
+    u16 colorArrow = RGB(12, 26, 29);
+    u16 colorOutline = RGB(1, 2, 3);
 
     LoadPalette(&colorArrow, OBJ_PLTT_ID(index) + 1, sizeof(colorArrow));
     LoadPalette(&colorOutline, OBJ_PLTT_ID(index) + 2, sizeof(colorOutline));

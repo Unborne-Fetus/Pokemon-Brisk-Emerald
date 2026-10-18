@@ -92,8 +92,8 @@ static const u16 sDarkText[16] =
 
 static const u16 sDarkOptions[16] =
 {
-    0, THEME_PANEL, THEME_MUTED, THEME_INK,
-    THEME_ACCENT, RGB(3, 10, 13), THEME_TEXT, THEME_SHADOW,
+    0, THEME_PANEL, THEME_TEXT, THEME_INK,
+    THEME_ACCENT, RGB(3, 10, 13), THEME_MUTED, THEME_INK,
     THEME_INK, THEME_INK, THEME_INK, THEME_INK,
     THEME_INK, THEME_INK, THEME_INK, THEME_INK,
 };
@@ -118,6 +118,43 @@ static const u16 sDarkStorage[16] =
     RGB(9, 17, 18), THEME_INK, RGB(17, 25, 19), THEME_EDGE,
 };
 
+// Hand-authored roles for the battle UI. The message uses white ink at 1
+// over fill 15; the command menu instead uses ink 13 over fill 14. Those
+// whites have opposite jobs and must never share a luminance transform.
+static const u16 sDarkBattleBox[2][16] =
+{
+    {0, THEME_TEXT, RGB(31, 15, 15), RGB(9, 15, 21), RGB(14, 21, 26),
+     THEME_RAISED, THEME_INK, THEME_EDGE, RGB(6, 11, 17), THEME_INK,
+     THEME_EDGE, RGB(7, 13, 18), RGB(9, 18, 22), THEME_TEXT, THEME_RAISED, THEME_PANEL},
+    {0, RGB(6, 11, 17), RGB(9, 15, 21), RGB(14, 21, 26), THEME_INK,
+     THEME_RAISED, THEME_INK, THEME_EDGE, THEME_PANEL, THEME_EDGE,
+     RGB(10, 20, 24), RGB(7, 14, 19), THEME_TEXT, THEME_TEXT, THEME_RAISED, THEME_INK},
+};
+
+static const u16 sDarkShop[16] =
+{
+    0, THEME_PANEL, THEME_RAISED, THEME_EDGE, RGB(13, 17, 21),
+    THEME_EDGE, THEME_INK, RGB(8, 18, 23), RGB(16, 27, 22),
+    RGB(25, 24, 18), RGB(22, 20, 15), RGB(16, 14, 11),
+    RGB(29, 24, 11), RGB(17, 13, 5), RGB(31, 28, 16), THEME_TEXT,
+};
+
+static const u16 sDarkNaming[16] =
+{
+    0, THEME_PANEL, THEME_EDGE, THEME_SHADOW, RGB(12, 16, 20),
+    THEME_EDGE, THEME_RAISED, RGB(5, 13, 16), RGB(7, 17, 20), RGB(9, 21, 24),
+    THEME_TEXT, THEME_INK, RGB(8, 17, 22), RGB(10, 21, 25),
+    RGB(14, 25, 28), RGB(19, 28, 30),
+};
+
+static const u16 sDarkStorageChrome[16] =
+{
+    0, THEME_EDGE, THEME_RAISED, THEME_INK, RGB(10, 14, 18),
+    RGB(28, 23, 13), RGB(12, 16, 20), THEME_INK,
+    RGB(13, 23, 27), RGB(8, 17, 22), RGB(26, 24, 16),
+    RGB(18, 27, 30), RGB(14, 23, 28), RGB(9, 20, 24), THEME_TEXT, THEME_ACCENT,
+};
+
 static u16 DarkPaletteColor(u16 color, u32 index, enum BriskMenuPaletteStyle style)
 {
     u32 slot = index & 15, bank = index / 16;
@@ -125,6 +162,44 @@ static u16 DarkPaletteColor(u16 color, u32 index, enum BriskMenuPaletteStyle sty
         return color;
     switch (style)
     {
+    case BRISK_PALETTE_BATTLE_BOX:
+        return bank < ARRAY_COUNT(sDarkBattleBox) ? sDarkBattleBox[bank][slot] : color;
+    case BRISK_PALETTE_BATTLE_TEXT:
+        // Slots 1-4 are PP warning colors, updated during move selection.
+        if (slot == 13) return THEME_TEXT;
+        if (slot == 14) return THEME_RAISED;
+        if (slot == 15) return THEME_INK;
+        return color;
+    case BRISK_PALETTE_TRAINER_CARD:
+        // Bank 1 is the original male/female accent; badges, stickers,
+        // stars, trainer portraits and team icons have separate palettes.
+        if (bank == 1) return color;
+        if (bank == 0)
+        {
+            static const u16 card[16] = {0, THEME_PANEL, THEME_RAISED, THEME_EDGE,
+                THEME_SHADOW, THEME_MUTED, THEME_EDGE, RGB(7,16,21),
+                RGB(10,21,26), THEME_RAISED, THEME_EDGE, THEME_SHADOW,
+                RGB(6,14,13), THEME_ACCENT, THEME_EDGE, THEME_INK};
+            return card[slot];
+        }
+        if (bank == 2 && slot <= 12)
+            return slot % 4 == 1 ? THEME_PANEL : slot % 4 == 2 ? THEME_RAISED : slot % 4 == 3 ? THEME_EDGE : THEME_SHADOW;
+        return color;
+    case BRISK_PALETTE_SHOP: return sDarkShop[slot];
+    case BRISK_PALETTE_NAMING: return sDarkNaming[slot];
+    case BRISK_PALETTE_KEYBOARD:
+    case BRISK_PALETTE_STORAGE_TEXT:
+        // These use the standard text slots; other entries include symbols.
+        if (slot == 1) return THEME_PANEL;
+        if (slot == 2) return THEME_TEXT;
+        if (slot == 3) return THEME_INK;
+        return color;
+    case BRISK_PALETTE_STORAGE_CHROME: return sDarkStorageChrome[slot];
+    case BRISK_PALETTE_STORAGE_BACKDROP:
+        if (slot >= 8 && slot <= 10)
+            return RGB(3 + (10 - slot), 6 + (10 - slot), 10 + (10 - slot));
+        if (slot == 1) return THEME_EDGE;
+        return color;
     case BRISK_PALETTE_TEXT: return sDarkText[slot];
     case BRISK_PALETTE_OPTIONS: return sDarkOptions[slot];
     case BRISK_PALETTE_BAG:
@@ -135,7 +210,9 @@ static u16 DarkPaletteColor(u16 color, u32 index, enum BriskMenuPaletteStyle sty
         // Keep the border's original hue and shading order, even for black.
         if (slot == 14) return THEME_PANEL;
         if (slot == 15) return THEME_INK;
-        return RGB((color & 31) * 3 / 4, ((color >> 5) & 31) * 3 / 4, ((color >> 10) & 31) * 3 / 4);
+        // Lift black edging above the fill, while retaining each frame's hue
+        // and the original order of its highlights. No crushed black borders.
+        return RGB(5 + (color & 31) / 2, 7 + ((color >> 5) & 31) / 2, 10 + ((color >> 10) & 31) / 2);
     case BRISK_PALETTE_PARTY:
         if (bank == 0)
         {
@@ -238,7 +315,8 @@ void LoadBriskMenuPaletteStyled(const void *src, u32 offset, u32 size, enum Bris
         // BG color zero is the opaque backdrop, unlike transparent zero in
         // every other palette bank. Only full-screen UI assets own this slot.
         if (offset == 0 && start == 0
-         && (style == BRISK_PALETTE_BAG || style == BRISK_PALETTE_PARTY || style == BRISK_PALETTE_SUMMARY))
+         && (style == BRISK_PALETTE_BAG || style == BRISK_PALETTE_PARTY || style == BRISK_PALETTE_SUMMARY
+          || style == BRISK_PALETTE_NAMING || style == BRISK_PALETTE_STORAGE_CHROME))
             palette[0] = THEME_INK;
         LoadPalette(palette, offset + start, count * sizeof(u16));
     }

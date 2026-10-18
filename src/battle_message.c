@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "dynamax_adventure.h"
 #include "ball_capsule.h"
 #include "battle.h"
@@ -3959,8 +3960,11 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
 void SetPPNumbersPaletteInMoveSelection(enum BattlerId battler)
 {
     struct ChooseMoveStruct *chooseMoveStruct = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    const u16 *palPtr = gPPTextPalette;
+    u16 ppPalette[8];
+    const u16 *palPtr = ppPalette;
     u8 var;
+
+    BriskCopyMenuPaletteStyled(ppPalette, gPPTextPalette, ARRAY_COUNT(ppPalette), 0, BRISK_PALETTE_PP);
 
     if (!gBattleStruct->zmove.viewing)
         var = GetCurrentPPToMaxPPState(chooseMoveStruct->currentPP[gMoveSelectionCursor[battler]],

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "naming_screen.h"
 #include "malloc.h"
 #include "palette.h"
@@ -1952,8 +1953,8 @@ static void CreateHelperTasks(void)
 
 static void LoadPalettes(void)
 {
-    LoadPalette(gNamingScreenMenu_Pal, BG_PLTT_ID(0), sizeof(gNamingScreenMenu_Pal));
-    LoadPalette(sKeyboard_Pal, BG_PLTT_ID(10), sizeof(sKeyboard_Pal));
+    LoadBriskMenuPaletteStyled(gNamingScreenMenu_Pal, BG_PLTT_ID(0), sizeof(gNamingScreenMenu_Pal), BRISK_PALETTE_NAMING);
+    LoadBriskMenuPaletteStyled(sKeyboard_Pal, BG_PLTT_ID(10), sizeof(sKeyboard_Pal), BRISK_PALETTE_KEYBOARD);
     LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), PLTT_SIZE_4BPP);
 }
 

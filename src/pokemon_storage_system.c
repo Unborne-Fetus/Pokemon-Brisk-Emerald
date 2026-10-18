@@ -4027,13 +4027,13 @@ static void LoadWaveformSpritePalette(void)
 
 static void InitPalettesAndSprites(void)
 {
-    LoadPalette(sInterface_Pal, BG_PLTT_ID(0), sizeof(sInterface_Pal));
-    LoadPalette(sPkmnDataGray_Pal, BG_PLTT_ID(2), sizeof(sPkmnDataGray_Pal));
-    LoadPalette(sTextWindows_Pal, BG_PLTT_ID(15), sizeof(sTextWindows_Pal));
+    LoadBriskMenuPaletteStyled(sInterface_Pal, BG_PLTT_ID(0), sizeof(sInterface_Pal), BRISK_PALETTE_STORAGE_CHROME);
+    LoadBriskMenuPaletteStyled(sPkmnDataGray_Pal, BG_PLTT_ID(2), sizeof(sPkmnDataGray_Pal), BRISK_PALETTE_STORAGE_CHROME);
+    LoadBriskMenuPaletteStyled(sTextWindows_Pal, BG_PLTT_ID(15), sizeof(sTextWindows_Pal), BRISK_PALETTE_STORAGE_TEXT);
     if (sStorage->boxOption != OPTION_MOVE_ITEMS)
-        LoadPalette(sScrollingBg_Pal, BG_PLTT_ID(3), sizeof(sScrollingBg_Pal));
+        LoadBriskMenuPaletteStyled(sScrollingBg_Pal, BG_PLTT_ID(3), sizeof(sScrollingBg_Pal), BRISK_PALETTE_STORAGE_BACKDROP);
     else
-        LoadPalette(sScrollingBgMoveItems_Pal, BG_PLTT_ID(3), sizeof(sScrollingBgMoveItems_Pal));
+        LoadBriskMenuPaletteStyled(sScrollingBgMoveItems_Pal, BG_PLTT_ID(3), sizeof(sScrollingBgMoveItems_Pal), BRISK_PALETTE_STORAGE_BACKDROP);
 
     SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(1) | BGCNT_CHARBASE(1) | BGCNT_16COLOR | BGCNT_SCREENBASE(30));
     CreateDisplayMonSprite();
