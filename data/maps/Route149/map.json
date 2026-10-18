@@ -28,7 +28,14 @@
   "warp_events": [
     {
       "x": 24,
-      "y": 8,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE148",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE148",
       "dest_warp_id": "0"
