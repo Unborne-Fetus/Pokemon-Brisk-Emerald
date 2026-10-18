@@ -7,7 +7,7 @@ OrangeCity_EventScript_TownSign::
 
 OrangeCity_Text_TownSign:
 	.string "ORANGE CITY\n"
-	.string "A bright harbor on the Orange Coast.$"
+	.string "A bright harbor in the\nORANGE ISLANDS.$"
 
 OrangeCity_EventScript_Welcome::
 	msgbox OrangeCity_Text_Welcome, MSGBOX_NPC
@@ -30,5 +30,5 @@ OrangeCity_EventScript_Town::
 	end
 
 OrangeCity_Text_Town:
-	.string "The houses here are built with\n"
-	.string "local bamboo and warm orange roofs.$"
+	.string "The town square leads to the\n"
+	.string "harbor and our island homes.$"

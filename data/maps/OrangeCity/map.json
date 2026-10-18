@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 20,
-      "y": 21,
+      "x": 18,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -41,7 +41,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 24,
-      "y": 32,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -53,8 +53,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 33,
-      "y": 18,
+      "x": 31,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -67,38 +67,31 @@
   ],
   "warp_events": [
     {
-      "x": 40,
-      "y": 17,
+      "x": 14,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ORANGE_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_MART",
       "dest_warp_id": "0"
     },
     {
-      "x": 36,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_ORANGE_CITY_MART",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 20,
-      "y": 25,
+      "x": 10,
+      "y": 28,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 33,
-      "y": 13,
+      "x": 35,
+      "y": 27,
       "elevation": 0,
       "dest_map": "MAP_ORANGE_CITY_HOUSE2",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 24,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_ORANGE_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     }
   ],
@@ -107,7 +100,7 @@
     {
       "type": "sign",
       "x": 18,
-      "y": 17,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OrangeCity_EventScript_TownSign"

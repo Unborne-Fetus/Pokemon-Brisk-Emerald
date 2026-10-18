@@ -7,12 +7,12 @@ Route146_EventScript_RouteSign::
 
 Route146_Text_RouteSign:
 	.string "ROUTE 146 - CRESCENT LOOKOUT\n"
-	.string "The last island of the Orange Coast.$"
+	.string "A lookout over the\nORANGE ISLANDS.$"
 
 Route146_EventScript_Lookout::
 	msgbox Route146_Text_Lookout, MSGBOX_NPC
 	end
 
 Route146_Text_Lookout:
-	.string "From here, the whole coast\n"
+	.string "From here, the islands\n"
 	.string "looks like a string of orange pearls.$"

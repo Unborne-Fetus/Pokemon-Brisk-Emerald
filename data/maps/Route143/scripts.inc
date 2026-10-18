@@ -6,7 +6,7 @@ Route143_EventScript_RouteSign::
 	end
 
 Route143_Text_RouteSign:
-	.string "ROUTE 143 - ORANGE COAST\n"
+	.string "ROUTE 143 - ORANGE ISLANDS\n"
 	.string "East: Route 144 and ORANGE CITY$"
 
 Route143_EventScript_Landing::
@@ -15,4 +15,4 @@ Route143_EventScript_Landing::
 
 Route143_Text_Landing:
 	.string "These boardwalks keep our beaches\n"
-	.string "open to everyone. Enjoy the coast!$"
+	.string "open to everyone. Enjoy the islands!$"

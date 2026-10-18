@@ -225,7 +225,7 @@ static const struct {
     {COMPOUND_STRING("REPELS"), COMPOUND_STRING("Repels now prevent wild\nencounters at all levels,\nregardless of your lead\nPOKéMON's level.")},
     {COMPOUND_STRING("CUSTOM MEGAS"), COMPOUND_STRING("New custom Mega forms use\nnative 80x80 battle art.\nTheir Mega Stones are sold\nin the expanded shops.")},
     {COMPOUND_STRING("STARTER FIXES"), COMPOUND_STRING("Starter natures, gender,\nIVs and shiny chances\nare rolled normally.\nNo fixed Hardy/zero IVs.")},
-    {COMPOUND_STRING("ORANGE COAST"), COMPOUND_STRING("Orange City and Routes\n143, 144, 145 and 146\nhave been added with\nOrange Islands-style tiles.")},
+    {COMPOUND_STRING("ORANGE ISLANDS"), COMPOUND_STRING("Explore Routes 143-150\nand ORANGE CITY. Its mart\nsells custom MEGA STONES.\nThe lookout has a cave.")},
     {COMPOUND_STRING("CHAMPION ROUTE"), COMPOUND_STRING("Route 135 is guarded\nuntil you have entered\nthe Hall of Fame.\nChampion Archives await.")},
     {COMPOUND_STRING("ENCOUNTER RATES"), COMPOUND_STRING("Wild encounters in caves\nand on water have been\nrebalanced; regular land\ntables are unchanged.")},
     {COMPOUND_STRING("WONDER TRADE"), COMPOUND_STRING("Use the in-game Wonder\nTrade to exchange a\nPOKéMON for a random\neligible trade partner.")},
