@@ -3,6 +3,7 @@
 
 void DynamaxAdventure_InitRaidHud(void);
 void DynamaxAdventure_UpdateRaidHud(void);
+u32 DynamaxAdventure_GetDisplayedBossHP(void);
 void DynamaxAdventure_ResetRaidHud(void);
 
 #include "pokemon.h"

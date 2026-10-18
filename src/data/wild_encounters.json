@@ -64224,7 +64224,7 @@
           "map": "MAP_ROUTE143",
           "base_label": "gRoute143",
           "land_mons": {
-            "encounter_rate": 7,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 75,
@@ -64358,7 +64358,7 @@
           "map": "MAP_ROUTE144",
           "base_label": "gRoute144",
           "land_mons": {
-            "encounter_rate": 7,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 30,
@@ -64492,7 +64492,7 @@
           "map": "MAP_ROUTE145",
           "base_label": "gRoute145",
           "land_mons": {
-            "encounter_rate": 7,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 75,
@@ -64626,7 +64626,7 @@
           "map": "MAP_ROUTE146",
           "base_label": "gRoute146",
           "land_mons": {
-            "encounter_rate": 7,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 75,
@@ -64760,7 +64760,7 @@
           "map": "MAP_ORANGE_CITY",
           "base_label": "gOrangeCity",
           "land_mons": {
-            "encounter_rate": 7,
+            "encounter_rate": 15,
             "mons": [
               {
                 "min_level": 5,

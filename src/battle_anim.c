@@ -1445,9 +1445,10 @@ static void Cmd_clearmonbg(void)
     else
         battler = gBattleAnimTarget;
 
-    if (sMonAnimTaskIdArray[0] != TASK_NONE)
+    if (sMonAnimTaskIdArray[0] != TASK_NONE && IsBattlerSpritePresent(battler))
         gSprites[gBattlerSpriteIds[battler]].invisible = FALSE;
-    if (animBattlerId > 1 && sMonAnimTaskIdArray[1] != TASK_NONE)
+    if (animBattlerId > 1 && sMonAnimTaskIdArray[1] != TASK_NONE
+     && IsBattlerSpritePresent(GetPartnerBattler(battler)))
         gSprites[gBattlerSpriteIds[GetPartnerBattler(battler)]].invisible = FALSE;
     else
         animBattlerId = 0;

@@ -304,6 +304,26 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: player Mega and rival G-Max activate independ
                 foundBossBar = TRUE;
             }
         EXPECT(foundBossBar);
+        // A whole inflated HP bar must finish in <=49 updates rather than
+        // waiting one frame per HP. The dedicated boss bar follows its progress.
+        enum BattlerId boss = B_BATTLER_1;
+        BattleControllerFunc savedController = gBattlerControllerFuncs[boss];
+        gBattlerControllerFuncs[boss] = Controller_WaitForHealthBar;
+        SetBattleBarStruct(boss, gHealthboxSpriteIds[boss], gBattleMons[boss].maxHP,
+            gBattleMons[boss].maxHP, gBattleMons[boss].maxHP);
+        u32 frames = 0, previousHP = gBattleMons[boss].maxHP;
+        while (frames++ < 50)
+        {
+            s32 hp = MoveBattleBar(boss, gHealthboxSpriteIds[boss], HEALTH_BAR, 0);
+            if (hp == -1)
+                break;
+            EXPECT_EQ(DynamaxAdventure_GetDisplayedBossHP(), hp);
+            EXPECT_LE(hp, previousHP);
+            previousHP = hp;
+        }
+        EXPECT_LE(frames, 49);
+        EXPECT_EQ(previousHP, 0);
+        gBattlerControllerFuncs[boss] = savedController;
         // Damage-controller calls cannot resurrect any of the three native box sprites.
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[B_BATTLER_1]);
         UpdateOamPriorityInAllHealthboxes(1, TRUE);
@@ -1193,4 +1213,40 @@ TEST("Adventure: Birch swaps earlier catches without refreshing HP or changing r
     EXPECT(!DynamaxAdventure_SelectCaught(1));
     EXPECT(DynamaxAdventure_Quit());
     VarSet(VAR_BRISK_DIFFICULTY, difficulty);
+}
+
+TWO_VS_ONE_BATTLE_TEST("Adventure: team-boosting Max Moves never animate or boost the empty fourth slot")
+{
+    enum Move move;
+    enum Stat stat;
+    PARAMETRIZE { move = MOVE_BRICK_BREAK; stat = STAT_ATK; }
+    PARAMETRIZE { move = MOVE_SLUDGE_BOMB; stat = STAT_SPATK; }
+    PARAMETRIZE { move = MOVE_IRON_HEAD; stat = STAT_DEF; }
+    PARAMETRIZE { move = MOVE_AIR_SLASH; stat = STAT_SPEED; }
+    PARAMETRIZE { move = MOVE_EARTH_POWER; stat = STAT_SPDEF; }
+    GIVEN {
+        StartRental();
+        EXPECT(DynamaxAdventure_ChoosePath(0));
+        EXPECT(DynamaxAdventure_PrepareBattle());
+        gBattleTestRunnerState->data.recordedBattle.battleFlags &= ~BATTLE_TYPE_TRAINER;
+        gBattleTestRunnerState->data.recordedBattle.partnerId = DynamaxAdventure_GetRivalPartnerId();
+        gBattleTypeFlags &= ~BATTLE_TYPE_TRAINER;
+        PLAYER(SPECIES_SHUCKLE) { Level(100); MaxHP(999); HP(999); Moves(MOVE_CELEBRATE); }
+        PARTNER(SPECIES_SHUCKLE) { Level(100); MaxHP(999); HP(999); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_VENUSAUR) { Moves(move); GigantamaxFactor(TRUE); }
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, move, target: playerLeft); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
+        NONE_OF { ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, &gBattleMons[B_BATTLER_3]); }
+    } THEN {
+        EXPECT_EQ(opponentLeft->statStages[stat], DEFAULT_STAT_STAGE + 1);
+        EXPECT(gAbsentBattlerFlags & (1u << B_BATTLER_3));
+        EXPECT_EQ(gBattleMons[B_BATTLER_3].species, SPECIES_NONE);
+        EXPECT_EQ(gBattleMons[B_BATTLER_3].hp, 0);
+        EXPECT_EQ(gBattleMons[B_BATTLER_3].statStages[stat], 0);
+        EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
+        gMain.inBattle = FALSE;
+        EXPECT(DynamaxAdventure_Quit());
+    }
 }

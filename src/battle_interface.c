@@ -2179,7 +2179,8 @@ s32 MoveBattleBar(enum BattlerId battler, u8 healthboxSpriteId, u8 whichBar, u8 
                         gBattleSpritesDataPtr->battleBars[battler].oldValue,
                         gBattleSpritesDataPtr->battleBars[battler].receivedValue,
                         &gBattleSpritesDataPtr->battleBars[battler].currValue,
-                        B_HEALTHBAR_PIXELS / 8, 1);
+                        B_HEALTHBAR_PIXELS / 8, IsDynamaxAdventureBattle()
+                            ? max(1, (gBattleSpritesDataPtr->battleBars[battler].maxValue + B_HEALTHBAR_PIXELS - 1) / B_HEALTHBAR_PIXELS) : 1);
         }
         else // exp bar
         {

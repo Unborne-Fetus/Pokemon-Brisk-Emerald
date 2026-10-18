@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_interface.h"
+#include "battle_controllers.h"
 #include "battle_util.h"
 #include "bg.h"
 #include "dynamax_adventure.h"
@@ -49,10 +50,20 @@ void DynamaxAdventure_ShowDamageHealthbox(enum BattlerId battler)
     SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
 }
 
+u32 DynamaxAdventure_GetDisplayedBossHP(void)
+{
+    enum BattlerId boss = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    const struct BattleBarInfo *bar = &gBattleSpritesDataPtr->battleBars[boss];
+    if (gBattlerControllerFuncs[boss] == Controller_WaitForHealthBar
+     && bar->currValue >= 0 && bar->maxValue == gBattleMons[boss].maxHP)
+        return min(bar->maxValue, bar->maxValue < 48 ? Q_24_8_TO_INT(bar->currValue) : bar->currValue);
+    return gBattleMons[boss].hp;
+}
+
 static void DrawBossBar(void)
 {
     enum BattlerId boss = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
-    u32 hp = gBattleMons[boss].hp, maxHP = gBattleMons[boss].maxHP;
+    u32 hp = DynamaxAdventure_GetDisplayedBossHP(), maxHP = gBattleMons[boss].maxHP;
     if (sBossWindow == WINDOW_NONE || maxHP == 0)
         return;
     if (hp != sBossHP || gBattleMons[boss].species != sBossSpecies)

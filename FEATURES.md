@@ -127,3 +127,9 @@ Birch accompanies the expedition into each rest room. Between rounds, talk to
 him to switch to a previously caught Pokémon that neither teammate is using.
 Benched Pokémon retain their battle HP/status/PP rather than resetting on each
 switch; end-of-run reward snapshots remain unchanged.
+
+Adventure HP animations finish within approximately 48 frames even for inflated
+boss/rental health, and the large boss bar displays the animation immediately.
+Team stat boosts skip absent partners. Mega Snorlax has 75 Defense and 120
+Special Defense. Orange Islands grass rates are 15 (formerly 7). Rhydon has a
+split evolution: Rhyfortress at level 60, or Rhyperior using a Protector.

@@ -70,7 +70,7 @@ TEST("CDRX73 evolution chains reach their authored destinations")
         {SPECIES_MIGHTYENA, 38, SPECIES_ALPHAYENA},
         {SPECIES_RATICATE, 36, SPECIES_BRUTICATE},
         {SPECIES_MAROWAK, 42, SPECIES_MARROWAK},
-        {SPECIES_RHYPERIOR, 60, SPECIES_RHYFORTRESS},
+        {SPECIES_RHYDON, 60, SPECIES_RHYFORTRESS},
         {SPECIES_SANDSLASH, 42, SPECIES_DUNESHRED},
         {SPECIES_SKARMORY, 48, SPECIES_SKARMAGEDN},
         {SPECIES_SHARPEDO, 48, SPECIES_SHARKAISER},
@@ -120,4 +120,19 @@ SINGLE_BATTLE_TEST("CDRX73 Dragoninite C and original Dragoninite select distinc
         EXPECT_EQ(GetFormChangeTargetSpecies_Internal(ctx), SPECIES_DRAGONITE);
         gMain.inBattle = FALSE;
     }
+}
+
+TEST("Rhydon branches to Rhyfortress by level and Rhyperior by Protector")
+{
+    const struct Evolution *evolutions = gSpeciesInfo[SPECIES_RHYDON].evolutions;
+    bool32 fortress = FALSE, perior = FALSE;
+    for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+    {
+        if (evolutions[i].targetSpecies == SPECIES_RHYFORTRESS)
+            fortress = evolutions[i].method == EVO_LEVEL && evolutions[i].param == 60;
+        if (evolutions[i].targetSpecies == SPECIES_RHYPERIOR)
+            perior = evolutions[i].method == EVO_ITEM && evolutions[i].param == ITEM_PROTECTOR;
+    }
+    EXPECT(fortress && perior);
+    EXPECT(gSpeciesInfo[SPECIES_RHYPERIOR].evolutions == NULL);
 }

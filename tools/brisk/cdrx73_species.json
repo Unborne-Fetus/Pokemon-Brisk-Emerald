@@ -159,7 +159,8 @@
     "national_dex": 1042,
     "icon_palette": 1,
     "shiny_supplied": true,
-    "ability_reason": "The plated rock fortress withstands impacts and projectiles."
+    "ability_reason": "The plated rock fortress withstands impacts and projectiles.",
+    "evolvesFrom": "RHYDON"
   },
   {
     "id": "DUNESHRED",

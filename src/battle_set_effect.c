@@ -238,7 +238,7 @@ static void HandleSetEffectStatChange(struct BattleCalcValues *cv, struct SetEff
             stage = -1 * stage;
 
         SetStatChange(se->effectBattler, stat, stage);
-        if (se->additionalEffect->onSide)
+        if (se->additionalEffect->onSide && IsBattlerAlive(GetPartnerBattler(se->effectBattler)))
             SetStatChange(GetPartnerBattler(se->effectBattler), stat, stage);
     }
 
