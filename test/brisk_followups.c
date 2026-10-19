@@ -17,23 +17,26 @@
 #include "test/test.h"
 #include "constants/rgb.h"
 
-TEST("Brisk difficulty progression caps use full, regular and minus-ten limits")
+TEST("Brisk difficulty progression caps use full, regular and raised challenge limits")
 {
     static const u16 flags[] = {FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET, FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET, FLAG_IS_CHAMPION};
     bool8 saved[ARRAY_COUNT(flags)];
     for (u32 i = 0; i < ARRAY_COUNT(flags); i++) { saved[i] = FlagGet(flags[i]); FlagClear(flags[i]); }
     VarSet(VAR_BRISK_NO_LEVEL_CAP, 0);
     static const u8 expected[] = {25, 35, 45, 50, 55, 65, 75, 100, 100};
-    for (u32 stage = 0; stage < ARRAY_COUNT(expected); stage++)
+    static const u8 challenge[] = {25, 35, 45, 50, 55, 65, 75, 90, 100};
+    for (u32 stage = 0; stage <= ARRAY_COUNT(expected); stage++)
     {
         for (u32 mode = 0; mode < 4; mode++)
         {
             VarSet(VAR_BRISK_DIFFICULTY, mode);
-            u32 cap = mode == BRISK_MODE_EASY ? MAX_LEVEL : mode >= BRISK_MODE_HARD ? expected[stage] - 10 : expected[stage];
+            u32 cap = MAX_LEVEL;
+            if (stage < ARRAY_COUNT(expected) && mode != BRISK_MODE_EASY)
+                cap = mode >= BRISK_MODE_HARD ? challenge[stage] : expected[stage];
             EXPECT_EQ(GetProgressionLevelCap(), cap);
             EXPECT_EQ(GetCurrentLevelCap(), mode == BRISK_MODE_EXTREME ? cap : MAX_LEVEL);
         }
-        FlagSet(flags[stage]);
+        if (stage < ARRAY_COUNT(flags)) FlagSet(flags[stage]);
     }
     for (u32 i = 0; i < ARRAY_COUNT(flags); i++) if (saved[i]) FlagSet(flags[i]); else FlagClear(flags[i]);
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);

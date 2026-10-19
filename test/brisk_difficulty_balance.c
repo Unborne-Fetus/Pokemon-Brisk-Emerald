@@ -1,8 +1,59 @@
 #include "global.h"
 #include "brisk_modes.h"
 #include "caps.h"
+#include "data.h"
 #include "event_data.h"
+#include "pokemon.h"
+#include "random.h"
+#include "trainer_util.h"
 #include "test/test.h"
+#include "constants/trainers.h"
+
+TEST("Hard and Extreme generate level 25 Roxanne teams and reach level 100 for the League")
+{
+    // First-party levels from Roxanne through Juan, then the Elite Four.
+    // The runner replaces gTrainers, so exercise the real generator with fixtures.
+    static const u8 original[] = {40, 50, 55, 65, 70, 80, 85, 90, 100};
+    static const u8 expected[] = {25, 35, 45, 50, 55, 65, 75, 90, 100};
+    static const u16 flags[] = {FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
+        FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET, FLAG_IS_CHAMPION};
+    bool8 saved[ARRAY_COUNT(flags)];
+    for (u32 i = 0; i < ARRAY_COUNT(flags); i++) { saved[i] = FlagGet(flags[i]); FlagClear(flags[i]); }
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, 0);
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    struct TrainerMon trainerMon = {
+        .species = SPECIES_GOLEM, .moves = {MOVE_TACKLE},
+        .gender = TRAINER_MON_RANDOM_GENDER, .nature = NATURE_HARDY, .ball = BALL_POKE,
+    };
+    struct Trainer trainer = {
+        .trainerClass = TRAINER_CLASS_LEADER, .party = &trainerMon, .partySize = 1,
+        .trainerName = _("TEST"),
+    };
+    for (u32 stage = 0; stage < ARRAY_COUNT(expected); stage++)
+    {
+        trainerMon.lvl = original[stage];
+        for (u32 mode = BRISK_MODE_HARD; mode <= BRISK_MODE_EXTREME; mode++)
+        {
+            VarSet(VAR_BRISK_DIFFICULTY, mode);
+            struct TrainerGenerator generator = {0};
+            struct Pokemon mon;
+            MakeTrainerGenerator(&generator, &trainer);
+            GenerateMonFromTrainerMon(&mon, &trainerMon, &generator);
+            EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), expected[stage]);
+            EXPECT_EQ(GetLevelFromMonExp(&mon), expected[stage]);
+            EXPECT_EQ(GetProgressionLevelCap(), expected[stage]);
+            if (mode == BRISK_MODE_EXTREME)
+            {
+                EXPECT_EQ(GetCurrentLevelCap(), expected[stage]);
+                EXPECT_EQ(GetSoftLevelCapExpValue(expected[stage] - 1, 100), 100);
+                EXPECT_EQ(GetSoftLevelCapExpValue(expected[stage], 100), 0);
+            }
+        }
+        FlagSet(flags[stage]);
+    }
+    for (u32 i = 0; i < ARRAY_COUNT(flags); i++) if (saved[i]) FlagSet(flags[i]); else FlagClear(flags[i]);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
 
 TEST("Hard and Extreme use small early boosts and scale mandatory trainers within every badge cap")
 {

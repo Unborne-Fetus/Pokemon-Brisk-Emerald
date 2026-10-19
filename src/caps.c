@@ -16,17 +16,20 @@ u32 GetProgressionLevelCap(void)
     u32 mode = GetBriskDifficulty();
     if (mode == BRISK_MODE_EASY || (mode != BRISK_MODE_EXTREME && VarGet(VAR_BRISK_NO_LEVEL_CAP)))
         return MAX_LEVEL;
-    static const u32 sLevelCapFlagMap[][2] =
+    // Normal keeps its original obedience curve. Hard/Extreme use an explicit
+    // curve shared with trainer scaling, rather than subtracting ten levels.
+    static const u32 sLevelCapFlagMap[][3] =
     {
-        {FLAG_BADGE01_GET, 25},
-        {FLAG_BADGE02_GET, 35},
-        {FLAG_BADGE03_GET, 45},
-        {FLAG_BADGE04_GET, 50},
-        {FLAG_BADGE05_GET, 55},
-        {FLAG_BADGE06_GET, 65},
-        {FLAG_BADGE07_GET, 75},
-        {FLAG_BADGE08_GET, 100},
-        {FLAG_IS_CHAMPION, MAX_LEVEL},
+        // Milestone          Normal  Hard/Extreme
+        {FLAG_BADGE01_GET,      25,     25},
+        {FLAG_BADGE02_GET,      35,     35},
+        {FLAG_BADGE03_GET,      45,     45},
+        {FLAG_BADGE04_GET,      50,     50},
+        {FLAG_BADGE05_GET,      55,     55},
+        {FLAG_BADGE06_GET,      65,     65},
+        {FLAG_BADGE07_GET,      75,     75},
+        {FLAG_BADGE08_GET,     100,     90},
+        {FLAG_IS_CHAMPION, MAX_LEVEL, MAX_LEVEL},
     };
 
     u32 cap = MAX_LEVEL;
@@ -34,12 +37,12 @@ u32 GetProgressionLevelCap(void)
     {
         if (!FlagGet(sLevelCapFlagMap[i][0]))
         {
-            cap = sLevelCapFlagMap[i][1];
+            cap = sLevelCapFlagMap[i][mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME ? 2 : 1];
             break;
         }
     }
 
-    return mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME ? max(1, cap - 10) : cap;
+    return cap;
 }
 
 u32 GetCurrentLevelCap(void)

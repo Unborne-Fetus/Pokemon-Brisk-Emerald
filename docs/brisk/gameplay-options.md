@@ -32,6 +32,22 @@ DIFFICULTY cycles through Normal, Easy, Hard and Extreme. The 48 Pokémon levels
 
 Levels stop at 100. Hard/Extreme NPC trainer levels also stop at the current progression/obedience cap, so mandatory fights do not demand levels the player cannot use. Their AI, training, abilities, moves, prices, item restrictions and EXP Share rules are unchanged. Wild encounters and gifts use the proportional boosts without the trainer clamp. The starting partner remains level 5 and Birch's opening battle remains level 3.
 
+Hard and Extreme now use a higher explicit progression curve rather than subtracting ten from Normal's caps. Roxanne's team generates at level 25 in both modes. The player and trainer limits rise together:
+
+| Next milestone | Hard / Extreme cap |
+| --- | --- |
+| Roxanne | 25 |
+| Brawly | 35 |
+| Wattson | 45 |
+| Flannery | 50 |
+| Norman | 55 |
+| Winona | 65 |
+| Tate & Liza | 75 |
+| Juan | 90 |
+| Elite Four / Champion and postgame | 100 |
+
+Extreme stops EXP at these levels. Hard retains the existing rule allowing Pokémon caught under the cap to grow above it, and its optional cap override. Easy and Normal keep their existing curves. These changes affect newly generated opponents; existing owned Pokémon keep their levels.
+
 Randomizer switches can be combined:
 
 - RANDOM WILD changes wild and static species, including fishing and overworld spawns.
