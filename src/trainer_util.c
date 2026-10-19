@@ -187,7 +187,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
-        adjusted.lvl = ScaleBriskLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
+        adjusted.lvl = ScaleBriskTrainerLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
         adjusted.heldItem = BriskRandomItem(adjusted.heldItem);
         enum Species species = BriskRandomSpecies(adjusted.species, category);
         if (species != adjusted.species || BriskRandomizerEnabled(BRISK_RAND_ALL))

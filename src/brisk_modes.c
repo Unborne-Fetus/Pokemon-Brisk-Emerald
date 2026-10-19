@@ -2,6 +2,7 @@
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
+#include "caps.h"
 #include "battle.h"
 #include "event_data.h"
 #include "item.h"
@@ -122,13 +123,26 @@ void SetBriskExpShareMode(bool32 modern)
 
 u32 ScaleBriskLevel(u32 level, u32 salt)
 {
+    // Small proportional boosts keep early-route training viable. The salt
+    // remains in the API for callers; level difficulty is now predictable.
+    (void)salt;
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: level = (level + 1) / 2; break;
-    case BRISK_MODE_HARD: level += 10 + ModeHash(salt, 0x101) % 11; break;
-    case BRISK_MODE_EXTREME: level += 40 + ModeHash(salt, 0x101) % 11; break;
+    case BRISK_MODE_HARD: level += max(1, level / 10); break;
+    case BRISK_MODE_EXTREME: level += max(2, level / 5); break;
     }
     return max(1, min(level, MAX_LEVEL));
+}
+
+u32 ScaleBriskTrainerLevel(u32 level, u32 salt)
+{
+    level = ScaleBriskLevel(level, salt);
+    // Do not put a level-80 boss in front of a team hard-capped at level 15.
+    // Owned levels and Frontier/Adventure rentals are not rewritten.
+    if (GetBriskDifficulty() == BRISK_MODE_HARD || GetBriskDifficulty() == BRISK_MODE_EXTREME)
+        level = min(level, GetProgressionLevelCap());
+    return level;
 }
 
 bool32 BriskRandomizerEnabled(u32 category)

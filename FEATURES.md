@@ -142,3 +142,7 @@ split evolution: Rhyfortress at level 60, or Rhyperior using a Protector.
 - Pokémon, box wallpapers, type colors, HP/PP warnings, badges, and item art retain their original colors. Light mode restores the original UI assets.
 
 The starting partner is always level 5 and Birch's opening Zigzagoon battle is level 3 in every difficulty. Other gifts, wild encounters, and trainers retain their difficulty scaling.
+
+DexNav supports the expanded 25-slot land and 12-slot water tables with 12/5-species pages, L/R paging, SELECT registration, empty-slot filtering, full-table completion, and managed icon cleanup. It unlocks with the Pokédex, detection with the PokéNav, and uses independent persistent variables/flags. The full nine-entry start menu uses compact spacing to remain on screen; DexNav follows light/dark appearance.
+
+Hard levels now gain 10% (minimum +1), Extreme 20% (minimum +2), rather than flat +10–20/+40–50 boosts. Mandatory NPC trainer levels in those modes are capped at the player's progression cap. Wild/gift scaling stays proportional; advanced AI, IV/EV training, abilities, moves, prices, EXP Share and item restrictions remain intact.

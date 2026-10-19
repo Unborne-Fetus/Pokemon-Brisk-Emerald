@@ -27,10 +27,10 @@ DIFFICULTY cycles through Normal, Easy, Hard and Extreme. The 48 Pokémon levels
 | --- | --- |
 | Normal (default) | Original level |
 | Easy | Half, rounded up; minimum 1 |
-| Hard | Original + 10–20 |
-| Extreme | Original + 40–50 |
+| Hard | Original + 10%, rounded down; at least +1 |
+| Extreme | Original + 20%, rounded down; at least +2 |
 
-Levels stop at 100. Hard/Extreme offsets are deterministic for each generated entry in the save. The level-cap option remains independent.
+Levels stop at 100. Hard/Extreme NPC trainer levels also stop at the current progression/obedience cap, so mandatory fights do not demand levels the player cannot use. Their AI, training, abilities, moves, prices, item restrictions and EXP Share rules are unchanged. Wild encounters and gifts use the proportional boosts without the trainer clamp. The starting partner remains level 5 and Birch's opening battle remains level 3.
 
 Randomizer switches can be combined:
 
@@ -45,3 +45,9 @@ Results are repeatable for the save's trainer ID; toggling a category does not r
 ## Follow-up fixes
 
 The capsule editor now renders two persistent, instant lines with D-pad icons, avoiding scrolling, truncation and automatic clearing. Accepting a candy level-up move continues processing remaining moves and then checks evolution. Opening animations run two animation ticks per display frame. Shiny Hunt replacement waits are reduced from 45 to 8 ticks, and ordinary refill waits from 6+3 per active spawn to 1+1 per active spawn. Protected shiny/static encounters are still retained.
+
+## Expanded DexNav tables
+
+DexNav lists every unique species in the current encounter tables, skipping empty slots. Land is shown 12 species per page and water 5 per page, with separate saved page positions. Highlight a land or water row and use L/R to change its page; SELECT registers the highlighted seen Pokémon and A starts its search. The overworld R search shortcut is unchanged. The counter shows the focused section; land and water remember their pages independently. Cursor navigation skips empty rows and unused slots on the final page. Completion markers still check the entire table, not just the current page.
+
+DexNav is available from the start menu after receiving the Pokédex. Hidden encounter detection unlocks with the PokéNav. Registration uses unused persistent save variables, and its searching state uses a dedicated unused flag rather than trainer-defeat flags. An interrupted search is cleared safely after a restart.

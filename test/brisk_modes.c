@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "brisk_modes.h"
+#include "caps.h"
 #include "data.h"
 #include "event_data.h"
 #include "item.h"
@@ -43,8 +44,8 @@ TEST("Brisk modes scale generated trainer teams once")
         u32 level = GetMonData(&mon, MON_DATA_LEVEL);
         if (mode == BRISK_MODE_NORMAL) EXPECT_EQ(level, 40);
         if (mode == BRISK_MODE_EASY) EXPECT_EQ(level, 20);
-        if (mode == BRISK_MODE_HARD) { EXPECT_GE(level, 50); EXPECT_LE(level, 60); }
-        if (mode == BRISK_MODE_EXTREME) { EXPECT_GE(level, 80); EXPECT_LE(level, 90); }
+        if (mode == BRISK_MODE_HARD) EXPECT_EQ(level, min(44, GetProgressionLevelCap()));
+        if (mode == BRISK_MODE_EXTREME) EXPECT_EQ(level, min(48, GetProgressionLevelCap()));
         CalculateMonStats(&mon);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), level);
     }
