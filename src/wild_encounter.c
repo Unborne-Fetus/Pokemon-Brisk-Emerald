@@ -463,9 +463,8 @@ static u8 PickWildMonNature(enum Species species)
     return GetSynchronizedNature(WILDMON_ORIGIN, species);
 }
 
-void CreateWildMon(enum Species species, u8 level)
+static void CreateWildMonAtLevel(enum Species species, u8 level)
 {
-    level = ScaleBriskLevel(level, species);
     species = BriskRandomSpecies(species, BRISK_RAND_WILD);
     ZeroEnemyPartyMons();
     u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
@@ -473,6 +472,17 @@ void CreateWildMon(enum Species species, u8 level)
     CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
     BriskSetWildShinyContext(FALSE);
     GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
+}
+
+void CreateWildMon(enum Species species, u8 level)
+{
+    CreateWildMonAtLevel(species, ScaleBriskLevel(level, species));
+}
+
+void CreateBirchRescueMon(void)
+{
+    // A fixed tutorial level must not disable scaling for later encounters.
+    CreateWildMonAtLevel(SPECIES_ZIGZAGOON, 3);
 }
 
 #ifdef BUGFIX

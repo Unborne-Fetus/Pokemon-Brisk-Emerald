@@ -547,7 +547,7 @@ static void BirchCase_GiveMon(void)
     }
 
     FlagSet(FLAG_SYS_POKEMON_GET);
-    gSpecialVar_Result = ScriptGiveMonParameterized(B_SIDE_PLAYER, PARTY_SIZE, &monTemplate);
+    gSpecialVar_Result = ScriptGiveStarterMon(&monTemplate);
 }
 
 //==========FUNCTIONS==========//

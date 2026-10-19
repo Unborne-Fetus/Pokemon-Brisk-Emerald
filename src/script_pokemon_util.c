@@ -380,14 +380,14 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemplate)
+static u32 GiveMonParameterized(u8 side, u8 slot, const struct PokemonTemplate *monTemplate, bool32 scaleLevel)
 {
     struct Pokemon mon;
 
     struct PokemonTemplate adjusted = *monTemplate;
     if (adjusted.origin == GIFTMON_ORIGIN)
     {
-        if (adjusted.level <= MAX_LEVEL)
+        if (scaleLevel && adjusted.level <= MAX_LEVEL)
             adjusted.level = ScaleBriskLevel(adjusted.level, adjusted.species);
         adjusted.species = BriskRandomSpecies(adjusted.species, BRISK_RAND_ALL);
         if (BriskRandomizerEnabled(BRISK_RAND_ALL))
@@ -405,6 +405,20 @@ u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemp
     }
     CopyMon(&gParties[B_TRAINER_OPPONENT_A][slot], &mon, sizeof(struct Pokemon));
     return MON_GIVEN_TO_PARTY;
+}
+
+u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemplate)
+{
+    return GiveMonParameterized(side, slot, monTemplate, TRUE);
+}
+
+u32 ScriptGiveStarterMon(const struct PokemonTemplate *monTemplate)
+{
+    // Only the starting partner bypasses difficulty scaling. Keep the normal
+    // gift randomizer, shiny, nature and IV handling intact.
+    struct PokemonTemplate starter = *monTemplate;
+    starter.level = 5;
+    return GiveMonParameterized(B_SIDE_PLAYER, PARTY_SIZE, &starter, FALSE);
 }
 
 void GiveUnborneScizor(void)

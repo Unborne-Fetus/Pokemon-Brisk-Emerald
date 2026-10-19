@@ -140,3 +140,5 @@ split evolution: Rhyfortress at level 60, or Rhyperior using a Protector.
 - Dark battle message/command panels, shops, naming keyboard, trainer card, and the PC frame, text, and scrolling backdrop.
 - HGSS Pokédex now follows the saved appearance option, including dark information/list/search panels, separate navigation lettering, and brighter arrows.
 - Pokémon, box wallpapers, type colors, HP/PP warnings, badges, and item art retain their original colors. Light mode restores the original UI assets.
+
+The starting partner is always level 5 and Birch's opening Zigzagoon battle is level 3 in every difficulty. Other gifts, wild encounters, and trainers retain their difficulty scaling.

@@ -1033,7 +1033,15 @@ static void CB2_GiveStarter(void)
 
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
-    ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    struct PokemonTemplate starter = {
+        .species = starterMon,
+        .level = 5,
+        .origin = GIFTMON_ORIGIN,
+        .nature = NATURE_RANDOM,
+        .gender = MON_GENDER_RANDOM,
+        .ivs = {USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS, USE_RANDOM_IVS},
+    };
+    ScriptGiveStarterMon(&starter);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
