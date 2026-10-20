@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Encode Hisuian Avalugg for Emerald's PRESS START screen, preserving its sky.
 
-Uses existing game pixels, integer nearest-neighbor scaling, and native 4bpp
+Uses the front-facing title mask, integer nearest-neighbor scaling, and native 4bpp
 BG tiles. Bank 15 is private to this layer; clouds retain original bank 14.
 """
 from collections import Counter
@@ -34,22 +34,28 @@ def main():
         sky = tile(Counter(candidates).most_common(1)[0][0])
         for y in range(8):
             canvas[ty*8+y] = sky[y] * 32
-    sprite = Image.open(ROOT / 'graphics/pokemon/avalugg/hisui/front.png')
-    assert sprite.mode == 'P' and sprite.size == (64, 64)
-    points = [(x, y) for y in range(64) for x in range(64) if sprite.getpixel((x, y))]
-    left, top = min(x for x, y in points), min(y for x, y in points)
-    right, bottom = max(x for x, y in points) + 1, max(y for x, y in points) + 1
+    sprite = Image.open(OUT / 'avalugg_hisui_front_mask.png')
+    assert sprite.mode == 'P'
+    width, height = sprite.size
+    assert set(sprite.get_flattened_data()) == {0, 1, 2}
     scale = 3
-    x0, y0 = (240 - (right-left)*scale)//2, 160-(bottom-top)*scale
-    assert y0 >= 0
-    eye_count = 0
-    for x, y in points:
-        color = 15 if sprite.getpixel((x, y)) == 14 else 11
-        eye_count += color == 15
-        for dy in range(scale):
-            for dx in range(scale):
-                canvas[y0+(y-top)*scale+dy][x0+(x-left)*scale+dx] = color
-    assert eye_count == 4
+    x0, y0 = (240 - width*scale)//2, 160-height*scale
+    assert x0 >= 0 and y0 >= 0
+    eyes = []
+    for y in range(height):
+        for x in range(width):
+            value = sprite.getpixel((x, y))
+            if not value:
+                continue
+            color = 15 if value == 2 else 11
+            if value == 2:
+                eyes.append((x, y))
+            for dy in range(scale):
+                for dx in range(scale):
+                    canvas[y0+y*scale+dy][x0+x*scale+dx] = color
+    assert any(x < width//2 for x, y in eyes)
+    assert any(x > width//2 for x, y in eyes)
+    assert all(80 <= y0+y*scale < 104 for x, y in eyes)
     # Deduplicate so this BG stays inside its 16 KiB character block and cannot
     # overwrite the title's clouds in the next block.
     tiles, lookup, tilemap = [], {}, []
@@ -67,7 +73,7 @@ def main():
     palette = (OUT / 'rayquaza_and_clouds.pal').read_text().splitlines()[3:19]
     palette[11], palette[15] = '0 0 0', '255 246 123'
     (OUT / 'avalugg_hisui.pal').write_text('JASC-PAL\n0100\n16\n'+'\n'.join(palette)+'\n')
-    print(f'Encoded PRESS START Avalugg: {len(tiles)} tiles, full silhouette within viewport, 36 yellow-eye pixels; original sky retained.')
+    print(f'Encoded PRESS START Avalugg: {len(tiles)} tiles, full silhouette within viewport, {len(eyes)*scale*scale} yellow-eye pixels; original sky retained.')
 
 
 if __name__ == '__main__':
