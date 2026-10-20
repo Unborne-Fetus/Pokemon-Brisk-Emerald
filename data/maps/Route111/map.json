@@ -694,7 +694,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZAPDOS_GALAR)",
-      "x": 20,
+      "x": 17,
       "y": 95,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -707,7 +707,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(OKIDOGI)",
-      "x": 24,
+      "x": 23,
       "y": 105,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",

@@ -126,7 +126,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(REGIELEKI)",
-      "x": 26,
+      "x": 19,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -139,8 +139,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGEARNA)",
-      "x": 20,
-      "y": 14,
+      "x": 16,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -152,8 +152,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZEKROM)",
-      "x": 28,
-      "y": 14,
+      "x": 15,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -162,19 +162,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BriskStatic_EventScript_ZEKROM",
       "flag": "FLAG_DEFEATED_ZEKROM"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_KOKO)",
-      "x": 32,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "BriskStatic_EventScript_TAPU_KOKO",
-      "flag": "FLAG_DEFEATED_TAPU_KOKO"
     }
   ],
   "warp_events": [

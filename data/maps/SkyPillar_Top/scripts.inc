@@ -62,6 +62,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 
 SkyPillar_Top_EventScript_CaughtRayquaza::
 	giveitem ITEM_MYSTIC_TICKET
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
 	setflag FLAG_DEFEATED_RAYQUAZA
 	releaseall
 	end
