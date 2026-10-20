@@ -35,7 +35,7 @@
     Scene 0. Copyright screen
     Scene 1. GF Logo, pan up over plants, Flygon silhouette goes by
     Scene 2. Player biking on path, joined by Pokémon
-    Scene 3. A fight between Groudon/Kyogre ends with Hisuian Avalugg's silhouette
+    Scene 3. A fight between Groudon/Kyogre ends with Rayquaza
 
     After this it progresses to the title screen
 */
@@ -2385,7 +2385,7 @@ static void Task_Scene3_InitClouds(u8 taskId)
     gTasks[taskId].tCloudPos = 16;
 }
 
-// Clouds coming in from the sides before the Avalugg silhouette appears
+// Clouds coming in from the sides before Rayquaza appears
 static void Task_Scene3_Clouds(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -2427,12 +2427,9 @@ static void Task_Scene3_Clouds(u8 taskId)
 
 static void Task_Scene3_LoadLightning(u8 taskId)
 {
-    DecompressDataWithHeaderVram(gIntroAvaluggHisui_Tilemap, (void *)(BG_SCREEN_ADDR(28)));
+    DecompressDataWithHeaderVram(gIntroRayquaza_Tilemap, (void *)(BG_SCREEN_ADDR(28)));
     DecompressDataWithHeaderVram(gIntroRayquazaClouds_Tilemap, (void *)(BG_CHAR_ADDR(3)));
-    DecompressDataWithHeaderVram(gIntroAvaluggHisui_Gfx, (void *)(BG_CHAR_ADDR(1)));
-    LoadPalette(gIntroAvaluggHisui_Pal, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
-    // Start hidden in the storm. The existing eye-flash sequence uses index 14.
-    BlendPalette(BG_PLTT_ID(5), 16, 16, RGB(9, 10, 10));
+    DecompressDataWithHeaderVram(gIntroRayquaza_Gfx, (void *)(BG_CHAR_ADDR(1)));
     DecompressDataWithHeaderVram(gIntroRayquazaClouds_Gfx, (void *)VRAM);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0
                                 | DISPCNT_OBJ_1D_MAP

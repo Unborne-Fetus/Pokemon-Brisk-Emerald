@@ -31,9 +31,8 @@ const u32 gIntroCloudsSun_Tilemap[] = INCGFX_U32("graphics/intro/scene_3/clouds_
 const u32 gIntroLightning_Gfx[] = INCGFX_U32("graphics/intro/scene_3/lightning.png", ".4bpp.smol");
 const u16 gIntroLightning_Pal[] = INCGFX_U16("graphics/intro/scene_3/lightning.png", ".gbapal");
 
-const u32 gIntroAvaluggHisui_Gfx[] = INCGFX_U32("graphics/intro/scene_3/avalugg_hisui_silhouette.4bpp", ".smol");
-const u32 gIntroAvaluggHisui_Tilemap[] = INCGFX_U32("graphics/intro/scene_3/avalugg_hisui_silhouette.bin", ".smolTM");
-const u16 gIntroAvaluggHisui_Pal[] = INCGFX_U16("graphics/intro/scene_3/avalugg_hisui_silhouette.pal", ".gbapal");
+const u32 gIntroRayquaza_Gfx[] = INCGFX_U32("graphics/intro/scene_3/rayquaza.png", ".4bpp.smol");
+const u32 gIntroRayquaza_Tilemap[] = INCGFX_U32("graphics/intro/scene_3/rayquaza.bin", ".smolTM");
 
 const u32 gIntroUnused1_Tilemap[] = INCGFX_U32("graphics/intro/scene_3/unused_1.bin", ".smolTM");
 const u32 gIntroUnused2_Tilemap[] = INCGFX_U32("graphics/intro/scene_3/unused_2.bin", ".smolTM");
