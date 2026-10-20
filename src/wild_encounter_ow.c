@@ -591,6 +591,26 @@ static bool32 StartWildBattleWithOWE_CheckMassOutbreak(enum CategoryOWE category
     return TRUE;
 }
 
+static bool32 TryGenerateSecondOWEMon(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea wildArea)
+{
+    // Wild generation clears the enemy party and writes slot zero. Keep the
+    // visible encounter first, including its level, gender and shiny status.
+    struct Pokemon visibleMon = gParties[B_TRAINER_OPPONENT_A][0];
+    bool32 generated = wildMonInfo != NULL
+        && TryGenerateWildMon(wildMonInfo, wildArea, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
+    if (generated)
+        gParties[B_TRAINER_OPPONENT_A][1] = gParties[B_TRAINER_OPPONENT_A][0];
+    gParties[B_TRAINER_OPPONENT_A][0] = visibleMon;
+    return generated;
+}
+
+#if TESTING
+bool32 Test_TryGenerateSecondOWEMon(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea wildArea)
+{
+    return TryGenerateSecondOWEMon(wildMonInfo, wildArea);
+}
+#endif
+
 static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, u32 headerId)
 {
     enum WildPokemonArea wildArea;
@@ -598,10 +618,8 @@ static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, 
     const struct WildPokemonInfo *wildMonInfo;
     u32 metatileBehavior = MapGridGetMetatileBehaviorAt(owe->currentCoords.x, owe->currentCoords.y);
 
-    if (TryDoDoubleWildBattle())
+    if (headerId != HEADER_NONE && TryDoDoubleWildBattle())
     {
-        struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
-
         if (MetatileBehavior_IsWaterWildEncounter(metatileBehavior))
         {
             wildArea = WILD_AREA_WATER;
@@ -615,9 +633,8 @@ static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, 
             wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
         }
 
-        if (TryGenerateWildMon(wildMonInfo, wildArea, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE))
+        if (TryGenerateSecondOWEMon(wildMonInfo, wildArea))
         {
-            gParties[B_TRAINER_OPPONENT_A][1] = mon1;
             BattleSetup_StartDoubleWildBattle();
             return TRUE;
         }

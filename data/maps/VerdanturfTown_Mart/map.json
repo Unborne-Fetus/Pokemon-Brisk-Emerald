@@ -71,14 +71,14 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 1,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_VERDANTURF_TOWN",
       "dest_warp_id": "1"
     },
     {
-      "x": 4,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_VERDANTURF_TOWN",

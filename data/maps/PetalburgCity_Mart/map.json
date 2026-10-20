@@ -71,14 +71,14 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 1,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY",
       "dest_warp_id": "5"
     },
     {
-      "x": 4,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY",
