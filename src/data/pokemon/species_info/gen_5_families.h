@@ -5719,6 +5719,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sDarmanitanTeachableLearnset,
         .formSpeciesIdTable = sDarmanitanFormSpeciesIdTable,
         .formChangeTable = sDarmanitanFormChangeTable,
+        OVERWORLD(sPicTable_DarmanitanStandard, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_DarmanitanStandard, gShinyOverworldPalette_DarmanitanStandard)
     },
 
 #if P_GALARIAN_FORMS
@@ -5911,6 +5912,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sDarmanitanGalarTeachableLearnset,
         .formSpeciesIdTable = sDarmanitanFormSpeciesIdTable,
         .formChangeTable = sDarmanitanGalarFormChangeTable,
+        OVERWORLD(sPicTable_DarmanitanGalarStandard, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_DarmanitanGalarStandard, gShinyOverworldPalette_DarmanitanGalarStandard)
     },
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_DARUMAKA
@@ -15053,6 +15055,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sKeldeoTeachableLearnset,
         .formSpeciesIdTable = sKeldeoFormSpeciesIdTable,
         .formChangeTable = sKeldeoFormChangeTable,
+        OVERWORLD(sPicTable_KeldeoOrdinary, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_KeldeoOrdinary, gShinyOverworldPalette_KeldeoOrdinary)
     },
 #endif //P_FAMILY_KELDEO
 

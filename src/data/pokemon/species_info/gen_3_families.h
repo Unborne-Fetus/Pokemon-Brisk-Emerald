@@ -14952,17 +14952,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Sizzlipede, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Sizzlipede, gShinyOverworldPalette_Sizzlipede)
         .levelUpLearnset = sHissioriteLevelUpLearnset,
         .teachableLearnset = sHissioriteTeachableLearnset,
         .eggMoveLearnset = sHissioriteEggMoveLearnset,
@@ -15009,17 +14999,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Centiskorch, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Centiskorch, gShinyOverworldPalette_Centiskorch)
         .levelUpLearnset = sCobarettLevelUpLearnset,
         .teachableLearnset = sCobarettTeachableLearnset,
         .eggMoveLearnset = sCobarettEggMoveLearnset,
@@ -15066,17 +15046,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Centiskorch, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Centiskorch, gShinyOverworldPalette_Centiskorch)
         .levelUpLearnset = sPythonovaLevelUpLearnset,
         .teachableLearnset = sPythonovaTeachableLearnset,
         .eggMoveLearnset = sPythonovaEggMoveLearnset,
@@ -15122,17 +15092,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Exeggutor, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Exeggutor, gShinyOverworldPalette_Exeggutor)
         .levelUpLearnset = sBaobyLevelUpLearnset,
         .teachableLearnset = sBaobyTeachableLearnset,
         .eggMoveLearnset = sBaobyEggMoveLearnset,
@@ -15179,17 +15139,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_ExeggutorAlola, SIZE_64x64, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_ExeggutorAlola, gShinyOverworldPalette_ExeggutorAlola)
         .levelUpLearnset = sBaobaraffeLevelUpLearnset,
         .teachableLearnset = sBaobaraffeTeachableLearnset,
         .eggMoveLearnset = sBaobaraffeEggMoveLearnset,
@@ -15235,17 +15185,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Dreepy, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Dreepy, gShinyOverworldPalette_Dreepy)
         .levelUpLearnset = sDrashimiLevelUpLearnset,
         .teachableLearnset = sDrashimiTeachableLearnset,
         .eggMoveLearnset = sDrashimiEggMoveLearnset,
@@ -15292,17 +15232,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Drakloak, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Drakloak, gShinyOverworldPalette_Drakloak)
         .levelUpLearnset = sTsushimiLevelUpLearnset,
         .teachableLearnset = sTsushimiTeachableLearnset,
         .eggMoveLearnset = sTsushimiEggMoveLearnset,
@@ -15351,17 +15281,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Dragapult, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Dragapult, gShinyOverworldPalette_Dragapult)
         .levelUpLearnset = sTobishimiLevelUpLearnset,
         .teachableLearnset = sTobishimiTeachableLearnset,
         .eggMoveLearnset = sTobishimiEggMoveLearnset,
@@ -15409,17 +15329,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Sewaddle, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Sewaddle, gShinyOverworldPalette_Sewaddle)
         .levelUpLearnset = sMerlicunLevelUpLearnset,
         .teachableLearnset = sMerlicunTeachableLearnset,
         .eggMoveLearnset = sMerlicunEggMoveLearnset,
@@ -15466,17 +15376,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Volcarona, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Volcarona, gShinyOverworldPalette_Volcarona)
         .levelUpLearnset = sFiromenisLevelUpLearnset,
         .teachableLearnset = sFiromenisTeachableLearnset,
         .eggMoveLearnset = sFiromenisEggMoveLearnset,
@@ -15524,17 +15424,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Espeon, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Espeon, gShinyOverworldPalette_Espeon)
         .levelUpLearnset = sAnuLevelUpLearnset,
         .teachableLearnset = sAnuTeachableLearnset,
         .eggMoveLearnset = sAnuEggMoveLearnset,
@@ -15580,17 +15470,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(0, 0, SHADOW_SIZE_M)
         FOOTPRINT(QuestionMark)
-#if OW_POKEMON_OBJECT_EVENTS
-        .overworldData = {
-            .tileTag = TAG_NONE, .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
-            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-            .size = 512, .width = 32, .height = 32,
-            .paletteSlot = PALSLOT_NPC_1, .shadowSize = SHADOW_SIZE_M,
-            .compressed = COMP, .tracks = TRACKS_FOOT,
-            .oam = &gObjectEventBaseOam_32x32, .subspriteTables = sOamTables_32x32,
-            .anims = sAnimTable_Following, .images = sPicTable_Substitute,
-        },
-#endif
+        OVERWORLD(sPicTable_Furret, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Furret, gShinyOverworldPalette_Furret)
         .levelUpLearnset = sNuenfluLevelUpLearnset,
         .teachableLearnset = sNuenfluTeachableLearnset,
         .eggMoveLearnset = sNuenfluEggMoveLearnset,

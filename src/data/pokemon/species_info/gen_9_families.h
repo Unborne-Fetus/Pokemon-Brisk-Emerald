@@ -7053,6 +7053,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sGimmighoulTeachableLearnset,
         .formSpeciesIdTable = sGimmighoulFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_GHOLDENGO}),
+        OVERWORLD(sPicTable_GimmighoulChest, SIZE_32x32, SHADOW_SIZE_S, TRACKS_NONE, sAnimTable_Following, gOverworldPalette_GimmighoulChest, gShinyOverworldPalette_GimmighoulChest)
     },
 
     [SPECIES_GHOLDENGO] =
@@ -8808,6 +8809,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sTerapagosTeachableLearnset,
         .formSpeciesIdTable = sTerapagosFormSpeciesIdTable,
         .formChangeTable = sTerapagosFormChangeTable,
+        OVERWORLD(sPicTable_TerapagosNormal, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_TerapagosNormal, gShinyOverworldPalette_TerapagosNormal)
     },
 #endif //P_FAMILY_TERAPAGOS
 

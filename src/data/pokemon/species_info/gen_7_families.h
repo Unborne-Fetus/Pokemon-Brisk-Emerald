@@ -2544,6 +2544,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sWishiwashiEggMoveLearnset,
         .formSpeciesIdTable = sWishiwashiFormSpeciesIdTable,
         .formChangeTable = sWishiwashiFormChangeTable,
+        OVERWORLD(sPicTable_WishiwashiSolo, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_WishiwashiSolo, gShinyOverworldPalette_WishiwashiSolo)
     },
 #endif //P_FAMILY_WISHIWASHI
 
@@ -4868,6 +4869,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         SHADOW(-2, 12, SHADOW_SIZE_S)                           \
         .formChangeTable = sMinior ##Form##FormChangeTable,     \
         MINIOR_MISC_INFO(color),                                \
+        OVERWORLD(sPicTable_MiniorMeteor, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_MiniorMeteor, gShinyOverworldPalette_MiniorMeteor) \
     }
 
     [SPECIES_MINIOR_METEOR_RED]    = MINIOR_METEOR_SPECIES_INFO(Red,    ITEM_HARD_STONE),
@@ -5270,6 +5272,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sMimikyuEggMoveLearnset,
         .formSpeciesIdTable = sMimikyuFormSpeciesIdTable,
         .formChangeTable = sMimikyuFormChangeTable,
+        OVERWORLD(sPicTable_MimikyuDisguised, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym, gOverworldPalette_MimikyuDisguised, gShinyOverworldPalette_MimikyuDisguised)
     },
 
     [SPECIES_MIMIKYU_TOTEM_DISGUISED] =
@@ -5391,6 +5394,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sMimikyuEggMoveLearnset,
         .formSpeciesIdTable = sMimikyuFormSpeciesIdTable,
         .formChangeTable = sMimikyuTotemFormChangeTable,
+        OVERWORLD(sPicTable_MimikyuDisguised, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym, gOverworldPalette_MimikyuDisguised, gShinyOverworldPalette_MimikyuDisguised)
     },
 #endif //P_FAMILY_MIMIKYU
 

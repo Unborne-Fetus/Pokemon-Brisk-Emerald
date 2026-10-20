@@ -50,9 +50,12 @@ variants are used for the five reference-card species.
 Run `python tools/brisk/import_phoenix_fakemon.py <original-sheet-directory>`
 to reproduce the graphics; crop coordinates are recorded in the script and
 palette/native-size results in `tools/brisk/phoenix_sprite_import.json`.
-No walking sprite sheets were supplied. Until they are provided, followers use
-the engine's safe Substitute graphic, and footprints use its question-mark
-fallback. Cries reuse suitable existing cries rather than claiming new audio.
+No custom walking sprite sheets were supplied. Overworld objects now borrow
+visually similar existing Pokémon sprites, including their matching normal and
+shiny palettes. The Hissiorite line uses Sizzlipede/Centiskorch, Baoby uses
+Exeggutor, and Baobaraffe uses Alolan Exeggutor. The complete donor list is in
+`brisk/overworld-sprite-matches.json`. Footprints keep the question-mark fallback.
+Cries reuse suitable existing cries rather than claiming new audio.
 
 ## Sources and credit
 

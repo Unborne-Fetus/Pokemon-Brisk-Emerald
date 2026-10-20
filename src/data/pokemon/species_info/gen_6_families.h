@@ -3401,6 +3401,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sAegislashTeachableLearnset,
         .formSpeciesIdTable = sAegislashFormSpeciesIdTable,
         .formChangeTable = sAegislashFormChangeTable,
+        OVERWORLD(sPicTable_AegislashShield, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following_Asym, gOverworldPalette_AegislashShield, gShinyOverworldPalette_AegislashShield)
     },
 #endif //P_FAMILY_HONEDGE
 

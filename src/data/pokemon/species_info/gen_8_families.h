@@ -3261,6 +3261,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sCramorantEggMoveLearnset,
         .formSpeciesIdTable = sCramorantFormSpeciesIdTable,
         .formChangeTable = sCramorantGulpMissleFormChangeTable,
+        OVERWORLD(sPicTable_Cramorant, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Cramorant, gShinyOverworldPalette_Cramorant)
     },
 
     [SPECIES_CRAMORANT_GORGING] =
@@ -3318,6 +3319,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sCramorantEggMoveLearnset,
         .formSpeciesIdTable = sCramorantFormSpeciesIdTable,
         .formChangeTable = sCramorantGulpMissleFormChangeTable,
+        OVERWORLD(sPicTable_Cramorant, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Cramorant, gShinyOverworldPalette_Cramorant)
     },
 #endif //P_FAMILY_CRAMORANT
 
@@ -5941,6 +5943,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sEiscueEggMoveLearnset,
         .formSpeciesIdTable = sEiscueFormSpeciesIdTable,
         .formChangeTable = sEiscueFormChangeTable,
+        OVERWORLD(sPicTable_EiscueIce, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_EiscueIce, gShinyOverworldPalette_EiscueIce)
     },
 #endif //P_FAMILY_EISCUE
 
@@ -6197,6 +6200,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sMorpekoEggMoveLearnset,
         .formSpeciesIdTable = sMorpekoFormSpeciesIdTable,
         .formChangeTable = sMorpekoFormChangeTable,
+        OVERWORLD(sPicTable_MorpekoFullBelly, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_MorpekoFullBelly, gShinyOverworldPalette_MorpekoFullBelly)
     },
 #endif //P_FAMILY_MORPEKO
 
@@ -7448,6 +7452,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sEternatusLevelUpLearnset,
         .teachableLearnset = sEternatusTeachableLearnset,
         .formSpeciesIdTable = sEternatusFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Eternatus, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Eternatus, gShinyOverworldPalette_Eternatus)
     },
 #endif //P_FAMILY_ETERNATUS
 
@@ -7900,6 +7905,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sZarudeLevelUpLearnset,
         .teachableLearnset = sZarudeTeachableLearnset,
         .formSpeciesIdTable = sZarudeFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Zarude, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Zarude, gShinyOverworldPalette_Zarude)
     },
 #endif //P_FAMILY_ZARUDE
 

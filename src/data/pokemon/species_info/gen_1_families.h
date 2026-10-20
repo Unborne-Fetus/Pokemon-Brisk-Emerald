@@ -3373,6 +3373,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_ROCK_STAR] =
@@ -3425,6 +3426,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_BELLE] =
@@ -3478,6 +3480,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_POP_STAR] =
@@ -3531,6 +3534,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_PHD] =
@@ -3583,6 +3587,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_LIBRE] =
@@ -3635,6 +3640,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
 #endif //P_COSPLAY_PIKACHU_FORMS
@@ -3695,6 +3701,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_HOENN] =
@@ -3751,6 +3758,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_SINNOH] =
@@ -3807,6 +3815,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_UNOVA] =
@@ -3863,6 +3872,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_KALOS] =
@@ -3919,6 +3929,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_ALOLA] =
@@ -3975,6 +3986,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_PARTNER] =
@@ -4032,6 +4044,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
     [SPECIES_PIKACHU_WORLD] =
@@ -4088,6 +4101,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPikachuLevelUpLearnset,
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
+        OVERWORLD(sPicTable_Pikachu, SIZE_32x32, SHADOW_SIZE_M, TRACKS_FOOT, sAnimTable_Following, gOverworldPalette_Pikachu, gShinyOverworldPalette_Pikachu)
     },
 
 #endif //P_CAP_PIKACHU_FORMS
