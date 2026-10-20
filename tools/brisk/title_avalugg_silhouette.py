@@ -38,6 +38,8 @@ def main():
     assert sprite.mode == 'P'
     width, height = sprite.size
     assert set(sprite.get_flattened_data()) == {0, 1, 2}
+    assert all(sprite.getpixel((x, y)) == sprite.getpixel((width-1-x, y))
+               for y in range(height) for x in range(width)), 'Title silhouette must be symmetrical'
     scale = 3
     x0, y0 = (240 - width*scale)//2, 160-height*scale
     assert x0 >= 0 and y0 >= 0
