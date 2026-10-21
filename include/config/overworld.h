@@ -101,6 +101,8 @@
 #define OW_OBJECT_SUBPRIORITY           148     // The higher the value, the farther back compared to other sprites. Shadows should be behind object events.
 #define OW_ENABLE_DNS                   TRUE    // If set to TRUE, the overworld will be tinted depending on time of day.
 
+#define OW_ENVIRONMENTAL_LIGHTING      TRUE    // Region-specific lighting; shares DNS/weather fades, excludes UI palettes.
+
 // Object Event Shadows
 #define OW_OBJECT_VANILLA_SHADOWS      TRUE    // When FALSE, every object in the overworld has a shadow. WARNING: This means every object will take up two sprites instead of one. When TRUE, an object's shadow is only shown when jumping.
 

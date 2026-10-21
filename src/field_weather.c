@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_lighting.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
 #include "constants/rgb.h"
@@ -470,7 +471,7 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
         palOffset = PLTT_ID(startPalIndex);
         UpdateAltBgPalettes(palettes & PALETTES_BG);
         // Thunder gamma-shift looks bad on night-blended palettes, so ignore time blending in some situations
-        if (colorMapIndex <= 3 && MapHasNaturalLight(gMapHeader.mapType))
+        if (colorMapIndex <= 3 && (MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)))
             UpdatePalettesWithTime(palettes);
         else
             CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, PLTT_SIZE_4BPP * numPalettes);
@@ -539,7 +540,7 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
     }
     else
     {
-        if (MapHasNaturalLight(gMapHeader.mapType))
+        if ((MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)))
         {
             // Time-blend
             u32 palettes = ((1 << numPalettes) - 1) << startPalIndex;
@@ -800,7 +801,7 @@ void FadeSelectedPals(u8 mode, s8 delay, u32 selectedPalettes)
         {
             gWeatherPtr->fadeScreenCounter = 0; // Triggers gamma-shift-based fade-in
         }
-        else if (MapHasNaturalLight(gMapHeader.mapType))
+        else if ((MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)))
         {
             UpdateAltBgPalettes(selectedPalettes & PALETTES_BG);
             BeginTimeOfDayPaletteFade(selectedPalettes, delay, 16, 0, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight, fadeColor);

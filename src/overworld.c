@@ -1,5 +1,6 @@
 #include "global.h"
 #include "bike.h"
+#include "brisk_lighting.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -1714,8 +1715,8 @@ void UpdateTimeOfDay(bool32 updateBlend)
     {
         if (updateBlend)
         {
-            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_NIGHT];
-            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_MORNING];
+            gTimeBlend.startBlend = BriskLighting_GetTimeBlend(TIME_NIGHT);
+            gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_MORNING);
             gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE);
             gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2;
         }
@@ -1725,8 +1726,8 @@ void UpdateTimeOfDay(bool32 updateBlend)
     {
         if (updateBlend)
         {
-            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_MORNING];
-            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+            gTimeBlend.startBlend = BriskLighting_GetTimeBlend(TIME_MORNING);
+            gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_DAY);
             gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_MIDDLE, MORNING_HOUR_END);
             gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2 + (DEFAULT_WEIGHT / 2);
         }
@@ -1736,8 +1737,8 @@ void UpdateTimeOfDay(bool32 updateBlend)
     {
         if (updateBlend)
         {
-            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_DAY];
-            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_EVENING];
+            gTimeBlend.startBlend = BriskLighting_GetTimeBlend(TIME_DAY);
+            gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_EVENING);
             gTimeBlend.weight = TIME_BLEND_WEIGHT(EVENING_HOUR_BEGIN, EVENING_HOUR_END);
             gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);
         }
@@ -1747,8 +1748,8 @@ void UpdateTimeOfDay(bool32 updateBlend)
     {
         if (updateBlend)
         {
-            gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
-            gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+            gTimeBlend.startBlend = BriskLighting_GetTimeBlend(TIME_EVENING);
+            gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_NIGHT);
             gTimeBlend.weight = TIME_BLEND_WEIGHT(NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1);
             gTimeBlend.altWeight = gTimeBlend.weight / 2;
         }
@@ -1760,7 +1761,7 @@ void UpdateTimeOfDay(bool32 updateBlend)
         {
             gTimeBlend.weight = DEFAULT_WEIGHT;
             gTimeBlend.altWeight = 0;
-            gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+            gTimeBlend.startBlend = gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_NIGHT);
         }
         gTimeOfDay = TIME_NIGHT;
     }
@@ -1769,7 +1770,7 @@ void UpdateTimeOfDay(bool32 updateBlend)
         if (updateBlend)
         {
             gTimeBlend.weight = gTimeBlend.altWeight = DEFAULT_WEIGHT;
-            gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+            gTimeBlend.startBlend = gTimeBlend.endBlend = BriskLighting_GetTimeBlend(TIME_DAY);
         }
         gTimeOfDay = TIME_DAY;
     }
@@ -1826,7 +1827,7 @@ void UpdateAltBgPalettes(u16 palettes)
 
 void UpdatePalettesWithTime(u32 palettes)
 {
-    if (!MapHasNaturalLight(gMapHeader.mapType))
+    if (!(MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)))
         return;
     u32 i;
     u32 mask = 1 << 16;
@@ -1845,7 +1846,7 @@ void UpdatePalettesWithTime(u32 palettes)
 
 u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 {
-    if (MapHasNaturalLight(gMapHeader.mapType)
+    if ((MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType))
      && !IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(paletteNum)))
         TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
     return paletteNum;
@@ -1871,7 +1872,7 @@ static void OverworldBasic(void)
         gTimeUpdateCounter = (SECONDS_PER_MINUTE * 60 / FakeRtc_GetSecondsRatio());
         UpdateTimeOfDay(TRUE);
         FormChangeTimeUpdate();
-        if (MapHasNaturalLight(gMapHeader.mapType) &&
+        if ((MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)) &&
            (bld0[0] != bld1[0]
          || bld0[1] != bld1[1]
          || bld0[2] != bld1[2]))
