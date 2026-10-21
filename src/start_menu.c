@@ -361,8 +361,12 @@ static void BuildNormalStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
 
-    if (DN_FLAG_DEXNAV_GET != 0 && FlagGet(DN_FLAG_DEXNAV_GET))
+    // DexNav is a starting tool, independent of the story Pokédex flag.
+    if (DEXNAV_ENABLED)
+    {
+        FlagSet(DN_FLAG_DETECTOR_MODE); // Also unlock for existing saves.
         AddStartMenuAction(MENU_ACTION_DEXNAV);
+    }
 
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
@@ -1041,9 +1045,14 @@ void SaveGame(void)
 
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void))
 {
+    // Replace the previous prompt completely; immediate printing does not
+    // clear longer lines left behind by the previous confirmation.
     StringExpandPlaceholders(gStringVar4, message);
+    FillWindowPixelBuffer(0, PIXEL_FILL(TEXT_COLOR_WHITE));
     LoadMessageBoxAndFrameGfx(0, TRUE);
+    gTextFlags.autoScroll = FALSE;
     AddTextPrinterWithCustomSpeedForMessage(TRUE, 0);
+    CopyWindowToVram(0, COPYWIN_FULL);
     sSavingComplete = TRUE;
     sSaveDialogCallback = saveCallback;
 }

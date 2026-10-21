@@ -1245,6 +1245,18 @@ TWO_VS_ONE_BATTLE_TEST("Adventure: team-boosting Max Moves never animate or boos
         EXPECT_EQ(gBattleMons[B_BATTLER_3].species, SPECIES_NONE);
         EXPECT_EQ(gBattleMons[B_BATTLER_3].hp, 0);
         EXPECT_EQ(gBattleMons[B_BATTLER_3].statStages[stat], 0);
+        // Reproduce a generic side effect copying the boss into its empty
+        // flank. The invariant must remove it before another action can run.
+        gBattleMons[B_BATTLER_3] = *opponentLeft;
+        gAbsentBattlerFlags &= ~(1u << B_BATTLER_3);
+        gBattleStruct->battlerState[B_BATTLER_3].notOnField = FALSE;
+        EXPECT(DynamaxAdventure_IsEmptyBossSlot(B_BATTLER_3));
+        EXPECT(!DynamaxAdventure_IsEmptyBossSlot(B_BATTLER_1));
+        DynamaxAdventure_KeepBossSlotEmpty();
+        EXPECT(gAbsentBattlerFlags & (1u << B_BATTLER_3));
+        EXPECT_EQ(gBattleMons[B_BATTLER_3].species, SPECIES_NONE);
+        EXPECT_EQ(gBattleMons[B_BATTLER_3].hp, 0);
+        EXPECT(gBattleStruct->battlerState[B_BATTLER_3].notOnField);
         EXPECT(DynamaxAdventure_FinishBattle(B_OUTCOME_WON));
         gMain.inBattle = FALSE;
         EXPECT(DynamaxAdventure_Quit());

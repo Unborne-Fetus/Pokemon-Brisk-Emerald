@@ -3311,6 +3311,13 @@ static void Cmd_switchinanim(void)
 
     battler = GetBattlerForBattleScript(cmd->battler);
 
+    if (DynamaxAdventure_IsEmptyBossSlot(battler))
+    {
+        DynamaxAdventure_KeepBossSlotEmpty();
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
+
     GetBattlerPartyState(battler)->sentOut = TRUE;
 
     gAbsentBattlerFlags &= ~(1u << battler);

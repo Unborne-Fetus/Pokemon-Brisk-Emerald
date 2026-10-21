@@ -822,6 +822,8 @@ bool32 InitSpritePosToAnimBattler(enum AnimBattler animBattlerId, struct Sprite 
 
 bool8 IsBattlerSpritePresent(enum BattlerId battler)
 {
+    if (!IsContest() && DynamaxAdventure_IsEmptyBossSlot(battler))
+        return FALSE;
     if (IsContest())
     {
         if (gBattleAnimAttacker == battler)

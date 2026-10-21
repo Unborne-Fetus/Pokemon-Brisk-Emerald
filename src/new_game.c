@@ -1,4 +1,5 @@
 #include "global.h"
+#include "config/dexnav.h"
 #include "outfit_menu.h"
 #include "clock.h"
 #include "new_game.h"
@@ -245,6 +246,8 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
+    // Unlock hidden DexNav encounters without granting the story PokéNav.
+    FlagSet(DN_FLAG_DETECTOR_MODE);
     ClearFollowerNPCData();
 }
 

@@ -2823,9 +2823,12 @@ bool32 InBattleRunningActions()
 
 static void BattleMainCB1(void)
 {
+    DynamaxAdventure_KeepBossSlotEmpty();
     gBattleMainFunc();
+    DynamaxAdventure_KeepBossSlotEmpty();
     for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
         gBattlerControllerFuncs[battler](battler);
+    DynamaxAdventure_KeepBossSlotEmpty();
 }
 
 static void ClearSetBScriptingStruct(void)

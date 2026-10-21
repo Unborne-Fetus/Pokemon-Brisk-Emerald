@@ -9,6 +9,10 @@ void DynamaxAdventure_ResetRaidHud(void);
 #include "pokemon.h"
 #include "constants/dynamax_adventure.h"
 
+// The opponent-right position is reserved and must remain empty throughout a raid.
+bool32 DynamaxAdventure_IsEmptyBossSlot(enum BattlerId battler);
+void DynamaxAdventure_KeepBossSlotEmpty(void);
+
 bool32 DynamaxAdventure_IsDamageHealthboxVisible(enum BattlerId battler);
 void DynamaxAdventure_ShowDamageHealthbox(enum BattlerId battler);
 

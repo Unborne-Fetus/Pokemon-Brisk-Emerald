@@ -27,6 +27,28 @@ static const struct WindowTemplate sBossTemplate = {
     .height = 2, .paletteNum = 7, .baseBlock = 0x50,
 };
 
+bool32 DynamaxAdventure_IsEmptyBossSlot(enum BattlerId battler)
+{
+    return IsDynamaxAdventureBattle() && battler < gBattlersCount
+        && GetBattlerPosition(battler) == B_POSITION_OPPONENT_RIGHT;
+}
+
+void DynamaxAdventure_KeepBossSlotEmpty(void)
+{
+    if (!IsDynamaxAdventureBattle())
+        return;
+    for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
+    {
+        if (!DynamaxAdventure_IsEmptyBossSlot(battler))
+            continue;
+        // Side-wide effects must never turn this reserved position into a
+        // second boss by reusing the opponent's party index.
+        gAbsentBattlerFlags |= 1u << battler;
+        memset(&gBattleMons[battler], 0, sizeof(gBattleMons[battler]));
+        gBattleStruct->battlerState[battler].notOnField = TRUE;
+    }
+}
+
 void DynamaxAdventure_ResetRaidHud(void)
 {
     sBossWindow = WINDOW_NONE;

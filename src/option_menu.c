@@ -20,6 +20,8 @@
 #include "window.h"
 #include "gba/m4a_internal.h"
 #include "event_data.h"
+#include "constants/flags.h"
+#include "config/overworld.h"
 #include "constants/rgb.h"
 #include "string_util.h"
 #include "player_name.h"
@@ -1434,7 +1436,9 @@ static void DrawBattleOptions(void)
     DrawToggle(!BriskDisplayTypes(), 48);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("BATTLE BAG"), 8, 65, TEXT_SKIP_DRAW, NULL);
     DrawToggle(VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) != 0, 64);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 81, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("TALK ONLY"), 8, 81, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!FlagGet(OW_FLAG_NO_TRAINER_SEE), 80);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 97, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1448,11 +1452,11 @@ static void Task_BattleOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 5))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 6))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 5)) % 6;
+        gTasks[taskId].tMenuSelection = (row + (JOY_REPEAT(DPAD_DOWN) ? 1 : 6)) % 7;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT) || JOY_NEW(A_BUTTON))
@@ -1467,6 +1471,8 @@ static void Task_BattleOptions(u8 taskId)
             VarSet(VAR_BRISK_TYPES_DISABLED, BriskDisplayTypes());
         else if (row == 4)
             VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0);
+        else if (row == 5)
+            FlagToggle(OW_FLAG_NO_TRAINER_SEE);
         DrawBattleOptions();
     }
 }
