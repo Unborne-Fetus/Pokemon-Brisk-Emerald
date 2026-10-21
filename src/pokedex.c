@@ -206,6 +206,9 @@ static void ClearSearchParameterBoxText(void);
 // const rom data
 #include "data/pokemon/pokedex_orders.h"
 
+STATIC_ASSERT(NATIONAL_DEX_BOARHORN - NATIONAL_DEX_STEAM_SHELL <= 16, SacredDexCapacity);
+STATIC_ASSERT(NATIONAL_DEX_STEAM_SHELL - NATIONAL_DEX_PECHARUNT <= 28, CustomDexCapacity);
+
 static const struct OamData sOamData_ScrollBar =
 {
     .y = DISPLAY_HEIGHT,
@@ -4474,7 +4477,6 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     {
         // Separate unused save variables hold these twelve species' bits.
         // Existing Dex bits and both save-block layouts remain unchanged.
-        STATIC_ASSERT(NATIONAL_DEX_BOARHORN - NATIONAL_DEX_STEAM_SHELL <= 16, SacredDexCapacity);
         u16 var = (caseID == FLAG_GET_CAUGHT || caseID == FLAG_SET_CAUGHT)
             ? VAR_BRISK_SACRED_DEX_CAUGHT : VAR_BRISK_SACRED_DEX_SEEN;
         u32 mask = 1u << (nationalDexNo - NATIONAL_DEX_STEAM_SHELL - 1);
@@ -4499,7 +4501,6 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         }
         // The additional evolutions use a previously unused Pokedex word.
         // Keep both save blocks and all established flag offsets unchanged.
-        STATIC_ASSERT(NATIONAL_DEX_STEAM_SHELL - NATIONAL_DEX_PECHARUNT <= 28, CustomDexCapacity);
         if (nationalDexNo > NATIONAL_DEX_NUENFLU)
         {
             u32 shift = nationalDexNo - NATIONAL_DEX_NUENFLU - 1;

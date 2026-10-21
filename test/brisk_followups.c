@@ -87,7 +87,7 @@ TEST("Brisk independent send-out editor keeps text choices pending until Save")
 {
     ResetTasks();
     CreateMonWithIVs(&gParties[B_TRAINER_PLAYER][0], SPECIES_PIKACHU, 20, 0, OTID_STRUCT_PRESET(0), 0);
-    u8 task = Test_OpenBriskSendOutEditor();
+    Test_OpenBriskSendOutEditor();
     gMain.newKeys = 0;
     for (u32 text = 1; text < BALL_CAPSULE_TEXT_COUNT; text++)
     {
