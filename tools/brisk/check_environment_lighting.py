@@ -62,6 +62,7 @@ int main(void) {
             for (time = 0; time < 6; time++) {
                 struct BlendSettings b = BriskLighting_GetTimeBlend(time);
                 assert(b.coeff <= 8);
+                assert(b.isTint || b.coeff > 0); // No neutral midday endpoints.
             }
         }
     }

@@ -543,7 +543,9 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
         if ((MapHasNaturalLight(gMapHeader.mapType) || BriskLighting_IsEnabled(gMapHeader.mapType)))
         {
             // Time-blend
-            u32 palettes = ((1 << numPalettes) - 1) << startPalIndex;
+            // Shifting a 32-bit value by 32 is undefined; full refreshes
+            // must include every palette rather than yielding an empty mask.
+            u32 palettes = (numPalettes == 32 ? 0xFFFFFFFFu : ((1u << numPalettes) - 1)) << startPalIndex;
             UpdateAltBgPalettes(palettes & PALETTES_BG);
             UpdatePalettesWithTime(palettes);
         }

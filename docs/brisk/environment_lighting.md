@@ -7,9 +7,9 @@ extra sprite layer, save format migration, or user action is required.
 
 | Profile | Where | Treatment |
 | --- | --- | --- |
-| Plains | Other outdoor towns/routes | Soft dawn, neutral midday, amber sunset, blue moonlight |
+| Plains | Other outdoor towns/routes | Warm dawn/daylight, amber sunset, blue moonlight |
 | Coast | Major seaside towns and ocean routes | Cooler sea air and brighter blue nights |
-| Orange Islands | Orange City and Routes 143–149 | Warm dawn, subtle tropical daylight, stronger golden sunsets, clear moonlight |
+| Orange Islands | Orange City and Routes 143–149 | Warm dawn, golden tropical daylight, stronger golden sunsets, clear moonlight |
 | Forest | Petalburg Woods, Fortree, Routes 119–120 | Green canopy shade with cooler, deeper nights |
 | Mountain | Fallarbor, Routes 113–115 | Cool daylight and lavender evening/night colors |
 | Volcanic | Chimney, Jagged Pass, Fiery Path, Scorched Slab | Restrained ember warmth |
@@ -19,13 +19,16 @@ extra sprite layer, save format migration, or user action is required.
 | Ruins | Sealed Chamber, Desert Ruins, Sky Pillar | Constant aged stone warmth |
 | Haunted | Mt. Pyre, Abandoned Ship | Constant restrained violet atmosphere |
 | Industrial | New Mauville | Constant cool fluorescent tint |
-| Interior | Ordinary buildings and secret bases | Subtle warm indoor light, independent of outdoor time |
+| Interior | Ordinary buildings and secret bases | Warm indoor light, independent of outdoor time |
 
 Map type takes precedence for underwater areas and ordinary buildings. A cave
 on an island receives cave lighting rather than tropical sunlight. Dungeon
 sections retain their specialized profiles. Shoal's profile also covers its
 non-ice rooms because they share a section; individual-room overrides can be
 added later if desired.
+
+All profiles now apply an always-on ambient grade, including midday. Outdoor
+clock transitions add variety without disabling the effect during daylight.
 
 ## Integration
 

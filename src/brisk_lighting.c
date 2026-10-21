@@ -8,7 +8,7 @@
 #include "constants/rgb.h"
 
 // Tint multipliers are unsigned Q0.8, packed R/G/B from low to high byte.
-// Keep a real neutral midday (BLEND coefficient 0), and retain black outlines.
+// Every endpoint has a visible ambient grade, including midday.
 // Alpha-marked tileset colors still use expansion's warm emissive-light path.
 #define TINT(r, g, b) {.blendColor = (r) | ((g) << 8) | ((b) << 16), .isTint = TRUE, .coeff = 8}
 #define BLEND(r, g, b, strength) {.blendColor = RGB(r, g, b), .isTint = FALSE, .coeff = strength}
@@ -23,23 +23,23 @@ struct EnvironmentLighting
 static const struct EnvironmentLighting sProfiles[BRISK_LIGHT_PROFILE_COUNT] =
 {
     [BRISK_LIGHT_PLAINS] = {{
-        TINT(250, 232, 215), BLEND(0, 0, 0, 0),
+        TINT(255, 224, 190), BLEND(29, 25, 18, 3),
         TINT(255, 205, 170), TINT(160, 176, 218),
     }},
     [BRISK_LIGHT_COAST] = {{
-        TINT(245, 238, 225), BLEND(12, 25, 29, 1),
+        TINT(245, 230, 205), BLEND(10, 25, 29, 3),
         TINT(255, 210, 184), TINT(155, 187, 228),
     }},
     [BRISK_LIGHT_ISLANDS] = {{
-        TINT(255, 236, 209), BLEND(20, 29, 27, 1),
+        TINT(255, 224, 185), BLEND(27, 28, 17, 3),
         TINT(255, 192, 155), TINT(166, 190, 235),
     }},
     [BRISK_LIGHT_FOREST] = {{
-        TINT(219, 237, 203), TINT(225, 247, 220),
+        TINT(205, 235, 184), TINT(204, 242, 195),
         TINT(240, 205, 169), TINT(144, 177, 181),
     }},
     [BRISK_LIGHT_MOUNTAIN] = {{
-        TINT(239, 230, 238), BLEND(23, 27, 31, 1),
+        TINT(229, 218, 240), BLEND(19, 24, 31, 3),
         TINT(250, 202, 202), TINT(155, 173, 230),
     }},
     [BRISK_LIGHT_VOLCANIC] = {{
@@ -51,8 +51,8 @@ static const struct EnvironmentLighting sProfiles[BRISK_LIGHT_PROFILE_COUNT] =
         BLEND(8, 12, 19, 3), BLEND(8, 12, 19, 3),
     }},
     [BRISK_LIGHT_ICE] = {{
-        BLEND(17, 25, 30, 2), BLEND(17, 25, 30, 2),
-        BLEND(17, 25, 30, 2), BLEND(17, 25, 30, 2),
+        BLEND(17, 25, 30, 3), BLEND(17, 25, 30, 3),
+        BLEND(17, 25, 30, 3), BLEND(17, 25, 30, 3),
     }},
     [BRISK_LIGHT_UNDERWATER] = {{
         BLEND(3, 17, 25, 4), BLEND(3, 17, 25, 4),
@@ -67,12 +67,12 @@ static const struct EnvironmentLighting sProfiles[BRISK_LIGHT_PROFILE_COUNT] =
         BLEND(14, 11, 21, 3), BLEND(14, 11, 21, 3),
     }},
     [BRISK_LIGHT_INDUSTRIAL] = {{
-        BLEND(16, 23, 24, 2), BLEND(16, 23, 24, 2),
-        BLEND(16, 23, 24, 2), BLEND(16, 23, 24, 2),
+        BLEND(16, 23, 24, 3), BLEND(16, 23, 24, 3),
+        BLEND(16, 23, 24, 3), BLEND(16, 23, 24, 3),
     }},
     [BRISK_LIGHT_INTERIOR] = {{
-        BLEND(29, 25, 18, 1), BLEND(29, 25, 18, 1),
-        BLEND(29, 25, 18, 1), BLEND(29, 25, 18, 1),
+        BLEND(29, 25, 18, 3), BLEND(29, 25, 18, 3),
+        BLEND(29, 25, 18, 3), BLEND(29, 25, 18, 3),
     }},
 };
 
