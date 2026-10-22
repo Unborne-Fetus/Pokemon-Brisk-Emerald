@@ -83,15 +83,18 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
     const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[species];
     u32 abilityNum;
     u32 maxAbilityNum = ARRAY_COUNT(speciesInfo->abilities);
+    // Old trainer exports can name abilities removed by a species rebalance.
+    // Reject them before indexing ability data, then use the normal legal
+    // ability selection below in GenerateMonFromTrainerMon.
+    if (ability == ABILITY_NONE || ability >= ABILITIES_COUNT)
+        return FALSE;
     for (abilityNum = 0; abilityNum < maxAbilityNum; ++abilityNum)
     {
         if (speciesInfo->abilities[abilityNum] == ability)
             break;
     }
-    assertf(abilityNum < maxAbilityNum, "illegal ability %S for %S", gAbilitiesInfo[ability].name, speciesInfo->speciesName)
-    {
+    if (abilityNum == maxAbilityNum)
         return FALSE;
-    }
     SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
     return TRUE;
 }

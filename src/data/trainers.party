@@ -3241,7 +3241,7 @@ Tera Type: ghost
 
 Hitmonchan (M) @ Punching Glove
 Level: 49
-Ability: Guts
+Ability: Iron Fist
 EVs: 128 Atk / 252 Spe / 128 Def
 Ball: Poke 
 Nature: Adamant
@@ -3253,7 +3253,7 @@ Tera Type: Psychic
 
 Hariyama (M) @ life Orb
 Level: 50
-Ability: Neutralizing Gas
+Ability: Sheer Force
 EVs: 252 Atk / 48 Spe / 128 Def
 Ball: Love 
 Nature: Adamant
@@ -12271,7 +12271,7 @@ AI: Check Viability
 
 Haunter (M)
 Level: 25
-Ability: Cursed Body
+Ability: Levitate
 Ball: Poke
 Nature: Serious
 - Shadow Punch
@@ -12374,7 +12374,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Muk @ Expert Belt
 Level: 47
-Ability: Stench
+Ability: Poison Touch
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -16545,7 +16545,7 @@ AI: Check Viability
 
 Muk @ Expert Belt
 Level: 44
-Ability: Stench
+Ability: Poison Touch
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe

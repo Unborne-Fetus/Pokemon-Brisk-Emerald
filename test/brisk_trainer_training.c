@@ -27,6 +27,40 @@ static void GenerateTrainingMon(struct Pokemon *mon, const struct TrainerMon *en
     GenerateMonFromTrainerMon(mon, entry, &generator);
 }
 
+TEST("Brisk trainer generation recovers from stale and out-of-range abilities")
+{
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    static const enum Ability abilities[] = {ABILITY_CURSED_BODY, ABILITIES_COUNT};
+    for (u32 i = 0; i < ARRAY_COUNT(abilities); i++)
+    {
+        struct TrainerMon entry = sTrainingMon;
+        struct Pokemon mon;
+        entry.species = SPECIES_HAUNTER;
+        entry.ability = abilities[i];
+        entry.moves[0] = MOVE_SHADOW_BALL;
+        entry.moves[1] = MOVE_THUNDERBOLT;
+        GenerateTrainingMon(&mon, &entry);
+        EXPECT_EQ(GetMonAbility(&mon), ABILITY_LEVITATE);
+        EXPECT_EQ(GetMonData(&mon, MON_DATA_MOVE1), MOVE_SHADOW_BALL);
+        EXPECT_EQ(GetMonData(&mon, MON_DATA_MOVE2), MOVE_THUNDERBOLT);
+    }
+}
+
+TEST("Brisk trainer generation preserves valid authored abilities and moves")
+{
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    struct TrainerMon entry = sTrainingMon;
+    struct Pokemon mon;
+    entry.species = SPECIES_HITMONCHAN;
+    entry.ability = ABILITY_IRON_FIST;
+    entry.moves[0] = MOVE_ICE_PUNCH;
+    GenerateTrainingMon(&mon, &entry);
+    EXPECT_EQ(GetMonAbility(&mon), ABILITY_IRON_FIST);
+    EXPECT_EQ(GetMonData(&mon, MON_DATA_MOVE1), MOVE_ICE_PUNCH);
+}
+
 TEST("Brisk trainer training zeroes Easy, preserves Normal and perfects Hard IVs")
 {
     static const u8 authored[] = {100, 80, 60, 10, 40, 20}; // Pokemon stat order.
