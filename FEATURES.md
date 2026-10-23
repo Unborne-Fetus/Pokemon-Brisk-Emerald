@@ -73,6 +73,8 @@ A lot of features listed below can be turned off as desired. Check which ones in
 - ***High-Quality RNG:*** No more broken vanilla RNG.
 
 ## Overworld improvements
+
+- **Lead Pokémon weather (Brisk):** Drizzle and Primordial Sea bring rain; Drought, Desolate Land, and Orichalcum Pulse bring sunlight; Sand Stream and Sand Spit bring sandstorms; Snow Warning brings snow; Delta Stream brings wind wisps. This applies outdoors and refreshes when the lead changes. Buildings, protected native weather (desert sandstorms, legendary weather, ash, fog, and underwater effects), and field scripts take priority. Ability weather never overwrites saved map weather, so it cannot create a Go-Goggles requirement.
 - ***Modern Mechanics***: Defog field move, B2W2+ Repel system, Running indoors, Removed field poison, Chain fishing, VS. Seeker, FRLG+ whiteout message.
 - ***Overworld and Follower Pokémon*** ([feature branch](https://github.com/aarant/pokeemerald/tree/followers-expanded-id) by @aarant)
     - *Includes Dynamic overworld palettes (DOWP) and Overworld Expansion for event IDs beyond 255.*

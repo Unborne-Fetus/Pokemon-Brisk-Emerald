@@ -1425,6 +1425,21 @@ void FogHorizontal_Main(void)
     }
 }
 
+// Thin, fast wind wisps use the existing horizontal weather sprites. Their
+// distinct weather ID avoids fog's palette whitening and battle terrain.
+void StrongWinds_Main(void)
+{
+    gWeatherPtr->fogHScrollOffset += 2;
+    FogHorizontal_Main();
+}
+
+void StrongWinds_InitAll(void)
+{
+    FogHorizontal_InitVars();
+    while (!gWeatherPtr->weatherGfxLoaded)
+        StrongWinds_Main();
+}
+
 bool8 FogHorizontal_Finish(void)
 {
     gWeatherPtr->fogHScrollPosX = (gSpriteCoordOffsetX - gWeatherPtr->fogHScrollOffset) & 0xFF;
@@ -2666,6 +2681,7 @@ static enum OverworldWeather TranslateWeatherNum(enum OverworldWeather weather)
 {
     switch (weather)
     {
+    case WEATHER_STRONG_WINDS:       return WEATHER_STRONG_WINDS;
     case WEATHER_NONE:               return WEATHER_NONE;
     case WEATHER_COUNT:              return WEATHER_NONE;
     case WEATHER_SUNNY_CLOUDS:       return WEATHER_SUNNY_CLOUDS;

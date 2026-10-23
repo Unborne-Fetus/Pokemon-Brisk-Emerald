@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_lead_weather.h"
 #include "brisk_lighting.h"
 #include "constants/songs.h"
 #include "constants/weather.h"
@@ -128,6 +129,7 @@ struct Weather *const gWeatherPtr = &gWeather;
 
 static const struct WeatherCallbacks sWeatherFuncs[] =
 {
+    [WEATHER_STRONG_WINDS]       = {FogHorizontal_InitVars, StrongWinds_Main, StrongWinds_InitAll, FogHorizontal_Finish},
     [WEATHER_NONE]               = {None_Init,              None_Main,          None_Init,             None_Finish},
     [WEATHER_SUNNY_CLOUDS]       = {Clouds_InitVars,        Clouds_Main,        Clouds_InitAll,        Clouds_Finish},
     [WEATHER_SUNNY]              = {Sunny_InitVars,         Sunny_Main,         Sunny_InitAll,         Sunny_Finish},
@@ -228,6 +230,7 @@ void StartWeather(void)
 
 void SetNextWeather(u8 weather)
 {
+    weather = BriskLeadWeather_Apply(weather);
     if (weather != WEATHER_RAIN && weather != WEATHER_RAIN_THUNDERSTORM && weather != WEATHER_DOWNPOUR)
     {
         PlayRainStoppingSoundEffect();
@@ -261,6 +264,7 @@ static void UpdateWeatherForms(void)
 
 void SetCurrentAndNextWeather(u8 weather)
 {
+    weather = BriskLeadWeather_Apply(weather);
     PlayRainStoppingSoundEffect();
     gWeatherPtr->currWeather = weather;
     gWeatherPtr->nextWeather = weather;
@@ -269,6 +273,7 @@ void SetCurrentAndNextWeather(u8 weather)
 
 void SetCurrentAndNextWeatherNoDelay(u8 weather)
 {
+    weather = BriskLeadWeather_Apply(weather);
     PlayRainStoppingSoundEffect();
     gWeatherPtr->currWeather = weather;
     gWeatherPtr->nextWeather = weather;
@@ -1195,13 +1200,15 @@ void ResetPreservedPalettesInWeather(void)
 
 bool32 IsWeatherAlphaBlend(void)
 {
-    return (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL
+    return (gWeatherPtr->currWeather == WEATHER_STRONG_WINDS
+         || gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL
          || gWeatherPtr->currWeather == WEATHER_FOG_DIAGONAL
          || gWeatherPtr->currWeather == WEATHER_UNDERWATER_BUBBLES
          || gWeatherPtr->currWeather == WEATHER_UNDERWATER);
 }
 
 static const u8 sWeatherNames[WEATHER_COUNT][24] = {
+    [WEATHER_STRONG_WINDS]       = _("STRONG WINDS"),
     [WEATHER_NONE]               = _("NONE"),
     [WEATHER_SUNNY_CLOUDS]       = _("SUNNY CLOUDS"),
     [WEATHER_SUNNY]              = _("SUNNY"),

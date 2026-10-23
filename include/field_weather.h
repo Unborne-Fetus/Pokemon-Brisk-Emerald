@@ -198,6 +198,8 @@ bool8 Thunderstorm_Finish(void);
 void FogHorizontal_InitVars(void);
 u8 UpdateShadowColor(u16 color);
 void FogHorizontal_Main(void);
+void StrongWinds_Main(void);
+void StrongWinds_InitAll(void);
 void FogHorizontal_InitAll(void);
 bool8 FogHorizontal_Finish(void);
 void Ash_InitVars(void);

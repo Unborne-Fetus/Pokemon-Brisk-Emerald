@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_lead_weather.h"
 #include "bike.h"
 #include "brisk_lighting.h"
 #include "overworld.h"
@@ -1855,6 +1856,7 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
+    BriskLeadWeather_Update();
     RunTasks();
     AnimateSprites();
     CameraUpdate();
