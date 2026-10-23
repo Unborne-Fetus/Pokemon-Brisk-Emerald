@@ -7,6 +7,7 @@
 #include "trainer_util.h"
 #include "test/test.h"
 #include "constants/trainers.h"
+#include "constants/form_change_types.h"
 
 static const u8 sAuthoredEvs[] = {100, 80, 60, 40, 20, 10}; // Showdown order.
 static const struct TrainerMon sTrainingMon = {
@@ -153,4 +154,69 @@ TEST("Brisk training modifiers leave allied trainer Pokemon unchanged")
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HP_EV), 100);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_ATK_EV), 80);
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
+TEST("Brisk every authored trainer ability belongs to its pre-battle species")
+{
+    for (u32 difficulty = 0; difficulty < DIFFICULTY_COUNT; difficulty++)
+    {
+        for (u32 id = 0; id < TRAINERS_COUNT; id++)
+        {
+            const struct Trainer *trainer = &gTrainers[difficulty][id];
+            for (u32 slot = 0; slot < trainer->partySize; slot++)
+            {
+                const struct TrainerMon *entry = &trainer->party[slot];
+                if (entry->ability == ABILITY_NONE)
+                    continue;
+                bool32 legal = FALSE;
+                EXPECT_LT(entry->ability, ABILITIES_COUNT);
+                for (u32 abilitySlot = 0; abilitySlot < NUM_ABILITY_SLOTS; abilitySlot++)
+                    if (gSpeciesInfo[entry->species].abilities[abilitySlot] == entry->ability)
+                        legal = TRUE;
+                EXPECT(legal);
+            }
+        }
+    }
+}
+
+TEST("Brisk Mega Scovillain gains Spicy Spray from every base ability slot")
+{
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    struct FormChangeContext ctx = {
+        .currentSpecies = SPECIES_SCOVILLAIN, .heldItem = ITEM_SCOVILLAINITE,
+        .method = FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,
+    };
+    u32 mega = GetFormChangeTargetSpecies_Internal(ctx);
+    EXPECT_EQ(mega, SPECIES_SCOVILLAIN_MEGA);
+    for (u32 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+    {
+        struct Pokemon mon;
+        CreateMonWithIVs(&mon, SPECIES_SCOVILLAIN, 50, 0, OTID_STRUCT_PRESET(0), 31);
+        SetMonData(&mon, MON_DATA_ABILITY_NUM, &slot);
+        EXPECT_NE(GetMonAbility(&mon), ABILITY_SPICY_SPRAY);
+        SetMonData(&mon, MON_DATA_SPECIES, &mega);
+        EXPECT_EQ(GetMonAbility(&mon), ABILITY_SPICY_SPRAY);
+    }
+}
+
+TEST("Brisk every Mega form resolves a valid ability from every inherited slot")
+{
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    for (u32 species = 1; species < NUM_SPECIES; species++)
+    {
+        if (!gSpeciesInfo[species].isMegaEvolution)
+            continue;
+        EXPECT_NE(gSpeciesInfo[species].abilities[0], ABILITY_NONE);
+        for (u32 slot = 0; slot < NUM_ABILITY_SLOTS; slot++)
+        {
+            enum Ability ability = GetAbilityBySpecies(species, slot);
+            EXPECT_NE(ability, ABILITY_NONE);
+            EXPECT_LT(ability, ABILITIES_COUNT);
+            bool32 belongsToMega = FALSE;
+            for (u32 i = 0; i < NUM_ABILITY_SLOTS; i++)
+                if (gSpeciesInfo[species].abilities[i] == ability)
+                    belongsToMega = TRUE;
+            EXPECT(belongsToMega);
+        }
+    }
 }

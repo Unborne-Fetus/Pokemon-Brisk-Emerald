@@ -139,12 +139,45 @@ void InitMap(void)
     RunOnLoadMapScript();
 }
 
+// A save contains a cached window of map tiles. Restore the corrected warp
+// tiles after that window loads so players saved inside an old broken map
+// can leave immediately. Keep every other cached tile and all story state.
+static void RepairCachedBriskWarpTiles(u16 layoutId)
+{
+    bool32 mart = layoutId == LAYOUT_MART;
+    if (!mart && layoutId != LAYOUT_AQUA_HIDEOUT_1F
+        && layoutId != LAYOUT_SKY_PILLAR_5F && layoutId != LAYOUT_SKY_PILLAR_5F_CLEAN)
+        return;
+    const struct MapLayout *layout = gMapHeader.mapLayout;
+    const struct MapEvents *events = gMapHeader.events;
+    if (layout == NULL || events == NULL)
+        return;
+    for (u32 i = 0; i < events->warpCount; i++)
+    {
+        s32 x = events->warps[i].x;
+        s32 y = events->warps[i].y;
+        if (x < 0 || y < 0 || x >= layout->width || y >= layout->height)
+            continue;
+        MapGridSetMetatileEntryAt(x + MAP_OFFSET, y + MAP_OFFSET, layout->map[y * layout->width + x]);
+        if (mart && y > 0)
+            MapGridSetMetatileEntryAt(x + MAP_OFFSET, y - 1 + MAP_OFFSET, layout->map[(y - 1) * layout->width + x]);
+    }
+}
+
+#if TESTING
+void Test_RepairCachedBriskWarpTiles(u16 layoutId)
+{
+    RepairCachedBriskWarpTiles(layoutId);
+}
+#endif
+
 void InitMapFromSavedGame(void)
 {
     InitMapLayoutData(&gMapHeader);
     InitSecretBaseAppearance(FALSE);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
+    RepairCachedBriskWarpTiles(gSaveBlock1Ptr->mapLayoutId);
     RunOnLoadMapScript();
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }
