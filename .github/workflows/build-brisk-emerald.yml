@@ -17,6 +17,9 @@ jobs:
       - name: Audit trainer progression
         run: python3 tools/brisk/check_trainer_progression.py
 
+      - name: Audit ordinary trainer fairness and protected teams
+        run: python3 tools/brisk/check_trainer_fairness.py
+
       - name: Install dependencies
         timeout-minutes: 30
         run: |

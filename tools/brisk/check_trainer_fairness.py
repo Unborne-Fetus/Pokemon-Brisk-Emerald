@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+"""Validate ordinary authored teams and fingerprint protected trainer entries.
+
+The policy records compiled Brisk stats/learnsets used for this balance pass.
+Update that catalog deliberately when changing species data or learnsets.
+Hard/Extreme's existing battle-time modifiers are separate from these sets.
+"""
+import hashlib
+import json
+import re
+from check_trainer_progression import ROOT, TEAM_RE
+
+
+def power_cap(level):
+    return 50 if level < 12 else 60 if level < 20 else 75 if level < 30 else 90 if level < 40 else 100 if level < 50 else 120
+
+
+def stat_cap(level):
+    return 350 if level < 12 else 420 if level < 20 else 470 if level < 30 else 510 if level < 40 else 550 if level < 50 else 600
+
+
+def audit():
+    policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
+    teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
+    errors = []
+    for trainer_id, fingerprint in policy['protected'].items():
+        actual = hashlib.sha256(teams.get(trainer_id, '').encode()).hexdigest()
+        if actual != fingerprint:
+            errors.append(f'{trainer_id}: protected trainer changed; review explicitly')
+    mons = 0
+    for trainer_id in policy['reworked']:
+        if trainer_id not in teams:
+            errors.append(f'{trainer_id}: missing team'); continue
+        team = teams[trainer_id]
+        blocks = re.split(r'\n[ \t]*\n', team.strip())[1:]
+        party_levels = []
+        for block in blocks:
+            name = block.splitlines()[0].split(' @ ')[0]
+            match = re.search(r'^Level: (\d+)$', block, re.M)
+            if name not in policy['species'] or not match:
+                errors.append(f'{trainer_id}: unknown species or missing level: {name}'); continue
+            level = int(match[1]); party_levels.append(level); mons += 1
+            info = policy['species'][name]
+            prefix = f'{trainer_id}: {name} at {level}'
+            if level < info['minimum_level'] or sum(info['stats']) > stat_cap(level) or info.get('special'):
+                errors.append(prefix + ': species is too advanced for this level')
+            if re.search(r'^(Dynamax Level|Gigantamax|Tera Type|Ability):', block, re.M):
+                errors.append(prefix + ': unexpected gimmick or ability override')
+            item = block.splitlines()[0].partition(' @ ')[2]
+            allowed_items = {''}
+            if level >= 12: allowed_items.add('Oran Berry')
+            if level >= 35: allowed_items.add('Sitrus Berry')
+            if level >= 50: allowed_items.add('Expert Belt')
+            if item not in allowed_items:
+                errors.append(prefix + ': inappropriate held item')
+            legal = set(); lineage = [name]; visited = set()
+            while lineage:
+                ancestor = lineage.pop()
+                if ancestor in visited: continue
+                visited.add(ancestor)
+                legal.update(m for l,m in policy['species'][ancestor]['learnset'] if l <= level)
+                lineage.extend(policy['parents'].get(ancestor, []))
+            moves = re.findall(r'^- (MOVE_\w+)$', block, re.M)
+            if not 1 <= len(moves) <= 4 or len(moves) != len(set(moves)):
+                errors.append(prefix + ': invalid move count or duplicates')
+            for move in moves:
+                if move not in legal or move not in policy['moves'] or policy['moves'][move]['power'] > power_cap(level):
+                    errors.append(prefix + ': illegal or excessive-power move: ' + move)
+            if not any(policy['moves'].get(m, {}).get('power', 0) > 1 for m in moves):
+                errors.append(prefix + ': no usable damaging move')
+            ivs = [int(n) for n in re.findall(r'(\d+) (?:HP|Atk|Def|SpA|SpD|Spe)', re.search(r'^IVs: (.*)',block,re.M)[1])]
+            expected_iv = 8 if level < 12 else 12 if level < 25 else 18 if level < 45 else 24
+            if len(ivs) != 6 or any(n != expected_iv for n in ivs):
+                errors.append(prefix + ': inconsistent IV progression')
+            ev_match = re.search(r'^EVs: (.*)',block,re.M)
+            evs = [int(n) for n in re.findall(r'\d+',ev_match[1])] if ev_match else []
+            ev_cap = 0 if level < 25 else 128 if level < 45 else 256 if level < 65 else 384
+            if sum(evs) > ev_cap or any(n > 252 for n in evs):
+                errors.append(prefix + ': excessive EV training')
+        if party_levels:
+            ace = max(party_levels)
+            cap = 2 if ace < 12 else 3 if ace < 25 else 4 if ace < 45 else 5 if ace < 65 else 6
+            if len(party_levels) > cap:
+                errors.append(f'{trainer_id}: excessive party size for this stage')
+    for error in errors: print(error)
+    print(f'Fairness audit: {len(policy["reworked"])} teams, {mons} Pokemon; '
+          f'{len(policy["protected"])} protected entries; {len(errors)} errors.')
+    return bool(errors)
+
+
+if __name__ == '__main__':
+    raise SystemExit(audit())
