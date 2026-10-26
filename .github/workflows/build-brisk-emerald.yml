@@ -14,6 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Audit trainer progression
+        run: python3 tools/brisk/check_trainer_progression.py
+
       - name: Install dependencies
         timeout-minutes: 30
         run: |

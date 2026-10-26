@@ -38,6 +38,31 @@ TEST("Brisk difficulty trainer AI preserves Normal and upgrades Hard and Extreme
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
 }
 
+TEST("Brisk Hard and Extreme enable move scoring for trainers with sparse legacy AI")
+{
+    const u64 originals[] = {0, AI_FLAG_CHECK_VIABILITY, AI_FLAG_FORCE_SETUP_FIRST_TURN};
+    for (u32 i = 0; i < ARRAY_COUNT(originals); i++)
+    {
+        for (u32 mode = BRISK_MODE_NORMAL; mode <= BRISK_MODE_EXTREME; mode++)
+        {
+            VarSet(VAR_BRISK_DIFFICULTY, mode);
+            u64 flags = GetBriskTrainerAiFlags(originals[i]);
+            if (mode == BRISK_MODE_NORMAL)
+                EXPECT_EQ(flags, originals[i]);
+            else if (mode == BRISK_MODE_EASY)
+                EXPECT_EQ(flags, AI_FLAG_CHECK_BAD_MOVE);
+            else
+            {
+                EXPECT_EQ(flags & AI_FLAG_BASIC_TRAINER, AI_FLAG_BASIC_TRAINER);
+                EXPECT(flags & AI_FLAG_SMART_MON_CHOICES);
+                if (mode == BRISK_MODE_EXTREME)
+                    EXPECT(flags & AI_FLAG_OMNISCIENT);
+            }
+        }
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+}
+
 TEST("Brisk difficulty enforces battle style without overwriting the player's preference")
 {
     for (u32 mode = 0; mode < 4; mode++)

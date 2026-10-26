@@ -40,8 +40,10 @@ u64 GetBriskTrainerAiFlags(u64 flags)
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: return AI_FLAG_CHECK_BAD_MOVE;
-    case BRISK_MODE_HARD: return flags | AI_FLAG_SMART_MON_CHOICES;
-    case BRISK_MODE_EXTREME: return flags | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT;
+    // Some legacy parties only specify viability (or no flags). Knowledge and
+    // switch selection alone do not enable the basic move-scoring scripts.
+    case BRISK_MODE_HARD: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES;
+    case BRISK_MODE_EXTREME: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT;
     default: return flags;
     }
 }

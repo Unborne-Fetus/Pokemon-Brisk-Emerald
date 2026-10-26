@@ -9,6 +9,47 @@
 #include "test/test.h"
 #include "constants/trainers.h"
 
+TEST("Brisk ordinary trainers and rivals both receive difficulty when their parties are generated")
+{
+    const u8 classes[] = {TRAINER_CLASS_YOUNGSTER, TRAINER_CLASS_RIVAL};
+    const u8 expectedLevels[] = {
+        [BRISK_MODE_NORMAL] = 20, [BRISK_MODE_EASY] = 10,
+        [BRISK_MODE_HARD] = 22, [BRISK_MODE_EXTREME] = 24,
+    };
+    u16 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
+    u16 savedRandomizer = VarGet(VAR_BRISK_RANDOMIZER);
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    struct TrainerMon entry = {
+        .species = SPECIES_RATICATE, .lvl = 20, .moves = {MOVE_TACKLE},
+        .gender = TRAINER_MON_RANDOM_GENDER, .nature = NATURE_HARDY, .ball = BALL_POKE,
+    };
+    struct Trainer trainer = {.party = &entry, .partySize = 1, .trainerName = _("TEST")};
+    for (u32 i = 0; i < ARRAY_COUNT(classes); i++)
+    {
+        trainer.trainerClass = classes[i];
+        for (u32 mode = BRISK_MODE_NORMAL; mode <= BRISK_MODE_EXTREME; mode++)
+        {
+            struct TrainerGenerator generator = {0};
+            struct Pokemon mon;
+            VarSet(VAR_BRISK_DIFFICULTY, mode);
+            MakeTrainerGenerator(&generator, &trainer);
+            GenerateMonFromTrainerMon(&mon, &entry, &generator);
+            EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), expectedLevels[mode]);
+            EXPECT_EQ(GetLevelFromMonExp(&mon), expectedLevels[mode]);
+            EXPECT_EQ(GetMonData(&mon, MON_DATA_IVS), mode >= BRISK_MODE_HARD ? 0x3FFFFFFF : 0);
+            if (mode == BRISK_MODE_EXTREME)
+            {
+                u32 totalEvs = 0;
+                for (u32 stat = 0; stat < NUM_STATS; stat++)
+                    totalEvs += GetMonData(&mon, MON_DATA_HP_EV + stat);
+                EXPECT_EQ(totalEvs, 510);
+            }
+        }
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    VarSet(VAR_BRISK_RANDOMIZER, savedRandomizer);
+}
+
 TEST("Hard and Extreme generate level 25 Roxanne teams and reach level 100 for the League")
 {
     // First-party levels from Roxanne through Juan, then the Elite Four.
