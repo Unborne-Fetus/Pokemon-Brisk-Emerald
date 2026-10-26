@@ -807,6 +807,7 @@ struct
     [MENU_CHANGE_BALL]     = {COMPOUND_STRING("CHANGE BALL"), CursorCb_ChangeBall},
     [MENU_SEND_OUT_TEXT]   = {COMPOUND_STRING("SEND-OUT TEXT"), CursorCb_SendOutText},
     [MENU_BALL_CAPSULE]    = {COMPOUND_STRING("BALL CAPSULE"), CursorCb_BallCapsule},
+    [MENU_POKEDEX]         = {COMPOUND_STRING("POKéDEX"), CursorCb_Pokedex},
     [MENU_SUMMARY]         = {COMPOUND_STRING("SUMMARY"),         CursorCb_Summary},
     [MENU_STAT_EDIT]       = {COMPOUND_STRING("STAT EDIT"),       CursorCb_StatEdit},
     [MENU_SWITCH]          = {COMPOUND_STRING("SWITCH"),          CursorCb_Switch},

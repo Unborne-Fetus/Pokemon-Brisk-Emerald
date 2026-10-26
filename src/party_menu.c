@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokedex.h"
 #include "ball_capsule.h"
 #include "naming_screen.h"
 #include "pokeball.h"
@@ -120,6 +121,7 @@ enum {
     MENU_BALL_CAPSULE,
     MENU_SEND_OUT_TEXT,
     MENU_CHANGE_BALL,
+    MENU_POKEDEX,
     MENU_FIELD_MOVES
 };
 
@@ -465,6 +467,8 @@ static void ShiftMoveSlot(struct BoxPokemon *, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, bool8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, bool8);
 static void CursorCb_Summary(u8);
+static void CursorCb_Pokedex(u8);
+static void CB2_ShowPartyMonPokedex(void);
 static void CursorCb_StatEdit(u8);
 static void CB2_ReturnToPartyMenuFromStatEditor(void);
 static void CursorCb_Switch(u8);
@@ -2989,6 +2993,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+    if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG))
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_POKEDEX);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STAT_EDIT);
 
     // Add normal field moves the Pokémon actually knows.
@@ -3172,6 +3178,19 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
             break;
         }
     }
+}
+
+static void CursorCb_Pokedex(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    sPartyMenuInternal->exitCallback = CB2_ShowPartyMonPokedex;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CB2_ShowPartyMonPokedex(void)
+{
+    gLastViewedMonIndex = gPartyMenu.slotId;
+    OpenPartyMonPokedex(GetMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], MON_DATA_SPECIES), CB2_ReturnToPartyMenuFromSummaryScreen);
 }
 
 static void CursorCb_Summary(u8 taskId)

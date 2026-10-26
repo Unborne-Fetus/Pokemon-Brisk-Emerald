@@ -1468,6 +1468,18 @@ void ResetPokedexView(struct PokedexView *pokedexView)
         pokedexView->unkArr3[i] = 0;
 }
 
+static EWRAM_DATA enum Species sPartyDexSpecies = SPECIES_NONE;
+static EWRAM_DATA enum Species sPartyDexEntry = SPECIES_NONE;
+static EWRAM_DATA MainCallback sPartyDexReturn = NULL;
+
+void OpenPartyMonPokedex(enum Species species, MainCallback returnCallback)
+{
+    sPartyDexSpecies = species;
+    sPartyDexEntry = species;
+    sPartyDexReturn = returnCallback;
+    SetMainCallback2(CB2_OpenPokedex);
+}
+
 void CB2_OpenPokedex(void)
 {
     switch (gMain.state)
@@ -1519,7 +1531,17 @@ void CB2_OpenPokedex(void)
         EnableInterrupts(1);
         SetVBlankCallback(VBlankCB_Pokedex);
         SetMainCallback2(CB2_Pokedex);
-        CreatePokedexList(sPokedexView->dexMode, sPokedexView->dexOrder);
+        if (sPartyDexReturn != NULL)
+        {
+            sPokedexView->dexMode = DEX_MODE_NATIONAL;
+            sPokedexView->selectedPokemon = 0;
+            sPokedexView->pokemonListCount = 1;
+            sPokedexView->pokedexList[0].dexNum = SpeciesToNationalPokedexNum(sPartyDexSpecies);
+            sPokedexView->pokedexList[0].seen = TRUE;
+            sPokedexView->pokedexList[0].owned = TRUE;
+        }
+        else
+            CreatePokedexList(sPokedexView->dexMode, sPokedexView->dexOrder);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x80);
         break;
     }
@@ -1557,8 +1579,13 @@ void Task_HandlePokedexInput(u8 taskId)
     }
     else
     {
-        if (JOY_NEW(A_BUTTON) && sPokedexView->pokedexList[sPokedexView->selectedPokemon].seen)
+        if ((JOY_NEW(A_BUTTON) || sPartyDexSpecies != SPECIES_NONE) && sPokedexView->pokedexList[sPokedexView->selectedPokemon].seen)
         {
+            if (sPartyDexSpecies != SPECIES_NONE)
+            {
+                sPokedexView->formSpecies = sPartyDexSpecies;
+                sPartyDexSpecies = SPECIES_NONE;
+            }
             HandleDestroyStatBars_HGSS();
             UpdateSelectedMonSpriteId();
             BeginNormalPaletteFade(~(1 << (gSprites[sPokedexView->selectedMonSpriteId].oam.paletteNum + 16)), MENU_FADE_DELAY, 0, 0x10, RGB_BLACK);
@@ -1738,14 +1765,19 @@ static void Task_ClosePokedex(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        if (sPartyDexReturn == NULL)
+        {
         gSaveBlock2Ptr->pokedex.mode = sPokedexView->dexMode;
         if (!IsNationalPokedexEnabled())
             gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
         gSaveBlock2Ptr->pokedex.order = sPokedexView->dexOrder;
+        }
         ClearMonSprites();
         FreeWindowAndBgBuffers();
         DestroyTask(taskId);
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        SetMainCallback2(sPartyDexReturn != NULL ? sPartyDexReturn : CB2_ReturnToFieldWithOpenMenu);
+        sPartyDexReturn = NULL;
+        sPartyDexSpecies = SPECIES_NONE;
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
         Free(sPokedexView);
     }
@@ -2089,6 +2121,15 @@ void CreatePokedexList(u8 dexMode, u8 order)
 #define temp_dexNum     vars[2]
     s32 i;
 
+    if (sPartyDexReturn != NULL)
+    {
+        sPokedexView->pokemonListCount = 1;
+        sPokedexView->selectedPokemon = 0;
+        sPokedexView->pokedexList[0].dexNum = SpeciesToNationalPokedexNum(sPartyDexEntry);
+        sPokedexView->pokedexList[0].seen = TRUE;
+        sPokedexView->pokedexList[0].owned = TRUE;
+        return;
+    }
     sPokedexView->pokemonListCount = 0;
 
     switch (dexMode)
