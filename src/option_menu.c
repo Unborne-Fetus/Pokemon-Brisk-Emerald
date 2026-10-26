@@ -25,6 +25,12 @@
 #include "constants/rgb.h"
 #include "string_util.h"
 #include "player_name.h"
+#include "debug.h"
+#include "overworld.h"
+#include "field_screen_effect.h"
+#include "field_weather.h"
+#include "event_object_movement.h"
+#include "script.h"
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
@@ -88,7 +94,11 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 6
+#define PAGE_COUNT 7
+
+static void DrawDebugOptions(void);
+static void Task_DebugOptions(u8 taskId);
+static void CB2_ReturnToFieldDebug(void);
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuRename(u8 taskId);
@@ -411,6 +421,12 @@ static void Task_ChangePage(u8 taskId)
         DrawHelpPage();
         gTasks[taskId].func = Task_OptionMenuProcessInput_Help;
         break;
+    case 6:
+        gTasks[taskId].tMenuSelection = 0;
+        DrawDebugOptions();
+        HighlightOptionMenuItem(0);
+        gTasks[taskId].func = Task_DebugOptions;
+        break;
     }
 }
 
@@ -518,6 +534,12 @@ void CB2_InitOptionMenu(void)
         case 5:
             taskId = CreateTask(Task_OptionMenuProcessInput_Help, 0);
             DrawHelpPage();
+            break;
+        case 6:
+            taskId = CreateTask(Task_DebugOptions, 0);
+            ReadAllCurrentSettings(taskId);
+            DrawDebugOptions();
+            HighlightOptionMenuItem(0);
             break;
         }
         gMain.state++;
@@ -760,6 +782,63 @@ static void Task_OptionMenuFadeOut(u8 taskId)
         DestroyTask(taskId);
         FreeAllWindowBuffers();
         SetMainCallback2(gMain.savedCallback);
+    }
+}
+
+static void Task_OpenOptionsDebug(u8 taskId)
+{
+    if (gPaletteFade.active || !IsWeatherNotFadingIn())
+        return;
+    DestroyTask(taskId);
+    Debug_ShowMainMenu();
+}
+
+static bool8 FieldCB_OptionsDebug(void)
+{
+    // Rebuild the field before creating debug windows or executing its actions.
+    LockPlayerFieldControls();
+    FreezeObjectEvents();
+    FadeInFromBlack();
+    CreateTask(Task_OpenOptionsDebug, 10);
+    return TRUE;
+}
+
+static void CB2_ReturnToFieldDebug(void)
+{
+    gFieldCallback2 = FieldCB_OptionsDebug;
+    CB2_ReturnToField();
+}
+
+static void DrawDebugOptions(void)
+{
+    FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("DEBUG MENU"), 8, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 17, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_DebugOptions(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 1))
+        gTasks[taskId].func = Task_OptionMenuSave;
+    else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
+    {
+        gTasks[taskId].tMenuSelection ^= 1;
+        HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        // Use the usual settings-save and fade-out path before opening debug.
+        gMain.savedCallback = CB2_ReturnToFieldDebug;
+        gTasks[taskId].func = Task_OptionMenuSave;
     }
 }
 
