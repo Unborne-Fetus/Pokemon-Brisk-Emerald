@@ -72,8 +72,16 @@ TEST("Brisk trainer training zeroes Easy, preserves Normal and perfects Hard IVs
         struct Pokemon mon;
         GenerateTrainingMon(&mon, &sTrainingMon);
         EXPECT_EQ(GetMonData(&mon, MON_DATA_IVS), mode == BRISK_MODE_EASY ? 0 : mode == BRISK_MODE_NORMAL ? sTrainingMon.iv : 0x3FFFFFFF);
+        u32 total = 0;
         for (u32 stat = 0; stat < NUM_STATS; stat++)
-            EXPECT_EQ(GetMonData(&mon, MON_DATA_HP_EV + stat), mode == BRISK_MODE_EASY ? 0 : authored[stat]);
+        {
+            u32 ev = GetMonData(&mon, MON_DATA_HP_EV + stat);
+            total += ev;
+            EXPECT_LE(ev, 252);
+            if (mode != BRISK_MODE_HARD)
+                EXPECT_EQ(ev, mode == BRISK_MODE_EASY ? 0 : authored[stat]);
+        }
+        if (mode == BRISK_MODE_HARD) EXPECT_GE(total, 310);
     }
     EXPECT_EQ(sAuthoredEvs[0], 100);
     EXPECT_EQ(sTrainingMon.iv & 31, 3);

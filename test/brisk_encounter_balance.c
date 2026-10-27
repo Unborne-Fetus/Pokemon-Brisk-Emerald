@@ -73,10 +73,10 @@ TEST("Brisk turning overworld encounters off preserves scripted Pokemon and foll
     gSpecialVar_LastTalked = oldTalked;
 }
 
-TEST("Brisk Route 102 Normal 10-15 curve maps to Easy 5-8 Hard 11-16 and Extreme 12-18")
+TEST("Brisk Route 102 Normal 10-15 curve maps to Easy 5-8 Hard 13-18 and Extreme 14-19")
 {
-    const u8 minimum[] = {[BRISK_MODE_NORMAL]=10,[BRISK_MODE_EASY]=5,[BRISK_MODE_HARD]=11,[BRISK_MODE_EXTREME]=12};
-    const u8 maximum[] = {[BRISK_MODE_NORMAL]=15,[BRISK_MODE_EASY]=8,[BRISK_MODE_HARD]=16,[BRISK_MODE_EXTREME]=18};
+    const u8 minimum[] = {[BRISK_MODE_NORMAL]=10,[BRISK_MODE_EASY]=5,[BRISK_MODE_HARD]=13,[BRISK_MODE_EXTREME]=14};
+    const u8 maximum[] = {[BRISK_MODE_NORMAL]=15,[BRISK_MODE_EASY]=8,[BRISK_MODE_HARD]=18,[BRISK_MODE_EXTREME]=19};
     u16 old = VarGet(VAR_BRISK_DIFFICULTY);
     for (u32 mode = 0; mode <= BRISK_MODE_EXTREME; mode++)
     {

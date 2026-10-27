@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_options.h"
+#include "brisk_battle_retry.h"
 #include "brisk_battle_format.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
@@ -473,10 +474,17 @@ const u8 *const gStatusConditionStringsTable[][2] =
     {gStatusConditionString_LoveJpn, gText_Love}
 };
 
+static EWRAM_DATA bool8 sRetryOffered = FALSE;
+static void HandleBattleRetryInput(void);
+static void CB2_BattleRetry(void);
+static const u8 sText_BattleRetry[] = _("Retry with a healed party?\nA: Retry    B: Continue");
+
 void CB2_InitBattle(void)
 {
     if (!gTestRunnerEnabled)
         MoveSaveBlocks_ResetHeap();
+    BriskCaptureBattleRetry();
+    sRetryOffered = FALSE;
     AllocateBattleResources();
     AllocateBattleSpritesData();
     AllocateMonSpritesGfx();
@@ -583,6 +591,7 @@ static void CB2_InitBattleInternal(void)
     SetVBlankCallback(VBlankCB_Battle);
     SetUpBattleVarsAndBirchZigzagoon();
     BriskPrepareBattleParties();
+    BriskCaptureRetryOpponents();
 
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI
      && (TESTING || gBattleTypeFlags & (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_INGAME_PARTNER)))
@@ -5221,8 +5230,48 @@ static void HandleEndTurn_BattleWon(void)
     gBattleMainFunc = HandleEndTurn_FinishBattle;
 }
 
+static void HandleBattleRetryInput(void)
+{
+    if (IsTextPrinterActiveOnWindow(B_WIN_MSG))
+        return;
+    if (JOY_NEW(B_BUTTON))
+    {
+        gBattleMainFunc = HandleEndTurn_BattleLost;
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gMain.callback1 = NULL;
+        SetMainCallback2(CB2_BattleRetry);
+    }
+}
+
+static void CB2_BattleRetry(void)
+{
+    UpdatePaletteFade();
+    if (gPaletteFade.active)
+        return;
+    SetVBlankCallback(NULL);
+    SetHBlankCallback(NULL);
+    // Do not run loss scripts, post-battle evolutions, rewards or whiteout.
+    // Outcome zero also prevents cleanup from recharging a spent Tera Orb.
+    gBattleOutcome = 0;
+    FreeRestoreBattleData();
+    FreeAllWindowBuffers();
+    BriskRestoreBattleRetry();
+    SetMainCallback2(CB2_InitBattle);
+}
+
 static void HandleEndTurn_BattleLost(void)
 {
+    if (!sRetryOffered && !gTestRunnerEnabled && BriskBattleRetryAvailable() && gBattleResults.caughtMonSpecies == SPECIES_NONE)
+    {
+        sRetryOffered = TRUE;
+        BattlePutTextOnWindow(sText_BattleRetry, B_WIN_MSG);
+        gBattleMainFunc = HandleBattleRetryInput;
+        return;
+    }
     gCurrentActionFuncId = 0;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))

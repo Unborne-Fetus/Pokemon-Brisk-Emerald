@@ -154,11 +154,9 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon)
 
     u32 ivs = mode == BRISK_MODE_EASY ? 0 : 0x3FFFFFFF; // Six 5-bit IVs.
     SetMonData(mon, MON_DATA_IVS, &ivs);
-    if (mode == BRISK_MODE_HARD)
-        return;
 
     u8 evs[NUM_STATS] = {0};
-    if (mode == BRISK_MODE_EXTREME)
+    if (mode == BRISK_MODE_EXTREME || mode == BRISK_MODE_HARD)
     {
         enum Species species = GetMonData(mon, MON_DATA_SPECIES);
         u16 scores[NUM_STATS];
@@ -187,7 +185,16 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon)
         if (slow) scores[STAT_SPEED] = 0;
         if (GetSpeciesBaseHP(species) == 1) scores[STAT_HP] = 0;
         // Stable tie order; no random rolls and no EVs above 252 or 510 total.
-        static const u8 amounts[] = {252, 252, 6};
+        u32 level = GetMonData(mon, MON_DATA_LEVEL);
+        u32 budget = mode == BRISK_MODE_EXTREME ? 510 : level < 20 ? 128 : level < 35 ? 256 : level < 50 ? 384 : 510;
+        if (mode == BRISK_MODE_HARD)
+        {
+            u32 authoredTotal = 0;
+            for (u32 stat = 0; stat < NUM_STATS; stat++)
+                authoredTotal += GetMonData(mon, MON_DATA_HP_EV + stat);
+            budget = min(510, max(budget, authoredTotal));
+        }
+        const u8 amounts[] = {min(252, budget / 2), min(252, budget / 2), budget > 504 ? 6 : 0};
         for (u32 i = 0; i < ARRAY_COUNT(amounts); i++)
         {
             u32 best = 0;

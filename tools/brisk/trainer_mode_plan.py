@@ -22,8 +22,8 @@ def party_levels(team):
 
 def scaled(level, mode):
     if mode == 'Easy': return max(1, (level + 1) // 2)
-    if mode == 'Hard': return min(100, level + max(1, level // 10))
-    if mode == 'Extreme': return min(100, level + max(2, level // 5))
+    if mode == 'Hard': return min(100, level + max(3, level // 5))
+    if mode == 'Extreme': return min(100, level + max(4, level * 3 // 10))
     return level
 
 
@@ -57,11 +57,11 @@ def render():
         '## Mode rules', '',
         '| Rule | Easy | Normal | Hard | Extreme |',
         '| --- | --- | --- | --- | --- |',
-        '| Trainer levels | Half, rounded up | Authored curve | +10%, at least +1 | +20%, at least +2 |',
+        '| Trainer levels | Half, rounded up | Authored curve | +20%, at least +3 | +30%, at least +4 |',
         '| IVs | 0 | 8 / 12 / 18 / 24 by stage | 31 | 31 |',
-        '| EVs | 0 | 0 / 128 / 256 / 384 by stage | Authored spread | 510, chosen for the set |',
-        '| Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Authored moves, stronger abilities | Optimized legal moves within stage power limits |',
-        '| AI | Basic bad-move checks | Basic move scoring | Smarter party choices | Omniscient, smarter party choices |',
+        '| EVs | 0 | 0 / 128 / 256 / 384 by stage | 128 / 256 / 384 / 510 (at least authored total) | 510, chosen for the set |',
+        '| Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Optimized ordinary moves and stronger abilities | Optimized legal moves within stage power limits |',
+        '| AI | Basic bad-move checks | Basic move scoring | Smart switching, HP and KO checks | Omniscient with smart switching |',
         '| Battle style | Shift | Player preference | Set | Set |',
         '| Player battle consumables | Allowed | Allowed | Blocked | Blocked |',
         '| Shared EXP | 200% | 100% | 50% | Disabled |', '',

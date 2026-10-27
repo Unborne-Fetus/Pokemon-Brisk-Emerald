@@ -42,8 +42,8 @@ u64 GetBriskTrainerAiFlags(u64 flags)
     case BRISK_MODE_EASY: return AI_FLAG_CHECK_BAD_MOVE;
     // Some legacy parties only specify viability (or no flags). Knowledge and
     // switch selection alone do not enable the basic move-scoring scripts.
-    case BRISK_MODE_HARD: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES;
-    case BRISK_MODE_EXTREME: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT;
+    case BRISK_MODE_HARD: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_SMART_TERA | AI_FLAG_PP_STALL_PREVENTION;
+    case BRISK_MODE_EXTREME: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
     default: return flags;
     }
 }
@@ -139,7 +139,14 @@ u32 ScaleBriskLevel(u32 level, u32 salt)
 
 u32 ScaleBriskTrainerLevel(u32 level, u32 salt)
 {
-    level = ScaleBriskLevel(level, salt);
+    // Trainer-only increases; wild encounter difficulty remains unchanged.
+    switch (GetBriskDifficulty())
+    {
+    case BRISK_MODE_HARD: level += max(3, level / 5); break;
+    case BRISK_MODE_EXTREME: level += max(4, level * 3 / 10); break;
+    default: level = ScaleBriskLevel(level, salt); break;
+    }
+    level = min(level, MAX_LEVEL);
     // Do not put a level-80 boss in front of a team hard-capped at level 15.
     // Owned levels and Frontier/Adventure rentals are not rewritten.
     if (GetBriskDifficulty() == BRISK_MODE_HARD || GetBriskDifficulty() == BRISK_MODE_EXTREME)
