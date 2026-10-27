@@ -297,6 +297,8 @@ static void DebugAction_TimeMenu_RedoDailyEvents(u8 taskId);
 
 static void DebugAction_CreateFollowerNPC(u8 taskId);
 static void DebugAction_DestroyFollowerNPC(u8 taskId);
+static void DebugAction_EnablePokemonFollower(u8 taskId);
+static void DebugAction_DisablePokemonFollower(u8 taskId);
 
 static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId);
 static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId);
@@ -580,8 +582,10 @@ static const struct DebugMenuOption sDebugMenu_Actions_BerryFunctions[] =
 
 static const struct DebugMenuOption sDebugMenu_Actions_FollowerNPCMenu[] =
 {
-    { COMPOUND_STRING("Create Follower"),  DebugAction_OpenSubMenuCreateFollowerNPC, sDebugMenu_Actions_FollowerNPCMenu_Create },
-    { COMPOUND_STRING("Destroy Follower"), DebugAction_DestroyFollowerNPC },
+    { COMPOUND_STRING("POKéMON follower ON"), DebugAction_EnablePokemonFollower },
+    { COMPOUND_STRING("POKéMON follower OFF"), DebugAction_DisablePokemonFollower },
+    { COMPOUND_STRING("Create human NPC"),  DebugAction_OpenSubMenuCreateFollowerNPC, sDebugMenu_Actions_FollowerNPCMenu_Create },
+    { COMPOUND_STRING("Remove human NPC"), DebugAction_DestroyFollowerNPC },
     { NULL }
 };
 
@@ -596,7 +600,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Cheat start"),               DebugAction_Util_CheatStart },
     { COMPOUND_STRING("Berry Functions…"),          DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),           DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
-    { COMPOUND_STRING("Follower NPC…"),             DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
+    { COMPOUND_STRING("Followers…"),                DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
     { COMPOUND_STRING("Test Species Randomizer"),   DebugAction_Selection_Init, &sSpeciesGeneratorSelection },
     { COMPOUND_STRING("Test Item Randomizer"),      DebugAction_Selection_Init, &sItemGeneratorSelection },
     { COMPOUND_STRING("Wally Tutorial"),            DebugAction_ExecuteScript, Debug_EventScript_WallyTutorial },
@@ -1731,6 +1735,20 @@ static void DebugAction_ToggleFlag(u8 taskId, void *flagToggleFunc)
     ((DebugFunc)flagToggleFunc)(taskId);
     generateListFunctions[sDebugMenuListData->menuType](NULL);
     RedrawListMenu(gTasks[taskId].tMenuTaskId);
+}
+
+static void DebugAction_EnablePokemonFollower(u8 taskId)
+{
+    VarSet(VAR_BRISK_FOLLOWERS_DISABLED, 0);
+    Debug_DestroyMenu_Full(taskId);
+    UpdateFollowingPokemon();
+}
+
+static void DebugAction_DisablePokemonFollower(u8 taskId)
+{
+    VarSet(VAR_BRISK_FOLLOWERS_DISABLED, 1);
+    Debug_DestroyMenu_Full(taskId);
+    UpdateFollowingPokemon();
 }
 
 static void DebugAction_OpenSubMenuCreateFollowerNPC(u8 taskId, const struct DebugMenuOption *items)

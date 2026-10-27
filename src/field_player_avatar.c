@@ -963,9 +963,28 @@ static enum Collision CheckForPlayerAvatarStaticCollision(enum Direction directi
     return CheckForObjectEventStaticCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
 }
 
+static bool32 PlayerCannotEnterWater(struct ObjectEvent *objectEvent, u8 behavior)
+{
+    // Do not let custom land/transition elevations turn water into walkable land.
+    return objectEvent == &gObjectEvents[gPlayerAvatar.objectEventId]
+        && !(gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
+        && MetatileBehavior_IsSurfableWaterOrUnderwater(behavior)
+        && !MetatileBehavior_IsBridgeOverWater(behavior);
+}
+
+#if TESTING
+bool32 Test_PlayerCannotEnterWater(struct ObjectEvent *objectEvent, u8 behavior)
+{
+    return PlayerCannotEnterWater(objectEvent, behavior);
+}
+#endif
+
 enum Collision CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction, u8 metatileBehavior)
 {
-    enum Collision collision = GetCollisionAtCoords(objectEvent, x, y, direction);
+    enum Collision collision;
+    if (PlayerCannotEnterWater(objectEvent, metatileBehavior))
+        return COLLISION_IMPASSABLE;
+    collision = GetCollisionAtCoords(objectEvent, x, y, direction);
 
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
@@ -990,7 +1009,10 @@ enum Collision CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16
 
 static enum Collision CheckForObjectEventStaticCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction, u8 metatileBehavior)
 {
-    enum Collision collision = GetCollisionAtCoords(objectEvent, x, y, direction);
+    enum Collision collision;
+    if (PlayerCannotEnterWater(objectEvent, metatileBehavior))
+        return COLLISION_IMPASSABLE;
+    collision = GetCollisionAtCoords(objectEvent, x, y, direction);
 
     if (collision == COLLISION_NONE)
     {
@@ -1005,6 +1027,7 @@ static bool8 CanStopSurfing(s16 x, s16 y, enum Direction direction)
 {
     if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
      && MapGridGetElevationAt(x, y) == ELEVATION_DEFAULT
+     && !MetatileBehavior_IsSurfableWaterOrUnderwater(MapGridGetMetatileBehaviorAt(x, y))
      && (GetObjectEventIdByPosition(x, y, ELEVATION_DEFAULT) == OBJECT_EVENTS_COUNT
      || GetObjectEventIdByPosition(x, y, ELEVATION_DEFAULT) == GetFollowerNPCObjectId()
      ))
@@ -1017,6 +1040,13 @@ static bool8 CanStopSurfing(s16 x, s16 y, enum Direction direction)
         return FALSE;
     }
 }
+
+#if TESTING
+bool8 Test_CanStopSurfing(s16 x, s16 y, enum Direction direction)
+{
+    return CanStopSurfing(x, y, direction);
+}
+#endif
 
 static bool8 ShouldJumpLedge(s16 x, s16 y, enum Direction direction)
 {

@@ -342,7 +342,7 @@ Debug_Follower_NPC_Not_Enabled::
 	end
 
 Debug_Enable_To_Use_Follower_NPCs:
-	.string "Feature unavailable.\nSet FNPC_ENABLE_NPC_FOLLOWERS to\lTRUE in 'include/config/follower_npc.h'.$"
+	.string "Human companions are unavailable.\nFor a POKéMON follower, use\lOPTIONS page 5: FOLLOWERS ON.\pYou can also select POKéMON\nfollower ON in the debug menu.$"
 
 Debug_Follower_NPC_Event_Script::
 	lock
