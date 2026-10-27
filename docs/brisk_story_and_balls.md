@@ -34,7 +34,9 @@ levels; default low-IV, unevolved midgame teams are no longer carried forward.
 | Victory Road Wally | 92–96 | Rematches rise to 99/100 |
 
 Gym ace targets remain 25/35/45/50/55/65/75/90; their sets and training have been
-strengthened. Every League/Wallace member is level 100 on Normal, Hard and
+strengthened. The League now uses [curated strategic teams](brisk_league_teams.md),
+including intentional ability/item/nature/EV combinations that mode automation
+preserves. Every League/Wallace member is level 100 on Normal, Hard and
 Extreme, and level 70 on Easy. These five teams bypass ordinary/story level
 scaling and badge-cap clamps. Rival starter suffixes identify
 the player's starter: TORCHIC variants give the rival Swampert, TREECKO gives

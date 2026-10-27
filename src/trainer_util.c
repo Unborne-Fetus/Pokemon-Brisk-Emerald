@@ -360,13 +360,24 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
 
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
-        if (trainer->fairLoadout)
-            ApplyBriskFairTrainerLoadout(mon);
-        else if (trainer->storyLoadout)
-            ApplyBriskStoryTrainerLoadout(mon);
+        if (trainer->leagueLevels)
+        {
+            // Keep each League member's authored role, coverage, support,
+            // ability and EV spread. Generic optimization would remove screens,
+            // Protect, speed control or investments needed for those roles.
+            if (GetBriskDifficulty() == BRISK_MODE_EASY)
+                ApplyBriskTrainerTraining(mon);
+        }
         else
-            ApplyBriskTrainerLoadout(mon);
-        ApplyBriskTrainerTraining(mon);
+        {
+            if (trainer->fairLoadout)
+                ApplyBriskFairTrainerLoadout(mon);
+            else if (trainer->storyLoadout)
+                ApplyBriskStoryTrainerLoadout(mon);
+            else
+                ApplyBriskTrainerLoadout(mon);
+            ApplyBriskTrainerTraining(mon);
+        }
     }
 
     CalculateMonStats(mon);

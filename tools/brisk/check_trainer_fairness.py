@@ -8,8 +8,9 @@ Hard/Extreme's existing battle-time modifiers are separate from these sets.
 import hashlib
 import json
 import re
-from check_trainer_progression import ROOT, TEAM_RE
+from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 from trainer_mode_plan import ordinary_scaled
+from league_teams import audit as audit_league
 
 
 def power_cap(level):
@@ -104,12 +105,18 @@ def audit():
             cap = 2 if ace < 12 else 3 if ace < 25 else 4 if ace < 45 else 5 if ace < 65 else 6
             if len(party_levels) > cap:
                 errors.append(f'{trainer_id}: excessive party size for this stage')
+    errors.extend(audit_league(teams))
     story_mons = 0
     for tid in policy['story']:
         team = teams[tid]
         blocks = re.split(r'\n[ \t]*\n', team.strip())[1:]
         if not 1 <= len(blocks) <= 6:
             errors.append(f'{tid}: invalid story party size')
+        if tid in LEAGUE_IDS:
+            # Full cross-generation learnability is checked above. Native tests
+            # validate abilities and preserve the actual sets at 70 and 100.
+            story_mons += len(blocks)
+            continue
         for block in blocks:
             name = block.splitlines()[0].split(' @ ')[0]
             match = re.search(r'^Level: (\d+)$', block, re.M)

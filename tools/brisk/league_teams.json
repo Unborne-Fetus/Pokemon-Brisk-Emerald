@@ -1,0 +1,445 @@
+{
+  "TRAINER_SIDNEY": [
+    {
+      "species": "SPECIES_GRIMMSNARL",
+      "item": "Light Clay",
+      "ability": "Prankster",
+      "nature": "Careful",
+      "evs": "252 HP / 4 Def / 252 SpD",
+      "moves": [
+        "MOVE_SPIRIT_BREAK",
+        "MOVE_REFLECT",
+        "MOVE_LIGHT_SCREEN",
+        "MOVE_TAUNT"
+      ],
+      "role": "Lead screens; deny setup and Trick Room"
+    },
+    {
+      "species": "SPECIES_TYRANITAR",
+      "item": "Tyranitarite",
+      "ability": "Sand Stream",
+      "nature": "Adamant",
+      "evs": "252 HP / 252 Atk / 4 SpD",
+      "moves": [
+        "MOVE_ROCK_SLIDE",
+        "MOVE_CRUNCH",
+        "MOVE_BRICK_BREAK",
+        "MOVE_PROTECT"
+      ],
+      "role": "Bulky Mega lead; safe spread damage and Steel coverage"
+    },
+    {
+      "species": "SPECIES_SAMUROTT_HISUI",
+      "item": "Mystic Water",
+      "ability": "Sharpness",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_CEASELESS_EDGE",
+        "MOVE_RAZOR_SHELL",
+        "MOVE_SACRED_SWORD",
+        "MOVE_PROTECT"
+      ],
+      "role": "Hazards and Water coverage against Fire Ground and Rock"
+    },
+    {
+      "species": "SPECIES_OBSTAGOON",
+      "item": "Flame Orb",
+      "ability": "Guts",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_FACADE",
+        "MOVE_KNOCK_OFF",
+        "MOVE_CLOSE_COMBAT",
+        "MOVE_OBSTRUCT"
+      ],
+      "role": "Status absorber and physical wallbreaker"
+    },
+    {
+      "species": "SPECIES_URSHIFU_SINGLE_STRIKE",
+      "item": "Roseli Berry",
+      "ability": "Unseen Fist",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_WICKED_BLOW",
+        "MOVE_CLOSE_COMBAT",
+        "MOVE_POISON_JAB",
+        "MOVE_PROTECT"
+      ],
+      "role": "G-Max breaker; Fairy insurance and coverage",
+      "gigantamax": true
+    },
+    {
+      "species": "SPECIES_KINGAMBIT",
+      "item": "Black Glasses",
+      "ability": "Supreme Overlord",
+      "nature": "Adamant",
+      "evs": "252 HP / 252 Atk / 4 SpD",
+      "moves": [
+        "MOVE_KOWTOW_CLEAVE",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_IRON_HEAD",
+        "MOVE_PROTECT"
+      ],
+      "role": "Late-game ace; priority and Fairy punishment"
+    }
+  ],
+  "TRAINER_PHOEBE": [
+    {
+      "species": "SPECIES_FLUTTER_MANE",
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_DAZZLING_GLEAM",
+        "MOVE_SHADOW_BALL",
+        "MOVE_ICY_WIND",
+        "MOVE_PROTECT"
+      ],
+      "role": "Fast Fairy coverage and team speed control"
+    },
+    {
+      "species": "SPECIES_ANNIHILAPE",
+      "item": "Safety Goggles",
+      "ability": "Defiant",
+      "nature": "Careful",
+      "evs": "252 HP / 4 Def / 252 SpD",
+      "moves": [
+        "MOVE_RAGE_FIST",
+        "MOVE_DRAIN_PUNCH",
+        "MOVE_BULK_UP",
+        "MOVE_PROTECT"
+      ],
+      "role": "Punish Intimidate; ignore powder and break Dark Normal and Steel"
+    },
+    {
+      "species": "SPECIES_GHOLDENGO",
+      "item": "Air Balloon",
+      "ability": "Good as Gold",
+      "nature": "Modest",
+      "evs": "252 HP / 252 SpA / 4 SpD",
+      "moves": [
+        "MOVE_MAKE_IT_RAIN",
+        "MOVE_SHADOW_BALL",
+        "MOVE_NASTY_PLOT",
+        "MOVE_PROTECT"
+      ],
+      "role": "Status immunity and temporary Ground immunity"
+    },
+    {
+      "species": "SPECIES_SKELEDIRGE",
+      "item": "Leftovers",
+      "ability": "Unaware",
+      "nature": "Bold",
+      "evs": "252 HP / 252 Def / 4 SpD",
+      "moves": [
+        "MOVE_TORCH_SONG",
+        "MOVE_SHADOW_BALL",
+        "MOVE_SLACK_OFF",
+        "MOVE_WILL_O_WISP"
+      ],
+      "role": "Check physical setup; Tera Fairy resists Dark",
+      "tera": "Fairy"
+    },
+    {
+      "species": "SPECIES_GENGAR",
+      "item": "Gengarite",
+      "ability": "Cursed Body",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_SHADOW_BALL",
+        "MOVE_SLUDGE_BOMB",
+        "MOVE_FOCUS_BLAST",
+        "MOVE_PROTECT"
+      ],
+      "role": "Fast Mega; Fairy Dark and Normal coverage",
+      "shiny": true
+    },
+    {
+      "species": "SPECIES_DRAGAPULT",
+      "item": "Clear Amulet",
+      "ability": "Infiltrator",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_DRAGON_DARTS",
+        "MOVE_PHANTOM_FORCE",
+        "MOVE_DRAGON_DANCE",
+        "MOVE_PROTECT"
+      ],
+      "role": "Physical finisher bypassing screens and Substitute"
+    }
+  ],
+  "TRAINER_GLACIA": [
+    {
+      "species": "SPECIES_NINETALES_ALOLA",
+      "item": "Light Clay",
+      "ability": "Snow Warning",
+      "nature": "Timid",
+      "evs": "252 HP / 4 SpA / 252 Spe",
+      "moves": [
+        "MOVE_MOONBLAST",
+        "MOVE_AURORA_VEIL",
+        "MOVE_ENCORE",
+        "MOVE_PROTECT"
+      ],
+      "role": "Snow and Veil lead; disrupt setup with Encore"
+    },
+    {
+      "species": "SPECIES_BAXCALIBUR",
+      "item": "Baxcalibrite",
+      "ability": "Thermal Exchange",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_ICICLE_CRASH",
+        "MOVE_GLAIVE_RUSH",
+        "MOVE_HIGH_HORSEPOWER",
+        "MOVE_PROTECT"
+      ],
+      "role": "Mega breaker immune to burns; Ground coverage for Steel and Fire"
+    },
+    {
+      "species": "SPECIES_IRON_BUNDLE",
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_FREEZE_DRY",
+        "MOVE_HYDRO_PUMP",
+        "MOVE_ICY_WIND",
+        "MOVE_PROTECT"
+      ],
+      "role": "Speed control; Water Fire Rock and Steel coverage"
+    },
+    {
+      "species": "SPECIES_LAPRAS",
+      "item": "Weakness Policy",
+      "ability": "Water Absorb",
+      "nature": "Modest",
+      "evs": "252 HP / 4 Def / 252 SpA",
+      "moves": [
+        "MOVE_FREEZE_DRY",
+        "MOVE_HYDRO_PUMP",
+        "MOVE_THUNDERBOLT",
+        "MOVE_PROTECT"
+      ],
+      "role": "Bulky G-Max; Water immunity and backup Veil",
+      "gigantamax": true
+    },
+    {
+      "species": "SPECIES_MAMOSWINE",
+      "item": "Life Orb",
+      "ability": "Thick Fat",
+      "nature": "Adamant",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_HIGH_HORSEPOWER",
+        "MOVE_ICICLE_CRASH",
+        "MOVE_ICE_SHARD",
+        "MOVE_PROTECT"
+      ],
+      "role": "Safe Ground attacks; Fire mitigation and priority"
+    },
+    {
+      "species": "SPECIES_DRACOVISH",
+      "item": "Choice Scarf",
+      "ability": "Strong Jaw",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_FISHIOUS_REND",
+        "MOVE_PSYCHIC_FANGS",
+        "MOVE_CRUNCH",
+        "MOVE_OUTRAGE"
+      ],
+      "role": "Fast Water breaker; screen removal and Fighting coverage",
+      "tera": "Water"
+    }
+  ],
+  "TRAINER_DRAKE": [
+    {
+      "species": "SPECIES_DRAGONITE",
+      "item": "Heavy-Duty Boots",
+      "ability": "Multiscale",
+      "nature": "Adamant",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_DRAGON_DANCE",
+        "MOVE_EXTREME_SPEED",
+        "MOVE_DRAGON_CLAW",
+        "MOVE_EARTHQUAKE"
+      ],
+      "role": "Protected setup; priority and defensive Tera Normal",
+      "tera": "Normal"
+    },
+    {
+      "species": "SPECIES_GARCHOMP",
+      "item": "Rocky Helmet",
+      "ability": "Rough Skin",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_EARTHQUAKE",
+        "MOVE_DRAGON_CLAW",
+        "MOVE_POISON_JAB",
+        "MOVE_SWORDS_DANCE"
+      ],
+      "role": "Physical threat; Fairy coverage and contact punishment"
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "item": "Scope Lens",
+      "ability": "Sniper",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_HYDRO_PUMP",
+        "MOVE_DRACO_METEOR",
+        "MOVE_ICE_BEAM",
+        "MOVE_FOCUS_ENERGY"
+      ],
+      "role": "Critical-hit special breaker through defensive boosts"
+    },
+    {
+      "species": "SPECIES_DURALUDON",
+      "item": "Assault Vest",
+      "ability": "Stalwart",
+      "nature": "Modest",
+      "evs": "252 HP / 252 SpA / 4 SpD",
+      "moves": [
+        "MOVE_FLASH_CANNON",
+        "MOVE_DRACO_METEOR",
+        "MOVE_THUNDERBOLT",
+        "MOVE_BODY_PRESS"
+      ],
+      "role": "Bulky Steel answer to Fairy and Ice; mixed coverage",
+      "gigantamax": true
+    },
+    {
+      "species": "SPECIES_KOMMO_O",
+      "item": "Throat Spray",
+      "ability": "Soundproof",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_CLANGING_SCALES",
+        "MOVE_AURA_SPHERE",
+        "MOVE_FLASH_CANNON",
+        "MOVE_CLANGOROUS_SOUL"
+      ],
+      "role": "Special setup; sound immunity and Steel coverage for Fairies"
+    },
+    {
+      "species": "SPECIES_SALAMENCE",
+      "item": "Heavy-Duty Boots",
+      "ability": "Intimidate",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_DRAGON_CLAW",
+        "MOVE_DUAL_WINGBEAT",
+        "MOVE_TAILWIND",
+        "MOVE_ROOST"
+      ],
+      "role": "Intimidate pivot; team speed control and recovery"
+    }
+  ],
+  "TRAINER_WALLACE": [
+    {
+      "species": "SPECIES_GARCHOMP",
+      "item": "Life Orb",
+      "ability": "Rough Skin",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_STEALTH_ROCK",
+        "MOVE_EARTHQUAKE",
+        "MOVE_DRAGON_CLAW",
+        "MOVE_FIRE_FANG"
+      ],
+      "role": "Hazard lead; punish contact and Steel switches"
+    },
+    {
+      "species": "SPECIES_GRENINJA",
+      "item": "Choice Scarf",
+      "ability": "Protean",
+      "nature": "Timid",
+      "evs": "4 Def / 252 SpA / 252 Spe",
+      "moves": [
+        "MOVE_HYDRO_PUMP",
+        "MOVE_DARK_PULSE",
+        "MOVE_ICE_BEAM",
+        "MOVE_GRASS_KNOT"
+      ],
+      "role": "Revenge killer with broad coverage including Water Ground walls",
+      "shiny": true
+    },
+    {
+      "species": "SPECIES_CORVIKNIGHT",
+      "item": "Leftovers",
+      "ability": "Mirror Armor",
+      "nature": "Impish",
+      "evs": "252 HP / 168 Def / 88 SpD",
+      "moves": [
+        "MOVE_BRAVE_BIRD",
+        "MOVE_BODY_PRESS",
+        "MOVE_ROOST",
+        "MOVE_DEFOG"
+      ],
+      "role": "Physical pivot; reflect stat drops and remove hazards",
+      "gigantamax": true,
+      "shiny": true
+    },
+    {
+      "species": "SPECIES_SKELEDIRGE",
+      "item": "Heavy-Duty Boots",
+      "ability": "Unaware",
+      "nature": "Bold",
+      "evs": "252 HP / 252 Def / 4 SpD",
+      "moves": [
+        "MOVE_TORCH_SONG",
+        "MOVE_HEX",
+        "MOVE_WILL_O_WISP",
+        "MOVE_SLACK_OFF"
+      ],
+      "role": "Unaware anti-setup wall; burn Hex synergy and Dark-resistant Tera",
+      "tera": "Fairy"
+    },
+    {
+      "species": "SPECIES_SYLVEON",
+      "item": "Throat Spray",
+      "ability": "Pixilate",
+      "nature": "Modest",
+      "evs": "252 HP / 4 Def / 252 SpA",
+      "moves": [
+        "MOVE_HYPER_VOICE",
+        "MOVE_MYSTICAL_FIRE",
+        "MOVE_WISH",
+        "MOVE_PROTECT"
+      ],
+      "role": "Special breaker; Wish support and Steel coverage",
+      "shiny": true
+    },
+    {
+      "species": "SPECIES_METAGROSS",
+      "item": "Metagrossite",
+      "ability": "Clear Body",
+      "nature": "Jolly",
+      "evs": "252 Atk / 4 SpD / 252 Spe",
+      "moves": [
+        "MOVE_METEOR_MASH",
+        "MOVE_ZEN_HEADBUTT",
+        "MOVE_ICE_PUNCH",
+        "MOVE_BULLET_PUNCH"
+      ],
+      "role": "Fast Mega finisher; priority and Dragon Ground coverage",
+      "shiny": true
+    }
+  ]
+}
