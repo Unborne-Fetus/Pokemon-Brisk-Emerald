@@ -25,6 +25,7 @@
 #include "constants/rgb.h"
 #include "string_util.h"
 #include "player_name.h"
+#include "m4a.h"
 #include "debug.h"
 #include "overworld.h"
 #include "field_screen_effect.h"
@@ -204,6 +205,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("AUDIO MUTES"), COMPOUND_STRING("Options 7 has three mutes:\nSOUND: clicks and effects.\nMUSIC: BGM and fanfares.\nCRIES: POKéMON voices only.")},
     {COMPOUND_STRING("GIMMICK GEN"), COMPOUND_STRING("Options 7: GIMMICK GEN ON/OFF.\nON recharges your TERA ORB\nafter each battle. Per-battle\nlimits and required items stay.")},
     {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
@@ -819,7 +821,13 @@ static void DrawDebugOptions(void)
     DrawToggle(!BriskOverworldEncountersEnabled(), 16);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("GIMMICK GEN"), 8, 33, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskGimmickGenEnabled(), 32);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 49, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE SOUND"), 8, 49, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskSoundMuted(), 48);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE MUSIC"), 8, 65, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskMusicMuted(), 64);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE CRIES"), 8, 81, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskCriesMuted(), 80);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 97, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -833,11 +841,11 @@ static void Task_DebugOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 3))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 6))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : 3)) % 4;
+        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : 6)) % 7;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (gTasks[taskId].tMenuSelection == 1 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
@@ -849,6 +857,14 @@ static void Task_DebugOptions(u8 taskId)
     {
         FlagToggle(FLAG_BRISK_GIMMICK_GEN);
         BriskRechargeGimmicks(); // Also make an already-spent Orb usable on enabling.
+        DrawDebugOptions();
+    }
+    else if (gTasks[taskId].tMenuSelection >= 3 && gTasks[taskId].tMenuSelection <= 5
+          && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
+    {
+        static const u16 flags[] = {FLAG_BRISK_MUTE_SOUND, FLAG_BRISK_MUTE_MUSIC, FLAG_BRISK_MUTE_CRIES};
+        FlagToggle(flags[gTasks[taskId].tMenuSelection - 3]);
+        RefreshBriskAudioMute();
         DrawDebugOptions();
     }
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 0)

@@ -1,5 +1,7 @@
 #include "global.h"
 #include "gba/m4a_internal.h"
+#include "brisk_options.h"
+#include "constants/songs.h"
 #include "global.h"
 
 extern const u8 gCgb3Vol[];
@@ -18,6 +20,59 @@ COMMON_DATA struct MusicPlayerTrack gPokemonCryTracks[MAX_POKEMON_CRIES * 2] = {
 COMMON_DATA struct PokemonCrySong gPokemonCrySong = {0};
 COMMON_DATA u8 gMPlayMemAccArea[0x10] = {0};
 COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE3 = {0};
+
+enum { BRISK_AUDIO_SOUND = 1, BRISK_AUDIO_MUSIC = 2, BRISK_AUDIO_CRIES = 4 };
+static EWRAM_DATA u8 sBriskMuteMask = 0;
+static EWRAM_DATA bool8 sBriskPlayerIsMusic[4] = {0};
+
+static bool32 BriskPlayerMuted(struct MusicPlayerInfo *player)
+{
+    if (player == &gMPlayInfo_BGM)
+        return (sBriskMuteMask & BRISK_AUDIO_MUSIC) != 0;
+    for (u32 i = 1; i < 4; i++)
+        if (player == gMPlayTable[i].info)
+            return (sBriskMuteMask & (sBriskPlayerIsMusic[i] ? BRISK_AUDIO_MUSIC : BRISK_AUDIO_SOUND)) != 0;
+    for (u32 i = 0; i < MAX_POKEMON_CRIES; i++)
+        if (player == &gPokemonCryMusicPlayers[i])
+            return (sBriskMuteMask & BRISK_AUDIO_CRIES) != 0;
+    return FALSE;
+}
+
+static void BriskClassifyPlayer(struct MusicPlayerInfo *player, const struct SongHeader *header)
+{
+    for (u32 i = 1; i < 4; i++)
+    {
+        if (player != gMPlayTable[i].info)
+            continue;
+        sBriskPlayerIsMusic[i] = FALSE;
+        // Fanfares use the same player as menu effects. Classify the accepted
+        // song once at start, including callers that bypass PlayBGM/PlaySE.
+        for (u32 song = MUS_LITTLEROOT_TEST; song <= LAST_PHONEME_SONG; song++)
+            if (gSongTable[song].header == header)
+            {
+                sBriskPlayerIsMusic[i] = TRUE;
+                break;
+            }
+        break;
+    }
+}
+
+void RefreshBriskAudioMute(void)
+{
+    u8 mask = (BriskSoundMuted() ? BRISK_AUDIO_SOUND : 0)
+            | (BriskMusicMuted() ? BRISK_AUDIO_MUSIC : 0)
+            | (BriskCriesMuted() ? BRISK_AUDIO_CRIES : 0);
+    if (mask == sBriskMuteMask)
+        return;
+    sBriskMuteMask = mask;
+    for (u32 i = 0; i < 4 + MAX_POKEMON_CRIES; i++)
+    {
+        struct MusicPlayerInfo *player = i < 4 ? gMPlayTable[i].info : &gPokemonCryMusicPlayers[i - 4];
+        for (u32 j = 0; j < player->trackCount; j++)
+            if (player->tracks[j].flags & MPT_FLG_EXIST)
+                player->tracks[j].flags |= MPT_FLG_VOLCHG;
+    }
+}
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
 {
@@ -98,6 +153,7 @@ void m4aSoundInit(void)
 
 void m4aSoundMain(void)
 {
+    RefreshBriskAudioMute();
     SoundMain();
 }
 
@@ -574,6 +630,7 @@ void MPlayStart(struct MusicPlayerInfo *mplayInfo, struct SongHeader *songHeader
     {
         mplayInfo->ident++;
         mplayInfo->status = 0;
+        BriskClassifyPlayer(mplayInfo, songHeader);
         mplayInfo->songHeader = songHeader;
         mplayInfo->tone = songHeader->tone;
         mplayInfo->priority = songHeader->priority;
@@ -720,6 +777,10 @@ void TrkVolPitSet(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *tr
 
         if (track->modT == 1)
             x = (u32)(x * (track->modM + 128)) >> 7;
+
+        // Silence output without stopping tracks, timers, fades or fanfare waits.
+        if (BriskPlayerMuted(mplayInfo))
+            x = 0;
 
         y = 2 * track->pan + track->panX;
 

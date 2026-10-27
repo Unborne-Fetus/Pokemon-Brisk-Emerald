@@ -11,6 +11,21 @@
 
 static bool32 sWildShinyContext = FALSE;
 
+bool32 BriskSoundMuted(void)
+{
+    return gSaveBlock1Ptr != NULL && FlagGet(FLAG_BRISK_MUTE_SOUND);
+}
+
+bool32 BriskMusicMuted(void)
+{
+    return gSaveBlock1Ptr != NULL && FlagGet(FLAG_BRISK_MUTE_MUSIC);
+}
+
+bool32 BriskCriesMuted(void)
+{
+    return gSaveBlock1Ptr != NULL && FlagGet(FLAG_BRISK_MUTE_CRIES);
+}
+
 bool32 BriskGimmickGenEnabled(void)
 {
     return FlagGet(FLAG_BRISK_GIMMICK_GEN);

@@ -7,6 +7,9 @@
 
 // Persistent Brisk option; 0x025 is unused in both supported flag layouts.
 #define FLAG_BRISK_GIMMICK_GEN 0x025
+#define FLAG_BRISK_MUTE_SOUND 0x026
+#define FLAG_BRISK_MUTE_MUSIC 0x027
+#define FLAG_BRISK_MUTE_CRIES 0x4A9
 
 
 // Temporary Flags
