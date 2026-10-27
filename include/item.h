@@ -271,6 +271,7 @@ u8 GetItemImportance(enum Item itemId);
 u8 GetItemConsumability(enum Item itemId);
 enum Pocket GetItemPocket(enum Item itemId);
 enum ItemType GetItemType(enum Item itemId);
+enum ItemType GetItemBattleMenuType(enum Item itemId);
 ItemUseFunc GetItemFieldFunc(enum Item itemId);
 enum EffectItem GetItemBattleUsage(enum Item itemId);
 u32 GetItemSecondaryId(enum Item itemId);

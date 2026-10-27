@@ -190,6 +190,23 @@ u32 ScaleBriskOrdinaryTrainerLevel(u32 level, u32 highestLevel)
     return max(1, min(level, MAX_LEVEL));
 }
 
+u32 ScaleBriskStoryTrainerLevel(u32 level, u32 highestLevel)
+{
+    u32 originalLevel = level;
+    highestLevel = max(level, highestLevel);
+    switch (GetBriskDifficulty())
+    {
+    case BRISK_MODE_EASY: return max(1, (level + 1) / 2);
+    case BRISK_MODE_HARD: level += max(3, level / 4); break;
+    case BRISK_MODE_EXTREME: level += max(5, level * 45 / 100); break;
+    default: return max(1, min(level, MAX_LEVEL));
+    }
+    u32 cap = GetProgressionLevelCap();
+    u32 gap = highestLevel - originalLevel;
+    u32 ceiling = cap > gap ? cap - gap : 1;
+    return max(1, min(level, ceiling));
+}
+
 bool32 BriskRandomizerEnabled(u32 category)
 {
     return (VarGet(VAR_BRISK_RANDOMIZER) & (category | BRISK_RAND_ALL)) != 0;

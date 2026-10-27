@@ -24,13 +24,16 @@ def audit():
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     errors = []
-    if set(teams) != set(policy['reworked']) | policy['protected'].keys():
-        errors.append('Every trainer entry must be explicitly classified as ordinary or protected')
+    if set(teams) != set(policy['reworked']) | set(policy['story']) | policy['protected'].keys() | policy['metadata_only'].keys():
+        errors.append('Every trainer entry must be explicitly classified as ordinary, story, dedication/Easter egg, or metadata-only')
     runtime_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE',
         (ROOT / 'src/data/brisk_ordinary_trainers.h').read_text()))
     if runtime_ids != set(policy['reworked']) or runtime_ids & policy['protected'].keys():
         errors.append('Runtime ordinary-trainer classification disagrees with protected-team policy')
-    for trainer_id, fingerprint in policy['protected'].items():
+    story_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE', (ROOT / 'src/data/brisk_story_trainers.h').read_text()))
+    if story_ids != set(policy['story']) or story_ids & (set(policy['reworked']) | policy['protected'].keys()):
+        errors.append('Runtime story-trainer classification disagrees with policy')
+    for trainer_id, fingerprint in (policy['protected'] | policy['metadata_only']).items():
         actual = hashlib.sha256(teams.get(trainer_id, '').encode()).hexdigest()
         if actual != fingerprint:
             errors.append(f'{trainer_id}: protected trainer changed; review explicitly')
@@ -101,6 +104,47 @@ def audit():
             cap = 2 if ace < 12 else 3 if ace < 25 else 4 if ace < 45 else 5 if ace < 65 else 6
             if len(party_levels) > cap:
                 errors.append(f'{trainer_id}: excessive party size for this stage')
+    story_mons = 0
+    for tid in policy['story']:
+        team = teams[tid]
+        blocks = re.split(r'\n[ \t]*\n', team.strip())[1:]
+        if not 1 <= len(blocks) <= 6:
+            errors.append(f'{tid}: invalid story party size')
+        for block in blocks:
+            name = block.splitlines()[0].split(' @ ')[0]
+            match = re.search(r'^Level: (\d+)$', block, re.M)
+            if not match or name not in policy['story_species']:
+                errors.append(f'{tid}: missing story species or level'); continue
+            level = int(match[1]); story_mons += 1
+            legal = set(); todo = [name]; visited = set()
+            while todo:
+                n = todo.pop()
+                if n in visited: continue
+                visited.add(n)
+                legal.update(m for l,m in policy['story_species'][n]['learnset'] if l <= level)
+                todo.extend(policy['story_parents'].get(n, []))
+            moves = re.findall(r'^- (MOVE_\w+)$', block, re.M)
+            if not 1 <= len(moves) <= 4 or len(set(moves)) != len(moves) or any(m not in legal for m in moves):
+                errors.append(f'{tid}: illegal story moves on {name}')
+            if not any(policy['moves'][m]['power'] > 1 for m in moves):
+                errors.append(f'{tid}: no usable story attack on {name}')
+            cap = 50 if level < 12 else 75 if level < 25 else 90 if level < 35 else 100 if level < 50 else 120
+            if any(policy['moves'][m]['power'] > cap for m in moves):
+                errors.append(f'{tid}: excessive story move power on {name}')
+            ev = re.search(r'^EVs: (.*)$',block,re.M)
+            values = [int(n) for n in re.findall(r'\d+',ev[1])] if ev else []
+            if sum(values) > 510 or any(n > 252 for n in values):
+                errors.append(f'{tid}: illegal story EVs on {name}')
+    # Rival suffix refers to the player's starter; the rival takes its counter.
+    for name in ('MAY', 'BRENDAN'):
+        for suffix, starter in (('MUDKIP','SCEPTILE'),('TREECKO','BLAZIKEN'),('TORCHIC','SWAMPERT')):
+            for location, count in (('ROUTE_110',4),('ROUTE_119',5),('LILYCOVE',6)):
+                tid = f'TRAINER_{name}_{location}_{suffix}'
+                blocks = re.split(r'\n[ \t]*\n', teams[tid].strip())[1:]
+                if len(blocks) != count or not blocks[-1].startswith('SPECIES_'+starter):
+                    errors.append(f'{tid}: incomplete or unevolved rival team')
+    print(f'Story audit: {len(policy["story"])} teams, {story_mons} Pokemon; '
+          f'{len(policy["protected"])} dedication/Easter egg entries; {len(policy["metadata_only"])} metadata-only records.')
     for error in errors: print(error)
     print(f'Fairness audit: {len(policy["reworked"])} teams, {mons} Pokemon; '
           f'{len(policy["protected"])} protected entries; {len(errors)} errors.')

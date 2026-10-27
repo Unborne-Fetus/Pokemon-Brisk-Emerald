@@ -306,6 +306,13 @@ void ApplyBriskFairTrainerLoadout(struct Pokemon *mon)
     ApplyLoadout(mon, GetBriskDifficulty(), maximumPower);
 }
 
+void ApplyBriskStoryTrainerLoadout(struct Pokemon *mon)
+{
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
+    u32 maximumPower = level < 12 ? 50 : level < 25 ? 75 : level < 35 ? 90 : level < 50 ? 100 : 120;
+    ApplyLoadout(mon, GetBriskDifficulty(), maximumPower);
+}
+
 void ApplyBriskStrongLoadout(struct Pokemon *mon)
 {
     ApplyLoadout(mon, BRISK_MODE_EXTREME, 0);

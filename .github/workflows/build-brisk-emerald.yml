@@ -17,7 +17,7 @@ jobs:
       - name: Audit trainer progression
         run: python3 tools/brisk/check_trainer_progression.py
 
-      - name: Audit ordinary trainer fairness and protected teams
+      - name: Audit ordinary/story trainer fairness and dedication exemptions
         run: python3 tools/brisk/check_trainer_fairness.py
 
       - name: Check every trainer's difficulty plan

@@ -8,6 +8,7 @@ struct TrainerGenerator
     u8 isFrontier:1;
     u8 trainerClass;
     bool8 fairLoadout;
+    bool8 storyLoadout;
     u8 highestLevel;
     u8 name[TRAINER_NAME_LENGTH + 1];
     struct OriginalTrainerId otID;

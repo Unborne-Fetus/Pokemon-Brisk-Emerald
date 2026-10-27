@@ -5,6 +5,7 @@ struct Pokemon;
 
 void ApplyBriskTrainerLoadout(struct Pokemon *mon);
 void ApplyBriskFairTrainerLoadout(struct Pokemon *mon);
+void ApplyBriskStoryTrainerLoadout(struct Pokemon *mon);
 void ApplyBriskStrongLoadout(struct Pokemon *mon);
 void BriskSetBestAbility(struct Pokemon *mon);
 #if TESTING

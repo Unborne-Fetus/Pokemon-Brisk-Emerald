@@ -109,11 +109,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise @ Blastoisinite
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_BLASTOISE @ Blastoisinite
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
@@ -122,15 +128,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tentacruel
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TENTACRUEL
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_SLUDGE_WAVE
+- MOVE_EARTH_POWER
+- MOVE_SURF
 
-Starmie @ Starminite
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARMIE @ Starminite
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_PSYCHIC
+- MOVE_POWER_GEM
+- MOVE_RECOVER
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: GRUNT
@@ -139,11 +157,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Feraligatr @ Feraligite
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_FERALIGATR @ Feraligite
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_SUPERPOWER
+- MOVE_THRASH
+- MOVE_HYDRO_PUMP
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
@@ -152,11 +176,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Slowbro @ Slowbronite
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SLOWBRO @ Slowbronite
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_HEADBUTT
+- MOVE_SLACK_OFF
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
 Name: GRUNT
@@ -165,11 +195,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gyarados @ Gyaradosite
-Level: 82
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_GYARADOS @ Gyaradosite
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
 Name: GRUNT
@@ -178,11 +214,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Sharpedo @ Sharpedonite
-Level: 82
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SHARPEDO @ Sharpedonite
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_TAKE_DOWN
+- MOVE_NIGHT_SLASH
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
 Name: GRUNT
@@ -191,11 +233,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tatsugiri @ Tatsugirinite
-Level: 82
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TATSUGIRI @ Tatsugirinite
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_WATER_PULSE
+- MOVE_WATER_GUN
 
 === TRAINER_GABRIELLE_1 ===
 Name: GABRIELLE
@@ -274,11 +322,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wooper
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_QUAGSIRE @ Oran Berry
+Level: 20
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_MUD_SHOT
+- MOVE_GIGA_DRAIN
+- MOVE_WATER_GUN
+- MOVE_MAGICAL_LEAF
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -377,11 +431,17 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Golisopod @ Golisopite
-Level: 82
-IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_GOLISOPOD @ Golisopite
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FIRST_IMPRESSION
+- MOVE_LIQUIDATION
+- MOVE_SLASH
+- MOVE_SWORDS_DANCE
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -409,11 +469,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Dewott
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_DEWOTT @ Oran Berry
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_WATER_PULSE
+- MOVE_FURY_CUTTER
+- MOVE_TACKLE
+- MOVE_RAZOR_SHELL
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: GRUNT
@@ -422,15 +488,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gyarados
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_GYARADOS
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
 
-Quagsire
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_QUAGSIRE @ Sitrus Berry
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_AQUA_TAIL
+- MOVE_SLAM
+- MOVE_MUDDY_WATER
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
 Name: GRUNT
@@ -439,15 +517,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Castform Rainy
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CASTFORM_RAINY
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_HYDRO_PUMP
+- MOVE_BLIZZARD
+- MOVE_FIRE_BLAST
+- MOVE_HURRICANE
 
-Castform Snowy
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CASTFORM_SNOWY @ Sitrus Berry
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_BLIZZARD
+- MOVE_FIRE_BLAST
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
 Name: GRUNT
@@ -456,19 +546,37 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Relicanth
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_RELICANTH
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_DOUBLE_EDGE
+- MOVE_ANCIENTPOWER
+- MOVE_DIVE
 
-Luvdisc
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_LUVDISC @ Expert Belt
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_DRAINING_KISS
+- MOVE_TAKE_DOWN
+- MOVE_WATER_PULSE
 
-Carvanha
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SHARPEDO @ Sitrus Berry
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_TAKE_DOWN
+- MOVE_NIGHT_SLASH
 
 === TRAINER_GRUNT_MUSEUM_1 ===
 Name: GRUNT
@@ -477,11 +585,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Omanyte
+SPECIES_OMASTAR @ Sitrus Berry
 Level: 40
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_BRINE
+- MOVE_ANCIENTPOWER
+- MOVE_MUD_SHOT
+- MOVE_WATER_GUN
 
 === TRAINER_GRUNT_MUSEUM_2 ===
 Name: GRUNT
@@ -490,15 +604,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Kabuto
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tirtouga
+SPECIES_KABUTO
 Level: 39
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_BRINE
+- MOVE_ANCIENTPOWER
+- MOVE_SCRATCH
+- MOVE_AQUA_JET
+
+SPECIES_CARRACOSTA @ Sitrus Berry
+Level: 40
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_ROCK_SLIDE
+- MOVE_CRUNCH
+- MOVE_SMACK_DOWN
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
 Name: GRUNT
@@ -507,11 +633,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Iron Moth
-Level: 78
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_IRON_MOTH @ Sitrus Berry
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FIRE_BLAST
+- MOVE_SLUDGE_WAVE
+- MOVE_HURRICANE
+- MOVE_QUIVER_DANCE
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
 Name: GRUNT
@@ -520,11 +652,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Seaking
-Level: 67
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SEAKING @ Sitrus Berry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_MEGAHORN
+- MOVE_WATERFALL
+- MOVE_HORN_ATTACK
+- MOVE_WATER_PULSE
 
 === TRAINER_GRUNT_MT_PYRE_2 ===
 Name: GRUNT
@@ -533,11 +671,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Vaporeon
-Level: 67
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_VAPOREON @ Sitrus Berry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_DOUBLE_EDGE
+- MOVE_AURORA_BEAM
+- MOVE_MUDDY_WATER
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
 Name: GRUNT
@@ -546,15 +690,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Azumarill
-Level: 67
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_AZUMARILL
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_PLAY_ROUGH
+- MOVE_DOUBLE_EDGE
+- MOVE_BUBBLEBEAM
 
-Octillery
-Level: 67
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_OCTILLERY @ Sitrus Berry
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_HYDRO_PUMP
+- MOVE_ICE_BEAM
+- MOVE_BUBBLEBEAM
 
 === TRAINER_GRUNT_WEATHER_INST_4 ===
 Name: GRUNT
@@ -563,11 +719,17 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mantine
+SPECIES_MANTINE @ Sitrus Berry
 Level: 61
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_AIR_SLASH
+- MOVE_PSYBEAM
+- MOVE_ROOST
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
 Name: GRUNT
@@ -576,11 +738,17 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wailord
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_WAILORD @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_DIVE
+- MOVE_BODY_SLAM
+- MOVE_BOUNCE
+- MOVE_HYDRO_PUMP
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
 Name: GRUNT
@@ -589,11 +757,17 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Milotic
-Level: 69
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_MILOTIC @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_DISARMING_VOICE
+- MOVE_TWISTER
+- MOVE_RECOVER
 
 === TRAINER_FREDRICK ===
 Name: FREDRICK
@@ -630,17 +804,48 @@ Class: Aqua Admin
 Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
-Items: Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Poliwrath
-Level: 69
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_PELIPPER
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Greninja @ Greninjite
-Level: 69
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_CRAWDAUNT @ Expert Belt
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_CRUNCH
+- MOVE_SWIFT
+- MOVE_SWORDS_DANCE
+
+SPECIES_CROBAT
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
+
+SPECIES_SHARPEDO @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_TAKE_DOWN
+- MOVE_NIGHT_SLASH
 
 === TRAINER_ZANDER ===
 Name: ZANDER
@@ -668,15 +873,47 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Swampert @ Swampertite
-Level: 61
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_PELIPPER
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Slowking
+SPECIES_LUDICOLO @ Expert Belt
 Level: 61
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_SLOWKING
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
 Name: SHELLY
@@ -685,16 +922,58 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Slowbro @ Slowbronite
-Level: 82
+SPECIES_PELIPPER
+Level: 84
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Shiny: Yes
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Crawdaunt
-Level: 82
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_LUDICOLO @ Expert Belt
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_CRAWDAUNT
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_CRUNCH
+- MOVE_SWIFT
+- MOVE_SWORDS_DANCE
+
+SPECIES_TENTACRUEL @ Expert Belt
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_SLUDGE_WAVE
+- MOVE_EARTH_POWER
+- MOVE_SURF
+
+SPECIES_SLOWBRO @ Sitrus Berry
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_HEADBUTT
+- MOVE_SLACK_OFF
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -702,32 +981,68 @@ Class: Aqua Leader
 Pic: Aqua Leader Archie
 Gender: Male
 Music: Aqua
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Swampert @ Swampertite
-Level: 83
+SPECIES_PELIPPER
+Level: 86
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Crobat
-Level: 83
+SPECIES_CROBAT @ Expert Belt
+Level: 86
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
-Wugtrio
-Level: 83
+SPECIES_LUDICOLO
+Level: 87
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Walking Wake
-Level: 83
+SPECIES_CRAWDAUNT @ Expert Belt
+Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_CRUNCH
+- MOVE_SWIFT
+- MOVE_SWORDS_DANCE
 
-Dracovish @ Choice Scarf
-Ability: Strong Jaw
+SPECIES_SHARPEDO
+Level: 89
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 4 Def / 252 Spe
-Nature: Jolly
-- Fishious Rend
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_TAKE_DOWN
+- MOVE_NIGHT_SLASH
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_LEAH ===
 Name: LEAH
@@ -1189,15 +1504,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magneton
-Level: 30
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_MAGNEZONE
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_THUNDER_WAVE
 
-Loudred
-Level: 25
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_UPROAR
 
 === TRAINER_GABBY_AND_TY_2 ===
 Name: GABBY & TY
@@ -1206,15 +1533,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magnezone
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_MAGNEZONE
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-Exploud
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_HYPER_VOICE
 
 === TRAINER_GABBY_AND_TY_3 ===
 Name: GABBY & TY
@@ -1223,15 +1562,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magnezone
-Level: 39
+SPECIES_MAGNEZONE
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-
-Exploud
-Level: 40
-
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_HYPER_VOICE
 
 === TRAINER_GABBY_AND_TY_4 ===
 Name: GABBY & TY
@@ -1240,14 +1591,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magnezone
-Level: 46
+SPECIES_MAGNEZONE
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-
-Exploud
-Level: 48
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_HYPER_VOICE
 
 === TRAINER_GABBY_AND_TY_5 ===
 Name: GABBY & TY
@@ -1256,14 +1620,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magnezone
-Level: 50
+SPECIES_MAGNEZONE
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-
-Exploud
-Level: 54
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_HYPER_VOICE
 
 === TRAINER_GABBY_AND_TY_6 ===
 Name: GABBY & TY
@@ -1272,15 +1649,27 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Double Battle: Yes
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magnezone
-Level: 58
+SPECIES_MAGNEZONE
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-
-Exploud
-Level: 60
-
+SPECIES_EXPLOUD @ Sitrus Berry
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_FIRE_FANG
+- MOVE_HYPER_VOICE
 
 === TRAINER_LOLA_1 ===
 Name: LOLA
@@ -3007,20 +3396,37 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Cinderace
-Ability: Libero
-Level: 77
+SPECIES_CINDERACE
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PYRO_BALL
+- MOVE_DOUBLE_EDGE
+- MOVE_BOUNCE
+- MOVE_FLAME_CHARGE
 
+SPECIES_TYPHLOSION_HISUI @ Expert Belt
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_DOUBLE_EDGE
+- MOVE_FLAMETHROWER
 
-Typhlosion Hisui
-Level: 77
-
-
-Blaziken @ Blazikenite
-Level: 77
-
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_CINDY_2 ===
 Name: CINDY
@@ -3679,11 +4085,17 @@ Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Charizard @ Charizardite Y
-Level: 47
-
+SPECIES_CHARIZARD @ Charizardite Y
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_DRAGONBREATH
+- MOVE_AIR_SLASH
+- MOVE_HEAT_WAVE
 
 === TRAINER_STEVE_2 ===
 Name: STEVE
@@ -4854,15 +5266,27 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wailord
-Level: 70
+SPECIES_WAILORD
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_DIVE
+- MOVE_BODY_SLAM
+- MOVE_BOUNCE
+- MOVE_HYDRO_PUMP
 
-Pyukumuku
-Level: 71
-IVs: 31 HP / 31 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 6 Atk
+SPECIES_TENTACRUEL @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SURF
+- MOVE_SLUDGE_WAVE
+- MOVE_HEX
+- MOVE_ACID_ARMOR
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
 Name: GRUNT
@@ -4871,11 +5295,17 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Dondozo
-Level: 71
-
+SPECIES_DONDOZO @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DOUBLE_EDGE
+- MOVE_ORDER_UP
+- MOVE_AQUA_TAIL
 
 === TRAINER_SHAWN ===
 Name: SHAWN
@@ -6712,50 +7142,71 @@ Class: Elite Four
 Pic: Elite Four Sidney
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Purple
 
-Tyranitar @ Tyranitarite
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_TYRANITAR @ Tyranitarite
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_CRUNCH
+- MOVE_THRASH
+- MOVE_ROCK_SLIDE
 
-Obstagoon
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
+SPECIES_OBSTAGOON @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_NIGHT_SLASH
+- MOVE_CROSS_CHOP
+- MOVE_TAKE_DOWN
 
-Samurott Hisui
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_SAMUROTT_HISUI
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_MEGAHORN
+- MOVE_SUCKER_PUNCH
+- MOVE_SWORDS_DANCE
 
+SPECIES_KINGAMBIT @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_KOWTOW_CLEAVE
+- MOVE_IRON_HEAD
+- MOVE_RETALIATE
+- MOVE_SWORDS_DANCE
 
-Kingambit
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
-- Swords Dance
-- Strength
-- Facade
+SPECIES_GRIMMSNARL @ Sitrus Berry
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FOUL_PLAY
+- MOVE_PLAY_ROUGH
+- MOVE_HAMMER_ARM
+- MOVE_BULK_UP
 
-Grimmsnarl @ Sitrus Berry
+SPECIES_URSHIFU_SINGLE_STRIKE @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Urshifu Single Strike @ Sitrus Berry
-Level: 100
-Gigantamax: Yes
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Close Combat
-- Wicked Blow
-- Iron Head 
-- Stone Edge
-
+Gigantamax: Yes
+- MOVE_CLOSE_COMBAT
+- MOVE_WICKED_BLOW
+- MOVE_IRON_HEAD
+- MOVE_BULK_UP
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -6763,46 +7214,71 @@ Class: Elite Four
 Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Green
 
-Flutter Mane @ Choice Specs
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Moonblast
-- Psyshock
-- Mystical Fire
+SPECIES_FLUTTER_MANE @ Choice Specs
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_MOONBLAST
+- MOVE_SHADOW_BALL
+- MOVE_POWER_GEM
+- MOVE_DAZZLING_GLEAM
 
-Annihilape
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rage Fist
-- Drain Punch
-- Fire Punch
-- Low Kick
+SPECIES_ANNIHILAPE @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_OUTRAGE
+- MOVE_THRASH
+- MOVE_CROSS_CHOP
 
-Gholdengo
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Make it Rain
+SPECIES_GHOLDENGO
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_MAKE_IT_RAIN
+- MOVE_SHADOW_BALL
+- MOVE_POWER_GEM
+- MOVE_RECOVER
 
-Skeledirge
+SPECIES_SKELEDIRGE @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Tera Type: Ghost
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_HYPER_VOICE
+- MOVE_WILL_O_WISP
 
-Gengar @ Gengarite
+SPECIES_GENGAR @ Gengarite
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Shiny: Yes
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_SHADOW_BALL
+- MOVE_DREAM_EATER
+- MOVE_DARK_PULSE
+- MOVE_HEX
 
-Dragapult @ Sitrus Berry
+SPECIES_DRAGAPULT @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DRAGON_RUSH
+- MOVE_PHANTOM_FORCE
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_DANCE
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -6810,48 +7286,72 @@ Class: Elite Four
 Pic: Elite Four Glacia
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Pink
 
-Baxcalibur @ Baxcalibrite
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_BAXCALIBUR @ Baxcalibrite
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_CLAW
 
-Iron Bundle
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_IRON_BUNDLE @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_BLIZZARD
+- MOVE_HYDRO_PUMP
+- MOVE_TAKE_DOWN
+- MOVE_ICE_BEAM
 
-Lapras
-Level: 100
+SPECIES_LAPRAS
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_ICE_BEAM
+- MOVE_BODY_SLAM
+- MOVE_BRINE
 
+SPECIES_MAMOSWINE @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_THRASH
+- MOVE_BLIZZARD
+- MOVE_ICE_FANG
 
-Mamoswine
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_WALREIN
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_BLIZZARD
+- MOVE_SURF
+- MOVE_BODY_SLAM
+- MOVE_AURORA_BEAM
 
-
-Walrein @ Sitrus Berry
+SPECIES_DRACOVISH @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
-
-Dracovish
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Tera Type: Ice
-Ability: Strong Jaw
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fishious Rend
-- Super Fang
-- Crunch
-- Psychic Fangs
+- MOVE_DRAGON_RUSH
+- MOVE_FISHIOUS_REND
+- MOVE_CRUNCH
+- MOVE_DRAGON_PULSE
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -6859,47 +7359,71 @@ Class: Elite Four
 Pic: Elite Four Drake
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Blue
 
-Dragonite
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_DRAGONITE
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_HURRICANE
+- MOVE_AQUA_TAIL
+- MOVE_ROOST
 
+SPECIES_GARCHOMP @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DRAGON_RUSH
+- MOVE_DIG
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_CLAW
 
-Garchomp
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_KINGDRA
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
 
-
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
-
-Duraludon
-Gigantamax: Yes
+SPECIES_DURALUDON @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Gigantamax: Yes
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SMASH
+- MOVE_BREAKING_SWIPE
 
 SPECIES_KOMMO_O
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_OUTRAGE
+- MOVE_HEADBUTT
+- MOVE_DRAGON_DANCE
 
-
-Salamence @ Salamencite
+SPECIES_SALAMENCE @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_FLY
+- MOVE_DOUBLE_EDGE
+- MOVE_ROOST
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -6907,41 +7431,46 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Golem
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+SPECIES_GOLEM @ Oran Berry
+Level: 22
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_BULLDOZE
+- MOVE_ROCK_THROW
+- MOVE_TACKLE
+- MOVE_SMACK_DOWN
 
-Sudowoodo
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bulldoze
-- Brick Break
-- Facade
-- Earth Power
+SPECIES_SUDOWOODO @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_ROCK_TOMB
+- MOVE_ROCK_THROW
 
-Steelix @ Steelixite
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Body Press
-- Brutal Swing
-- Breaking Swipe
-- Dig
+SPECIES_STEELIX @ Steelixite
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_ROCK_SLIDE
+- MOVE_FIRE_FANG
+- MOVE_ICE_FANG
+- MOVE_THUNDER_FANG
 
-Probopass @ Oran Berry
+SPECIES_PROBOPASS @ Oran Berry
 Level: 25
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
-- Rock Tomb
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_ROCK_SLIDE
+- MOVE_SPARK
+- MOVE_TRI_ATTACK
+- MOVE_THUNDER_WAVE
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -6949,37 +7478,48 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Machamp
-Level: 35
-- Karate Chop
-- Low Kick
-- Seismic Toss
-- Close Combat
+SPECIES_MACHAMP
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 64 Atk / 64 Spe
+Nature: Adamant
+- MOVE_VITAL_THROW
+- MOVE_STRENGTH
+- MOVE_KNOCK_OFF
+- MOVE_LOW_SWEEP
 
-Hitmonchan
-Level: 35
-- Hidden Power
-- Earthquake
-- Tackle
-- Bulk Up
+SPECIES_HITMONCHAN
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 64 Atk / 64 Spe
+Nature: Adamant
+- MOVE_DRAIN_PUNCH
+- MOVE_MEGA_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_ICE_PUNCH
 
-Medicham @ Medichamite
-Level: 35
-- Focus Punch
-- Light Screen
-- Reflect
-- Bulk Up
+SPECIES_MEDICHAM @ Medichamite
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 64 Atk / 64 Spe
+Nature: Adamant
+- MOVE_ZEN_HEADBUTT
+- MOVE_FORCE_PALM
+- MOVE_FIRE_PUNCH
+- MOVE_ICE_PUNCH
 
-Hariyama @ Sitrus Berry
+SPECIES_HARIYAMA @ Sitrus Berry
 Level: 35
-- Arm Thrust
-- Vital Throw
-- Reversal
-- Bulk Up
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_FORCE_PALM
+- MOVE_KNOCK_OFF
+- MOVE_BRINE
+- MOVE_BULK_UP
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
@@ -6987,38 +7527,48 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Bellibolt
+SPECIES_BELLIBOLT
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_MUD_SHOT
+- MOVE_WEATHER_BALL
+- MOVE_SLACK_OFF
+
+SPECIES_AMPHAROS
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_DRAGON_PULSE
+- MOVE_DAZZLING_GLEAM
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MAGNEZONE
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MANECTRIC @ Manectite
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Ampharos @ Ampharosite
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
-
-Magnezone
-Level: 45
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
-- Shock Wave
-- Thunder Wave
-- Sonic Boom
-
-Manectric @ Manectite
-Level: 45
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
-- Thunder Wave
-- Shock Wave
-- Howl
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -7026,38 +7576,59 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Marowak Alola
+SPECIES_MAROWAK_ALOLA
 Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_SHADOW_BONE
+- MOVE_FLAME_WHEEL
+- MOVE_STOMPING_TANTRUM
+- MOVE_WILL_O_WISP
 
-Typhlosion Hisui
-Level: 46
+SPECIES_TYPHLOSION_HISUI
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_SWIFT
+- MOVE_FLAMETHROWER
 
-Scovillain
-Level: 46
+SPECIES_SCOVILLAIN
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_FIRE_FANG
+- MOVE_CRUNCH
+- MOVE_FLAMETHROWER
 
-Camerupt @ Cameruptite
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Tackle
-- Sunny Day
-- Attract
+SPECIES_CAMERUPT @ Cameruptite
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_TAKE_DOWN
+- MOVE_LAVA_PLUME
 
-Torkoal @ White Herb
-Dynamax Level: 10
+SPECIES_TORKOAL @ White Herb
 Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Sleep Talk
-- Body Slam
-- Rest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+Dynamax Level: 10
+- MOVE_HEAT_WAVE
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_FLAME_WHEEL
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -7065,36 +7636,49 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Cyclizar
-Level: 51
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+SPECIES_CYCLIZAR
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_CLAW
+- MOVE_U_TURN
+- MOVE_BREAKING_SWIPE
 
-
-Ursaluna @ Flame Orb
-Level: 51
-Ability: Guts
+SPECIES_URSALUNA @ Expert Belt
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Shiny: Yes
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Facade
-- Earthquake
-- High Horsepower
+- MOVE_HEADLONG_RUSH
+- MOVE_THRASH
+- MOVE_PLAY_ROUGH
+- MOVE_HIGH_HORSEPOWER
 
-Farigiraf
-Level: 51
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+SPECIES_FARIGIRAF
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_PSYCHIC
+- MOVE_STOMP
+- MOVE_CRUNCH
+- MOVE_PSYBEAM
 
-
-Slaking @ Sitrus Berry
+SPECIES_SLAKING @ Sitrus Berry
 Level: 55
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Counter
-- Yawn
-- Facade
-- Feint Attack
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_MEGA_KICK
+- MOVE_PLAY_ROUGH
+- MOVE_THROAT_CHOP
+- MOVE_SLACK_OFF
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -7102,40 +7686,58 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gyarados @ Gyaradosite
+SPECIES_GYARADOS @ Gyaradosite
 Level: 61
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
 
+SPECIES_TROPIUS @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Tropius
-Level: 61
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Synthesis
+SPECIES_ROTOM_FAN
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_UPROAR
+- MOVE_HEX
+- MOVE_THUNDER_WAVE
 
-Rotom Fan
-Level: 61
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+SPECIES_GLISCOR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_ACROBATICS
+- MOVE_POISON_JAB
+- MOVE_SWORDS_DANCE
 
-
-Gliscor
-Level: 61
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-
-
-Altaria @ Altarianite
+SPECIES_ALTARIA @ Sitrus Berry
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
@@ -7143,32 +7745,60 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Alakazam
+SPECIES_ALAKAZAM
 Level: 71
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_RECOVER
+- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 
-Scream Tail
-Level: 71
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+SPECIES_SCREAM_TAIL @ Expert Belt
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLAY_ROUGH
+- MOVE_PSYCHIC_FANGS
+- MOVE_DOUBLE_EDGE
+- MOVE_BODY_SLAM
 
-Hatterene @ Sitrus Berry
+SPECIES_HATTERENE @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
-Level: 71
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_BRUTAL_SWING
+- MOVE_CALM_MIND
 
+SPECIES_DELPHOX @ Expert Belt
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_LIGHT_SCREEN
 
-Delphox @ Sitrus Berry
-Level: 71
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Gallade @ Galladite
+SPECIES_GALLADE @ Galladite
 Level: 75
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_FUTURE_SIGHT
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
@@ -7176,38 +7806,70 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise
+SPECIES_BLASTOISE
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
+
+SPECIES_POLITOED @ Expert Belt
 Level: 86
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_EARTH_POWER
+- MOVE_HYPER_VOICE
+- MOVE_BUBBLEBEAM
 
+SPECIES_SLOWKING
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
 
-Politoed
-Level: 86
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+SPECIES_SWAMPERT @ Swampertite
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
+SPECIES_KINGDRA
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
 
-Slowking
-Level: 86
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Swampert @ Swampertite
-Level: 86
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Kingdra
-Level: 86
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Seismitoad @ Chesto Berry
+SPECIES_SEISMITOAD @ Chesto Berry
 Level: 90
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_HYDRO_PUMP
+- MOVE_DRAIN_PUNCH
+- MOVE_HYPER_VOICE
+- MOVE_MUDDY_WATER
 
 === TRAINER_JERRY_1 ===
 Name: JERRY
@@ -7750,13 +8412,27 @@ Pic: Pokefan M
 Gender: Male
 Music: Twins
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magmortar
+SPECIES_MAGMORTAR
 Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_CLEAR_SMOG
+- MOVE_LAVA_PLUME
+- MOVE_FIRE_PUNCH
 
-Darmanitan
-Level: 45
+SPECIES_DARMANITAN @ Sitrus Berry
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_FIRE_PUNCH
+- MOVE_HAMMER_ARM
+- MOVE_HEADBUTT
+- MOVE_FIRE_FANG
 
 === TRAINER_MIGUEL_1 ===
 Name: MIGUEL
@@ -7929,11 +8605,17 @@ Pic: Pokefan F
 Gender: Female
 Music: Twins
 Double Battle: No
-AI: Check Viability / Try To Faint
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Incineroar @ Oran Berry
-Level: 45
-
+SPECIES_INCINEROAR @ Oran Berry
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_DARKEST_LARIAT
+- MOVE_CROSS_CHOP
+- MOVE_FIRE_FANG
+- MOVE_BULK_UP
 
 === TRAINER_VANESSA ===
 Name: VANESSA
@@ -8240,12 +8922,18 @@ Pic: Expert F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Hippowdon
-Tera Type: Grass
+SPECIES_HIPPOWDON @ Sitrus Berry
 Level: 46
-
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+Tera Type: Grass
+- MOVE_EARTHQUAKE
+- MOVE_TAKE_DOWN
+- MOVE_CRUNCH
+- MOVE_DIG
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
@@ -8830,87 +9518,78 @@ Class: Champion
 Pic: Champion Wallace
 Gender: Male
 Music: Wallace
-Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: OMNISCIENT
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Yellow
 
-Garchomp @ Life Orb
-Level: 100
-Ability: Rough Skin
+SPECIES_GARCHOMP @ Life Orb
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Shiny: No
-Nature: Naive
-EVs: 0 HP / 248 Atk / 0 Def / 248 SpA / 0 SpD / 26 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Stealth Rock
-- Earthquake
-- Draco Meteor
-- Fire Blast
+- MOVE_DRAGON_RUSH
+- MOVE_DIG
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_CLAW
 
-Greninja @ Choice Scarf
-Level: 100
-Ability: Protean
+SPECIES_GRENINJA @ Choice Scarf
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Shiny: Yes
-Nature: Naive
-EVs: 0 HP / 248 Atk / 0 Def / 248 SpA / 0 SpD / 26 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hydro Pump
-- U Turn
-- Ice Beam
-- Gunk Shot
+- MOVE_HYDRO_PUMP
+- MOVE_EXTRASENSORY
+- MOVE_NIGHT_SLASH
+- MOVE_WATER_PULSE
 
-Corviknight @ Leftovers
-Level: 100
+SPECIES_CORVIKNIGHT @ Leftovers
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+Shiny: Yes
 Dynamax Level: 10
 Gigantamax: Yes
-Ability: Mirror Armor
-Shiny: Yes
-Nature: Impish
-EVs: 0 HP / 26 Atk / 248 Def / 0 SpA / 248 SpD / 0 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Defense
-- Body Press
-- Brave Bird
-- Roost
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_POWER_TRIP
+- MOVE_DRILL_PECK
 
-Skeledirge @ Clear Amulet
-Level: 100
-Ability: Unaware
-Tera Type: Fire
-Shiny: No
-Nature: Bold
-EVs: 26 HP / 0 Atk / 124 Def / 248 SpA / 124 SpD / 0 Spe
+SPECIES_SKELEDIRGE @ Clear Amulet
+Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Torch Song
-- Slack Off
-- Yawn
-- Shadow Ball
-
-Sylveon @ Fairy Feather
-Level: 100
-Ability: Pixilate
-Shiny: Yes
+EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest
-EVs: 26 HP / 0 Atk / 124 Def / 248 SpA / 62 SpD / 62 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Moonblast
-- Quick Attack
-- Shadow Ball
+Shiny: No
+Tera Type: Fire
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_HYPER_VOICE
+- MOVE_WILL_O_WISP
 
-Metagross @ Metagrossite
-Level: 100
-Ability: Clear Body
+SPECIES_SYLVEON @ Fairy Feather
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Shiny: Yes
-Nature: Jolly
-EVs: 26 HP / 248 Atk / 0 Def / 0 SpA / 26 SpD / 248 Spe
+- MOVE_MOONBLAST
+- MOVE_DOUBLE_EDGE
+- MOVE_BITE
+- MOVE_LIGHT_SCREEN
+
+SPECIES_METAGROSS @ Metagrossite
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic Fangs
-- Meteor Mash
-- Earthquake
-- Ice Punch
-
-
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+Shiny: Yes
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_ANDREW ===
 Name: ANDREW
@@ -13775,20 +14454,47 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
-Multi Party: Half
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt
-Level: 78
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Mightyena
-Level: 78
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Golbat
+SPECIES_MIGHTYENA
 Level: 79
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
+
+SPECIES_CROBAT @ Expert Belt
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
+
+SPECIES_WEEZING
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_BELCH
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE_BOMB
+
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_EDWIN_2 ===
 Name: EDWIN
@@ -13912,49 +14618,58 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Altaria
-Level: 93
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
+SPECIES_ALTARIA
 Level: 92
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
-Roselia
+SPECIES_DELCATTY @ Expert Belt
 Level: 93
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_PLAY_ROUGH
+- MOVE_PAYBACK
+- MOVE_FACADE
 
-Magneton
-Level: 90
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
-
-Gardevoir
+SPECIES_ROSERADE
 Level: 94
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_GIGA_DRAIN
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ Sitrus Berry
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BRENDAN
@@ -13963,11 +14678,16 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Treecko
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TREECKO
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_MEGA_DRAIN
+- MOVE_POUND
+- MOVE_LEAFAGE
+- MOVE_QUICK_ATTACK
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -13976,19 +14696,47 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Slugma
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_MAGCARGO
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_LAVA_PLUME
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_INCINERATE
 
-Wingull
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Grovyle
+SPECIES_PELIPPER
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_AIR_SLASH
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: BRENDAN
@@ -13997,19 +14745,57 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magcargo
+SPECIES_MAGCARGO
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Pelipper
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_PELIPPER @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Sceptile
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BRENDAN
@@ -14018,11 +14804,16 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Torchic
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TORCHIC
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_EMBER
+- MOVE_QUICK_ATTACK
+- MOVE_FLAME_CHARGE
+- MOVE_SCRATCH
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
 Name: BRENDAN
@@ -14031,19 +14822,47 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wingull
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_PELIPPER
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_AIR_SLASH
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Lombre
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Combusken
+SPECIES_LUDICOLO
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_BUBBLEBEAM
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_BLAZE_KICK
+- MOVE_BOUNCE
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
 Name: BRENDAN
@@ -14052,19 +14871,57 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Pelipper
+SPECIES_PELIPPER
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Ludicolo
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_LUDICOLO @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Blaziken
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BRENDAN
@@ -14073,11 +14930,16 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mudkip
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_MUDKIP
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_ROCK_THROW
+- MOVE_ROCK_SMASH
+- MOVE_TACKLE
+- MOVE_WATER_GUN
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
 Name: BRENDAN
@@ -14086,19 +14948,47 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Lombre
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_LUDICOLO
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_BUBBLEBEAM
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Slugma
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Marshtomp
+SPECIES_MAGCARGO
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_LAVA_PLUME
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_INCINERATE
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+- MOVE_MUDDY_WATER
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
@@ -14107,19 +14997,57 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ludicolo
+SPECIES_LUDICOLO
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Magcargo
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_MAGCARGO @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Swampert
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
 Name: MAY
@@ -14128,11 +15056,16 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Treecko
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TREECKO
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_MEGA_DRAIN
+- MOVE_POUND
+- MOVE_LEAFAGE
+- MOVE_QUICK_ATTACK
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -14141,19 +15074,47 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wingull
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_PELIPPER
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_AIR_SLASH
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Slugma
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Grovyle
+SPECIES_MAGCARGO
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_LAVA_PLUME
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_INCINERATE
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: MAY
@@ -14162,19 +15123,57 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Magcargo
+SPECIES_MAGCARGO
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Ludicolo
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_LUDICOLO @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Sceptile
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
 Name: MAY
@@ -14183,11 +15182,16 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Torchic
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TORCHIC
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_EMBER
+- MOVE_QUICK_ATTACK
+- MOVE_FLAME_CHARGE
+- MOVE_SCRATCH
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
@@ -14196,19 +15200,47 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wingull
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_PELIPPER
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_AIR_SLASH
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Lombre
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Combusken
+SPECIES_LUDICOLO
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_BUBBLEBEAM
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_BLAZE_KICK
+- MOVE_BOUNCE
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
 Name: MAY
@@ -14217,19 +15249,57 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Pelipper
+SPECIES_PELIPPER
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Ludicolo
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_LUDICOLO @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Blaziken
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
@@ -14238,11 +15308,16 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mudkip
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_MUDKIP
+Level: 9
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Nature: Hardy
+- MOVE_ROCK_THROW
+- MOVE_ROCK_SMASH
+- MOVE_TACKLE
+- MOVE_WATER_GUN
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
 Name: MAY
@@ -14251,19 +15326,47 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Lombre
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_LUDICOLO
+Level: 41
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_BUBBLEBEAM
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Slugma
-Level: 40
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Marshtomp
+SPECIES_MAGCARGO
 Level: 42
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_LAVA_PLUME
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_INCINERATE
+
+SPECIES_MANECTRIC
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+- MOVE_MUDDY_WATER
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
@@ -14272,19 +15375,57 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ludicolo
+SPECIES_LUDICOLO
 Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Magcargo
-Level: 61
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_MAGCARGO @ Expert Belt
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Swampert
+SPECIES_MANECTRIC
 Level: 63
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Expert Belt
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_ISAAC_1 ===
 Name: ISAAC
@@ -15362,29 +16503,27 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Crawdaunt @ Life Orb
-Level: 87
-Ability: Adaptability
-EVs: 252 HP / 252 Atk / 4 Def
+SPECIES_CRAWDAUNT @ Life Orb
+Level: 86
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
-- Liquidation
-- Crunch
-- Aqua Jet
-- Rain Dance
+- MOVE_CRABHAMMER
+- MOVE_CRUNCH
+- MOVE_SWIFT
+- MOVE_SWORDS_DANCE
 
-Crobat @ Expert Belt
+SPECIES_CROBAT @ Expert Belt
 Level: 87
-Ability: Infiltrator
-EVs: 252 Atk / 252 Spe / 4 HP
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Jolly
-- Poison Jab
-- Brave Bird
-- Sludge Bomb
-- Toxic
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
 === TRAINER_GRUNT_UNUSED ===
 Name: GRUNT
@@ -15393,29 +16532,27 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndour @ Eviolite
-Level: 46
-Ability: Flash Fire
-EVs: 252 HP / 252 SpA / 4 SpD
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+SPECIES_HOUNDOOM
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
 Nature: Modest
-- Dark Pulse
-- Flamethrower
-- Snarl
-- Swords Dance
+- MOVE_FLAMETHROWER
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_INCINERATE
 
-Rolycoly @ Eviolite
+SPECIES_COALOSSAL @ Sitrus Berry
 Level: 46
-Ability: Steam Engine
-EVs: 252 HP / 252 Atk / 4 Def
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
 Nature: Adamant
-- Stone Edge
-- Rock Slide
-- Rock Tomb
-- Stealth Rock
+- MOVE_FLAME_CHARGE
+- MOVE_SMACK_DOWN
+- MOVE_RAPID_SPIN
+- MOVE_ANCIENTPOWER
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
@@ -15424,29 +16561,27 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Lanturn @ Expert Belt
-Level: 67
-Ability: Volt Absorb
-EVs: 252 HP / 252 SpA / 4 SpD
+SPECIES_LANTURN @ Expert Belt
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest
-- Hydro Pump
-- Thunderbolt
-- Surf
-- Rain Dance
+- MOVE_HYDRO_PUMP
+- MOVE_DISCHARGE
+- MOVE_TAKE_DOWN
+- MOVE_THUNDER_WAVE
 
-Toxapex @ Leftovers
-Level: 67
-Ability: Regenerator
-EVs: 252 HP / 252 Atk / 4 Def
+SPECIES_TOXAPEX @ Leftovers
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
-- Poison Jab
-- Liquidation
-- Sludge Bomb
-- Toxic
+- MOVE_LIQUIDATION
+- MOVE_POISON_JAB
+- MOVE_BITE
+- MOVE_RECOVER
 
 === TRAINER_GRUNT_JAGGED_PASS ===
 Name: GRUNT
@@ -15455,29 +16590,27 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Life Orb
-Level: 47
-Ability: Solar Power
-EVs: 252 SpA / 252 Spe / 4 HP
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Timid
-- Dark Pulse
-- Flamethrower
-- Snarl
-- Swords Dance
+SPECIES_HOUNDOOM @ Life Orb
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_INCINERATE
 
-Torkoal @ Leftovers
-Level: 47
-Ability: Drought
-EVs: 252 HP / 252 Atk / 4 Def
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+SPECIES_TORKOAL @ Leftovers
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
 Nature: Adamant
-- Flare Blitz
-- Fire Punch
-- Fire Blast
-- Sunny Day
+- MOVE_HEAT_WAVE
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_FLAME_WHEEL
 
 === TRAINER_MARC ===
 Name: MARC
@@ -15656,18 +16789,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Expert Belt
-Level: 47
-Ability: Magma Armor
+SPECIES_CAMERUPT @ Expert Belt
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
 Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Earth Power
-- Lava Plume
-- Curse
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_TAKE_DOWN
+- MOVE_LAVA_PLUME
 
 === TRAINER_CLARENCE ===
 Name: CLARENCE
@@ -15820,30 +16952,28 @@ Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Drapion @ Expert Belt
+SPECIES_DRAPION @ Expert Belt
 Level: 79
-Tera Type: Poison
-Ability: Battle Armor
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Poison
-- Night Slash
-- Poison Fang
-- Toxic
-
-Muk @ Expert Belt
-Level: 79
-Ability: Poison Touch
+EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
+Tera Type: Poison
+- MOVE_CRUNCH
+- MOVE_CROSS_POISON
+- MOVE_X_SCISSOR
+- MOVE_NIGHT_SLASH
+
+SPECIES_MUK @ Expert Belt
+Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gunk Shot
-- Pound
-- Sludge Wave
-- Toxic
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_POUND
+- MOVE_MUD_SHOT
+- MOVE_BELCH
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
 Name: GRUNT
@@ -15852,18 +16982,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Salazzle @ Poisonium Z
+SPECIES_SALAZZLE @ Poisonium Z
 Level: 80
-Ability: Corrosion
-Nature: Timid
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Venoshock
-- Ember
-- Poison Fang
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_VENOSHOCK
+- MOVE_DRAGON_PULSE
+- MOVE_INCINERATE
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
 Name: GRUNT
@@ -15872,18 +17001,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Expert Belt
+SPECIES_CAMERUPT @ Expert Belt
 Level: 82
-Ability: Magma Armor
-Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Earth Power
-- Lava Plume
-- Yawn
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
 Name: GRUNT
@@ -15892,18 +17020,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Crobat @ Expert Belt
+SPECIES_CROBAT @ Expert Belt
 Level: 82
-Ability: Inner Focus
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Poison
-- Poison Fang
-- Bite
-- Tailwind
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
 Name: GRUNT
@@ -15912,18 +17039,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Expert Belt
+SPECIES_CAMERUPT @ Expert Belt
 Level: 82
-Ability: Magma Armor
-Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Earth Power
-- Lava Plume
-- Yawn
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_MACEY ===
 Name: MACEY
@@ -15951,15 +17077,37 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Lotad
+SPECIES_LOMBRE @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_BUBBLEBEAM
+- MOVE_MEGA_DRAIN
+- MOVE_KNOCK_OFF
+- MOVE_WATER_GUN
 
-Torchic
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_COMBUSKEN @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_FLAME_CHARGE
+- MOVE_SLASH
+- MOVE_AERIAL_ACE
+- MOVE_DOUBLE_KICK
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
 Name: BRENDAN
@@ -15968,15 +17116,37 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wingull
+SPECIES_WINGULL @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 Spe
+Nature: Modest
+- MOVE_WATER_PULSE
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_WATER_GUN
 
-Treecko
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_GROVYLE @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 Spe
+Nature: Modest
+- MOVE_GIGA_DRAIN
+- MOVE_ASSURANCE
+- MOVE_FALSE_SWIPE
+- MOVE_MEGA_DRAIN
 
 === TRAINER_PAXTON ===
 Name: PAXTON
@@ -16033,29 +17203,27 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Sharpedo @ Sharpedonite
-Level: 62
-Ability: Rough Skin
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
+SPECIES_SHARPEDO @ Sharpedonite
+Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Crunch
-- Night Slash
-- Aqua Jet
-- Agility
-
-Wailord @ Expert Belt
-Level: 62
-Ability: Water Veil
+EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_TAKE_DOWN
+- MOVE_NIGHT_SLASH
+
+SPECIES_WAILORD @ Expert Belt
+Level: 62
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Body Slam
-- Bounce
-- Astonish
-- Rest
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_DIVE
+- MOVE_BODY_SLAM
+- MOVE_BOUNCE
+- MOVE_HYDRO_PUMP
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
@@ -16064,23 +17232,47 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Numel
+SPECIES_MIGHTYENA
 Level: 46
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
 
-Poochyena
-Level: 46
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_CROBAT
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_BITE
+- MOVE_AIR_CUTTER
+- MOVE_POISON_FANG
 
-Numel
-Level: 46
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_WEEZING
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 HP
+Nature: Adamant
+- MOVE_SLUDGE_BOMB
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE
 
-Zubat
-Level: 46
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_TAKE_DOWN
+- MOVE_LAVA_PLUME
 
 === TRAINER_JONATHAN ===
 Name: JONATHAN
@@ -16118,15 +17310,37 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Slugma
+SPECIES_SLUGMA @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_ANCIENTPOWER
+- MOVE_EMBER
+- MOVE_CLEAR_SMOG
+- MOVE_ROCK_THROW
 
-Mudkip
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_MARSHTOMP @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_ROCK_SLIDE
+- MOVE_WATER_PULSE
+- MOVE_MUD_SHOT
+- MOVE_ROCK_THROW
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
 Name: MAY
@@ -16135,15 +17349,37 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Viability / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Wingull
+SPECIES_WINGULL @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 Spe
+Nature: Modest
+- MOVE_WATER_PULSE
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_WATER_GUN
 
-Treecko
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_GROVYLE @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 Spe
+Nature: Modest
+- MOVE_GIGA_DRAIN
+- MOVE_ASSURANCE
+- MOVE_FALSE_SWIPE
+- MOVE_MEGA_DRAIN
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
@@ -16151,21 +17387,68 @@ Class: Magma Leader
 Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mightyena
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_MIGHTYENA
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
 
-Crobat
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CROBAT @ Expert Belt
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
-Camerupt
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CLAYDOL
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_EARTH_POWER
+- MOVE_EXTRASENSORY
+- MOVE_ROCK_TOMB
+- MOVE_PSYBEAM
+
+SPECIES_WEEZING @ Expert Belt
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_BELCH
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE_BOMB
+
+SPECIES_SKARMORY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_SLASH
+- MOVE_DRILL_PECK
+
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: MAXIE
@@ -16173,21 +17456,58 @@ Class: Magma Leader
 Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mightyena
+SPECIES_MIGHTYENA
 Level: 46
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
 
-Zubat
-Level: 46
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CROBAT
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_BITE
+- MOVE_AIR_CUTTER
+- MOVE_POISON_FANG
 
-Camerupt
-Level: 46
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CLAYDOL
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_EARTH_POWER
+- MOVE_EXTRASENSORY
+- MOVE_ROCK_TOMB
+- MOVE_PSYBEAM
+
+SPECIES_SKARMORY
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_DRILL_PECK
+- MOVE_STEEL_WING
+- MOVE_SLASH
+- MOVE_WING_ATTACK
+
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_TIANA ===
 Name: TIANA
@@ -16264,19 +17584,37 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Marill
-Level: 41
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_AZUMARILL
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_BUBBLEBEAM
+- MOVE_PLAY_ROUGH
+- MOVE_BOUNCE
+- MOVE_AQUA_TAIL
 
-Shroomish
-Level: 41
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_BRELOOM
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 Atk / 128 Spe
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_BRICK_BREAK
+- MOVE_HEADBUTT
+- MOVE_LEECH_SEED
 
-Numel
-Level: 41
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_TAKE_DOWN
+- MOVE_LAVA_PLUME
 
 === TRAINER_HALEY_2 ===
 Name: HALEY
@@ -17773,11 +19111,37 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ralts
+SPECIES_ROSERADE
 Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_GIGA_DRAIN
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_MAGICAL_LEAF
+
+SPECIES_MAGNEZONE
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 HP
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR @ Sitrus Berry
+Level: 43
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 128 SpA / 128 Spe
+Nature: Modest
+- MOVE_DREAM_EATER
+- MOVE_DAZZLING_GLEAM
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -17785,49 +19149,58 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Altaria
-Level: 96
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
+SPECIES_ALTARIA
 Level: 95
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
-Roselia
+SPECIES_DELCATTY @ Expert Belt
 Level: 96
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_PLAY_ROUGH
+- MOVE_PAYBACK
+- MOVE_FACADE
 
-Magneton
-Level: 93
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
-
-Gardevoir
+SPECIES_ROSERADE
 Level: 97
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_GIGA_DRAIN
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ Sitrus Berry
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_WALLY_VR_3 ===
 Name: WALLY
@@ -17835,49 +19208,58 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Altaria
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 98
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
+SPECIES_ALTARIA
 Level: 96
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
-Gardevoir
+SPECIES_DELCATTY @ Expert Belt
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_PLAY_ROUGH
+- MOVE_PAYBACK
+- MOVE_FACADE
+
+SPECIES_ROSERADE
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_GIGA_DRAIN
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ Sitrus Berry
 Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_WALLY_VR_4 ===
 Name: WALLY
@@ -17885,49 +19267,58 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Altaria
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 98
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
+SPECIES_ALTARIA
 Level: 96
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
-Gardevoir
+SPECIES_DELCATTY @ Expert Belt
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_PLAY_ROUGH
+- MOVE_PAYBACK
+- MOVE_FACADE
+
+SPECIES_ROSERADE
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_GIGA_DRAIN
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ Sitrus Berry
 Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_WALLY_VR_5 ===
 Name: WALLY
@@ -17935,49 +19326,58 @@ Class: Rival
 Pic: Wally
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Altaria
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
-
-Delcatty
-Level: 98
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 99
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
-
-Magneton
+SPECIES_ALTARIA
 Level: 96
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
-Gardevoir
+SPECIES_DELCATTY @ Expert Belt
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_PLAY_ROUGH
+- MOVE_PAYBACK
+- MOVE_FACADE
+
+SPECIES_ROSERADE
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_GIGA_DRAIN
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ Sitrus Berry
 Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
 Name: BRENDAN
@@ -17986,23 +19386,67 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Magcargo
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Pelipper
+SPECIES_MAGCARGO @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Sceptile
+SPECIES_PELIPPER
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
 Name: BRENDAN
@@ -18011,23 +19455,67 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Ludicolo
+SPECIES_PELIPPER @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Blaziken
+SPECIES_LUDICOLO
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
 Name: BRENDAN
@@ -18036,23 +19524,67 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Magcargo
+SPECIES_LUDICOLO @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Swampert
+SPECIES_MAGCARGO
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
 Name: MAY
@@ -18061,23 +19593,67 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Magcargo
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Pelipper
+SPECIES_MAGCARGO @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
 
-Sceptile
+SPECIES_PELIPPER
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SCEPTILE @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_ENERGY_BALL
+- MOVE_SLAM
+- MOVE_X_SCISSOR
+- MOVE_GIGA_DRAIN
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
 Name: MAY
@@ -18086,23 +19662,67 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Ludicolo
+SPECIES_PELIPPER @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_QUICK_ATTACK
+- MOVE_ROOST
 
-Blaziken
+SPECIES_LUDICOLO
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_BLAZIKEN @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
+- MOVE_SLASH
+- MOVE_BULK_UP
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
 Name: MAY
@@ -18111,23 +19731,67 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Tropius
-Level: 69
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
+SPECIES_TROPIUS
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
 
-Magcargo
+SPECIES_LUDICOLO @ Expert Belt
 Level: 70
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ENERGY_BALL
+- MOVE_ZEN_HEADBUTT
+- MOVE_LEECH_SEED
 
-Swampert
+SPECIES_MAGCARGO
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_ANCIENTPOWER
+- MOVE_EARTH_POWER
+- MOVE_RECOVER
+
+SPECIES_MANECTRIC @ Expert Belt
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
+
+SPECIES_GARDEVOIR
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_MOONBLAST
+- MOVE_MYSTICAL_FIRE
+- MOVE_CALM_MIND
+
+SPECIES_SWAMPERT @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_JONAH ===
 Name: JONAH
@@ -19479,18 +21143,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_2 ===
 Name: GRUNT
@@ -19499,18 +21162,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_3 ===
 Name: GRUNT
@@ -19519,18 +21181,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
 Name: GRUNT
@@ -19539,29 +21200,27 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 70
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
-Crobat @ Expert Belt
-Level: 70
-Ability: Inner Focus
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
+SPECIES_CROBAT @ Expert Belt
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Poison
-- Poison Fang
-- Bite
-- Tailwind
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
 Name: GRUNT
@@ -19570,29 +21229,27 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Drapion @ Expert Belt
+SPECIES_DRAPION @ Expert Belt
 Level: 70
-Ability: Battle Armor
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Poison
-- Night Slash
-- Poison Fang
-- Toxic
-
-Weezing @ Black Sludge
-Level: 70
-Ability: Levitate
+EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
+- MOVE_CRUNCH
+- MOVE_CROSS_POISON
+- MOVE_X_SCISSOR
+- MOVE_NIGHT_SLASH
+
+SPECIES_WEEZING @ Black Sludge
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Double Hit
-- Sludge Bomb
-- Toxic
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_BELCH
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE_BOMB
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
 Name: GRUNT
@@ -19601,18 +21258,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
 Name: GRUNT
@@ -19621,18 +21277,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Cameruptite
+SPECIES_CAMERUPT @ Cameruptite
 Level: 71
-Ability: Magma Armor
-Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Earth Power
-- Lava Plume
-- Yawn
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
 Name: GRUNT
@@ -19641,20 +21296,19 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Centiskorch @ Expert Belt
+SPECIES_CENTISKORCH @ Expert Belt
 Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-Ability: Flash Fire
-Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bug Bite
-- Flame Wheel
-- Slam
-- Coil
+- MOVE_FIRE_LASH
+- MOVE_LUNGE
+- MOVE_CRUNCH
+- MOVE_INFERNO
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
 Name: GRUNT
@@ -19663,19 +21317,18 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Tera Type: Dark
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+Tera Type: Dark
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
 Name: GRUNT
@@ -19684,18 +21337,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Groundium Z
+SPECIES_CAMERUPT @ Groundium Z
 Level: 71
-Ability: Magma Armor
-Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earth Power
-- Eruption
-- Lava Plume
-- Yawn
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
 Name: GRUNT
@@ -19704,18 +21356,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Muk @ Expert Belt
+SPECIES_MUK @ Expert Belt
 Level: 71
-Ability: Poison Touch
-Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Gunk Shot
-- Pound
-- Sludge Wave
-- Toxic
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_POUND
+- MOVE_MUD_SHOT
+- MOVE_BELCH
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
 Name: GRUNT
@@ -19724,18 +21375,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Weezing @ Black Sludge
+SPECIES_WEEZING @ Black Sludge
 Level: 71
-Ability: Levitate
-Nature: Adamant
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
-- Double Hit
-- Belch
-- Toxic
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_BELCH
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE_BOMB
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
 Name: GRUNT
@@ -19744,18 +21394,17 @@ Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Camerupt @ Expert Belt
+SPECIES_CAMERUPT @ Expert Belt
 Level: 71
-Ability: Magma Armor
-Nature: Modest
-EVs: 252 SpA / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Eruption
-- Earth Power
-- Lava Plume
-- Yawn
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
 Name: GRUNT
@@ -19764,18 +21413,17 @@ Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Crobat @ Expert Belt
+SPECIES_CROBAT @ Expert Belt
 Level: 71
-Ability: Inner Focus
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Poison
-- Poison Fang
-- Bite
-- Tailwind
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
 Name: GRUNT
@@ -19784,18 +21432,17 @@ Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Krookodile @ Expert Belt
+SPECIES_KROOKODILE @ Expert Belt
 Level: 71
-Ability: Intimidate
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Foul Play
-- Crunch
-- Sandstorm
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_FOUL_PLAY
+- MOVE_OUTRAGE
+- MOVE_CRUNCH
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
 Name: GRUNT
@@ -19804,18 +21451,17 @@ Pic: Magma Grunt F
 Gender: Female
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Houndoom @ Expert Belt
+SPECIES_HOUNDOOM @ Expert Belt
 Level: 71
-Ability: Early Bird
-Nature: Jolly
-EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ember
-- Fire Fang
-- Comeuppance
-- Nasty Plot
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_FOUL_PLAY
+- MOVE_THUNDER_FANG
+- MOVE_FLAMETHROWER
 
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
 Name: TABITHA
@@ -19824,23 +21470,57 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Viability
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Numel
-Level: 67
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
-
-Mightyena
-Level: 67
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
-
-Zubat
-Level: 67
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
-
-Camerupt
+SPECIES_MIGHTYENA
 Level: 68
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
+
+SPECIES_CROBAT @ Expert Belt
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
+
+SPECIES_WEEZING
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_BELCH
+- MOVE_HEAT_WAVE
+- MOVE_ASSURANCE
+- MOVE_SLUDGE_BOMB
+
+SPECIES_SKARMORY @ Expert Belt
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_SLASH
+- MOVE_DRILL_PECK
+
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_DARCY ===
 Name: DARCY
@@ -19878,20 +21558,57 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer
-Multi Party: Half
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Mightyena
+SPECIES_MIGHTYENA
 Level: 80
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_TAKE_DOWN
+- MOVE_SUCKER_PUNCH
 
-Crobat
-Level: 80
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CROBAT @ Expert Belt
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_POISON
+- MOVE_LEECH_LIFE
+- MOVE_AIR_SLASH
+- MOVE_POISON_FANG
 
-Camerupt
-Level: 80
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_CLAYDOL
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_EARTH_POWER
+- MOVE_EXTRASENSORY
+- MOVE_ROCK_TOMB
+- MOVE_PSYBEAM
+
+SPECIES_SKARMORY @ Expert Belt
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_SLASH
+- MOVE_DRILL_PECK
+
+SPECIES_CAMERUPT @ Sitrus Berry
+Level: 84
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
 === TRAINER_PETE ===
 Name: PETE
@@ -20816,15 +22533,37 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Lotad
+SPECIES_LOMBRE @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_BUBBLEBEAM
+- MOVE_MEGA_DRAIN
+- MOVE_KNOCK_OFF
+- MOVE_WATER_GUN
 
-Torchic
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_COMBUSKEN @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_FLAME_CHARGE
+- MOVE_SLASH
+- MOVE_AERIAL_ACE
+- MOVE_DOUBLE_KICK
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
 Name: MAY
@@ -20833,15 +22572,37 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Torkoal
+SPECIES_TORKOAL @ Oran Berry
 Level: 22
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_FLAME_WHEEL
+- MOVE_RAPID_SPIN
+- MOVE_CLEAR_SMOG
+- MOVE_EMBER
 
-Mudkip
+SPECIES_ELECTRIKE @ Oran Berry
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 SpA / 64 HP
+Nature: Modest
+- MOVE_SHOCK_WAVE
+- MOVE_BITE
+- MOVE_QUICK_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_MARSHTOMP @ Oran Berry
 Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 Atk / 64 HP
+Nature: Adamant
+- MOVE_ROCK_SLIDE
+- MOVE_WATER_PULSE
+- MOVE_MUD_SHOT
+- MOVE_ROCK_THROW
 
 === TRAINER_ROXANNE_2 ===
 Name: ROXANNE
@@ -20849,49 +22610,58 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Golem
-Level: 50
+SPECIES_GOLEM
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Rollout
-- Magnitude
-- Explosion
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_BULLDOZE
 
-Sudowoodo
-Level: 50
+SPECIES_SUDOWOODO @ Expert Belt
+Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Brick Break
-- Facade
-- Earth Power
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_WOOD_HAMMER
+- MOVE_ROCK_SLIDE
 
-Kabuto @ Sitrus Berry
-Level: 50
+SPECIES_KABUTOPS
+Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_LIQUIDATION
+- MOVE_LEECH_LIFE
+- MOVE_NIGHT_SLASH
+- MOVE_SLASH
 
-Steelix @ Steelixite
-Level: 50
+SPECIES_STEELIX @ Steelixite
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_IRON_TAIL
+- MOVE_DIG
+- MOVE_DOUBLE_EDGE
+- MOVE_STONE_EDGE
 
-Probopass @ Sitrus Berry
+SPECIES_PROBOPASS @ Sitrus Berry
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_ZAP_CANNON
+- MOVE_EARTH_POWER
+- MOVE_THUNDER_WAVE
 
 === TRAINER_ROXANNE_3 ===
 Name: ROXANNE
@@ -20899,57 +22669,68 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Omanyte
-Level: 60
+SPECIES_OMASTAR
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
-- Rock Slide
-- Surf
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ANCIENTPOWER
+- MOVE_MUD_SHOT
+- MOVE_SURF
 
-Golem
-Level: 60
+SPECIES_GOLEM @ Expert Belt
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Rollout
-- Magnitude
-- Explosion
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_BULLDOZE
 
-Kabutops @ Sitrus Berry
-Level: 60
+SPECIES_KABUTOPS @ Sitrus Berry
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_LIQUIDATION
+- MOVE_LEECH_LIFE
+- MOVE_NIGHT_SLASH
 
-Steelix @ Steelixite
-Level: 60
+SPECIES_STEELIX @ Steelixite
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_IRON_TAIL
+- MOVE_DIG
+- MOVE_DOUBLE_EDGE
+- MOVE_STONE_EDGE
 
-Probopass @ Sitrus Berry
+SPECIES_PROBOPASS @ Sitrus Berry
+Level: 69
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_ZAP_CANNON
+- MOVE_EARTH_POWER
+- MOVE_THUNDER_WAVE
+
+SPECIES_SUDOWOODO @ Sitrus Berry
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
-
-Sudowoodo
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Brick Break
-- Facade
-- Earth Power
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_WOOD_HAMMER
+- MOVE_ROCK_SLIDE
 
 === TRAINER_ROXANNE_4 ===
 Name: ROXANNE
@@ -20957,57 +22738,68 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Omastar
-Level: 70
+SPECIES_OMASTAR
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
-- Rock Slide
-- Surf
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ANCIENTPOWER
+- MOVE_MUD_SHOT
+- MOVE_SURF
 
-Golem
-Level: 70
+SPECIES_GOLEM @ Expert Belt
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Rollout
-- Earthquake
-- Explosion
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_BULLDOZE
 
-Kabutops @ Sitrus Berry
-Level: 70
+SPECIES_KABUTOPS @ Sitrus Berry
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_LIQUIDATION
+- MOVE_LEECH_LIFE
+- MOVE_NIGHT_SLASH
 
-Steelix @ Steelixite
-Level: 70
+SPECIES_STEELIX @ Steelixite
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_IRON_TAIL
+- MOVE_DIG
+- MOVE_DOUBLE_EDGE
+- MOVE_STONE_EDGE
 
-Probopass @ Sitrus Berry
+SPECIES_PROBOPASS @ Sitrus Berry
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_ZAP_CANNON
+- MOVE_EARTH_POWER
+- MOVE_THUNDER_WAVE
+
+SPECIES_SUDOWOODO @ Sitrus Berry
 Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
-
-Sudowoodo
-Level: 70
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Brick Break
-- Facade
-- Earth Power
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_WOOD_HAMMER
+- MOVE_ROCK_SLIDE
 
 === TRAINER_ROXANNE_5 ===
 Name: ROXANNE
@@ -21015,65 +22807,68 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Aerodactyl
+SPECIES_AERODACTYL
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_TAKE_DOWN
+- MOVE_WING_ATTACK
+- MOVE_ROCK_SLIDE
+
+SPECIES_GOLEM @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_STONE_EDGE
+- MOVE_DOUBLE_EDGE
+- MOVE_BULLDOZE
+
+SPECIES_OMASTAR
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_ANCIENTPOWER
+- MOVE_MUD_SHOT
+- MOVE_SURF
+
+SPECIES_KABUTOPS @ Sitrus Berry
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_LIQUIDATION
+- MOVE_LEECH_LIFE
+- MOVE_NIGHT_SLASH
+
+SPECIES_STEELIX @ Steelixite
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_IRON_TAIL
+- MOVE_DIG
+- MOVE_DOUBLE_EDGE
+- MOVE_STONE_EDGE
+
+SPECIES_PROBOPASS @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Slide
-- Hyper Beam
-- Supersonic
-- Protect
-
-Golem
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Rollout
-- Earthquake
-- Explosion
-
-Omastar
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
-- Rock Slide
-- Surf
-
-Kabutops @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
-
-Steelix @ Steelixite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
-
-Probopass @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
-
-Sudowoodo
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bulldoze
-- Brick Break
-- Facade
-- Earth Power
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_STONE_EDGE
+- MOVE_ZAP_CANNON
+- MOVE_EARTH_POWER
+- MOVE_THUNDER_WAVE
 
 === TRAINER_BRAWLY_2 ===
 Name: BRAWLY
@@ -21081,41 +22876,48 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Machamp @ Sitrus Berry
-Level: 60
+SPECIES_MACHAMP @ Sitrus Berry
+Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_CHOP
+- MOVE_DOUBLE_EDGE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
-Medicham @ Medichamite
-Level: 60
+SPECIES_MEDICHAM @ Medichamite
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Light Screen
-- Reflect
-- Focus Punch
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AXE_KICK
+- MOVE_ZEN_HEADBUTT
+- MOVE_FIRE_PUNCH
+- MOVE_RECOVER
 
-Hitmonchan
-Level: 60
+SPECIES_HITMONCHAN
+Level: 69
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_MEGA_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_DRAIN_PUNCH
 
-Hariyama @ Sitrus Berry
+SPECIES_HARIYAMA @ Sitrus Berry
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_HEADLONG_RUSH
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 === TRAINER_BRAWLY_3 ===
 Name: BRAWLY
@@ -21123,41 +22925,48 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Machamp @ Sitrus Berry
-Level: 70
+SPECIES_MACHAMP @ Sitrus Berry
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CROSS_CHOP
+- MOVE_DOUBLE_EDGE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
-Medicham @ Medichamite
-Level: 70
+SPECIES_MEDICHAM @ Medichamite
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Light Screen
-- Reflect
-- Focus Punch
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AXE_KICK
+- MOVE_ZEN_HEADBUTT
+- MOVE_FIRE_PUNCH
+- MOVE_RECOVER
 
-Hitmonchan
-Level: 70
+SPECIES_HITMONCHAN
+Level: 79
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_MEGA_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_DRAIN_PUNCH
 
-Hariyama @ Sitrus Berry
+SPECIES_HARIYAMA @ Sitrus Berry
 Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_HEADLONG_RUSH
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 === TRAINER_BRAWLY_4 ===
 Name: BRAWLY
@@ -21165,51 +22974,60 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Hitmonchan
-Level: 80
+SPECIES_HITMONCHAN
+Level: 86
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_MEGA_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_DRAIN_PUNCH
 
-Machamp @ Sitrus Berry
-Level: 80
+SPECIES_MACHAMP @ Sitrus Berry
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+- MOVE_CROSS_CHOP
+- MOVE_DOUBLE_EDGE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
-Medicham @ Medichamite
-Level: 80
+SPECIES_MEDICHAM @ Medichamite
+Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Psychic
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AXE_KICK
+- MOVE_ZEN_HEADBUTT
+- MOVE_FIRE_PUNCH
+- MOVE_RECOVER
 
-Hitmontop
-Level: 80
+SPECIES_HITMONTOP @ Expert Belt
+Level: 89
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_DIG
+- MOVE_SUCKER_PUNCH
+- MOVE_RAPID_SPIN
 
-Hariyama @ Sitrus Berry
+SPECIES_HARIYAMA @ Sitrus Berry
 Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_HEADLONG_RUSH
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 === TRAINER_BRAWLY_5 ===
 Name: BRAWLY
@@ -21217,59 +23035,70 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Hitmonlee
-Level: 100
+SPECIES_HITMONLEE
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mega Kick
-- Focus Punch
-- Earthquake
-- Bulk Up
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AXE_KICK
+- MOVE_MEGA_KICK
+- MOVE_BLAZE_KICK
+- MOVE_CLOSE_COMBAT
 
-Hitmonchan
-Level: 100
+SPECIES_HITMONCHAN @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_MEGA_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_DRAIN_PUNCH
 
-Machamp @ Sitrus Berry
-Level: 100
+SPECIES_MACHAMP @ Sitrus Berry
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Chop
-- Rock Slide
-- Focus Punch
-- Bulk Up
+- MOVE_CROSS_CHOP
+- MOVE_DOUBLE_EDGE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
-Medicham @ Medichamite
+SPECIES_MEDICHAM @ Medichamite
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AXE_KICK
+- MOVE_ZEN_HEADBUTT
+- MOVE_FIRE_PUNCH
+- MOVE_RECOVER
+
+SPECIES_HITMONTOP
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_DIG
+- MOVE_SUCKER_PUNCH
+- MOVE_RAPID_SPIN
+
+SPECIES_IRON_HANDS @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Psychic
-
-Hitmontop
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
-- Counter
-- Protect
-- Triple Kick
-
-Iron Hands @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
-- Drain Punch
-- Belly Drum
-- Close Combat
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_WILD_CHARGE
+- MOVE_HEADLONG_RUSH
+- MOVE_BULK_UP
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
@@ -21277,34 +23106,48 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Bellibolt
-Level: 70
+SPECIES_BELLIBOLT
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_MUD_SHOT
+- MOVE_WEATHER_BALL
+- MOVE_SLACK_OFF
 
+SPECIES_AMPHAROS @ Expert Belt
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_DAZZLING_GLEAM
+- MOVE_LIGHT_SCREEN
 
-Ampharos @ Ampharosite
-Level: 70
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
+SPECIES_MAGNEZONE
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
 
-Magnezone
-Level: 70
-- Supersonic
-- Shock Wave
-- Thunder Wave
-- Sonic Boom
-
-Manectric @ Manectite
+SPECIES_MANECTRIC @ Manectite
 Level: 80
-- Quick Attack
-- Thunder Wave
-- Shock Wave
-- Howl
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
@@ -21312,48 +23155,60 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Pikachu @ Eviolite
-Level: 83
+SPECIES_PIKACHU @ Eviolite
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Slam
-- Rain Dance
-- Shock Wave
+- MOVE_THUNDER
+- MOVE_IRON_TAIL
+- MOVE_QUICK_ATTACK
+- MOVE_LIGHT_SCREEN
 
-Ampharos @ Ampharosite
+SPECIES_AMPHAROS @ Ampharosite
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_DAZZLING_GLEAM
+- MOVE_LIGHT_SCREEN
+
+SPECIES_BELLIBOLT
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_MUD_SHOT
+- MOVE_WEATHER_BALL
+- MOVE_SLACK_OFF
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MANECTRIC @ Manectite
 Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
-
-Bellibolt
-Level: 83
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Magneton @ Sitrus Berry
-Level: 83
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
-
-Manectric @ Manectite
-Level: 83
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
 
 === TRAINER_WATTSON_4 ===
 Name: WATTSON
@@ -21361,48 +23216,60 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Pikachu @ Eviolite
+SPECIES_PIKACHU @ Eviolite
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_THUNDER
+- MOVE_IRON_TAIL
+- MOVE_QUICK_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_AMPHAROS @ Ampharosite
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_DAZZLING_GLEAM
+- MOVE_LIGHT_SCREEN
+
+SPECIES_BELLIBOLT
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_MUD_SHOT
+- MOVE_WEATHER_BALL
+- MOVE_SLACK_OFF
+
+SPECIES_MAGNEZONE @ Expert Belt
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MANECTRIC @ Manectite
 Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Slam
-- Rain Dance
-- Protect
-
-Ampharos @ Ampharosite
-Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
-
-Bellibolt
-Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Magneton @ Sitrus Berry
-Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
-
-Manectric @ Manectite
-Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
 
 === TRAINER_WATTSON_5 ===
 Name: WATTSON
@@ -21410,57 +23277,71 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Electivire
-Level: 100
+SPECIES_ELECTIVIRE
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swift
-- Focus Punch
-- Thunder Punch
-- Light Screen
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_THUNDERPUNCH
+- MOVE_QUICK_ATTACK
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER
 
-Pikachu @ Eviolite
-Level: 100
+SPECIES_PIKACHU @ Eviolite
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Slam
-- Rain Dance
-- Protect
+- MOVE_THUNDER
+- MOVE_IRON_TAIL
+- MOVE_QUICK_ATTACK
+- MOVE_LIGHT_SCREEN
 
-Ampharos @ Ampharosite
-Level: 100
+SPECIES_AMPHAROS @ Ampharosite
+Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
-- Thunder Wave
-- Light Screen
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_DAZZLING_GLEAM
+- MOVE_LIGHT_SCREEN
 
-Bellibolt
+SPECIES_BELLIBOLT @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Tera Type: Flying
+- MOVE_ZAP_CANNON
+- MOVE_MUD_SHOT
+- MOVE_WEATHER_BALL
+- MOVE_SLACK_OFF
+
+SPECIES_MAGNEZONE
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_ZAP_CANNON
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MANECTRIC @ Manectite
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Magneton @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
-- Thunder
-- Rain Dance
-
-Manectric @ Manectite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
-- Thunder
-- Protect
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_THUNDER
+- MOVE_FIRE_FANG
+- MOVE_BITE
+- MOVE_THUNDER_WAVE
 
 === TRAINER_FLANNERY_2 ===
 Name: FLANNERY
@@ -21468,38 +23349,58 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Marowak Alola @ White Herb
-Level: 75
+SPECIES_MAROWAK_ALOLA @ White Herb
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_SHADOW_BONE
+- MOVE_DOUBLE_EDGE
+- MOVE_WILL_O_WISP
 
-Typhlosion Hisui
-Level: 75
+SPECIES_TYPHLOSION_HISUI @ Expert Belt
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_DOUBLE_EDGE
+- MOVE_FLAMETHROWER
 
-Scovillain
-Level: 75
+SPECIES_SCOVILLAIN
+Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_FIRE_FANG
+- MOVE_CRUNCH
+- MOVE_SOLARBEAM
 
-
-Camerupt @ Cameruptite
-Level: 75
+SPECIES_CAMERUPT @ Expert Belt
+Level: 79
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
-Torkoal @ White Herb
+SPECIES_TORKOAL @ White Herb
 Level: 80
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_INFERNO
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_HEAT_WAVE
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
@@ -21507,43 +23408,68 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Turtonator
-Level: 85
+SPECIES_TURTONATOR
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_DRAGON_PULSE
+- MOVE_BODY_SLAM
+- MOVE_INCINERATE
 
-
-Marowak Alola @ White Herb
-Level: 85
+SPECIES_MAROWAK_ALOLA @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_SHADOW_BONE
+- MOVE_DOUBLE_EDGE
+- MOVE_WILL_O_WISP
 
-
-Typhlosion Hisui
-Level: 85
+SPECIES_TYPHLOSION_HISUI
+Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_DOUBLE_EDGE
+- MOVE_FLAMETHROWER
 
-Scovillain
-Level: 85
+SPECIES_SCOVILLAIN @ Expert Belt
+Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_FIRE_FANG
+- MOVE_CRUNCH
+- MOVE_SOLARBEAM
 
-Camerupt @ Cameruptite
-Level: 85
+SPECIES_CAMERUPT @ Cameruptite
+Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
-Torkoal @ White Herb
+SPECIES_TORKOAL @ White Herb
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_INFERNO
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_HEAT_WAVE
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
@@ -21551,43 +23477,68 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Turtonator
-Level: 95
+SPECIES_TURTONATOR
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_DRAGON_PULSE
+- MOVE_BODY_SLAM
+- MOVE_INCINERATE
 
-
-Marowak Alola @ White Herb
-Level: 95
+SPECIES_MAROWAK_ALOLA @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_SHADOW_BONE
+- MOVE_DOUBLE_EDGE
+- MOVE_WILL_O_WISP
 
-
-Typhlosion Hisui
-Level: 95
+SPECIES_TYPHLOSION_HISUI
+Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_DOUBLE_EDGE
+- MOVE_FLAMETHROWER
 
-Scovillain
-Level: 95
+SPECIES_SCOVILLAIN @ Expert Belt
+Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_FIRE_FANG
+- MOVE_CRUNCH
+- MOVE_SOLARBEAM
 
-Camerupt @ Cameruptite
-Level: 95
+SPECIES_CAMERUPT @ Cameruptite
+Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
 
-Torkoal @ White Herb
+SPECIES_TORKOAL @ White Herb
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_INFERNO
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_HEAT_WAVE
 
 === TRAINER_FLANNERY_5 ===
 Name: FLANNERY
@@ -21595,43 +23546,68 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Turtonator
+SPECIES_TURTONATOR
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FLAMETHROWER
+- MOVE_DRAGON_PULSE
+- MOVE_BODY_SLAM
+- MOVE_INCINERATE
+
+SPECIES_MAROWAK_ALOLA @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_FLARE_BLITZ
+- MOVE_SHADOW_BONE
+- MOVE_DOUBLE_EDGE
+- MOVE_WILL_O_WISP
+
+SPECIES_TYPHLOSION_HISUI
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_INFERNO
+- MOVE_INFERNAL_PARADE
+- MOVE_DOUBLE_EDGE
+- MOVE_FLAMETHROWER
+
+SPECIES_SCOVILLAIN @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_SEED_BOMB
+- MOVE_FIRE_FANG
+- MOVE_CRUNCH
+- MOVE_SOLARBEAM
+
+SPECIES_CAMERUPT @ Cameruptite
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_EARTH_POWER
+- MOVE_FLAMETHROWER
+- MOVE_DOUBLE_EDGE
+- MOVE_LAVA_PLUME
+
+SPECIES_TORKOAL @ White Herb
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Marowak Alola @ White Herb
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Typhlosion Hisui
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Scovillain
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Camerupt @ Cameruptite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Earthquake
-- Attract
-
-Torkoal @ White Herb
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Overheat
-- Sunny Day
-- Explosion
-- Attract
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_INFERNO
+- MOVE_BODY_SLAM
+- MOVE_CLEAR_SMOG
+- MOVE_HEAT_WAVE
 
 === TRAINER_NORMAN_2 ===
 Name: NORMAN
@@ -21639,39 +23615,59 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Cyclizar
-Level: 80
+SPECIES_CYCLIZAR
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_RUSH
+- MOVE_U_TURN
+- MOVE_DRAGON_CLAW
 
-
-Ursaluna @ Flame Orb
-Level: 80
-Ability: Guts
+SPECIES_URSALUNA @ Expert Belt
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Shiny: Yes
-- Facade
-- Earthquake
-- High Horsepower
+- MOVE_HEADLONG_RUSH
+- MOVE_THRASH
+- MOVE_HAMMER_ARM
+- MOVE_HIGH_HORSEPOWER
 
-
-Grafaiai
-Level: 80
+SPECIES_GRAFAIAI
+Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_SLASH
+- MOVE_U_TURN
+- MOVE_POISON_JAB
 
-Arboliva
-Level: 80
+SPECIES_ARBOLIVA @ Expert Belt
+Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_DAZZLING_GLEAM
+- MOVE_TERRAIN_PULSE
+- MOVE_LEECH_SEED
 
-Slaking @ Sitrus Berry
+SPECIES_SLAKING @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_MEGA_KICK
+- MOVE_HAMMER_ARM
+- MOVE_PLAY_ROUGH
+- MOVE_SLACK_OFF
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
@@ -21679,43 +23675,69 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ursaluna @ Flame Orb
-Level: 90
-Ability: Guts
+SPECIES_URSALUNA @ Flame Orb
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Shiny: Yes
-- Facade
-- Earthquake
-- High Horsepower
+- MOVE_HEADLONG_RUSH
+- MOVE_THRASH
+- MOVE_HAMMER_ARM
+- MOVE_HIGH_HORSEPOWER
 
-
-Arboliva
-Level: 90
+SPECIES_ARBOLIVA @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_DAZZLING_GLEAM
+- MOVE_TERRAIN_PULSE
+- MOVE_LEECH_SEED
 
-
-Cyclizar
-Level: 90
+SPECIES_CYCLIZAR
+Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_RUSH
+- MOVE_U_TURN
+- MOVE_DRAGON_CLAW
 
-Grafaiai
-Level: 90
+SPECIES_GRAFAIAI @ Expert Belt
+Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_SLASH
+- MOVE_U_TURN
+- MOVE_POISON_JAB
 
-Obstagoon
-Level: 90
+SPECIES_OBSTAGOON
+Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_NIGHT_SLASH
+- MOVE_CROSS_CHOP
+- MOVE_TAKE_DOWN
 
-Slaking @ Sitrus Berry
+SPECIES_SLAKING @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_MEGA_KICK
+- MOVE_HAMMER_ARM
+- MOVE_PLAY_ROUGH
+- MOVE_SLACK_OFF
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
@@ -21723,45 +23745,69 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ursaluna @ Flame Orb
-Level: 100
-Ability: Guts
+SPECIES_URSALUNA @ Flame Orb
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Shiny: Yes
-- Facade
-- Earthquake
-- High Horsepower
+- MOVE_HEADLONG_RUSH
+- MOVE_THRASH
+- MOVE_HAMMER_ARM
+- MOVE_HIGH_HORSEPOWER
 
+SPECIES_CYCLIZAR @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_RUSH
+- MOVE_U_TURN
+- MOVE_DRAGON_CLAW
 
-Cyclizar
+SPECIES_ARBOLIVA
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_DAZZLING_GLEAM
+- MOVE_TERRAIN_PULSE
+- MOVE_LEECH_SEED
+
+SPECIES_GRAFAIAI @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_SLASH
+- MOVE_U_TURN
+- MOVE_POISON_JAB
+
+SPECIES_OBSTAGOON
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_NIGHT_SLASH
+- MOVE_CROSS_CHOP
+- MOVE_TAKE_DOWN
+
+SPECIES_SLAKING @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Arboliva
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Grafaiai
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Obstagoon
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Slaking @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_MEGA_KICK
+- MOVE_HAMMER_ARM
+- MOVE_PLAY_ROUGH
+- MOVE_SLACK_OFF
 
 === TRAINER_NORMAN_5 ===
 Name: NORMAN
@@ -21769,46 +23815,69 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Ursaluna @ Flame Orb
-Level: 100
-Ability: Guts
+SPECIES_URSALUNA @ Flame Orb
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Shiny: Yes
-- Facade
-- Earthquake
-- High Horsepower
+- MOVE_HEADLONG_RUSH
+- MOVE_THRASH
+- MOVE_HAMMER_ARM
+- MOVE_HIGH_HORSEPOWER
 
+SPECIES_OBSTAGOON @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_NIGHT_SLASH
+- MOVE_CROSS_CHOP
+- MOVE_TAKE_DOWN
 
-Obstagoon
+SPECIES_GRAFAIAI
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_GUNK_SHOT
+- MOVE_SLASH
+- MOVE_U_TURN
+- MOVE_POISON_JAB
+
+SPECIES_CYCLIZAR @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_RUSH
+- MOVE_U_TURN
+- MOVE_DRAGON_CLAW
+
+SPECIES_ARBOLIVA
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_PETAL_DANCE
+- MOVE_DAZZLING_GLEAM
+- MOVE_TERRAIN_PULSE
+- MOVE_LEECH_SEED
+
+SPECIES_SLAKING @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Grafaiai
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Cyclizar
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Arboliva
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Slaking @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
-- Shadow Ball
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_MEGA_KICK
+- MOVE_HAMMER_ARM
+- MOVE_PLAY_ROUGH
+- MOVE_SLACK_OFF
 
 === TRAINER_WINONA_2 ===
 Name: WINONA
@@ -21816,48 +23885,68 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Dragonite @ Dragoninite
+SPECIES_DRAGONITE @ Dragoninite
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_HURRICANE
+- MOVE_AQUA_TAIL
+- MOVE_ROOST
+
+SPECIES_GYARADOS @ Gyaradosite
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
+
+SPECIES_TROPIUS
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
+
+SPECIES_ROTOM_FAN @ Expert Belt
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_UPROAR
+- MOVE_HEX
+- MOVE_THUNDER_WAVE
+
+SPECIES_GLISCOR
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_ACROBATICS
+- MOVE_POISON_JAB
+- MOVE_SWORDS_DANCE
+
+SPECIES_ALTARIA @ Sitrus Berry
 Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
-
-Gyarados @ Gyaradosite
-Level: 90
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-
-
-Tropius
-Level: 90
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Synthesis
-
-Rotom Fan
-Level: 90
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-
-
-Gliscor
-Level: 90
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-
-
-Altaria @ Altarianite
-Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
@@ -21865,48 +23954,68 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gliscor
+SPECIES_GLISCOR
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_ACROBATICS
+- MOVE_POISON_JAB
+- MOVE_SWORDS_DANCE
+
+SPECIES_TROPIUS @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
+
+SPECIES_DRAGONITE @ Dragoninite
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_HURRICANE
+- MOVE_AQUA_TAIL
+- MOVE_ROOST
+
+SPECIES_ROTOM_FAN @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_UPROAR
+- MOVE_HEX
+- MOVE_THUNDER_WAVE
+
+SPECIES_GYARADOS
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
+
+SPECIES_ALTARIA @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Tropius
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonite @ Dragoninite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
-
-Rotom Fan
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Gyarados @ Gyaradosite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Altaria @ Altarianite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rest
-- Dragon Dance
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
@@ -21914,48 +24023,68 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gyarados @ Gyaradosite
+SPECIES_GYARADOS @ Gyaradosite
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
+
+SPECIES_TROPIUS @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
+
+SPECIES_DRAGONITE @ Dragoninite
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_HURRICANE
+- MOVE_AQUA_TAIL
+- MOVE_ROOST
+
+SPECIES_GLISCOR @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_ACROBATICS
+- MOVE_POISON_JAB
+- MOVE_SWORDS_DANCE
+
+SPECIES_ROTOM_FAN
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_UPROAR
+- MOVE_HEX
+- MOVE_THUNDER_WAVE
+
+SPECIES_ALTARIA @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Tropius
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonite @ Dragoninite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
-- Hyper Beam
-- Ice Beam
-
-Gliscor
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Rotom Fan
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Altaria @ Altarianite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rest
-- Dragon Dance
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
 === TRAINER_WINONA_5 ===
 Name: WINONA
@@ -21963,48 +24092,68 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gliscor
+SPECIES_GLISCOR
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CRABHAMMER
+- MOVE_ACROBATICS
+- MOVE_POISON_JAB
+- MOVE_SWORDS_DANCE
+
+SPECIES_TROPIUS @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_SOLARBEAM
+- MOVE_AIR_SLASH
+- MOVE_OUTRAGE
+- MOVE_MAGICAL_LEAF
+
+SPECIES_GYARADOS @ Gyaradosite
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_AQUA_TAIL
+- MOVE_THRASH
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
+
+SPECIES_DRAGONITE @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_OUTRAGE
+- MOVE_HURRICANE
+- MOVE_AQUA_TAIL
+- MOVE_ROOST
+
+SPECIES_ROTOM_FAN
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_DISCHARGE
+- MOVE_UPROAR
+- MOVE_HEX
+- MOVE_THUNDER_WAVE
+
+SPECIES_ALTARIA @ Sitrus Berry
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Tropius
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Earthquake
-
-Gyarados @ Gyaradosite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Dragonite @ Dragoninite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Thunderbolt
-- Earthquake
-- Ice Beam
-
-Rotom Fan
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Altaria @ Altarianite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Attack
-- Rest
-- Dragon Dance
-- Earthquake
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLUCK
+- MOVE_TAKE_DOWN
+- MOVE_DRAGON_PULSE
+- MOVE_MOONBLAST
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
@@ -22012,39 +24161,70 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Alakazam
-Level: 95
+SPECIES_ALAKAZAM
+Level: 91
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_RECOVER
+- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 
-
-Scream Tail
-Level: 95
+SPECIES_SCREAM_TAIL @ Expert Belt
+Level: 91
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLAY_ROUGH
+- MOVE_PSYCHIC_FANGS
+- MOVE_DOUBLE_EDGE
+- MOVE_BODY_SLAM
 
-
-Hatterene @ Chesto Berry
+SPECIES_HATTERENE
+Level: 92
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_BRUTAL_SWING
+- MOVE_CALM_MIND
+
+SPECIES_DELPHOX @ Expert Belt
+Level: 93
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_LIGHT_SCREEN
+
+SPECIES_IRON_VALIANT
+Level: 94
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_SPIRIT_BREAK
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
+
+SPECIES_METAGROSS @ Metagrossite
 Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Delphox @ Chesto Berry
-Level: 95
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Iron Valiant @ Sitrus Berry
-Level: 95
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Metagross @ Metagrossite
-Level: 95
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -22052,40 +24232,70 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Alakazam
-Level: 100
+SPECIES_ALAKAZAM
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_RECOVER
+- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 
-
-Scream Tail
-Level: 100
+SPECIES_SCREAM_TAIL @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLAY_ROUGH
+- MOVE_PSYCHIC_FANGS
+- MOVE_DOUBLE_EDGE
+- MOVE_BODY_SLAM
 
-
-Hatterene @ Chesto Berry
+SPECIES_HATTERENE
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_BRUTAL_SWING
+- MOVE_CALM_MIND
+
+SPECIES_DELPHOX @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_LIGHT_SCREEN
+
+SPECIES_IRON_VALIANT
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_SPIRIT_BREAK
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
+
+SPECIES_METAGROSS @ Metagrossite
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Delphox @ Chesto Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Iron Valiant @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Metagross @ Metagrossite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
-
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
@@ -22093,40 +24303,70 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Alakazam
-Level: 100
+SPECIES_ALAKAZAM
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_RECOVER
+- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 
-
-Scream Tail
-Level: 100
+SPECIES_SCREAM_TAIL @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLAY_ROUGH
+- MOVE_PSYCHIC_FANGS
+- MOVE_DOUBLE_EDGE
+- MOVE_BODY_SLAM
 
-
-Hatterene @ Chesto Berry
+SPECIES_HATTERENE
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_BRUTAL_SWING
+- MOVE_CALM_MIND
+
+SPECIES_DELPHOX @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_LIGHT_SCREEN
+
+SPECIES_IRON_VALIANT
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_SPIRIT_BREAK
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
+
+SPECIES_METAGROSS @ Metagrossite
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Delphox @ Chesto Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Iron Valiant @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Metagross @ Metagrossite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
-
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: TATE&LIZA
@@ -22134,39 +24374,70 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Alakazam
-Level: 100
+SPECIES_ALAKAZAM
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_RECOVER
+- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 
-
-Scream Tail
-Level: 100
+SPECIES_SCREAM_TAIL @ Expert Belt
+Level: 96
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_PLAY_ROUGH
+- MOVE_PSYCHIC_FANGS
+- MOVE_DOUBLE_EDGE
+- MOVE_BODY_SLAM
 
-
-Hatterene @ Chesto Berry
+SPECIES_HATTERENE
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_BRUTAL_SWING
+- MOVE_CALM_MIND
+
+SPECIES_DELPHOX @ Expert Belt
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+- MOVE_SHADOW_BALL
+- MOVE_LIGHT_SCREEN
+
+SPECIES_IRON_VALIANT
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_CLOSE_COMBAT
+- MOVE_SPIRIT_BREAK
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
+
+SPECIES_METAGROSS @ Metagrossite
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Delphox @ Chesto Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-
-Iron Valiant @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-
-Metagross @ Metagrossite
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe 
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -22174,38 +24445,71 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise
+SPECIES_BLASTOISE
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
+
+SPECIES_POLITOED @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_EARTH_POWER
+- MOVE_HYPER_VOICE
+- MOVE_BUBBLEBEAM
+
+SPECIES_SLOWKING
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
+
+SPECIES_SWAMPERT @ Swampertite
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+
+SPECIES_KINGDRA
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
+
+SPECIES_SEISMITOAD @ Chesto Berry
 Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Politoed
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Slowking
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Swampert @ Swampertite
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Seismitoad @ Chesto Berry
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Tera Type: Flying
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_DRAIN_PUNCH
+- MOVE_HYPER_VOICE
+- MOVE_MUDDY_WATER
 
 === TRAINER_JUAN_3 ===
 Name: JUAN
@@ -22213,38 +24517,71 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise
+SPECIES_BLASTOISE
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
+
+SPECIES_POLITOED @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_EARTH_POWER
+- MOVE_HYPER_VOICE
+- MOVE_BUBBLEBEAM
+
+SPECIES_SLOWKING
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
+
+SPECIES_SWAMPERT @ Swampertite
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+
+SPECIES_KINGDRA
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
+
+SPECIES_SEISMITOAD @ Chesto Berry
 Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Politoed
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Slowking
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Swampert @ Swampertite
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Seismitoad @ Chesto Berry
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Tera Type: Flying
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_DRAIN_PUNCH
+- MOVE_HYPER_VOICE
+- MOVE_MUDDY_WATER
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -22252,39 +24589,71 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise
+SPECIES_BLASTOISE
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
+
+SPECIES_POLITOED @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_EARTH_POWER
+- MOVE_HYPER_VOICE
+- MOVE_BUBBLEBEAM
+
+SPECIES_SLOWKING
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
+
+SPECIES_SWAMPERT @ Swampertite
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+
+SPECIES_KINGDRA
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
+
+SPECIES_SEISMITOAD @ Chesto Berry
 Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Politoed
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Slowking
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Swampert @ Swampertite
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Seismitoad @ Chesto Berry
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Tera Type: Flying
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
+- MOVE_HYDRO_PUMP
+- MOVE_DRAIN_PUNCH
+- MOVE_HYPER_VOICE
+- MOVE_MUDDY_WATER
 
 === TRAINER_JUAN_5 ===
 Name: JUAN
@@ -22292,40 +24661,71 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Blastoise
+SPECIES_BLASTOISE
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Dynamax Level: 10
 Gigantamax: Yes
+- MOVE_HYDRO_PUMP
+- MOVE_FLASH_CANNON
+- MOVE_BITE
+- MOVE_WAVE_CRASH
+
+SPECIES_POLITOED @ Expert Belt
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
+- MOVE_HYDRO_PUMP
+- MOVE_EARTH_POWER
+- MOVE_HYPER_VOICE
+- MOVE_BUBBLEBEAM
+
+SPECIES_SLOWKING
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 6 SpD
+Nature: Modest
+- MOVE_FUTURE_SIGHT
+- MOVE_SURF
+- MOVE_POWER_GEM
+- MOVE_SLACK_OFF
+
+SPECIES_SWAMPERT @ Swampertite
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_HYDRO_PUMP
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
+
+SPECIES_KINGDRA
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_WAVE_CRASH
+- MOVE_DRAGON_PULSE
+- MOVE_DRAGON_DANCE
+- MOVE_HYDRO_PUMP
+
+SPECIES_SEISMITOAD @ Chesto Berry
 Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Politoed
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-
-Slowking
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Swampert @ Swampertite
-Level: 100
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-
-Kingdra
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Seismitoad @ Chesto Berry
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
 Tera Type: Flying
-Level: 100
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-
+- MOVE_HYDRO_PUMP
+- MOVE_DRAIN_PUNCH
+- MOVE_HYPER_VOICE
+- MOVE_MUDDY_WATER
 
 === TRAINER_ANGELO ===
 Name: ANGELO
@@ -22381,72 +24781,71 @@ Class: Rival
 Pic: Steven
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-Gholdengo @ Choice Scarf
-Level: 100 
-Ability: Good as Gold
-Nature: Timid
-EVs: 4 Def / 252 SpA / 252 Spe
+SPECIES_GHOLDENGO @ Choice Scarf
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 SpD
+Nature: Modest
 Tera Type: Steel
-- Make It Rain
-- Shadow Ball
-- Focus Blast
-- Trick
+- MOVE_MAKE_IT_RAIN
+- MOVE_SHADOW_BALL
+- MOVE_POWER_GEM
+- MOVE_RECOVER
 
-Kingambit @ Black Glasses
-Level: 100  
-Ability: Supreme Overlord
+SPECIES_KINGAMBIT @ Black Glasses
+Level: 96
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
-EVs: 252 HP / 252 Atk / 4 SpD
-- Kowtow Cleave
-- Iron Head
-- Sucker Punch
-- Swords Dance
+- MOVE_KOWTOW_CLEAVE
+- MOVE_IRON_HEAD
+- MOVE_RETALIATE
+- MOVE_SWORDS_DANCE
 
-Scizor @ Heavy-Duty Boots
-Level: 100  
-Ability: Technician
+SPECIES_SCIZOR @ Heavy-Duty Boots
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
-EVs: 248 HP / 252 Atk / 8 SpD
-- Bullet Punch
-- U-turn
-- Close Combat
-- Swords Dance
+- MOVE_IRON_HEAD
+- MOVE_X_SCISSOR
+- MOVE_SLASH
+- MOVE_SWORDS_DANCE
 
-Excadrill @ Air Balloon
-Level: 100  
-Ability: Mold Breaker
-Nature: Jolly
-EVs: 252 Atk / 252 Spe / 4 HP
-- Earthquake
-- Iron Head
-- Rock Slide
-- Rapid Spin
+SPECIES_EXCADRILL @ Air Balloon
+Level: 98
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_EARTHQUAKE
+- MOVE_CRUSH_CLAW
+- MOVE_METAL_CLAW
+- MOVE_SWORDS_DANCE
 
-Corviknight @ Leftovers
-Level: 100 
-Ability: Mirror Armor
+SPECIES_CORVIKNIGHT @ Leftovers
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 6 SpD
+Nature: Adamant
 Dynamax Level: 10
 Gigantamax: Yes
-Nature: Impish
-EVs: 252 HP / 252 Def / 4 SpD
-- Brave Bird
-- Body Press
-- Roost
-- U-turn
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_POWER_TRIP
+- MOVE_DRILL_PECK
 
-Metagross @ Metagrossite
+SPECIES_METAGROSS @ Metagrossite
 Level: 100
-Ability: Clear Body
-Nature: Jolly
-EVs: 252 Atk / 252 Spe / 4 HP
-- Meteor Mash
-- Zen Headbutt
-- Earthquake
-- Ice Punch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 6 SpD
+Nature: Adamant
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_HAMMER_ARM
+- MOVE_TAKE_DOWN
 
 === TRAINER_ANABEL ===
 Name: ANABEL

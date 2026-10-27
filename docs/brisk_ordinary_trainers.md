@@ -6,13 +6,15 @@ lowering an evolved Pokémon's level alone did not make early fights fair.
 
 ## Protected encounters
 
-190 entries retain their exact pre-rework definitions. These include all gym
-leaders, rivals, Elite Four members, Wallace, other Champions, villain teams and
-admins, story opponents, Winstrates, interviewers and Frontier bosses. Trainers
-whose displayed name differs from their original ID are protected, including
-their rematches: Queen, Sugimori, Elvis, Manolete, Flo, Spro, Neo, Sam and Scotty.
-Special IDs, including Joey and Unborne, are also protected. No trainer in the
-FRLG party file was changed.
+Only the 27 dedication/Easter egg entries retain their exact definitions and
+previous runtime behavior. These include Queen, Sugimori, Elvis, Manolete, Flo,
+Spro, Neo, Sam, Scotty, Unborne, Joey and the Archive guest Champions. Twelve
+metadata-only records provide unused/Frontier identity templates rather than
+playable authored fights.
+
+Story trainers, rivals, gym leaders, Elite Four members, Wallace, villain teams,
+Steven, Winstrates and interviewers are now eligible for balance changes. See
+[the story-team pass](brisk_story_and_balls.md) for the current targets.
 
 ## Ordinary encounters
 
@@ -35,7 +37,7 @@ FRLG party file was changed.
 
 The existing Easy/Hard/Extreme modifiers still apply at battle time, including
 Extreme's stronger moves and full EV training. Ordinary trainers now also respect
-the stage power ceilings when Easy/Hard/Extreme generates moves. Protected trainer
+the stage power ceilings when Easy/Hard/Extreme generates moves. Dedication/Easter egg trainer
 IDs retain their previous runtime behavior. See [the complete mode plan](brisk_trainer_mode_plan.md)
 for every trainer's levels across all four modes and the revised opening curve.
 

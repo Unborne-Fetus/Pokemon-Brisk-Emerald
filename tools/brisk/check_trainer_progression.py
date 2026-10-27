@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[2]
-TEAM_RE = re.compile(r"^=== (TRAINER_\w+) ===\n(.*?)(?=^===|\Z)", re.M | re.S)
+TEAM_RE = re.compile(r"^===[ \t]*(TRAINER_\w+)[ \t]*===[ \t]*\n(.*?)(?=^===|\Z)", re.M | re.S)
 LEVEL_RE = re.compile(r"^Level: (\d+)[ \t]*$", re.M)
 
 MAP_BANDS = {
@@ -41,6 +41,15 @@ GYMS = dict(zip((f"TRAINER_{name}_1" for name in (
     "ROXANNE", "BRAWLY", "WATTSON", "FLANNERY", "NORMAN", "WINONA", "TATE_AND_LIZA", "JUAN")),
     (25, 35, 45, 50, 55, 65, 75, 90)))
 
+
+STORY_ACES = {
+    'TRAINER_TABITHA_MT_CHIMNEY': 49, 'TRAINER_MAXIE_MT_CHIMNEY': 50,
+    'TRAINER_TABITHA_MAGMA_HIDEOUT': 72, 'TRAINER_MAXIE_MAGMA_HIDEOUT': 74,
+    'TRAINER_TABITHA_MOSSDEEP': 82, 'TRAINER_MAXIE_MOSSDEEP': 84,
+    'TRAINER_SHELLY_WEATHER_INSTITUTE': 63, 'TRAINER_SHELLY_SEAFLOOR_CAVERN': 88,
+    'TRAINER_MATT': 73, 'TRAINER_ARCHIE': 90,
+    **{f'TRAINER_GABBY_AND_TY_{i}': ace for i, ace in enumerate((44,46,60,64,74,86),1)},
+}
 
 def levels(team):
     return list(map(int, LEVEL_RE.findall(team)))
@@ -98,12 +107,12 @@ def rival_aces(teams):
     aces = {}
     for trainer_id in teams:
         if re.match(r"TRAINER_(?:BRENDAN|MAY)_", trainer_id):
-            for location, ace in (("ROUTE_103", 7), ("RUSTBORO", 24), ("ROUTE_110", 42),
-                                  ("ROUTE_119", 63), ("LILYCOVE", 72)):
+            for location, ace in (("ROUTE_103", 9), ("RUSTBORO", 24), ("ROUTE_110", 44),
+                                  ("ROUTE_119", 65), ("LILYCOVE", 74)):
                 if location in trainer_id:
                     aces[trainer_id] = ace
-        if trainer_id == "TRAINER_WALLY_MAUVILLE": aces[trainer_id] = 41
-        if trainer_id == "TRAINER_WALLY_VR_1": aces[trainer_id] = 94
+        if trainer_id == "TRAINER_WALLY_MAUVILLE": aces[trainer_id] = 43
+        if trainer_id == "TRAINER_WALLY_VR_1": aces[trainer_id] = 96
     return aces
 
 
@@ -113,12 +122,12 @@ def audit():
     bands = encounter_bands(teams)
     protected = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())['protected']
     for trainer_id, (low, high) in bands.items():
-        if trainer_id in protected:
-            continue  # Intentional story/dedication exceptions are fingerprinted separately.
+        if trainer_id in protected or trainer_id in STORY_ACES:
+            continue  # Named bosses have explicit targets; only dedication/Easter eggs are exempt.
         party_levels = levels(teams[trainer_id])
         if not party_levels or not all(low <= level <= high for level in party_levels):
             errors.append(f"{trainer_id}: {party_levels}, expected {low}-{high}")
-    for trainer_id, ace in (GYMS | rival_aces(teams)).items():
+    for trainer_id, ace in (GYMS | rival_aces(teams) | STORY_ACES).items():
         party_levels = levels(teams[trainer_id])
         if not party_levels or max(party_levels) != ace or min(party_levels) < ace - 4:
             errors.append(f"{trainer_id}: {party_levels}, expected ace {ace}, spread <= 4")
@@ -134,7 +143,7 @@ def audit():
                     errors.append(f"{trainer_id}: rematch weaker than previous team")
     for trainer_id in rival_aces(teams):
         if "ROUTE_119" in trainer_id or "LILYCOVE" in trainer_id:
-            if re.search(r"^(Grovyle|Combusken|Marshtomp|Slugma|Lombre)\s*$", teams[trainer_id], re.M):
+            if re.search(r"^(?:SPECIES_)?(?:GROVYLE|COMBUSKEN|MARSHTOMP|SLUGMA|LOMBRE)\s*(?:@.*)?$", teams[trainer_id], re.M | re.I):
                 errors.append(f"{trainer_id}: late rival still has an unevolved team member")
     for error in errors:
         print(error)

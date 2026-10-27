@@ -40,6 +40,14 @@ def ordinary_scaled(level, mode, highest, cap=100):
     return max(1, min(100, min(boost(level), max(1, cap - (highest - level)))))
 
 
+def story_scaled(level, mode, highest, cap=100):
+    if mode == 'Easy': return max(1, (level + 1) // 2)
+    if mode == 'Hard': value = level + max(3, level // 4)
+    elif mode == 'Extreme': value = level + max(5, level * 45 // 100)
+    else: return level
+    return max(1, min(value, max(1, cap - (highest - level))))
+
+
 def render():
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
@@ -47,7 +55,7 @@ def render():
         'This is the complete Hoenn trainer plan, including ordinary trainers, rematches,',
         'story fights, rivals, gyms, the League and dedication/Easter egg encounters.',
         'Normal levels are authored per encounter; revisiting an old route does not',
-        'scale its trainers up to the player. Important teams retain their definitions.', '',
+        'scale its trainers up to the player. Only dedication/Easter egg teams are exempt.', '',
         '## Progression targets', '',
         '| Section | Normal | Easy | Hard, before badge cap | Extreme, before badge cap |',
         '| --- | --- | --- | --- | --- |',
@@ -65,12 +73,13 @@ def render():
         lines.append('| ' + name + ' | ' + ' | '.join(ranges) + ' |')
     lines += ['', 'The section bands describe ordinary encounter targets, not blanket map scaling.',
         'Individual teams and intentional protected exceptions are listed below.',
-        'The opening Route 103 tutorial rival and protected story encounters retain',
-        'their existing levels; they are separate from Route 102 ordinary trainers.', '',
+        'Important fights now use their own authored teams and stronger mode curve.',
+        'The opening Route 103 rival has a level-9 starter on Normal.', '',
         '## Mode rules', '',
         '| Rule | Easy | Normal | Hard | Extreme |',
         '| --- | --- | --- | --- | --- |',
         '| Ordinary trainer levels | Half, with support below ace | Varied authored curve | +20%, at least +2 | +40%, at least +4 |',
+        '| Story trainer levels | Half, rounded up | Authored boss curve | +25%, at least +3 | +45%, at least +5 |',
         '| IVs | 0 | 8 / 12 / 18 / 24 by stage | 31 | 31 |',
         '| EVs | 0 | 0 / 128 / 256 / 384 by stage | 128 / 256 / 384 / 510 (at least authored total) | 510, chosen for the set |',
         '| Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Optimized ordinary moves and stronger abilities | Optimized legal moves within stage power limits |',
@@ -78,17 +87,18 @@ def render():
         '| Battle style | Shift | Player preference | Set | Set |',
         '| Player battle consumables | Allowed | Allowed | Blocked | Blocked |',
         '| Shared EXP | 200% | 100% | 50% | Disabled |', '',
-        'Protected trainer scaling remains +20% (minimum 3) on Hard and +30%',
+        'Dedication/Easter egg scaling remains +20% (minimum 3) on Hard and +30%',
         '(minimum 4) on Extreme; Easy still halves their authored levels.',
-        'Ordinary Hard/Extreme supports stay below the current badge cap by their',
+        'Ordinary and story Hard/Extreme supports stay below the current badge cap by their',
         'authored gap from the ace, preserving a spread instead of flattening the team.',
         'Protected Hard and Extreme trainer levels are clamped to the save’s current',
         'badge cap: **25 / 35 / 45 / 50 / 55 / 65 / 75 / 90 / 100**. The individual',
         'table assumes a cap of 100; earlier caps limit ordinary teams and clamp',
         'protected levels individually. Extreme enforces the player EXP cap too.',
         'Difficulty does not evolve an opponent into a different species at runtime.', '',
-        'Only the 670 ordinary trainer IDs use the new move-power guard. Important',
-        'and dedication/Easter egg teams keep their previous mode behavior. Ordinary',
+        '670 ordinary IDs use their original stage power guard. 155 story IDs now use',
+        'a separate stage guard: 50 below 12; 75 below 25; 90 below 35; 100 below 50;',
+        '120 thereafter. Dedication/Easter egg teams retain their previous behavior. Ordinary',
         'generated attacks are capped at base power **50 below level 12; 60 below 20;',
         '75 below 30; 90 below 40; 100 below 50; 120 thereafter**. Multi-hit, recoil,',
         'setup, typing and abilities still affect actual damage; this is a power-spike',
@@ -101,7 +111,8 @@ def render():
         'preference persists in the save and is independent of difficulty.', '',
         '## Every trainer entry', '',
         'Levels are in authored party order. Protected entries are byte-for-byte',
-        'unchanged by this pass; their existing runtime difficulty modifiers remain.', '',
+        'unchanged only for dedication/Easter eggs. Metadata-only entries supply NPC',
+        'identity/templates, not playable battles; their levels are not a challenge plan.', '',
         '| Trainer ID | Display name | Role | Normal | Easy | Hard* | Extreme* |',
         '| --- | --- | --- | --- | --- | --- | --- |',
     ]
@@ -110,8 +121,8 @@ def render():
         lv = party_levels(team)
         if not lv: continue
         name = re.search(r'^Name: (.*)',team,re.M)[1].strip().replace('|','\\|')
-        role = 'Protected' if tid in policy['protected'] else 'Ordinary'
-        cells = [' / '.join(str(scaled(n,m) if role == 'Protected' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
+        role = 'Protected' if tid in policy['protected'] else 'Story' if tid in policy['story'] else 'Metadata' if tid in policy['metadata_only'] else 'Ordinary'
+        cells = [' / '.join(str(scaled(n,m) if role == 'Protected' else story_scaled(n,m,max(lv)) if role == 'Story' else n if role == 'Metadata' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| `' + tid + '` | ' + name + ' | ' + role + ' | ' + ' | '.join(cells) + ' |')
         count += 1
     lines += ['', f'{count} populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.', '',

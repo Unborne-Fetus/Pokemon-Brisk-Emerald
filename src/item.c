@@ -893,6 +893,15 @@ enum ItemType GetItemType(enum Item itemId)
     return gItemsInfo[SanitizeItemId(itemId)].type;
 }
 
+// Field-enabled balls still use the Bag's throw handler during battle.
+// Do not change their field type: that controls the overworld catch feature.
+enum ItemType GetItemBattleMenuType(enum Item itemId)
+{
+    if (GetItemBattleUsage(itemId) == EFFECT_ITEM_THROW_BALL)
+        return ITEM_USE_BAG_MENU;
+    return GetItemType(itemId);
+}
+
 ItemUseFunc GetItemFieldFunc(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].fieldUseFunc;

@@ -3,7 +3,7 @@
 This is the complete Hoenn trainer plan, including ordinary trainers, rematches,
 story fights, rivals, gyms, the League and dedication/Easter egg encounters.
 Normal levels are authored per encounter; revisiting an old route does not
-scale its trainers up to the player. Important teams retain their definitions.
+scale its trainers up to the player. Only dedication/Easter egg teams are exempt.
 
 ## Progression targets
 
@@ -29,14 +29,15 @@ scale its trainers up to the player. Important teams retain their definitions.
 
 The section bands describe ordinary encounter targets, not blanket map scaling.
 Individual teams and intentional protected exceptions are listed below.
-The opening Route 103 tutorial rival and protected story encounters retain
-their existing levels; they are separate from Route 102 ordinary trainers.
+Important fights now use their own authored teams and stronger mode curve.
+The opening Route 103 rival has a level-9 starter on Normal.
 
 ## Mode rules
 
 | Rule | Easy | Normal | Hard | Extreme |
 | --- | --- | --- | --- | --- |
 | Ordinary trainer levels | Half, with support below ace | Varied authored curve | +20%, at least +2 | +40%, at least +4 |
+| Story trainer levels | Half, rounded up | Authored boss curve | +25%, at least +3 | +45%, at least +5 |
 | IVs | 0 | 8 / 12 / 18 / 24 by stage | 31 | 31 |
 | EVs | 0 | 0 / 128 / 256 / 384 by stage | 128 / 256 / 384 / 510 (at least authored total) | 510, chosen for the set |
 | Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Optimized ordinary moves and stronger abilities | Optimized legal moves within stage power limits |
@@ -45,9 +46,9 @@ their existing levels; they are separate from Route 102 ordinary trainers.
 | Player battle consumables | Allowed | Allowed | Blocked | Blocked |
 | Shared EXP | 200% | 100% | 50% | Disabled |
 
-Protected trainer scaling remains +20% (minimum 3) on Hard and +30%
+Dedication/Easter egg scaling remains +20% (minimum 3) on Hard and +30%
 (minimum 4) on Extreme; Easy still halves their authored levels.
-Ordinary Hard/Extreme supports stay below the current badge cap by their
+Ordinary and story Hard/Extreme supports stay below the current badge cap by their
 authored gap from the ace, preserving a spread instead of flattening the team.
 Protected Hard and Extreme trainer levels are clamped to the save’s current
 badge cap: **25 / 35 / 45 / 50 / 55 / 65 / 75 / 90 / 100**. The individual
@@ -55,8 +56,9 @@ table assumes a cap of 100; earlier caps limit ordinary teams and clamp
 protected levels individually. Extreme enforces the player EXP cap too.
 Difficulty does not evolve an opponent into a different species at runtime.
 
-Only the 670 ordinary trainer IDs use the new move-power guard. Important
-and dedication/Easter egg teams keep their previous mode behavior. Ordinary
+670 ordinary IDs use their original stage power guard. 155 story IDs now use
+a separate stage guard: 50 below 12; 75 below 25; 90 below 35; 100 below 50;
+120 thereafter. Dedication/Easter egg teams retain their previous behavior. Ordinary
 generated attacks are capped at base power **50 below level 12; 60 below 20;
 75 below 30; 90 below 40; 100 below 50; 120 thereafter**. Multi-hit, recoil,
 setup, typing and abilities still affect actual damage; this is a power-spike
@@ -73,44 +75,45 @@ preference persists in the save and is independent of difficulty.
 ## Every trainer entry
 
 Levels are in authored party order. Protected entries are byte-for-byte
-unchanged by this pass; their existing runtime difficulty modifiers remain.
+unchanged only for dedication/Easter eggs. Metadata-only entries supply NPC
+identity/templates, not playable battles; their levels are not a challenge plan.
 
 | Trainer ID | Display name | Role | Normal | Easy | Hard* | Extreme* |
 | --- | --- | --- | --- | --- | --- | --- |
 | `TRAINER_SAWYER_1` | SAWYER | Ordinary | 46 | 23 | 55 | 64 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_1` | GRUNT | Protected | 69 | 35 | 82 | 89 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_2` | GRUNT | Protected | 69 / 69 | 35 / 35 | 82 / 82 | 89 / 89 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_3` | GRUNT | Protected | 69 | 35 | 82 | 89 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_4` | GRUNT | Protected | 69 | 35 | 82 | 89 |
-| `TRAINER_GRUNT_SEAFLOOR_CAVERN_1` | GRUNT | Protected | 82 | 41 | 98 | 100 |
-| `TRAINER_GRUNT_SEAFLOOR_CAVERN_2` | GRUNT | Protected | 82 | 41 | 98 | 100 |
-| `TRAINER_GRUNT_SEAFLOOR_CAVERN_3` | GRUNT | Protected | 82 | 41 | 98 | 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_1` | GRUNT | Story | 73 | 37 | 91 | 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_2` | GRUNT | Story | 72 / 73 | 36 / 37 | 90 / 91 | 99 / 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_3` | GRUNT | Story | 73 | 37 | 91 | 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_4` | GRUNT | Story | 73 | 37 | 91 | 100 |
+| `TRAINER_GRUNT_SEAFLOOR_CAVERN_1` | GRUNT | Story | 87 | 44 | 100 | 100 |
+| `TRAINER_GRUNT_SEAFLOOR_CAVERN_2` | GRUNT | Story | 87 | 44 | 100 | 100 |
+| `TRAINER_GRUNT_SEAFLOOR_CAVERN_3` | GRUNT | Story | 87 | 44 | 100 | 100 |
 | `TRAINER_GABRIELLE_1` | GABRIELLE | Ordinary | 66 / 66 / 66 / 66 / 66 / 67 | 33 / 33 / 33 / 33 / 33 / 34 | 79 / 79 / 79 / 79 / 79 / 80 | 92 / 92 / 92 / 92 / 92 / 93 |
-| `TRAINER_GRUNT_PETALBURG_WOODS` | GRUNT | Protected | 12 | 6 | 15 | 16 |
+| `TRAINER_GRUNT_PETALBURG_WOODS` | GRUNT | Story | 20 | 10 | 25 | 29 |
 | `TRAINER_MARCEL` | MARCEL | Ordinary | 66 / 67 | 33 / 34 | 79 / 80 | 92 / 93 |
 | `TRAINER_ALBERTO` | ALBERTO | Ordinary | 66 / 67 | 33 / 34 | 79 / 80 | 92 / 93 |
 | `TRAINER_ED` | ED | Ordinary | 66 / 67 | 33 / 34 | 79 / 80 | 92 / 93 |
-| `TRAINER_GRUNT_SEAFLOOR_CAVERN_4` | GRUNT | Protected | 82 | 41 | 98 | 100 |
+| `TRAINER_GRUNT_SEAFLOOR_CAVERN_4` | GRUNT | Story | 87 | 44 | 100 | 100 |
 | `TRAINER_DECLAN` | DECLAN | Ordinary | 68 | 34 | 81 | 95 |
-| `TRAINER_GRUNT_RUSTURF_TUNNEL` | GRUNT | Protected | 20 | 10 | 24 | 26 |
-| `TRAINER_GRUNT_WEATHER_INST_1` | GRUNT | Protected | 58 / 58 | 29 / 29 | 69 / 69 | 75 / 75 |
-| `TRAINER_GRUNT_WEATHER_INST_2` | GRUNT | Protected | 59 / 59 | 30 / 30 | 70 / 70 | 76 / 76 |
-| `TRAINER_GRUNT_WEATHER_INST_3` | GRUNT | Protected | 59 / 59 / 59 | 30 / 30 / 30 | 70 / 70 / 70 | 76 / 76 / 76 |
-| `TRAINER_GRUNT_MUSEUM_1` | GRUNT | Protected | 40 | 20 | 48 | 52 |
-| `TRAINER_GRUNT_MUSEUM_2` | GRUNT | Protected | 37 / 39 | 19 / 20 | 44 / 46 | 48 / 50 |
-| `TRAINER_GRUNT_SPACE_CENTER_1` | GRUNT | Protected | 78 | 39 | 93 | 100 |
-| `TRAINER_GRUNT_MT_PYRE_1` | GRUNT | Protected | 67 | 34 | 80 | 87 |
-| `TRAINER_GRUNT_MT_PYRE_2` | GRUNT | Protected | 67 | 34 | 80 | 87 |
-| `TRAINER_GRUNT_MT_PYRE_3` | GRUNT | Protected | 67 / 67 | 34 / 34 | 80 / 80 | 87 / 87 |
-| `TRAINER_GRUNT_WEATHER_INST_4` | GRUNT | Protected | 61 | 31 | 73 | 79 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_5` | GRUNT | Protected | 69 | 35 | 82 | 89 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_6` | GRUNT | Protected | 69 | 35 | 82 | 89 |
+| `TRAINER_GRUNT_RUSTURF_TUNNEL` | GRUNT | Story | 24 | 12 | 30 | 34 |
+| `TRAINER_GRUNT_WEATHER_INST_1` | GRUNT | Story | 60 / 61 | 30 / 31 | 75 / 76 | 87 / 88 |
+| `TRAINER_GRUNT_WEATHER_INST_2` | GRUNT | Story | 61 / 62 | 31 / 31 | 76 / 77 | 88 / 89 |
+| `TRAINER_GRUNT_WEATHER_INST_3` | GRUNT | Story | 60 / 61 / 62 | 30 / 31 / 31 | 75 / 76 / 77 | 87 / 88 / 89 |
+| `TRAINER_GRUNT_MUSEUM_1` | GRUNT | Story | 40 | 20 | 50 | 58 |
+| `TRAINER_GRUNT_MUSEUM_2` | GRUNT | Story | 39 / 40 | 20 / 20 | 48 / 50 | 56 / 58 |
+| `TRAINER_GRUNT_SPACE_CENTER_1` | GRUNT | Story | 80 | 40 | 100 | 100 |
+| `TRAINER_GRUNT_MT_PYRE_1` | GRUNT | Story | 70 | 35 | 87 | 100 |
+| `TRAINER_GRUNT_MT_PYRE_2` | GRUNT | Story | 70 | 35 | 87 | 100 |
+| `TRAINER_GRUNT_MT_PYRE_3` | GRUNT | Story | 69 / 70 | 35 / 35 | 86 / 87 | 99 / 100 |
+| `TRAINER_GRUNT_WEATHER_INST_4` | GRUNT | Story | 61 | 31 | 76 | 88 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_5` | GRUNT | Story | 73 | 37 | 91 | 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_6` | GRUNT | Story | 73 | 37 | 91 | 100 |
 | `TRAINER_FREDRICK` | FREDRICK | Ordinary | 66 / 67 | 33 / 34 | 79 / 80 | 92 / 93 |
-| `TRAINER_MATT` | MATT | Protected | 69 / 69 | 35 / 35 | 82 / 82 | 89 / 89 |
+| `TRAINER_MATT` | MATT | Story | 70 / 71 / 72 / 73 | 35 / 36 / 36 / 37 | 87 / 88 / 90 / 91 | 97 / 98 / 99 / 100 |
 | `TRAINER_ZANDER` | ZANDER | Ordinary | 67 | 34 | 80 | 93 |
-| `TRAINER_SHELLY_WEATHER_INSTITUTE` | SHELLY | Protected | 61 / 61 | 31 / 31 | 73 / 73 | 79 / 79 |
-| `TRAINER_SHELLY_SEAFLOOR_CAVERN` | SHELLY | Protected | 82 / 82 | 41 / 41 | 98 / 98 | 100 / 100 |
-| `TRAINER_ARCHIE` | ARCHIE | Protected | 83 / 83 / 83 / 83 / 100 | 42 / 42 / 42 / 42 / 50 | 99 / 99 / 99 / 99 / 100 | 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_SHELLY_WEATHER_INSTITUTE` | SHELLY | Story | 60 / 61 / 62 / 63 | 30 / 31 / 31 / 32 | 75 / 76 / 77 / 78 | 87 / 88 / 89 / 91 |
+| `TRAINER_SHELLY_SEAFLOOR_CAVERN` | SHELLY | Story | 84 / 85 / 86 / 87 / 88 | 42 / 43 / 43 / 44 / 44 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_ARCHIE` | ARCHIE | Story | 86 / 86 / 87 / 88 / 89 / 90 | 43 / 43 / 44 / 44 / 45 / 45 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_LEAH` | LEAH | Ordinary | 67 | 34 | 80 | 93 |
 | `TRAINER_DAISY` | DAISY | Ordinary | 35 / 36 | 17 / 18 | 42 / 43 | 49 / 50 |
 | `TRAINER_ROSE_1` | ROSE | Ordinary | 40 / 40 / 41 | 20 / 20 / 21 | 48 / 48 / 49 | 56 / 56 / 57 |
@@ -127,12 +130,12 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_DUSTY_3` | DUSTY | Ordinary | 52 | 26 | 62 | 72 |
 | `TRAINER_DUSTY_4` | DUSTY | Ordinary | 55 | 28 | 66 | 77 |
 | `TRAINER_DUSTY_5` | DUSTY | Ordinary | 58 | 29 | 69 | 81 |
-| `TRAINER_GABBY_AND_TY_1` | GABBY & TY | Protected | 30 / 25 | 15 / 13 | 36 / 30 | 39 / 32 |
-| `TRAINER_GABBY_AND_TY_2` | GABBY & TY | Protected | 39 / 40 | 20 / 20 | 46 / 48 | 50 / 52 |
-| `TRAINER_GABBY_AND_TY_3` | GABBY & TY | Protected | 39 / 40 | 20 / 20 | 46 / 48 | 50 / 52 |
-| `TRAINER_GABBY_AND_TY_4` | GABBY & TY | Protected | 46 / 48 | 23 / 24 | 55 / 57 | 59 / 62 |
-| `TRAINER_GABBY_AND_TY_5` | GABBY & TY | Protected | 50 / 54 | 25 / 27 | 60 / 64 | 65 / 70 |
-| `TRAINER_GABBY_AND_TY_6` | GABBY & TY | Protected | 58 / 60 | 29 / 30 | 69 / 72 | 75 / 78 |
+| `TRAINER_GABBY_AND_TY_1` | GABBY & TY | Story | 43 / 44 | 22 / 22 | 53 / 55 | 62 / 63 |
+| `TRAINER_GABBY_AND_TY_2` | GABBY & TY | Story | 45 / 46 | 23 / 23 | 56 / 57 | 65 / 66 |
+| `TRAINER_GABBY_AND_TY_3` | GABBY & TY | Story | 59 / 60 | 30 / 30 | 73 / 75 | 85 / 87 |
+| `TRAINER_GABBY_AND_TY_4` | GABBY & TY | Story | 63 / 64 | 32 / 32 | 78 / 80 | 91 / 92 |
+| `TRAINER_GABBY_AND_TY_5` | GABBY & TY | Story | 73 / 74 | 37 / 37 | 91 / 92 | 99 / 100 |
+| `TRAINER_GABBY_AND_TY_6` | GABBY & TY | Story | 85 / 86 | 43 / 43 | 99 / 100 | 99 / 100 |
 | `TRAINER_LOLA_1` | LOLA | Ordinary | 35 / 36 | 17 / 18 | 42 / 43 | 49 / 50 |
 | `TRAINER_AUSTINA` | AUSTINA | Ordinary | 35 | 18 | 42 | 49 |
 | `TRAINER_GWEN` | GWEN | Ordinary | 35 | 18 | 42 | 49 |
@@ -192,7 +195,7 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_VALERIE_5` | VALERIE | Ordinary | 75 / 77 / 79 | 38 / 39 / 40 | 90 / 92 / 94 | 96 / 98 / 100 |
 | `TRAINER_CINDY_1` | CINDY | Ordinary | 14 | 7 | 16 | 19 |
 | `TRAINER_DAPHNE` | DAPHNE | Ordinary | 85 / 86 | 42 / 43 | 99 / 100 | 99 / 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_2` | GRUNT | Protected | 77 / 77 / 77 | 39 / 39 / 39 | 92 / 92 / 92 | 100 / 100 / 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_2` | GRUNT | Story | 78 / 79 / 80 | 39 / 40 / 40 | 97 / 98 / 100 | 98 / 99 / 100 |
 | `TRAINER_CINDY_2` | CINDY | Ordinary | 21 | 11 | 25 | 29 |
 | `TRAINER_BRIANNA` | BRIANNA | Ordinary | 87 | 44 | 100 | 100 |
 | `TRAINER_NAOMI` | NAOMI | Ordinary | 60 | 30 | 72 | 84 |
@@ -222,7 +225,7 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_STEVE_1` | STEVE | Ordinary | 44 | 22 | 52 | 61 |
 | `TRAINER_THALIA_1` | THALIA | Ordinary | 56 / 57 | 28 / 29 | 67 / 68 | 78 / 79 |
 | `TRAINER_MARK` | MARK | Ordinary | 67 | 34 | 80 | 93 |
-| `TRAINER_GRUNT_MT_CHIMNEY_1` | GRUNT | Protected | 47 | 24 | 56 | 61 |
+| `TRAINER_GRUNT_MT_CHIMNEY_1` | GRUNT | Story | 49 | 25 | 61 | 71 |
 | `TRAINER_STEVE_2` | STEVE | Ordinary | 47 | 24 | 56 | 65 |
 | `TRAINER_STEVE_3` | STEVE | Ordinary | 48 / 50 | 24 / 25 | 57 / 60 | 67 / 70 |
 | `TRAINER_STEVE_4` | STEVE | Ordinary | 51 / 53 | 26 / 27 | 61 / 63 | 71 / 74 |
@@ -268,8 +271,8 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_DAISUKE` | Spro | Protected | 49 / 48 / 49 | 25 / 24 / 25 | 58 / 57 / 58 | 63 / 62 / 63 |
 | `TRAINER_ATSUSHI` | ATSUSHI | Ordinary | 69 | 35 | 82 | 96 |
 | `TRAINER_KIRK` | KIRK | Ordinary | 41 / 43 | 21 / 22 | 49 / 51 | 57 / 60 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_7` | GRUNT | Protected | 70 / 71 | 35 / 36 | 84 / 85 | 91 / 92 |
-| `TRAINER_GRUNT_AQUA_HIDEOUT_8` | GRUNT | Protected | 71 | 36 | 85 | 92 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_7` | GRUNT | Story | 72 / 73 | 36 / 37 | 90 / 91 | 99 / 100 |
+| `TRAINER_GRUNT_AQUA_HIDEOUT_8` | GRUNT | Story | 73 | 37 | 91 | 100 |
 | `TRAINER_SHAWN` | SHAWN | Ordinary | 40 / 41 | 20 / 21 | 48 / 49 | 56 / 57 |
 | `TRAINER_FERNANDO_1` | FERNANDO | Ordinary | 67 / 69 | 34 / 35 | 80 / 82 | 93 / 96 |
 | `TRAINER_DALTON_1` | Queen | Protected | 44 / 43 | 22 / 22 | 52 / 51 | 57 / 55 |
@@ -337,18 +340,18 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_WALTER_3` | WALTER | Ordinary | 70 / 72 | 35 / 36 | 84 / 86 | 98 / 100 |
 | `TRAINER_WALTER_4` | WALTER | Ordinary | 78 / 80 | 39 / 40 | 93 / 96 | 98 / 100 |
 | `TRAINER_WALTER_5` | WALTER | Ordinary | 96 / 98 / 100 | 48 / 49 / 50 | 96 / 98 / 100 | 96 / 98 / 100 |
-| `TRAINER_SIDNEY` | SIDNEY | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_PHOEBE` | PHOEBE | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_GLACIA` | GLACIA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_DRAKE` | DRAKE | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_ROXANNE_1` | ROXANNE | Protected | 25 / 25 / 25 / 25 | 13 / 13 / 13 / 13 | 30 / 30 / 30 / 30 | 32 / 32 / 32 / 32 |
-| `TRAINER_BRAWLY_1` | BRAWLY | Protected | 35 / 35 / 35 / 35 | 18 / 18 / 18 / 18 | 42 / 42 / 42 / 42 | 45 / 45 / 45 / 45 |
-| `TRAINER_WATTSON_1` | WATTSON | Protected | 45 / 45 / 45 / 45 | 23 / 23 / 23 / 23 | 54 / 54 / 54 / 54 | 58 / 58 / 58 / 58 |
-| `TRAINER_FLANNERY_1` | FLANNERY | Protected | 46 / 46 / 46 / 46 / 50 | 23 / 23 / 23 / 23 / 25 | 55 / 55 / 55 / 55 / 60 | 59 / 59 / 59 / 59 / 65 |
-| `TRAINER_NORMAN_1` | NORMAN | Protected | 51 / 51 / 51 / 55 | 26 / 26 / 26 / 28 | 61 / 61 / 61 / 66 | 66 / 66 / 66 / 71 |
-| `TRAINER_WINONA_1` | WINONA | Protected | 61 / 61 / 61 / 61 / 65 | 31 / 31 / 31 / 31 / 33 | 73 / 73 / 73 / 73 / 78 | 79 / 79 / 79 / 79 / 84 |
-| `TRAINER_TATE_AND_LIZA_1` | TATE&LIZA | Protected | 71 / 71 / 71 / 71 / 75 | 36 / 36 / 36 / 36 / 38 | 85 / 85 / 85 / 85 / 90 | 92 / 92 / 92 / 92 / 97 |
-| `TRAINER_JUAN_1` | JUAN | Protected | 86 / 86 / 86 / 86 / 86 / 90 | 43 / 43 / 43 / 43 / 43 / 45 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_SIDNEY` | SIDNEY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_PHOEBE` | PHOEBE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_GLACIA` | GLACIA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_DRAKE` | DRAKE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_ROXANNE_1` | ROXANNE | Story | 22 / 23 / 24 / 25 | 11 / 12 / 12 / 13 | 27 / 28 / 30 / 31 | 31 / 33 / 34 / 36 |
+| `TRAINER_BRAWLY_1` | BRAWLY | Story | 32 / 33 / 34 / 35 | 16 / 17 / 17 / 18 | 40 / 41 / 42 / 43 | 46 / 47 / 49 / 50 |
+| `TRAINER_WATTSON_1` | WATTSON | Story | 42 / 43 / 44 / 45 | 21 / 22 / 22 / 23 | 52 / 53 / 55 / 56 | 60 / 62 / 63 / 65 |
+| `TRAINER_FLANNERY_1` | FLANNERY | Story | 46 / 47 / 48 / 49 / 50 | 23 / 24 / 24 / 25 / 25 | 57 / 58 / 60 / 61 / 62 | 66 / 68 / 69 / 71 / 72 |
+| `TRAINER_NORMAN_1` | NORMAN | Story | 52 / 53 / 54 / 55 | 26 / 27 / 27 / 28 | 65 / 66 / 67 / 68 | 75 / 76 / 78 / 79 |
+| `TRAINER_WINONA_1` | WINONA | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_TATE_AND_LIZA_1` | TATE&LIZA | Story | 71 / 72 / 73 / 74 / 75 | 36 / 36 / 37 / 37 / 38 | 88 / 90 / 91 / 92 / 93 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_JUAN_1` | JUAN | Story | 86 / 86 / 87 / 88 / 89 / 90 | 43 / 43 / 44 / 44 / 45 / 45 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_JERRY_1` | JERRY | Ordinary | 20 | 10 | 24 | 28 |
 | `TRAINER_TED` | TED | Ordinary | 44 | 22 | 52 | 61 |
 | `TRAINER_PAUL` | PAUL | Ordinary | 42 / 43 / 44 | 21 / 21 / 22 | 50 / 51 / 52 | 58 / 60 / 61 |
@@ -368,14 +371,14 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_ANNA_AND_MEG_3` | ANNA & MEG | Ordinary | 44 / 46 | 22 / 23 | 52 / 55 | 61 / 64 |
 | `TRAINER_ANNA_AND_MEG_4` | ANNA & MEG | Ordinary | 53 / 55 | 27 / 28 | 63 / 66 | 74 / 77 |
 | `TRAINER_ANNA_AND_MEG_5` | ANNA & MEG | Ordinary | 68 / 70 | 34 / 35 | 81 / 84 | 95 / 98 |
-| `TRAINER_VICTOR` | VICTOR | Protected | 45 / 45 | 23 / 23 | 54 / 54 | 58 / 58 |
+| `TRAINER_VICTOR` | VICTOR | Story | 45 / 46 | 23 / 23 | 56 / 57 | 65 / 66 |
 | `TRAINER_MIGUEL_1` | MIGUEL | Ordinary | 40 | 20 | 48 | 56 |
 | `TRAINER_COLTON` | COLTON | Ordinary | 80 / 82 / 84 / 86 / 88 / 90 | 40 / 41 / 42 / 43 / 44 / 45 | 90 / 92 / 94 / 96 / 98 / 100 | 90 / 92 / 94 / 96 / 98 / 100 |
 | `TRAINER_MIGUEL_2` | MIGUEL | Ordinary | 60 | 30 | 72 | 84 |
 | `TRAINER_MIGUEL_3` | MIGUEL | Ordinary | 70 | 35 | 84 | 98 |
 | `TRAINER_MIGUEL_4` | MIGUEL | Ordinary | 80 | 40 | 96 | 100 |
 | `TRAINER_MIGUEL_5` | MIGUEL | Ordinary | 100 | 50 | 100 | 100 |
-| `TRAINER_VICTORIA` | VICTORIA | Protected | 45 | 23 | 54 | 58 |
+| `TRAINER_VICTORIA` | VICTORIA | Story | 46 | 23 | 57 | 66 |
 | `TRAINER_VANESSA` | VANESSA | Ordinary | 69 | 35 | 82 | 96 |
 | `TRAINER_BETHANY` | BETHANY | Ordinary | 85 / 86 / 88 | 43 / 43 / 44 | 97 / 98 / 100 | 97 / 98 / 100 |
 | `TRAINER_ISABEL_1` | ISABEL | Ordinary | 37 / 39 | 19 / 20 | 44 / 46 | 51 / 54 |
@@ -388,7 +391,7 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_TIMOTHY_3` | TIMOTHY | Ordinary | 67 | 34 | 80 | 93 |
 | `TRAINER_TIMOTHY_4` | TIMOTHY | Ordinary | 70 | 35 | 84 | 98 |
 | `TRAINER_TIMOTHY_5` | TIMOTHY | Ordinary | 100 | 50 | 100 | 100 |
-| `TRAINER_VICKY` | VICKY | Protected | 46 | 23 | 55 | 59 |
+| `TRAINER_VICKY` | VICKY | Story | 46 | 23 | 57 | 66 |
 | `TRAINER_SHELBY_1` | SHELBY | Ordinary | 46 / 48 | 23 / 24 | 55 / 57 | 64 / 67 |
 | `TRAINER_SHELBY_2` | SHELBY | Ordinary | 53 / 55 | 27 / 28 | 63 / 66 | 74 / 77 |
 | `TRAINER_SHELBY_3` | SHELBY | Ordinary | 63 / 65 | 32 / 33 | 75 / 78 | 88 / 91 |
@@ -411,7 +414,7 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_EDDIE` | EDDIE | Ordinary | 39 / 41 | 20 / 21 | 46 / 49 | 54 / 57 |
 | `TRAINER_ALLEN` | ALLEN | Ordinary | 13 / 11 | 7 / 6 | 15 / 13 | 18 / 15 |
 | `TRAINER_TIMMY` | TIMMY | Ordinary | 38 / 40 | 19 / 20 | 45 / 48 | 53 / 56 |
-| `TRAINER_WALLACE` | WALLACE | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_WALLACE` | WALLACE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_ANDREW` | ANDREW | Ordinary | 35 / 36 / 38 | 18 / 18 / 19 | 42 / 43 / 45 | 49 / 50 / 53 |
 | `TRAINER_IVAN` | IVAN | Ordinary | 14 / 16 / 18 | 7 / 8 / 9 | 16 / 19 / 21 | 19 / 22 / 25 |
 | `TRAINER_CLAUDE` | CLAUDE | Ordinary | 44 / 44 / 45 | 22 / 22 / 23 | 52 / 52 / 54 | 61 / 61 / 63 |
@@ -590,30 +593,30 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_CONOR` | CONOR | Ordinary | 81 / 83 | 41 / 42 | 97 / 99 | 98 / 100 |
 | `TRAINER_EDWIN_1` | EDWIN | Ordinary | 36 / 37 | 18 / 19 | 43 / 44 | 50 / 51 |
 | `TRAINER_HECTOR` | HECTOR | Ordinary | 43 / 44 | 21 / 22 | 51 / 52 | 60 / 61 |
-| `TRAINER_TABITHA_MOSSDEEP` | TABITHA | Protected | 78 / 78 / 79 | 39 / 39 / 40 | 93 / 93 / 94 | 100 / 100 / 100 |
+| `TRAINER_TABITHA_MOSSDEEP` | TABITHA | Story | 79 / 80 / 81 / 82 | 40 / 40 / 41 / 41 | 97 / 98 / 99 / 100 | 97 / 98 / 99 / 100 |
 | `TRAINER_EDWIN_2` | EDWIN | Ordinary | 39 / 41 | 20 / 21 | 46 / 49 | 54 / 57 |
 | `TRAINER_EDWIN_3` | EDWIN | Ordinary | 42 / 44 | 21 / 22 | 50 / 52 | 58 / 61 |
 | `TRAINER_EDWIN_4` | EDWIN | Ordinary | 45 / 47 | 23 / 24 | 54 / 56 | 63 / 65 |
 | `TRAINER_EDWIN_5` | EDWIN | Ordinary | 98 / 100 | 49 / 50 | 98 / 100 | 98 / 100 |
-| `TRAINER_WALLY_VR_1` | WALLY | Protected | 93 / 92 / 93 / 90 / 94 | 47 / 46 / 47 / 45 / 47 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_BRENDAN_ROUTE_103_MUDKIP` | BRENDAN | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_BRENDAN_ROUTE_110_MUDKIP` | BRENDAN | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_BRENDAN_ROUTE_119_MUDKIP` | BRENDAN | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
-| `TRAINER_BRENDAN_ROUTE_103_TREECKO` | BRENDAN | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_BRENDAN_ROUTE_110_TREECKO` | BRENDAN | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_BRENDAN_ROUTE_119_TREECKO` | BRENDAN | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
-| `TRAINER_BRENDAN_ROUTE_103_TORCHIC` | BRENDAN | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_BRENDAN_ROUTE_110_TORCHIC` | BRENDAN | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_BRENDAN_ROUTE_119_TORCHIC` | BRENDAN | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
-| `TRAINER_MAY_ROUTE_103_MUDKIP` | MAY | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_MAY_ROUTE_110_MUDKIP` | MAY | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_MAY_ROUTE_119_MUDKIP` | MAY | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
-| `TRAINER_MAY_ROUTE_103_TREECKO` | MAY | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_MAY_ROUTE_110_TREECKO` | MAY | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_MAY_ROUTE_119_TREECKO` | MAY | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
-| `TRAINER_MAY_ROUTE_103_TORCHIC` | MAY | Protected | 7 | 4 | 10 | 11 |
-| `TRAINER_MAY_ROUTE_110_TORCHIC` | MAY | Protected | 40 / 40 / 42 | 20 / 20 / 21 | 48 / 48 / 50 | 52 / 52 / 54 |
-| `TRAINER_MAY_ROUTE_119_TORCHIC` | MAY | Protected | 61 / 61 / 63 | 31 / 31 / 32 | 73 / 73 / 75 | 79 / 79 / 81 |
+| `TRAINER_WALLY_VR_1` | WALLY | Story | 92 / 93 / 94 / 95 / 96 | 46 / 47 / 47 / 48 / 48 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRENDAN_ROUTE_103_MUDKIP` | BRENDAN | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_BRENDAN_ROUTE_110_MUDKIP` | BRENDAN | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_BRENDAN_ROUTE_119_MUDKIP` | BRENDAN | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_BRENDAN_ROUTE_103_TREECKO` | BRENDAN | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_BRENDAN_ROUTE_110_TREECKO` | BRENDAN | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_BRENDAN_ROUTE_119_TREECKO` | BRENDAN | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_BRENDAN_ROUTE_103_TORCHIC` | BRENDAN | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_BRENDAN_ROUTE_110_TORCHIC` | BRENDAN | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_BRENDAN_ROUTE_119_TORCHIC` | BRENDAN | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_MAY_ROUTE_103_MUDKIP` | MAY | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_MAY_ROUTE_110_MUDKIP` | MAY | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_MAY_ROUTE_119_MUDKIP` | MAY | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_MAY_ROUTE_103_TREECKO` | MAY | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_MAY_ROUTE_110_TREECKO` | MAY | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_MAY_ROUTE_119_TREECKO` | MAY | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
+| `TRAINER_MAY_ROUTE_103_TORCHIC` | MAY | Story | 9 | 5 | 12 | 14 |
+| `TRAINER_MAY_ROUTE_110_TORCHIC` | MAY | Story | 41 / 42 / 43 / 44 | 21 / 21 / 22 / 22 | 51 / 52 / 53 / 55 | 59 / 60 / 62 / 63 |
+| `TRAINER_MAY_ROUTE_119_TORCHIC` | MAY | Story | 61 / 62 / 63 / 64 / 65 | 31 / 31 / 32 / 32 / 33 | 76 / 77 / 78 / 80 / 81 | 88 / 89 / 91 / 92 / 94 |
 | `TRAINER_ISAAC_1` | ISAAC | Ordinary | 39 / 39 / 39 / 40 | 19 / 19 / 19 / 20 | 46 / 46 / 46 / 48 | 54 / 54 / 54 / 56 |
 | `TRAINER_DAVIS` | DAVIS | Ordinary | 67 | 34 | 80 | 93 |
 | `TRAINER_MITCHELL` | Neo | Protected | 91 / 91 / 91 | 46 / 46 / 46 | 100 / 100 / 100 | 100 / 100 / 100 |
@@ -643,10 +646,10 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_CATHERINE_4` | CATHERINE | Ordinary | 65 / 67 | 33 / 34 | 78 / 80 | 91 / 93 |
 | `TRAINER_CATHERINE_5` | CATHERINE | Ordinary | 98 / 100 | 49 / 50 | 98 / 100 | 98 / 100 |
 | `TRAINER_JULIO` | JULIO | Ordinary | 47 | 24 | 56 | 65 |
-| `TRAINER_GRUNT_SEAFLOOR_CAVERN_5` | GRUNT | Protected | 87 / 87 | 44 / 44 | 100 / 100 | 100 / 100 |
-| `TRAINER_GRUNT_UNUSED` | GRUNT | Protected | 46 / 46 | 23 / 23 | 55 / 55 | 59 / 59 |
-| `TRAINER_GRUNT_MT_PYRE_4` | GRUNT | Protected | 67 / 67 | 34 / 34 | 80 / 80 | 87 / 87 |
-| `TRAINER_GRUNT_JAGGED_PASS` | GRUNT | Protected | 47 / 47 | 24 / 24 | 56 / 56 | 61 / 61 |
+| `TRAINER_GRUNT_SEAFLOOR_CAVERN_5` | GRUNT | Story | 86 / 87 | 43 / 44 | 99 / 100 | 99 / 100 |
+| `TRAINER_GRUNT_UNUSED` | GRUNT | Story | 45 / 46 | 23 / 23 | 56 / 57 | 65 / 66 |
+| `TRAINER_GRUNT_MT_PYRE_4` | GRUNT | Story | 69 / 70 | 35 / 35 | 86 / 87 | 99 / 100 |
+| `TRAINER_GRUNT_JAGGED_PASS` | GRUNT | Story | 48 / 49 | 24 / 25 | 60 / 61 | 69 / 71 |
 | `TRAINER_MARC` | MARC | Ordinary | 21 / 22 | 10 / 11 | 25 / 26 | 29 / 30 |
 | `TRAINER_BRENDEN` | BRENDEN | Ordinary | 30 | 15 | 36 | 42 |
 | `TRAINER_LILITH` | LILITH | Ordinary | 29 | 15 | 34 | 40 |
@@ -655,34 +658,34 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_LEONARDO` | LEONARDO | Ordinary | 74 | 37 | 88 | 100 |
 | `TRAINER_ATHENA` | ATHENA | Ordinary | 76 / 78 | 38 / 39 | 91 / 93 | 98 / 100 |
 | `TRAINER_HARRISON` | HARRISON | Ordinary | 80 | 40 | 96 | 100 |
-| `TRAINER_GRUNT_MT_CHIMNEY_2` | GRUNT | Protected | 47 | 24 | 56 | 61 |
+| `TRAINER_GRUNT_MT_CHIMNEY_2` | GRUNT | Story | 49 | 25 | 61 | 71 |
 | `TRAINER_CLARENCE` | CLARENCE | Ordinary | 80 | 40 | 96 | 100 |
 | `TRAINER_TERRY` | TERRY | Ordinary | 54 | 27 | 64 | 75 |
 | `TRAINER_NATE` | NATE | Ordinary | 73 | 37 | 87 | 100 |
 | `TRAINER_KATHLEEN` | Sam | Protected | 71 / 71 / 71 / 71 | 36 / 36 / 36 / 36 | 85 / 85 / 85 / 85 | 92 / 92 / 92 / 92 |
 | `TRAINER_CLIFFORD` | CLIFFORD | Ordinary | 73 | 37 | 87 | 100 |
 | `TRAINER_NICHOLAS` | NICHOLAS | Ordinary | 73 | 37 | 87 | 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_3` | GRUNT | Protected | 79 / 79 | 40 / 40 | 94 / 94 | 100 / 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_4` | GRUNT | Protected | 80 | 40 | 96 | 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_5` | GRUNT | Protected | 82 | 41 | 98 | 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_6` | GRUNT | Protected | 82 | 41 | 98 | 100 |
-| `TRAINER_GRUNT_SPACE_CENTER_7` | GRUNT | Protected | 82 | 41 | 98 | 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_3` | GRUNT | Story | 79 / 80 | 40 / 40 | 98 / 100 | 99 / 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_4` | GRUNT | Story | 80 | 40 | 100 | 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_5` | GRUNT | Story | 82 | 41 | 100 | 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_6` | GRUNT | Story | 82 | 41 | 100 | 100 |
+| `TRAINER_GRUNT_SPACE_CENTER_7` | GRUNT | Story | 82 | 41 | 100 | 100 |
 | `TRAINER_MACEY` | MACEY | Ordinary | 73 | 37 | 87 | 100 |
-| `TRAINER_BRENDAN_RUSTBORO_TREECKO` | BRENDAN | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
-| `TRAINER_BRENDAN_RUSTBORO_MUDKIP` | BRENDAN | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
+| `TRAINER_BRENDAN_RUSTBORO_TREECKO` | BRENDAN | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
+| `TRAINER_BRENDAN_RUSTBORO_MUDKIP` | BRENDAN | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
 | `TRAINER_PAXTON` | PAXTON | Ordinary | 80 / 82 | 40 / 41 | 96 / 98 | 98 / 100 |
 | `TRAINER_ISABELLA` | ISABELLA | Ordinary | 72 | 36 | 86 | 100 |
-| `TRAINER_GRUNT_WEATHER_INST_5` | GRUNT | Protected | 62 / 62 | 31 / 31 | 74 / 74 | 80 / 80 |
-| `TRAINER_TABITHA_MT_CHIMNEY` | TABITHA | Protected | 46 / 46 / 46 / 46 | 23 / 23 / 23 / 23 | 55 / 55 / 55 / 55 | 59 / 59 / 59 / 59 |
+| `TRAINER_GRUNT_WEATHER_INST_5` | GRUNT | Story | 61 / 62 | 31 / 31 | 76 / 77 | 88 / 89 |
+| `TRAINER_TABITHA_MT_CHIMNEY` | TABITHA | Story | 46 / 47 / 48 / 49 | 23 / 24 / 24 / 25 | 57 / 58 / 60 / 61 | 66 / 68 / 69 / 71 |
 | `TRAINER_JONATHAN` | JONATHAN | Ordinary | 80 / 82 | 40 / 41 | 96 / 98 | 98 / 100 |
-| `TRAINER_BRENDAN_RUSTBORO_TORCHIC` | BRENDAN | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
-| `TRAINER_MAY_RUSTBORO_MUDKIP` | MAY | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
-| `TRAINER_MAXIE_MAGMA_HIDEOUT` | MAXIE | Protected | 69 / 69 / 69 | 35 / 35 / 35 | 82 / 82 / 82 | 89 / 89 / 89 |
-| `TRAINER_MAXIE_MT_CHIMNEY` | MAXIE | Protected | 46 / 46 / 46 | 23 / 23 / 23 | 55 / 55 / 55 | 59 / 59 / 59 |
+| `TRAINER_BRENDAN_RUSTBORO_TORCHIC` | BRENDAN | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
+| `TRAINER_MAY_RUSTBORO_MUDKIP` | MAY | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
+| `TRAINER_MAXIE_MAGMA_HIDEOUT` | MAXIE | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_MAXIE_MT_CHIMNEY` | MAXIE | Story | 46 / 47 / 48 / 49 / 50 | 23 / 24 / 24 / 25 / 25 | 57 / 58 / 60 / 61 / 62 | 66 / 68 / 69 / 71 / 72 |
 | `TRAINER_TIANA` | TIANA | Ordinary | 13 / 15 | 7 / 8 | 15 / 18 | 18 / 21 |
 | `TRAINER_HALEY_1` | HALEY | Ordinary | 14 / 15 | 7 / 8 | 16 / 18 | 19 / 21 |
 | `TRAINER_JANICE` | JANICE | Ordinary | 20 | 10 | 24 | 28 |
-| `TRAINER_VIVI` | VIVI | Protected | 41 / 41 / 41 | 21 / 21 / 21 | 49 / 49 / 49 | 53 / 53 / 53 |
+| `TRAINER_VIVI` | VIVI | Story | 44 / 45 / 46 | 22 / 23 / 23 | 55 / 56 / 57 | 63 / 65 / 66 |
 | `TRAINER_HALEY_2` | HALEY | Ordinary | 39 / 41 | 20 / 21 | 46 / 49 | 54 / 57 |
 | `TRAINER_HALEY_3` | HALEY | Ordinary | 42 / 44 | 21 / 22 | 50 / 52 | 58 / 61 |
 | `TRAINER_HALEY_4` | HALEY | Ordinary | 46 / 48 | 23 / 24 | 55 / 57 | 64 / 67 |
@@ -732,17 +735,17 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_RILEY` | RILEY | Ordinary | 59 / 61 | 30 / 31 | 70 / 73 | 82 / 85 |
 | `TRAINER_FLINT` | FLINT | Ordinary | 61 / 62 | 30 / 31 | 73 / 74 | 85 / 86 |
 | `TRAINER_ASHLEY` | ASHLEY | Ordinary | 61 / 61 / 62 | 30 / 30 / 31 | 73 / 73 / 74 | 85 / 85 / 86 |
-| `TRAINER_WALLY_MAUVILLE` | WALLY | Protected | 41 | 21 | 49 | 53 |
-| `TRAINER_WALLY_VR_2` | WALLY | Protected | 96 / 95 / 96 / 93 / 97 | 48 / 48 / 48 / 47 / 49 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WALLY_VR_3` | WALLY | Protected | 99 / 98 / 99 / 96 / 100 | 50 / 49 / 50 / 48 / 50 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WALLY_VR_4` | WALLY | Protected | 99 / 98 / 99 / 96 / 100 | 50 / 49 / 50 / 48 / 50 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WALLY_VR_5` | WALLY | Protected | 99 / 98 / 99 / 96 / 100 | 50 / 49 / 50 / 48 / 50 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_BRENDAN_LILYCOVE_MUDKIP` | BRENDAN | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
-| `TRAINER_BRENDAN_LILYCOVE_TREECKO` | BRENDAN | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
-| `TRAINER_BRENDAN_LILYCOVE_TORCHIC` | BRENDAN | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
-| `TRAINER_MAY_LILYCOVE_MUDKIP` | MAY | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
-| `TRAINER_MAY_LILYCOVE_TREECKO` | MAY | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
-| `TRAINER_MAY_LILYCOVE_TORCHIC` | MAY | Protected | 69 / 70 / 70 / 72 | 35 / 35 / 35 / 36 | 82 / 84 / 84 / 86 | 89 / 91 / 91 / 93 |
+| `TRAINER_WALLY_MAUVILLE` | WALLY | Story | 41 / 42 / 43 | 21 / 21 / 22 | 51 / 52 / 53 | 59 / 60 / 62 |
+| `TRAINER_WALLY_VR_2` | WALLY | Story | 95 / 96 / 97 / 98 / 99 | 48 / 48 / 49 / 49 / 50 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WALLY_VR_3` | WALLY | Story | 96 / 97 / 98 / 99 / 100 | 48 / 49 / 49 / 50 / 50 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WALLY_VR_4` | WALLY | Story | 96 / 97 / 98 / 99 / 100 | 48 / 49 / 49 / 50 / 50 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WALLY_VR_5` | WALLY | Story | 96 / 97 / 98 / 99 / 100 | 48 / 49 / 49 / 50 / 50 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRENDAN_LILYCOVE_MUDKIP` | BRENDAN | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRENDAN_LILYCOVE_TREECKO` | BRENDAN | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRENDAN_LILYCOVE_TORCHIC` | BRENDAN | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_MAY_LILYCOVE_MUDKIP` | MAY | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_MAY_LILYCOVE_TREECKO` | MAY | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_MAY_LILYCOVE_TORCHIC` | MAY | Story | 70 / 70 / 71 / 72 / 73 / 74 | 35 / 35 / 36 / 36 / 37 / 37 | 87 / 87 / 88 / 90 / 91 / 92 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_JONAH` | JONAH | Ordinary | 76 / 77 / 78 | 38 / 38 / 39 | 91 / 92 / 93 | 98 / 99 / 100 |
 | `TRAINER_HENRY` | HENRY | Ordinary | 76 / 78 | 38 / 39 | 91 / 93 | 98 / 100 |
 | `TRAINER_ROGER` | ROGER | Ordinary | 76 / 77 / 78 | 38 / 38 / 39 | 91 / 92 / 93 | 98 / 99 / 100 |
@@ -792,25 +795,25 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_KAI` | KAI | Ordinary | 44 | 22 | 52 | 61 |
 | `TRAINER_CHARLOTTE` | CHARLOTTE | Ordinary | 44 | 22 | 52 | 61 |
 | `TRAINER_DEANDRE` | DEANDRE | Ordinary | 40 / 40 / 41 | 20 / 20 / 21 | 48 / 48 / 49 | 56 / 56 / 57 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_1` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_2` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_3` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_4` | GRUNT | Protected | 70 / 70 | 35 / 35 | 84 / 84 | 91 / 91 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_5` | GRUNT | Protected | 70 / 70 | 35 / 35 | 84 / 84 | 91 / 91 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_6` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_7` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_8` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_9` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_10` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_11` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_12` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_13` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_14` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_15` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_GRUNT_MAGMA_HIDEOUT_16` | GRUNT | Protected | 71 | 36 | 85 | 92 |
-| `TRAINER_TABITHA_MAGMA_HIDEOUT` | TABITHA | Protected | 67 / 67 / 67 / 68 | 34 / 34 / 34 / 34 | 80 / 80 / 80 / 81 | 87 / 87 / 87 / 88 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_1` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_2` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_3` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_4` | GRUNT | Story | 70 / 71 | 35 / 36 | 87 / 88 | 99 / 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_5` | GRUNT | Story | 70 / 71 | 35 / 36 | 87 / 88 | 99 / 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_6` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_7` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_8` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_9` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_10` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_11` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_12` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_13` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_14` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_15` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_GRUNT_MAGMA_HIDEOUT_16` | GRUNT | Story | 71 | 36 | 88 | 100 |
+| `TRAINER_TABITHA_MAGMA_HIDEOUT` | TABITHA | Story | 68 / 69 / 70 / 71 / 72 | 34 / 35 / 35 / 36 / 36 | 85 / 86 / 87 / 88 / 90 | 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_DARCY` | DARCY | Ordinary | 80 / 82 | 40 / 41 | 96 / 98 | 98 / 100 |
-| `TRAINER_MAXIE_MOSSDEEP` | MAXIE | Protected | 80 / 80 / 80 | 40 / 40 / 40 | 96 / 96 / 96 | 100 / 100 / 100 |
+| `TRAINER_MAXIE_MOSSDEEP` | MAXIE | Story | 80 / 81 / 82 / 83 / 84 | 40 / 41 / 41 / 42 / 42 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_PETE` | PETE | Ordinary | 37 | 19 | 44 | 51 |
 | `TRAINER_ISABELLE` | ISABELLE | Ordinary | 37 | 19 | 44 | 51 |
 | `TRAINER_ANDRES_1` | ANDRES | Ordinary | 55 / 56 | 27 / 28 | 66 / 67 | 77 / 78 |
@@ -844,50 +847,50 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_MYLES` | Scotty | Protected | 67 | 34 | 80 | 87 |
 | `TRAINER_PAT` | PAT | Ordinary | 66 / 66 / 66 / 66 / 66 / 67 | 33 / 33 / 33 / 33 / 33 / 34 | 79 / 79 / 79 / 79 / 79 / 80 | 92 / 92 / 92 / 92 / 92 / 93 |
 | `TRAINER_CRISTIN_1` | CRISTIN | Ordinary | 66 / 67 | 33 / 34 | 79 / 80 | 92 / 93 |
-| `TRAINER_MAY_RUSTBORO_TREECKO` | MAY | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
-| `TRAINER_MAY_RUSTBORO_TORCHIC` | MAY | Protected | 22 / 24 | 11 / 12 | 26 / 28 | 28 / 31 |
-| `TRAINER_ROXANNE_2` | ROXANNE | Protected | 50 / 50 / 50 / 50 / 60 | 25 / 25 / 25 / 25 / 30 | 60 / 60 / 60 / 60 / 72 | 65 / 65 / 65 / 65 / 78 |
-| `TRAINER_ROXANNE_3` | ROXANNE | Protected | 60 / 60 / 60 / 60 / 70 / 60 | 30 / 30 / 30 / 30 / 35 / 30 | 72 / 72 / 72 / 72 / 84 / 72 | 78 / 78 / 78 / 78 / 91 / 78 |
-| `TRAINER_ROXANNE_4` | ROXANNE | Protected | 70 / 70 / 70 / 70 / 80 / 70 | 35 / 35 / 35 / 35 / 40 / 35 | 84 / 84 / 84 / 84 / 96 / 84 | 91 / 91 / 91 / 91 / 100 / 91 |
-| `TRAINER_ROXANNE_5` | ROXANNE | Protected | 100 / 100 / 100 / 100 / 100 / 100 / 32 | 50 / 50 / 50 / 50 / 50 / 50 / 16 | 100 / 100 / 100 / 100 / 100 / 100 / 38 | 100 / 100 / 100 / 100 / 100 / 100 / 41 |
-| `TRAINER_BRAWLY_2` | BRAWLY | Protected | 60 / 60 / 60 / 70 | 30 / 30 / 30 / 35 | 72 / 72 / 72 / 84 | 78 / 78 / 78 / 91 |
-| `TRAINER_BRAWLY_3` | BRAWLY | Protected | 70 / 70 / 70 / 80 | 35 / 35 / 35 / 40 | 84 / 84 / 84 / 96 | 91 / 91 / 91 / 100 |
-| `TRAINER_BRAWLY_4` | BRAWLY | Protected | 80 / 80 / 80 / 80 / 90 | 40 / 40 / 40 / 40 / 45 | 96 / 96 / 96 / 96 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_BRAWLY_5` | BRAWLY | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WATTSON_2` | WATTSON | Protected | 70 / 70 / 70 / 80 | 35 / 35 / 35 / 40 | 84 / 84 / 84 / 96 | 91 / 91 / 91 / 100 |
-| `TRAINER_WATTSON_3` | WATTSON | Protected | 83 / 83 / 83 / 83 / 83 | 42 / 42 / 42 / 42 / 42 | 99 / 99 / 99 / 99 / 99 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WATTSON_4` | WATTSON | Protected | 90 / 90 / 90 / 90 / 90 | 45 / 45 / 45 / 45 / 45 | 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WATTSON_5` | WATTSON | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_FLANNERY_2` | FLANNERY | Protected | 75 / 75 / 75 / 75 / 80 | 38 / 38 / 38 / 38 / 40 | 90 / 90 / 90 / 90 / 96 | 97 / 97 / 97 / 97 / 100 |
-| `TRAINER_FLANNERY_3` | FLANNERY | Protected | 85 / 85 / 85 / 85 / 85 / 100 | 43 / 43 / 43 / 43 / 43 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_FLANNERY_4` | FLANNERY | Protected | 95 / 95 / 95 / 95 / 95 / 100 | 48 / 48 / 48 / 48 / 48 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_FLANNERY_5` | FLANNERY | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_NORMAN_2` | NORMAN | Protected | 80 / 80 / 80 / 80 / 100 | 40 / 40 / 40 / 40 / 50 | 96 / 96 / 96 / 96 / 100 | 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_NORMAN_3` | NORMAN | Protected | 90 / 90 / 90 / 90 / 90 / 100 | 45 / 45 / 45 / 45 / 45 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_NORMAN_4` | NORMAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_NORMAN_5` | NORMAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WINONA_2` | WINONA | Protected | 90 / 90 / 90 / 90 / 90 / 90 | 45 / 45 / 45 / 45 / 45 / 45 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WINONA_3` | WINONA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WINONA_4` | WINONA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_WINONA_5` | WINONA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_TATE_AND_LIZA_2` | TATE&LIZA | Protected | 95 / 95 / 95 / 95 / 95 / 95 | 48 / 48 / 48 / 48 / 48 / 48 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_TATE_AND_LIZA_3` | TATE&LIZA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_TATE_AND_LIZA_4` | TATE&LIZA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_TATE_AND_LIZA_5` | TATE&LIZA | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_JUAN_2` | JUAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_JUAN_3` | JUAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_JUAN_4` | JUAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_JUAN_5` | JUAN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_MAY_RUSTBORO_TREECKO` | MAY | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
+| `TRAINER_MAY_RUSTBORO_TORCHIC` | MAY | Story | 22 / 23 / 24 | 11 / 12 / 12 | 27 / 28 / 30 | 31 / 33 / 34 |
+| `TRAINER_ROXANNE_2` | ROXANNE | Story | 56 / 57 / 58 / 59 / 60 | 28 / 29 / 29 / 30 / 30 | 70 / 71 / 72 / 73 / 75 | 81 / 82 / 84 / 85 / 87 |
+| `TRAINER_ROXANNE_3` | ROXANNE | Story | 66 / 66 / 67 / 68 / 69 / 70 | 33 / 33 / 34 / 34 / 35 / 35 | 82 / 82 / 83 / 85 / 86 / 87 | 95 / 95 / 97 / 98 / 99 / 100 |
+| `TRAINER_ROXANNE_4` | ROXANNE | Story | 76 / 76 / 77 / 78 / 79 / 80 | 38 / 38 / 39 / 39 / 40 / 40 | 95 / 95 / 96 / 97 / 98 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_ROXANNE_5` | ROXANNE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRAWLY_2` | BRAWLY | Story | 67 / 68 / 69 / 70 | 34 / 34 / 35 / 35 | 83 / 85 / 86 / 87 | 97 / 98 / 99 / 100 |
+| `TRAINER_BRAWLY_3` | BRAWLY | Story | 77 / 78 / 79 / 80 | 39 / 39 / 40 / 40 | 96 / 97 / 98 / 100 | 97 / 98 / 99 / 100 |
+| `TRAINER_BRAWLY_4` | BRAWLY | Story | 86 / 87 / 88 / 89 / 90 | 43 / 44 / 44 / 45 / 45 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_BRAWLY_5` | BRAWLY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WATTSON_2` | WATTSON | Story | 77 / 78 / 79 / 80 | 39 / 39 / 40 / 40 | 96 / 97 / 98 / 100 | 97 / 98 / 99 / 100 |
+| `TRAINER_WATTSON_3` | WATTSON | Story | 79 / 80 / 81 / 82 / 83 | 40 / 40 / 41 / 41 / 42 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WATTSON_4` | WATTSON | Story | 86 / 87 / 88 / 89 / 90 | 43 / 44 / 44 / 45 / 45 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WATTSON_5` | WATTSON | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_FLANNERY_2` | FLANNERY | Story | 76 / 77 / 78 / 79 / 80 | 38 / 39 / 39 / 40 / 40 | 95 / 96 / 97 / 98 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_FLANNERY_3` | FLANNERY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_FLANNERY_4` | FLANNERY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_FLANNERY_5` | FLANNERY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_NORMAN_2` | NORMAN | Story | 96 / 97 / 98 / 99 / 100 | 48 / 49 / 49 / 50 / 50 | 96 / 97 / 98 / 99 / 100 | 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_NORMAN_3` | NORMAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_NORMAN_4` | NORMAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_NORMAN_5` | NORMAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WINONA_2` | WINONA | Story | 86 / 86 / 87 / 88 / 89 / 90 | 43 / 43 / 44 / 44 / 45 / 45 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WINONA_3` | WINONA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WINONA_4` | WINONA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WINONA_5` | WINONA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_TATE_AND_LIZA_2` | TATE&LIZA | Story | 91 / 91 / 92 / 93 / 94 / 95 | 46 / 46 / 46 / 47 / 47 / 48 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_TATE_AND_LIZA_3` | TATE&LIZA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_TATE_AND_LIZA_4` | TATE&LIZA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_TATE_AND_LIZA_5` | TATE&LIZA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_JUAN_2` | JUAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_JUAN_3` | JUAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_JUAN_4` | JUAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_JUAN_5` | JUAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_ANGELO` | ANGELO | Ordinary | 40 / 41 | 20 / 21 | 48 / 49 | 56 / 57 |
 | `TRAINER_DARIUS` | DARIUS | Ordinary | 61 | 31 | 73 | 85 |
-| `TRAINER_STEVEN` | STEVEN | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
-| `TRAINER_ANABEL` | ANABEL | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_TUCKER` | TUCKER | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_SPENSER` | SPENSER | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_GRETA` | GRETA | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_NOLAND` | NOLAND | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_LUCY` | LUCY | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_BRANDON` | BRANDON | Protected | 5 | 3 | 8 | 9 |
+| `TRAINER_STEVEN` | STEVEN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_ANABEL` | ANABEL | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_TUCKER` | TUCKER | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_SPENSER` | SPENSER | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_GRETA` | GRETA | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_NOLAND` | NOLAND | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_LUCY` | LUCY | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_BRANDON` | BRANDON | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_ANDRES_2` | ANDRES | Ordinary | 57 / 59 | 29 / 30 | 68 / 70 | 79 / 82 |
 | `TRAINER_ANDRES_3` | ANDRES | Ordinary | 58 / 60 / 62 | 29 / 30 / 31 | 69 / 72 / 74 | 81 / 84 / 86 |
 | `TRAINER_ANDRES_4` | ANDRES | Ordinary | 61 / 63 / 65 | 31 / 32 / 33 | 73 / 75 / 78 | 85 / 88 / 91 |
@@ -927,16 +930,20 @@ unchanged by this pass; their existing runtime difficulty modifiers remain.
 | `TRAINER_MARIELA` | MARIELA | Ordinary | 80 | 40 | 96 | 100 |
 | `TRAINER_ALVARO` | ALVARO | Ordinary | 78 / 80 | 39 / 40 | 93 / 96 | 98 / 100 |
 | `TRAINER_EVERETT` | EVERETT | Ordinary | 80 | 40 | 96 | 100 |
-| `TRAINER_RED` | RED | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_LEAF` | LEAF | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_BRENDAN_PLACEHOLDER` | BRENDAN | Protected | 5 | 3 | 8 | 9 |
-| `TRAINER_MAY_PLACEHOLDER` | MAY | Protected | 5 | 3 | 8 | 9 |
+| `TRAINER_RED` | RED | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_LEAF` | LEAF | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_BRENDAN_PLACEHOLDER` | BRENDAN | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_MAY_PLACEHOLDER` | MAY | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_RED2` | RED | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_BLUE` | BLUE | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_CYNTHIA` | Cynthia | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_IRIS` | Iris | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_DIANTHA` | Diantha | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_LEON` | Leon | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_NEMONA` | Nemona | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_VOLO` | Volo | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_UNBORNE` | Unborne | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 
-859 populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.
+863 populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.
 
 Regenerate with `python tools/brisk/trainer_mode_plan.py`; validate with `--check`.

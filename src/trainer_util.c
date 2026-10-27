@@ -13,8 +13,9 @@
 #include "constants/pokeball.h"
 #include "constants/opponents.h"
 #include "data/brisk_ordinary_trainers.h"
+#include "data/brisk_story_trainers.h"
 
-static bool32 UsesFairLoadout(const struct Trainer *trainer)
+static bool32 UsesTrainerPolicy(const struct Trainer *trainer, const bool8 *policy)
 {
 #ifndef EMERALD
     return FALSE; // The manifest identifies Hoenn teams, not FRLG trainer IDs.
@@ -26,7 +27,7 @@ static bool32 UsesFairLoadout(const struct Trainer *trainer)
     u32 offset = address - start;
     if (offset % sizeof(struct Trainer) != 0)
         return FALSE;
-    return sBriskFairTrainer[(offset / sizeof(struct Trainer)) % TRAINERS_COUNT];
+    return policy[(offset / sizeof(struct Trainer)) % TRAINERS_COUNT];
 #endif
 }
 
@@ -119,10 +120,11 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
-    trainerGen->fairLoadout = UsesFairLoadout(trainer);
+    trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
+    trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
     trainerGen->highestLevel = 0;
-    if (trainerGen->fairLoadout)
-        for (u32 i = 0; i < trainer->partySize; i++)
+    if (trainerGen->fairLoadout || trainerGen->storyLoadout)
+        for (u32 i = 0; i < max(trainer->partySize, trainer->poolSize); i++)
             trainerGen->highestLevel = max(trainerGen->highestLevel, trainer->party[i].lvl);
     trainerGen->gender = trainer->gender;
     if (trainer->aiFlags & AI_FLAG_SMART_TERA)
@@ -138,6 +140,7 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 {
     u32 otID;
     trainerGen->fairLoadout = FALSE;
+    trainerGen->storyLoadout = FALSE;
     trainerGen->highestLevel = 0;
     trainerGen->gender = partner->gender;
     if (partner->aiFlags & AI_FLAG_SMART_TERA)
@@ -224,6 +227,8 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
         if (trainer->fairLoadout)
             adjusted.lvl = ScaleBriskOrdinaryTrainerLevel(adjusted.lvl, trainer->highestLevel);
+        else if (trainer->storyLoadout)
+            adjusted.lvl = ScaleBriskStoryTrainerLevel(adjusted.lvl, trainer->highestLevel);
         else
             adjusted.lvl = ScaleBriskTrainerLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
         adjusted.heldItem = BriskRandomItem(adjusted.heldItem);
@@ -342,6 +347,8 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     {
         if (trainer->fairLoadout)
             ApplyBriskFairTrainerLoadout(mon);
+        else if (trainer->storyLoadout)
+            ApplyBriskStoryTrainerLoadout(mon);
         else
             ApplyBriskTrainerLoadout(mon);
         ApplyBriskTrainerTraining(mon);
@@ -354,6 +361,11 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
 }
 
 #if TESTING
+bool32 Test_BriskStoryTrainerId(u32 id)
+{
+    return id < TRAINERS_COUNT && sBriskStoryTrainer[id];
+}
+
 void Test_ApplyBriskTrainerTraining(struct Pokemon *mon)
 {
     ApplyBriskTrainerTraining(mon);

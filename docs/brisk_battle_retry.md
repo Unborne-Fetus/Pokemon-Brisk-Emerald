@@ -18,16 +18,8 @@ so retry cannot duplicate a catch already transferred to storage.
 
 # Trainer difficulty
 
-Normal and Easy retain their rules and authored teams. Hard trainer levels gain
-20% (minimum 3); Extreme gains 30% (minimum 4). Both still respect the badge cap.
-Wild level scaling remains unchanged. Hard and Extreme now use smart switching,
-HP-aware scoring, 2HKO checks, smarter Tera timing and PP-stall prevention.
-Extreme retains full opponent knowledge; Hard uses its existing observed knowledge.
-
-Ordinary trainers on Hard now get optimized legal move coverage within the existing
-level-based move-power limits, plus stronger abilities. Important/dedication teams
-retain their authored Hard moves. Hard training budgets grow from 128 EVs below
-level 20, to 256 below 35, 384 below 50, and 510 thereafter; an authored higher total
-is preserved as the budget floor. Investment follows the actual moves and species
-strengths. IVs remain perfect on Hard/Extreme. Extreme keeps its 510-EV training.
-No authored team species, party sizes, or special trainer definitions are edited.
+Ordinary and story trainers now have separate mode curves. See
+`brisk_ordinary_level_spreads.md`, `brisk_story_and_balls.md` and the complete
+`brisk_trainer_mode_plan.md` for the current authored teams, mode levels, badge-cap
+rules and dedication/Easter egg exemptions. Retry always retains the generated
+opponent teams for the selected mode.
