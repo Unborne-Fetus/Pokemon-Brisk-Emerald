@@ -15,6 +15,17 @@
 #include "data/brisk_ordinary_trainers.h"
 #include "data/brisk_story_trainers.h"
 
+// These five actual League teams have fixed levels, not progression scaling.
+// Do not apply the rule to guest Champions or dedication trainers.
+static const bool8 sBriskLeagueTrainer[TRAINERS_COUNT] =
+{
+    [TRAINER_SIDNEY] = TRUE,
+    [TRAINER_PHOEBE] = TRUE,
+    [TRAINER_GLACIA] = TRUE,
+    [TRAINER_DRAKE] = TRUE,
+    [TRAINER_WALLACE] = TRUE,
+};
+
 static bool32 UsesTrainerPolicy(const struct Trainer *trainer, const bool8 *policy)
 {
 #ifndef EMERALD
@@ -122,6 +133,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 {
     trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
     trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
+    trainerGen->leagueLevels = UsesTrainerPolicy(trainer, sBriskLeagueTrainer);
     trainerGen->highestLevel = 0;
     if (trainerGen->fairLoadout || trainerGen->storyLoadout)
         for (u32 i = 0; i < max(trainer->partySize, trainer->poolSize); i++)
@@ -141,6 +153,7 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
     u32 otID;
     trainerGen->fairLoadout = FALSE;
     trainerGen->storyLoadout = FALSE;
+    trainerGen->leagueLevels = FALSE;
     trainerGen->highestLevel = 0;
     trainerGen->gender = partner->gender;
     if (partner->aiFlags & AI_FLAG_SMART_TERA)
@@ -225,7 +238,9 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
-        if (trainer->fairLoadout)
+        if (trainer->leagueLevels)
+            adjusted.lvl = GetBriskDifficulty() == BRISK_MODE_EASY ? 70 : 100;
+        else if (trainer->fairLoadout)
             adjusted.lvl = ScaleBriskOrdinaryTrainerLevel(adjusted.lvl, trainer->highestLevel);
         else if (trainer->storyLoadout)
             adjusted.lvl = ScaleBriskStoryTrainerLevel(adjusted.lvl, trainer->highestLevel);

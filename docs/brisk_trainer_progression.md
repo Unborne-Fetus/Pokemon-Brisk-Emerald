@@ -9,6 +9,8 @@ Story fights add 25% (minimum three) on Hard and 45% (minimum five) on Extreme,
 with supports below their capped ace. Dedication/Easter egg trainers retain their previous scaling: Easy halves levels, Hard adds
 20% (at least three), Extreme adds 30% (at least four), with individual cap limits.
 Their IV, EV, ability, moveset and AI upgrades still apply at the cap.
+The Elite Four and Wallace override level scaling: every party member is 100 on
+Normal/Hard/Extreme and 70 on Easy, independent of progression caps.
 
 | Encounter | Normal ace |
 | --- | ---: |

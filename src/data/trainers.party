@@ -7147,7 +7147,7 @@ AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Purple
 
 SPECIES_TYRANITAR @ Tyranitarite
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
@@ -7157,7 +7157,7 @@ Nature: Adamant
 - MOVE_ROCK_SLIDE
 
 SPECIES_OBSTAGOON @ Expert Belt
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7167,7 +7167,7 @@ Nature: Adamant
 - MOVE_TAKE_DOWN
 
 SPECIES_SAMUROTT_HISUI
-Level: 97
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7177,7 +7177,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_KINGAMBIT @ Expert Belt
-Level: 98
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
@@ -7187,7 +7187,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_GRIMMSNARL @ Sitrus Berry
-Level: 99
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
@@ -7219,7 +7219,7 @@ AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Green
 
 SPECIES_FLUTTER_MANE @ Choice Specs
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -7229,7 +7229,7 @@ Nature: Modest
 - MOVE_DAZZLING_GLEAM
 
 SPECIES_ANNIHILAPE @ Expert Belt
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7239,7 +7239,7 @@ Nature: Adamant
 - MOVE_CROSS_CHOP
 
 SPECIES_GHOLDENGO
-Level: 97
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -7249,7 +7249,7 @@ Nature: Modest
 - MOVE_RECOVER
 
 SPECIES_SKELEDIRGE @ Expert Belt
-Level: 98
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest
@@ -7260,7 +7260,7 @@ Tera Type: Ghost
 - MOVE_WILL_O_WISP
 
 SPECIES_GENGAR @ Gengarite
-Level: 99
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -7291,7 +7291,7 @@ AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Pink
 
 SPECIES_BAXCALIBUR @ Baxcalibrite
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7301,7 +7301,7 @@ Nature: Adamant
 - MOVE_DRAGON_CLAW
 
 SPECIES_IRON_BUNDLE @ Expert Belt
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -7311,7 +7311,7 @@ Nature: Modest
 - MOVE_ICE_BEAM
 
 SPECIES_LAPRAS
-Level: 97
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
@@ -7323,7 +7323,7 @@ Gigantamax: Yes
 - MOVE_BRINE
 
 SPECIES_MAMOSWINE @ Expert Belt
-Level: 98
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7333,7 +7333,7 @@ Nature: Adamant
 - MOVE_ICE_FANG
 
 SPECIES_WALREIN
-Level: 99
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest
@@ -7364,7 +7364,7 @@ AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Blue
 
 SPECIES_DRAGONITE
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7374,7 +7374,7 @@ Nature: Adamant
 - MOVE_ROOST
 
 SPECIES_GARCHOMP @ Expert Belt
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7384,7 +7384,7 @@ Nature: Adamant
 - MOVE_DRAGON_CLAW
 
 SPECIES_KINGDRA
-Level: 97
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -7394,7 +7394,7 @@ Nature: Adamant
 - MOVE_HYDRO_PUMP
 
 SPECIES_DURALUDON @ Expert Belt
-Level: 98
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -7406,7 +7406,7 @@ Gigantamax: Yes
 - MOVE_BREAKING_SWIPE
 
 SPECIES_KOMMO_O
-Level: 99
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -9523,7 +9523,7 @@ AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 Mugshot: Yellow
 
 SPECIES_GARCHOMP @ Life Orb
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 6 SpD
 Nature: Adamant
@@ -9534,7 +9534,7 @@ Shiny: No
 - MOVE_DRAGON_CLAW
 
 SPECIES_GRENINJA @ Choice Scarf
-Level: 96
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 SpD
 Nature: Modest
@@ -9545,7 +9545,7 @@ Shiny: Yes
 - MOVE_WATER_PULSE
 
 SPECIES_CORVIKNIGHT @ Leftovers
-Level: 97
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 6 SpD
 Nature: Adamant
@@ -9558,7 +9558,7 @@ Gigantamax: Yes
 - MOVE_DRILL_PECK
 
 SPECIES_SKELEDIRGE @ Clear Amulet
-Level: 98
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest
@@ -9570,7 +9570,7 @@ Tera Type: Fire
 - MOVE_WILL_O_WISP
 
 SPECIES_SYLVEON @ Fairy Feather
-Level: 99
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 HP / 6 SpD
 Nature: Modest

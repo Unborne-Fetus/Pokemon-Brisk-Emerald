@@ -42,6 +42,8 @@ GYMS = dict(zip((f"TRAINER_{name}_1" for name in (
     (25, 35, 45, 50, 55, 65, 75, 90)))
 
 
+LEAGUE_IDS = {f'TRAINER_{name}' for name in ('SIDNEY','PHOEBE','GLACIA','DRAKE','WALLACE')}
+
 STORY_ACES = {
     'TRAINER_TABITHA_MT_CHIMNEY': 49, 'TRAINER_MAXIE_MT_CHIMNEY': 50,
     'TRAINER_TABITHA_MAGMA_HIDEOUT': 72, 'TRAINER_MAXIE_MAGMA_HIDEOUT': 74,
@@ -131,6 +133,10 @@ def audit():
         party_levels = levels(teams[trainer_id])
         if not party_levels or max(party_levels) != ace or min(party_levels) < ace - 4:
             errors.append(f"{trainer_id}: {party_levels}, expected ace {ace}, spread <= 4")
+    for trainer_id in LEAGUE_IDS:
+        party_levels = levels(teams[trainer_id])
+        if party_levels != [100] * 6:
+            errors.append(f'{trainer_id}: every League member must be authored at 100')
     # Use the actual rematch table: numbered grunts are different people.
     rematches = 0
     for chain in rematch_chains():

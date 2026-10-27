@@ -3,7 +3,7 @@
 import json
 import re
 import sys
-from check_trainer_progression import ROOT, TEAM_RE
+from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 
 OUTPUT = ROOT / 'docs/brisk_trainer_mode_plan.md'
 
@@ -69,12 +69,14 @@ def render():
               ('Space Center / eastern sea',76,83),('Seafloor / Juan approach',82,89),
               ('Victory Road',86,94),('League',100,100)]
     for name,low,high in stages:
-        ranges = [f'{ordinary_scaled(low,m,high)}–{ordinary_scaled(high,m,high)}' for m in ('Normal','Easy','Hard','Extreme')]
+        ranges = ['100', '70', '100', '100'] if name == 'League' else [f'{ordinary_scaled(low,m,high)}–{ordinary_scaled(high,m,high)}' for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| ' + name + ' | ' + ' | '.join(ranges) + ' |')
     lines += ['', 'The section bands describe ordinary encounter targets, not blanket map scaling.',
         'Individual teams and intentional protected exceptions are listed below.',
         'Important fights now use their own authored teams and stronger mode curve.',
-        'The opening Route 103 rival has a level-9 starter on Normal.', '',
+        'The opening Route 103 rival has a level-9 starter on Normal.',
+        'Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Extreme',
+        'and 70 on Easy, independent of badge caps and ordinary/story scaling.', '',
         '## Mode rules', '',
         '| Rule | Easy | Normal | Hard | Extreme |',
         '| --- | --- | --- | --- | --- |',
@@ -122,7 +124,7 @@ def render():
         if not lv: continue
         name = re.search(r'^Name: (.*)',team,re.M)[1].strip().replace('|','\\|')
         role = 'Protected' if tid in policy['protected'] else 'Story' if tid in policy['story'] else 'Metadata' if tid in policy['metadata_only'] else 'Ordinary'
-        cells = [' / '.join(str(scaled(n,m) if role == 'Protected' else story_scaled(n,m,max(lv)) if role == 'Story' else n if role == 'Metadata' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
+        cells = [' / '.join(str((70 if m == 'Easy' else 100) if tid in LEAGUE_IDS else scaled(n,m) if role == 'Protected' else story_scaled(n,m,max(lv)) if role == 'Story' else n if role == 'Metadata' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| `' + tid + '` | ' + name + ' | ' + role + ' | ' + ' | '.join(cells) + ' |')
         count += 1
     lines += ['', f'{count} populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.', '',

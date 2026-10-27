@@ -25,12 +25,14 @@ scale its trainers up to the player. Only dedication/Easter egg teams are exempt
 | Space Center / eastern sea | 76–83 | 38–42 | 91–99 | 93–100 |
 | Seafloor / Juan approach | 82–89 | 41–45 | 93–100 | 93–100 |
 | Victory Road | 86–94 | 43–47 | 92–100 | 92–100 |
-| League | 100–100 | 50–50 | 100–100 | 100–100 |
+| League | 100 | 70 | 100 | 100 |
 
 The section bands describe ordinary encounter targets, not blanket map scaling.
 Individual teams and intentional protected exceptions are listed below.
 Important fights now use their own authored teams and stronger mode curve.
 The opening Route 103 rival has a level-9 starter on Normal.
+Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Extreme
+and 70 on Easy, independent of badge caps and ordinary/story scaling.
 
 ## Mode rules
 
@@ -340,10 +342,10 @@ identity/templates, not playable battles; their levels are not a challenge plan.
 | `TRAINER_WALTER_3` | WALTER | Ordinary | 70 / 72 | 35 / 36 | 84 / 86 | 98 / 100 |
 | `TRAINER_WALTER_4` | WALTER | Ordinary | 78 / 80 | 39 / 40 | 93 / 96 | 98 / 100 |
 | `TRAINER_WALTER_5` | WALTER | Ordinary | 96 / 98 / 100 | 48 / 49 / 50 | 96 / 98 / 100 | 96 / 98 / 100 |
-| `TRAINER_SIDNEY` | SIDNEY | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
-| `TRAINER_PHOEBE` | PHOEBE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
-| `TRAINER_GLACIA` | GLACIA | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
-| `TRAINER_DRAKE` | DRAKE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_SIDNEY` | SIDNEY | Story | 100 / 100 / 100 / 100 / 100 / 100 | 70 / 70 / 70 / 70 / 70 / 70 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_PHOEBE` | PHOEBE | Story | 100 / 100 / 100 / 100 / 100 / 100 | 70 / 70 / 70 / 70 / 70 / 70 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_GLACIA` | GLACIA | Story | 100 / 100 / 100 / 100 / 100 / 100 | 70 / 70 / 70 / 70 / 70 / 70 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_DRAKE` | DRAKE | Story | 100 / 100 / 100 / 100 / 100 / 100 | 70 / 70 / 70 / 70 / 70 / 70 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_ROXANNE_1` | ROXANNE | Story | 22 / 23 / 24 / 25 | 11 / 12 / 12 / 13 | 27 / 28 / 30 / 31 | 31 / 33 / 34 / 36 |
 | `TRAINER_BRAWLY_1` | BRAWLY | Story | 32 / 33 / 34 / 35 | 16 / 17 / 17 / 18 | 40 / 41 / 42 / 43 | 46 / 47 / 49 / 50 |
 | `TRAINER_WATTSON_1` | WATTSON | Story | 42 / 43 / 44 / 45 | 21 / 22 / 22 / 23 | 52 / 53 / 55 / 56 | 60 / 62 / 63 / 65 |
@@ -414,7 +416,7 @@ identity/templates, not playable battles; their levels are not a challenge plan.
 | `TRAINER_EDDIE` | EDDIE | Ordinary | 39 / 41 | 20 / 21 | 46 / 49 | 54 / 57 |
 | `TRAINER_ALLEN` | ALLEN | Ordinary | 13 / 11 | 7 / 6 | 15 / 13 | 18 / 15 |
 | `TRAINER_TIMMY` | TIMMY | Ordinary | 38 / 40 | 19 / 20 | 45 / 48 | 53 / 56 |
-| `TRAINER_WALLACE` | WALLACE | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_WALLACE` | WALLACE | Story | 100 / 100 / 100 / 100 / 100 / 100 | 70 / 70 / 70 / 70 / 70 / 70 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_ANDREW` | ANDREW | Ordinary | 35 / 36 / 38 | 18 / 18 / 19 | 42 / 43 / 45 | 49 / 50 / 53 |
 | `TRAINER_IVAN` | IVAN | Ordinary | 14 / 16 / 18 | 7 / 8 / 9 | 16 / 19 / 21 | 19 / 22 / 25 |
 | `TRAINER_CLAUDE` | CLAUDE | Ordinary | 44 / 44 / 45 | 22 / 22 / 23 | 52 / 52 / 54 | 61 / 61 / 63 |
