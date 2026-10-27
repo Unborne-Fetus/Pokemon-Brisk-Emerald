@@ -4,11 +4,25 @@
 #include "event_data.h"
 #include "palette.h"
 #include "menu.h"
+#include "item.h"
 #include "constants/rgb.h"
 #include "constants/region_map_sections.h"
 #include "constants/map_types.h"
 
 static bool32 sWildShinyContext = FALSE;
+
+bool32 BriskGimmickGenEnabled(void)
+{
+    return FlagGet(FLAG_BRISK_GIMMICK_GEN);
+}
+
+void BriskRechargeGimmicks(void)
+{
+    // Other gimmicks' usage is battle-local. Only the Orb has a persistent
+    // charge; do not grant an Orb or alter per-battle usage/availability rules.
+    if (BriskGimmickGenEnabled() && CheckBagHasItem(ITEM_TERA_ORB, 1))
+        FlagSet(B_FLAG_TERA_ORB_CHARGED);
+}
 
 bool32 BriskOverworldEncountersEnabled(void)
 {

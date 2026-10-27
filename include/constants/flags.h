@@ -5,6 +5,9 @@
 #include "constants/opponents.h"
 #include "constants/rematches.h"
 
+// Persistent Brisk option; 0x025 is unused in both supported flag layouts.
+#define FLAG_BRISK_GIMMICK_GEN 0x025
+
 
 // Temporary Flags
 // These temporary flags are are cleared every time a map is loaded. They are used

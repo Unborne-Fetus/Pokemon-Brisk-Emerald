@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "brisk_options.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "malloc.h"
@@ -78,6 +79,8 @@ void FreeBattleResources(void)
     gFieldTimers.terrain = 0;
     if (gBattleResources != NULL)
     {
+        if (gBattleOutcome != 0 && !(gBattleTypeFlags & (BATTLE_TYPE_RECORDED | BATTLE_TYPE_RECORDED_LINK)))
+            BriskRechargeGimmicks();
         FREE_AND_SET_NULL(gBattleStruct);
         FREE_AND_SET_NULL(gAiBattleData);
         FREE_AND_SET_NULL(gAiThinkingStruct);

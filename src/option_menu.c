@@ -204,6 +204,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("GIMMICK GEN"), COMPOUND_STRING("Options 7: GIMMICK GEN ON/OFF.\nON recharges your TERA ORB\nafter each battle. Per-battle\nlimits and required items stay.")},
     {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
     {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
@@ -816,7 +817,9 @@ static void DrawDebugOptions(void)
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("DEBUG MENU"), 8, 1, TEXT_SKIP_DRAW, NULL);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("OW ENCOUNTERS"), 8, 17, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskOverworldEncountersEnabled(), 16);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 33, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("GIMMICK GEN"), 8, 33, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskGimmickGenEnabled(), 32);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 49, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -830,16 +833,22 @@ static void Task_DebugOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 2))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 3))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : 2)) % 3;
+        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : 3)) % 4;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (gTasks[taskId].tMenuSelection == 1 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
     {
         VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, BriskOverworldEncountersEnabled());
+        DrawDebugOptions();
+    }
+    else if (gTasks[taskId].tMenuSelection == 2 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
+    {
+        FlagToggle(FLAG_BRISK_GIMMICK_GEN);
+        BriskRechargeGimmicks(); // Also make an already-spent Orb usable on enabling.
         DrawDebugOptions();
     }
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 0)
