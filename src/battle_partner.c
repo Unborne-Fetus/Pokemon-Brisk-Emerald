@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_modes.h"
 #include "main.h"
 #include "battle.h"
 #include "battle_partner.h"
@@ -23,6 +24,35 @@ const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT] =
 
 #define STEVEN_OTID 61226
 
+static void GenerateNamedPartnerParty(const struct Trainer *partner, u16 trainerId, s32 lastIndex)
+{
+    u32 highestLevel = 0;
+    for (u32 n = 0; n < partner->partySize; n++) highestLevel = max(highestLevel, partner->party[n].lvl);
+    struct TrainerGenerator partnerGen;
+    MakePartnerGenerator(&partnerGen, partner);
+    if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+    {
+        partnerGen.otID = OTID_STRUCT_PRESET(STEVEN_OTID);
+        if (GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL)
+            lastIndex = min(lastIndex, 3);
+    }
+    for (u32 i = 0; i < lastIndex && i < partner->partySize; i++)
+    {
+        struct TrainerMon entry = partner->party[i];
+        if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+            entry.lvl = ScaleBriskStoryTrainerLevel(entry.lvl, highestLevel);
+        GenerateMonFromTrainerMon(&gParties[B_TRAINER_PARTNER][i], &entry, &partnerGen);
+    }
+}
+
+#if TESTING
+void Test_GenerateNamedPartnerParty(const struct Trainer *partner, u16 trainerId, u32 limit)
+{
+    ZeroPartyMons(gParties[B_TRAINER_PARTNER]);
+    GenerateNamedPartnerParty(partner, trainerId, limit);
+}
+#endif
+
 void FillPartnerParty(u16 trainerId)
 {
     s32 i, j;
@@ -38,14 +68,7 @@ void FillPartnerParty(u16 trainerId)
         s32 lastIndex = AreMultiPartiesFullTeams() ? PARTY_SIZE : MULTI_PARTY_SIZE;
 
         const struct Trainer *partner = GetTrainerStructFromId(trainerId);
-        struct TrainerGenerator partnerGen;
-        MakePartnerGenerator(&partnerGen, partner);
-        if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
-            partnerGen.otID = OTID_STRUCT_PRESET(STEVEN_OTID);
-        for (i = 0; i < lastIndex && i < partner->partySize; i++)
-        {
-            GenerateMonFromTrainerMon(&gParties[B_TRAINER_PARTNER][i], &partner->party[i], &partnerGen);
-        }
+        GenerateNamedPartnerParty(partner, trainerId, lastIndex);
     }
     else if (trainerId == TRAINER_EREADER)
     {

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_difficulty.h"
 #include "dynamax_adventure.h"
 #include "brisk_options.h"
 #include "battle.h"
@@ -1345,23 +1346,21 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
 
     ZeroPartyMons(party);
 
-    monsCount = trainer->partySize;
-    if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && (B_MULTI_HALF_TEAMS || trainer->multiTeamSize == MULTI_TEAM_SIZE_HALF))
-    {
-        if (monsCount > PARTY_SIZE / 2)
-            monsCount = PARTY_SIZE / 2;
-    }
-
-    u32 monIndices[monsCount];
     struct TrainerGenerator *trainerGen = AllocZeroed(sizeof(struct TrainerGenerator));
     MakeTrainerGenerator(trainerGen, trainer);
+    u32 target = BriskDifficultyPartySize(trainer->partySize, trainerGen->highestLevel,
+        trainerGen->storyLoadout, trainerGen->leagueLevels, trainerGen->fairLoadout || trainerGen->storyLoadout);
+    if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && (B_MULTI_HALF_TEAMS || trainer->multiTeamSize == MULTI_TEAM_SIZE_HALF))
+        target = min(target, PARTY_SIZE / 2);
+    monsCount = min(target, trainer->partySize);
+    u32 monIndices[monsCount];
     DoTrainerPartyPool(trainer, monIndices, monsCount, gBattleTypeFlags);
-
+    // Keep the authored ace when Easy trims a non-pooled party.
+    if (monsCount && monsCount < trainer->partySize && trainer->poolSize == 0)
+        monIndices[monsCount-1] = trainer->partySize-1;
     for (i = 0; i < monsCount; i++)
-    {
-        u32 monIndex = monIndices[i];
-        GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
-    }
+        GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndices[i]], trainerGen);
+    BriskExpandTrainerParty(party, monsCount, target, trainerGen);
     Free(trainerGen);
 }
 

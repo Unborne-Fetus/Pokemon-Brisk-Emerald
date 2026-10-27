@@ -60,16 +60,18 @@ SINGLE_BATTLE_TEST("Brisk item restrictions keep opposing trainer item actions w
     }
 }
 
-WILD_BATTLE_TEST("Brisk Extreme battle EXP stops exactly at the reduced cap, including boosted rewards")
+WILD_BATTLE_TEST("Brisk Hard and Extreme battle EXP stop exactly at their cap including boosted rewards")
 {
     s32 offset = 0;
-    PARAMETRIZE { offset = -1; }
-    PARAMETRIZE { offset = 0; }
-    PARAMETRIZE { offset = 1; }
+    u32 difficulty = BRISK_MODE_EXTREME;
+    for (u32 m = BRISK_MODE_HARD; m <= BRISK_MODE_EXTREME; m++)
+        for (s32 n = -1; n <= 1; n++)
+            PARAMETRIZE {offset = n; difficulty = m;}
     u32 cap = 0;
     GIVEN {
         WITH_CONFIG(B_SCALED_EXP, GEN_3);
-        VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXTREME);
+        VarSet(VAR_BRISK_DIFFICULTY, difficulty);
+        VarSet(VAR_BRISK_NO_LEVEL_CAP, 0);
         cap = GetCurrentLevelCap();
         PLAYER(SPECIES_WOBBUFFET) { Level(cap + offset); Item(ITEM_LUCKY_EGG); }
         OPPONENT(SPECIES_BLISSEY) { Level(100); Moves(MOVE_MEMENTO); }

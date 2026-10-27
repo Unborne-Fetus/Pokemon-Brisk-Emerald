@@ -5928,7 +5928,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     tItemEffect = GetItemEffectType(gSpecialVar_ItemId);
     tItemCount = 1;
 
-    if (!((B_RARE_CANDY_CAP || IsExtremeExpCap()) && sInitialLevel >= GetCurrentLevelCap()))
+    if (!((B_RARE_CANDY_CAP || BriskUsesExpCap()) && sInitialLevel >= GetCurrentLevelCap()))
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0, 0, 1);
     else
         cannotUseEffect = TRUE;

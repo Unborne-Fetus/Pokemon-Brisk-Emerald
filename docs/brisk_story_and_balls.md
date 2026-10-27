@@ -1,5 +1,7 @@
 # Important fights and all-ball battle use
 
+Current mode profiles and runtime team sizes: [difficulty targets](brisk_mode_targets.md).
+
 ## Balls
 
 All 28 ball item types use the battle Bag handler, including Poké, Great and Ultra

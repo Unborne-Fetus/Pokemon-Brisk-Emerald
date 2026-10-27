@@ -2,6 +2,7 @@
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
+#include "brisk_difficulty.h"
 #include "caps.h"
 #include "battle.h"
 #include "event_data.h"
@@ -35,7 +36,7 @@ u32 GetBriskPriceMultiplier(void)
     return multipliers[GetBriskDifficulty()];
 }
 
-u64 GetBriskTrainerAiFlags(u64 flags)
+static u64 GetLegacyBriskTrainerAiFlags(u64 flags)
 {
     switch (GetBriskDifficulty())
     {
@@ -48,11 +49,33 @@ u64 GetBriskTrainerAiFlags(u64 flags)
     }
 }
 
+u64 GetBriskTrainerAiFlags(u64 flags)
+{
+    switch (GetBriskDifficulty())
+    {
+    case BRISK_MODE_EASY: return AI_FLAG_CHECK_BAD_MOVE;
+    case BRISK_MODE_NORMAL:
+        return (flags & ~(AI_FLAG_OMNISCIENT | AI_FLAG_ABILITY_OMNISCIENCE | AI_FLAG_ITEM_OMNISCIENCE
+            | AI_FLAG_MOVE_OMNISCIENCE | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_FORCE_SETUP_FIRST_TURN))
+            | AI_FLAG_BASIC_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_SMART_MON_CHOICES;
+    case BRISK_MODE_HARD: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
+    case BRISK_MODE_EXTREME: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO
+        | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_CONSERVATIVE;
+    }
+    return flags;
+}
+
+u64 GetBriskTrainerAiFlagsForTrainer(u64 flags, u32 id)
+{
+    return BriskTrainerDifficultyExempt(id) ? GetLegacyBriskTrainerAiFlags(flags) : GetBriskTrainerAiFlags(flags);
+}
+
 u32 GetBriskBattleStyle(u32 preference)
 {
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: return OPTIONS_BATTLE_STYLE_SHIFT;
+    case BRISK_MODE_NORMAL:
     case BRISK_MODE_HARD:
     case BRISK_MODE_EXTREME: return OPTIONS_BATTLE_STYLE_SET;
     default: return preference;

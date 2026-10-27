@@ -48,6 +48,28 @@ def story_scaled(level, mode, highest, cap=100):
     return max(1, min(value, max(1, cap - (highest - level))))
 
 
+def profile_levels(tid, role, levels, mode):
+    if tid in LEAGUE_IDS: return [70 if mode == 'Easy' else 100] * len(levels)
+    if role == 'Protected': return [scaled(n, mode) for n in levels]
+    if role == 'Metadata': return levels
+    highest, count = max(levels), len(levels)
+    target = count
+    tutorial = '_ROUTE_103_' in tid
+    if not tutorial:
+        if mode == 'Easy':
+            limit = (2 if highest < 30 else 3 if highest < 50 else 4 if highest < 80 else 5) if role == 'Story' else (2 if highest < 40 else 3 if highest < 70 else 4)
+            target = min(count, limit)
+        elif mode == 'Normal': target = max(count, 2 if highest < 20 else 3 if highest < 40 else 4)
+        elif mode == 'Hard': target = max(count, (4 if highest < 25 else 5 if highest < 40 else 6) if role == 'Story' else (3 if highest < 20 else 4 if highest < 40 else 5))
+        elif mode == 'Extreme': target = max(count, (4 if highest < 20 else 6) if role == 'Story' else (4 if highest < 20 else 5 if highest < 30 else 6))
+    target = min(6, target)
+    values = levels if target >= count else levels[:target-1]+levels[-1:]
+    scaler = story_scaled if role == 'Story' else ordinary_scaled
+    result = [scaler(n, mode, highest) for n in values]
+    extras = [scaler(max(1, highest-1-i%2), mode, highest) for i in range(target-count)]
+    return result[:-1] + extras + result[-1:]
+
+
 def render():
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
@@ -82,13 +104,15 @@ def render():
         '| --- | --- | --- | --- | --- |',
         '| Ordinary trainer levels | Half, with support below ace | Varied authored curve | +20%, at least +2 | +40%, at least +4 |',
         '| Story trainer levels | Half, rounded up | Authored boss curve | +25%, at least +3 | +45%, at least +5 |',
-        '| IVs | 0 | 8 / 12 / 18 / 24 by stage | 31 | 31 |',
-        '| EVs | 0 | 0 / 128 / 256 / 384 by stage | 128 / 256 / 384 / 510 (at least authored total) | 510, chosen for the set |',
-        '| Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Optimized ordinary moves and stronger abilities | Optimized legal moves within stage power limits |',
-        '| AI | Basic bad-move checks | Basic move scoring | Smart switching, HP and KO checks | Omniscient with smart switching |',
-        '| Battle style | Shift | Player preference | Set | Set |',
+        '| IVs | 0 | At least 16 / 20 / 24 / 31 by stage | 31 | 31 |',
+        '| EVs | 0 | 0 / 64 / 128 / 256 / 384 by stage | 256 / 384 / 510 by stage | 510, chosen for the set |',
+        '| Ordinary moves | Stock level-up sets | Authored coverage/support | Optimized coverage with useful support | Optimized coverage with useful support |',
+        '| AI | Basic bad-move checks | Full scoring, HP and KO awareness | Omniscient, smart switching | Omniscient, party knowledge and predictions |',
+        '| Battle style | Shift | Set | Set | Set |',
         '| Player battle consumables | Allowed | Allowed | Blocked | Blocked |',
         '| Shared EXP | 200% | 100% | 50% | Disabled |', '',
+        'See [mode targets](brisk_mode_targets.md) for party sizes, item upgrades, Easy',
+        'species/gimmick rules and caps. League role training remains curated.', '',
         'Dedication/Easter egg scaling remains +20% (minimum 3) on Hard and +30%',
         '(minimum 4) on Extreme; Easy still halves their authored levels.',
         'Ordinary and story Hard/Extreme supports stay below the current badge cap by their',
@@ -96,15 +120,17 @@ def render():
         'Protected Hard and Extreme trainer levels are clamped to the save’s current',
         'badge cap: **25 / 35 / 45 / 50 / 55 / 65 / 75 / 90 / 100**. The individual',
         'table assumes a cap of 100; earlier caps limit ordinary teams and clamp',
-        'protected levels individually. Extreme enforces the player EXP cap too.',
+        'protected levels individually. Hard enforces EXP caps when the cap option is on;',
+        'Extreme always enforces EXP caps. Owned over-cap Pokemon are not lowered.',
         'Difficulty does not evolve an opponent into a different species at runtime.', '',
         '670 ordinary IDs use their original stage power guard. 155 story IDs now use',
         'a separate stage guard: 50 below 12; 75 below 25; 90 below 35; 100 below 50;',
         '120 thereafter. Dedication/Easter egg teams retain their previous behavior. Ordinary',
-        'generated attacks are capped at base power **50 below level 12; 60 below 20;',
+        'optimized Hard/Extreme attacks are capped at **50 below level 12; 60 below 20;',
         '75 below 30; 90 below 40; 100 below 50; 120 thereafter**. Multi-hit, recoil,',
         'setup, typing and abilities still affect actual damage; this is a power-spike',
-        'guard rather than a guarantee of equal battle difficulty.', '',
+        'guard rather than a guarantee of equal battle difficulty. Easy uses stock',
+        'level-up sets rather than the optimized-attack ceiling.', '',
         '## Overworld encounter preference', '',
         '**Options page 7 → OW ENCOUNTERS → ON/OFF.** ON is the default for old and',
         'new saves. OFF removes generated roaming Pokémon after returning to the',
@@ -112,8 +138,12 @@ def render():
         'story encounters, followers, fishing and DexNav remain available. The',
         'preference persists in the save and is independent of difficulty.', '',
         '## Every trainer entry', '',
-        'Levels are in authored party order. Protected entries are byte-for-byte',
-        'unchanged only for dedication/Easter eggs. Metadata-only entries supply NPC',
+        'Levels show the default generated party, including mode reserves. Reserve species',
+        'are selected from level-gated themed/coverage pools; their exact choice is stable',
+        'for the save. The last authored slot stays last. Protected entries are byte-for-byte',
+        'unchanged only for dedication/Easter eggs. Easy may devolve species and trim teams.',
+        'Tutorials and League teams retain their sizes. Two-trainer half-team formats can',
+        'limit a side to three; this table assumes ordinary full teams. Metadata entries supply NPC',
         'identity/templates, not playable battles; their levels are not a challenge plan.', '',
         '| Trainer ID | Display name | Role | Normal | Easy | Hard* | Extreme* |',
         '| --- | --- | --- | --- | --- | --- | --- |',
@@ -124,7 +154,7 @@ def render():
         if not lv: continue
         name = re.search(r'^Name: (.*)',team,re.M)[1].strip().replace('|','\\|')
         role = 'Protected' if tid in policy['protected'] else 'Story' if tid in policy['story'] else 'Metadata' if tid in policy['metadata_only'] else 'Ordinary'
-        cells = [' / '.join(str((70 if m == 'Easy' else 100) if tid in LEAGUE_IDS else scaled(n,m) if role == 'Protected' else story_scaled(n,m,max(lv)) if role == 'Story' else n if role == 'Metadata' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
+        cells = [' / '.join(str(n) for n in profile_levels(tid,role,lv,m)) for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| `' + tid + '` | ' + name + ' | ' + role + ' | ' + ' | '.join(cells) + ' |')
         count += 1
     lines += ['', f'{count} populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.', '',

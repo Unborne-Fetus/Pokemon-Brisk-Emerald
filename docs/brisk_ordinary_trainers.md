@@ -1,5 +1,7 @@
 # Ordinary trainer team rework
 
+Current generated rosters and training: [difficulty targets](brisk_mode_targets.md).
+
 670 ordinary Hoenn trainer entries (1,309 Pokémon, including rematches) have
 revised species, moves, items and training. This follows the area-level pass;
 lowering an evolved Pokémon's level alone did not make early fights fair.
@@ -28,7 +30,7 @@ Steven, Winstrates and interviewers are now eligible for balance changes. See
   OHKO moves, evasion spam, suicide moves and trapping-only Wobbuffet teams.
 - Give later teams coverage and one useful support/setup move where available.
   Normal's basic trainer AI evaluates moves without omniscient knowledge.
-- Normal IVs progress through 8 / 12 / 18 / 24. No early EV training; later
+- Authored IVs progress through 8 / 12 / 18 / 24 before runtime mode floors. No early EV training; later
   spreads total 128, 256 or 384. Beneficial natures start at level 25.
 - Limit early party size; preserve doubles and existing trainer identities.
   Only the final party slot gets a held item: Oran from level 12, Sitrus from
@@ -37,7 +39,7 @@ Steven, Winstrates and interviewers are now eligible for balance changes. See
 
 The existing Easy/Hard/Extreme modifiers still apply at battle time, including
 Extreme's stronger moves and full EV training. Ordinary trainers now also respect
-the stage power ceilings when Easy/Hard/Extreme generates moves. Dedication/Easter egg trainer
+the stage power ceilings when Hard/Extreme generates moves; Easy uses stock level-up sets. Dedication/Easter egg trainer
 IDs retain their previous runtime behavior. See [the complete mode plan](brisk_trainer_mode_plan.md)
 for every trainer's levels across all four modes and the revised opening curve.
 

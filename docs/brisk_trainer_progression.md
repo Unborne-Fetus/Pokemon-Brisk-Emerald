@@ -1,5 +1,7 @@
 # Trainer progression
 
+Current mode profiles and runtime team sizes: [difficulty targets](brisk_mode_targets.md).
+
 Hoenn's authored teams use one Normal-mode progression. Easy, Hard and Extreme
 are applied by `GenerateMonFromTrainerMon` for both ordinary trainers and rivals.
 Normal uses varied authored levels. Ordinary Hard adds 20% (at least two), and

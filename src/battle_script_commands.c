@@ -2271,7 +2271,7 @@ static void Cmd_getexp(void)
                 gBattleStruct->battlerExpReward = 0;
             }
             else if (GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL) == MAX_LEVEL
-                || (IsExtremeExpCap() && GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL) >= GetCurrentLevelCap()))
+                || (BriskUsesExpCap() && GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_LEVEL) >= GetCurrentLevelCap()))
             {
                 gBattleScripting.getexpState = 5;
                 gBattleStruct->battlerExpReward = 0;
@@ -2309,7 +2309,7 @@ static void Cmd_getexp(void)
                     if (getsExpShare && !wasSentOut)
                         gBattleStruct->battlerExpReward = ScaleBriskSharedExp(gBattleStruct->battlerExpReward);
 
-                    if ((B_EXP_CAP_TYPE == EXP_CAP_HARD || IsExtremeExpCap()) && gBattleStruct->battlerExpReward != 0)
+                    if ((B_EXP_CAP_TYPE == EXP_CAP_HARD || BriskUsesExpCap()) && gBattleStruct->battlerExpReward != 0)
                     {
                         enum GrowthRate growthRate = gSpeciesInfo[GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_SPECIES)].growthRate;
                         u32 currentExp = GetMonData(&gParties[B_TRAINER_PLAYER][*expMonId], MON_DATA_EXP);

@@ -1,8 +1,10 @@
 #include "global.h"
 #include "brisk_modes.h"
+#include "brisk_difficulty.h"
 #include "brisk_trainer_moves.h"
 #include "main.h"
 #include "data.h"
+#include "item.h"
 #include "move.h"
 #include "random.h"
 #include "string_util.h"
@@ -26,8 +28,22 @@ static const bool8 sBriskLeagueTrainer[TRAINERS_COUNT] =
     [TRAINER_WALLACE] = TRUE,
 };
 
+#if TESTING
+static const struct Trainer *sTestPolicyTrainer;
+static u32 sTestPolicyId;
+void Test_BriskTrainerSource(const struct Trainer *trainer, u32 id)
+{
+    sTestPolicyTrainer = trainer;
+    sTestPolicyId = id;
+}
+#endif
+
 static bool32 UsesTrainerPolicy(const struct Trainer *trainer, const bool8 *policy)
 {
+#if TESTING
+    if (trainer == sTestPolicyTrainer && sTestPolicyId < TRAINERS_COUNT)
+        return policy[sTestPolicyId];
+#endif
 #ifndef EMERALD
     return FALSE; // The manifest identifies Hoenn teams, not FRLG trainer IDs.
 #else
@@ -167,17 +183,25 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 }
 
 // Apply difficulty to the generated opponent, leaving authored teams untouched.
-static void ApplyBriskTrainerTraining(struct Pokemon *mon)
+static void ApplyBriskTrainerTraining(struct Pokemon *mon, bool32 tuned)
 {
     u32 mode = GetBriskDifficulty();
-    if (mode == BRISK_MODE_NORMAL)
+    if (mode == BRISK_MODE_NORMAL && !tuned)
         return;
 
     u32 ivs = mode == BRISK_MODE_EASY ? 0 : 0x3FFFFFFF; // Six 5-bit IVs.
+    if (mode == BRISK_MODE_NORMAL)
+    {
+        u32 level = GetMonData(mon, MON_DATA_LEVEL);
+        u32 floor = level < 20 ? 16 : level < 35 ? 20 : level < 50 ? 24 : 31;
+        ivs = 0;
+        for (u32 stat = 0; stat < NUM_STATS; stat++)
+            ivs |= max(floor, GetMonData(mon, MON_DATA_HP_IV + stat)) << (5 * stat);
+    }
     SetMonData(mon, MON_DATA_IVS, &ivs);
 
     u8 evs[NUM_STATS] = {0};
-    if (mode == BRISK_MODE_EXTREME || mode == BRISK_MODE_HARD)
+    if (mode == BRISK_MODE_EXTREME || mode == BRISK_MODE_HARD || mode == BRISK_MODE_NORMAL)
     {
         enum Species species = GetMonData(mon, MON_DATA_SPECIES);
         u16 scores[NUM_STATS];
@@ -208,7 +232,11 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon)
         // Stable tie order; no random rolls and no EVs above 252 or 510 total.
         u32 level = GetMonData(mon, MON_DATA_LEVEL);
         u32 budget = mode == BRISK_MODE_EXTREME ? 510 : level < 20 ? 128 : level < 35 ? 256 : level < 50 ? 384 : 510;
-        if (mode == BRISK_MODE_HARD)
+        if (tuned && mode == BRISK_MODE_HARD)
+            budget = level < 20 ? 256 : level < 35 ? 384 : 510;
+        if (mode == BRISK_MODE_NORMAL)
+            budget = level < 15 ? 0 : level < 25 ? 64 : level < 40 ? 128 : level < 60 ? 256 : 384;
+        if (mode == BRISK_MODE_HARD || mode == BRISK_MODE_NORMAL)
         {
             u32 authoredTotal = 0;
             for (u32 stat = 0; stat < NUM_STATS; stat++)
@@ -258,6 +286,23 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
                 adjusted.moves[i] = MOVE_NONE;
             adjusted.gigantamaxFactor = FALSE;
         }
+    }
+    if ((trainer->fairLoadout || trainer->storyLoadout) && !trainer->leagueLevels && GetBriskDifficulty() == BRISK_MODE_EASY)
+    {
+        enum Species easySpecies = BriskEasyTrainerSpecies(adjusted.species, adjusted.lvl);
+        if (easySpecies != adjusted.species)
+        {
+            adjusted.species = easySpecies;
+            adjusted.ability = ABILITY_NONE;
+            adjusted.nickname = NULL;
+        }
+        memset(adjusted.moves, 0, sizeof(adjusted.moves));
+        adjusted.shouldUseDynamax = FALSE;
+        adjusted.gigantamaxFactor = FALSE;
+        adjusted.teraType = TYPE_MYSTERY;
+        enum HoldEffect effect = GetItemHoldEffect(adjusted.heldItem);
+        if (effect == HOLD_EFFECT_MEGA_STONE || effect == HOLD_EFFECT_PRIMAL_ORB || effect == HOLD_EFFECT_Z_CRYSTAL)
+            adjusted.heldItem = adjusted.lvl >= 20 ? ITEM_SITRUS_BERRY : ITEM_ORAN_BERRY;
     }
     trainerMon = &adjusted;
     u32 data;
@@ -366,7 +411,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             // ability and EV spread. Generic optimization would remove screens,
             // Protect, speed control or investments needed for those roles.
             if (GetBriskDifficulty() == BRISK_MODE_EASY)
-                ApplyBriskTrainerTraining(mon);
+                ApplyBriskTrainerTraining(mon, FALSE);
         }
         else
         {
@@ -376,7 +421,9 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
                 ApplyBriskStoryTrainerLoadout(mon);
             else
                 ApplyBriskTrainerLoadout(mon);
-            ApplyBriskTrainerTraining(mon);
+            ApplyBriskTrainerTraining(mon, trainer->fairLoadout || trainer->storyLoadout);
+            if (trainer->fairLoadout || trainer->storyLoadout)
+                BriskDifficultyHeldItem(mon);
         }
     }
 
@@ -394,6 +441,6 @@ bool32 Test_BriskStoryTrainerId(u32 id)
 
 void Test_ApplyBriskTrainerTraining(struct Pokemon *mon)
 {
-    ApplyBriskTrainerTraining(mon);
+    ApplyBriskTrainerTraining(mon, FALSE);
 }
 #endif

@@ -230,6 +230,8 @@ void BattleAI_SetupItems(void)
 
 static u64 GetWildAiFlags(void)
 {
+    if (GetBriskDifficulty() == BRISK_MODE_EASY)
+        return AI_FLAG_CHECK_BAD_MOVE;
     u32 avgLevel = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL);
     u64 flags = 0;
 
@@ -290,7 +292,7 @@ static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
         {
             flags = GetTrainerAIFlagsFromId(trainerId);
             if (!IsOnPlayerSide(battler))
-                flags = GetBriskTrainerAiFlags(flags);
+                flags = GetBriskTrainerAiFlagsForTrainer(flags, trainerId);
         }
     }
 

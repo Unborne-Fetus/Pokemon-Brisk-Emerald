@@ -90,6 +90,6 @@ TEST("Brisk Hard ordinary loadouts improve weak coverage within the early power 
     EXPECT(ai & AI_FLAG_SMART_SWITCHING);
     EXPECT(ai & AI_FLAG_HP_AWARE);
     EXPECT(ai & AI_FLAG_TRY_TO_2HKO);
-    EXPECT(!(ai & AI_FLAG_OMNISCIENT));
+    EXPECT(ai & AI_FLAG_OMNISCIENT);
     VarSet(VAR_BRISK_DIFFICULTY, old);
 }

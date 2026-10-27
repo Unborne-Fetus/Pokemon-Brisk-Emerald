@@ -11,6 +11,12 @@ bool32 IsExtremeExpCap(void)
     return GetBriskDifficulty() == BRISK_MODE_EXTREME;
 }
 
+bool32 BriskUsesExpCap(void)
+{
+    u32 mode = GetBriskDifficulty();
+    return mode == BRISK_MODE_EXTREME || (mode == BRISK_MODE_HARD && !VarGet(VAR_BRISK_NO_LEVEL_CAP));
+}
+
 u32 GetProgressionLevelCap(void)
 {
     u32 mode = GetBriskDifficulty();
@@ -47,7 +53,7 @@ u32 GetProgressionLevelCap(void)
 
 u32 GetCurrentLevelCap(void)
 {
-    if (IsExtremeExpCap())
+    if (BriskUsesExpCap())
         return GetProgressionLevelCap();
     if (VarGet(VAR_BRISK_NO_LEVEL_CAP))
         return MAX_LEVEL;
@@ -67,7 +73,7 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
     u32 levelDifference;
     u32 currentLevelCap = GetCurrentLevelCap();
 
-    if (IsExtremeExpCap() && level >= currentLevelCap)
+    if (BriskUsesExpCap() && level >= currentLevelCap)
         return 0;
     if (B_EXP_CAP_TYPE == EXP_CAP_NONE || GetBriskDifficulty() == BRISK_MODE_EASY)
         return expValue;

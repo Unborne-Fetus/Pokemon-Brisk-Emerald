@@ -3580,7 +3580,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
              && GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL
-             && (!IsExtremeExpCap() || GetMonData(mon, MON_DATA_LEVEL) < GetCurrentLevelCap()))
+             && (!BriskUsesExpCap() || GetMonData(mon, MON_DATA_LEVEL) < GetCurrentLevelCap()))
             {
                 u8 param = GetItemHoldEffectParam(item);
                 dataUnsigned = 0;
@@ -3591,7 +3591,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         u32 currentLevel = GetMonData(mon, MON_DATA_LEVEL);
                         u32 targetLevel = min(currentLevel + itemCount, (u32)MAX_LEVEL);
 
-                        if (B_RARE_CANDY_CAP || IsExtremeExpCap())
+                        if (B_RARE_CANDY_CAP || BriskUsesExpCap())
                             targetLevel = min(targetLevel, GetCurrentLevelCap());
 
                         dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][targetLevel];
@@ -3602,7 +3602,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
                     dataUnsigned = (sExpCandyExperienceTable[param - 1] * itemCount) + GetMonData(mon, MON_DATA_EXP);
 
-                    if ((B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD) || IsExtremeExpCap())
+                    if ((B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD) || BriskUsesExpCap())
                     {
                         u32 currentLevelCap = GetCurrentLevelCap();
                         if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap])

@@ -19,6 +19,7 @@
 #endif
 
 bool32 IsExtremeExpCap(void);
+bool32 BriskUsesExpCap(void);
 u32 GetProgressionLevelCap(void);
 u32 GetCurrentLevelCap(void);
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);

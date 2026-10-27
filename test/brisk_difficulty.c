@@ -24,17 +24,20 @@ TEST("Brisk difficulty purchase prices scale while resale values stay fixed")
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
 }
 
-TEST("Brisk difficulty trainer AI preserves Normal and upgrades Hard and Extreme")
+TEST("Brisk difficulty trainer AI progresses from conventional Easy to difficult Normal expert Hard and predictive Extreme")
 {
     u64 original = AI_FLAG_BASIC_TRAINER | AI_FLAG_PREDICT_MOVE | AI_FLAG_RANDOMIZE_SWITCHIN;
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
     EXPECT_EQ(GetBriskTrainerAiFlags(original), AI_FLAG_CHECK_BAD_MOVE);
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
-    EXPECT_EQ(GetBriskTrainerAiFlags(original), original);
+    EXPECT(GetBriskTrainerAiFlags(original) & AI_FLAG_BASIC_TRAINER);
+    EXPECT(!(GetBriskTrainerAiFlags(original) & (AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION)));
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_HARD);
-    EXPECT_EQ(GetBriskTrainerAiFlags(original), original | AI_FLAG_SMART_MON_CHOICES);
+    EXPECT(GetBriskTrainerAiFlags(original) & AI_FLAG_SMART_SWITCHING);
+    EXPECT(GetBriskTrainerAiFlags(original) & AI_FLAG_OMNISCIENT);
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXTREME);
-    EXPECT_EQ(GetBriskTrainerAiFlags(original), original | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
+    EXPECT_EQ(GetBriskTrainerAiFlags(original) & AI_FLAG_PREDICTION, AI_FLAG_PREDICTION);
+    EXPECT(GetBriskTrainerAiFlags(original) & AI_FLAG_KNOW_OPPONENT_PARTY);
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
 }
 
@@ -48,7 +51,7 @@ TEST("Brisk Hard and Extreme enable move scoring for trainers with sparse legacy
             VarSet(VAR_BRISK_DIFFICULTY, mode);
             u64 flags = GetBriskTrainerAiFlags(originals[i]);
             if (mode == BRISK_MODE_NORMAL)
-                EXPECT_EQ(flags, originals[i]);
+                EXPECT_EQ(flags & AI_FLAG_BASIC_TRAINER, AI_FLAG_BASIC_TRAINER);
             else if (mode == BRISK_MODE_EASY)
                 EXPECT_EQ(flags, AI_FLAG_CHECK_BAD_MOVE);
             else
@@ -70,7 +73,7 @@ TEST("Brisk difficulty enforces battle style without overwriting the player's pr
         VarSet(VAR_BRISK_DIFFICULTY, mode);
         for (u32 preference = 0; preference < 2; preference++)
         {
-            u32 expected = mode == BRISK_MODE_NORMAL ? preference : mode == BRISK_MODE_EASY ? OPTIONS_BATTLE_STYLE_SHIFT : OPTIONS_BATTLE_STYLE_SET;
+            u32 expected = mode == BRISK_MODE_EASY ? OPTIONS_BATTLE_STYLE_SHIFT : OPTIONS_BATTLE_STYLE_SET;
             EXPECT_EQ(GetBriskBattleStyle(preference), expected);
         }
     }

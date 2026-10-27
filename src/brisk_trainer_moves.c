@@ -246,6 +246,11 @@ static void ApplyLoadout(struct Pokemon *mon, u32 mode, u32 maximumPower)
     if (mode == BRISK_MODE_NORMAL)
         return;
     bool32 easy = mode == BRISK_MODE_EASY;
+    if (easy && maximumPower != 0)
+    {
+        GiveMonInitialMoveset(mon);
+        return;
+    }
     SelectAbility(mon, easy);
     if (mode == BRISK_MODE_HARD && maximumPower == 0)
         return;
@@ -264,6 +269,13 @@ static void ApplyLoadout(struct Pokemon *mon, u32 mode, u32 maximumPower)
                 continue;
             s32 score = SupportMoveScore(&ctx, move);
             if (score > supportScore) { support = move; supportScore = score; }
+        }
+    if (!easy && maximumPower != 0)
+        for (enum Move move = 1; move < MOVES_COUNT; move++)
+        {
+            if (!InMovePool(pool, move) || move == MOVE_TRICK_ROOM) continue;
+            s32 score = SupportMoveScore(&ctx, move);
+            if (score > supportScore) {support = move; supportScore = score;}
         }
     u32 count = 0;
     for (; count < MAX_MON_MOVES - (support != MOVE_NONE); count++)

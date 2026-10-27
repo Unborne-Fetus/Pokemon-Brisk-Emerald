@@ -1,5 +1,7 @@
 # Ordinary trainer level spreads
 
+Current mode profiles and runtime team sizes: [difficulty targets](brisk_mode_targets.md).
+
 Allen now leads with Galarian Slowpoke and has a lower-level Rattata:
 
 | Pokemon | Easy | Normal | Hard | Extreme |
@@ -8,8 +10,8 @@ Allen now leads with Galarian Slowpoke and has a lower-level Rattata:
 | Rattata | 6 | 11 | 13 | 15 |
 
 414 ordinary team definitions were adjusted. All 430 ordinary multi-Pokemon teams
-now have a level spread; the 240 single-Pokemon teams use the same ordinary mode
-curve. Route bands, species evolution/stat limits, legal moves and appropriate
+now have a level spread; the 240 authored single-Pokemon cores use the same mode curve. Current profiles
+add level-gated reserves to those cores on Normal/Hard/Extreme. Route bands, species evolution/stat limits, legal moves and appropriate
 IVs, EVs and held items are validated after the edits. The later story pass narrows exemptions to 27 dedication/Easter egg teams; their
 fingerprints and previous runtime scaling remain unchanged.
 

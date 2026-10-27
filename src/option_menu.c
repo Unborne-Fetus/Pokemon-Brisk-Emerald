@@ -215,14 +215,14 @@ static const struct {
     {COMPOUND_STRING("2-IN-1 BIKE"), COMPOUND_STRING("Either BIKE has both modes.\nStop, then press L to switch.\nMACH: speed. ACRO: B tricks.\nKeep ACRO mode on rails.")},
     {COMPOUND_STRING("CHANGE NAME"), COMPOUND_STRING("Options 3: CHANGE NAME.\nEdit your name, then select OK.\nYour Trainer ID stays the same;\nyour POKéMON remain yours.")},
     {COMPOUND_STRING("APPEARANCE"), COMPOUND_STRING("Options 3: LIGHT or DARK.\nUse Left/Right or A.\nSlate panels, cyan accents;\nPOKéMON keep their colors.")},
-    {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("NORMAL keeps original levels.\nEASY halves opponent levels.\nOrdinary HARD +20%; EXT +40%.\nTrainer levels respect your cap.")},
-    {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("No level caps; prices x1.\nBasic AI; items allowed.\nSHIFT style; shared EXP 200%.\nOver-level freely.")},
-    {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Prices x2; original AI.\nBattle items are allowed.\nChoose SHIFT or SET style.\nShared EXP remains 100%.")},
-    {COMPOUND_STRING("HARD RULES"), COMPOUND_STRING("Caps start at 25; end at 100.\nPrices x4; smarter switching.\nNo items; SET; shared EXP 50%.\nUnder-cap catches can grow.")},
-    {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Caps start at 25; EXP stops.\nPrices x10; omniscient AI.\nNo items; SET; no EXP Share.\nWild POKé BALLS still work.")},
+    {COMPOUND_STRING("DIFFICULTY"), COMPOUND_STRING("EASY: classic-style battles.\nNORMAL: difficult.\nHARD: very difficult.\nEXTREME: Kaizo-style rules.")},
+    {COMPOUND_STRING("EASY RULES"), COMPOUND_STRING("Smaller, level-fit teams.\nBasic AI; SHIFT; items.\nNo EXP cap; shared EXP 200%.\nLeague: all level 70.")},
+    {COMPOUND_STRING("NORMAL RULES"), COMPOUND_STRING("Stronger teams and training.\nSmart move choices; SET.\nBattle items allowed.\nShared EXP 100%; League 100.")},
+    {COMPOUND_STRING("HARD RULES"), COMPOUND_STRING("Larger teams; expert AI.\nEXP caps follow badges.\nSET; balls only in battle.\nShared EXP 50%; League 100.")},
+    {COMPOUND_STRING("EXTREME RULES"), COMPOUND_STRING("Full teams from midgame.\nPredictive AI; full training.\nSET; strict EXP caps.\nBalls allowed; League 100.")},
     {COMPOUND_STRING("EXP SHARE MODES"), COMPOUND_STRING("Options 3: GEN 3 is held.\nMODERN shares with the team.\nBoth keep full battler EXP.\nDifficulty sets shared EXP.")},
     {COMPOUND_STRING("MODERN EXP SHARE"), COMPOUND_STRING("Devon reward: a Key Item.\nUse it in the Bag for ON/OFF.\nSwitch MODERN on Options 3.\nIt isn't sold in Lilycove.")},
-    {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: original training.\nHARD: perfect IVs, old EVs.\nEXTREME: perfect IVs, new EVs.")},
+    {COMPOUND_STRING("TRAINER TRAINING"), COMPOUND_STRING("EASY: zero IVs and EVs.\nNORMAL: stronger by stage.\nHARD: perfect IVs, trained EVs.\nEXTREME: full 510 EVs.")},
     {COMPOUND_STRING("TRAINER LOADOUTS"), COMPOUND_STRING("EASY: weak attacks, abilities.\nNORMAL: original sets.\nHARD: better legal abilities.\nEXTREME: stronger moves too.")},
     {COMPOUND_STRING("RANDOMIZER"), COMPOUND_STRING("Options 4: randomize wild\nPOKéMON, trainers, items,\nmajor fights or everything.\nWarps are never randomized.")},
     {COMPOUND_STRING("CONTEST RHYTHM"), COMPOUND_STRING("Tap A on the shown beat: 2-4.\nPerfect: +4 hearts. Good: +2.\nMissing keeps normal appeal.\nHigher ranks tighten the timing.")},
@@ -233,7 +233,7 @@ static const struct {
     {COMPOUND_STRING("AUTO RUN"), COMPOUND_STRING("Auto Run is on by default.\nNo need to hold B to run.\nTurn it off on Options\npage 2 if you prefer.")},
     {COMPOUND_STRING("MENUS AND SAVING"), COMPOUND_STRING("Hold the D-pad to repeat\nthrough menus more quickly.\nSave messages are faster;\nyour save still gets written.")},
     {COMPOUND_STRING("MOVE PROMPTS"), COMPOUND_STRING("Options 2 lets you skip\nautomatic level-up move\nprompts or turn them\nback on when you want.")},
-    {COMPOUND_STRING("LEVEL CAPS"), COMPOUND_STRING("Easy: no cap. Normal: regular.\nHard/Extreme: raised gym caps.\nExtreme stops EXP at its cap.\nSTART shows the current cap.")},
+    {COMPOUND_STRING("LEVEL CAPS"), COMPOUND_STRING("EASY has no EXP cap.\nHARD honors the cap setting.\nEXTREME always caps EXP.\nSTART shows the current cap.")},
     {COMPOUND_STRING("REMATCHES"), COMPOUND_STRING("Options page 2 controls\nunlimited trainer rematches.\nTurn this on to repeat\ntrainer battles freely.")},
     {COMPOUND_STRING("MOVE RELEARNER"), COMPOUND_STRING("Summary: moves page, START.\nUse L/R for Level, Egg,\nTM and Tutor move lists.\nEmpty lists can be browsed.")},
     {COMPOUND_STRING("TM AND EGG MOVES"), COMPOUND_STRING("Egg moves come from the\nPOKéMON's egg move list.\nTM moves need the matching\nTM in your Bag.")},
@@ -1055,14 +1055,7 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (GetBriskDifficulty() != BRISK_MODE_NORMAL)
-        return selection;
-    if (JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
-    {
-        selection ^= 1;
-        sArrowPressed = TRUE;
-    }
-
+    // The mode selects SHIFT (Easy) or SET; retain the saved preference.
     return selection;
 }
 

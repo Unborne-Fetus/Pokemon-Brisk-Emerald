@@ -31,6 +31,9 @@ def audit():
         (ROOT / 'src/data/brisk_ordinary_trainers.h').read_text()))
     if runtime_ids != set(policy['reworked']) or runtime_ids & policy['protected'].keys():
         errors.append('Runtime ordinary-trainer classification disagrees with protected-team policy')
+    exempt_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE', (ROOT / 'src/data/brisk_exempt_trainers.h').read_text()))
+    if exempt_ids != policy['protected'].keys():
+        errors.append('Runtime difficulty exemptions disagree with dedication/Easter egg policy')
     story_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE', (ROOT / 'src/data/brisk_story_trainers.h').read_text()))
     if story_ids != set(policy['story']) or story_ids & (set(policy['reworked']) | policy['protected'].keys()):
         errors.append('Runtime story-trainer classification disagrees with policy')

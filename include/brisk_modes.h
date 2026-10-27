@@ -16,6 +16,7 @@ struct Pokemon;
 u32 GetBriskDifficulty(void);
 u32 GetBriskPriceMultiplier(void);
 u64 GetBriskTrainerAiFlags(u64 flags);
+u64 GetBriskTrainerAiFlagsForTrainer(u64 flags, u32 id);
 u32 GetBriskBattleStyle(u32 preference);
 bool32 BriskBattleItemsAllowed(void);
 bool32 BriskCanUseBattleItem(enum Item item);

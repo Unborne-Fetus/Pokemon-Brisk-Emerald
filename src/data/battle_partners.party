@@ -11,37 +11,73 @@ Class: Rival
 Pic: Steven
 Gender: Male
 Music: Male
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices / HP Aware / Smart Tera
 
-Metang
-Brave Nature
-Level: 42
+SPECIES_METAGROSS @ Sitrus Berry
+Level: 83
+Ability: Clear Body
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
 
-Skarmory
-Impish Nature
-Level: 43
+SPECIES_SKARMORY @ Leftovers
+Level: 82
+Ability: Sturdy
+Nature: Careful
+EVs: 252 HP / 4 Def / 252 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 6 SpA / 252 SpD
-- Toxic
-- Aerial Ace
-- Protect
-- Steel Wing
+- MOVE_BRAVE_BIRD
+- MOVE_IRON_HEAD
+- MOVE_TAILWIND
+- MOVE_ROOST
 
-Aggron
-Adamant Nature
-Level: 44
+SPECIES_AGGRON @ Sitrus Berry
+Level: 84
+Ability: Rock Head
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 SpA / 6 SpD
-- Thunder
-- Protect
-- Solar Beam
-- Dragon Claw
+- MOVE_HEAD_SMASH
+- MOVE_HEAVY_SLAM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_CLAYDOL @ Light Clay
+Level: 82
+Ability: Levitate
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTH_POWER
+- MOVE_PSYCHIC
+- MOVE_LIGHT_SCREEN
+- MOVE_PROTECT
+
+SPECIES_CRADILY @ Leftovers
+Level: 81
+Ability: Storm Drain
+Nature: Calm
+EVs: 252 HP / 4 SpA / 252 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_GIGA_DRAIN
+- MOVE_ANCIENT_POWER
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_ARMALDO @ Expert Belt
+Level: 82
+Ability: Battle Armor
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ROCK_BLAST
+- MOVE_X_SCISSOR
+- MOVE_AQUA_JET
+- MOVE_PROTECT
 
 === PARTNER_BRENDAN ===
 Name: BRENDAN
