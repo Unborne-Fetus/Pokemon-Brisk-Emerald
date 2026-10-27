@@ -258,7 +258,7 @@ Nature: Modest
 - MOVE_ICE_PUNCH
 
 SPECIES_SPIRITOMB @ Expert Belt
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -300,7 +300,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_SCIZOR @ Expert Belt
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -319,7 +319,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_STARAPTOR
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -330,7 +330,7 @@ Shiny: Yes
 - MOVE_GROWL
 
 SPECIES_XATU @ Sitrus Berry
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -360,7 +360,7 @@ Shiny: Yes
 - MOVE_SWORDS_DANCE
 
 SPECIES_SEVIPER @ Sitrus Berry
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -605,7 +605,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -768,7 +768,7 @@ Nature: Adamant
 - MOVE_LEECH_SEED
 
 SPECIES_ROSELIA @ Sitrus Berry
-Level: 35
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -807,7 +807,7 @@ Nature: Modest
 - MOVE_LEECH_SEED
 
 SPECIES_LILLIGANT @ Sitrus Berry
-Level: 40
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -826,7 +826,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SALAMENCE
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -865,7 +865,7 @@ Nature: Modest
 - MOVE_LEECH_SEED
 
 SPECIES_BELLOSSOM @ Sitrus Berry
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -884,7 +884,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BRELOOM
-Level: 39
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -913,7 +913,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BRELOOM
-Level: 44
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -923,9 +923,9 @@ Nature: Adamant
 - MOVE_LEECH_SEED
 
 SPECIES_VILEPLUME
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_GIGA_DRAIN
 - MOVE_MOONBLAST
@@ -952,7 +952,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BRELOOM
-Level: 49
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -972,7 +972,7 @@ Nature: Modest
 - MOVE_SLEEP_POWDER
 
 SPECIES_ROSERADE @ Sitrus Berry
-Level: 47
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -991,17 +991,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BRELOOM
-Level: 52
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
-- MOVE_DYNAMICPUNCH
 - MOVE_SEED_BOMB
 - MOVE_HEADBUTT
 - MOVE_LEECH_SEED
 
 SPECIES_VILEPLUME
-Level: 52
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -1049,7 +1048,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOLURK
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -1069,7 +1068,7 @@ Nature: Adamant
 - MOVE_SHADOW_BALL
 
 SPECIES_STONJOURNER @ Sitrus Berry
-Level: 60
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -1098,7 +1097,7 @@ Nature: Modest
 - MOVE_ANCIENTPOWER
 
 SPECIES_MINIOR @ Expert Belt
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -1303,7 +1302,7 @@ Nature: Modest
 - MOVE_TAIL_WHIP
 
 SPECIES_POLIWRATH @ Sitrus Berry
-Level: 35
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -1360,7 +1359,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SEAKING
-Level: 38
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -1389,7 +1388,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BIBAREL
-Level: 40
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -1418,7 +1417,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GASTRODON_WEST
-Level: 44
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -1447,8 +1446,8 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM_WASH
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_SHOCK_WAVE
@@ -1505,7 +1504,7 @@ Nature: Modest
 - MOVE_TAIL_WHIP
 
 SPECIES_DEWGONG @ Sitrus Berry
-Level: 35
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -1695,7 +1694,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BAXCALIBUR
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1735,7 +1734,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_SHIFTRY @ Expert Belt
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1754,7 +1753,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HAXORUS
-Level: 94
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1764,7 +1763,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_DRAMPA
-Level: 93
+Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -1793,7 +1792,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAWILE
-Level: 90
+Level: 93
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1842,7 +1841,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_BLAZIKEN @ Sitrus Berry
-Level: 45
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -1871,7 +1870,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_MUK_ALOLA @ Expert Belt
-Level: 86
+Level: 87
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1900,7 +1899,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_SPIDOPS @ Sitrus Berry
-Level: 86
+Level: 87
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1968,7 +1967,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_SHEDINJA
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -1978,7 +1977,7 @@ Nature: Adamant
 - MOVE_SHADOW_CLAW
 
 SPECIES_YANMEGA
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2007,7 +2006,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_VENUSAUR
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2017,7 +2016,7 @@ Nature: Modest
 - MOVE_SLEEP_POWDER
 
 SPECIES_ARBOK
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2027,7 +2026,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_DRAGALGE @ Expert Belt
-Level: 88
+Level: 89
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2056,8 +2055,8 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_ROTOM_FROST
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_SHOCK_WAVE
@@ -2085,7 +2084,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FORRETRESS
-Level: 49
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2095,7 +2094,7 @@ Nature: Adamant
 - MOVE_RAPID_SPIN
 
 SPECIES_SKARMAGEDN
-Level: 48
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2124,7 +2123,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BASTIODON
-Level: 54
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2134,7 +2133,7 @@ Nature: Adamant
 - MOVE_TACKLE
 
 SPECIES_AGGRON
-Level: 54
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2163,7 +2162,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRIFBLIM
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -2173,7 +2172,7 @@ Nature: Modest
 - MOVE_FOCUS_ENERGY
 
 SPECIES_DUSKNOIR
-Level: 54
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2212,7 +2211,7 @@ Nature: Adamant
 - MOVE_BULLDOZE
 
 SPECIES_LINEVOLVER @ Expert Belt
-Level: 81
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2288,7 +2287,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_EXPLOUD
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2298,7 +2297,7 @@ Nature: Adamant
 - MOVE_UPROAR
 
 SPECIES_STOUTLAND
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2327,7 +2326,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SALAMENCE
-Level: 92
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2376,7 +2375,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_SABLEYE @ Sitrus Berry
-Level: 45
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2472,7 +2471,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_AEGISLASH @ Sitrus Berry
-Level: 87
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2501,7 +2500,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_NIDOQUEEN @ Sitrus Berry
-Level: 88
+Level: 89
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2520,7 +2519,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FLYGON
-Level: 89
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2540,7 +2539,7 @@ Nature: Adamant
 - MOVE_DIG
 
 SPECIES_SANDACONDA @ Sitrus Berry
-Level: 88
+Level: 89
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2559,9 +2558,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HITMONCHAN
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_DRAIN_PUNCH
 - MOVE_MEGA_PUNCH
@@ -2579,7 +2578,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HITMONTOP @ Sitrus Berry
-Level: 47
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2598,7 +2597,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CHARIZARD
-Level: 51
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -2608,7 +2607,7 @@ Nature: Modest
 - MOVE_GROWL
 
 SPECIES_VENUSAUR
-Level: 47
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -2618,7 +2617,7 @@ Nature: Modest
 - MOVE_SLEEP_POWDER
 
 SPECIES_BLASTOISE @ Sitrus Berry
-Level: 48
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -2637,7 +2636,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRAGONAIR
-Level: 54
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2647,7 +2646,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_PUPITAR
-Level: 54
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2676,7 +2675,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRAGONITE
-Level: 57
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2686,7 +2685,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_TYRANITAR
-Level: 57
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -2725,7 +2724,7 @@ Nature: Modest
 - MOVE_WILL_O_WISP
 
 SPECIES_FROSLASS @ Expert Belt
-Level: 76
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -2744,7 +2743,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MISMAGIUS
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2783,7 +2782,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_GENGAR @ Expert Belt
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2840,7 +2839,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HOUNDOOM
-Level: 66
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2869,7 +2868,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOTHITELLE
-Level: 73
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2898,7 +2897,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOTHITELLE
-Level: 76
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2937,7 +2936,7 @@ Nature: Adamant
 - MOVE_BITE
 
 SPECIES_TOXTRICITY
-Level: 75
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -2992,7 +2991,7 @@ Nature: Modest
 - MOVE_AQUA_TAIL
 
 SPECIES_AZUMARILL @ Sitrus Berry
-Level: 85
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -3309,7 +3308,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_FLOATZEL @ Expert Belt
-Level: 85
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -3338,7 +3337,7 @@ Nature: Modest
 - MOVE_SWORDS_DANCE
 
 SPECIES_SHARKAISER @ Sitrus Berry
-Level: 85
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -3357,7 +3356,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CERULEDGE
-Level: 69
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -3501,7 +3500,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_GARDEVOIR @ Expert Belt
-Level: 81
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -3635,7 +3634,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RAICHU_ALOLA
-Level: 57
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -3715,17 +3714,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM_HEAT
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_DISCHARGE
 - MOVE_HEX
 - MOVE_SHOCK_WAVE
 - MOVE_THUNDER_WAVE
 
 SPECIES_GOLEM_ALOLA @ Sitrus Berry
-Level: 49
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -3744,7 +3742,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM_HEAT
-Level: 53
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -3754,7 +3752,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_GOLEM_ALOLA @ Sitrus Berry
-Level: 52
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -3773,12 +3771,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM_HEAT
-Level: 56
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
 - MOVE_DISCHARGE
-- MOVE_UPROAR
 - MOVE_HEX
 - MOVE_THUNDER_WAVE
 
@@ -3850,7 +3847,7 @@ Nature: Modest
 - MOVE_BUBBLEBEAM
 
 SPECIES_POLIWRATH @ Sitrus Berry
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -3889,7 +3886,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_LAPRAS @ Expert Belt
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -3975,7 +3972,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_SHARKAISER @ Expert Belt
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -3994,7 +3991,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BARRASKEWDA
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4004,7 +4001,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_INTELEON @ Sitrus Berry
-Level: 69
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -4130,7 +4127,7 @@ Nature: Modest
 - MOVE_WATER_GUN
 
 SPECIES_BLASTOISE @ Expert Belt
-Level: 72
+Level: 73
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -4187,7 +4184,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BARBARACLE
-Level: 81
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4322,9 +4319,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RELICANTH
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_AQUA_TAIL
 - MOVE_TAKE_DOWN
@@ -4332,7 +4329,7 @@ Nature: Adamant
 - MOVE_DIVE
 
 SPECIES_EMPOLEON
-Level: 47
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -4342,8 +4339,8 @@ Nature: Modest
 - MOVE_SWORDS_DANCE
 
 SPECIES_SAMUROTT_HISUI @ Sitrus Berry
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_AQUA_TAIL
@@ -4361,7 +4358,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SEISMITOAD
-Level: 71
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4371,7 +4368,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_SWANNA @ Expert Belt
-Level: 70
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4428,7 +4425,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SWAMPERT
-Level: 64
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4457,7 +4454,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SWAMPERT
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4505,7 +4502,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HAWLUCHA
-Level: 83
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -4553,7 +4550,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4563,7 +4560,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_FALINKS @ Expert Belt
-Level: 58
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4620,11 +4617,10 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEDICHAM
-Level: 54
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
-- MOVE_AXE_KICK
 - MOVE_ZEN_HEADBUTT
 - MOVE_FIRE_PUNCH
 - MOVE_CALM_MIND
@@ -4649,7 +4645,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEDICHAM
-Level: 60
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4659,7 +4655,7 @@ Nature: Adamant
 - MOVE_CALM_MIND
 
 SPECIES_MACHOKE
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4688,7 +4684,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEDICHAM
-Level: 63
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4698,7 +4694,7 @@ Nature: Adamant
 - MOVE_CALM_MIND
 
 SPECIES_MACHOKE
-Level: 63
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4708,7 +4704,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_HARIYAMA
-Level: 63
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4737,7 +4733,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SHEDINJA
-Level: 53
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -4832,7 +4828,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAROWAK_ALOLA
-Level: 43
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -4891,7 +4887,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM_HEAT
-Level: 41
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -4920,7 +4916,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ELECTITAN
-Level: 69
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -5075,7 +5071,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CINDERACE
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5273,7 +5269,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TSAREENA
-Level: 48
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5283,7 +5279,7 @@ Nature: Adamant
 - MOVE_MAGICAL_LEAF
 
 SPECIES_PINSIR
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5293,7 +5289,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_BUTTERFREE @ Sitrus Berry
-Level: 45
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -5331,7 +5327,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_REVAVROOM
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5341,7 +5337,7 @@ Nature: Adamant
 - MOVE_IRON_HEAD
 
 SPECIES_CYCLIZAR @ Sitrus Berry
-Level: 46
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5379,7 +5375,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FORRETRESS
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5446,17 +5442,16 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ESCAVALIER
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
-- MOVE_DOUBLE_EDGE
 - MOVE_IRON_HEAD
 - MOVE_X_SCISSOR
 - MOVE_SWORDS_DANCE
 
 SPECIES_ACCELGOR @ Sitrus Berry
-Level: 47
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -5504,7 +5499,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ESCAVALIER
-Level: 63
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5514,7 +5509,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_ACCELGOR
-Level: 62
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -5524,7 +5519,7 @@ Nature: Modest
 - MOVE_U_TURN
 
 SPECIES_GOLEM_ALOLA @ Expert Belt
-Level: 60
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5543,7 +5538,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ESCAVALIER
-Level: 78
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -5553,7 +5548,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_ACCELGOR
-Level: 75
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -5611,7 +5606,7 @@ Nature: Adamant
 - MOVE_INFERNO
 
 SPECIES_ORBEETLE
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -5640,7 +5635,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOLISOPOD
-Level: 59
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5650,7 +5645,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_SCOLIPEDE
-Level: 59
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5695,7 +5690,7 @@ Nature: Adamant
 - MOVE_TACKLE
 
 SPECIES_VIKAVOLT @ Expert Belt
-Level: 59
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -5724,7 +5719,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_CRUSTLE @ Sitrus Berry
-Level: 40
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -5743,7 +5738,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WEEDLE
-Level: 62
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5751,7 +5746,7 @@ Nature: Adamant
 - MOVE_POISON_STING
 
 SPECIES_CATERPIE
-Level: 62
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -5778,9 +5773,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BEEDRILL
-Level: 65
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_POISON_JAB
 - MOVE_BUG_BITE
@@ -5788,9 +5783,9 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_BUTTERFREE
-Level: 65
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_BUG_BUZZ
 - MOVE_AIR_SLASH
@@ -5817,9 +5812,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BEEDRILL
-Level: 68
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_POISON_JAB
 - MOVE_BUG_BITE
@@ -5827,7 +5822,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_BUTTERFREE
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -5856,7 +5851,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BEEDRILL
-Level: 80
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -5866,7 +5861,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_BUTTERFREE
-Level: 80
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -5971,7 +5966,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_EXEGGUTOR
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -5981,7 +5976,7 @@ Nature: Modest
 - MOVE_LEECH_SEED
 
 SPECIES_SLOWBRO
-Level: 68
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -6010,7 +6005,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SLOWBRO_GALAR
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6058,7 +6053,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_THIEVUL
-Level: 71
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -6087,7 +6082,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRIMMSNARL
-Level: 74
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6097,7 +6092,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_MAWILE @ Sitrus Berry
-Level: 70
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6116,7 +6111,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRIMMSNARL
-Level: 77
+Level: 75
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6126,7 +6121,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_MAWILE @ Sitrus Berry
-Level: 73
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6145,7 +6140,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRIMMSNARL
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6155,7 +6150,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_MAWILE @ Sitrus Berry
-Level: 76
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6193,7 +6188,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEDICHAM
-Level: 73
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6260,7 +6255,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEOWSTIC
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -6270,7 +6265,7 @@ Nature: Modest
 - MOVE_LIGHT_SCREEN
 
 SPECIES_RUNERIGUS
-Level: 68
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6280,7 +6275,7 @@ Nature: Adamant
 - MOVE_SHADOW_BALL
 
 SPECIES_INDEEDEE @ Sitrus Berry
-Level: 67
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -6299,7 +6294,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FARIGIRAF
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -6328,7 +6323,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6357,7 +6352,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 71
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6386,7 +6381,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 74
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6415,7 +6410,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 85
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6444,7 +6439,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6492,7 +6487,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ORTHWORM
-Level: 60
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -6624,7 +6619,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERRSERKER
-Level: 68
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6653,7 +6648,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERRSERKER
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6682,7 +6677,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERRSERKER
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -6692,7 +6687,7 @@ Nature: Adamant
 - MOVE_METAL_CLAW
 
 SPECIES_METAGROSS
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -7261,7 +7256,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_VAPOREON
-Level: 44
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -7271,7 +7266,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_FLAREON
-Level: 44
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -7300,12 +7295,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BELLOSSOM
-Level: 40
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_GIGA_DRAIN
-- MOVE_MOONBLAST
 - MOVE_ACID
 - MOVE_QUIVER_DANCE
 
@@ -7329,11 +7323,10 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BELLOSSOM
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_PETAL_DANCE
 - MOVE_MOONBLAST
 - MOVE_ACID
 - MOVE_QUIVER_DANCE
@@ -7358,7 +7351,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BELLOSSOM
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -7387,7 +7380,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BELLOSSOM
-Level: 70
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7397,7 +7390,7 @@ Nature: Modest
 - MOVE_QUIVER_DANCE
 
 SPECIES_VILEPLUME
-Level: 70
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7454,7 +7447,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HITMONTOP @ Sitrus Berry
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -7473,13 +7466,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 40
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_BRICK_BREAK
 - MOVE_FIRST_IMPRESSION
-- MOVE_SLASH
 - MOVE_LEER
 
 SPECIES_LUCARIO @ Sitrus Berry
@@ -7502,13 +7493,12 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_BRICK_BREAK
 - MOVE_FIRST_IMPRESSION
-- MOVE_SLAM
 - MOVE_SWORDS_DANCE
 
 SPECIES_LUCARIO @ Sitrus Berry
@@ -7531,7 +7521,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -7560,7 +7550,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SIRFETCHD
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -7589,7 +7579,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ESPEON
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7618,7 +7608,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GRUMPIG
-Level: 40
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -7647,7 +7637,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GRUMPIG
-Level: 43
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -7676,9 +7666,9 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GRUMPIG
-Level: 46
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_PSYCHIC
 - MOVE_POWER_GEM
@@ -7705,7 +7695,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GRUMPIG
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -7734,7 +7724,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GRUMPIG
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7797,8 +7787,8 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ZOROARK
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 80
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_NIGHT_DAZE
@@ -7807,7 +7797,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_ALTARIA
-Level: 55
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -7817,7 +7807,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_ZOROARK_HISUI
-Level: 65
+Level: 84
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7827,7 +7817,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_RAICHU
-Level: 70
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -7837,7 +7827,7 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_AZUMARILL
-Level: 80
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -7974,7 +7964,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ARAQUANID
-Level: 88
+Level: 85
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -7984,7 +7974,7 @@ Nature: Adamant
 - MOVE_LUNGE
 
 SPECIES_GYARADOS
-Level: 88
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8013,7 +8003,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 39
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -8042,9 +8032,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_RAGING_BULL
 - MOVE_ZEN_HEADBUTT
@@ -8071,7 +8061,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -8100,7 +8090,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8129,7 +8119,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8267,7 +8257,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DARMANITAN_GALAR
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -8296,7 +8286,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DARMANITAN_GALAR
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -8325,9 +8315,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DARMANITAN_GALAR
-Level: 65
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_ICICLE_CRASH
 - MOVE_SUPERPOWER
@@ -8354,7 +8344,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DARMANITAN_GALAR
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8383,7 +8373,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DARMANITAN_GALAR
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8430,7 +8420,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MASCHIFF
-Level: 17
+Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
@@ -8439,7 +8429,7 @@ Nature: Hardy
 - MOVE_LEER
 
 SPECIES_RATTATA_ALOLA @ Oran Berry
-Level: 16
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
@@ -8475,7 +8465,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_SHIELDON
-Level: 24
+Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_TACKLE
@@ -8540,7 +8530,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_VIGOROTH
-Level: 88
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8569,7 +8559,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -8579,7 +8569,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_GARBODOR @ Expert Belt
-Level: 88
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8655,7 +8645,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERSIAN_ALOLA
-Level: 50
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -8684,7 +8674,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERSIAN_ALOLA
-Level: 50
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -8694,7 +8684,7 @@ Nature: Modest
 - MOVE_GROWL
 
 SPECIES_PERRSERKER
-Level: 55
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -8723,7 +8713,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PERSIAN_ALOLA
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -8733,7 +8723,7 @@ Nature: Modest
 - MOVE_GROWL
 
 SPECIES_PERRSERKER
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -8762,11 +8752,10 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_QUAGSIRE
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_EARTHQUAKE
 - MOVE_AQUA_TAIL
 - MOVE_SLAM
 - MOVE_TAIL_WHIP
@@ -8791,15 +8780,15 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SLOWPOKE_GALAR
-Level: 10
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 13
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_TACKLE
 - MOVE_ACID
 - MOVE_GROWL
 
 SPECIES_RATTATA
-Level: 10
+Level: 11
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Nature: Hardy
 - MOVE_QUICK_ATTACK
@@ -8816,7 +8805,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_KLAWF
-Level: 39
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -8933,7 +8922,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SEAKING
-Level: 36
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -8943,7 +8932,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_SHELLDER
-Level: 37
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -8969,16 +8958,15 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CARVANHA
-Level: 17
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_BITE
 - MOVE_AQUA_JET
 - MOVE_POISON_FANG
 - MOVE_FOCUS_ENERGY
 
 SPECIES_KRABBY
-Level: 18
+Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_METAL_CLAW
@@ -8987,7 +8975,7 @@ Nature: Hardy
 - MOVE_LEER
 
 SPECIES_GOLDEEN @ Oran Berry
-Level: 17
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_WATER_PULSE
@@ -9014,11 +9002,10 @@ Nature: Modest
 - MOVE_GROWL
 
 SPECIES_KABUTOPS
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_LEECH_LIFE
 - MOVE_BRINE
 - MOVE_NIGHT_SLASH
 - MOVE_LEER
@@ -9099,7 +9086,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUMINEON
-Level: 39
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -9109,7 +9096,7 @@ Nature: Adamant
 - MOVE_WATER_GUN
 
 SPECIES_WAILMER
-Level: 39
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -9119,13 +9106,12 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_CLAWITZER
-Level: 40
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_WATER_PULSE
 - MOVE_DRAGON_PULSE
-- MOVE_AURA_SPHERE
 - MOVE_SWORDS_DANCE
 
 SPECIES_WHISCASH @ Sitrus Berry
@@ -9215,7 +9201,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_OVERQWIL
-Level: 37
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -9244,7 +9230,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 55
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9254,7 +9240,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_OCTILLERY
-Level: 47
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9264,7 +9250,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HUNTAIL @ Sitrus Berry
-Level: 50
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9283,7 +9269,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 55
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9293,7 +9279,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_OCTILLERY
-Level: 47
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9303,7 +9289,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HUNTAIL
-Level: 50
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9332,7 +9318,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 60
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9342,7 +9328,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_OCTILLERY
-Level: 56
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9352,7 +9338,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HUNTAIL
-Level: 59
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -9381,7 +9367,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 70
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -9391,7 +9377,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_OCTILLERY
-Level: 67
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -9401,7 +9387,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_HUNTAIL
-Level: 75
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -9450,7 +9436,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_SAMUROTT_HISUI
-Level: 81
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -9460,7 +9446,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_EMPOLEON
-Level: 82
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -9470,7 +9456,7 @@ Nature: Modest
 - MOVE_SWORDS_DANCE
 
 SPECIES_QUAQUAVAL
-Level: 82
+Level: 84
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -9509,7 +9495,7 @@ Nature: Adamant
 - MOVE_PLUCK
 
 SPECIES_FEAROW
-Level: 36
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -9681,7 +9667,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HONCHKROW
-Level: 39
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -9691,7 +9677,7 @@ Nature: Adamant
 - MOVE_SUCKER_PUNCH
 
 SPECIES_NOCTOWL
-Level: 37
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -9986,7 +9972,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 79
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10015,7 +10001,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SCOVILLAIN
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10063,7 +10049,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BLASTOISE
-Level: 74
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10073,7 +10059,7 @@ Nature: Modest
 - MOVE_TAIL_WHIP
 
 SPECIES_KINGDRA @ Expert Belt
-Level: 73
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10216,7 +10202,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CURSOLA
-Level: 78
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10283,7 +10269,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RELICANTH
-Level: 79
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10388,7 +10374,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRUDDIGON
-Level: 84
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10398,7 +10384,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_GOODRA_HISUI @ Expert Belt
-Level: 82
+Level: 84
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10417,7 +10403,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRUDDIGON
-Level: 87
+Level: 85
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10427,7 +10413,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_GOODRA_HISUI @ Expert Belt
-Level: 86
+Level: 87
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10446,7 +10432,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRUDDIGON
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10456,7 +10442,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_GOODRA_HISUI @ Expert Belt
-Level: 88
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10485,7 +10471,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_DRUDDIGON
-Level: 93
+Level: 91
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10514,7 +10500,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DRUDDIGON
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10524,7 +10510,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_GOODRA_HISUI
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10591,7 +10577,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_STARAPTOR
-Level: 59
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10639,7 +10625,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FLAMIGO
-Level: 62
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10649,7 +10635,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_BOMBIRDIER
-Level: 61
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10718,7 +10704,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MINIOR
-Level: 62
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10747,7 +10733,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ORICORIO_SENSU
-Level: 63
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -10757,7 +10743,7 @@ Nature: Modest
 - MOVE_AIR_SLASH
 
 SPECIES_ORICORIO_BAILE @ Expert Belt
-Level: 62
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -10795,7 +10781,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DECIDUEYE
-Level: 69
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10805,7 +10791,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_PELIPPER
-Level: 69
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -10834,7 +10820,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CROBAT
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -10844,7 +10830,7 @@ Nature: Adamant
 - MOVE_POISON_FANG
 
 SPECIES_LEDIAN @ Sitrus Berry
-Level: 56
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -10863,9 +10849,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOUCANNON
-Level: 65
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_BEAK_BLAST
 - MOVE_HYPER_VOICE
@@ -10892,7 +10878,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOUCANNON
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10921,7 +10907,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOUCANNON
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10950,7 +10936,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOUCANNON
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -10979,7 +10965,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_XATU
-Level: 83
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11046,7 +11032,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MOTHIM
-Level: 59
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -11075,7 +11061,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CLAYDOL
-Level: 92
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11133,7 +11119,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_ZOROARK_HISUI
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -11191,7 +11177,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRENINJA
-Level: 60
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -11202,7 +11188,7 @@ Shiny: Yes
 - MOVE_GROWL
 
 SPECIES_ZOROARK_HISUI
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -11231,9 +11217,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRENINJA
-Level: 70
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 Shiny: Yes
 - MOVE_HYDRO_PUMP
@@ -11242,7 +11228,7 @@ Shiny: Yes
 - MOVE_GROWL
 
 SPECIES_ZOROARK_HISUI
-Level: 70
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11252,7 +11238,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_CACTURNE
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11281,7 +11267,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRENINJA
-Level: 80
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11292,7 +11278,7 @@ Shiny: Yes
 - MOVE_GROWL
 
 SPECIES_ZOROARK_HISUI
-Level: 80
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11302,7 +11288,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_CACTURNE
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11331,7 +11317,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GRENINJA
-Level: 100
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11342,7 +11328,7 @@ Shiny: Yes
 - MOVE_GROWL
 
 SPECIES_ZOROARK_HISUI
-Level: 100
+Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11352,7 +11338,7 @@ Nature: Modest
 - MOVE_LEER
 
 SPECIES_CACTURNE
-Level: 100
+Level: 94
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11362,7 +11348,7 @@ Nature: Adamant
 - MOVE_LEECH_SEED
 
 SPECIES_ACCELGOR
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11372,7 +11358,7 @@ Nature: Modest
 - MOVE_U_TURN
 
 SPECIES_KINGLER
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11439,7 +11425,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIENFOO
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -11506,14 +11492,13 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIENSHAO
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_DRAIN_PUNCH
 - MOVE_BOUNCE
 - MOVE_U_TURN
-- MOVE_CALM_MIND
 
 SPECIES_HITMONTOP @ Expert Belt
 Level: 55
@@ -11535,9 +11520,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIENSHAO
-Level: 65
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_DRAIN_PUNCH
 - MOVE_BOUNCE
@@ -11564,7 +11549,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIENSHAO
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11593,7 +11578,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIENSHAO
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11603,7 +11588,7 @@ Nature: Adamant
 - MOVE_CALM_MIND
 
 SPECIES_HITMONTOP
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -11651,7 +11636,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUDICOLO
-Level: 62
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -11737,7 +11722,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUDICOLO
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11766,7 +11751,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUDICOLO
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -11795,7 +11780,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_STARMIE
-Level: 58
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -11862,7 +11847,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LAPRAS
-Level: 57
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -11910,7 +11895,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LANTURN
-Level: 58
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -11978,7 +11963,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_AZUMARILL @ Sitrus Berry
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12073,7 +12058,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_JELLICENT
-Level: 74
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12083,7 +12068,7 @@ Nature: Modest
 - MOVE_BRINE
 
 SPECIES_LUDICOLO @ Expert Belt
-Level: 73
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12121,7 +12106,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MANTINE
-Level: 81
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12207,7 +12192,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DHELMISE
-Level: 74
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -12255,7 +12240,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_OVERQWIL
-Level: 85
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -12265,7 +12250,7 @@ Nature: Adamant
 - MOVE_BITE
 
 SPECIES_SEAKING @ Sitrus Berry
-Level: 84
+Level: 85
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -12284,17 +12269,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOLDUCK
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_HYDRO_PUMP
 - MOVE_ZEN_HEADBUTT
 - MOVE_SCRATCH
 - MOVE_TAIL_WHIP
 
 SPECIES_PELIPPER @ Sitrus Berry
-Level: 48
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12399,7 +12383,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PRIMARINA
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12428,7 +12412,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PRIMARINA
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12438,7 +12422,7 @@ Nature: Modest
 - MOVE_GROWL
 
 SPECIES_LANTURN
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12467,7 +12451,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DACHSBUN
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -12496,7 +12480,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_APPLETUN
-Level: 47
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12525,7 +12509,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 43
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -12564,8 +12548,8 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_RAICHU @ Sitrus Berry
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_THUNDERPUNCH
@@ -12583,7 +12567,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_COMFEY
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12612,7 +12596,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12670,7 +12654,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_APPLETUN
-Level: 46
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12699,17 +12683,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_BUG_BUZZ
 - MOVE_DAZZLING_GLEAM
 - MOVE_COVET
 - MOVE_POLLEN_PUFF
 
 SPECIES_LILLIGANT_HISUI
-Level: 46
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -12738,7 +12721,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 59
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12748,7 +12731,7 @@ Nature: Modest
 - MOVE_QUIVER_DANCE
 
 SPECIES_LILLIGANT_HISUI
-Level: 55
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -12758,7 +12741,7 @@ Nature: Adamant
 - MOVE_SLEEP_POWDER
 
 SPECIES_DACHSBUN @ Sitrus Berry
-Level: 50
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -12777,7 +12760,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 70
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12787,7 +12770,7 @@ Nature: Modest
 - MOVE_QUIVER_DANCE
 
 SPECIES_LILLIGANT_HISUI
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -12816,7 +12799,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_RIBOMBEE
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12826,7 +12809,7 @@ Nature: Modest
 - MOVE_QUIVER_DANCE
 
 SPECIES_LILLIGANT_HISUI
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -12855,7 +12838,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 38
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -12884,17 +12867,16 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 50
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_THUNDER
 - MOVE_SWIFT
 - MOVE_DISCHARGE
 - MOVE_THUNDER_WAVE
 
 SPECIES_MINUN @ Sitrus Berry
-Level: 45
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -12913,7 +12895,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_LOMBRE
-Level: 17
+Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_MEGA_DRAIN
@@ -12949,7 +12931,7 @@ Nature: Adamant
 - MOVE_CHARM
 
 SPECIES_LUDICOLO @ Sitrus Berry
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12968,7 +12950,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -12997,7 +12979,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_INDEEDEE_F
-Level: 38
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -13007,7 +12989,7 @@ Nature: Modest
 - MOVE_STORED_POWER
 
 SPECIES_INDEEDEE_M @ Sitrus Berry
-Level: 37
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -13026,7 +13008,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13055,7 +13037,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13084,7 +13066,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_PLUSLE
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13123,7 +13105,7 @@ Nature: Modest
 - MOVE_SWORDS_DANCE
 
 SPECIES_CRABOMINABLE @ Sitrus Berry
-Level: 35
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13161,7 +13143,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 72
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13190,7 +13172,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_POLIWRATH
-Level: 38
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13200,14 +13182,14 @@ Nature: Adamant
 - MOVE_EARTH_POWER
 
 SPECIES_WIMPOD
-Level: 39
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_STRUGGLE_BUG
 
 SPECIES_BARRASKEWDA @ Sitrus Berry
-Level: 38
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13226,7 +13208,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FERALIGATR
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13236,7 +13218,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_CLOBBOPUS @ Sitrus Berry
-Level: 79
+Level: 81
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13255,7 +13237,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DONDOZO
-Level: 81
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13265,7 +13247,7 @@ Nature: Adamant
 - MOVE_AQUA_TAIL
 
 SPECIES_MILOTIC
-Level: 80
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13275,7 +13257,7 @@ Nature: Modest
 - MOVE_SURF
 
 SPECIES_DRAGALGE @ Expert Belt
-Level: 79
+Level: 81
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13294,7 +13276,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SLOWBRO
-Level: 61
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -13323,7 +13305,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 75
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13333,7 +13315,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_KINGDRA
-Level: 75
+Level: 73
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13362,7 +13344,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 78
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13372,7 +13354,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_KINGDRA
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13401,7 +13383,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 81
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13411,7 +13393,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_KINGDRA
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13440,7 +13422,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WAILORD
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13450,7 +13432,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_KINGDRA
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13498,7 +13480,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_RAICHU
-Level: 88
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13584,7 +13566,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ELECTITAN
-Level: 70
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13623,7 +13605,7 @@ Nature: Modest
 - MOVE_BRINE
 
 SPECIES_WALREIN @ Sitrus Berry
-Level: 82
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13671,7 +13653,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_MIENSHAO @ Expert Belt
-Level: 82
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -13709,7 +13691,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAGNEZONE
-Level: 83
+Level: 81
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -13738,7 +13720,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CRUSTLE
-Level: 37
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13767,7 +13749,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SHUCKLE
-Level: 44
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13818,7 +13800,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CRUSTLE
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13847,7 +13829,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CRUSTLE
-Level: 44
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -13876,7 +13858,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CRUSTLE
-Level: 47
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -13905,7 +13887,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CRUSTLE
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14344,7 +14326,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_TSAREENA @ Sitrus Berry
-Level: 39
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -14428,7 +14410,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ANNIHILAPE
-Level: 42
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -14438,7 +14420,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_LUXIO
-Level: 42
+Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -14477,9 +14459,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ANNIHILAPE
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_CROSS_CHOP
 - MOVE_SHADOW_PUNCH
@@ -14487,9 +14469,9 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_LUXIO
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_CRUNCH
 - MOVE_SPARK
@@ -14497,19 +14479,18 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_RHYPERIOR
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_EARTHQUAKE
 - MOVE_HAMMER_ARM
 - MOVE_TAKE_DOWN
 - MOVE_TAIL_WHIP
 
 SPECIES_TSAREENA
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_TROP_KICK
 - MOVE_STOMP
@@ -14536,9 +14517,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ANNIHILAPE
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_CROSS_CHOP
 - MOVE_SHADOW_PUNCH
@@ -14546,27 +14527,25 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_LUXIO
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_WILD_CHARGE
 - MOVE_CRUNCH
 - MOVE_TACKLE
 - MOVE_THUNDER_WAVE
 
 SPECIES_RHYPERIOR
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_EARTHQUAKE
 - MOVE_HAMMER_ARM
 - MOVE_TAKE_DOWN
 - MOVE_TAIL_WHIP
 
 SPECIES_TSAREENA
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -14595,7 +14574,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ANNIHILAPE
-Level: 100
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14605,7 +14584,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_LUXRAY
-Level: 100
+Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14615,7 +14594,7 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_RHYPERIOR
-Level: 100
+Level: 94
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14625,7 +14604,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_TSAREENA
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14635,7 +14614,7 @@ Nature: Adamant
 - MOVE_RAZOR_LEAF
 
 SPECIES_DARMANITAN
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14694,7 +14673,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_CORVIKNIGHT @ Sitrus Berry
-Level: 39
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -14713,7 +14692,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_KOMMO_O
-Level: 88
+Level: 87
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14761,13 +14740,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_NOCTOWL
-Level: 42
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_AIR_SLASH
-- MOVE_DREAM_EATER
-- MOVE_MOONBLAST
 - MOVE_REFLECT
 
 SPECIES_HATTERENE
@@ -14781,7 +14758,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_QUAGSIRE
-Level: 42
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -14810,19 +14787,17 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_NOCTOWL
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 37
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_AIR_SLASH
-- MOVE_DREAM_EATER
-- MOVE_MOONBLAST
 - MOVE_REFLECT
 
 SPECIES_HATTERENE
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_PSYCHIC
 - MOVE_DAZZLING_GLEAM
@@ -14830,9 +14805,9 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_QUAGSIRE
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_AQUA_TAIL
@@ -14840,9 +14815,9 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_CORVIKNIGHT
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_DRILL_PECK
 - MOVE_STEEL_WING
@@ -14869,9 +14844,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_NOCTOWL
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_AIR_SLASH
 - MOVE_DREAM_EATER
@@ -14879,9 +14854,9 @@ Nature: Modest
 - MOVE_REFLECT
 
 SPECIES_HATTERENE
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_PSYCHIC
 - MOVE_DAZZLING_GLEAM
@@ -14889,9 +14864,9 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_QUAGSIRE
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_AQUA_TAIL
@@ -14899,7 +14874,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_CORVIKNIGHT
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -14928,7 +14903,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_NOCTARCH
-Level: 100
+Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -14938,7 +14913,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_HATTERENE
-Level: 100
+Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -14948,7 +14923,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_CLODSIRE
-Level: 100
+Level: 94
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14958,7 +14933,7 @@ Nature: Adamant
 - MOVE_TAIL_WHIP
 
 SPECIES_CORVIKNIGHT
-Level: 100
+Level: 96
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -14968,7 +14943,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_DACHSBUN
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -15016,7 +14991,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LEAFEON
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15026,7 +15001,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_APPLETUN
-Level: 61
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -15131,7 +15106,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TREVENANT
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -15158,7 +15133,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LURANTIS
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15187,7 +15162,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TORTERRA
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15197,7 +15172,7 @@ Nature: Adamant
 - MOVE_LEECH_SEED
 
 SPECIES_FLAPPLE
-Level: 61
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15226,7 +15201,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ALTARIA
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -15255,7 +15230,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LURANTIS
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15284,7 +15259,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LURANTIS
-Level: 64
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -15313,7 +15288,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LURANTIS
-Level: 67
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -15342,7 +15317,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LURANTIS
-Level: 100
+Level: 98
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -15523,7 +15498,7 @@ Nature: Hardy
 - MOVE_SMACK_DOWN
 
 SPECIES_CARKOL @ Oran Berry
-Level: 21
+Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_FLAME_CHARGE
@@ -15636,7 +15611,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_METAGROSS
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -16013,7 +15988,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FLYGON
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -16117,7 +16092,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CORVIKNIGHT
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -16224,7 +16199,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TEDDIURSA
-Level: 12
+Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_COVET
@@ -16259,7 +16234,7 @@ Nature: Hardy
 - MOVE_TACKLE
 
 SPECIES_SLAKOTH @ Oran Berry
-Level: 14
+Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_SCRATCH
@@ -16313,7 +16288,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 41
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -16342,7 +16317,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TAUROS
-Level: 44
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -16371,7 +16346,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DUDUNSPARCE
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -16400,22 +16375,19 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FARIGIRAF
-Level: 51
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
-- MOVE_PSYCHIC
 - MOVE_STOMP
 - MOVE_CRUNCH
 - MOVE_GROWL
 
 SPECIES_BOUFFALANT
-Level: 51
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
-- MOVE_HEAD_CHARGE
-- MOVE_MEGAHORN
 - MOVE_THROAT_CHOP
 - MOVE_SWORDS_DANCE
 
@@ -16478,7 +16450,7 @@ Nature: Adamant
 - MOVE_STOMP
 
 SPECIES_GIRAFARIG @ Sitrus Berry
-Level: 38
+Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -16516,7 +16488,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ZANGOOSE
-Level: 89
+Level: 87
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -16526,7 +16498,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_SNORLAX @ Sitrus Berry
-Level: 88
+Level: 89
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -16545,10 +16517,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WEEDLE
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 11
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Nature: Hardy
-- MOVE_BUG_BITE
 - MOVE_POISON_STING
 
 SPECIES_VENIPEDE @ Oran Berry
@@ -16569,7 +16540,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DUSTOX
-Level: 18
+Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
@@ -16613,7 +16584,7 @@ Nature: Hardy
 - MOVE_GUST
 
 SPECIES_SURSKIT @ Oran Berry
-Level: 20
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUBBLEBEAM
@@ -16630,7 +16601,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SCIZOR
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -16659,7 +16630,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HERACROSS
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -16707,16 +16678,15 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BUTTERFREE
-Level: 20
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
-- MOVE_PSYBEAM
 - MOVE_GUST
 - MOVE_CONFUSION
 
 SPECIES_DUSTOX @ Oran Berry
-Level: 18
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
@@ -16734,7 +16704,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BUTTERFREE
-Level: 42
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -16763,9 +16733,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HERACROSS
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_BRICK_BREAK
 - MOVE_THROAT_CHOP
@@ -16792,15 +16762,15 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SNOM
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_STRUGGLE_BUG
 - MOVE_POWDER_SNOW
 
 SPECIES_VIKAVOLT
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -16829,17 +16799,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LOKIX
-Level: 51
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_FIRST_IMPRESSION
 - MOVE_THROAT_CHOP
-- MOVE_BOUNCE
 - MOVE_LEER
 
 SPECIES_GOLISOPOD
-Level: 51
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -16849,7 +16818,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_LARVESTA
-Level: 51
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -16888,7 +16857,7 @@ Nature: Modest
 - MOVE_FOCUS_ENERGY
 
 SPECIES_VIBRAVA @ Sitrus Berry
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -16927,7 +16896,7 @@ Nature: Adamant
 - MOVE_PSYBEAM
 
 SPECIES_CAMERUPT @ Sitrus Berry
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -16956,8 +16925,8 @@ Nature: Adamant
 - MOVE_CRUNCH
 
 SPECIES_MAMOSWINE @ Sitrus Berry
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_ICE_FANG
@@ -16985,8 +16954,8 @@ Nature: Adamant
 - MOVE_ICY_WIND
 
 SPECIES_GLISCOR @ Sitrus Berry
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_ACROBATICS
@@ -17004,7 +16973,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAMOSWINE
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17014,7 +16983,7 @@ Nature: Adamant
 - MOVE_ICY_WIND
 
 SPECIES_GLISCOR
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17061,7 +17030,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DONPHAN
-Level: 47
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17108,7 +17077,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PHANPY
-Level: 22
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BULLDOZE
@@ -17135,7 +17104,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ARON
-Level: 23
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_ROCK_TOMB
@@ -17144,7 +17113,7 @@ Nature: Hardy
 - MOVE_TACKLE
 
 SPECIES_ROGGENROLA
-Level: 23
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_SMACK_DOWN
@@ -17170,19 +17139,18 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_AGGRON
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_IRON_TAIL
 - MOVE_ROCK_SLIDE
 - MOVE_TAKE_DOWN
 - MOVE_IRON_HEAD
 
 SPECIES_GIGALITH
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 41
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_STONE_EDGE
 - MOVE_HEADBUTT
@@ -17190,9 +17158,9 @@ Nature: Adamant
 - MOVE_ROCK_SLIDE
 
 SPECIES_KROOKODILE
-Level: 45
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 43
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_FOUL_PLAY
@@ -17219,19 +17187,18 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_AGGRON
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 42
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
-- MOVE_IRON_TAIL
 - MOVE_ROCK_SLIDE
 - MOVE_TAKE_DOWN
 - MOVE_IRON_HEAD
 
 SPECIES_GIGALITH
-Level: 48
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk
+Level: 44
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_STONE_EDGE
 - MOVE_HEADBUTT
@@ -17239,7 +17206,7 @@ Nature: Adamant
 - MOVE_ROCK_SLIDE
 
 SPECIES_KROOKODILE
-Level: 48
+Level: 46
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17268,7 +17235,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FLYGON
-Level: 51
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -17278,7 +17245,7 @@ Nature: Modest
 - MOVE_DRAGON_CLAW
 
 SPECIES_AGGRON
-Level: 51
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17288,7 +17255,7 @@ Nature: Adamant
 - MOVE_IRON_HEAD
 
 SPECIES_GIGALITH
-Level: 51
+Level: 49
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17317,17 +17284,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GLISCOR
-Level: 54
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_CRABHAMMER
 - MOVE_ACROBATICS
 - MOVE_POISON_JAB
-- MOVE_SWORDS_DANCE
 
 SPECIES_GARGANACL
-Level: 54
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17337,7 +17303,7 @@ Nature: Adamant
 - MOVE_ROCK_SLIDE
 
 SPECIES_MUDSDALE
-Level: 54
+Level: 52
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17366,7 +17332,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_MAMOSWINE
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -17395,7 +17361,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 63
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -17424,7 +17390,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_LAPRAS
-Level: 57
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17453,7 +17419,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -17482,7 +17448,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_TOXICROAK
-Level: 63
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17511,9 +17477,9 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_HAXORUS
-Level: 66
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_OUTRAGE
 - MOVE_CRUNCH
@@ -17540,7 +17506,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_TOXICROAK
-Level: 69
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -17607,7 +17573,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MACHOKE
-Level: 41
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -17655,7 +17621,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CROBAT
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17684,7 +17650,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MACHOKE
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -17713,7 +17679,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ACCELGOR
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -17752,7 +17718,7 @@ Nature: Adamant
 - MOVE_LEECH_SEED
 
 SPECIES_ROSERADE @ Expert Belt
-Level: 61
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -17791,7 +17757,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_ROSERADE @ Sitrus Berry
-Level: 61
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -18173,7 +18139,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_KINGDRA
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18183,7 +18149,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_QUAQUAVAL
-Level: 78
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18212,7 +18178,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_QUAQUAVAL
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18280,7 +18246,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAMOSWINE
-Level: 79
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18309,7 +18275,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 79
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18367,7 +18333,7 @@ Nature: Adamant
 - MOVE_RAZOR_SHELL
 
 SPECIES_TOXAPEX
-Level: 78
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18396,7 +18362,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_STARAPTOR
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18425,7 +18391,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_QUAQUAVAL
-Level: 80
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18483,7 +18449,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_EELEKTROSS @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -18502,7 +18468,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_MILOTIC
-Level: 70
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18541,8 +18507,8 @@ Nature: Adamant
 - MOVE_CHARM
 
 SPECIES_TOGEKISS @ Sitrus Berry
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
 - MOVE_AIR_SLASH
@@ -18560,7 +18526,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_VIBRAVA
-Level: 36
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -18599,7 +18565,7 @@ Nature: Modest
 - MOVE_SURF
 
 SPECIES_ARCANINE @ Sitrus Berry
-Level: 78
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18618,7 +18584,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ALTARIA
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18647,7 +18613,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_SNORLAX
-Level: 84
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18676,7 +18642,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ESPEON
-Level: 87
+Level: 85
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18705,7 +18671,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_ARCANINE
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18734,7 +18700,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_MAGNEZONE
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18763,7 +18729,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_METAGROSS
-Level: 72
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18773,7 +18739,7 @@ Nature: Adamant
 - MOVE_PSYCHIC
 
 SPECIES_TOXICROAK @ Sitrus Berry
-Level: 71
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18792,7 +18758,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_HAXORUS
-Level: 75
+Level: 73
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18802,7 +18768,7 @@ Nature: Adamant
 - MOVE_DRAGON_DANCE
 
 SPECIES_GALLADE @ Sitrus Berry
-Level: 72
+Level: 75
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18821,7 +18787,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18831,7 +18797,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_GENGAR @ Sitrus Berry
-Level: 76
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18850,7 +18816,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_TOXICROAK
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18860,7 +18826,7 @@ Nature: Adamant
 - MOVE_POISON_JAB
 
 SPECIES_LUCARIO @ Sitrus Berry
-Level: 78
+Level: 81
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18879,7 +18845,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_FLYGON
-Level: 84
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -18889,7 +18855,7 @@ Nature: Modest
 - MOVE_DRAGONBREATH
 
 SPECIES_METAGROSS @ Sitrus Berry
-Level: 82
+Level: 84
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -18908,7 +18874,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_LUCARIO
-Level: 56
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -18937,7 +18903,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DREDNAW
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -18957,7 +18923,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_SHARKAISER
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -18967,7 +18933,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_KINGDRA @ Sitrus Berry
-Level: 57
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -18995,7 +18961,7 @@ Nature: Hardy
 - MOVE_EMBER
 
 SPECIES_GROWLITHE @ Oran Berry
-Level: 20
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_FLAME_WHEEL
@@ -19022,7 +18988,7 @@ Nature: Hardy
 - MOVE_MEGA_DRAIN
 
 SPECIES_KIRLIA @ Oran Berry
-Level: 20
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_PSYBEAM
@@ -19084,7 +19050,7 @@ Nature: Modest
 - MOVE_TACKLE
 
 SPECIES_LUDICOLO @ Sitrus Berry
-Level: 35
+Level: 36
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -19113,7 +19079,7 @@ Nature: Adamant
 - MOVE_CHARM
 
 SPECIES_AZUMARILL @ Sitrus Berry
-Level: 36
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -19142,7 +19108,7 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_MAGNETON @ Sitrus Berry
-Level: 36
+Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -19304,7 +19270,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_ALTARIA @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -19333,7 +19299,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_CROBAT @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -19362,7 +19328,7 @@ Nature: Adamant
 - MOVE_MAGICAL_LEAF
 
 SPECIES_WHIMSICOTT @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -19391,7 +19357,7 @@ Nature: Adamant
 - MOVE_CHARM
 
 SPECIES_SNORLAX @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -19420,8 +19386,8 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_ALTARIA @ Sitrus Berry
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
 - MOVE_DRAGON_PULSE
@@ -19497,7 +19463,7 @@ Nature: Adamant
 - MOVE_FOCUS_ENERGY
 
 SPECIES_DELCATTY @ Sitrus Berry
-Level: 40
+Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -19886,7 +19852,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_METAGROSS
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -19975,7 +19941,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GLISCOR
-Level: 56
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20004,7 +19970,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ALTARIA
-Level: 56
+Level: 55
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20072,7 +20038,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_MILOTIC @ Sitrus Berry
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20111,7 +20077,7 @@ Nature: Modest
 - MOVE_DRAGON_CLAW
 
 SPECIES_LUCARIO @ Expert Belt
-Level: 55
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20130,7 +20096,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_HONCHKROW
-Level: 36
+Level: 35
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -20159,7 +20125,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_AZUMARILL
-Level: 46
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20188,7 +20154,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ONIX
-Level: 46
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20217,7 +20183,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_VENUSAUR
-Level: 46
+Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20256,7 +20222,7 @@ Nature: Adamant
 - MOVE_ANCIENTPOWER
 
 SPECIES_SALAZZLE @ Sitrus Berry
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -20285,7 +20251,7 @@ Nature: Adamant
 - MOVE_MAGICAL_LEAF
 
 SPECIES_WHIMSICOTT @ Sitrus Berry
-Level: 42
+Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 SpA
 Nature: Modest
@@ -20314,7 +20280,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_ARCANINE @ Sitrus Berry
-Level: 56
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20343,7 +20309,7 @@ Nature: Adamant
 - MOVE_POISON_JAB
 
 SPECIES_DRAPION @ Expert Belt
-Level: 56
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20372,7 +20338,7 @@ Nature: Adamant
 - MOVE_WILL_O_WISP
 
 SPECIES_GALLADE @ Sitrus Berry
-Level: 56
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20401,7 +20367,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_LUCARIO @ Sitrus Berry
-Level: 56
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20430,7 +20396,7 @@ Nature: Modest
 - MOVE_LIGHT_SCREEN
 
 SPECIES_METANG @ Sitrus Berry
-Level: 43
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -20458,7 +20424,7 @@ Nature: Hardy
 - MOVE_SCRATCH
 
 SPECIES_PHANPY @ Oran Berry
-Level: 20
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BULLDOZE
@@ -20485,7 +20451,7 @@ Nature: Hardy
 - MOVE_FURY_SWIPES
 
 SPECIES_LOUDRED @ Oran Berry
-Level: 20
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
@@ -20560,7 +20526,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAGNEZONE
-Level: 82
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -20608,7 +20574,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CAMERUPT
-Level: 58
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -20675,7 +20641,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MACHOKE
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -20704,7 +20670,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BEEDRILL
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -20805,7 +20771,7 @@ Nature: Adamant
 - MOVE_CHARM
 
 SPECIES_TOGEKISS @ Sitrus Berry
-Level: 66
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -20824,7 +20790,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 67
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -22371,7 +22337,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SCIZOR
-Level: 41
+Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 HP / 64 Atk
 Nature: Adamant
@@ -22583,7 +22549,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MUDSDALE
-Level: 59
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22612,7 +22578,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAMOSWINE
-Level: 62
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22622,7 +22588,7 @@ Nature: Adamant
 - MOVE_ICE_FANG
 
 SPECIES_COALOSSAL
-Level: 62
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22651,9 +22617,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MUDSDALE
-Level: 65
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_MEGA_KICK
@@ -22661,13 +22627,12 @@ Nature: Adamant
 - MOVE_HIGH_HORSEPOWER
 
 SPECIES_MAMOSWINE
-Level: 65
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_BLIZZARD
-- MOVE_THRASH
 - MOVE_ICE_FANG
 
 SPECIES_COALOSSAL @ Expert Belt
@@ -22690,9 +22655,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MUDSDALE
-Level: 68
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_MEGA_KICK
@@ -22700,7 +22665,7 @@ Nature: Adamant
 - MOVE_HIGH_HORSEPOWER
 
 SPECIES_MAMOSWINE
-Level: 68
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -22729,7 +22694,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WHISCASH
-Level: 58
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22739,7 +22704,7 @@ Nature: Adamant
 - MOVE_MUDDY_WATER
 
 SPECIES_WAILORD
-Level: 58
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22768,7 +22733,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SHARKAISER
-Level: 61
+Level: 57
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22778,7 +22743,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_PELIPPER
-Level: 61
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -22807,7 +22772,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LAPRAS
-Level: 64
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22817,7 +22782,7 @@ Nature: Adamant
 - MOVE_GROWL
 
 SPECIES_SHARKAISER
-Level: 64
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -22846,9 +22811,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MILOTIC
-Level: 67
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_HYDRO_PUMP
 - MOVE_DRAGON_TAIL
@@ -22856,7 +22821,7 @@ Nature: Modest
 - MOVE_SURF
 
 SPECIES_BASCULEGION
-Level: 67
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -22885,7 +22850,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GENGAR
-Level: 77
+Level: 75
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -22914,7 +22879,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FLYGON
-Level: 80
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -22924,7 +22889,7 @@ Nature: Modest
 - MOVE_DRAGONBREATH
 
 SPECIES_METAGROSS
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -22953,7 +22918,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOGEKISS
-Level: 83
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -22963,7 +22928,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_FLYGON
-Level: 83
+Level: 81
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -22992,7 +22957,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUCARIO
-Level: 86
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23002,7 +22967,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_HAXORUS
-Level: 86
+Level: 84
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23031,7 +22996,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUCARIO
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23060,7 +23025,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PAWMOT
-Level: 84
+Level: 80
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23070,7 +23035,7 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_FALINKS
-Level: 84
+Level: 82
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23099,7 +23064,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FALINKS
-Level: 87
+Level: 83
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23109,7 +23074,7 @@ Nature: Adamant
 - MOVE_BULK_UP
 
 SPECIES_LUCARIO
-Level: 87
+Level: 85
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23138,7 +23103,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GALLADE
-Level: 90
+Level: 86
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23148,7 +23113,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_CONKELDURR
-Level: 90
+Level: 88
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23177,7 +23142,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CORVIKNIGHT
-Level: 70
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23206,7 +23171,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GENGAR
-Level: 73
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23216,7 +23181,7 @@ Nature: Modest
 - MOVE_HEX
 
 SPECIES_MILOTIC
-Level: 73
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23245,7 +23210,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_METAGROSS
-Level: 76
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23255,7 +23220,7 @@ Nature: Adamant
 - MOVE_PSYCHIC
 
 SPECIES_TOXICROAK
-Level: 76
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23284,7 +23249,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAMOSWINE
-Level: 79
+Level: 75
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23294,7 +23259,7 @@ Nature: Adamant
 - MOVE_ICE_FANG
 
 SPECIES_ROSERADE
-Level: 79
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23323,7 +23288,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM
-Level: 72
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23333,7 +23298,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_MANECTRIC
-Level: 72
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23362,7 +23327,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MAGNEZONE
-Level: 75
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23372,7 +23337,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_AMPHAROS
-Level: 75
+Level: 73
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23401,7 +23366,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_LUXRAY
-Level: 78
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23411,7 +23376,7 @@ Nature: Adamant
 - MOVE_THUNDER_WAVE
 
 SPECIES_BELLIBOLT
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23440,7 +23405,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROTOM
-Level: 81
+Level: 77
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23450,7 +23415,7 @@ Nature: Modest
 - MOVE_THUNDER_WAVE
 
 SPECIES_AMPHAROS
-Level: 81
+Level: 79
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23479,7 +23444,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CAMERUPT
-Level: 49
+Level: 47
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -23508,7 +23473,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_AGGRON
-Level: 52
+Level: 48
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -23518,12 +23483,11 @@ Nature: Adamant
 - MOVE_IRON_HEAD
 
 SPECIES_MACHOKE
-Level: 52
+Level: 50
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_CROSS_CHOP
-- MOVE_DOUBLE_EDGE
 - MOVE_KNOCK_OFF
 - MOVE_BULK_UP
 
@@ -23547,17 +23511,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_COALOSSAL
-Level: 55
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
-- MOVE_STONE_EDGE
 - MOVE_FLAME_CHARGE
 - MOVE_RAPID_SPIN
 - MOVE_SMACK_DOWN
 
 SPECIES_MAMOSWINE
-Level: 55
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -23586,17 +23549,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GOLURK
-Level: 58
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
 - MOVE_EARTHQUAKE
 - MOVE_PHANTOM_FORCE
-- MOVE_DYNAMICPUNCH
 - MOVE_HIGH_HORSEPOWER
 
 SPECIES_GLISCOR
-Level: 58
+Level: 56
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk
 Nature: Adamant
@@ -23625,9 +23587,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MILOTIC
-Level: 69
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_HYDRO_PUMP
 - MOVE_DRAGON_TAIL
@@ -23635,9 +23597,9 @@ Nature: Modest
 - MOVE_SURF
 
 SPECIES_SYLVEON
-Level: 69
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_MOONBLAST
 - MOVE_DOUBLE_EDGE
@@ -23645,9 +23607,9 @@ Nature: Modest
 - MOVE_LIGHT_SCREEN
 
 SPECIES_SNORLAX
-Level: 69
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_BODY_SLAM
 - MOVE_HAMMER_ARM
@@ -23655,7 +23617,7 @@ Nature: Adamant
 - MOVE_BELCH
 
 SPECIES_LEAFEON
-Level: 69
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23665,7 +23627,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_GARDEVOIR
-Level: 69
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23694,9 +23656,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_AZUMARILL
-Level: 72
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_HYDRO_PUMP
 - MOVE_PLAY_ROUGH
@@ -23704,9 +23666,9 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_TSAREENA
-Level: 72
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 Atk / 128 Spe
+EVs: 85 HP / 85 Atk / 85 Spe
 Nature: Adamant
 - MOVE_POWER_WHIP
 - MOVE_STOMP
@@ -23714,7 +23676,7 @@ Nature: Adamant
 - MOVE_RAZOR_LEAF
 
 SPECIES_MILOTIC
-Level: 72
+Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23724,7 +23686,7 @@ Nature: Modest
 - MOVE_SURF
 
 SPECIES_SYLVEON
-Level: 72
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23734,7 +23696,7 @@ Nature: Modest
 - MOVE_LIGHT_SCREEN
 
 SPECIES_SNORLAX
-Level: 72
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23763,7 +23725,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TOGEKISS
-Level: 75
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23773,7 +23735,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_ARCANINE
-Level: 75
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23783,7 +23745,7 @@ Nature: Adamant
 - MOVE_LEER
 
 SPECIES_AZUMARILL
-Level: 75
+Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23793,7 +23755,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_TSAREENA
-Level: 75
+Level: 71
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23803,7 +23765,7 @@ Nature: Adamant
 - MOVE_RAZOR_LEAF
 
 SPECIES_MILOTIC
-Level: 75
+Level: 73
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23832,7 +23794,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SNORLAX
-Level: 78
+Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23842,7 +23804,7 @@ Nature: Adamant
 - MOVE_BELCH
 
 SPECIES_LEAFEON
-Level: 78
+Level: 70
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23852,7 +23814,7 @@ Nature: Adamant
 - MOVE_SWORDS_DANCE
 
 SPECIES_GARDEVOIR
-Level: 78
+Level: 72
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23862,7 +23824,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_TOGEKISS
-Level: 78
+Level: 74
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -23872,7 +23834,7 @@ Nature: Modest
 - MOVE_CHARM
 
 SPECIES_ARCANINE
-Level: 78
+Level: 76
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -23901,7 +23863,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 60
+Level: 58
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -23930,7 +23892,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROSERADE
-Level: 63
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -23940,7 +23902,7 @@ Nature: Modest
 - MOVE_LEECH_SEED
 
 SPECIES_MILOTIC
-Level: 63
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA
 Nature: Modest
@@ -23969,9 +23931,9 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROSERADE
-Level: 66
+Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_PETAL_DANCE
 - MOVE_POISON_STING
@@ -23979,9 +23941,9 @@ Nature: Modest
 - MOVE_LEECH_SEED
 
 SPECIES_MILOTIC
-Level: 66
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-EVs: 128 HP / 128 SpA / 128 Spe
+EVs: 85 HP / 85 SpA / 85 Spe
 Nature: Modest
 - MOVE_HYDRO_PUMP
 - MOVE_DRAGON_TAIL
@@ -24008,7 +23970,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_GARDEVOIR
-Level: 69
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest
@@ -24018,7 +23980,7 @@ Nature: Modest
 - MOVE_CALM_MIND
 
 SPECIES_TSAREENA
-Level: 69
+Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 Atk / 128 Spe
 Nature: Adamant
@@ -24066,7 +24028,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FARIGIRAF
-Level: 80
+Level: 78
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 128 HP / 128 SpA / 128 Spe
 Nature: Modest

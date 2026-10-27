@@ -154,6 +154,42 @@ u32 ScaleBriskTrainerLevel(u32 level, u32 salt)
     return level;
 }
 
+u32 ScaleBriskOrdinaryTrainerLevel(u32 level, u32 highestLevel)
+{
+    u32 mode = GetBriskDifficulty();
+    highestLevel = max(level, highestLevel);
+    u32 ace = highestLevel;
+    u32 originalLevel = level;
+    switch (mode)
+    {
+    case BRISK_MODE_EASY:
+        level = (level + 1) / 2;
+        ace = (ace + 1) / 2;
+        // A lower-level support must not round up to the ace's Easy level.
+        if (originalLevel < highestLevel && level == ace && level > 1)
+            level -= 1;
+        break;
+    case BRISK_MODE_HARD:
+        level += max(2, level / 5);
+        break;
+    case BRISK_MODE_EXTREME:
+        level += max(4, level * 2 / 5);
+        break;
+    default: return max(1, min(level, MAX_LEVEL));
+    }
+    if (mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME)
+    {
+        // Keep each support below the capped ace by its authored level gap.
+        // Unlike subtracting the boosted ace's excess from the whole team,
+        // this cannot make an Extreme support lower-level than its Hard set.
+        u32 cap = GetProgressionLevelCap();
+        u32 gap = highestLevel - originalLevel;
+        u32 ceiling = cap > gap ? cap - gap : 1;
+        level = min(level, ceiling);
+    }
+    return max(1, min(level, MAX_LEVEL));
+}
+
 bool32 BriskRandomizerEnabled(u32 category)
 {
     return (VarGet(VAR_BRISK_RANDOMIZER) & (category | BRISK_RAND_ALL)) != 0;

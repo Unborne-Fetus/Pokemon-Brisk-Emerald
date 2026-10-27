@@ -2,8 +2,11 @@
 
 Hoenn's authored teams use one Normal-mode progression. Easy, Hard and Extreme
 are applied by `GenerateMonFromTrainerMon` for both ordinary trainers and rivals.
-Normal uses authored levels; Easy halves them; Hard adds 20% (at least three);
-Extreme adds 30% (at least four). Hard and Extreme respect the current badge cap.
+Normal uses varied authored levels. Ordinary Hard adds 20% (at least two), and
+Extreme adds 40% (at least four). Easy halves levels, keeping supports below the
+ace. Supports stay below the badge cap by their authored gap from the ace.
+Protected trainers retain their previous scaling: Easy halves levels, Hard adds
+20% (at least three), Extreme adds 30% (at least four), with individual cap limits.
 Their IV, EV, ability, moveset and AI upgrades still apply at the cap.
 
 | Encounter | Normal ace |

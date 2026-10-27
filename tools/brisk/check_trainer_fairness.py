@@ -9,6 +9,7 @@ import hashlib
 import json
 import re
 from check_trainer_progression import ROOT, TEAM_RE
+from trainer_mode_plan import ordinary_scaled
 
 
 def power_cap(level):
@@ -83,7 +84,19 @@ def audit():
             ev_cap = 0 if level < 25 else 128 if level < 45 else 256 if level < 65 else 384
             if sum(evs) > ev_cap or any(n > 252 for n in evs):
                 errors.append(prefix + ': excessive EV training')
+        if len(party_levels) > 1:
+            for mode in ('Easy', 'Normal', 'Hard', 'Extreme'):
+                for cap in (25, 35, 45, 50, 55, 65, 75, 90, 100):
+                    varied = {ordinary_scaled(level, mode, max(party_levels), cap) for level in party_levels}
+                    if len(varied) == 1:
+                        errors.append(f'{trainer_id}: flat {mode} team at cap {cap}')
         if party_levels:
+            for cap in (25, 35, 45, 50, 55, 65, 75, 90, 100):
+                for level in party_levels:
+                    hard = ordinary_scaled(level, 'Hard', max(party_levels), cap)
+                    extreme = ordinary_scaled(level, 'Extreme', max(party_levels), cap)
+                    if extreme < hard:
+                        errors.append(f'{trainer_id}: Extreme member below Hard at cap {cap}')
             ace = max(party_levels)
             cap = 2 if ace < 12 else 3 if ace < 25 else 4 if ace < 45 else 5 if ace < 65 else 6
             if len(party_levels) > cap:

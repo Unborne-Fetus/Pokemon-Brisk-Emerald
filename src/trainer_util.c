@@ -120,6 +120,10 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
     trainerGen->fairLoadout = UsesFairLoadout(trainer);
+    trainerGen->highestLevel = 0;
+    if (trainerGen->fairLoadout)
+        for (u32 i = 0; i < trainer->partySize; i++)
+            trainerGen->highestLevel = max(trainerGen->highestLevel, trainer->party[i].lvl);
     trainerGen->gender = trainer->gender;
     if (trainer->aiFlags & AI_FLAG_SMART_TERA)
         trainerGen->smartTera = TRUE;
@@ -134,6 +138,7 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 {
     u32 otID;
     trainerGen->fairLoadout = FALSE;
+    trainerGen->highestLevel = 0;
     trainerGen->gender = partner->gender;
     if (partner->aiFlags & AI_FLAG_SMART_TERA)
         trainerGen->smartTera = TRUE;
@@ -217,7 +222,10 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
-        adjusted.lvl = ScaleBriskTrainerLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
+        if (trainer->fairLoadout)
+            adjusted.lvl = ScaleBriskOrdinaryTrainerLevel(adjusted.lvl, trainer->highestLevel);
+        else
+            adjusted.lvl = ScaleBriskTrainerLevel(adjusted.lvl, adjusted.species ^ Crc32B((const u8 *)&trainer->localRngState, sizeof(trainer->localRngState)));
         adjusted.heldItem = BriskRandomItem(adjusted.heldItem);
         enum Species species = BriskRandomSpecies(adjusted.species, category);
         if (species != adjusted.species || BriskRandomizerEnabled(BRISK_RAND_ALL))

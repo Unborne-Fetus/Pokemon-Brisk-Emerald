@@ -26,6 +26,7 @@ u32 ScaleBriskSharedExp(u32 exp);
 void SetBriskExpShareMode(bool32 modern);
 u32 ScaleBriskLevel(u32 level, u32 salt);
 u32 ScaleBriskTrainerLevel(u32 level, u32 salt);
+u32 ScaleBriskOrdinaryTrainerLevel(u32 level, u32 highestLevel);
 bool32 BriskRandomizerEnabled(u32 category);
 bool32 BriskIsImportantTrainer(u32 trainerClass);
 enum Species BriskRandomSpecies(enum Species species, u32 category);

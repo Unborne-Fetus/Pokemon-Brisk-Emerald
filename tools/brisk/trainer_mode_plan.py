@@ -27,6 +27,19 @@ def scaled(level, mode):
     return level
 
 
+def ordinary_scaled(level, mode, highest, cap=100):
+    if mode == 'Easy':
+        value = (level + 1) // 2
+        return max(1, value - (level < highest and value == (highest + 1) // 2))
+    if mode == 'Hard':
+        boost = lambda n: n + max(2, n // 5)
+    elif mode == 'Extreme':
+        boost = lambda n: n + max(4, n * 2 // 5)
+    else:
+        return level
+    return max(1, min(100, min(boost(level), max(1, cap - (highest - level)))))
+
+
 def render():
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
@@ -48,7 +61,7 @@ def render():
               ('Space Center / eastern sea',76,83),('Seafloor / Juan approach',82,89),
               ('Victory Road',86,94),('League',100,100)]
     for name,low,high in stages:
-        ranges = [f'{scaled(low,m)}–{scaled(high,m)}' for m in ('Normal','Easy','Hard','Extreme')]
+        ranges = [f'{ordinary_scaled(low,m,high)}–{ordinary_scaled(high,m,high)}' for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| ' + name + ' | ' + ' | '.join(ranges) + ' |')
     lines += ['', 'The section bands describe ordinary encounter targets, not blanket map scaling.',
         'Individual teams and intentional protected exceptions are listed below.',
@@ -57,7 +70,7 @@ def render():
         '## Mode rules', '',
         '| Rule | Easy | Normal | Hard | Extreme |',
         '| --- | --- | --- | --- | --- |',
-        '| Trainer levels | Half, rounded up | Authored curve | +20%, at least +3 | +30%, at least +4 |',
+        '| Ordinary trainer levels | Half, with support below ace | Varied authored curve | +20%, at least +2 | +40%, at least +4 |',
         '| IVs | 0 | 8 / 12 / 18 / 24 by stage | 31 | 31 |',
         '| EVs | 0 | 0 / 128 / 256 / 384 by stage | 128 / 256 / 384 / 510 (at least authored total) | 510, chosen for the set |',
         '| Ordinary moves | Weaker legal attacks | Legal authored coverage/support | Optimized ordinary moves and stronger abilities | Optimized legal moves within stage power limits |',
@@ -65,10 +78,14 @@ def render():
         '| Battle style | Shift | Player preference | Set | Set |',
         '| Player battle consumables | Allowed | Allowed | Blocked | Blocked |',
         '| Shared EXP | 200% | 100% | 50% | Disabled |', '',
-        'Hard and Extreme trainer levels are additionally clamped to the save’s current',
+        'Protected trainer scaling remains +20% (minimum 3) on Hard and +30%',
+        '(minimum 4) on Extreme; Easy still halves their authored levels.',
+        'Ordinary Hard/Extreme supports stay below the current badge cap by their',
+        'authored gap from the ace, preserving a spread instead of flattening the team.',
+        'Protected Hard and Extreme trainer levels are clamped to the save’s current',
         'badge cap: **25 / 35 / 45 / 50 / 55 / 65 / 75 / 90 / 100**. The individual',
-        'table shows boosts before that clamp because the same rematch can be fought',
-        'at different progression stages. Extreme enforces the player EXP cap too.',
+        'table assumes a cap of 100; earlier caps limit ordinary teams and clamp',
+        'protected levels individually. Extreme enforces the player EXP cap too.',
         'Difficulty does not evolve an opponent into a different species at runtime.', '',
         'Only the 670 ordinary trainer IDs use the new move-power guard. Important',
         'and dedication/Easter egg teams keep their previous mode behavior. Ordinary',
@@ -94,10 +111,10 @@ def render():
         if not lv: continue
         name = re.search(r'^Name: (.*)',team,re.M)[1].strip().replace('|','\\|')
         role = 'Protected' if tid in policy['protected'] else 'Ordinary'
-        cells = [' / '.join(str(scaled(n,m)) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
+        cells = [' / '.join(str(scaled(n,m) if role == 'Protected' else ordinary_scaled(n,m,max(lv))) for n in lv) for m in ('Normal','Easy','Hard','Extreme')]
         lines.append('| `' + tid + '` | ' + name + ' | ' + role + ' | ' + ' | '.join(cells) + ' |')
         count += 1
-    lines += ['', f'{count} populated trainer entries; *Hard/Extreme values are before the current badge cap.', '',
+    lines += ['', f'{count} populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.', '',
         'Regenerate with `python tools/brisk/trainer_mode_plan.py`; validate with `--check`.', '']
     return '\n'.join(lines)
 

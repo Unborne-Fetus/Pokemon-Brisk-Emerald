@@ -126,3 +126,35 @@ TEST("Brisk ordinary Extreme moves remain within stage power limits and Normal k
     }
     VarSet(VAR_BRISK_DIFFICULTY, old);
 }
+
+TEST("Brisk Allen ordinary curve is Slowpoke 7 13 15 18 and Rattata 6 11 13 15")
+{
+    const u8 slowpoke[] = {13, 7, 15, 18};
+    const u8 rattata[] = {11, 6, 13, 15};
+    u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        EXPECT_EQ(ScaleBriskOrdinaryTrainerLevel(13, 13), slowpoke[mode]);
+        EXPECT_EQ(ScaleBriskOrdinaryTrainerLevel(11, 13), rattata[mode]);
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, oldMode);
+}
+
+TEST("Brisk ordinary teams retain level differences through Easy rounding and Hard Extreme caps")
+{
+    u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
+    for (u32 mode = 0; mode < 4; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        for (u32 ace = 2; ace <= 100; ace++)
+        {
+            u32 top = ScaleBriskOrdinaryTrainerLevel(ace, ace);
+            u32 support = ScaleBriskOrdinaryTrainerLevel(ace - 1, ace);
+            if (mode != BRISK_MODE_EASY || top > 1) EXPECT_LT(support, top);
+            EXPECT_GE(support, 1);
+            EXPECT_LE(top, 100);
+        }
+    }
+    VarSet(VAR_BRISK_DIFFICULTY, oldMode);
+}
