@@ -1,13 +1,13 @@
 # Curated Elite Four and Wallace teams
 
-Every member is **level 100 on Normal, Hard and Extreme**, or **70 on Easy**.
+Every member is **level 100 on Normal, Hard and Kaizo**, or **70 on Easy**.
 Sidney, Phoebe and Glacia use native doubles; Drake and Wallace use singles.
 The battle-format option can still override the normal format.
 
 All 30 members have held items, explicit abilities, matching natures and deliberate
 EV spreads. These five teams retain their authored sets across modes, including
 Protect, screens, recovery and speed control. Easy still uses reduced IV/EV training
-and simpler AI. Hard/Extreme retain the authored role spreads and their stronger AI.
+and simpler AI. Hard/Kaizo retain the authored role spreads and their stronger AI.
 
 Moves are checked against the repository’s full cross-generation learnability
 catalog, including legitimate TM, tutor and transfer moves; they are not restricted

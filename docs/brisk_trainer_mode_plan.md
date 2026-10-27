@@ -7,7 +7,7 @@ scale its trainers up to the player. Only dedication/Easter egg teams are exempt
 
 ## Progression targets
 
-| Section | Normal | Easy | Hard, before badge cap | Extreme, before badge cap |
+| Section | Normal | Easy | Hard, before badge cap | Kaizo, before badge cap |
 | --- | --- | --- | --- | --- |
 | Route 102 | 10–15 | 5–8 | 12–18 | 14–21 |
 | Route 104 | 14–21 | 7–11 | 16–25 | 19–29 |
@@ -31,12 +31,12 @@ The section bands describe ordinary encounter targets, not blanket map scaling.
 Individual teams and intentional protected exceptions are listed below.
 Important fights now use their own authored teams and stronger mode curve.
 The opening Route 103 rival has a level-9 starter on Normal.
-Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Extreme
+Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Kaizo
 and 70 on Easy, independent of badge caps and ordinary/story scaling.
 
 ## Mode rules
 
-| Rule | Easy | Normal | Hard | Extreme |
+| Rule | Easy | Normal | Hard | Kaizo |
 | --- | --- | --- | --- | --- |
 | Ordinary trainer levels | Half, with support below ace | Varied authored curve | +20%, at least +2 | +40%, at least +4 |
 | Story trainer levels | Half, rounded up | Authored boss curve | +25%, at least +3 | +45%, at least +5 |
@@ -52,20 +52,20 @@ See [mode targets](brisk_mode_targets.md) for party sizes, item upgrades, Easy
 species/gimmick rules and caps. League role training remains curated.
 
 Dedication/Easter egg scaling remains +20% (minimum 3) on Hard and +30%
-(minimum 4) on Extreme; Easy still halves their authored levels.
-Ordinary and story Hard/Extreme supports stay below the current badge cap by their
+(minimum 4) on Kaizo; Easy still halves their authored levels.
+Ordinary and story Hard/Kaizo supports stay below the current badge cap by their
 authored gap from the ace, preserving a spread instead of flattening the team.
-Protected Hard and Extreme trainer levels are clamped to the save’s current
+Protected Hard and Kaizo trainer levels are clamped to the save’s current
 badge cap: **25 / 35 / 45 / 50 / 55 / 65 / 75 / 90 / 100**. The individual
 table assumes a cap of 100; earlier caps limit ordinary teams and clamp
 protected levels individually. Hard enforces EXP caps when the cap option is on;
-Extreme always enforces EXP caps. Owned over-cap Pokemon are not lowered.
+Kaizo always enforces EXP caps. Owned over-cap Pokemon are not lowered.
 Difficulty does not evolve an opponent into a different species at runtime.
 
 670 ordinary IDs use their original stage power guard. 155 story IDs now use
 a separate stage guard: 50 below 12; 75 below 25; 90 below 35; 100 below 50;
 120 thereafter. Dedication/Easter egg teams retain their previous behavior. Ordinary
-optimized Hard/Extreme attacks are capped at **50 below level 12; 60 below 20;
+optimized Hard/Kaizo attacks are capped at **50 below level 12; 60 below 20;
 75 below 30; 90 below 40; 100 below 50; 120 thereafter**. Multi-hit, recoil,
 setup, typing and abilities still affect actual damage; this is a power-spike
 guard rather than a guarantee of equal battle difficulty. Easy uses stock
@@ -89,7 +89,7 @@ Tutorials and League teams retain their sizes. Two-trainer half-team formats can
 limit a side to three; this table assumes ordinary full teams. Metadata entries supply NPC
 identity/templates, not playable battles; their levels are not a challenge plan.
 
-| Trainer ID | Display name | Role | Normal | Easy | Hard* | Extreme* |
+| Trainer ID | Display name | Role | Normal | Easy | Hard* | Kaizo* |
 | --- | --- | --- | --- | --- | --- | --- |
 | `TRAINER_SAWYER_1` | SAWYER | Ordinary | 45 / 44 / 45 / 46 | 23 | 54 / 52 / 54 / 52 / 55 | 63 / 61 / 63 / 61 / 63 / 64 |
 | `TRAINER_GRUNT_AQUA_HIDEOUT_1` | GRUNT | Story | 72 / 71 / 72 / 73 | 37 | 90 / 88 / 90 / 88 / 90 / 91 | 99 / 98 / 99 / 98 / 99 / 100 |
@@ -942,7 +942,7 @@ identity/templates, not playable battles; their levels are not a challenge plan.
 | `TRAINER_ALVARO` | ALVARO | Ordinary | 78 / 79 / 78 / 80 | 39 / 40 | 93 / 94 / 93 / 94 / 96 | 98 / 99 / 98 / 99 / 98 / 100 |
 | `TRAINER_EVERETT` | EVERETT | Ordinary | 79 / 78 / 79 / 80 | 40 | 94 / 93 / 94 / 93 / 96 | 99 / 98 / 99 / 98 / 99 / 100 |
 | `TRAINER_RED` | RED | Metadata | 5 | 5 | 5 | 5 |
-| `TRAINER_LEAF` | LEAF | Metadata | 5 | 5 | 5 | 5 |
+| `TRAINER_TANKERSON` | Tankerson | Kaizo only | — | — | — | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_BRENDAN_PLACEHOLDER` | BRENDAN | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_MAY_PLACEHOLDER` | MAY | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_RED2` | RED | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
@@ -953,8 +953,9 @@ identity/templates, not playable battles; their levels are not a challenge plan.
 | `TRAINER_LEON` | Leon | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_NEMONA` | Nemona | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_VOLO` | Volo | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
+| `TRAINER_HOODED_FIGURE` | Hooded Figure | Kaizo only | — | — | — | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_UNBORNE` | Unborne | Protected | 100 / 100 / 100 / 100 / 100 / 100 | 50 / 50 / 50 / 50 / 50 / 50 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 
-863 populated trainer entries; *Hard/Extreme values assume a cap of 100; earlier badge caps still apply.
+864 populated trainer entries; *Hard/Kaizo values assume a cap of 100; earlier badge caps still apply.
 
 Regenerate with `python tools/brisk/trainer_mode_plan.py`; validate with `--check`.

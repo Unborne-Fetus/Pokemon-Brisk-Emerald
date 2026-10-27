@@ -26506,17 +26506,81 @@ Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_LEAF ===
-Name: LEAF
-Class: Rival
-Pic: Leaf
-Gender: Female
+=== TRAINER_TANKERSON ===
+Name: Tankerson
+Class: Champion
+Pic: Hiker
+Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
+AI: Smart Trainer / Prediction / Know Opponent Party / HP Aware / Try To 2HKO / Conservative
 
-Bulbasaur
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_KANGASKHAN @ Kangaskhanite
+Level: 100
+Ability: Scrappy
+Nature: Jolly
+EVs: 4 HP / 252 Atk / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FAKE_OUT
+- MOVE_DOUBLE_EDGE
+- MOVE_LOW_KICK
+- MOVE_SUCKER_PUNCH
+
+SPECIES_KYOGRE @ Blue Orb
+Level: 100
+Ability: Drizzle
+Nature: Quiet
+EVs: 252 HP / 4 Def / 252 SpA
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- MOVE_WATER_SPOUT
+- MOVE_ORIGIN_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_ZAMAZENTA @ Rusted Shield
+Level: 100
+Ability: Dauntless Shield
+Nature: Impish
+EVs: 252 HP / 80 Def / 176 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BODY_PRESS
+- MOVE_HEAVY_SLAM
+- MOVE_WIDE_GUARD
+- MOVE_IRON_DEFENSE
+
+SPECIES_INCINEROAR @ Safety Goggles
+Level: 100
+Ability: Intimidate
+Nature: Careful
+EVs: 252 HP / 92 Def / 164 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FAKE_OUT
+- MOVE_PARTING_SHOT
+- MOVE_KNOCK_OFF
+- MOVE_SNARL
+
+SPECIES_AMOONGUSS @ Rocky Helmet
+Level: 100
+Ability: Regenerator
+Nature: Sassy
+EVs: 252 HP / 156 Def / 100 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- MOVE_SPORE
+- MOVE_RAGE_POWDER
+- MOVE_POLLEN_PUFF
+- MOVE_PROTECT
+
+SPECIES_CALYREX_ICE @ Clear Amulet
+Level: 100
+Ability: As One Ice Rider
+Nature: Brave
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+Tera Type: Water
+- MOVE_GLACIAL_LANCE
+- MOVE_HIGH_HORSEPOWER
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
 
 === TRAINER_BRENDAN_PLACEHOLDER ===
 Name: BRENDAN
@@ -26968,6 +27032,82 @@ Giratina Origin
 - Earth Power
 
 
+
+=== TRAINER_HOODED_FIGURE ===
+Name: HoodedFig
+Class: Champion
+Pic: Ninja Boy
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer / Prediction / Know Opponent Party / HP Aware / Try To 2HKO / Conservative
+
+SPECIES_CALYREX_SHADOW @ Focus Sash
+Level: 100
+Ability: As One Shadow Rider
+Nature: Timid
+EVs: 4 Def / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ASTRAL_BARRAGE
+- MOVE_PSYSHOCK
+- MOVE_DRAINING_KISS
+- MOVE_NASTY_PLOT
+
+SPECIES_MIRAIDON @ Choice Specs
+Level: 100
+Ability: Hadron Engine
+Nature: Timid
+EVs: 4 Def / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Tera Type: Electric
+- MOVE_ELECTRO_DRIFT
+- MOVE_DRACO_METEOR
+- MOVE_VOLT_SWITCH
+- MOVE_OVERHEAT
+
+SPECIES_ZACIAN @ Rusted Sword
+Level: 100
+Ability: Intrepid Sword
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_IRON_HEAD
+- MOVE_PLAY_ROUGH
+- MOVE_CLOSE_COMBAT
+- MOVE_SWORDS_DANCE
+
+SPECIES_YVELTAL @ Heavy-Duty Boots
+Level: 100
+Ability: Dark Aura
+Nature: Careful
+EVs: 248 HP / 8 Def / 252 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FOUL_PLAY
+- MOVE_OBLIVION_WING
+- MOVE_DEFOG
+- MOVE_ROOST
+
+SPECIES_ARCEUS_GROUND @ Earth Plate
+Level: 100
+Ability: Multitype
+Nature: Timid
+EVs: 248 HP / 8 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_JUDGMENT
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_CALM_MIND
+
+SPECIES_RAYQUAZA @ Life Orb
+Level: 100
+Ability: Air Lock
+Nature: Jolly
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_ASCENT
+- MOVE_EXTREME_SPEED
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_DANCE
 
 === TRAINER_UNBORNE ===
 Name: Unborne

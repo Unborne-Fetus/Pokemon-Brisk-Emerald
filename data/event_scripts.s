@@ -23,6 +23,7 @@
 #include "constants/daycare.h"
 #include "constants/decorations.h"
 #include "constants/difficulty.h"
+#include "constants/brisk_modes.h"
 #include "constants/dynamax_adventure.h"
 #include "constants/easy_chat.h"
 #include "constants/event_objects.h"

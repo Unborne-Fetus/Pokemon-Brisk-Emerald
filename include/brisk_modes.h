@@ -1,10 +1,7 @@
 #ifndef GUARD_BRISK_MODES_H
 #define GUARD_BRISK_MODES_H
 
-#define BRISK_MODE_NORMAL 0
-#define BRISK_MODE_EASY 1
-#define BRISK_MODE_HARD 2
-#define BRISK_MODE_EXTREME 3
+#include "constants/brisk_modes.h"
 #define BRISK_RAND_WILD (1 << 0)
 #define BRISK_RAND_TRAINERS (1 << 1)
 #define BRISK_RAND_ITEMS (1 << 2)
@@ -12,6 +9,8 @@
 #define BRISK_RAND_ALL (1 << 4)
 
 struct Pokemon;
+bool32 BriskIsKaizoBoss(u32 trainerId);
+bool32 BriskKaizoBossAvailable(void);
 
 u32 GetBriskDifficulty(void);
 u32 GetBriskPriceMultiplier(void);

@@ -217,6 +217,8 @@ extern const union AnimCmd *const gAnims_MonPic[];
 extern const union AnimCmd *const gAnims_Trainer[];
 extern const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT];
 
+extern const u8 gText_HoodedFigureTrainerName[];
+
 extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
 
@@ -307,6 +309,8 @@ static inline const u8 *GetTrainerClassNameFromId(u16 trainerId)
 
 static inline const u8 *GetTrainerNameFromId(u16 trainerId)
 {
+    if (trainerId == TRAINER_HOODED_FIGURE && !gIsDebugBattle)
+        return gText_HoodedFigureTrainerName;
     return GetTrainerStructFromId(trainerId)->trainerName;
 }
 

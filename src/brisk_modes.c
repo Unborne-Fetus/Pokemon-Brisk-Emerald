@@ -9,6 +9,7 @@
 #include "item.h"
 #include "pokemon.h"
 #include "constants/trainers.h"
+#include "constants/opponents.h"
 #include "constants/battle_ai.h"
 #include "constants/battle.h"
 #include "constants/hold_effects.h"
@@ -28,6 +29,16 @@ u32 GetBriskDifficulty(void)
 {
     u32 mode = VarGet(VAR_BRISK_DIFFICULTY);
     return mode <= BRISK_MODE_EXTREME ? mode : BRISK_MODE_NORMAL;
+}
+
+bool32 BriskIsKaizoBoss(u32 trainerId)
+{
+    return trainerId == TRAINER_HOODED_FIGURE || trainerId == TRAINER_TANKERSON;
+}
+
+bool32 BriskKaizoBossAvailable(void)
+{
+    return GetBriskDifficulty() == BRISK_MODE_KAIZO;
 }
 
 u32 GetBriskPriceMultiplier(void)

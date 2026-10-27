@@ -3,7 +3,7 @@
 
 The policy records compiled Brisk stats/learnsets used for this balance pass.
 Update that catalog deliberately when changing species data or learnsets.
-Hard/Extreme's existing battle-time modifiers are separate from these sets.
+Hard/Kaizo's existing battle-time modifiers are separate from these sets.
 """
 import hashlib
 import json
@@ -11,6 +11,7 @@ import re
 from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 from trainer_mode_plan import ordinary_scaled
 from league_teams import audit as audit_league
+from kaizo_bosses import audit as audit_kaizo
 
 
 def power_cap(level):
@@ -25,7 +26,7 @@ def audit():
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     errors = []
-    if set(teams) != set(policy['reworked']) | set(policy['story']) | policy['protected'].keys() | policy['metadata_only'].keys():
+    if set(teams) != set(policy['reworked']) | set(policy['story']) | policy['protected'].keys() | policy['metadata_only'].keys() | set(policy['kaizo_bosses']):
         errors.append('Every trainer entry must be explicitly classified as ordinary, story, dedication/Easter egg, or metadata-only')
     runtime_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE',
         (ROOT / 'src/data/brisk_ordinary_trainers.h').read_text()))
@@ -92,7 +93,7 @@ def audit():
             if sum(evs) > ev_cap or any(n > 252 for n in evs):
                 errors.append(prefix + ': excessive EV training')
         if len(party_levels) > 1:
-            for mode in ('Easy', 'Normal', 'Hard', 'Extreme'):
+            for mode in ('Easy', 'Normal', 'Hard', 'Kaizo'):
                 for cap in (25, 35, 45, 50, 55, 65, 75, 90, 100):
                     varied = {ordinary_scaled(level, mode, max(party_levels), cap) for level in party_levels}
                     if len(varied) == 1:
@@ -101,14 +102,15 @@ def audit():
             for cap in (25, 35, 45, 50, 55, 65, 75, 90, 100):
                 for level in party_levels:
                     hard = ordinary_scaled(level, 'Hard', max(party_levels), cap)
-                    extreme = ordinary_scaled(level, 'Extreme', max(party_levels), cap)
+                    extreme = ordinary_scaled(level, 'Kaizo', max(party_levels), cap)
                     if extreme < hard:
-                        errors.append(f'{trainer_id}: Extreme member below Hard at cap {cap}')
+                        errors.append(f'{trainer_id}: Kaizo member below Hard at cap {cap}')
             ace = max(party_levels)
             cap = 2 if ace < 12 else 3 if ace < 25 else 4 if ace < 45 else 5 if ace < 65 else 6
             if len(party_levels) > cap:
                 errors.append(f'{trainer_id}: excessive party size for this stage')
     errors.extend(audit_league(teams))
+    errors.extend(audit_kaizo(teams))
     story_mons = 0
     for tid in policy['story']:
         team = teams[tid]

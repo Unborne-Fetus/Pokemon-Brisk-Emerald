@@ -10,6 +10,7 @@ struct TrainerGenerator
     bool8 fairLoadout;
     bool8 storyLoadout;
     bool8 leagueLevels;
+    bool8 kaizoBoss;
     u8 highestLevel;
     u8 name[TRAINER_NAME_LENGTH + 1];
     struct OriginalTrainerId otID;

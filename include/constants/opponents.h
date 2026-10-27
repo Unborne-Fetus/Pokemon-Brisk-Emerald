@@ -856,11 +856,13 @@
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851
-#define TRAINER_LEAF                        852
+#define TRAINER_TANKERSON                   852
+#define TRAINER_LEAF                        TRAINER_TANKERSON // Former unused Hoenn placeholder; compatibility alias.
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_BLUE                        855
 #define TRAINER_RED2                        856
+#define TRAINER_HOODED_FIGURE               857 // Previously vacant slot; keep trainer/system flag boundaries fixed.
 #define TRAINER_CYNTHIA                     858
 #define TRAINER_IRIS                        859
 #define TRAINER_DIANTHA                     860
