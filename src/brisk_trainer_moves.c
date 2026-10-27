@@ -241,7 +241,7 @@ static void SelectAbility(struct Pokemon *mon, bool32 easy)
     SetMonData(mon, MON_DATA_ABILITY_NUM, &best);
 }
 
-static void ApplyLoadout(struct Pokemon *mon, u32 mode)
+static void ApplyLoadout(struct Pokemon *mon, u32 mode, u32 maximumPower)
 {
     if (mode == BRISK_MODE_NORMAL)
         return;
@@ -273,6 +273,7 @@ static void ApplyLoadout(struct Pokemon *mon, u32 mode)
         for (enum Move move = 1; move < MOVES_COUNT; move++)
         {
             if (!InMovePool(pool, move)) continue;
+            if (maximumPower && GetMovePower(move) > maximumPower) continue;
             bool32 duplicate = FALSE;
             for (u32 i = 0; i < count; i++) if (selected[i] == move) duplicate = TRUE;
             if (duplicate) continue;
@@ -295,12 +296,19 @@ static void ApplyLoadout(struct Pokemon *mon, u32 mode)
 
 void ApplyBriskTrainerLoadout(struct Pokemon *mon)
 {
-    ApplyLoadout(mon, GetBriskDifficulty());
+    ApplyLoadout(mon, GetBriskDifficulty(), 0);
+}
+
+void ApplyBriskFairTrainerLoadout(struct Pokemon *mon)
+{
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
+    u32 maximumPower = level < 12 ? 50 : level < 20 ? 60 : level < 30 ? 75 : level < 40 ? 90 : level < 50 ? 100 : 120;
+    ApplyLoadout(mon, GetBriskDifficulty(), maximumPower);
 }
 
 void ApplyBriskStrongLoadout(struct Pokemon *mon)
 {
-    ApplyLoadout(mon, BRISK_MODE_EXTREME);
+    ApplyLoadout(mon, BRISK_MODE_EXTREME, 0);
 }
 
 void BriskSetBestAbility(struct Pokemon *mon)

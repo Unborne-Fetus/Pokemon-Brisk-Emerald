@@ -232,6 +232,14 @@ const struct FieldEffectInfoOWE gOverworldWildEncounterFieldEffectInfo[] =
 
 void UpdateOverworldWildEncounter(void)
 {
+    // Run before field-control/DexNav/header checks so disabling the option
+    // also clears existing generated spawns after returning from Options.
+    if (!BriskOverworldEncountersEnabled())
+    {
+        DespawnAllOverworldWildEncounters(OWE_GENERATED, 0);
+        sOWESpawnCountdown = OWE_NO_ENCOUNTER_SET;
+        return;
+    }
     //Check if possible to spawn.
 
     bool32 shouldSpawnWaterMons = ShouldSpawnWaterOWE();
@@ -667,6 +675,8 @@ void TryTriggerOverworldWildEncounter(struct ObjectEvent *obstacle, struct Objec
         return;
 
     struct ObjectEvent *wildMon = playerFollowerIsColliderOWE ? obstacle : collider;
+    if (!BriskOverworldEncountersEnabled() && IsOverworldWildEncounter(wildMon, OWE_GENERATED))
+        return;
     enum CategoryOWE category = GetOWECategory(wildMon);
     if (category < ROAMER_COUNT
      && !IsRoamerAt(category, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum))

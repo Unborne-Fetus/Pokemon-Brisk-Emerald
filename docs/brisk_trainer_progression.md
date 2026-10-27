@@ -9,6 +9,7 @@ Their IV, EV, ability, moveset and AI upgrades still apply at the cap.
 | Encounter | Normal ace |
 | --- | ---: |
 | First rival, Route 103 | 7 |
+| Route 102 ordinary trainers | 10–15 |
 | Rustboro rival / Roxanne | 24 / 25 |
 | Brawly | 35 |
 | Mauville Wally / Route 110 rival / Wattson | 41 / 42 / 45 |

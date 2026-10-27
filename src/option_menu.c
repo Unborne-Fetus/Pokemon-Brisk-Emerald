@@ -204,6 +204,7 @@ static const struct {
     const u8 *title;
     const u8 *description;
 } sHelpTopics[] = {
+    {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
     {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
     {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
@@ -813,7 +814,9 @@ static void DrawDebugOptions(void)
 {
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("DEBUG MENU"), 8, 1, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 17, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("OW ENCOUNTERS"), 8, 17, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskOverworldEncountersEnabled(), 16);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 33, TEXT_SKIP_DRAW, NULL);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -827,14 +830,19 @@ static void Task_DebugOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 1))
+    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 2))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
-        gTasks[taskId].tMenuSelection ^= 1;
+        gTasks[taskId].tMenuSelection = (gTasks[taskId].tMenuSelection + (JOY_REPEAT(DPAD_DOWN) ? 1 : 2)) % 3;
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
-    else if (JOY_NEW(A_BUTTON))
+    else if (gTasks[taskId].tMenuSelection == 1 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
+    {
+        VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, BriskOverworldEncountersEnabled());
+        DrawDebugOptions();
+    }
+    else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 0)
     {
         // Use the usual settings-save and fade-out path before opening debug.
         gMain.savedCallback = CB2_ReturnToFieldDebug;
@@ -1469,6 +1477,20 @@ static void Task_OptionMenuProcessInput_Help(u8 taskId)
 }
 
 #if TESTING
+u8 Test_OpenBriskWorldOptions(void)
+{
+    ResetTasks();
+    InitBgsFromTemplates(0, sOptionMenuBgTemplates, ARRAY_COUNT(sOptionMenuBgTemplates));
+    InitWindows(sOptionMenuWinTemplates);
+    DeactivateAllTextPrinters();
+    sCurrPage = 6;
+    u8 taskId = CreateTask(Task_ChangePage, 0);
+    ReadAllCurrentSettings(taskId);
+    Task_ChangePage(taskId);
+    gPaletteFade.active = FALSE;
+    return taskId;
+}
+
 u8 Test_OpenBriskThemeOption(void)
 {
     ResetTasks();

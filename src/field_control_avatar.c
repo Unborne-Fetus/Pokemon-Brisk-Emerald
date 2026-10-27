@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_options.h"
 #include "battle_setup.h"
 #include "bike.h"
 #include "coord_event_weather.h"
@@ -903,7 +904,10 @@ static bool32 ShouldDisableRandomEncounters(void)
     if (FlagGet(WE_FLAG_NO_ENCOUNTER))
         return TRUE;
 
-    if (!WE_VANILLA_RANDOM && WE_OW_ENCOUNTERS)
+    if (!BriskOverworldEncountersEnabled())
+        return FALSE; // Fall back to grass/cave/surf encounters, never an empty world.
+
+    if (!WE_VANILLA_RANDOM && WE_OW_ENCOUNTERS && BriskOverworldEncountersEnabled())
     {
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && !WE_OWE_BATTLE_PIKE)
             return FALSE;
@@ -914,6 +918,13 @@ static bool32 ShouldDisableRandomEncounters(void)
 
     return !WE_VANILLA_RANDOM;
 }
+
+#if TESTING
+bool32 Test_ShouldDisableRandomEncounters(void)
+{
+    return ShouldDisableRandomEncounters();
+}
+#endif
 
 static bool8 CheckStandardWildEncounter(u16 metatileBehavior)
 {

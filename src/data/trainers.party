@@ -2965,9 +2965,9 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_MINCCINO
-Level: 11
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+SPECIES_MINCCINO @ Oran Berry
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_POUND
 - MOVE_ECHOED_VOICE
@@ -3472,14 +3472,14 @@ Music: Rich
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_MEOWTH
-Level: 11
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+SPECIES_MEOWTH @ Oran Berry
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_FAKE_OUT
 - MOVE_GROWL
+- MOVE_PAY_DAY
 - MOVE_SCRATCH
-- MOVE_FEINT
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE
@@ -7224,9 +7224,10 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ODDISH @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_GIGA_DRAIN
 - MOVE_ACID
 - MOVE_MEGA_DRAIN
 - MOVE_ABSORB
@@ -7425,10 +7426,10 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_FARFETCHD @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_PECK
+- MOVE_AERIAL_ACE
 - MOVE_CUT
 - MOVE_FURY_CUTTER
 - MOVE_LEER
@@ -8411,11 +8412,12 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MEOWTH_ALOLA
-Level: 7
+Level: 10
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Nature: Hardy
 - MOVE_FAKE_OUT
 - MOVE_GROWL
+- MOVE_SCRATCH
 - MOVE_FEINT
 
 === TRAINER_BILLY ===
@@ -8428,7 +8430,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MASCHIFF
-Level: 14
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
@@ -8437,7 +8439,7 @@ Nature: Hardy
 - MOVE_LEER
 
 SPECIES_RATTATA_ALOLA @ Oran Berry
-Level: 13
+Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
@@ -8789,7 +8791,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SLOWPOKE_GALAR
-Level: 7
+Level: 10
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Nature: Hardy
 - MOVE_TACKLE
@@ -8797,7 +8799,7 @@ Nature: Hardy
 - MOVE_GROWL
 
 SPECIES_RATTATA
-Level: 7
+Level: 10
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Nature: Hardy
 - MOVE_QUICK_ATTACK
@@ -8967,15 +8969,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CARVANHA
-Level: 14
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_BITE
 - MOVE_AQUA_JET
 - MOVE_POISON_FANG
 - MOVE_FOCUS_ENERGY
 
 SPECIES_KRABBY
-Level: 16
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_METAL_CLAW
@@ -8984,7 +8987,7 @@ Nature: Hardy
 - MOVE_LEER
 
 SPECIES_GOLDEEN @ Oran Berry
-Level: 14
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_WATER_PULSE
@@ -12910,7 +12913,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_LOMBRE
-Level: 14
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_MEGA_DRAIN
@@ -12919,7 +12922,7 @@ Nature: Hardy
 - MOVE_GROWL
 
 SPECIES_ZIGZAGOON @ Oran Berry
-Level: 14
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_COVET
@@ -16221,19 +16224,21 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_TEDDIURSA
-Level: 8
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_SCRATCH
+- MOVE_COVET
 - MOVE_LICK
+- MOVE_SCRATCH
 - MOVE_FURY_SWIPES
 
-SPECIES_SENTRET
-Level: 10
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+SPECIES_FURRET @ Oran Berry
+Level: 15
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_QUICK_ATTACK
 - MOVE_SCRATCH
+- MOVE_FURY_SWIPES
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -16245,16 +16250,17 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SKITTY
-Level: 11
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_DISARMING_VOICE
 - MOVE_FAKE_OUT
 - MOVE_TAIL_WHIP
 - MOVE_TACKLE
 
-SPECIES_SLAKOTH
-Level: 11
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+SPECIES_SLAKOTH @ Oran Berry
+Level: 14
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_SCRATCH
 
@@ -16268,13 +16274,13 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_MIGHTYENA @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BITE
-- MOVE_TACKLE
+- MOVE_FIRE_FANG
+- MOVE_ICE_FANG
 - MOVE_LEER
-- MOVE_THIEF
 
 === TRAINER_VIVI ===
 Name: VIVI
@@ -16539,15 +16545,17 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_WEEDLE
-Level: 8
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 12
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_BUG_BITE
 - MOVE_POISON_STING
 
-SPECIES_VENIPEDE
-Level: 9
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+SPECIES_VENIPEDE @ Oran Berry
+Level: 13
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_POISON_TAIL
 - MOVE_ROLLOUT
 - MOVE_POISON_STING
 
@@ -16561,7 +16569,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_DUSTOX
-Level: 15
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
@@ -16570,14 +16578,15 @@ Nature: Hardy
 - MOVE_GUST
 
 SPECIES_LEDYBA
-Level: 13
+Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_SWIFT
+- MOVE_MACH_PUNCH
 - MOVE_TACKLE
 
 SPECIES_BEAUTIFLY @ Oran Berry
-Level: 15
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
@@ -16595,20 +16604,21 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BEAUTIFLY
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_AIR_CUTTER
 - MOVE_BUG_BITE
-- MOVE_GUST
 - MOVE_TACKLE
-- MOVE_ABSORB
+- MOVE_GUST
 
 SPECIES_SURSKIT @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_WATER_GUN
+- MOVE_BUBBLEBEAM
 - MOVE_QUICK_ATTACK
+- MOVE_WATER_GUN
 
 === TRAINER_DOUG ===
 Name: DOUG
@@ -16697,16 +16707,16 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_BUTTERFREE
-Level: 17
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
+- MOVE_PSYBEAM
 - MOVE_GUST
 - MOVE_CONFUSION
-- MOVE_TACKLE
 
 SPECIES_DUSTOX @ Oran Berry
-Level: 15
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BUG_BITE
@@ -17033,10 +17043,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_NOSEPASS @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_ROCK_THROW
+- MOVE_SPARK
 - MOVE_TACKLE
 - MOVE_THUNDER_WAVE
 
@@ -18975,7 +18986,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_VULPIX
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_INCINERATE
@@ -18984,7 +18995,7 @@ Nature: Hardy
 - MOVE_EMBER
 
 SPECIES_GROWLITHE @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_FLAME_WHEEL
@@ -19002,22 +19013,22 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_ROSELIA
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_MAGICAL_LEAF
 - MOVE_POISON_STING
+- MOVE_LEECH_SEED
 - MOVE_MEGA_DRAIN
-- MOVE_ABSORB
 
-SPECIES_RALTS @ Oran Berry
-Level: 19
+SPECIES_KIRLIA @ Oran Berry
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_CONFUSION
+- MOVE_PSYBEAM
 - MOVE_DRAINING_KISS
 - MOVE_GROWL
-- MOVE_DISARMING_VOICE
+- MOVE_CONFUSION
 
 === TRAINER_DARIAN ===
 Name: DARIAN
@@ -19029,10 +19040,12 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_CORPHISH @ Oran Berry
-Level: 19
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
-- MOVE_WATER_GUN
+- MOVE_BUBBLEBEAM
+- MOVE_KNOCK_OFF
+- MOVE_DOUBLE_HIT
 - MOVE_LEER
 
 === TRAINER_HAILEY ===
@@ -20436,7 +20449,7 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_SANDSHREW
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BULLDOZE
@@ -20445,7 +20458,7 @@ Nature: Hardy
 - MOVE_SCRATCH
 
 SPECIES_PHANPY @ Oran Berry
-Level: 19
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
 - MOVE_BULLDOZE
@@ -20462,16 +20475,20 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_SLAKOTH
-Level: 19
+SPECIES_VIGOROTH
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_HEADBUTT
+- MOVE_FOCUS_ENERGY
 - MOVE_SCRATCH
+- MOVE_FURY_SWIPES
 
-SPECIES_WHISMUR @ Oran Berry
-Level: 19
+SPECIES_LOUDRED @ Oran Berry
+Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Nature: Hardy
+- MOVE_BITE
 - MOVE_POUND
 - MOVE_ASTONISH
 - MOVE_ECHOED_VOICE

@@ -9,6 +9,7 @@ u32 GetBriskWildShinyDenominator(u32 mapSection);
 bool32 BriskIslandShiniesEnabled(void);
 bool32 BriskDisplayTypes(void);
 bool32 BriskBattleBagAllowed(void);
+bool32 BriskOverworldEncountersEnabled(void);
 void BriskSetWildShinyContext(bool32 active);
 bool32 BriskSkipMovePrompts(void);
 bool32 BriskInfiniteRematches(void);

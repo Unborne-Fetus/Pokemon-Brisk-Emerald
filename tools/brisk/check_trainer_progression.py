@@ -14,8 +14,8 @@ TEAM_RE = re.compile(r"^=== (TRAINER_\w+) ===\n(.*?)(?=^===|\Z)", re.M | re.S)
 LEVEL_RE = re.compile(r"^Level: (\d+)[ \t]*$", re.M)
 
 MAP_BANDS = {
-    "Route102": (7, 10), "Route103": (35, 40), "Route104": (11, 19),
-    "PetalburgWoods": (12, 17), "RusturfTunnel": (20, 23), "Route116": (19, 23),
+    "Route102": (10, 15), "Route103": (35, 40), "Route104": (14, 21),
+    "PetalburgWoods": (16, 20), "RusturfTunnel": (20, 24), "Route116": (20, 24),
     "RustboroCity_Gym": (21, 24), "DewfordTown_Gym": (29, 34),
     "Route105": (55, 60), "Route106": (28, 33), "Route107": (55, 60),
     "Route108": (55, 60), "Route109": (35, 38), "Route109_SeashoreHouse": (35, 39),
@@ -111,7 +111,10 @@ def audit():
     teams = dict(TEAM_RE.findall((ROOT / "src/data/trainers.party").read_text()))
     errors = []
     bands = encounter_bands(teams)
+    protected = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())['protected']
     for trainer_id, (low, high) in bands.items():
+        if trainer_id in protected:
+            continue  # Intentional story/dedication exceptions are fingerprinted separately.
         party_levels = levels(teams[trainer_id])
         if not party_levels or not all(low <= level <= high for level in party_levels):
             errors.append(f"{trainer_id}: {party_levels}, expected {low}-{high}")

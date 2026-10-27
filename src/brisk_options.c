@@ -10,6 +10,12 @@
 
 static bool32 sWildShinyContext = FALSE;
 
+bool32 BriskOverworldEncountersEnabled(void)
+{
+    // Zero preserves the existing behavior in old saves.
+    return VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) != 1;
+}
+
 bool32 BriskBattleBagAllowed(void)
 {
     return !IsDynamaxAdventureBattle() && VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0;

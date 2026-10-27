@@ -34,17 +34,18 @@ FRLG party file was changed.
   inventories from ordinary fights.
 
 The existing Easy/Hard/Extreme modifiers still apply at battle time, including
-Extreme's stronger moves and full EV training. The power ceilings above apply
-to the authored sets used by Normal; this pass does not replace difficulty-mode
-rules or rewrite protected teams at runtime.
+Extreme's stronger moves and full EV training. Ordinary trainers now also respect
+the stage power ceilings when Easy/Extreme generates moves. Protected trainer
+IDs retain their previous runtime behavior. See [the complete mode plan](brisk_trainer_mode_plan.md)
+for every trainer's levels across all four modes and the revised opening curve.
 
 ## Examples
 
 | Trainer | Before | After |
 | --- | --- | --- |
-| Allen, Route 102 | Level 7 Galarian Slowking and Slowbro | Galarian Slowpoke and Rattata |
-| Rick, Route 102 | Armaldo and Scolipede with Expert Belts | Weedle and Venipede |
-| Tiana, Route 102 | Ursaring and Zangoose with Expert Belts | Teddiursa and Sentret |
+| Allen, Route 102 | Level 7 Galarian Slowking and Slowbro | Galarian Slowpoke and Rattata at level 10 |
+| Rick, Route 102 | Armaldo and Scolipede with Expert Belts | Stage-appropriate bugs at levels 12–13 |
+| Tiana, Route 102 | Ursaring and Zangoose with Expert Belts | Teddiursa at 12 and Furret at 15; one Oran Berry |
 | Gina & Mia, Route 104 | Indeedee pair with Psychic Seed/Choice Scarf | Lombre and Zigzagoon; one Oran Berry |
 | Marc, Rustboro Gym | Golem with Life Orb and Coalossal with Leftovers | Geodude and Carkol; one Oran Berry |
 

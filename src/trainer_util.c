@@ -11,6 +11,24 @@
 
 #include "constants/battle_ai.h"
 #include "constants/pokeball.h"
+#include "constants/opponents.h"
+#include "data/brisk_ordinary_trainers.h"
+
+static bool32 UsesFairLoadout(const struct Trainer *trainer)
+{
+#ifndef EMERALD
+    return FALSE; // The manifest identifies Hoenn teams, not FRLG trainer IDs.
+#else
+    u32 address = (u32)trainer;
+    u32 start = (u32)gTrainers;
+    if (address < start || address >= start + sizeof(gTrainers))
+        return FALSE; // Partners, generated Frontier teams and custom fixtures.
+    u32 offset = address - start;
+    if (offset % sizeof(struct Trainer) != 0)
+        return FALSE;
+    return sBriskFairTrainer[(offset / sizeof(struct Trainer)) % TRAINERS_COUNT];
+#endif
+}
 
 rng_value_t GeneratePartySeed(const struct Trainer *trainer)
 {
@@ -101,6 +119,7 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
+    trainerGen->fairLoadout = UsesFairLoadout(trainer);
     trainerGen->gender = trainer->gender;
     if (trainer->aiFlags & AI_FLAG_SMART_TERA)
         trainerGen->smartTera = TRUE;
@@ -114,6 +133,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *partner)
 {
     u32 otID;
+    trainerGen->fairLoadout = FALSE;
     trainerGen->gender = partner->gender;
     if (partner->aiFlags & AI_FLAG_SMART_TERA)
         trainerGen->smartTera = TRUE;
@@ -305,7 +325,10 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
 
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
-        ApplyBriskTrainerLoadout(mon);
+        if (trainer->fairLoadout)
+            ApplyBriskFairTrainerLoadout(mon);
+        else
+            ApplyBriskTrainerLoadout(mon);
         ApplyBriskTrainerTraining(mon);
     }
 

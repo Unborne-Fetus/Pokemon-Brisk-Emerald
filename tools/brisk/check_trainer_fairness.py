@@ -23,6 +23,12 @@ def audit():
     policy = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())
     teams = dict(TEAM_RE.findall((ROOT / 'src/data/trainers.party').read_text()))
     errors = []
+    if set(teams) != set(policy['reworked']) | policy['protected'].keys():
+        errors.append('Every trainer entry must be explicitly classified as ordinary or protected')
+    runtime_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE',
+        (ROOT / 'src/data/brisk_ordinary_trainers.h').read_text()))
+    if runtime_ids != set(policy['reworked']) or runtime_ids & policy['protected'].keys():
+        errors.append('Runtime ordinary-trainer classification disagrees with protected-team policy')
     for trainer_id, fingerprint in policy['protected'].items():
         actual = hashlib.sha256(teams.get(trainer_id, '').encode()).hexdigest()
         if actual != fingerprint:
