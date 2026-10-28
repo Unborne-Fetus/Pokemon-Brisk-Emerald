@@ -418,6 +418,7 @@ extern const u8 BattleScript_MultiHitPrintStrings[];
 extern const u8 BattleScript_BattlerAvoidedMultiHit[];
 extern const u8 BattleScript_RemoveFireType[];
 extern const u8 BattleScript_AbilityStatChange[];
+extern const u8 BattleScript_OverdoseDamage[];
 extern const u8 BattleScript_DefiantActivates[];
 extern const u8 BattleScript_AdrenalineOrbActivates[];
 extern const u8 BattleScript_MoveEffectStatChange[];
