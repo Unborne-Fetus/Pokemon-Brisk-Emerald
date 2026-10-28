@@ -2,7 +2,7 @@
 #include "battle_main.h"
 #include "test/battle.h"
 
-SINGLE_BATTLE_TEST("Solar Fleet temporarily grants Sunflora the equivalent of four Speed stages in sun")
+SINGLE_BATTLE_TEST("Solar Fleet temporarily grants Sunflora the equivalent of three Speed stages in sun")
 {
     GIVEN {
         PLAYER(SPECIES_SUNFLORA) { Ability(ABILITY_SOLAR_FLEET); Speed(100); }
@@ -16,8 +16,8 @@ SINGLE_BATTLE_TEST("Solar Fleet temporarily grants Sunflora the equivalent of fo
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
     } THEN {
-        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE); // Temporary modifier, no permanent +4 stages
-        EXPECT_EQ(GetBattlerTotalSpeedStat(B_BATTLER_0, ABILITY_SOLAR_FLEET, HOLD_EFFECT_NONE), 300);
+        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE); // Temporary modifier, no permanent +3 stages
+        EXPECT_EQ(GetBattlerTotalSpeedStat(B_BATTLER_0, ABILITY_SOLAR_FLEET, HOLD_EFFECT_NONE), 250);
     }
 }
 
@@ -56,6 +56,6 @@ SINGLE_BATTLE_TEST("Solar Fleet respects the maximum Speed stat stage")
         TURN { MOVE(player, MOVE_SUNNY_DAY); }
     } THEN {
         EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 2);
-        EXPECT_EQ(GetBattlerTotalSpeedStat(B_BATTLER_0, ABILITY_SOLAR_FLEET, HOLD_EFFECT_NONE), 400);
+        EXPECT_EQ(GetBattlerTotalSpeedStat(B_BATTLER_0, ABILITY_SOLAR_FLEET, HOLD_EFFECT_NONE), 350);
     }
 }
