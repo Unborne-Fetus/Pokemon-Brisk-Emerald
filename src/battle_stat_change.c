@@ -194,6 +194,12 @@ bool32 CanAnyStatChange(struct BattleCalcValues *cv, struct StatChange *st)
     {
         const struct AdditionalEffect *additionalEffect = GetMoveAdditionalEffectById(cv->move, i);
 
+        // Web Excretant raises only the user while lowering Evasion of
+        // everyone else. Normal mixed stat-change moves retain their logic.
+        if (cv->move == MOVE_WEB_EXCRETANT
+         && additionalEffect->self != (cv->battlerAtk == cv->battlerDef))
+            continue;
+
         for (enum Stat j = STAT_ATK; j < NUM_BATTLE_STATS; j++)
         {
             st->stat = sAccurateStatOrder[j];
