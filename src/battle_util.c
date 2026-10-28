@@ -8216,6 +8216,15 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
     else
         damage = DoMoveDamageCalc(ctx);
 
+    if (ctx->abilities[ctx->battlerAtk] == ABILITY_FLASH_FREEZE
+     && (gBattleMons[ctx->battlerDef].status1 & STATUS1_FREEZE)
+     && damage > 0
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+    {
+        // Double damage before Endure, Sturdy and Focus Sash checks.
+        damage *= 2;
+    }
+
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
     return GetAdjustedDamage(ctx, damage);
@@ -8225,6 +8234,12 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
 s32 CalculateMoveDamageVars(struct DamageContext *ctx)
 {
     s32 damage = DoMoveDamageCalcVars(ctx);
+    if (ctx->abilities[ctx->battlerAtk] == ABILITY_FLASH_FREEZE
+     && (gBattleMons[ctx->battlerDef].status1 & STATUS1_FREEZE)
+     && damage > 0
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+        damage *= 2;
+
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
     return damage;
