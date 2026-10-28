@@ -5108,6 +5108,14 @@ BattleScript_RoughSkinActivates::
 	waitabilitypopup
 	return
 
+BattleScript_OverdoseDamage::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	healthbarupdate BS_EFFECT_BATTLER
+	datahpupdate BS_EFFECT_BATTLER, ASSURANCE_DOUBLE
+	tryfaintmon BS_EFFECT_BATTLER
+	return
+
 BattleScript_RockyHelmetActivates::
 	call BattleScript_ItemPopUp_ScriptingNoFlush
 	call BattleScript_HurtAttacker
