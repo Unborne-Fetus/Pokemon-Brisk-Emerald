@@ -1831,13 +1831,25 @@ static void Cmd_setadditionaleffects(void)
             // Various checks for if this move effect can be applied this turn
             if (CanApplyAdditionalEffect(additionalEffect))
             {
-                percentChance = CalcSecondaryEffectChance(gBattlerAttacker, cv.abilities[cv.battlerAtk], additionalEffect);
+                bool32 flashFreezeIce = cv.abilities[cv.battlerAtk] == ABILITY_FLASH_FREEZE
+                                     && GetBattleMoveType(gCurrentMove) == TYPE_ICE
+                                     && !IsBattleMoveStatus(gCurrentMove);
+                bool32 nativeFreeze = additionalEffect->moveEffect == MOVE_EFFECT_FREEZE
+                                   || additionalEffect->moveEffect == MOVE_EFFECT_FROSTBITE;
+
+                percentChance = flashFreezeIce && nativeFreeze
+                              ? 40
+                              : CalcSecondaryEffectChance(gBattlerAttacker, cv.abilities[cv.battlerAtk], additionalEffect);
 
                 // Activate effect if it's primary (chance == 0) or if RNGesus says so
                 if ((percentChance == 0) || RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))
                 {
                     se.additionalEffect = additionalEffect;
-                    se.moveEffect = additionalEffect->moveEffect;
+                    // Flash Freeze always causes freeze, not frostbite, even
+                    // if the original Ice move uses the frostbite setting.
+                    se.moveEffect = flashFreezeIce && nativeFreeze
+                                  ? MOVE_EFFECT_FREEZE
+                                  : additionalEffect->moveEffect;
                     se.script = gBattlescriptCurrInstr;
                     se.effectBattler = additionalEffect->self ? cv.battlerAtk : cv.battlerDef;
                     se.primary = percentChance == 0;
@@ -1848,6 +1860,31 @@ static void Cmd_setadditionaleffects(void)
             }
 
             gBattleStruct->additionalEffectsCounter++;
+            return;
+        }
+
+        // Ice attacks with no native freeze/frostbite chance still get a
+        // single 40% freeze roll. The native-freeze path above already
+        // handled such moves, so it never double-rolls Ice Beam / Blizzard.
+        // Normal damage/substitute and status-immunity checks still apply.
+        if (cv.abilities[cv.battlerAtk] == ABILITY_FLASH_FREEZE
+         && !IsBattleMoveStatus(gCurrentMove)
+         && GetBattleMoveType(gCurrentMove) == TYPE_ICE
+         && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FREEZE)
+         && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FROSTBITE)
+         && gBattleStruct->additionalEffectsCounter == numAdditionalEffects)
+        {
+            gBattleStruct->additionalEffectsCounter++;
+            if (IsBattlerTurnDamaged(cv.battlerDef, EXCLUDING_SUBSTITUTES)
+             && IsBattlerAlive(cv.battlerDef)
+             && !gBattleStruct->toxicChainPriority
+             && RandomPercentage(RNG_SECONDARY_EFFECT + numAdditionalEffects, 40))
+            {
+                se.moveEffect = MOVE_EFFECT_FREEZE;
+                se.script = gBattlescriptCurrInstr;
+                se.effectBattler = cv.battlerDef;
+                SetMoveEffect(&cv, &se);
+            }
             return;
         }
     }
