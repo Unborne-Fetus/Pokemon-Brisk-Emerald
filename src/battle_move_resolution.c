@@ -840,7 +840,6 @@ static bool32 HandleMoveTargetRedirection(struct BattleCalcValues *cv, enum Move
     // Nopales intercepts targeted Water attacks, regardless of original
     // target or which side used the move, and heals the Maractus instead.
     if (GetBattleMoveType(cv->move) == TYPE_WATER
-     && !IsBattleMoveStatus(cv->move)
      && moveTarget != TARGET_USER && moveTarget != TARGET_USER_AND_ALLY
      && moveTarget != TARGET_OPPONENTS_FIELD && moveTarget != TARGET_FIELD)
     {
