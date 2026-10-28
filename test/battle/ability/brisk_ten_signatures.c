@@ -137,7 +137,8 @@ SINGLE_BATTLE_TEST("Burning Crust halves Water-type move damage", s16 damage)
     } SCENE {
         HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_NEAR(results[1].damage * 2, results[0].damage, 2);
+        EXPECT_LE(results[1].damage * 2, results[0].damage + 2);
+        EXPECT_GE(results[1].damage * 2, results[0].damage - 2);
     }
 }
 
@@ -192,7 +193,8 @@ SINGLE_BATTLE_TEST("Nopales reduces Fire damage against Maractus to one quarter"
     } SCENE {
         HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_NEAR(results[1].damage * 4, results[0].damage, 3);
+        EXPECT_LE(results[1].damage * 4, results[0].damage + 3);
+        EXPECT_GE(results[1].damage * 4, results[0].damage - 3);
     }
 }
 
@@ -209,7 +211,8 @@ SINGLE_BATTLE_TEST("Torsion halves physical move damage against Swalot", s16 dam
     } SCENE {
         HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_NEAR(results[1].damage * 2, results[0].damage, 2);
+        EXPECT_LE(results[1].damage * 2, results[0].damage + 2);
+        EXPECT_GE(results[1].damage * 2, results[0].damage - 2);
     }
 }
 
@@ -241,6 +244,7 @@ SINGLE_BATTLE_TEST("Flame Tongue boosts Heatmor's damage against Bug types by 50
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_NEAR(results[1].damage * 2, results[0].damage * 3, 3);
+        EXPECT_LE(results[1].damage * 2, results[0].damage * 3 + 3);
+        EXPECT_GE(results[1].damage * 2, results[0].damage * 3 - 3);
     }
 }
