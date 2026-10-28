@@ -2642,7 +2642,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
-    [ABILITY_OGOOUÉ_BASIN] =
+    [ABILITY_OGOOUE_BASIN] =
     {
         .name = _("Ogooué Basin"),
         .description = COMPOUND_STRING("Water moves deal double damage."),
