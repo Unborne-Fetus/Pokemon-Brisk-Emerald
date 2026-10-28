@@ -1762,6 +1762,19 @@ void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effectBattle
 
     if ((effect == MOVE_EFFECT_POISON || effect == MOVE_EFFECT_TOXIC) && trigger == TRIGGER_ON_MOVE)
         gSpecialStatuses[effectBattler].poisonPuppeteer = TRUE;
+
+    // Overdose applies after the normal toxic infliction animation and
+    // status icon, then returns to the original battle-script continuation.
+    if (effect == MOVE_EFFECT_TOXIC
+     && trigger == TRIGGER_ON_MOVE
+     && GetBattlerAbility(battlerAtk) == ABILITY_OVERDOSE
+     && !IsBattlerAlly(battlerAtk, effectBattler)
+     && IsBattlerAlive(effectBattler))
+    {
+        gBattlerAbility = gBattleScripting.battler = battlerAtk;
+        SetPassiveDamageAmount(effectBattler, MAX(1, GetNonDynamaxMaxHP(effectBattler) / 2));
+        BattleScriptPush(BattleScript_OverdoseDamage);
+    }
 }
 
 static bool32 CanApplyAdditionalEffect(const struct AdditionalEffect *additionalEffect)
