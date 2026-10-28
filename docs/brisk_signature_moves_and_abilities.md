@@ -1,22 +1,22 @@
-# Brisk Emerald: signature additions
+# Brisk Emerald: signature abilities
 
-These are authored on `master` for the following Pokémon:
+These additions are assigned to Pokémon in the GBA version of Brisk Emerald.
 
-| Pokémon | Signature | Effect |
+| Pokémon | Signature ability | Effect |
 |---|---|---|
-| Spidops | Web Excretant (Bug, Status, 10 PP) | Raises the user's Speed by two stages; lowers every *other active battler's* Evasion by one stage, including the user's doubles partner. Does not lower the user's Evasion. |
-| Kricketune | Grand Maestro (ability) | When using damaging sound moves, the offensive calculation uses the highest currently stage-adjusted stat among Attack, Defense, Sp. Attack, Sp. Defense, and Speed instead of the normal attacking stat. HP is excluded. The move retains its normal physical/special category and targets the defender's corresponding defensive stat. |
-| Luvdisc | Heartbreaker (ability) | When an opponent knocks Luvdisc out with a move, that attacking opponent takes damage equal to half its own maximum HP (minimum one). In doubles, the other opponent and the user's ally are not damaged. |
+| Spidops | Web Excretant | On entering battle, sharply raises Spidops's Speed (+2 stages) and lowers every *other active battler's* Evasion (-1 stage). In Double Battles this includes Spidops's partner; Spidops's own Evasion is untouched. |
+| Kricketune | Grand Maestro | When using damaging sound moves, offensive damage calculation uses the highest stage-adjusted non-HP stat among Attack, Defense, Sp. Attack, Sp. Defense, and Speed. The move retains its normal physical/special category. |
+| Luvdisc | Heartbreaker | When an opposing move knocks Luvdisc out, the attacking opponent takes damage equal to half its own maximum HP (minimum one). The other opponent and allies are not affected. |
 
-Web Excretant is learned by **Spidops at level 35** and can be relearned. The move reuses Sticky Web's battle animation; there is no separate art asset. It is a fieldwide stat move and does not create the normal entry-hazard Sticky Web.
+**Web Excretant is an Ability, not a move.** It occupies Spidops's first ability slot (replacing Insomnia); its hidden ability remains Stakeout. It triggers on entry, including subsequent switches. It applies ordinary stat-change rules, including the stat stage cap and protective abilities. There is no custom move, learnset entry, or PP cost.
 
-Grand Maestro replaces Kricketune's first ability slot (Swarm). Technician remains its hidden ability. Heartbreaker replaces Luvdisc's first ability slot (Swift Swim). Hydration remains its hidden ability.
+Grand Maestro replaces Kricketune's first ability slot (Swarm); Technician remains its hidden ability. Heartbreaker replaces Luvdisc's first ability slot (Swift Swim); Hydration remains its hidden ability.
 
-The Heartbreaker code currently uses the battle engine's move-end retaliation hook (the same class of hook used by Innards Out). Environmental fainting such as residual poison or entry hazards is **not** handled in that hook. It also respects the engine's normal passive-damage protections.
+Heartbreaker uses the engine's move-end retaliation hook. Indirect fainting from environmental effects (such as poison or weather) is not covered by that hook. The ability respects the engine's normal passive-damage protections.
 
-Regression test cases:
-- `test/battle/move_effect/web_excretant.c`
+Regression tests:
+- `test/battle/ability/web_excretant.c`
 - `test/battle/ability/grand_maestro.c`
 - `test/battle/ability/heartbreaker.c`
 
-Compile and execute the GBA battle test suite on the normal development environment; these tests have not been run in this connector environment.
+Run the project's GBA battle tests in the native build environment; tests have not been executed in the GitHub connector session.
