@@ -2585,4 +2585,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("On entry, sharply raises Speed and lowers others' Evasion."),
         .aiRating = 9,
     },
+
+    [ABILITY_FLASH_FREEZE] =
+    {
+        .name = _("Flash Freeze"),
+        .description = COMPOUND_STRING("Ice attacks freeze 40%; double damage to frozen foes."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_SOLAR_FLEET] =
+    {
+        .name = _("Solar Fleet"),
+        .description = COMPOUND_STRING("Speed gains four stat stages in harsh sunlight."),
+        .aiRating = 9,
+    },
 };
