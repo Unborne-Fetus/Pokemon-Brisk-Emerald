@@ -4158,7 +4158,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             {
                 if (!IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
                 {
-                    gBattleScripting.battler = gBattlerTarget;
+                    gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
                     SetPassiveDamageAmount(gBattlerAttacker,
                         MAX(1, GetNonDynamaxMaxHP(gBattlerAttacker) / (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BUG) ? 3 : 6)));
                     BattleScriptCall(BattleScript_RoughSkinActivates);
@@ -9679,7 +9679,7 @@ enum MoveTarget GetBattlerMoveTargetType(enum BattlerId battler, enum Move move)
 {
     // Nopales converts spread Water attacks into a single absorbed hit.
     // Other targets cannot receive any Water effect while it is active.
-    if (GetMoveType(move) == TYPE_WATER && !IsBattleMoveStatus(move)
+    if (GetMoveType(move) == TYPE_WATER
      && IsAbilityOnField(ABILITY_NOPALES))
     {
         enum MoveTarget target = GetBattlerMoveSelectionTargetType(battler, move);
