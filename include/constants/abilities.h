@@ -344,6 +344,7 @@ enum __attribute__((packed)) Ability
 
     // Brisk Emerald custom abilities
     ABILITY_SPEED_BOXER = ABILITIES_COUNT_GEN9,
+    ABILITY_NINE_LIVES,
     ABILITIES_COUNT,
 };
 

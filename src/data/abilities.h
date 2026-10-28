@@ -2557,4 +2557,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Punches use Speed, not Attack."),
         .aiRating = 8,
     },
+
+    [ABILITY_NINE_LIVES] =
+    {
+        .name = _("Nine Lives"),
+        .description = COMPOUND_STRING("First super-effective hit sharply raises defenses."),
+        .aiRating = 7,
+    },
 };

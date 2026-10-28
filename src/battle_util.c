@@ -3906,6 +3906,28 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_NINE_LIVES:
+            // The first super-effective hit Delcatty survives per switch-in
+            // sharply raises both defenses. Volatiles clear on switching,
+            // including Baton Pass, and each battler tracks this separately.
+            if (gBattlerAttacker != battler
+             && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBattlerAlive(battler)
+             && (gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_HIGH_EFFECTIVENESS)
+             && !gBattleMons[battler].volatiles.nineLivesUsed
+             && (CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)
+              || CompareStat(battler, STAT_SPDEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)))
+            {
+                gBattleMons[battler].volatiles.nineLivesUsed = TRUE;
+                gEffectBattler = gBattlerAbility = battler;
+                if (CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                    SetStatChange(battler, STAT_DEF, 2);
+                if (CompareStat(battler, STAT_SPDEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                    SetStatChange(battler, STAT_SPDEF, 2);
+                BattleScriptCall(BattleScript_AbilityStatChange);
+                effect++;
+            }
+            break;
         case ABILITY_STAMINA:
             if (gBattlerAttacker != gBattlerTarget
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
