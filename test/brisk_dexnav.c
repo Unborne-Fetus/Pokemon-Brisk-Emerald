@@ -27,6 +27,14 @@ static void FillTable(struct WildPokemon *mons, u32 slots, u32 start)
     }
 }
 
+TEST("DexNav manual search covers the whole nearby field")
+{
+    // Full 15x15 grid spans the player at (pos.x + 7, pos.y + 7).
+    EXPECT_EQ(SCANSIZE_X, 15);
+    EXPECT_EQ(SCANSIZE_Y, 15);
+}
+
+
 TEST("DexNav pages expose all 25 land and 12 water species with correct selection and registration")
 {
     struct WildPokemon land[NUM_LAND_MONS_ENCOUNTER_SLOTS], water[NUM_WATER_MONS_ENCOUNTER_SLOTS];

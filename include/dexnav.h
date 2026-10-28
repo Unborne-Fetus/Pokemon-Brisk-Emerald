@@ -44,8 +44,9 @@ enum EncounterType
 // SEARCH INFO
 #define SCANSTART_X             0
 #define SCANSTART_Y             0
-#define SCANSIZE_X              12
-#define SCANSIZE_Y              12
+// Covers the full 15x15 area centered around the player (map coords +7).
+#define SCANSIZE_X              15
+#define SCANSIZE_Y              15
 
 #define SPECIES_INFO_Y          5
 #define TYPE_ICONS_Y            (SPECIES_INFO_Y + 24)

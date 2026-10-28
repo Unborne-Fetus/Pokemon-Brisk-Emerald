@@ -593,126 +593,74 @@ static void DexNavProximityUpdate(void)
 }
 
 //Pick a specific tile based on environment
+// Pick uniformly among all reachable encounter tiles rather than rolling a tiny
+// independent success chance on each tile. A valid nearby habitat should not
+// return "couldn't be found" simply because the tile RNG failed.
 static bool8 DexNavPickTile(enum EncounterType environment, u8 areaX, u8 areaY, bool8 smallScan)
 {
-    // area of map to cover starting from camera position {-7, -7}
-    s16 topX = gSaveBlock1Ptr->pos.x - SCANSTART_X + (smallScan * 5);
-    s16 topY = gSaveBlock1Ptr->pos.y - SCANSTART_Y + (smallScan * 5);
-    s16 botX = topX + areaX;
-    s16 botY = topY + areaY;
-    u8 i;
-    bool8 nextIter;
-    u8 scale = 0;
-    u8 weight = 0;
+    // Map grid positions are offset by seven tiles from the player's coordinates.
+    s16 startX = gSaveBlock1Ptr->pos.x - SCANSTART_X + (smallScan * 5);
+    s16 startY = gSaveBlock1Ptr->pos.y - SCANSTART_Y + (smallScan * 5);
+    s16 endX = startX + areaX;
+    s16 endY = startY + areaY;
     enum MapType currMapType = GetCurrentMapType();
-    u8 tileBehaviour;
     u8 tileBuffer = 2;
-    u8 *xPos = AllocZeroed((botX - topX) * (botY - topY) * sizeof(u8));
-    u8 *yPos = AllocZeroed((botX - topX) * (botY - topY) * sizeof(u8));
-    u32 iter = 0;
-    bool32 ret = FALSE;
+    u32 candidates = 0;
 
-    // loop through every tile in area and evaluate
-    while (topY < botY)
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+        tileBuffer = SNEAKING_PROXIMITY + 3;
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
+        tileBuffer = SNEAKING_PROXIMITY + 1;
+
+    for (s16 y = startY; y < endY; y++)
     {
-        while (topX < botX)
+        for (s16 x = startX; x < endX; x++)
         {
-            tileBehaviour = MapGridGetMetatileBehaviorAt(topX, topY);
-            //Check for objects
-            nextIter = FALSE;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
-                tileBuffer = SNEAKING_PROXIMITY + 3;
-            else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
-                tileBuffer = SNEAKING_PROXIMITY + 1;
+            bool8 occupied = FALSE;
+            bool8 validTile = FALSE;
+            u8 tileBehaviour;
 
-            if (GetPlayerDistance(topX, topY) <= tileBuffer)
-            {
-                // tile too close to player
-                topX++;
+            // Keep the existing terrain, obstruction, and player-distance
+            // restrictions so no search spawns an unreachable Pokémon.
+            if (GetPlayerDistance(x, y) <= tileBuffer || MapGridGetCollisionAt(x, y))
                 continue;
-            }
 
-            for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+            for (u8 i = 0; i < OBJECT_EVENTS_COUNT; i++)
             {
-                if (gObjectEvents[i].currentCoords.x == topX && gObjectEvents[i].currentCoords.y == topY)
+                if (gObjectEvents[i].currentCoords.x == x && gObjectEvents[i].currentCoords.y == y)
                 {
-                    // cannot be on a tile where an object exists
-                    nextIter = TRUE;
+                    occupied = TRUE;
                     break;
                 }
             }
-
-            if (nextIter)
-            {
-                topX++;
+            if (occupied)
                 continue;
-            }
 
-            weight = 0; // initiliaze weight
-            switch (environment)
+            tileBehaviour = MapGridGetMetatileBehaviorAt(x, y);
+            if (environment == ENCOUNTER_TYPE_LAND)
             {
-            case ENCOUNTER_TYPE_LAND:
-                if (MetatileBehavior_IsLandWildEncounter(tileBehaviour))
-                {
-                    if (currMapType == MAP_TYPE_UNDERGROUND)
-                    {
-                        // inside (cave)
-                        if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
-                            break; //occurs at same z coord
-
-                        scale = 440 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2)  - (2 * (topX + topY));
-                        weight = ((Random() % scale) < 1) && !MapGridGetCollisionAt(topX, topY);
-                    }
-                    else
-                    {
-                        // outdoors: grass
-                        scale = 100 - (GetPlayerDistance(topX, topY) * 2);
-                        weight = (Random() % scale <= 5) && !MapGridGetCollisionAt(topX, topY);
-                    }
-                }
-                break;
-            case ENCOUNTER_TYPE_WATER:
-                if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehaviour))
-                {
-                    u8 scale = 320 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2);
-                    if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
-                        break;
-
-                    weight = (Random() % scale <= 1) && !MapGridGetCollisionAt(topX, topY);
-                }
-                break;
-            default:
-                break;
+                validTile = MetatileBehavior_IsLandWildEncounter(tileBehaviour);
+                if (validTile && currMapType == MAP_TYPE_UNDERGROUND)
+                    validTile = !IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.objectEventId].currentElevation, x, y);
             }
-
-            if (weight > 0)
+            else if (environment == ENCOUNTER_TYPE_WATER)
             {
-                xPos[iter] = topX;
-                yPos[iter] = topY;
-                iter++;
+                validTile = MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehaviour)
+                    && !IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.objectEventId].currentElevation, x, y);
             }
 
-            topX++;
+            // Reservoir sampling avoids per-tile encounter failures, avoids
+            // allocating tile arrays, and handles large coordinates safely.
+            if (validTile && (Random() % ++candidates) == 0)
+            {
+                sDexNavSearchDataPtr->tileX = x;
+                sDexNavSearchDataPtr->tileY = y;
+            }
         }
-
-        topY++;
-        topX = gSaveBlock1Ptr->pos.x - SCANSTART_X + (smallScan * 5);
     }
 
-    if (iter > 0)
-    {
-        i = Random() % iter;
-        sDexNavSearchDataPtr->tileX = xPos[i];
-        sDexNavSearchDataPtr->tileY = yPos[i];
-        ret = TRUE;
-    }
-
-    Free(xPos);
-    Free(yPos);
-
-    return ret;
+    return candidates != 0;
 }
-
 
 static bool8 TryStartHiddenMonFieldEffect(enum EncounterType environment, u8 xSize, u8 ySize, bool8 smallScan)
 {
@@ -878,7 +826,7 @@ static bool8 InitDexNavSearch(enum Species species, u32 environment)
         return TRUE;
     }
 
-    if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 12, 12, FALSE))
+    if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, SCANSIZE_X, SCANSIZE_Y, FALSE))
     {
         DexNavSearchBail(EventScript_NotFoundNearby);
         return TRUE;
