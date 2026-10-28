@@ -2599,4 +2599,74 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Speed gains three stat stages in harsh sunlight."),
         .aiRating = 9,
     },
+
+    [ABILITY_JAW_SNAP] =
+    {
+        .name = _("Jaw Snap"),
+        .description = COMPOUND_STRING("Contact attackers lose 1/6 HP; Bug types lose 1/3."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_DURAN] =
+    {
+        .name = _("Duran"),
+        .description = COMPOUND_STRING("Raises Evasion by 3 stages on entry."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CLEARWATER] =
+    {
+        .name = _("Clearwater"),
+        .description = COMPOUND_STRING("All moves gain priority; takes double damage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_BUILD_ME_UP] =
+    {
+        .name = _("Build Me Up"),
+        .description = COMPOUND_STRING("Each turn raises one stat and lowers each foe's stat."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_OVERDOSE] =
+    {
+        .name = _("Overdose"),
+        .description = COMPOUND_STRING("Badly poisoning a foe removes half its max HP."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_BURNING_CRUST] =
+    {
+        .name = _("Burning Crust"),
+        .description = COMPOUND_STRING("Immune to Ground; Water damage is halved."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_OGOOUÉ_BASIN] =
+    {
+        .name = _("Ogooué Basin"),
+        .description = COMPOUND_STRING("Water moves deal double damage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_NOPALES] =
+    {
+        .name = _("Nopales"),
+        .description = COMPOUND_STRING("Resists Fire; draws Water moves to heal."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_TORSION] =
+    {
+        .name = _("Torsion"),
+        .description = COMPOUND_STRING("Halves damage from physical attacks."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FLAME_TONGUE] =
+    {
+        .name = _("Flame Tongue"),
+        .description = COMPOUND_STRING("Fire hits both foes; deals 1.5x to Bug types."),
+        .aiRating = 8,
+    },
 };
