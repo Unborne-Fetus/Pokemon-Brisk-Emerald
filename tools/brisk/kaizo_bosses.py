@@ -86,7 +86,7 @@ def document():
              'Both trainers stand in the Orange City plaza. Speak to them in Kaizo to accept a repeatable challenge; choose No to leave. In Easy, Normal and Hard they pay you no mind. Each uses six level-100 Pokemon and full competitive training.', '',
              'Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.', '',
              'These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson uses Mega Mawile rather than Primal Kyogre. No single team is strongest in every matchup.', '',
-             'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson's shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.', '',
+             'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson\'s shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.', '',
              'Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.', '']
     for tid, t in sets().items():
         lines += ['## '+t['display_name']+' — '+('doubles' if t['double'] else 'singles'), '', '| Pokemon | Item | Ability | Nature; EVs | Moves |', '| --- | --- | --- | --- | --- |']
@@ -94,7 +94,7 @@ def document():
             clean = lambda s: s.removeprefix('SPECIES_').removeprefix('MOVE_').replace('_', ' ').title()
             lines += ['| '+clean(m['species'])+(' (shiny ace)' if m.get('shiny') else '')+' | '+m['item']+' | '+m['ability']+' | '+m['nature']+'; '+m['evs']+(' (0 Speed IV)' if m.get('zero_speed') else '')+' | '+', '.join(clean(n) for n in m['moves'])+' |']
         lines += ['']
-    lines += ['Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Rayquaza qualifies for Mega Evolution through Dragon Ascent. Tankerson's Mawile Mega Evolves using Mawilite; Umbreon is guaranteed shiny.', '']
+    lines += ['Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Rayquaza qualifies for Mega Evolution through Dragon Ascent. Tankerson\'s Mawile Mega Evolves using Mawilite; Umbreon is guaranteed shiny.', '']
     return '\n'.join(lines)
 
 
