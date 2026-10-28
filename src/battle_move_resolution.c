@@ -837,6 +837,25 @@ static bool32 HandleMoveTargetRedirection(struct BattleCalcValues *cv, enum Move
     u32 redirectorOrderNum = MAX_BATTLERS_COUNT;
     enum BattleSide side = (GetBattlerSide(cv->battlerAtk) ^ BIT_SIDE);
 
+    // Nopales intercepts targeted Water attacks, regardless of original
+    // target or which side used the move, and heals the Maractus instead.
+    if (GetBattleMoveType(cv->move) == TYPE_WATER
+     && !IsBattleMoveStatus(cv->move)
+     && moveTarget != TARGET_USER && moveTarget != TARGET_USER_AND_ALLY
+     && moveTarget != TARGET_OPPONENTS_FIELD && moveTarget != TARGET_FIELD)
+    {
+        for (enum BattlerId i = 0; i < gBattlersCount; i++)
+        {
+            if (IsBattlerAlive(i) && cv->abilities[i] == ABILITY_NOPALES)
+            {
+                cv->battlerDef = gBattleStruct->moveTarget[cv->battlerAtk] = i;
+                RecordAbilityBattle(i, ABILITY_NOPALES);
+                gSpecialStatuses[i].abilityRedirected = TRUE;
+                return TRUE;
+            }
+        }
+    }
+
     if (cv->moveEffect == EFFECT_REFLECT_DAMAGE)
     {
         enum DamageCategory reflectCategory = GetReflectDamageMoveDamageCategory(cv->battlerAtk, cv->move);
