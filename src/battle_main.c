@@ -4586,10 +4586,10 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
 
     priority = GetMovePriority(move);
 
-    // Clearwater's actions always execute in the highest normal priority
-    // bracket, while attacks of the same priority still use Speed.
-    if (ability == ABILITY_CLEARWATER && priority < 6)
-        priority = 6;
+    // Clearwater raises every move's usual priority by one bracket.
+    // Negative-priority moves retain their relative drawbacks.
+    if (ability == ABILITY_CLEARWATER)
+        priority++;
 
     // Max Guard check
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
