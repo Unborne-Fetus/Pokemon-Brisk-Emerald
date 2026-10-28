@@ -2596,7 +2596,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SOLAR_FLEET] =
     {
         .name = _("Solar Fleet"),
-        .description = COMPOUND_STRING("Speed gains four stat stages in harsh sunlight."),
+        .description = COMPOUND_STRING("Speed gains three stat stages in harsh sunlight."),
         .aiRating = 9,
     },
 };
