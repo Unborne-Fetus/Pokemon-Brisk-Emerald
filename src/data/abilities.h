@@ -2564,4 +2564,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("First super-effective hit sharply raises defenses."),
         .aiRating = 7,
     },
+
+    [ABILITY_GRAND_MAESTRO] =
+    {
+        .name = _("Grand Maestro"),
+        .description = COMPOUND_STRING("Sound moves use its highest battle stat for damage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_HEARTBREAKER] =
+    {
+        .name = _("Heartbreaker"),
+        .description = COMPOUND_STRING("On a foe's knockout, deals half its max HP in damage."),
+        .aiRating = 7,
+    },
 };
