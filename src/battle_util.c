@@ -3432,6 +3432,24 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_WEB_EXCRETANT:
+            if (shouldAbilityTrigger && IsBattlerAlive(battler))
+            {
+                // Spidops traps every OTHER active battler in its web on entry.
+                // The user's Speed rises by two stages; everyone else's Evasion
+                // drops one stage, including an ally in Double Battles.
+                gEffectBattler = gBattlerAbility = battler;
+                if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                    SetStatChange(battler, STAT_SPEED, 2);
+                for (enum BattlerId i = 0; i < gBattlersCount; i++)
+                {
+                    if (i != battler && IsBattlerAlive(i))
+                        SetStatChange(i, STAT_EVASION, -1);
+                }
+                BattleScriptCall(BattleScript_AbilityStatChange);
+                effect++;
+            }
+            break;
         case ABILITY_SUPERSWEET_SYRUP:
             if (shouldAbilityTrigger
              && !GetBattlerPartyState(battler)->supersweetSyrup
