@@ -2334,6 +2334,14 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
 
     switch (ctx->abilities[ctx->battlerDef])
     {
+    case ABILITY_BURNING_CRUST:
+        if (ctx->moveType == TYPE_GROUND)
+            battleScript = BattleScript_AbilityProtectedTarget;
+        break;
+    case ABILITY_NOPALES:
+        if (ctx->moveType == TYPE_WATER)
+            battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
+        break;
     case ABILITY_VOLT_ABSORB:
         if (ctx->moveType == TYPE_ELECTRIC)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
@@ -3432,6 +3440,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_DURAN:
+            if (shouldAbilityTrigger && IsBattlerAlive(battler)
+             && CompareStat(battler, STAT_EVASION, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+            {
+                gEffectBattler = gBattlerAbility = battler;
+                SetStatChange(battler, STAT_EVASION, 3);
+                BattleScriptCall(BattleScript_AbilityStatChange);
+                effect++;
+            }
+            break;
         case ABILITY_WEB_EXCRETANT:
             if (shouldAbilityTrigger && IsBattlerAlive(battler))
             {
@@ -3720,6 +3738,39 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 {
                     gEffectBattler = gBattlerAbility = battler;
                     SetStatChange(battler, STAT_SPEED, 1);
+                    BattleScriptCall(BattleScript_AbilityStatChange);
+                    effect++;
+                }
+                break;
+            case ABILITY_BUILD_ME_UP:
+                {
+                    // One random +1 boost for Furret; a random -1 drop on
+                    // each active opposing Pokémon after every turn.
+                    u8 choices[NUM_BATTLE_STATS];
+                    u32 count = 0;
+                    for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+                    {
+                        if (CompareStat(battler, stat, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                            choices[count++] = stat;
+                    }
+                    if (count)
+                        SetStatChange(battler, choices[RandomUniform(RNG_MOODY_INCREASE, 0, count - 1)], 1);
+
+                    for (enum BattlerId foe = 0; foe < gBattlersCount; foe++)
+                    {
+                        if (IsBattlerAlly(battler, foe) || !IsBattlerAlive(foe))
+                            continue;
+                        count = 0;
+                        for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+                        {
+                            if (CompareStat(foe, stat, MIN_STAT_STAGE, CMP_GREATER_THAN, GetBattlerAbility(foe)))
+                                choices[count++] = stat;
+                        }
+                        if (count)
+                            SetStatChange(foe, choices[RandomUniform(RNG_MOODY_DECREASE, 0, count - 1)], -1);
+                    }
+
+                    gEffectBattler = gBattlerAbility = battler;
                     BattleScriptCall(BattleScript_AbilityStatChange);
                     effect++;
                 }
@@ -4097,6 +4148,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     BattleScriptCall(BattleScript_AbilityStatChange);
                     effect++;
                 }
+            }
+            break;
+        case ABILITY_JAW_SNAP:
+            if (IsBattlerAlive(gBattlerAttacker)
+             && !gSpecialStatuses[gBattlerAttacker].attackerInParty
+             && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
+             && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move))
+            {
+                if (!IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
+                {
+                    gBattleScripting.battler = gBattlerTarget;
+                    SetPassiveDamageAmount(gBattlerAttacker,
+                        MAX(1, GetNonDynamaxMaxHP(gBattlerAttacker) / (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BUG) ? 3 : 6)));
+                    BattleScriptCall(BattleScript_RoughSkinActivates);
+                }
+                effect++;
             }
             break;
         case ABILITY_ROUGH_SKIN:
@@ -8225,6 +8292,33 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
         damage *= 2;
     }
 
+    // Signature abilities: offensive multipliers and defensive drawbacks.
+    if (damage > 0 && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+    {
+        switch (ctx->abilities[ctx->battlerAtk])
+        {
+        case ABILITY_OGOOUE_BASIN:
+            if (ctx->moveType == TYPE_WATER)
+                damage *= 2;
+            break;
+        case ABILITY_FLAME_TONGUE:
+            if (IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_BUG))
+                damage = (damage * 3) / 2;
+            break;
+        default:
+            break;
+        }
+
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_CLEARWATER)
+            damage *= 2;
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_BURNING_CRUST && ctx->moveType == TYPE_WATER)
+            damage = MAX(1, damage / 2);
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_NOPALES && ctx->moveType == TYPE_FIRE)
+            damage = MAX(1, damage / 4);
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_TORSION && IsBattleMovePhysical(ctx->move))
+            damage = MAX(1, damage / 2);
+    }
+
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
     return GetAdjustedDamage(ctx, damage);
@@ -8239,6 +8333,33 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
      && damage > 0
      && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
         damage *= 2;
+
+    // Signature abilities: offensive multipliers and defensive drawbacks.
+    if (damage > 0 && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+    {
+        switch (ctx->abilities[ctx->battlerAtk])
+        {
+        case ABILITY_OGOOUE_BASIN:
+            if (ctx->moveType == TYPE_WATER)
+                damage *= 2;
+            break;
+        case ABILITY_FLAME_TONGUE:
+            if (IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_BUG))
+                damage = (damage * 3) / 2;
+            break;
+        default:
+            break;
+        }
+
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_CLEARWATER)
+            damage *= 2;
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_BURNING_CRUST && ctx->moveType == TYPE_WATER)
+            damage = MAX(1, damage / 2);
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_NOPALES && ctx->moveType == TYPE_FIRE)
+            damage = MAX(1, damage / 4);
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_TORSION && IsBattleMovePhysical(ctx->move))
+            damage = MAX(1, damage / 2);
+    }
 
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
@@ -9556,6 +9677,27 @@ enum MoveTarget GetBattlerMoveSelectionTargetType(enum BattlerId battler, enum M
 
 enum MoveTarget GetBattlerMoveTargetType(enum BattlerId battler, enum Move move)
 {
+    // Nopales converts spread Water attacks into a single absorbed hit.
+    // Other targets cannot receive any Water effect while it is active.
+    if (GetMoveType(move) == TYPE_WATER && !IsBattleMoveStatus(move)
+     && IsAbilityOnField(ABILITY_NOPALES))
+    {
+        enum MoveTarget target = GetBattlerMoveSelectionTargetType(battler, move);
+        if (target == TARGET_BOTH || target == TARGET_FOES_AND_ALLY || target == TARGET_ALL_BATTLERS)
+            return TARGET_SELECTED;
+    }
+
+    // Flame Tongue makes Heatmor's ordinary damaging Fire attacks hit both
+    // opposing active Pokémon. This does not attack reserve party members.
+    if (GetBattlerAbility(battler) == ABILITY_FLAME_TONGUE
+     && GetMoveType(move) == TYPE_FIRE
+     && !IsBattleMoveStatus(move))
+    {
+        enum MoveTarget target = GetBattlerMoveSelectionTargetType(battler, move);
+        if (target == TARGET_SELECTED || target == TARGET_OPPONENT || target == TARGET_RANDOM)
+            return TARGET_BOTH;
+    }
+
     if (CanBattlerHitBothFoesInTerrain(battler, move, GetMoveEffect(move)))
         return TARGET_BOTH;
 
