@@ -17,6 +17,7 @@ def render(t):
     for m in t['members']:
         iv = '31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / '+('0' if m.get('zero_speed') else '31')+' Spe'
         lines = [m['species']+' @ '+m['item'], 'Level: 100', 'Ability: '+m['ability'], 'Nature: '+m['nature'], 'EVs: '+m['evs'], 'IVs: '+iv]
+        if m.get('shiny'): lines += ['Shiny: Yes']
         if m.get('tera'): lines += ['Tera Type: '+m['tera']]
         blocks += ['\n'.join(lines + ['- '+move for move in m['moves']])]
     return '\n'.join(header)+'\n\n'+'\n\n'.join(blocks)+'\n\n'
@@ -32,6 +33,11 @@ def audit(teams):
     rewards = {'TRAINER_HOODED_FIGURE': ('NECROZMA', 'FLAG_HIDE_ROUTE126_NECROZMA'),
                'TRAINER_TANKERSON': ('GUZZLORD', 'FLAG_DEFEATED_GUZZLORD')}
     if set(curated) != set(labels): errors.append('Expected exactly the two Kaizo bosses')
+    ace = curated['TRAINER_TANKERSON']['members'][-1]
+    if ace['species'] != 'SPECIES_UMBREON' or not ace.get('shiny') or 'MOVE_FOUL_PLAY' not in ace['moves']:
+        errors.append('Tankerson ace must be shiny Umbreon with Foul Play')
+    if sum(m.get('shiny', False) for m in curated['TRAINER_TANKERSON']['members']) != 1:
+        errors.append('Tankerson must have exactly one forced shiny')
     for tid, t in curated.items():
         if teams.get(tid, '').strip() != render(t).strip(): errors.append(tid+': source differs from curated party')
         if len(t['members']) != 6: errors.append(tid+': needs six Pokemon')
@@ -79,16 +85,16 @@ def document():
     lines = ['# Orange City Kaizo challenges', '',
              'Both trainers stand in the Orange City plaza. Speak to them in Kaizo to accept a repeatable challenge; choose No to leave. In Easy, Normal and Hard they pay you no mind. Each uses six level-100 Pokemon and full competitive training.', '',
              'Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.', '',
-             'These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson also uses Primal Kyogre. No single team is strongest in every matchup.', '',
-             'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson uses doubles with Fake Out, Intimidate, redirection, Wide Guard, rain and Trick Room. Zero Speed IVs support the slow rain/Trick Room core.', '',
+             'These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson uses Mega Mawile rather than Primal Kyogre. No single team is strongest in every matchup.', '',
+             'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson's shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.', '',
              'Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.', '']
     for tid, t in sets().items():
         lines += ['## '+t['display_name']+' — '+('doubles' if t['double'] else 'singles'), '', '| Pokemon | Item | Ability | Nature; EVs | Moves |', '| --- | --- | --- | --- | --- |']
         for m in t['members']:
             clean = lambda s: s.removeprefix('SPECIES_').removeprefix('MOVE_').replace('_', ' ').title()
-            lines += ['| '+clean(m['species'])+' | '+m['item']+' | '+m['ability']+' | '+m['nature']+'; '+m['evs']+(' (0 Speed IV)' if m.get('zero_speed') else '')+' | '+', '.join(clean(n) for n in m['moves'])+' |']
+            lines += ['| '+clean(m['species'])+(' (shiny ace)' if m.get('shiny') else '')+' | '+m['item']+' | '+m['ability']+' | '+m['nature']+'; '+m['evs']+(' (0 Speed IV)' if m.get('zero_speed') else '')+' | '+', '.join(clean(n) for n in m['moves'])+' |']
         lines += ['']
-    lines += ['Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Zamazenta similarly uses Rusted Shield. Kyogre starts with Drizzle and transforms through Blue Orb. Rayquaza qualifies for Mega Evolution through Dragon Ascent.', '']
+    lines += ['Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Rayquaza qualifies for Mega Evolution through Dragon Ascent. Tankerson's Mawile Mega Evolves using Mawilite; Umbreon is guaranteed shiny.', '']
     return '\n'.join(lines)
 
 

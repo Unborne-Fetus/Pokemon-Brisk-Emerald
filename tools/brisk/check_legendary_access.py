@@ -159,6 +159,12 @@ def main():
     for species in LEGENDS:
         if not sources[species]:
             errors.append(species + ': no default acquisition source found')
+    # Cresselia inherits its prior caught flag at Necrozma's old Route 126 position.
+    locations = [(data['id'], obj) for data in maps.values() for obj in data.get('object_events', []) if obj.get('script') == 'BriskStatic_EventScript_CRESSELIA']
+    if len(locations) != 1 or locations[0][0] != 'MAP_ROUTE126' or (locations[0][1]['x'], locations[0][1]['y']) != (41, 52):
+        errors.append('Cresselia: expected only Route 126 at 41,52')
+    if any(o.get('script') == 'BriskStatic_EventScript_GUZZLORD' for o in maps['MAP_METEOR_FALLS_B1F_2R']['object_events']):
+        errors.append('Old Guzzlord encounter spot must stay empty')
     for species, destination in [('TAPU_FINI', 'MAP_ROUTE143'), ('TAPU_BULU', 'MAP_ROUTE145'), ('TAPU_KOKO', 'MAP_ROUTE146')]:
         matches = [(data['id'], obj) for data in maps.values() for obj in data.get('object_events', []) if obj.get('script') == 'BriskStatic_EventScript_' + species]
         if len(matches) != 1 or matches[0][0] != destination:

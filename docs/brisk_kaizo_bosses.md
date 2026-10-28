@@ -4,9 +4,9 @@ Both trainers stand in the Orange City plaza. Speak to them in Kaizo to accept a
 
 Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.
 
-These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson also uses Primal Kyogre. No single team is strongest in every matchup.
+These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson uses Mega Mawile rather than Primal Kyogre. No single team is strongest in every matchup.
 
-Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson uses doubles with Fake Out, Intimidate, redirection, Wide Guard, rain and Trick Room. Zero Speed IVs support the slow rain/Trick Room core.
+Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson's shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.
 
 Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.
 
@@ -25,11 +25,11 @@ Existing Extreme saves now display Kaizo without changing the saved mode value. 
 
 | Pokemon | Item | Ability | Nature; EVs | Moves |
 | --- | --- | --- | --- | --- |
-| Kangaskhan | Kangaskhanite | Scrappy | Jolly; 4 HP / 252 Atk / 252 Spe | Fake Out, Double Edge, Low Kick, Sucker Punch |
-| Kyogre | Blue Orb | Drizzle | Quiet; 252 HP / 4 Def / 252 SpA (0 Speed IV) | Water Spout, Origin Pulse, Ice Beam, Protect |
-| Zamazenta | Rusted Shield | Dauntless Shield | Impish; 252 HP / 80 Def / 176 Spe | Body Press, Heavy Slam, Wide Guard, Iron Defense |
-| Incineroar | Safety Goggles | Intimidate | Careful; 252 HP / 92 Def / 164 SpD | Fake Out, Parting Shot, Knock Off, Snarl |
+| Grimmsnarl | Light Clay | Prankster | Careful; 252 HP / 116 Def / 140 SpD | Reflect, Light Screen, Spirit Break, Taunt |
+| Porygon2 | Eviolite | Download | Relaxed; 252 HP / 176 Def / 80 SpD (0 Speed IV) | Trick Room, Recover, Ice Beam, Thunderbolt |
+| Milotic | Sitrus Berry | Competitive | Quiet; 252 HP / 252 SpA / 4 SpD (0 Speed IV) | Muddy Water, Ice Beam, Recover, Protect |
+| Mawile | Mawilite | Hyper Cutter | Brave; 252 HP / 252 Atk / 4 SpD (0 Speed IV) | Play Rough, Iron Head, Sucker Punch, Protect |
 | Amoonguss | Rocky Helmet | Regenerator | Sassy; 252 HP / 156 Def / 100 SpD (0 Speed IV) | Spore, Rage Powder, Pollen Puff, Protect |
-| Calyrex Ice | Clear Amulet | As One Ice Rider | Brave; 252 HP / 252 Atk / 4 SpD (0 Speed IV) | Glacial Lance, High Horsepower, Trick Room, Protect |
+| Umbreon (shiny ace) | Leftovers | Inner Focus | Sassy; 252 HP / 156 Def / 100 SpD (0 Speed IV) | Foul Play, Snarl, Helping Hand, Protect |
 
-Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Zamazenta similarly uses Rusted Shield. Kyogre starts with Drizzle and transforms through Blue Orb. Rayquaza qualifies for Mega Evolution through Dragon Ascent.
+Zacian starts in its base form with Iron Head; Rusted Sword applies Crowned form and Behemoth Blade through the native battle transformation. Rayquaza qualifies for Mega Evolution through Dragon Ascent. Tankerson's Mawile Mega Evolves using Mawilite; Umbreon is guaranteed shiny.

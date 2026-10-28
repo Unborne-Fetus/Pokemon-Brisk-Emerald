@@ -29,6 +29,16 @@ static const struct Trainer sAuthoredKaizo[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 };
 static const u16 sKaizoIds[] = {TRAINER_HOODED_FIGURE, TRAINER_TANKERSON};
 
+TEST("Tankerson Kaizo ace has guaranteed shiny Umbreon with Foul Play")
+{
+    const struct TrainerMon *ace = &sAuthoredKaizo[DIFFICULTY_NORMAL][TRAINER_TANKERSON].party[PARTY_SIZE - 1];
+    EXPECT_EQ(ace->species, SPECIES_UMBREON);
+    EXPECT(ace->isShiny);
+    EXPECT_EQ(ace->moves[0], MOVE_FOUL_PLAY);
+    EXPECT_EQ(ace->lvl, 100);
+}
+
+
 TEST("Brisk Kaizo bosses all 12 authored Pokemon have valid abilities items and four usable distinct moves")
 {
     bool32 allLegal = TRUE;
@@ -99,6 +109,8 @@ TEST("Brisk Kaizo bosses preserves every authored move ability nature item and r
                 struct Pokemon mon;
                 GenerateMonFromTrainerMon(&mon, entry, &generator);
                 EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), 100);
+                if (sKaizoIds[n] == TRAINER_TANKERSON && entry->species == SPECIES_UMBREON)
+                    EXPECT(GetMonData(&mon, MON_DATA_IS_SHINY));
                 EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), entry->heldItem);
                 EXPECT_EQ(GetMonAbility(&mon), entry->ability);
                 EXPECT_EQ(GetNature(&mon), entry->nature);

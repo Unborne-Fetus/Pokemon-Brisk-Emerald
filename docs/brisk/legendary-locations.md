@@ -37,7 +37,7 @@ The static-map checker verifies floor collision, access from map entrances, inte
 | Heatran | HEATRAN: FieryPath (static, 11, 14) |
 | Regigigas | PetalburgCity_Gym (scripted encounter/reward) |
 | Giratina | Route135_Archives (scripted encounter/reward) |
-| Cresselia | CRESSELIA: MtPyre_Summit (static, 25, 20) |
+| Cresselia | CRESSELIA: Route126 (static, 41, 52) |
 | Phione | MAP_ROUTE130 (wild table) |
 | Manaphy | MAP_ROUTE130 (wild table) |
 | Darkrai | EverGrandeCity_SidneysRoom (scripted encounter/reward) |

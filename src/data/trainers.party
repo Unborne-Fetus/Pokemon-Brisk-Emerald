@@ -26519,49 +26519,49 @@ Music: Male
 Double Battle: Yes
 AI: Smart Trainer / Prediction / Know Opponent Party / HP Aware / Try To 2HKO / Conservative
 
-SPECIES_KANGASKHAN @ Kangaskhanite
+SPECIES_GRIMMSNARL @ Light Clay
 Level: 100
-Ability: Scrappy
-Nature: Jolly
-EVs: 4 HP / 252 Atk / 252 Spe
+Ability: Prankster
+Nature: Careful
+EVs: 252 HP / 116 Def / 140 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FAKE_OUT
-- MOVE_DOUBLE_EDGE
-- MOVE_LOW_KICK
-- MOVE_SUCKER_PUNCH
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_TAUNT
 
-SPECIES_KYOGRE @ Blue Orb
+SPECIES_PORYGON2 @ Eviolite
 Level: 100
-Ability: Drizzle
-Nature: Quiet
-EVs: 252 HP / 4 Def / 252 SpA
+Ability: Download
+Nature: Relaxed
+EVs: 252 HP / 176 Def / 80 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-- MOVE_WATER_SPOUT
-- MOVE_ORIGIN_PULSE
+- MOVE_TRICK_ROOM
+- MOVE_RECOVER
 - MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ Sitrus Berry
+Level: 100
+Ability: Competitive
+Nature: Quiet
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
 - MOVE_PROTECT
 
-SPECIES_ZAMAZENTA @ Rusted Shield
+SPECIES_MAWILE @ Mawilite
 Level: 100
-Ability: Dauntless Shield
-Nature: Impish
-EVs: 252 HP / 80 Def / 176 Spe
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_BODY_PRESS
-- MOVE_HEAVY_SLAM
-- MOVE_WIDE_GUARD
-- MOVE_IRON_DEFENSE
-
-SPECIES_INCINEROAR @ Safety Goggles
-Level: 100
-Ability: Intimidate
-Nature: Careful
-EVs: 252 HP / 92 Def / 164 SpD
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FAKE_OUT
-- MOVE_PARTING_SHOT
-- MOVE_KNOCK_OFF
-- MOVE_SNARL
+Ability: Hyper Cutter
+Nature: Brave
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_IRON_HEAD
+- MOVE_SUCKER_PUNCH
+- MOVE_PROTECT
 
 SPECIES_AMOONGUSS @ Rocky Helmet
 Level: 100
@@ -26574,16 +26574,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - MOVE_POLLEN_PUFF
 - MOVE_PROTECT
 
-SPECIES_CALYREX_ICE @ Clear Amulet
+SPECIES_UMBREON @ Leftovers
 Level: 100
-Ability: As One Ice Rider
-Nature: Brave
-EVs: 252 HP / 252 Atk / 4 SpD
+Ability: Inner Focus
+Nature: Sassy
+EVs: 252 HP / 156 Def / 100 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-Tera Type: Water
-- MOVE_GLACIAL_LANCE
-- MOVE_HIGH_HORSEPOWER
-- MOVE_TRICK_ROOM
+Shiny: Yes
+Tera Type: Poison
+- MOVE_FOUL_PLAY
+- MOVE_SNARL
+- MOVE_HELPING_HAND
 - MOVE_PROTECT
 
 === TRAINER_BRENDAN_PLACEHOLDER ===
