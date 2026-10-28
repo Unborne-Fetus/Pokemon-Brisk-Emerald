@@ -4123,6 +4123,21 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_HEARTBREAKER:
+            // The Pokémon that knocked Luvdisc out takes half of its own max HP.
+            // This is a fixed amount, unlike Innards Out's damage-based retaliation.
+            if (!IsBattlerUnaffectedByMove(gBattlerTarget)
+             && !IsBattlerAlive(gBattlerTarget)
+             && !gSpecialStatuses[gBattlerAttacker].attackerInParty
+             && IsBattlerAlive(gBattlerAttacker)
+             && !IsBattlerAlly(gBattlerAttacker, gBattlerTarget))
+            {
+                gBattleScripting.battler = gBattlerTarget;
+                SetPassiveDamageAmount(gBattlerAttacker, MAX(1, GetNonDynamaxMaxHP(gBattlerAttacker) / 2));
+                BattleScriptCall(BattleScript_AftermathDmg);
+                effect++;
+            }
+            break;
         case ABILITY_INNARDS_OUT:
             if (!IsBattlerUnaffectedByMove(gBattlerTarget)
              && !IsBattlerAlive(gBattlerTarget)
@@ -6865,7 +6880,40 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     }
     else
     {
-        if (IsBattleMovePhysical(move))
+        if (ctx->abilities[battlerAtk] == ABILITY_GRAND_MAESTRO && IsSoundMove(move))
+        {
+            // Choose the strongest current non-HP battle stat. Preserve its
+            // stage modifiers while using the sound move's original category.
+            const u32 stats[] = {
+                gBattleMons[battlerAtk].attack,
+                gBattleMons[battlerAtk].defense,
+                gBattleMons[battlerAtk].spAttack,
+                gBattleMons[battlerAtk].spDefense,
+                gBattleMons[battlerAtk].speed,
+            };
+            const u8 stages[] = {
+                gBattleMons[battlerAtk].statStages[STAT_ATK],
+                gBattleMons[battlerAtk].statStages[STAT_DEF],
+                gBattleMons[battlerAtk].statStages[STAT_SPATK],
+                gBattleMons[battlerAtk].statStages[STAT_SPDEF],
+                gBattleMons[battlerAtk].statStages[STAT_SPEED],
+            };
+            u32 strongest = 0;
+
+            atkStat = stats[0];
+            atkStage = stages[0];
+            for (u32 i = 0; i < ARRAY_COUNT(stats); i++)
+            {
+                u32 effective = stats[i] * gStatStageRatios[stages[i]][0] / gStatStageRatios[stages[i]][1];
+                if (effective > strongest)
+                {
+                    strongest = effective;
+                    atkStat = stats[i];
+                    atkStage = stages[i];
+                }
+            }
+        }
+        else if (IsBattleMovePhysical(move))
         {
             if (ctx->abilities[battlerAtk] == ABILITY_SPEED_BOXER && IsPunchingMove(move))
             {
