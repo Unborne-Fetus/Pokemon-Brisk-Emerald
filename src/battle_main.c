@@ -4494,14 +4494,14 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
     u32 weather = GetWeather();
     u32 speedStage = gBattleMons[battler].statStages[STAT_SPEED];
 
-    // Solar Fleet is a temporary +4 Speed stage bonus, not a permanent
+    // Solar Fleet is a temporary +3 Speed stage bonus, not a permanent
     // stat change. This respects the +6 stage cap and immediately ends
     // when sun fades, a weather-suppression ability activates, or the
     // user's ability changes. It also never stacks each turn.
     if (ability == ABILITY_SOLAR_FLEET
      && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
      && (weather & B_WEATHER_SUN))
-        speedStage = MIN(speedStage + 4, MAX_STAT_STAGE);
+        speedStage = MIN(speedStage + 3, MAX_STAT_STAGE);
 
     speed *= gStatStageRatios[speedStage][0];
     speed /= gStatStageRatios[speedStage][1];
