@@ -6845,8 +6845,17 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     {
         if (IsBattleMovePhysical(move))
         {
-            atkStat = gBattleMons[battlerAtk].attack;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+            if (ctx->abilities[battlerAtk] == ABILITY_SPEED_BOXER && IsPunchingMove(move))
+            {
+                // Like Body Press, use the replacement stat and its own stat stages.
+                atkStat = gBattleMons[battlerAtk].speed;
+                atkStage = gBattleMons[battlerAtk].statStages[STAT_SPEED];
+            }
+            else
+            {
+                atkStat = gBattleMons[battlerAtk].attack;
+                atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+            }
         }
         else
         {
