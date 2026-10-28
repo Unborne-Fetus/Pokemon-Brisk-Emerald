@@ -2578,4 +2578,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("On a foe's knockout, deals half its max HP in damage."),
         .aiRating = 7,
     },
+
+    [ABILITY_WEB_EXCRETANT] =
+    {
+        .name = _("Web Excretant"),
+        .description = COMPOUND_STRING("On entry, sharply raises Speed and lowers others' Evasion."),
+        .aiRating = 9,
+    },
 };
