@@ -145,6 +145,8 @@ struct Trainer
 
     struct String difficulty;
     int difficulty_line;
+    bool authored_party;
+    int authored_party_line;
 
     int party_size;
     int party_size_line;
@@ -1279,6 +1281,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             if (!token_human_identifiers(p, &value, trainer->starting_status, &trainer->starting_status_n, STARTING_STATUS_COUNT))
                 any_error = !show_parse_error(p);
         }
+        else if (is_literal_token(&key, "Authored Party"))
+        {
+            if (trainer->authored_party_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Authored Party'");
+            trainer->authored_party_line = value.location.line;
+            if (!token_bool(p, &value, &trainer->authored_party))
+                any_error = !show_parse_error(p);
+        }
         else if (is_literal_token(&key, "Difficulty"))
         {
             if (trainer->difficulty_line)
@@ -1824,6 +1834,8 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
         fprint_string(f, trainer->id);
         fprintf(f, "] =\n");
         fprintf(f, "    {\n");
+        if (trainer->authored_party)
+            fprintf(f, "        .authoredParty = TRUE,\n");
 
         if (!is_empty_string(trainer->name))
         {

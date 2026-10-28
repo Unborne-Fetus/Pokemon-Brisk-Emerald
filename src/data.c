@@ -234,7 +234,7 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #if IS_FRLG
 #include "data/trainers_frlg.h"
 #else
-#include "data/trainers.h"
+#include "data/brisk_mode_teams.h"
 #endif
 };
 #endif

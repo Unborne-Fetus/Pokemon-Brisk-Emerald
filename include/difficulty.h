@@ -5,6 +5,7 @@
 #include "script.h"
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void);
+enum DifficultyLevel GetBriskDifficultyLevel(void);
 void SetCurrentDifficultyLevel(enum DifficultyLevel);
 
 enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16);

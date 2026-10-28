@@ -159,6 +159,7 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
+    trainerGen->authoredParty = trainer->authoredParty;
     trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
     trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
     trainerGen->leagueLevels = UsesTrainerPolicy(trainer, sBriskLeagueTrainer);
@@ -169,7 +170,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
         for (u32 i = 0; i < max(trainer->partySize, trainer->poolSize); i++)
             trainerGen->highestLevel = max(trainerGen->highestLevel, trainer->party[i].lvl);
     trainerGen->gender = trainer->gender;
-    if (trainer->aiFlags & AI_FLAG_SMART_TERA)
+    if (!trainer->authoredParty && (trainer->aiFlags & AI_FLAG_SMART_TERA))
         trainerGen->smartTera = TRUE;
     trainerGen->isFrontier = FALSE;
     StringCopyN(trainerGen->name, trainer->trainerName, TRAINER_NAME_LENGTH + 1);
@@ -180,6 +181,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 
 void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *partner)
 {
+    trainerGen->authoredParty = FALSE;
     u32 otID;
     trainerGen->fairLoadout = FALSE;
     trainerGen->storyLoadout = FALSE;
@@ -282,7 +284,11 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
-        if (trainer->kaizoBoss || trainer->championSet)
+        if (trainer->authoredParty)
+        {
+            // Levels, like the rest of the roster, are authored per encounter.
+        }
+        else if (trainer->kaizoBoss || trainer->championSet)
             adjusted.lvl = 100;
         else if (trainer->leagueLevels)
             adjusted.lvl = GetBriskDifficulty() == BRISK_MODE_EASY ? 70 : 100;
@@ -305,7 +311,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             adjusted.gigantamaxFactor = FALSE;
         }
     }
-    if ((trainer->fairLoadout || trainer->storyLoadout) && !trainer->leagueLevels && !trainer->championSet && GetBriskDifficulty() == BRISK_MODE_EASY)
+    if (!trainer->authoredParty && (trainer->fairLoadout || trainer->storyLoadout) && !trainer->leagueLevels && !trainer->championSet && GetBriskDifficulty() == BRISK_MODE_EASY)
     {
         enum Species easySpecies = BriskEasyTrainerSpecies(adjusted.species, adjusted.lvl);
         if (easySpecies != adjusted.species)
@@ -421,7 +427,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         SetMonData(mon, MON_DATA_TERA_TYPE, &data);
     }
 
-    if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
+    if (!trainer->authoredParty && !trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         if (trainer->leagueLevels || trainer->kaizoBoss || trainer->championSet)
         {

@@ -2,12 +2,30 @@
 #include "data.h"
 #include "event_data.h"
 #include "script.h"
+#include "brisk_modes.h"
 #include "constants/battle.h"
+
+enum DifficultyLevel GetBriskDifficultyLevel(void)
+{
+    // Brisk save values put Normal before Easy; Expansion uses Easy first.
+    switch (GetBriskDifficulty())
+    {
+    case BRISK_MODE_EASY: return DIFFICULTY_EASY;
+    case BRISK_MODE_HARD: return DIFFICULTY_HARD;
+    case BRISK_MODE_KAIZO: return DIFFICULTY_KAIZO;
+    default: return DIFFICULTY_NORMAL;
+    }
+}
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
     if (!B_VAR_DIFFICULTY)
+    {
+#ifdef EMERALD
+        return GetBriskDifficultyLevel();
+#endif
         return DIFFICULTY_NORMAL;
+    }
 
     return VarGet(B_VAR_DIFFICULTY);
 }
@@ -42,6 +60,9 @@ enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
 enum DifficultyLevel GetTrainerDifficultyLevel(u16 trainerId)
 {
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (trainerId >= TRAINERS_COUNT)
+        return DIFFICULTY_NORMAL;
 
     if (difficulty == DIFFICULTY_NORMAL)
         return DIFFICULTY_NORMAL;

@@ -137,7 +137,7 @@ struct Trainer
     u16 battleType:2;
     u16 mugshotColor:3;
     u16 partySize:3;
-    u16 padding:1;
+    u16 authoredParty:1; // Mode roster is authoritative; skip legacy loadout/scaling.
     enum TrainerPicID trainerPic;
     u8 trainerName[TRAINER_NAME_LENGTH + 1];
     u8 poolSize;
@@ -290,7 +290,7 @@ static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
     }
     else
     {
-        difficulty = GetTrainerDifficultyLevel(trainerId);
+        difficulty = GetTrainerDifficultyLevel(SanitizeTrainerId(trainerId));
         return &gTrainers[difficulty][SanitizeTrainerId(trainerId)];
     }
 }

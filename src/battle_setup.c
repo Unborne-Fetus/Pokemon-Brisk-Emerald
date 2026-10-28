@@ -1348,7 +1348,7 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
 
     struct TrainerGenerator *trainerGen = AllocZeroed(sizeof(struct TrainerGenerator));
     MakeTrainerGenerator(trainerGen, trainer);
-    u32 target = BriskDifficultyPartySize(trainer->partySize, trainerGen->highestLevel,
+    u32 target = trainer->authoredParty ? trainer->partySize : BriskDifficultyPartySize(trainer->partySize, trainerGen->highestLevel,
         trainerGen->storyLoadout, trainerGen->leagueLevels || trainerGen->championSet, trainerGen->fairLoadout || trainerGen->storyLoadout);
     if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && (B_MULTI_HALF_TEAMS || trainer->multiTeamSize == MULTI_TEAM_SIZE_HALF))
         target = min(target, PARTY_SIZE / 2);
@@ -1360,7 +1360,8 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
         monIndices[monsCount-1] = trainer->partySize-1;
     for (i = 0; i < monsCount; i++)
         GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndices[i]], trainerGen);
-    BriskExpandTrainerParty(party, monsCount, target, trainerGen);
+    if (!trainer->authoredParty)
+        BriskExpandTrainerParty(party, monsCount, target, trainerGen);
     Free(trainerGen);
 }
 
