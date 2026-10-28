@@ -1772,7 +1772,7 @@ void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effectBattle
      && IsBattlerAlive(effectBattler))
     {
         gBattlerAbility = gBattleScripting.battler = battlerAtk;
-        SetPassiveDamageAmount(effectBattler, MAX(1, GetNonDynamaxMaxHP(effectBattler) / 2));
+        SetPassiveDamageAmount(effectBattler, max(1, GetNonDynamaxMaxHP(effectBattler) / 2));
         BattleScriptPush(BattleScript_OverdoseDamage);
     }
 }

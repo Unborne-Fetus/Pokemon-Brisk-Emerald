@@ -4501,7 +4501,7 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
     if (ability == ABILITY_SOLAR_FLEET
      && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
      && (weather & B_WEATHER_SUN))
-        speedStage = MIN(speedStage + 3, MAX_STAT_STAGE);
+        speedStage = min(speedStage + 3, MAX_STAT_STAGE);
 
     speed *= gStatStageRatios[speedStage][0];
     speed /= gStatStageRatios[speedStage][1];

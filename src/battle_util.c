@@ -4160,7 +4160,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 {
                     gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
                     SetPassiveDamageAmount(gBattlerAttacker,
-                        MAX(1, GetNonDynamaxMaxHP(gBattlerAttacker) / (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BUG) ? 3 : 6)));
+                        max(1, GetNonDynamaxMaxHP(gBattlerAttacker) / (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BUG) ? 3 : 6)));
                     BattleScriptCall(BattleScript_RoughSkinActivates);
                 }
                 effect++;
@@ -4218,7 +4218,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && !IsBattlerAlly(gBattlerAttacker, gBattlerTarget))
             {
                 gBattleScripting.battler = gBattlerTarget;
-                SetPassiveDamageAmount(gBattlerAttacker, MAX(1, GetNonDynamaxMaxHP(gBattlerAttacker) / 2));
+                SetPassiveDamageAmount(gBattlerAttacker, max(1, GetNonDynamaxMaxHP(gBattlerAttacker) / 2));
                 BattleScriptCall(BattleScript_AftermathDmg);
                 effect++;
             }
@@ -8312,11 +8312,11 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
         if (ctx->abilities[ctx->battlerDef] == ABILITY_CLEARWATER)
             damage *= 2;
         if (ctx->abilities[ctx->battlerDef] == ABILITY_BURNING_CRUST && ctx->moveType == TYPE_WATER)
-            damage = MAX(1, damage / 2);
+            damage = max(1, damage / 2);
         if (ctx->abilities[ctx->battlerDef] == ABILITY_NOPALES && ctx->moveType == TYPE_FIRE)
-            damage = MAX(1, damage / 4);
+            damage = max(1, damage / 4);
         if (ctx->abilities[ctx->battlerDef] == ABILITY_TORSION && IsBattleMovePhysical(ctx->move))
-            damage = MAX(1, damage / 2);
+            damage = max(1, damage / 2);
     }
 
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
@@ -8354,11 +8354,11 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
         if (ctx->abilities[ctx->battlerDef] == ABILITY_CLEARWATER)
             damage *= 2;
         if (ctx->abilities[ctx->battlerDef] == ABILITY_BURNING_CRUST && ctx->moveType == TYPE_WATER)
-            damage = MAX(1, damage / 2);
+            damage = max(1, damage / 2);
         if (ctx->abilities[ctx->battlerDef] == ABILITY_NOPALES && ctx->moveType == TYPE_FIRE)
-            damage = MAX(1, damage / 4);
+            damage = max(1, damage / 4);
         if (ctx->abilities[ctx->battlerDef] == ABILITY_TORSION && IsBattleMovePhysical(ctx->move))
-            damage = MAX(1, damage / 2);
+            damage = max(1, damage / 2);
     }
 
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
