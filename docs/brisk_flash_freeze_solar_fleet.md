@@ -17,10 +17,10 @@
 
 **First ability slot:** Solar Fleet replaces Chlorophyll; Solar Power and hidden Early Bird remain available.
 
-- While effective sunny weather is active, Sunflora's effective Speed stat stage is **four stages higher**, capped at the normal +6 stage maximum.
-- At a neutral Speed stage, this is equivalent to +4 Speed, i.e. **3× effective Speed**.
+- While effective sunny weather is active, Sunflora's effective Speed stat stage is **three stages higher**, capped at the normal +6 stage maximum.
+- At a neutral Speed stage, this is equivalent to +3 Speed, i.e. **2.5× effective Speed**.
 - The ability is an automatically calculated, **temporary modifier** to Speed, rather than permanent increments of the stat-stage field. It therefore drops immediately if the sun ends or is suppressed, or if Sunflora loses the ability, without corrupting other boosts/drops.
-- No stacking each turn. The displayed stat-stage field does not include the virtual +4 boost.
+- No stacking each turn. The displayed stat-stage field does not include the virtual +3 boost.
 - As with Chlorophyll, Utility Umbrella blocks the weather-based boost.
 
 ## Verification
