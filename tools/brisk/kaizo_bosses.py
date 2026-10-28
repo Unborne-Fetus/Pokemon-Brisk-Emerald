@@ -29,6 +29,8 @@ def audit(teams):
     scripts = (ROOT / 'data/maps/OrangeCity/scripts.inc').read_text()
     objects = json.loads((ROOT / 'data/maps/OrangeCity/map.json').read_text())['object_events']
     labels = {'TRAINER_HOODED_FIGURE': 'HoodedFigure', 'TRAINER_TANKERSON': 'Tankerson'}
+    rewards = {'TRAINER_HOODED_FIGURE': ('NECROZMA', 'FLAG_HIDE_ROUTE126_NECROZMA'),
+               'TRAINER_TANKERSON': ('GUZZLORD', 'FLAG_DEFEATED_GUZZLORD')}
     if set(curated) != set(labels): errors.append('Expected exactly the two Kaizo bosses')
     for tid, t in curated.items():
         if teams.get(tid, '').strip() != render(t).strip(): errors.append(tid+': source differs from curated party')
@@ -44,6 +46,17 @@ def audit(teams):
         start = 'OrangeCity_EventScript_'+label
         gate = start+'::\n\tlock\n\tgoto_if_ne VAR_BRISK_DIFFICULTY, BRISK_MODE_KAIZO, '+start+'Ignored\n'
         if gate not in scripts: errors.append(tid+': missing first-action mode gate')
+        species, claimed_flag = rewards[tid]
+        section = scripts.split(start+'::', 1)[-1].split(start+'Ignored::', 1)[0]
+        for required in (f'goto_if_set {claimed_flag}, {start}OfferBattle',
+                         f'checktrainerflag {tid}',
+                         f'goto_if TRUE, {start}GiveReward',
+                         f'goto_if_set {claimed_flag}, {start}AfterVictory',
+                         f'givemon SPECIES_{species}, 70',
+                         f'goto_if_eq VAR_RESULT, MON_CANT_GIVE, {start}StorageFull',
+                         f'setflag {claimed_flag}',
+                         'call Common_EventScript_ReceivedGiftPokemon'):
+            if required not in section: errors.append(tid+': missing gift safety gate '+required)
         ignored = scripts.split(start+'Ignored::\n', 1)[-1].split('\n\n', 1)[0]
         if 'trainerbattle' in ignored or '\trelease\n\tend' not in ignored: errors.append(tid+': invalid ignored branch')
         npcs = [o for o in objects if o['script'] == start]
@@ -54,12 +67,18 @@ def audit(teams):
             offset = (o['y']*48+o['x'])*2
             block = int.from_bytes(raw[offset:offset+2], 'little')
             if block & 0xC00 or block>>12 != o['elevation']: errors.append(tid+': blocked tile/elevation')
+    for map_name, old_script in (('MeteorFalls_B1F_2R', 'BriskStatic_EventScript_GUZZLORD'),
+                                 ('Route126', 'Route126_EventScript_NECROZMA')):
+        original = json.loads((ROOT / 'data/maps' / map_name / 'map.json').read_text())
+        if any(o['script'] == old_script for o in original['object_events']):
+            errors.append(map_name+': moved legendary still appears as static')
     return errors
 
 
 def document():
     lines = ['# Orange City Kaizo challenges', '',
              'Both trainers stand in the Orange City plaza. Speak to them in Kaizo to accept a repeatable challenge; choose No to leave. In Easy, Normal and Hard they pay you no mind. Each uses six level-100 Pokemon and full competitive training.', '',
+             'Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.', '',
              'These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson also uses Primal Kyogre. No single team is strongest in every matchup.', '',
              'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson uses doubles with Fake Out, Intimidate, redirection, Wide Guard, rain and Trick Room. Zero Speed IVs support the slow rain/Trick Room core.', '',
              'Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.', '']

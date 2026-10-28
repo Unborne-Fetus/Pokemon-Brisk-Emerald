@@ -2,6 +2,8 @@
 
 Both trainers stand in the Orange City plaza. Speak to them in Kaizo to accept a repeatable challenge; choose No to leave. In Easy, Normal and Hard they pay you no mind. Each uses six level-100 Pokemon and full competitive training.
 
+Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.
+
 These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson also uses Primal Kyogre. No single team is strongest in every matchup.
 
 Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson uses doubles with Fake Out, Intimidate, redirection, Wide Guard, rain and Trick Room. Zero Speed IVs support the slow rain/Trick Room core.

@@ -102,7 +102,11 @@ def main():
         # Vanilla event battles and trainer/gift rewards, including ship rooms.
         for species in re.findall(r'\b(?:givemon|setwildbattle|seteventmon)\s+SPECIES_(\w+)', text):
             if family(species):
-                sources[family(species)].add(name + ' (scripted encounter/reward)')
+                if name == 'OrangeCity' and species in ('GUZZLORD', 'NECROZMA'):
+                    trainer = 'Tankerson' if species == 'GUZZLORD' else 'Hooded Figure'
+                    sources[family(species)].add(f'OrangeCity (Kaizo only; {trainer} reward after victory, level 70)')
+                else:
+                    sources[family(species)].add(name + ' (scripted encounter/reward)')
         for obj in data.get('object_events', []):
             entry = definitions.get(obj['script'])
             if not entry or not family(entry[0]):

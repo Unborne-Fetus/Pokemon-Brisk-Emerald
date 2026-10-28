@@ -37,11 +37,32 @@ OrangeCity_EventScript_HoodedFigure::
 	lock
 	goto_if_ne VAR_BRISK_DIFFICULTY, BRISK_MODE_KAIZO, OrangeCity_EventScript_HoodedFigureIgnored
 	faceplayer
+	@ Reuse the original Necrozma caught flag so existing captures cannot be rewarded twice.
+	goto_if_set FLAG_HIDE_ROUTE126_NECROZMA, OrangeCity_EventScript_HoodedFigureOfferBattle
+	@ After a win, an unclaimed gift can be collected without battling again.
+	checktrainerflag TRAINER_HOODED_FIGURE
+	goto_if TRUE, OrangeCity_EventScript_HoodedFigureGiveReward
+OrangeCity_EventScript_HoodedFigureOfferBattle::
 	msgbox OrangeCity_Text_HoodedFigureChallenge, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, OrangeCity_EventScript_HoodedFigureLeave
 	cleartrainerflag TRAINER_HOODED_FIGURE
 	trainerbattle_no_intro TRAINER_HOODED_FIGURE, OrangeCity_Text_HoodedFigureDefeat
+	goto_if_set FLAG_HIDE_ROUTE126_NECROZMA, OrangeCity_EventScript_HoodedFigureAfterVictory
+	goto OrangeCity_EventScript_HoodedFigureGiveReward
+
+OrangeCity_EventScript_HoodedFigureGiveReward::
+	msgbox OrangeCity_Text_HoodedFigureReward, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_NECROZMA
+	givemon SPECIES_NECROZMA, 70
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, OrangeCity_EventScript_HoodedFigureStorageFull
+	setflag FLAG_HIDE_ROUTE126_NECROZMA
+	call Common_EventScript_ReceivedGiftPokemon
+OrangeCity_EventScript_HoodedFigureAfterVictory::
 	msgbox OrangeCity_Text_HoodedFigureAfter, MSGBOX_DEFAULT
+	goto OrangeCity_EventScript_HoodedFigureLeave
+
+OrangeCity_EventScript_HoodedFigureStorageFull::
+	msgbox OrangeCity_Text_HoodedFigureStorageFull, MSGBOX_DEFAULT
 OrangeCity_EventScript_HoodedFigureLeave::
 	release
 	end
@@ -66,17 +87,47 @@ OrangeCity_Text_HoodedFigureAfter:
 	.string "Return whenever you seek\n"
 	.string "another challenge.$"
 
+OrangeCity_Text_HoodedFigureReward:
+	.string "You have conquered my trial.\p"
+	.string "Take NECROZMA as your reward.$"
+
+OrangeCity_Text_HoodedFigureStorageFull:
+	.string "Your party and PC are full.\p"
+	.string "Make room, then return for\n"
+	.string "NECROZMA.$"
+
 OrangeCity_EventScript_Tankerson::
 	lock
 	goto_if_ne VAR_BRISK_DIFFICULTY, BRISK_MODE_KAIZO, OrangeCity_EventScript_TankersonIgnored
 	faceplayer
+	@ Reuse the original Guzzlord caught flag so existing captures cannot be rewarded twice.
+	goto_if_set FLAG_DEFEATED_GUZZLORD, OrangeCity_EventScript_TankersonOfferBattle
+	@ After a win, an unclaimed gift can be collected without battling again.
+	checktrainerflag TRAINER_TANKERSON
+	goto_if TRUE, OrangeCity_EventScript_TankersonGiveReward
+OrangeCity_EventScript_TankersonOfferBattle::
 	msgbox OrangeCity_Text_TankersonChallenge, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, OrangeCity_EventScript_TankersonLeave
 	special HasEnoughMonsForDoubleBattle
 	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, OrangeCity_EventScript_TankersonNeedsPartner
 	cleartrainerflag TRAINER_TANKERSON
 	trainerbattle_no_intro TRAINER_TANKERSON, OrangeCity_Text_TankersonDefeat
+	goto_if_set FLAG_DEFEATED_GUZZLORD, OrangeCity_EventScript_TankersonAfterVictory
+	goto OrangeCity_EventScript_TankersonGiveReward
+
+OrangeCity_EventScript_TankersonGiveReward::
+	msgbox OrangeCity_Text_TankersonReward, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_GUZZLORD
+	givemon SPECIES_GUZZLORD, 70
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, OrangeCity_EventScript_TankersonStorageFull
+	setflag FLAG_DEFEATED_GUZZLORD
+	call Common_EventScript_ReceivedGiftPokemon
+OrangeCity_EventScript_TankersonAfterVictory::
 	msgbox OrangeCity_Text_TankersonAfter, MSGBOX_DEFAULT
+	goto OrangeCity_EventScript_TankersonLeave
+
+OrangeCity_EventScript_TankersonStorageFull::
+	msgbox OrangeCity_Text_TankersonStorageFull, MSGBOX_DEFAULT
 OrangeCity_EventScript_TankersonLeave::
 	release
 	end
@@ -100,6 +151,15 @@ OrangeCity_Text_TankersonDefeat:
 OrangeCity_Text_TankersonAfter:
 	.string "Return whenever you seek\n"
 	.string "another challenge.$"
+
+OrangeCity_Text_TankersonReward:
+	.string "You've beaten my best team.\p"
+	.string "GUZZLORD is yours to command.$"
+
+OrangeCity_Text_TankersonStorageFull:
+	.string "Your party and PC are full.\p"
+	.string "Make room, then return for\n"
+	.string "GUZZLORD.$"
 
 OrangeCity_EventScript_TankersonNeedsPartner::
 	msgbox OrangeCity_Text_TankersonNeedsPartner, MSGBOX_DEFAULT

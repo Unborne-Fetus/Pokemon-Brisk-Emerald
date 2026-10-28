@@ -78,8 +78,8 @@ The static-map checker verifies floor collision, access from map entrances, inte
 | Xurkitree | XURKITREE: NewMauville_Inside_2 (static, 6, 14) |
 | Celesteela | CELESTEELA: SkyPillar_Top (static, 10, 11) |
 | Kartana | VictoryRoad_B1F (scripted encounter/reward) |
-| Guzzlord | GUZZLORD: MeteorFalls_B1F_2R (static, 4, 4) |
-| Necrozma | NECROZMA: Route126 (static, 41, 52) |
+| Guzzlord | OrangeCity (Kaizo only; Tankerson reward after victory, level 70) |
+| Necrozma | OrangeCity (Kaizo only; Hooded Figure reward after victory, level 70) |
 | Magearna | MAGEARNA: NewMauville_Inside (static, 16, 11) |
 | Marshadow | MeteorFalls_StevensCave (scripted encounter/reward) |
 | Poipole | Route104 (scripted encounter/reward) |
