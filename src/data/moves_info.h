@@ -22102,6 +22102,38 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Brisk Emerald signature move: Spidops lowers every other battler's
+    // Evasion while sharply raising only its own Speed.
+    [MOVE_WEB_EXCRETANT] =
+    {
+        .name = COMPOUND_STRING("Web Excretant"),
+        .description = COMPOUND_STRING(
+            "Lowers others' Evasion;\n"
+            "sharply boosts own Speed."),
+        .effect = EFFECT_STAT_CHANGE,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = STAT_CHANGE_EFFECT_MINUS,
+            .evasion = 1,
+        },
+        {
+            .moveEffect = STAT_CHANGE_EFFECT_PLUS,
+            .speed = 2,
+            .self = TRUE,
+        }),
+        .battleAnimScript = gBattleAnimMove_StickyWeb,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
