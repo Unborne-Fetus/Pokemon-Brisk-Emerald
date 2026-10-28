@@ -12,6 +12,7 @@ from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 from trainer_mode_plan import ordinary_scaled
 from league_teams import audit as audit_league
 from kaizo_bosses import audit as audit_kaizo
+from steven_champion import audit as audit_steven
 
 
 def power_cap(level):
@@ -111,13 +112,14 @@ def audit():
                 errors.append(f'{trainer_id}: excessive party size for this stage')
     errors.extend(audit_league(teams))
     errors.extend(audit_kaizo(teams))
+    errors.extend(audit_steven(teams))
     story_mons = 0
     for tid in policy['story']:
         team = teams[tid]
         blocks = re.split(r'\n[ \t]*\n', team.strip())[1:]
         if not 1 <= len(blocks) <= 6:
             errors.append(f'{tid}: invalid story party size')
-        if tid in LEAGUE_IDS:
+        if tid in LEAGUE_IDS or tid == 'TRAINER_STEVEN':
             # Full cross-generation learnability is checked above. Native tests
             # validate abilities and preserve the actual sets at 70 and 100.
             story_mons += len(blocks)

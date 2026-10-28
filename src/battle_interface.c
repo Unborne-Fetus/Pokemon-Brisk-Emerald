@@ -1371,10 +1371,16 @@ u8 CreatePartyStatusSummarySprites(enum BattlerId battler, struct HpAndStatus *p
         bar_data0 = 5;
     }
 
-    LoadCompressedSpriteSheetUsingHeap(&sStatusSummaryBarSpriteSheet);
-    LoadSpriteSheet(&sStatusSummaryBallsSpriteSheet);
-    LoadSpritePalette(&sStatusSummaryBarSpritePal);
-    LoadSpritePalette(&sStatusSummaryBallsSpritePal);
+    // All four trainers share these sheets. Loading the same tag again
+    // allocates another range that the final tray cannot free.
+    if (GetSpriteTileStartByTag(TAG_STATUS_SUMMARY_BAR_TILE) == TAG_NONE)
+        LoadCompressedSpriteSheetUsingHeap(&sStatusSummaryBarSpriteSheet);
+    if (GetSpriteTileStartByTag(TAG_STATUS_SUMMARY_BALLS_TILE) == TAG_NONE)
+        LoadSpriteSheet(&sStatusSummaryBallsSpriteSheet);
+    if (IndexOfSpritePaletteTag(TAG_STATUS_SUMMARY_BAR_PAL) == 0xFF)
+        LoadSpritePalette(&sStatusSummaryBarSpritePal);
+    if (IndexOfSpritePaletteTag(TAG_STATUS_SUMMARY_BALLS_PAL) == 0xFF)
+        LoadSpritePalette(&sStatusSummaryBallsSpritePal);
 
     summaryBarSpriteId = CreateSprite(&sStatusSummaryBarSpriteTemplates[isOpponent], bar_X, bar_Y, 10);
     SetSubspriteTables(&gSprites[summaryBarSpriteId], sStatusSummaryBar_SubspriteTable_Enter);
@@ -1543,10 +1549,9 @@ u8 CreatePartyStatusSummarySprites(enum BattlerId battler, struct HpAndStatus *p
 
     gTasks[taskId].tIsBattleStart = isBattleStart;
 
-    if (isBattleStart)
-    {
-        gBattleSpritesDataPtr->animationData->field_9_x1C++;
-    }
+    // Count every live tray so shared resources survive overlapping summaries
+    // during the intro and when an opponent opens its party mid-battle.
+    gBattleSpritesDataPtr->animationData->field_9_x1C++;
 
     PlaySE12WithPanning(SE_BALL_TRAY_ENTER, 0);
     return taskId;
@@ -1678,8 +1683,19 @@ static void Task_HidePartyStatusSummary_DuringBattle(u8 taskId)
         for (i = 0; i < PARTY_SIZE; i++)
             ballIconSpriteIds[i] = gTasks[taskId].tBallIconSpriteId(i);
 
-        DestroySpriteAndFreeResources(&gSprites[summaryBarSpriteId]);
-        DestroySpriteAndFreeResources(&gSprites[ballIconSpriteIds[0]]);
+        gBattleSpritesDataPtr->animationData->field_9_x1C--;
+        if (gBattleSpritesDataPtr->animationData->field_9_x1C == 0)
+        {
+            DestroySpriteAndFreeResources(&gSprites[summaryBarSpriteId]);
+            DestroySpriteAndFreeResources(&gSprites[ballIconSpriteIds[0]]);
+        }
+        else
+        {
+            FreeSpriteOamMatrix(&gSprites[summaryBarSpriteId]);
+            DestroySprite(&gSprites[summaryBarSpriteId]);
+            FreeSpriteOamMatrix(&gSprites[ballIconSpriteIds[0]]);
+            DestroySprite(&gSprites[ballIconSpriteIds[0]]);
+        }
 
         for (i = 1; i < PARTY_SIZE; i++)
             DestroySprite(&gSprites[ballIconSpriteIds[i]]);

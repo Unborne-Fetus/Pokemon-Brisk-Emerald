@@ -49,6 +49,7 @@ def story_scaled(level, mode, highest, cap=100):
 
 
 def profile_levels(tid, role, levels, mode):
+    if tid == 'TRAINER_STEVEN': return [100] * 6
     if role == 'Kaizo only': return [100] * 6 if mode == 'Kaizo' else []
     if tid in LEAGUE_IDS: return [70 if mode == 'Easy' else 100] * len(levels)
     if role == 'Protected': return [scaled(n, mode) for n in levels]
@@ -98,6 +99,7 @@ def render():
         'Individual teams and intentional protected exceptions are listed below.',
         'Important fights now use their own authored teams and stronger mode curve.',
         'The opening Route 103 rival has a level-9 starter on Normal.',
+        'Meteor Falls Steven is a separate six-Pokemon level-100 challenge in every mode.',
         'Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Kaizo',
         'and 70 on Easy, independent of badge caps and ordinary/story scaling.', '',
         '## Mode rules', '',

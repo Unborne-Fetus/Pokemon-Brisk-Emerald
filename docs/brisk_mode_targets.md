@@ -56,6 +56,8 @@ Hard stops battle EXP, candy growth and daycare growth at the current badge cap
 by default. The existing cap-off preference still works on Hard. Kaizo always
 stops growth at its badge cap. Existing over-cap owned Pokemon are not lowered.
 League opponents override progression caps: 100 on Normal/Hard/Kaizo, 70 Easy.
+Meteor Falls Steven is a separate champion challenge: six level-100 Steel types
+in every mode, retaining their curated competitive training and sets.
 Normal retains authored levels and its existing cap/obedience preference.
 
 Normal's general profile does not receive hidden-move/item/ability knowledge or

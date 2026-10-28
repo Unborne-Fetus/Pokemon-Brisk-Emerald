@@ -498,7 +498,10 @@ u32 CreateSprite(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpri
 #if !RELEASE && !TESTING
         ShowSpriteSlotDiagnostics();
 #endif
-        fatal_assertf(FALSE, "Out of sprite slots: %d/64 used", used);
+        if (used == MAX_SPRITES)
+            fatal_assertf(FALSE, "Out of sprite slots: %d/64 used", used);
+        else
+            fatal_assertf(FALSE, "Out of sprite tiles: need %d tiles\n%d/64 sprite slots used", template->images->size / TILE_SIZE_4BPP, used);
     }
 
     return spriteId;
@@ -516,7 +519,7 @@ u32 CreateSpriteUnchecked(const struct SpriteTemplate *template, s16 x, s16 y, u
 u32 CreateSpriteAtEnd(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority)
 {
     u32 spriteId = CreateSpriteAtEndUnchecked(template, x, y, subpriority);
-    fatal_assertf(spriteId < MAX_SPRITES, "Out of sprite slots");
+    fatal_assertf(spriteId < MAX_SPRITES, "Sprite allocation failed\nslots full or OBJ tiles exhausted");
     return spriteId;
 }
 

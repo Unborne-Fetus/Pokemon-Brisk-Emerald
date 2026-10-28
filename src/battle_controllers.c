@@ -2939,6 +2939,13 @@ static void Task_StartSendOutAnim(u8 taskId)
         enum BattlerId battlerPartner;
         enum BattlerId battler = gTasks[taskId].tBattlerId;
 
+        // Fast retail intros can reach this task while four trainer pictures
+        // and their party trays still own OBJ tiles. Wait for this trainer's
+        // exit callback before allocating its Pokemon, ball and effect sprites.
+        if ((gBattleTypeFlags & BATTLE_TYPE_MULTI)
+         && gBattleStruct->trainerSlideSpriteIds[battler] < MAX_SPRITES)
+            return;
+
         if (TwoMonsAtSendOut(battler))
         {
             gBattleResources->bufferA[battler][1] = gBattlerPartyIndexes[battler];
@@ -2973,17 +2980,22 @@ static void SpriteCB_FreePlayerSpriteLoadMonSprite(struct Sprite *sprite)
     FreeSpriteOamMatrix(sprite);
     FreeSpritePaletteByTag(GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum));
     DestroySprite(sprite);
+    gBattleStruct->trainerSlideSpriteIds[battler] = MAX_SPRITES;
 
     // Load mon sprite
     BattleLoadMonSpriteGfx(GetBattlerMon(battler), battler);
-    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
+    // Multi send-outs allocate the Pokemon only after this callback returns.
+    if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI))
+        StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
 }
 
 static void SpriteCB_FreeOpponentSprite(struct Sprite *sprite)
 {
+    enum BattlerId battler = sprite->sBattlerId;
     FreeTrainerFrontPicPalette(sprite->oam.affineParam);
     FreeSpriteOamMatrix(sprite);
     DestroySprite(sprite);
+    gBattleStruct->trainerSlideSpriteIds[battler] = MAX_SPRITES;
 }
 
 #undef sBattlerId

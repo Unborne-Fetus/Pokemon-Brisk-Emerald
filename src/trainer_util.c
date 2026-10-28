@@ -24,6 +24,12 @@ static const bool8 sBriskKaizoBoss[TRAINERS_COUNT] =
     [TRAINER_TANKERSON] = TRUE,
 };
 
+// Meteor Falls Steven is a fixed level-100 postgame challenge in every mode.
+static const bool8 sBriskChampionSet[TRAINERS_COUNT] =
+{
+    [TRAINER_STEVEN] = TRUE,
+};
+
 // Only the five actual League teams receive the Easy level-70 exception.
 static const bool8 sBriskLeagueTrainer[TRAINERS_COUNT] =
 {
@@ -157,6 +163,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
     trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
     trainerGen->leagueLevels = UsesTrainerPolicy(trainer, sBriskLeagueTrainer);
     trainerGen->kaizoBoss = UsesTrainerPolicy(trainer, sBriskKaizoBoss);
+    trainerGen->championSet = UsesTrainerPolicy(trainer, sBriskChampionSet);
     trainerGen->highestLevel = 0;
     if (trainerGen->fairLoadout || trainerGen->storyLoadout)
         for (u32 i = 0; i < max(trainer->partySize, trainer->poolSize); i++)
@@ -178,6 +185,7 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
     trainerGen->storyLoadout = FALSE;
     trainerGen->leagueLevels = FALSE;
     trainerGen->kaizoBoss = FALSE;
+    trainerGen->championSet = FALSE;
     trainerGen->highestLevel = 0;
     trainerGen->gender = partner->gender;
     if (partner->aiFlags & AI_FLAG_SMART_TERA)
@@ -274,7 +282,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
-        if (trainer->kaizoBoss)
+        if (trainer->kaizoBoss || trainer->championSet)
             adjusted.lvl = 100;
         else if (trainer->leagueLevels)
             adjusted.lvl = GetBriskDifficulty() == BRISK_MODE_EASY ? 70 : 100;
@@ -297,7 +305,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             adjusted.gigantamaxFactor = FALSE;
         }
     }
-    if ((trainer->fairLoadout || trainer->storyLoadout) && !trainer->leagueLevels && GetBriskDifficulty() == BRISK_MODE_EASY)
+    if ((trainer->fairLoadout || trainer->storyLoadout) && !trainer->leagueLevels && !trainer->championSet && GetBriskDifficulty() == BRISK_MODE_EASY)
     {
         enum Species easySpecies = BriskEasyTrainerSpecies(adjusted.species, adjusted.lvl);
         if (easySpecies != adjusted.species)
@@ -415,9 +423,9 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
 
     if (!trainer->isFrontier && trainer->otID.method == OT_ID_RANDOM_NO_SHINY)
     {
-        if (trainer->leagueLevels || trainer->kaizoBoss)
+        if (trainer->leagueLevels || trainer->kaizoBoss || trainer->championSet)
         {
-            // Keep curated League and Kaizo boss roles, coverage, support,
+            // Keep curated champion and Kaizo boss roles, coverage, support,
             // ability and EV spread. Generic optimization would remove screens,
             // Protect, speed control or investments needed for those roles.
             if (trainer->leagueLevels && GetBriskDifficulty() == BRISK_MODE_EASY)

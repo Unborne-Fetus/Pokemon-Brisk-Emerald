@@ -31,6 +31,7 @@ The section bands describe ordinary encounter targets, not blanket map scaling.
 Individual teams and intentional protected exceptions are listed below.
 Important fights now use their own authored teams and stronger mode curve.
 The opening Route 103 rival has a level-9 starter on Normal.
+Meteor Falls Steven is a separate six-Pokemon level-100 challenge in every mode.
 Every Elite Four and Wallace party member is fixed at 100 on Normal/Hard/Kaizo
 and 70 on Easy, independent of badge caps and ordinary/story scaling.
 
@@ -894,7 +895,7 @@ identity/templates, not playable battles; their levels are not a challenge plan.
 | `TRAINER_JUAN_5` | JUAN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
 | `TRAINER_ANGELO` | ANGELO | Ordinary | 40 / 40 / 39 / 41 | 20 / 21 | 48 / 48 / 46 / 48 / 49 | 56 / 56 / 54 / 56 / 54 / 57 |
 | `TRAINER_DARIUS` | DARIUS | Ordinary | 60 / 59 / 60 / 61 | 31 | 72 / 70 / 72 / 70 / 73 | 84 / 82 / 84 / 82 / 84 / 85 |
-| `TRAINER_STEVEN` | STEVEN | Story | 96 / 96 / 97 / 98 / 99 / 100 | 48 / 48 / 49 / 49 / 50 | 96 / 96 / 97 / 98 / 99 / 100 | 96 / 96 / 97 / 98 / 99 / 100 |
+| `TRAINER_STEVEN` | STEVEN | Story | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 | 100 / 100 / 100 / 100 / 100 / 100 |
 | `TRAINER_ANABEL` | ANABEL | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_TUCKER` | TUCKER | Metadata | 5 | 5 | 5 | 5 |
 | `TRAINER_SPENSER` | SPENSER | Metadata | 5 | 5 | 5 | 5 |

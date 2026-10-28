@@ -1,0 +1,82 @@
+[
+  {
+    "species": "SPECIES_CORVIKNIGHT",
+    "item": "Rocky Helmet",
+    "ability": "Mirror Armor",
+    "nature": "Impish",
+    "evs": "248 HP / 252 Def / 8 SpD",
+    "moves": [
+      "MOVE_BODY_PRESS",
+      "MOVE_U_TURN",
+      "MOVE_DEFOG",
+      "MOVE_ROOST"
+    ]
+  },
+  {
+    "species": "SPECIES_HEATRAN",
+    "item": "Air Balloon",
+    "ability": "Flash Fire",
+    "nature": "Calm",
+    "evs": "252 HP / 4 Def / 252 SpD",
+    "moves": [
+      "MOVE_MAGMA_STORM",
+      "MOVE_EARTH_POWER",
+      "MOVE_TAUNT",
+      "MOVE_STEALTH_ROCK"
+    ]
+  },
+  {
+    "species": "SPECIES_DIALGA_ORIGIN",
+    "learnset_species": "DIALGA",
+    "item": "Adamant Crystal",
+    "ability": "Pressure",
+    "nature": "Modest",
+    "evs": "252 HP / 252 SpA / 4 SpD",
+    "moves": [
+      "MOVE_DRACO_METEOR",
+      "MOVE_FLASH_CANNON",
+      "MOVE_THUNDERBOLT",
+      "MOVE_FLAMETHROWER"
+    ]
+  },
+  {
+    "species": "SPECIES_GHOLDENGO",
+    "item": "Choice Scarf",
+    "ability": "Good as Gold",
+    "nature": "Timid",
+    "evs": "4 Def / 252 SpA / 252 Spe",
+    "moves": [
+      "MOVE_MAKE_IT_RAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_TRICK"
+    ]
+  },
+  {
+    "species": "SPECIES_METAGROSS",
+    "item": "Metagrossite",
+    "ability": "Clear Body",
+    "nature": "Jolly",
+    "evs": "252 Atk / 4 Def / 252 Spe",
+    "moves": [
+      "MOVE_METEOR_MASH",
+      "MOVE_ZEN_HEADBUTT",
+      "MOVE_ICE_PUNCH",
+      "MOVE_EARTHQUAKE"
+    ]
+  },
+  {
+    "species": "SPECIES_KINGAMBIT",
+    "item": "Black Glasses",
+    "ability": "Supreme Overlord",
+    "nature": "Adamant",
+    "evs": "252 HP / 252 Atk / 4 SpD",
+    "tera": "Flying",
+    "moves": [
+      "MOVE_KOWTOW_CLEAVE",
+      "MOVE_SUCKER_PUNCH",
+      "MOVE_IRON_HEAD",
+      "MOVE_SWORDS_DANCE"
+    ]
+  }
+]
