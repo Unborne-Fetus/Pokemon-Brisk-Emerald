@@ -347,6 +347,7 @@ enum __attribute__((packed)) Ability
     ABILITY_NINE_LIVES,
     ABILITY_GRAND_MAESTRO,
     ABILITY_HEARTBREAKER,
+    ABILITY_WEB_EXCRETANT,
     ABILITIES_COUNT,
 };
 
