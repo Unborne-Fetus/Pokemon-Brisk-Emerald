@@ -31,3 +31,19 @@ Route 146's new approach opens only existing ocean tiles in the rectangle
 x=20..62, y=24..43. Existing land, scenery, objects, pickups, and door warps
 are preserved. Existing saves on Route 146 also refresh those water tiles
 when their cached map view is restored.
+
+## Region Map handoff
+
+The west half of Orange Strait retains its own name on the Hoenn map. The
+Orange Islands do not yet have a dedicated drawn Town Map, so their player
+marker uses the eastern edge of Hoenn instead of indexing unset section
+coordinates. When the player crosses to the east half, the map now selects
+**Kanto**, anchored to the adjacent Route 20 map square; the existing
+FRLG Kanto Town Map artwork, cities and route labels are used automatically.
+The Kanto-side sea junction is specifically exempted from the converter's
+Kanto-story safety suppression so its return Surf trigger keeps working.
+
+In the Emerald build, Kanto city Fly destinations remain unavailable until
+that region's travel/heal systems are ported and verified. Hoenn Fly destinations
+are unchanged. This change does not activate Kanto gyms, trainers, shops,
+story events, flags, or gifts. Original Kanto terrain and source maps are untouched.

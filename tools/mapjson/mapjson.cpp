@@ -434,7 +434,8 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
     // Access-only Kanto: the imported story flags are placeholders in Emerald
     // and its variable IDs overlap Hoenn. Keep the source maps untouched while
     // exposing their terrain/warps without running unported story or rewards.
-    if (version == "emerald" && json_to_string(map_data, "region", true) == "REGION_KANTO") {
+    if (version == "emerald" && json_to_string(map_data, "region", true) == "REGION_KANTO"
+        && json_to_string(map_data, "id", true) != "MAP_ORANGE_STRAIT_EAST") {
         Json::object access = map_data.object_items();
         access["shared_scripts_map"] = "BriskKantoAccessOnly";
         access.erase("shared_events_map");

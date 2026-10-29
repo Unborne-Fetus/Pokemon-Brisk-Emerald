@@ -66,7 +66,18 @@ def audit():
         assert (m.w,m.h) == (40,20)
         assert all(m.water((x,y)) for y in range(m.h) for x in range(m.w)), m.name
         assert not m.meta['object_events'] and not m.meta['warp_events']
-        assert m.meta['region_map_section'] == 'MAPSEC_ORANGE_STRAIT'
+    # The east half must select the actual Kanto Town Map. Its map section
+    # is Route 20 because that section has a valid coastal Town Map position.
+    # The west half retains the Orange Strait name on the Hoenn map.
+    assert west.meta['region_map_section'] == 'MAPSEC_ORANGE_STRAIT'
+    assert east.meta['region_map_section'] == 'MAPSEC_ROUTE_20'
+    assert west.meta['region'] == 'REGION_HOENN'
+    assert east.meta['region'] == 'REGION_KANTO'
+    sections = [entry['id'] for entry in json.loads((ROOT/'src/data/region_map/region_map_sections.json').read_text())['map_sections']]
+    assert sections.index('MAPSEC_PALLET_TOWN') <= sections.index('MAPSEC_ROUTE_20') < sections.index('MAPSEC_SPECIAL_AREA')
+    # Keep the crossing scripts active while original Kanto story scripts stay guarded.
+    converter = (ROOT/'tools/mapjson/mapjson.cpp').read_text()
+    assert 'json_to_string(map_data, "id", true) != "MAP_ORANGE_STRAIT_EAST"' in converter
     for a,b,trigger,arrival in ((west,east,{(39,y) for y in range(20)},(20,2)),
                                 (east,west,{(x,0) for x in range(40)},(37,10))):
         assert {(c['x'],c['y']) for c in a.meta['coord_events']} == trigger
@@ -85,6 +96,6 @@ def audit():
     seen = cinnabar.flood((cinnabar.w-1,y) for y in range(cinnabar.h) if cinnabar.water((cinnabar.w-1,y)))
     assert (15,12) in seen, 'Cinnabar Pokemon Center approach unreachable'
     assert any((0,y) in route20.flood([(1,10)]) for y in range(20)), 'Route 20 west approach blocked'
-    print('PASS: Orange Strait links Route 146, Cinnabar and Route 20 both ways; Surf terrain, graphics formats, approach and loop-free crossings valid.')
+    print('PASS: Orange Strait Surf crossings, Kanto Town Map handoff and story guards valid.')
 
 if __name__ == '__main__': audit()

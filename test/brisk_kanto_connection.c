@@ -5,6 +5,8 @@
 #include "fieldmap.h"
 #include "malloc.h"
 #include "overworld.h"
+#include "regions.h"
+#include "region_map.h"
 #include "script.h"
 #include "test/test.h"
 #include "constants/layouts.h"
@@ -122,4 +124,22 @@ TEST("Brisk Kanto passage repairs old Route 146 water caches without changing la
     Free(grid);
     gMapHeader = savedHeader;
     gBackupMapLayout = savedBackup;
+}
+
+TEST("Brisk Kanto Town Map switches regions at the Orange Strait without enabling Kanto events")
+{
+    const struct MapHeader *west = Header(MAP_ORANGE_STRAIT_WEST);
+    const struct MapHeader *east = Header(MAP_ORANGE_STRAIT_EAST);
+    struct MapHeader savedHeader = gMapHeader;
+    EXPECT_EQ(west->regionMapSectionId, MAPSEC_ORANGE_STRAIT);
+    EXPECT_EQ(east->regionMapSectionId, MAPSEC_ROUTE_20);
+    gMapHeader = *west;
+    EXPECT_EQ(GetCurrentRegion(), REGION_HOENN);
+    EXPECT_EQ(GetRegionMapType(gMapHeader.regionMapSectionId), REGION_MAP_HOENN);
+    gMapHeader = *east;
+    EXPECT_EQ(GetCurrentRegion(), REGION_KANTO);
+    EXPECT_EQ(GetRegionMapType(gMapHeader.regionMapSectionId), REGION_MAP_KANTO);
+    EXPECT_EQ(east->events->coordEventCount, 40);
+    EXPECT_EQ(west->events->coordEventCount, 20);
+    gMapHeader = savedHeader;
 }
