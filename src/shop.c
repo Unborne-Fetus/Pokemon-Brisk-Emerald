@@ -165,6 +165,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
 static const u16 sShopInventory_ZeroBadges[] = {
     ITEM_POKE_BALL,
     ITEM_POTION,
+    ITEM_REPEL,
     ITEM_ANTIDOTE,
     ITEM_BURN_HEAL,
     ITEM_ICE_HEAL,
@@ -181,6 +182,7 @@ static const u16 sShopInventory_OneBadge[] = {
     ITEM_GREAT_BALL,
     ITEM_POTION,
     ITEM_SUPER_POTION,
+    ITEM_REPEL,
     ITEM_ANTIDOTE,
     ITEM_BURN_HEAL,
     ITEM_ICE_HEAL,
@@ -196,6 +198,7 @@ static const u16 sShopInventory_TwoBadges[] = {
     ITEM_GREAT_BALL,
     ITEM_POTION,
     ITEM_SUPER_POTION,
+    ITEM_REPEL,
     ITEM_ANTIDOTE,
     ITEM_BURN_HEAL,
     ITEM_ICE_HEAL,
@@ -617,6 +620,17 @@ static void SetShopItemsForSale(const u16 *items)
         i++;
     }
 }
+
+#if TESTING
+bool32 Test_BriskGeneralMartSells(u16 item)
+{
+    SetShopItemsForSale(NULL);
+    for (u32 i = 0; i < sMartInfo.itemCount; i++)
+        if (sMartInfo.itemList[i] == item)
+            return TRUE;
+    return FALSE;
+}
+#endif
 
 static void Task_ShopMenu(u8 taskId)
 {

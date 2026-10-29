@@ -5181,10 +5181,10 @@ Ball: Dusk
 Nature: Adamant
 Shiny: Yes
 Tera Type: ghost
-- Belly Drum
-- drain punch
-- rage fist
-- shadow punch
+- MOVE_DRAIN_PUNCH
+- MOVE_RAGE_FIST
+- MOVE_SHADOW_PUNCH
+- MOVE_BULK_UP
 
 Hitmonchan (M) @ Punching Glove
 Level: 48
@@ -5193,10 +5193,10 @@ EVs: 128 Atk / 252 Spe / 128 Def
 Ball: Poke 
 Nature: Adamant
 Tera Type: Psychic
-- comet punch
-- ice punch
-- fire punch
-- thunder
+- MOVE_COMET_PUNCH
+- MOVE_ICE_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_DYNAMIC_PUNCH
 
 Hariyama (M) @ life Orb
 Level: 49
@@ -6957,7 +6957,7 @@ Tera Type: Ghost
 -Ice Spinner
 -Low Kick
 
-Dragapult @ Life Orb
+SPECIES_DRAKLOAK @ Life Orb
 Level: 50
 Ability: Clear Body
 EVs: 6 HP / 252 Atk / 252 Spe
@@ -6965,10 +6965,10 @@ Ball: Dusk
 Nature: Adamant
 Shiny: Yes
 Tera Type: Steel
--Dragon Darts
--Sucker Punch
--Phantom Force
--U Turn
+- MOVE_OUTRAGE
+- MOVE_PHANTOM_FORCE
+- MOVE_DOUBLE_EDGE
+- MOVE_PSYCHIC_FANGS
 
 Glimmora @ Glimmoranite
 Level: 50
@@ -7014,10 +7014,10 @@ Ball: Great
 Nature: Adamant
 Shiny: Yes
 Tera Type: Poison
--First Impression
--Meteor Assault
--Close Combat
--Brave Bird
+- MOVE_FIRST_IMPRESSION
+- MOVE_CLOSE_COMBAT
+- MOVE_IRON_TAIL
+- MOVE_DOUBLE_EDGE
 
 
 === TRAINER_WALTER_2 ===
@@ -7459,15 +7459,15 @@ Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
 
-SPECIES_GOLEM @ Oran Berry
+SPECIES_GEODUDE @ Oran Berry
 Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 64 Atk / 64 HP
 Nature: Adamant
-- MOVE_BULLDOZE
-- MOVE_ROCK_THROW
-- MOVE_TACKLE
-- MOVE_SMACK_DOWN
+- MOVE_ROCK_SLIDE
+- MOVE_STOMPING_TANTRUM
+- MOVE_BRICK_BREAK
+- MOVE_FIRE_PUNCH
 
 SPECIES_SUDOWOODO @ Oran Berry
 Level: 23
@@ -7526,15 +7526,15 @@ Nature: Adamant
 - MOVE_FIRE_PUNCH
 - MOVE_ICE_PUNCH
 
-SPECIES_MEDICHAM @ Medichamite
+SPECIES_MEDITITE @ Medichamite
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 EVs: 64 Atk / 64 Spe
 Nature: Adamant
+- MOVE_HIGH_JUMP_KICK
 - MOVE_ZEN_HEADBUTT
-- MOVE_FORCE_PALM
-- MOVE_FIRE_PUNCH
-- MOVE_ICE_PUNCH
+- MOVE_TAKE_DOWN
+- MOVE_POISON_JAB
 
 SPECIES_HARIYAMA @ Sitrus Berry
 Level: 35
@@ -9201,8 +9201,9 @@ Music: Male
 Double Battle: No
 AI: Check Viability
 
-Gurdurr
+SPECIES_TIMBURR
 Level: 23
+- MOVE_BRICK_BREAK
 
 === TRAINER_BEN ===
 Name: BEN
@@ -16901,30 +16902,30 @@ Level: 71
 Ability: Levitate
 Ball: Poke
 Nature: Serious
-- Shadow Punch
-- Sucker Punch
-- Spite
-- Curse
+- MOVE_SHADOW_PUNCH
+- MOVE_SUCKER_PUNCH
+- MOVE_SPITE
+- MOVE_SLUDGE_WAVE
 
 Wartortle (M)
 Level: 71
 Ability: Torrent
 Ball: Poke
 Nature: Rash
-- Water Pulse
-- Bite
-- Tackle
-- Leer
+- MOVE_WATER_PULSE
+- MOVE_BITE
+- MOVE_TACKLE
+- MOVE_HYDRO_PUMP
 
 Pikachu (F)
 Level: 71
 Ability: Static
 Ball: Great
 Nature: Modest
-- Spark
-- Sweet Kiss
-- Thunderbolt
-- Nasty Plot
+- MOVE_SPARK
+- MOVE_THUNDERBOLT
+- MOVE_NASTY_PLOT
+- MOVE_VOLT_TACKLE
 
 Zangoose (M)
 Level: 71
@@ -26674,11 +26675,11 @@ Double Battle: No
 AI: OMNISCIENT
 
 Pidgeot
-Ability: Keen Eye  
-- Aerial Ace  
-- Feather Dance  
-- Sand Attack  
-- Whirlwind
+Ability: Keen Eye
+- MOVE_AERIAL_ACE
+- MOVE_FEATHER_DANCE
+- MOVE_WHIRLWIND
+- MOVE_BRAVE_BIRD
 
 Alakazam
 Ability: Synchronize 

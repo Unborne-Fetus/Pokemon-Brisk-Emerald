@@ -15,6 +15,7 @@ import re
 
 from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 from trainer_mode_plan import profile_levels
+import trainer_legality as legality
 from trainer_mode_archetypes import SET_ROWS, EARLY_POOLS, LATE_POOLS, BOSS_CORES, CLASS_THEMES, KAIZO_CORES
 
 OUT = ROOT / 'src/data/brisk_mode_teams.party'
@@ -69,7 +70,7 @@ def info(sp):
     abilities = re.findall(r'ABILITY_\w+', abilities[1]) if abilities else []
     abilities = [a for a in abilities if a != 'ABILITY_NONE']
     return dict(stats=stats, types=types, abilities=abilities,
-        minimum=SETS.get(sp, {}).get('minimum', POLICY['species'].get(sp, {}).get('minimum_level',1)))
+        minimum=max(legality.minimum_level(sp), SETS.get(sp, {}).get('minimum', POLICY['species'].get(sp, {}).get('minimum_level',1))))
 
 
 def parse_mon(block):
@@ -89,36 +90,23 @@ def stable(value):
 
 @lru_cache(None)
 def legal_moves(sp):
-    name=sp.removeprefix('SPECIES_')
-    if name in LEARNABLES: return set(LEARNABLES[name]) | set(level_moves(sp,100))
-    # Battle/weather forms share the base species learnsets.
-    while '_' in name:
-        name=name.rsplit('_',1)[0]
-        if name in LEARNABLES:return set(LEARNABLES[name]) | set(level_moves(sp,100))
-    return set(level_moves(sp,100))
+    return legality.legal_moves(sp)
 
 
 @lru_cache(None)
 def level_moves(sp, level):
-    todo, visited, result = [sp], set(), []
-    while todo:
-        name = todo.pop()
-        if name in visited: continue
-        visited.add(name)
-        result += [move for lv,move in CATALOG.get(name, {}).get('learnset', []) if lv <= level]
-        todo.extend(PARENTS.get(name, []))
-    return list(dict.fromkeys(result))
+    return legality.level_moves(sp,level)
 
 
 def stage_species(sp, level):
+    # The curated balance floor may be stricter than the evolution's legal
+    # minimum, but it must never make a later evolution appear early.
+    sp=legality.stage_species(sp,level)
     for _ in range(8):
-        minimum = info(sp)['minimum']
-        # Species outside the compiled catalog (not ordinary early candidates)
-        # stay as the authored ace. Easy uses pre-evolutions when catalogued.
-        if minimum <= level: return sp
-        parents = PARENTS.get(sp, [])
-        if not parents: return sp
-        sp = parents[0]
+        if info(sp)['minimum']<=level:return sp
+        parents=legality.PARENTS.get(legality.canonical(sp),[])
+        if not parents:return sp
+        sp=parents[0]
     return sp
 
 
@@ -151,7 +139,7 @@ def candidates(typ, level, mode, seed, core=()):
         if group:
             offset=seed % len(group)
             eligible += group[offset:]+group[:offset]
-    if not eligible: eligible = [sp for sp in early if legal_moves(sp)]
+    if not eligible: eligible = list(dict.fromkeys(stage_species(sp,level) for sp in early if legal_moves(sp)))
     return list(dict.fromkeys([sp for sp in core if info(sp)['minimum'] <= level and legal_moves(sp)] + eligible))
 
 
@@ -160,16 +148,18 @@ def select_moves(sp, level, mode, role, doubles):
     nature=SETS.get(sp,{}).get('nature')
     if nature in ('Modest','Timid','Quiet'):physical=False
     elif nature in ('Adamant','Jolly','Brave'):physical=True
-    legal = legal_moves(sp)
+    legal = legality.legal_moves(sp,level)
     if mode == 'Easy':
         pool = level_moves(sp,level)
         # Complete catalog fallback for species outside the stage snapshot.
         if not pool: pool = sorted(legal)
-        ceiling = 60 if level < 12 else 65 if level < 20 else 85 if level < 30 else 100
+        ceiling = 60 if level < 12 else 65 if level < 20 else 85 if level < 30 else 100 if level<50 else 150
     else:
         pool = sorted(legal)
         ceiling = 60 if level < 12 else 75 if level < 20 else 90 if level < 30 else 150 if level>=40 and mode in ('Hard','Kaizo') else 120
-    pool = [m for m in pool if m in MOVES and MOVES[m]['power'] <= ceiling]
+    if mode == 'Normal':
+        ceiling=min(ceiling,50 if level<12 else 75 if level<25 else 90 if level<35 else 100 if level<50 else 120)
+    pool = [m for m in pool if m in legal and m in MOVES and MOVES[m]['power'] <= ceiling]
     types = info(sp)['types']
     attacks = [m for m in pool if MOVES[m]['category'] != 'STATUS' and MOVES[m]['power'] > 1
                and m not in ('MOVE_SELF_DESTRUCT','MOVE_EXPLOSION','MOVE_DREAM_EATER','MOVE_SNORE','MOVE_LAST_RESORT','MOVE_BELCH','MOVE_FOCUS_PUNCH','MOVE_SYNCHRONOISE','MOVE_SOLAR_BEAM','MOVE_SOLAR_BLADE')]
@@ -225,6 +215,8 @@ def select_moves(sp, level, mode, role, doubles):
 
 
 def mon_block(sp, level, mode, slot, doubles, original=None, train_original=False):
+    if legality.minimum_level(sp)>level:
+        raise ValueError(f'{sp} cannot exist at level {level}')
     # Keep baseline personalities/nicknames/gimmicks on dedicated Normal sets.
     if original is not None:
         block=original.strip()
@@ -363,7 +355,7 @@ def render():
                 keep=(untouched or tutorial or (mode=='Normal' and (i<len(original)-1 or i==count-1)))
                 if keep:
                     old=original[min(original_index,len(original)-1)]
-                    chosen.append((old['species'],mon_block(old['species'],level,mode,slot,doubles,old['original'],train_original=mode=='Normal' and not untouched and not tutorial)))
+                    chosen.append((old['species'],mon_block(old['species'],level,mode,slot,doubles,None if mode=='Easy' and tutorial else old['original'],train_original=mode=='Normal' and not untouched and not tutorial)))
                     continue
                 # Retain an ace's family for ordinary/rival/dedication identity.
                 if slot=='ace' and core:
@@ -423,14 +415,18 @@ def audit(source):
         for mon in mons:
             sp=mon['species'];block=mon['original'];lv=mon['level']
             if not 1<=lv<=100:errors.append(f'{key}: bad level {lv}')
+            if tid not in POLICY['metadata_only'] and lv<legality.minimum_level(sp):errors.append(f'{key}: {sp} requires at least level {legality.minimum_level(sp)}, got {lv}')
             if tid in LEAGUE_IDS and lv!=(70 if mode=='Easy' else 100):errors.append(f'{key}: League level changed')
             if tid=='TRAINER_STEVEN' and lv!=100:errors.append(f'{key}: Steven level changed')
             moves=re.findall(r'^- (MOVE_\w+)$',block,re.M)
+            if tid not in POLICY['metadata_only']:
+                for move in moves:
+                    if legality.canonical_move(move) not in legality.legal_moves(sp,lv):errors.append(f'{key}: {sp} cannot obtain {move} at level {lv}')
             # Old dedication sets use display names; trainerproc validates those.
             if len(set(moves))!=len(moves):errors.append(f'{key}: duplicate move on {sp}')
             if tid not in POLICY['protected'] and tid not in POLICY['metadata_only'] and tid not in POLICY['kaizo_bosses']:
                 for move in moves:
-                    if legal_moves(sp) and move not in legal_moves(sp):errors.append(f'{key}: {sp} cannot learn {move}')
+                    if legal_moves(sp) and legality.canonical_move(move) not in legal_moves(sp):errors.append(f'{key}: {sp} cannot learn {move}')
             ev=re.search(r'^EVs: (.*)',block,re.M)
             if ev and tid not in POLICY['protected']:
                 evs=[int(v) for v in re.findall(r'\d+',ev[1])]

@@ -17,6 +17,11 @@ jobs:
       - name: Audit trainer progression
         run: python3 tools/brisk/check_trainer_progression.py
 
+      - name: Audit every fixed trainer for evolution legality and Easy balance
+        run: |
+          python3 tools/brisk/check_trainer_legality.py
+          python3 tools/brisk/test_trainer_legality.py
+
       - name: Audit ordinary/story trainer fairness and dedication exemptions
         run: python3 tools/brisk/check_trainer_fairness.py
 
@@ -51,6 +56,9 @@ jobs:
 
       - name: Audit emitted Kanto actors, unique dialogue and postgame encounters
         run: python3 tools/brisk/check_kanto_content.py
+
+      - name: Verify stale trainer caches cannot ship old parties
+        run: python3 tools/brisk/check_trainer_header.py
 
       - name: Rename ROM
         run: |

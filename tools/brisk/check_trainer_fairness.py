@@ -10,6 +10,8 @@ import json
 import re
 from check_trainer_progression import ROOT, TEAM_RE, LEAGUE_IDS
 from trainer_mode_plan import ordinary_scaled
+from author_mode_teams import MOVES
+import trainer_legality as legality
 from league_teams import audit as audit_league
 from kaizo_bosses import audit as audit_kaizo
 from steven_champion import audit as audit_steven
@@ -130,20 +132,14 @@ def audit():
             if not match or name not in policy['story_species']:
                 errors.append(f'{tid}: missing story species or level'); continue
             level = int(match[1]); story_mons += 1
-            legal = set(); todo = [name]; visited = set()
-            while todo:
-                n = todo.pop()
-                if n in visited: continue
-                visited.add(n)
-                legal.update(m for l,m in policy['story_species'][n]['learnset'] if l <= level)
-                todo.extend(policy['story_parents'].get(n, []))
+            legal = legality.legal_moves(name,level)
             moves = re.findall(r'^- (MOVE_\w+)$', block, re.M)
-            if not 1 <= len(moves) <= 4 or len(set(moves)) != len(moves) or any(m not in legal for m in moves):
+            if not 1 <= len(moves) <= 4 or len(set(moves)) != len(moves) or any(legality.canonical_move(m) not in legal for m in moves):
                 errors.append(f'{tid}: illegal story moves on {name}')
-            if not any(policy['moves'][m]['power'] > 1 for m in moves):
+            if not any(MOVES[legality.canonical_move(m)]['power'] > 1 for m in moves):
                 errors.append(f'{tid}: no usable story attack on {name}')
             cap = 50 if level < 12 else 75 if level < 25 else 90 if level < 35 else 100 if level < 50 else 120
-            if any(policy['moves'][m]['power'] > cap for m in moves):
+            if any(MOVES[legality.canonical_move(m)]['power'] > cap for m in moves):
                 errors.append(f'{tid}: excessive story move power on {name}')
             ev = re.search(r'^EVs: (.*)$',block,re.M)
             values = [int(n) for n in re.findall(r'\d+',ev[1])] if ev else []

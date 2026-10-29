@@ -252,3 +252,39 @@ TEST("Brisk Kaizo boss appearances stay consistent across authored mode teams")
         EXPECT_EQ(sModeTeams[row][TRAINER_TANKERSON].trainerClass, TRAINER_CLASS_CHAMPION);
     }
 }
+
+TEST("Brisk mode rosters keep Easy Roxanne Brawly Wattson and both Route 110 rivals on the intended curve")
+{
+    const u16 ids[] = {TRAINER_ROXANNE_1, TRAINER_BRAWLY_1, TRAINER_WATTSON_1,
+        TRAINER_MAY_ROUTE_110_TREECKO, TRAINER_BRENDAN_ROUTE_110_TREECKO};
+    const u8 aces[] = {13, 18, 23, 22, 22};
+    u16 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
+    u16 savedRandom = VarGet(VAR_BRISK_RANDOMIZER);
+    u32 savedFlags = gBattleTypeFlags;
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+    for (u32 i = 0; i < ARRAY_COUNT(ids); i++)
+    {
+        const struct Trainer *trainer = &sModeTeams[GetBriskDifficultyLevel()][ids[i]];
+        struct Pokemon party[PARTY_SIZE];
+        CreateNPCTrainerPartyFromTrainer(party, trainer);
+        u32 highest = 0;
+        for (u32 slot = 0; slot < trainer->partySize; slot++)
+        {
+            u32 level = GetMonData(&party[slot], MON_DATA_LEVEL);
+            enum Species species = GetMonData(&party[slot], MON_DATA_SPECIES);
+            highest = max(highest, level);
+            EXPECT_GE(level, aces[i] - 3);
+            EXPECT_LE(level, aces[i]);
+            if (species == SPECIES_COMBUSKEN || species == SPECIES_GROVYLE || species == SPECIES_MARSHTOMP)
+                EXPECT_GE(level, 16);
+            if (species == SPECIES_BLAZIKEN || species == SPECIES_SCEPTILE || species == SPECIES_SWAMPERT)
+                EXPECT_GE(level, 36);
+        }
+        EXPECT_EQ(highest, aces[i]);
+    }
+    gBattleTypeFlags = savedFlags;
+    VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    VarSet(VAR_BRISK_RANDOMIZER, savedRandom);
+}

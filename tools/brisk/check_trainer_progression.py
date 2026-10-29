@@ -118,11 +118,52 @@ def rival_aces(teams):
     return aces
 
 
+def authored_progression_errors(teams, bands, protected):
+    """Audit the four-mode records actually compiled into the Emerald ROM."""
+    records = {}
+    errors = []
+    for tid, body in TEAM_RE.findall((ROOT / 'src/data/brisk_mode_teams.party').read_text()):
+        mode = re.search(r'^Difficulty: (\w+)$', body, re.M)
+        if mode:
+            records[tid, mode[1]] = levels(body)
+    modes = ('Easy', 'Normal', 'Hard', 'Kaizo')
+    for tid, (low, high) in bands.items():
+        if tid in protected or tid in STORY_ACES:
+            continue
+        for mode in modes:
+            # Allow the authored Hard/Kaizo badge ceilings, while rejecting
+            # early-game leftovers among later route trainers in every mode.
+            lower = max(1, (low + 1) // 2 - 1) if mode == 'Easy' else max(1, low - 2)
+            upper = ((high + 1) // 2 if mode == 'Easy' else
+                     min(100, high + max(2, high // 5)) if mode == 'Hard' else
+                     min(100, high + max(4, high * 2 // 5)) if mode == 'Kaizo' else high)
+            if mode in ('Hard', 'Kaizo'):
+                upper = min(100, upper + 2)  # Story grunts use the stronger story profile.
+            actual = records.get((tid, mode), [])
+            if not actual or not all(lower <= lv <= upper for lv in actual):
+                errors.append(f'{tid}/{mode}: compiled-source levels {actual}, expected route band {lower}-{upper}')
+    # A rival after Dewford must not fall back to the opening tutorial levels.
+    for mode in modes:
+        brawly = records.get(('TRAINER_BRAWLY_1', mode), [])
+        for tid in rival_aces(teams):
+            if '_ROUTE_110_' not in tid:
+                continue
+            rival = records.get((tid, mode), [])
+            if not rival or not brawly or max(rival) < max(brawly):
+                errors.append(f'{tid}/{mode}: Route 110 rival regresses below Brawly')
+    for tid, ace in (GYMS | rival_aces(teams) | STORY_ACES).items():
+        actual = records.get((tid, 'Normal'), [])
+        if not actual or max(actual) != ace or min(actual) < ace - 4:
+            errors.append(f'{tid}/Normal: compiled-source levels {actual}, expected ace {ace}, spread <= 4')
+    return errors
+
+
 def audit():
     teams = dict(TEAM_RE.findall((ROOT / "src/data/trainers.party").read_text()))
     errors = []
     bands = encounter_bands(teams)
     protected = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())['protected']
+    errors.extend(authored_progression_errors(teams, bands, protected))
     for trainer_id, (low, high) in bands.items():
         if trainer_id in protected or trainer_id in STORY_ACES:
             continue  # Named bosses have explicit targets; only dedication/Easter eggs are exempt.
