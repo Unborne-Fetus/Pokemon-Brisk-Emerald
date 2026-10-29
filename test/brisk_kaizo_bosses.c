@@ -35,7 +35,7 @@ TEST("Brisk Kaizo boss portraits and class match their Orange City appearances")
     const struct Trainer *tankerson = &sAuthoredKaizo[DIFFICULTY_NORMAL][TRAINER_TANKERSON];
     EXPECT_EQ(hooded->trainerPic, TRAINER_PIC_HEX_MANIAC);
     EXPECT_EQ(hooded->trainerClass, TRAINER_CLASS_HEX_MANIAC);
-    EXPECT_EQ(hooded->gender, FEMALE);
+    EXPECT_EQ((u32)hooded->gender, FEMALE);
     EXPECT_EQ(tankerson->trainerPic, TRAINER_PIC_VOLO);
     EXPECT_EQ(tankerson->trainerClass, TRAINER_CLASS_CHAMPION);
 }
