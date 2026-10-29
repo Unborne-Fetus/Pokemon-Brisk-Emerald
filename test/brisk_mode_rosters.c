@@ -236,3 +236,15 @@ TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every 
     gMapHeader = savedHeader;
     VarSet(VAR_BRISK_DIFFICULTY, savedDifficulty);
 }
+
+TEST("Brisk Kaizo boss appearances stay consistent across authored mode teams")
+{
+    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_KAIZO; row++)
+    {
+        EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerPic, TRAINER_PIC_HEX_MANIAC);
+        EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerClass, TRAINER_CLASS_HEX_MANIAC);
+        EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].gender, FEMALE);
+        EXPECT_EQ(sModeTeams[row][TRAINER_TANKERSON].trainerPic, TRAINER_PIC_VOLO);
+        EXPECT_EQ(sModeTeams[row][TRAINER_TANKERSON].trainerClass, TRAINER_CLASS_CHAMPION);
+    }
+}

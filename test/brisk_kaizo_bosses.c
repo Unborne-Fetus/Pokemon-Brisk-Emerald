@@ -29,6 +29,18 @@ static const struct Trainer sAuthoredKaizo[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 };
 static const u16 sKaizoIds[] = {TRAINER_HOODED_FIGURE, TRAINER_TANKERSON};
 
+TEST("Brisk Kaizo boss portraits and class match their Orange City appearances")
+{
+    const struct Trainer *hooded = &sAuthoredKaizo[DIFFICULTY_NORMAL][TRAINER_HOODED_FIGURE];
+    const struct Trainer *tankerson = &sAuthoredKaizo[DIFFICULTY_NORMAL][TRAINER_TANKERSON];
+    EXPECT_EQ(hooded->trainerPic, TRAINER_PIC_HEX_MANIAC);
+    EXPECT_EQ(hooded->trainerClass, TRAINER_CLASS_HEX_MANIAC);
+    EXPECT_EQ(hooded->gender, FEMALE);
+    EXPECT_EQ(tankerson->trainerPic, TRAINER_PIC_VOLO);
+    EXPECT_EQ(tankerson->trainerClass, TRAINER_CLASS_CHAMPION);
+}
+
+
 TEST("Tankerson Kaizo ace has guaranteed shiny Umbreon with Foul Play")
 {
     const struct TrainerMon *ace = &sAuthoredKaizo[DIFFICULTY_NORMAL][TRAINER_TANKERSON].party[PARTY_SIZE - 1];

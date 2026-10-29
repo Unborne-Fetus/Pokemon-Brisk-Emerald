@@ -94,6 +94,8 @@ def audit():
                         'access["coord_events"] = Json::array()'):
         assert requirement in converter, requirement
     access = (ROOT/'data/scripts/brisk_kanto_access.inc').read_text()
+    assert not any(chr(92) * 2 + esc in access for esc in ('p', 'n')), 'Doubled Kanto escape breaks event_scripts.o'
+    assert all(chr(92) + esc in access for esc in ('p', 'n')), 'Kanto text must use single escape codes'
     assert 'trainerbattle_' not in access
     assert 'BriskKantoAccessOnly_EventScript_ChallengePending' in access
     # Existing route entry -> Surf approach -> every row of the strait entrance.

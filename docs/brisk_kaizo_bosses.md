@@ -8,6 +8,8 @@ These are unrestricted, cross-generation teams with legal species abilities, lea
 
 Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson's shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.
 
+Hooded Figure uses the Hex Maniac overworld and battle appearance. Tankerson uses Volo artwork for both sprites, but retains his own name, champion class, team and Guzzlord reward.
+
 Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.
 
 ## Hooded Figure — singles
