@@ -31,6 +31,9 @@ jobs:
           python3 tools/brisk/check_item_distribution.py
           python3 tools/brisk/check_custom_mega_stones.py
 
+      - name: Audit Orange Islands to Kanto passage
+        run: python3 tools/brisk/check_kanto_connection.py
+
       - name: Install dependencies
         timeout-minutes: 30
         run: |

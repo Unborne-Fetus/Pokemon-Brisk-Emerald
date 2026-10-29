@@ -9620,6 +9620,30 @@
       "border_filepath": "data/layouts/Route150/border.bin",
       "blockdata_filepath": "data/layouts/Route150/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ORANGE_STRAIT_WEST",
+      "name": "OrangeStraitWest_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_AquaOrangeIslands",
+      "secondary_tileset": "gTileset_AquaValenciaIsland",
+      "border_filepath": "data/layouts/OrangeStraitWest/border.bin",
+      "blockdata_filepath": "data/layouts/OrangeStraitWest/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ORANGE_STRAIT_EAST",
+      "name": "OrangeStraitEast_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CinnabarIsland",
+      "border_filepath": "data/layouts/OrangeStraitEast/border.bin",
+      "blockdata_filepath": "data/layouts/OrangeStraitEast/map.bin",
+      "layout_version": "frlg",
+      "border_width": 2,
+      "border_height": 2
     }
   ]
 }

@@ -152,7 +152,9 @@
     "Route147",
     "Route148",
     "Route149",
-    "Route150"
+    "Route150",
+    "OrangeStraitWest",
+    "OrangeStraitEast"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

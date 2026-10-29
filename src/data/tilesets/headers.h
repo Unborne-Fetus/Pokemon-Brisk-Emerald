@@ -833,7 +833,10 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
-#else
+#endif // Hoenn tilesets
+
+// Brisk includes Kanto terrain in Emerald as well as the FRLG builds.
+#if IS_FRLG || defined(EMERALD)
 
 // FRLG tilesets
 const struct Tileset gTileset_BuildingFrlg =

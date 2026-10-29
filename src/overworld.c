@@ -1044,6 +1044,14 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ACRO_BIKE;
 }
 
+#if TESTING
+u8 Test_GetInitialPlayerAvatarTransitionFlags(u16 behavior, enum MapType mapType)
+{
+    struct InitialPlayerAvatarState state = {.transitionFlags = PLAYER_AVATAR_FLAG_ON_FOOT};
+    return GetAdjustedInitialTransitionFlags(&state, behavior, mapType);
+}
+#endif
+
 bool8 MetatileBehavior_IsSurfableInSeafoamIslands(u16 metatileBehavior)
 {
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(metatileBehavior) != TRUE)

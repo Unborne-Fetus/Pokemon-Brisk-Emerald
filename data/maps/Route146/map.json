@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE145",
       "offset": 8,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ORANGE_STRAIT_WEST",
+      "offset": 24,
+      "direction": "right"
     }
   ],
   "object_events": [

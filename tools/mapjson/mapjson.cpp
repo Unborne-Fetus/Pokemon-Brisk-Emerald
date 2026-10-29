@@ -431,6 +431,34 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
     if (layouts_data == Json())
         FATAL_ERROR("%s\n", layouts_err.c_str());
 
+    // Access-only Kanto: the imported story flags are placeholders in Emerald
+    // and its variable IDs overlap Hoenn. Keep the source maps untouched while
+    // exposing their terrain/warps without running unported story or rewards.
+    if (version == "emerald" && json_to_string(map_data, "region", true) == "REGION_KANTO") {
+        Json::object access = map_data.object_items();
+        access["shared_scripts_map"] = "BriskKantoAccessOnly";
+        access.erase("shared_events_map");
+        Json::array objects;
+        for (const auto &event : map_data["object_events"].array_items()) {
+            Json::object object = event.object_items();
+            object["trainer_type"] = "TRAINER_TYPE_NONE";
+            object["trainer_sight_or_berry_tree_id"] = "0";
+            object["script"] = "BriskKantoAccessOnly_EventScript_NotReady";
+            objects.push_back(object);
+        }
+        access["object_events"] = objects;
+        access["coord_events"] = Json::array();
+        Json::array signs;
+        for (const auto &event : map_data["bg_events"].array_items()) {
+            if (json_to_string(event, "type") != "sign") continue;
+            Json::object sign = event.object_items();
+            sign["script"] = "BriskKantoAccessOnly_EventScript_NotReady";
+            signs.push_back(sign);
+        }
+        access["bg_events"] = signs;
+        map_data = access;
+    }
+
     string header_text = generate_map_header_text(map_data, layouts_data);
     string events_text = generate_map_events_text(map_data);
     string connections_text = generate_map_connections_text(map_data);
@@ -762,8 +790,8 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
         }
         string map_name = json_to_string(map_data, "name");
 
-        if ((version == "emerald" && region != "REGION_HOENN")
-         || (version == "firered" && region != "REGION_KANTO")) {
+        // Brisk Emerald includes both existing regions; keep map IDs stable.
+        if (version == "firered" && region != "REGION_KANTO") {
             invalid_maps.push_back(map_name);
         }
     }
@@ -802,8 +830,7 @@ string generate_layout_headers_text(Json layouts_data) {
             else if (version == "firered")
                 layout_version = "frlg";
         }
-        if ((version == "emerald" && layout_version != "emerald")
-         || (version == "firered" && layout_version != "frlg"))
+        if (version == "firered" && layout_version != "frlg")
             continue;
         string layoutName = json_to_string(layout, "name");
         string border_label = layoutName + "_Border";
@@ -860,7 +887,7 @@ string generate_layouts_table_text(Json layouts_data) {
             else if (version == "firered")
                 layout_version = "frlg";
         }
-        if ((version == "emerald" && layout_version != "emerald") || (version == "firered" && layout_version != "frlg")) {
+        if (version == "firered" && layout_version != "frlg") {
             text << "\t.4byte NULL\n";
         } else {
             string layout_name = json_to_string(layout, "name", true);

@@ -1698,6 +1698,10 @@
     {
       "id": "MAPSEC_ROUTE_150",
       "name": "Route 150"
+    },
+    {
+      "id": "MAPSEC_ORANGE_STRAIT",
+      "name": "ORANGE STRAIT"
     }
   ]
 }

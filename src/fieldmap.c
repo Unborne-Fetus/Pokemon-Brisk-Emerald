@@ -144,6 +144,19 @@ void InitMap(void)
 // can leave immediately. Keep every other cached tile and all story state.
 static void RepairCachedBriskWarpTiles(u16 layoutId)
 {
+    // Older Route 146 saves cached solid ocean on the new Surf approach.
+    if (layoutId == LAYOUT_ROUTE146)
+    {
+        const struct MapLayout *layout = gMapHeader.mapLayout;
+        for (s32 y = 24; y <= 43; y++)
+            for (s32 x = 20; x <= 62; x++)
+            {
+                u16 block = layout->map[y * layout->width + x];
+                if (UNPACK_METATILE(block) == 0x12B && UNPACK_COLLISION(block) == 0)
+                    MapGridSetMetatileEntryAt(x + MAP_OFFSET, y + MAP_OFFSET, block);
+            }
+        return;
+    }
     bool32 mart = layoutId == LAYOUT_MART;
     if (!mart && layoutId != LAYOUT_AQUA_HIDEOUT_1F
         && layoutId != LAYOUT_SKY_PILLAR_5F && layoutId != LAYOUT_SKY_PILLAR_5F_CLEAN)

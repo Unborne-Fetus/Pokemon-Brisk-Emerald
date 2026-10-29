@@ -1806,3 +1806,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route149/scripts.inc"
 
 	.include "data/maps/Route150/scripts.inc"
+
+	.include "data/maps/OrangeStraitWest/scripts.inc"
+
+	.include "data/maps/OrangeStraitEast/scripts.inc"
+
+	.include "data/scripts/brisk_kanto_access.inc"
