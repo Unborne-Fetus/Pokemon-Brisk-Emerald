@@ -3,8 +3,27 @@
 #include "overworld.h"
 #include "test/test.h"
 #include "constants/event_objects.h"
+#include "constants/metatile_labels.h"
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2Frlg;
+bool32 Test_MapHasDoorGraphics(u16 metatileNum);
+bool32 Test_MapHasPCTile(u16 tileId);
+
+TEST("Brisk Kanto doors and PC screens select imported resources inside an Emerald ROM")
+{
+    struct MapHeader saved = gMapHeader;
+    gMapHeader = *Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_CINNABAR_ISLAND), MAP_NUM(MAP_CINNABAR_ISLAND));
+    EXPECT(Test_MapHasDoorGraphics(METATILE_GeneralFrlg_Door));
+    gMapHeader = *Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN));
+    EXPECT(Test_MapHasDoorGraphics(METATILE_General_Door));
+    gMapHeader = *Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F), MAP_NUM(MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F));
+    EXPECT(Test_MapHasPCTile(METATILE_BuildingFrlg_PCOn));
+    EXPECT(Test_MapHasPCTile(METATILE_BuildingFrlg_PCOff));
+    gMapHeader = *Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(MAP_OLDALE_TOWN_POKEMON_CENTER_1F), MAP_NUM(MAP_OLDALE_TOWN_POKEMON_CENTER_1F));
+    EXPECT(Test_MapHasPCTile(METATILE_Building_PC_On));
+    EXPECT(Test_MapHasPCTile(METATILE_Building_PC_Off));
+    gMapHeader = saved;
+}
 
 TEST("Brisk Kanto arrival and onward-route NPC graphics have complete sprite data")
 {

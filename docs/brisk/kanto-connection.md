@@ -79,3 +79,58 @@ champion dialogue, unique encounter placement and accessible encounter tiles.
 Emulator regression tests cover NPC resources, Surf collision, map selection,
 independent defeat flags and save-extension round trips. These checks do not
 replace a complete playthrough of every Kanto route and interior.
+
+## Postgame NPC and animation repairs
+
+Kanto map compilation now resolves the Viridian tutorial actor to an ordinary
+old man, independent of saved Hoenn graphics variables. Unsupported dynamic
+cutscene actors are omitted. The Cinnabar ferry no longer spawns across the
+shore after its original story hide flag is removed. Bill remains at Cinnabar
+as himself, discussing his research rather than offering the disabled ferry
+quest. Other named residents keep dialogue appropriate to their identities.
+
+Residents keep local flavor text where it does not depend on the original badge
+campaign or offer an unavailable reward/service. Replacement dialogue uses local
+subjects, and trainer introductions, defeat lines and follow-up conversations
+are distinct. Signs use their original safe descriptions or local labels.
+Regenerate just the dialogue without touching teams:
+
+```
+python3 tools/brisk/author_kanto_postgame.py --dialogue-only
+```
+
+Nurses now turn to the machine, run the healing effect, restore the party and
+bow. The monitor selects its graphics using the current room's layout. Both
+regions' door graphics are compiled into Emerald and selected by tileset. PC
+recognition and screen flicker also follow the room's layout instead of the ROM
+version, avoiding Hoenn metatiles being written into Kanto interiors.
+
+## Wild Pokemon and future Fakemon
+
+Every Kanto route has an Emerald-specific postgame table. Ordinary habitats use
+level 90-95 Pokemon; Victory Road and Cerulean Cave use 95-100. The tables favor
+mature species and distinguish forests, mountain trails, rivers, open sea,
+ghost areas and urban approaches. Both halves of Route 21 and Orange Strait
+are covered. Imported FRLG campaign tables remain separate.
+
+`data/brisk_kanto_encounters.json` lists zero-based replacement slots: four
+active land slots and two active Surf/fishing slots per applicable table. They
+currently contain valid habitat Pokemon, so reserving space does not create
+empty rolls. To add Fakemon later, use the `overrides` object, for example:
+
+```
+"overrides": {
+  "MAP_ROUTE1": {
+    "land_mons": {"20": "SPECIES_YOUR_FAKEMON"}
+  }
+}
+```
+
+Then run `python3 tools/brisk/author_kanto_encounters.py`. Overrides survive
+regeneration. Keep the existing land/Surf `SPECIES_NONE` terminators intact.
+The encounter generator does not add new species definitions.
+
+Run `python3 tools/brisk/check_kanto_content.py` after building mapjson and
+generating map constants (a normal `make` does both). It checks all 421 emitted
+Kanto maps, distinct NPC text, active encounter levels and future replacement
+slots. Native graphics regressions also cover Kanto and Hoenn doors and PCs.

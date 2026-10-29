@@ -7,10 +7,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "BattleColosseum_4P_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "BirthIsland_Exterior_Frlg": {
       "objects": {
@@ -20,25 +22,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_BirthIsland_Exterior_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "BirthIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_BirthIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_BirthIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_Condominiums_1F_Frlg": {
       "objects": {
@@ -62,6 +66,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Condominiums_1F_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Condominiums_1F_Frlg_Sign_2"
       }
     },
     "CeladonCity_Condominiums_2F_Frlg": {
@@ -76,6 +84,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Condominiums_2F_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Condominiums_2F_Frlg_Sign_2"
       }
     },
     "CeladonCity_Condominiums_3F_Frlg": {
@@ -100,6 +112,16 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_2",
+        "3": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_3",
+        "4": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_4",
+        "5": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_5",
+        "6": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_6",
+        "7": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_7",
+        "8": "BriskKanto_CeladonCity_Condominiums_3F_Frlg_Sign_8"
       }
     },
     "CeladonCity_Condominiums_RoofRoom_Frlg": {
@@ -114,10 +136,19 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Condominiums_RoofRoom_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Condominiums_RoofRoom_Frlg_Sign_2",
+        "3": "BriskKanto_CeladonCity_Condominiums_RoofRoom_Frlg_Sign_3"
       }
     },
     "CeladonCity_Condominiums_Roof_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Condominiums_Roof_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Condominiums_Roof_Frlg_Sign_2"
+      }
     },
     "CeladonCity_DepartmentStore_1F_Frlg": {
       "objects": {
@@ -126,6 +157,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_1F_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_DepartmentStore_1F_Frlg_Sign_2"
       }
     },
     "CeladonCity_DepartmentStore_2F_Frlg": {
@@ -150,6 +185,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_2F_Frlg_Sign_1"
       }
     },
     "CeladonCity_DepartmentStore_3F_Frlg": {
@@ -179,6 +217,19 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_2",
+        "3": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_3",
+        "4": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_4",
+        "5": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_5",
+        "6": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_6",
+        "7": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_7",
+        "8": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_8",
+        "9": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_9",
+        "10": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_10",
+        "11": "BriskKanto_CeladonCity_DepartmentStore_3F_Frlg_Sign_11"
       }
     },
     "CeladonCity_DepartmentStore_4F_Frlg": {
@@ -198,6 +249,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_4F_Frlg_Sign_1"
       }
     },
     "CeladonCity_DepartmentStore_5F_Frlg": {
@@ -222,10 +276,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_5F_Frlg_Sign_1"
       }
     },
     "CeladonCity_DepartmentStore_Elevator_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_Elevator_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_DepartmentStore_Elevator_Frlg_Sign_2"
+      }
     },
     "CeladonCity_DepartmentStore_Roof_Frlg": {
       "objects": {
@@ -239,6 +300,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_DepartmentStore_Roof_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_DepartmentStore_Roof_Frlg_Sign_2",
+        "3": "BriskKanto_CeladonCity_DepartmentStore_Roof_Frlg_Sign_3",
+        "4": "BriskKanto_CeladonCity_DepartmentStore_Roof_Frlg_Sign_4"
       }
     },
     "CeladonCity_Frlg": {
@@ -333,6 +400,16 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Frlg_Sign_2",
+        "3": "BriskKanto_CeladonCity_Frlg_Sign_3",
+        "4": "BriskKanto_CeladonCity_Frlg_Sign_4",
+        "5": "BriskKanto_CeladonCity_Frlg_Sign_5",
+        "6": "BriskKanto_CeladonCity_Frlg_Sign_6",
+        "7": "BriskKanto_CeladonCity_Frlg_Sign_7",
+        "8": "BriskKanto_CeladonCity_Frlg_Sign_8"
       }
     },
     "CeladonCity_GameCorner_Frlg": {
@@ -392,6 +469,32 @@
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_7",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "13": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_13",
+        "14": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_14",
+        "15": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_15",
+        "16": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_16",
+        "17": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_17",
+        "18": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_18",
+        "19": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_19",
+        "20": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_20",
+        "21": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_21",
+        "22": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_22",
+        "23": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_23",
+        "24": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_24",
+        "25": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_25",
+        "26": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_26",
+        "27": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_27",
+        "28": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_28",
+        "29": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_29",
+        "30": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_30",
+        "31": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_31",
+        "32": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_32",
+        "33": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_33",
+        "34": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_34",
+        "35": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_35",
+        "36": "BriskKanto_CeladonCity_GameCorner_Frlg_Sign_36"
       }
     },
     "CeladonCity_GameCorner_PrizeRoom_Frlg": {
@@ -421,7 +524,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_Gym_Frlg": {
       "objects": {
@@ -480,6 +584,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeladonCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_CeladonCity_Gym_Frlg_Sign_2"
       }
     },
     "CeladonCity_Hotel_Frlg": {
@@ -504,7 +612,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_House1_Frlg": {
       "objects": {
@@ -523,7 +632,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -547,7 +657,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -571,7 +682,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeladonCity_Restaurant_Frlg": {
       "objects": {
@@ -600,7 +712,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCave_1F_Frlg": {
       "objects": {
@@ -649,7 +762,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCave_2F_Frlg": {
       "objects": {
@@ -718,7 +832,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCave_B1F_Frlg": {
       "objects": {
@@ -782,7 +897,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_BikeShop_Frlg": {
       "objects": {
@@ -801,6 +917,16 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_1",
+        "2": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_2",
+        "3": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_3",
+        "4": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_4",
+        "5": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_5",
+        "6": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_6",
+        "7": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_7",
+        "8": "BriskKanto_CeruleanCity_BikeShop_Frlg_Sign_8"
       }
     },
     "CeruleanCity_Frlg": {
@@ -880,6 +1006,15 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeruleanCity_Frlg_Sign_1",
+        "2": "BriskKanto_CeruleanCity_Frlg_Sign_2",
+        "3": "BriskKanto_CeruleanCity_Frlg_Sign_3",
+        "4": "BriskKanto_CeruleanCity_Frlg_Sign_4",
+        "6": "BriskKanto_CeruleanCity_Frlg_Sign_6",
+        "7": "BriskKanto_CeruleanCity_Frlg_Sign_7",
+        "8": "BriskKanto_CeruleanCity_Frlg_Sign_8"
       }
     },
     "CeruleanCity_Gym_Frlg": {
@@ -904,6 +1039,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeruleanCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_CeruleanCity_Gym_Frlg_Sign_2"
       }
     },
     "CeruleanCity_House1_Frlg": {
@@ -913,7 +1052,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_House2_Frlg": {
       "objects": {
@@ -927,6 +1067,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeruleanCity_House2_Frlg_Sign_1"
       }
     },
     "CeruleanCity_House3_Frlg": {
@@ -941,7 +1084,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_House4_Frlg": {
       "objects": {
@@ -950,7 +1094,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_House5_Frlg": {
       "objects": {
@@ -959,6 +1104,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CeruleanCity_House5_Frlg_Sign_1"
       }
     },
     "CeruleanCity_Mart_Frlg": {
@@ -978,7 +1126,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -1017,7 +1166,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CeruleanCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -1041,7 +1191,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_Frlg": {
       "objects": {
@@ -1061,10 +1212,16 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "4": {
-          "script": "BriskKanto_CinnabarIsland_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CinnabarIsland_Frlg_Sign_1",
+        "2": "BriskKanto_CinnabarIsland_Frlg_Sign_2",
+        "3": "BriskKanto_CinnabarIsland_Frlg_Sign_3",
+        "4": "BriskKanto_CinnabarIsland_Frlg_Sign_4"
       }
     },
     "CinnabarIsland_Gym_Frlg": {
@@ -1115,6 +1272,23 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
+      "signs": {
+        "1": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_2",
+        "3": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_3",
+        "4": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_4",
+        "5": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_5",
+        "6": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_6",
+        "7": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_7",
+        "8": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_8",
+        "9": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_9",
+        "10": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_10",
+        "11": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_11",
+        "12": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_12",
+        "13": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_13",
+        "14": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_14",
+        "15": "BriskKanto_CinnabarIsland_Gym_Frlg_Sign_15"
+      },
       "map_scripts": "BriskKanto_CinnabarIsland_Gym_Frlg"
     },
     "CinnabarIsland_Mart_Frlg": {
@@ -1134,7 +1308,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -1169,11 +1344,12 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "7": {
-          "script": "BriskKanto_CinnabarIsland_PokemonCenter_1F_Frlg_7",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -1197,7 +1373,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_PokemonLab_Entrance_Frlg": {
       "objects": {
@@ -1206,6 +1383,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CinnabarIsland_PokemonLab_Entrance_Frlg_Sign_1",
+        "2": "BriskKanto_CinnabarIsland_PokemonLab_Entrance_Frlg_Sign_2",
+        "3": "BriskKanto_CinnabarIsland_PokemonLab_Entrance_Frlg_Sign_3",
+        "4": "BriskKanto_CinnabarIsland_PokemonLab_Entrance_Frlg_Sign_4"
       }
     },
     "CinnabarIsland_PokemonLab_ExperimentRoom_Frlg": {
@@ -1220,7 +1403,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_PokemonLab_Lounge_Frlg": {
       "objects": {
@@ -1239,7 +1423,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "CinnabarIsland_PokemonLab_ResearchRoom_Frlg": {
       "objects": {
@@ -1253,10 +1438,15 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_CinnabarIsland_PokemonLab_ResearchRoom_Frlg_Sign_1",
+        "2": "BriskKanto_CinnabarIsland_PokemonLab_ResearchRoom_Frlg_Sign_2"
       }
     },
     "DiglettsCave_B1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "DiglettsCave_NorthEntrance_Frlg": {
       "objects": {
@@ -1265,7 +1455,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "DiglettsCave_SouthEntrance_Frlg": {
       "objects": {
@@ -1274,7 +1465,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_Frlg": {
       "objects": {
@@ -1308,21 +1500,25 @@
             "flag": "FLAG_TEMP_12"
           }
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FiveIsland_Frlg_Sign_1"
       }
     },
     "FiveIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_FiveIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_FiveIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_House1_Frlg": {
       "objects": {
@@ -1331,7 +1527,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_House2_Frlg": {
       "objects": {
@@ -1340,10 +1537,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Entrance_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room10_Frlg": {
       "objects": {
@@ -1357,7 +1556,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room11_Frlg": {
       "objects": {
@@ -1366,7 +1566,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room12_Frlg": {
       "objects": {
@@ -1375,7 +1576,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room13_Frlg": {
       "objects": {
@@ -1384,7 +1586,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room14_Frlg": {
       "objects": {
@@ -1393,7 +1596,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room1_Frlg": {
       "objects": {
@@ -1402,13 +1606,16 @@
           "trainer": "TRAINER_BRISK_KANTO_RUIN_MANIAC_LAWSON",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room2_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room3_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room4_Frlg": {
       "objects": {
@@ -1417,22 +1624,28 @@
           "trainer": "TRAINER_BRISK_KANTO_PSYCHIC_LAURA",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_LostCave_Room5_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room6_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room7_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room8_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_LostCave_Room9_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FiveIsland_Meadow_Frlg": {
       "objects": {
@@ -1471,6 +1684,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FiveIsland_Meadow_Frlg_Sign_1"
       }
     },
     "FiveIsland_MemorialPillar_Frlg": {
@@ -1500,6 +1716,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FiveIsland_MemorialPillar_Frlg_Sign_1"
       }
     },
     "FiveIsland_PokemonCenter_1F_Frlg": {
@@ -1529,7 +1748,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -1553,7 +1773,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FiveIsland_ResortGorgeous_Frlg": {
       "objects": {
@@ -1597,6 +1818,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "5": "BriskKanto_FiveIsland_ResortGorgeous_Frlg_Sign_5"
       }
     },
     "FiveIsland_ResortGorgeous_House_Frlg": {
@@ -1611,6 +1835,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FiveIsland_ResortGorgeous_House_Frlg_Sign_1",
+        "2": "BriskKanto_FiveIsland_ResortGorgeous_House_Frlg_Sign_2"
       }
     },
     "FiveIsland_RocketWarehouse_Frlg": {
@@ -1665,6 +1893,31 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_1",
+        "2": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_2",
+        "5": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_5",
+        "6": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_6",
+        "7": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_7",
+        "8": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_8",
+        "9": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_9",
+        "10": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_10",
+        "11": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_11",
+        "12": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_12",
+        "13": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_13",
+        "14": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_14",
+        "15": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_15",
+        "16": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_16",
+        "17": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_17",
+        "18": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_18",
+        "19": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_19",
+        "20": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_20",
+        "21": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_21",
+        "22": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_22",
+        "23": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_23",
+        "24": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_24",
+        "25": "BriskKanto_FiveIsland_RocketWarehouse_Frlg_Sign_25"
       }
     },
     "FiveIsland_WaterLabyrinth_Frlg": {
@@ -1679,7 +1932,8 @@
           "trainer": "TRAINER_BRISK_KANTO_PKMN_BREEDER_ALIZE",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_Frlg": {
       "objects": {
@@ -1743,21 +1997,26 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FourIsland_Frlg_Sign_1",
+        "4": "BriskKanto_FourIsland_Frlg_Sign_4"
       }
     },
     "FourIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_FourIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_FourIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_House1_Frlg": {
       "objects": {
@@ -1771,7 +2030,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_House2_Frlg": {
       "objects": {
@@ -1780,7 +2040,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_IcefallCave_1F_Frlg": {
       "objects": {
@@ -1794,7 +2055,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_IcefallCave_B1F_Frlg": {
       "objects": {
@@ -1808,7 +2070,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_IcefallCave_Back_Frlg": {
       "objects": {
@@ -1832,10 +2095,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_IcefallCave_Entrance_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "FourIsland_LoreleisHouse_Frlg": {
       "objects": {
@@ -1914,7 +2179,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_Mart_Frlg": {
       "objects": {
@@ -1933,7 +2199,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -1957,6 +2224,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FourIsland_PokemonCenter_1F_Frlg_Sign_1",
+        "2": "BriskKanto_FourIsland_PokemonCenter_1F_Frlg_Sign_2"
       }
     },
     "FourIsland_PokemonCenter_2F_Frlg": {
@@ -1981,7 +2252,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FourIsland_PokemonDayCare_Frlg": {
       "objects": {
@@ -1990,7 +2262,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_Frlg": {
       "objects": {
@@ -2037,7 +2310,21 @@
         "9": {
           "script": "BriskKanto_FuchsiaCity_Frlg_9",
           "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "trainer_type": "TRAINER_TYPE_NONE",
+          "object": {
+            "type": "object",
+            "graphics_id": "OBJ_EVENT_GFX_OMANYTE",
+            "x": 8,
+            "y": 8,
+            "elevation": 1,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "movement_range_x": 1,
+            "movement_range_y": 1,
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "0x0",
+            "flag": "0"
+          }
         },
         "10": {
           "script": "BriskKanto_FuchsiaCity_Frlg_10",
@@ -2074,6 +2361,19 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FuchsiaCity_Frlg_Sign_1",
+        "2": "BriskKanto_FuchsiaCity_Frlg_Sign_2",
+        "3": "BriskKanto_FuchsiaCity_Frlg_Sign_3",
+        "4": "BriskKanto_FuchsiaCity_Frlg_Sign_4",
+        "5": "BriskKanto_FuchsiaCity_Frlg_Sign_5",
+        "6": "BriskKanto_FuchsiaCity_Frlg_Sign_6",
+        "7": "BriskKanto_FuchsiaCity_Frlg_Sign_7",
+        "8": "BriskKanto_FuchsiaCity_Frlg_Sign_8",
+        "9": "BriskKanto_FuchsiaCity_Frlg_Sign_9",
+        "10": "BriskKanto_FuchsiaCity_Frlg_Sign_10",
+        "11": "BriskKanto_FuchsiaCity_Frlg_Sign_11"
       }
     },
     "FuchsiaCity_Gym_Frlg": {
@@ -2118,6 +2418,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FuchsiaCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_FuchsiaCity_Gym_Frlg_Sign_2"
       }
     },
     "FuchsiaCity_House1_Frlg": {
@@ -2137,7 +2441,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_House2_Frlg": {
       "objects": {
@@ -2146,7 +2451,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_House3_Frlg": {
       "objects": {
@@ -2155,7 +2461,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_Mart_Frlg": {
       "objects": {
@@ -2174,7 +2481,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -2198,7 +2506,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -2222,7 +2531,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_SafariZone_Entrance_Frlg": {
       "objects": {
@@ -2236,7 +2546,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_SafariZone_Office_Frlg": {
       "objects": {
@@ -2260,7 +2571,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "FuchsiaCity_WardensHouse_Frlg": {
       "objects": {
@@ -2284,6 +2596,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_FuchsiaCity_WardensHouse_Frlg_Sign_1",
+        "2": "BriskKanto_FuchsiaCity_WardensHouse_Frlg_Sign_2",
+        "3": "BriskKanto_FuchsiaCity_WardensHouse_Frlg_Sign_3",
+        "4": "BriskKanto_FuchsiaCity_WardensHouse_Frlg_Sign_4"
       }
     },
     "IndigoPlateau_Exterior_Frlg": {
@@ -2298,7 +2616,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "IndigoPlateau_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -2342,7 +2661,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "IndigoPlateau_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -2366,7 +2686,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_Frlg": {
       "objects": {
@@ -2385,6 +2706,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_LavenderTown_Frlg_Sign_1",
+        "2": "BriskKanto_LavenderTown_Frlg_Sign_2",
+        "3": "BriskKanto_LavenderTown_Frlg_Sign_3",
+        "4": "BriskKanto_LavenderTown_Frlg_Sign_4"
       }
     },
     "LavenderTown_House1_Frlg": {
@@ -2399,7 +2726,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_House2_Frlg": {
       "objects": {
@@ -2408,7 +2736,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_Mart_Frlg": {
       "objects": {
@@ -2432,7 +2761,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -2461,7 +2791,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -2485,7 +2816,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "LavenderTown_VolunteerPokemonHouse_Frlg": {
       "objects": {
@@ -2519,6 +2851,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_LavenderTown_VolunteerPokemonHouse_Frlg_Sign_1",
+        "2": "BriskKanto_LavenderTown_VolunteerPokemonHouse_Frlg_Sign_2",
+        "3": "BriskKanto_LavenderTown_VolunteerPokemonHouse_Frlg_Sign_3"
       }
     },
     "MtEmber_Exterior_Frlg": {
@@ -2623,7 +2960,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_1F_Frlg": {
       "objects": {
@@ -2652,7 +2990,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B1F_Frlg": {
       "objects": {
@@ -2676,7 +3015,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B1F_Stairs_Frlg": {
       "objects": {
@@ -2685,7 +3025,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B2F_Frlg": {
       "objects": {
@@ -2724,7 +3065,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B2F_Stairs_Frlg": {
       "objects": {
@@ -2738,7 +3080,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B3F_Frlg": {
       "objects": {
@@ -2792,10 +3135,39 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_RubyPath_B4F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_1",
+        "2": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_2",
+        "3": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_3",
+        "4": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_4",
+        "5": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_5",
+        "6": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_6",
+        "7": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_7",
+        "8": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_8",
+        "9": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_9",
+        "10": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_10",
+        "11": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_11",
+        "12": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_12",
+        "13": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_13",
+        "14": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_14",
+        "15": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_15",
+        "16": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_16",
+        "17": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_17",
+        "18": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_18",
+        "19": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_19",
+        "20": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_20",
+        "21": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_21",
+        "22": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_22",
+        "23": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_23",
+        "24": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_24",
+        "25": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_25",
+        "26": "BriskKanto_MtEmber_RubyPath_B4F_Frlg_Sign_26"
+      }
     },
     "MtEmber_RubyPath_B5F_Frlg": {
       "objects": {
@@ -2804,10 +3176,14 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_MtEmber_RubyPath_B5F_Frlg_Sign_1"
       }
     },
     "MtEmber_SummitPath_1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "MtEmber_SummitPath_2F_Frlg": {
       "objects": {
@@ -2856,10 +3232,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtEmber_SummitPath_3F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "MtEmber_Summit_Frlg": {
       "objects": {
@@ -2888,7 +3266,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "MtMoon_1F_Frlg": {
       "objects": {
@@ -2962,10 +3341,14 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_MtMoon_1F_Frlg_Sign_1"
       }
     },
     "MtMoon_B1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "MtMoon_B2F_Frlg": {
       "objects": {
@@ -3024,46 +3407,60 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "NavelRock_1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_B1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B10F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B11F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B2F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B3F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B4F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B5F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B6F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B7F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B8F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_BasePath_B9F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_Base_Frlg": {
       "objects": {
@@ -3072,39 +3469,47 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "NavelRock_Exterior_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_Fork_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_NavelRock_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_NavelRock_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "NavelRock_SummitPath_2F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_SummitPath_3F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_SummitPath_4F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_SummitPath_5F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "NavelRock_Summit_Frlg": {
       "objects": {
@@ -3113,14 +3518,15 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_OneIsland_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_OneIsland_Frlg_2",
@@ -3132,21 +3538,26 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_OneIsland_Frlg_Sign_1",
+        "2": "BriskKanto_OneIsland_Frlg_Sign_2"
       }
     },
     "OneIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_OneIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_OneIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_House1_Frlg": {
       "objects": {
@@ -3160,7 +3571,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_House2_Frlg": {
       "objects": {
@@ -3169,7 +3581,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_KindleRoad_EmberSpa_Frlg": {
       "objects": {
@@ -3203,7 +3616,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_KindleRoad_Frlg": {
       "objects": {
@@ -3352,6 +3766,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_OneIsland_KindleRoad_Frlg_Sign_1",
+        "2": "BriskKanto_OneIsland_KindleRoad_Frlg_Sign_2"
       }
     },
     "OneIsland_PokemonCenter_1F_Frlg": {
@@ -3362,9 +3780,9 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
           "script": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_3",
@@ -3386,6 +3804,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_1",
+        "2": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_2",
+        "3": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_3",
+        "4": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_4",
+        "5": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_5",
+        "6": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_6",
+        "7": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_7",
+        "8": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_8",
+        "9": "BriskKanto_OneIsland_PokemonCenter_1F_Frlg_Sign_9"
       }
     },
     "OneIsland_PokemonCenter_2F_Frlg": {
@@ -3410,7 +3839,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "OneIsland_TreasureBeach_Frlg": {
       "objects": {
@@ -3424,7 +3854,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PalletTown_Frlg": {
       "objects": {
@@ -3443,6 +3874,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PalletTown_Frlg_Sign_1",
+        "2": "BriskKanto_PalletTown_Frlg_Sign_2",
+        "3": "BriskKanto_PalletTown_Frlg_Sign_3",
+        "4": "BriskKanto_PalletTown_Frlg_Sign_4",
+        "5": "BriskKanto_PalletTown_Frlg_Sign_5"
       }
     },
     "PalletTown_PlayersHouse_1F_Frlg": {
@@ -3452,10 +3890,18 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PalletTown_PlayersHouse_1F_Frlg_Sign_1"
       }
     },
     "PalletTown_PlayersHouse_2F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_PalletTown_PlayersHouse_2F_Frlg_Sign_1",
+        "2": "BriskKanto_PalletTown_PlayersHouse_2F_Frlg_Sign_2",
+        "3": "BriskKanto_PalletTown_PlayersHouse_2F_Frlg_Sign_3"
+      }
     },
     "PalletTown_ProfessorOaksLab_Frlg": {
       "objects": {
@@ -3509,6 +3955,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PalletTown_ProfessorOaksLab_Frlg_Sign_1",
+        "2": "BriskKanto_PalletTown_ProfessorOaksLab_Frlg_Sign_2",
+        "3": "BriskKanto_PalletTown_ProfessorOaksLab_Frlg_Sign_3",
+        "4": "BriskKanto_PalletTown_ProfessorOaksLab_Frlg_Sign_4"
       }
     },
     "PalletTown_RivalsHouse_Frlg": {
@@ -3523,6 +3975,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PalletTown_RivalsHouse_Frlg_Sign_1",
+        "2": "BriskKanto_PalletTown_RivalsHouse_Frlg_Sign_2",
+        "3": "BriskKanto_PalletTown_RivalsHouse_Frlg_Sign_3"
       }
     },
     "PewterCity_Frlg": {
@@ -3562,6 +4019,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PewterCity_Frlg_Sign_1",
+        "2": "BriskKanto_PewterCity_Frlg_Sign_2",
+        "3": "BriskKanto_PewterCity_Frlg_Sign_3",
+        "4": "BriskKanto_PewterCity_Frlg_Sign_4",
+        "5": "BriskKanto_PewterCity_Frlg_Sign_5"
       }
     },
     "PewterCity_Gym_Frlg": {
@@ -3581,6 +4045,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PewterCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_PewterCity_Gym_Frlg_Sign_2"
       }
     },
     "PewterCity_House1_Frlg": {
@@ -3600,7 +4068,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PewterCity_House2_Frlg": {
       "objects": {
@@ -3614,7 +4083,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PewterCity_Mart_Frlg": {
       "objects": {
@@ -3633,7 +4103,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PewterCity_Museum_1F_Frlg": {
       "objects": {
@@ -3667,6 +4138,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PewterCity_Museum_1F_Frlg_Sign_1",
+        "2": "BriskKanto_PewterCity_Museum_1F_Frlg_Sign_2",
+        "3": "BriskKanto_PewterCity_Museum_1F_Frlg_Sign_3",
+        "4": "BriskKanto_PewterCity_Museum_1F_Frlg_Sign_4"
       }
     },
     "PewterCity_Museum_2F_Frlg": {
@@ -3696,6 +4173,16 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_1",
+        "2": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_2",
+        "3": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_3",
+        "4": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_4",
+        "5": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_5",
+        "6": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_6",
+        "7": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_7",
+        "8": "BriskKanto_PewterCity_Museum_2F_Frlg_Sign_8"
       }
     },
     "PewterCity_PokemonCenter_1F_Frlg": {
@@ -3735,7 +4222,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PewterCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -3759,7 +4247,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonLeague_AgathasRoom_Frlg": {
       "objects": {
@@ -3769,6 +4258,7 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_PokemonLeague_AgathasRoom_Frlg"
     },
     "PokemonLeague_BrunosRoom_Frlg": {
@@ -3779,6 +4269,7 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_PokemonLeague_BrunosRoom_Frlg"
     },
     "PokemonLeague_ChampionsRoom_Frlg": {
@@ -3794,6 +4285,7 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_PokemonLeague_ChampionsRoom_Frlg"
     },
     "PokemonLeague_HallOfFame_Frlg": {
@@ -3803,7 +4295,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonLeague_LancesRoom_Frlg": {
       "objects": {
@@ -3813,6 +4306,7 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_PokemonLeague_LancesRoom_Frlg"
     },
     "PokemonLeague_LoreleisRoom_Frlg": {
@@ -3823,6 +4317,7 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_PokemonLeague_LoreleisRoom_Frlg"
     },
     "PokemonMansion_1F_Frlg": {
@@ -3853,6 +4348,9 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {
+        "1": "BriskKanto_PokemonMansion_1F_Frlg_Sign_1"
+      },
       "map_scripts": "BriskKanto_PokemonMansion_1F_Frlg"
     },
     "PokemonMansion_2F_Frlg": {
@@ -3878,6 +4376,11 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
+      "signs": {
+        "1": "BriskKanto_PokemonMansion_2F_Frlg_Sign_1",
+        "2": "BriskKanto_PokemonMansion_2F_Frlg_Sign_2",
+        "3": "BriskKanto_PokemonMansion_2F_Frlg_Sign_3"
+      },
       "map_scripts": "BriskKanto_PokemonMansion_2F_Frlg"
     },
     "PokemonMansion_3F_Frlg": {
@@ -3902,6 +4405,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_PokemonMansion_3F_Frlg_Sign_1",
+        "2": "BriskKanto_PokemonMansion_3F_Frlg_Sign_2"
       },
       "map_scripts": "BriskKanto_PokemonMansion_3F_Frlg"
     },
@@ -3944,6 +4451,11 @@
           "keep_flag": true
         }
       },
+      "signs": {
+        "1": "BriskKanto_PokemonMansion_B1F_Frlg_Sign_1",
+        "2": "BriskKanto_PokemonMansion_B1F_Frlg_Sign_2",
+        "3": "BriskKanto_PokemonMansion_B1F_Frlg_Sign_3"
+      },
       "map_scripts": "BriskKanto_PokemonMansion_B1F_Frlg"
     },
     "PokemonTower_1F_Frlg": {
@@ -3973,7 +4485,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_2F_Frlg": {
       "objects": {
@@ -3987,7 +4500,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_3F_Frlg": {
       "objects": {
@@ -4011,7 +4525,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_4F_Frlg": {
       "objects": {
@@ -4045,7 +4560,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_5F_Frlg": {
       "objects": {
@@ -4084,7 +4600,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_6F_Frlg": {
       "objects": {
@@ -4113,7 +4630,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "PokemonTower_7F_Frlg": {
       "objects": {
@@ -4143,7 +4661,8 @@
           "trainer_type": "TRAINER_TYPE_NONE",
           "keep_flag": true
         }
-      }
+      },
+      "signs": {}
     },
     "PowerPlant_Frlg": {
       "objects": {
@@ -4187,7 +4706,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RecordCorner_Frlg": {
       "objects": {
@@ -4196,7 +4716,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RockTunnel_1F_Frlg": {
       "objects": {
@@ -4250,6 +4771,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_RockTunnel_1F_Frlg_Sign_1"
       }
     },
     "RockTunnel_B1F_Frlg": {
@@ -4384,7 +4908,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RocketHideout_B1F_Frlg": {
       "objects": {
@@ -4423,7 +4948,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RocketHideout_B2F_Frlg": {
       "objects": {
@@ -4452,7 +4978,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RocketHideout_B3F_Frlg": {
       "objects": {
@@ -4481,7 +5008,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RocketHideout_B4F_Frlg": {
       "objects": {
@@ -4530,10 +5058,14 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "RocketHideout_Elevator_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_RocketHideout_Elevator_Frlg_Sign_1"
+      }
     },
     "Route10_Frlg": {
       "objects": {
@@ -4587,6 +5119,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route10_Frlg_Sign_1",
+        "2": "BriskKanto_Route10_Frlg_Sign_2",
+        "3": "BriskKanto_Route10_Frlg_Sign_3"
       }
     },
     "Route10_PokemonCenter_1F_Frlg": {
@@ -4616,7 +5153,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route10_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -4640,7 +5178,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route11_EastEntrance_1F_Frlg": {
       "objects": {
@@ -4654,7 +5193,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route11_EastEntrance_2F_Frlg": {
       "objects": {
@@ -4668,6 +5208,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route11_EastEntrance_2F_Frlg_Sign_1",
+        "2": "BriskKanto_Route11_EastEntrance_2F_Frlg_Sign_2"
       }
     },
     "Route11_Frlg": {
@@ -4737,6 +5281,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route11_Frlg_Sign_1"
       }
     },
     "Route12_FishingHouse_Frlg": {
@@ -4746,6 +5293,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route12_FishingHouse_Frlg_Sign_1"
       }
     },
     "Route12_Frlg": {
@@ -4771,9 +5321,9 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         },
         "5": {
-          "script": "BriskKanto_Route12_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "6": {
           "script": "BriskKanto_Route12_Frlg_6",
@@ -4820,6 +5370,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route12_Frlg_Sign_1",
+        "2": "BriskKanto_Route12_Frlg_Sign_2"
       }
     },
     "Route12_NorthEntrance_1F_Frlg": {
@@ -4829,7 +5383,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route12_NorthEntrance_2F_Frlg": {
       "objects": {
@@ -4838,6 +5393,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route12_NorthEntrance_2F_Frlg_Sign_1",
+        "2": "BriskKanto_Route12_NorthEntrance_2F_Frlg_Sign_2"
       }
     },
     "Route13_Frlg": {
@@ -4897,6 +5456,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route13_Frlg_Sign_1",
+        "2": "BriskKanto_Route13_Frlg_Sign_2",
+        "3": "BriskKanto_Route13_Frlg_Sign_3"
       }
     },
     "Route14_Frlg": {
@@ -4976,6 +5540,9 @@
           "trainer": "TRAINER_BRISK_KANTO_TWINS_KIRI_JAN",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route14_Frlg_Sign_1"
       }
     },
     "Route15_Frlg": {
@@ -5065,6 +5632,9 @@
             "flag": "FLAG_TEMP_14"
           }
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route15_Frlg_Sign_1"
       }
     },
     "Route15_WestEntrance_1F_Frlg": {
@@ -5074,7 +5644,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route15_WestEntrance_2F_Frlg": {
       "objects": {
@@ -5083,6 +5654,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route15_WestEntrance_2F_Frlg_Sign_1",
+        "2": "BriskKanto_Route15_WestEntrance_2F_Frlg_Sign_2"
       }
     },
     "Route16_Frlg": {
@@ -5133,10 +5708,14 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         },
         "10": {
-          "script": "BriskKanto_Route16_Frlg_10",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route16_Frlg_Sign_1",
+        "2": "BriskKanto_Route16_Frlg_Sign_2"
       }
     },
     "Route16_House_Frlg": {
@@ -5151,7 +5730,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route16_NorthEntrance_1F_Frlg": {
       "objects": {
@@ -5165,7 +5745,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route16_NorthEntrance_2F_Frlg": {
       "objects": {
@@ -5184,6 +5765,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route16_NorthEntrance_2F_Frlg_Sign_1",
+        "2": "BriskKanto_Route16_NorthEntrance_2F_Frlg_Sign_2"
       }
     },
     "Route17_Frlg": {
@@ -5238,6 +5823,14 @@
           "trainer": "TRAINER_BRISK_KANTO_BIKER_JAXON",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route17_Frlg_Sign_1",
+        "2": "BriskKanto_Route17_Frlg_Sign_2",
+        "3": "BriskKanto_Route17_Frlg_Sign_3",
+        "4": "BriskKanto_Route17_Frlg_Sign_4",
+        "5": "BriskKanto_Route17_Frlg_Sign_5",
+        "6": "BriskKanto_Route17_Frlg_Sign_6"
       }
     },
     "Route18_EastEntrance_1F_Frlg": {
@@ -5247,7 +5840,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route18_EastEntrance_2F_Frlg": {
       "objects": {
@@ -5256,6 +5850,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route18_EastEntrance_2F_Frlg_Sign_1",
+        "2": "BriskKanto_Route18_EastEntrance_2F_Frlg_Sign_2"
       }
     },
     "Route18_Frlg": {
@@ -5275,6 +5873,10 @@
           "trainer": "TRAINER_BRISK_KANTO_BIRD_KEEPER_WILTON",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route18_Frlg_Sign_1",
+        "2": "BriskKanto_Route18_Frlg_Sign_2"
       }
     },
     "Route19_Frlg": {
@@ -5339,10 +5941,14 @@
           "trainer": "TRAINER_BRISK_KANTO_SIS_AND_BRO_LIA_LUC",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route19_Frlg_Sign_1"
       }
     },
     "Route19_UnusedHouse_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "Route1_Frlg": {
       "objects": {
@@ -5356,6 +5962,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route1_Frlg_Sign_1"
       }
     },
     "Route20_Frlg": {
@@ -5415,6 +6024,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route20_Frlg_Sign_1",
+        "2": "BriskKanto_Route20_Frlg_Sign_2"
       }
     },
     "Route21_North_Frlg": {
@@ -5464,7 +6077,8 @@
             "flag": "0"
           }
         }
-      }
+      },
+      "signs": {}
     },
     "Route21_South_Frlg": {
       "objects": {
@@ -5493,7 +6107,8 @@
           "trainer": "TRAINER_BRISK_KANTO_SWIMMER_MALE_ROLAND",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "Route22_Frlg": {
       "objects": {
@@ -5502,6 +6117,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route22_Frlg_Sign_1"
       }
     },
     "Route22_NorthEntrance_Frlg": {
@@ -5511,7 +6129,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route23_Frlg": {
       "objects": {
@@ -5556,10 +6175,14 @@
           "trainer_type": "TRAINER_TYPE_NONE",
           "keep_flag": true
         }
+      },
+      "signs": {
+        "9": "BriskKanto_Route23_Frlg_Sign_9"
       }
     },
     "Route23_UnusedHouse": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "Route24_Frlg": {
       "objects": {
@@ -5603,7 +6226,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route25_Frlg": {
       "objects": {
@@ -5672,20 +6296,26 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route25_Frlg_Sign_1"
       }
     },
     "Route25_SeaCottage_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_Route25_SeaCottage_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_Route25_SeaCottage_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route25_SeaCottage_Frlg_Sign_1"
       }
     },
     "Route2_EastBuilding_Frlg": {
@@ -5700,7 +6330,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route2_Frlg": {
       "objects": {
@@ -5754,6 +6385,10 @@
             "flag": "FLAG_TEMP_12"
           }
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route2_Frlg_Sign_1",
+        "2": "BriskKanto_Route2_Frlg_Sign_2"
       }
     },
     "Route2_House_Frlg": {
@@ -5768,7 +6403,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route2_ViridianForest_NorthEntrance_Frlg": {
       "objects": {
@@ -5787,7 +6423,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route2_ViridianForest_SouthEntrance_Frlg": {
       "objects": {
@@ -5801,7 +6438,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route3_Frlg": {
       "objects": {
@@ -5850,6 +6488,9 @@
           "trainer": "TRAINER_BRISK_KANTO_YOUNGSTER_BEN",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route3_Frlg_Sign_1"
       }
     },
     "Route4_Frlg": {
@@ -5904,6 +6545,10 @@
             "type": "object"
           }
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route4_Frlg_Sign_1",
+        "2": "BriskKanto_Route4_Frlg_Sign_2"
       }
     },
     "Route4_PokemonCenter_1F_Frlg": {
@@ -5938,7 +6583,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route4_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -5962,10 +6608,14 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route5_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_Route5_Frlg_Sign_1"
+      }
     },
     "Route5_PokemonDayCare_Frlg": {
       "objects": {
@@ -5974,7 +6624,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route5_SouthEntrance_Frlg": {
       "objects": {
@@ -5983,7 +6634,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route6_Frlg": {
       "objects": {
@@ -6017,6 +6669,9 @@
           "trainer": "TRAINER_BRISK_KANTO_CAMPER_JEFF",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route6_Frlg_Sign_1"
       }
     },
     "Route6_NorthEntrance_Frlg": {
@@ -6026,10 +6681,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route6_UnusedHouse_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "Route7_EastEntrance_Frlg": {
       "objects": {
@@ -6038,7 +6695,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route7_Frlg": {
       "objects": {
@@ -6062,6 +6720,9 @@
             "flag": "FLAG_TEMP_14"
           }
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route7_Frlg_Sign_1"
       }
     },
     "Route8_Frlg": {
@@ -6141,6 +6802,9 @@
           "trainer": "TRAINER_BRISK_KANTO_BIKER_JAREN",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route8_Frlg_Sign_1"
       }
     },
     "Route8_WestEntrance_Frlg": {
@@ -6150,7 +6814,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "Route9_Frlg": {
       "objects": {
@@ -6214,6 +6879,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_Route9_Frlg_Sign_1"
       }
     },
     "SSAnne_1F_Corridor_Frlg": {
@@ -6228,7 +6896,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room1_Frlg": {
       "objects": {
@@ -6237,7 +6906,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room2_Frlg": {
       "objects": {
@@ -6261,7 +6931,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room3_Frlg": {
       "objects": {
@@ -6280,7 +6951,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room4_Frlg": {
       "objects": {
@@ -6289,7 +6961,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room5_Frlg": {
       "objects": {
@@ -6298,7 +6971,8 @@
           "trainer": "TRAINER_BRISK_KANTO_GENTLEMAN_ARTHUR",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room6_Frlg": {
       "objects": {
@@ -6307,7 +6981,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_1F_Room7_Frlg": {
       "objects": {
@@ -6316,7 +6991,8 @@
           "trainer": "TRAINER_BRISK_KANTO_GENTLEMAN_THOMAS",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Corridor_Frlg": {
       "objects": {
@@ -6330,7 +7006,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room1_Frlg": {
       "objects": {
@@ -6339,7 +7016,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room2_Frlg": {
       "objects": {
@@ -6358,7 +7036,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room3_Frlg": {
       "objects": {
@@ -6372,7 +7051,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room4_Frlg": {
       "objects": {
@@ -6391,7 +7071,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room5_Frlg": {
       "objects": {
@@ -6405,7 +7086,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_2F_Room6_Frlg": {
       "objects": {
@@ -6419,7 +7101,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_3F_Corridor_Frlg": {
       "objects": {
@@ -6428,10 +7111,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_B1F_Corridor_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SSAnne_B1F_Room1_Frlg": {
       "objects": {
@@ -6445,7 +7130,8 @@
           "trainer": "TRAINER_BRISK_KANTO_SAILOR_PHILLIP",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_B1F_Room2_Frlg": {
       "objects": {
@@ -6459,7 +7145,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_B1F_Room3_Frlg": {
       "objects": {
@@ -6473,7 +7160,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_B1F_Room4_Frlg": {
       "objects": {
@@ -6487,7 +7175,8 @@
           "trainer": "TRAINER_BRISK_KANTO_SAILOR_LEONARD",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_B1F_Room5_Frlg": {
       "objects": {
@@ -6506,7 +7195,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_CaptainsOffice_Frlg": {
       "objects": {
@@ -6515,6 +7205,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SSAnne_CaptainsOffice_Frlg_Sign_1",
+        "2": "BriskKanto_SSAnne_CaptainsOffice_Frlg_Sign_2",
+        "3": "BriskKanto_SSAnne_CaptainsOffice_Frlg_Sign_3"
       }
     },
     "SSAnne_Deck_Frlg": {
@@ -6544,16 +7239,18 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_Exterior_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SSAnne_Exterior_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "SSAnne_Kitchen_Frlg": {
       "objects": {
@@ -6597,7 +7294,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SafariZone_Center_Frlg": {
       "objects": {
@@ -6606,6 +7304,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SafariZone_Center_Frlg_Sign_1",
+        "2": "BriskKanto_SafariZone_Center_Frlg_Sign_2",
+        "4": "BriskKanto_SafariZone_Center_Frlg_Sign_4"
       }
     },
     "SafariZone_Center_RestHouse_Frlg": {
@@ -6620,7 +7323,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SafariZone_East_Frlg": {
       "objects": {
@@ -6644,6 +7348,11 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SafariZone_East_Frlg_Sign_1",
+        "2": "BriskKanto_SafariZone_East_Frlg_Sign_2",
+        "3": "BriskKanto_SafariZone_East_Frlg_Sign_3"
       }
     },
     "SafariZone_East_RestHouse_Frlg": {
@@ -6663,7 +7372,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SafariZone_North_Frlg": {
       "objects": {
@@ -6682,6 +7392,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SafariZone_North_Frlg_Sign_1",
+        "2": "BriskKanto_SafariZone_North_Frlg_Sign_2",
+        "3": "BriskKanto_SafariZone_North_Frlg_Sign_3",
+        "4": "BriskKanto_SafariZone_North_Frlg_Sign_4",
+        "5": "BriskKanto_SafariZone_North_Frlg_Sign_5"
       }
     },
     "SafariZone_North_RestHouse_Frlg": {
@@ -6706,7 +7423,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SafariZone_SecretHouse_Frlg": {
       "objects": {
@@ -6715,7 +7433,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SafariZone_West_Frlg": {
       "objects": {
@@ -6739,6 +7458,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SafariZone_West_Frlg_Sign_1",
+        "2": "BriskKanto_SafariZone_West_Frlg_Sign_2",
+        "3": "BriskKanto_SafariZone_West_Frlg_Sign_3",
+        "4": "BriskKanto_SafariZone_West_Frlg_Sign_4"
       }
     },
     "SafariZone_West_RestHouse_Frlg": {
@@ -6758,10 +7483,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_Connection_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SaffronCity_CopycatsHouse_1F_Frlg": {
       "objects": {
@@ -6780,7 +7507,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_CopycatsHouse_2F_Frlg": {
       "objects": {
@@ -6804,6 +7532,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SaffronCity_CopycatsHouse_2F_Frlg_Sign_1",
+        "2": "BriskKanto_SaffronCity_CopycatsHouse_2F_Frlg_Sign_2"
       }
     },
     "SaffronCity_Dojo_Frlg": {
@@ -6843,6 +7575,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SaffronCity_Dojo_Frlg_Sign_1",
+        "2": "BriskKanto_SaffronCity_Dojo_Frlg_Sign_2",
+        "3": "BriskKanto_SaffronCity_Dojo_Frlg_Sign_3",
+        "4": "BriskKanto_SaffronCity_Dojo_Frlg_Sign_4"
       }
     },
     "SaffronCity_Frlg": {
@@ -6922,6 +7660,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SaffronCity_Frlg_Sign_1",
+        "2": "BriskKanto_SaffronCity_Frlg_Sign_2",
+        "3": "BriskKanto_SaffronCity_Frlg_Sign_3",
+        "4": "BriskKanto_SaffronCity_Frlg_Sign_4",
+        "5": "BriskKanto_SaffronCity_Frlg_Sign_5",
+        "6": "BriskKanto_SaffronCity_Frlg_Sign_6",
+        "7": "BriskKanto_SaffronCity_Frlg_Sign_7",
+        "8": "BriskKanto_SaffronCity_Frlg_Sign_8",
+        "9": "BriskKanto_SaffronCity_Frlg_Sign_9"
       }
     },
     "SaffronCity_Gym_Frlg": {
@@ -6971,6 +7720,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SaffronCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_SaffronCity_Gym_Frlg_Sign_2"
       }
     },
     "SaffronCity_House_Frlg": {
@@ -6995,6 +7748,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SaffronCity_House_Frlg_Sign_1"
       }
     },
     "SaffronCity_Mart_Frlg": {
@@ -7014,7 +7770,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_MrPsychicsHouse_Frlg": {
       "objects": {
@@ -7023,7 +7780,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -7057,7 +7815,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -7081,7 +7840,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SaffronCity_PokemonTrainerFanClub_Frlg": {
       "objects": {
@@ -7135,7 +7895,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SeafoamIslands_1F_Frlg": {
       "objects": {
@@ -7160,7 +7921,8 @@
           "trainer_type": "TRAINER_TYPE_NONE",
           "keep_flag": true
         }
-      }
+      },
+      "signs": {}
     },
     "SeafoamIslands_B1F_Frlg": {
       "objects": {
@@ -7184,7 +7946,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SeafoamIslands_B2F_Frlg": {
       "objects": {
@@ -7203,7 +7966,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SeafoamIslands_B3F_Frlg": {
       "objects": {
@@ -7237,7 +8001,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SeafoamIslands_B4F_Frlg": {
       "objects": {
@@ -7262,6 +8027,10 @@
           "trainer_type": "TRAINER_TYPE_NONE",
           "keep_flag": true
         }
+      },
+      "signs": {
+        "2": "BriskKanto_SeafoamIslands_B4F_Frlg_Sign_2",
+        "3": "BriskKanto_SeafoamIslands_B4F_Frlg_Sign_3"
       }
     },
     "SevenIsland_Frlg": {
@@ -7281,21 +8050,25 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SevenIsland_Frlg_Sign_1"
       }
     },
     "SevenIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SevenIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_SevenIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_House_Room1_Frlg": {
       "objects": {
@@ -7304,16 +8077,20 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SevenIsland_House_Room1_Frlg_Sign_1"
       }
     },
     "SevenIsland_House_Room2_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SevenIsland_House_Room2_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_Mart_Frlg": {
       "objects": {
@@ -7337,7 +8114,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -7371,7 +8149,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -7395,7 +8174,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_SevaultCanyon_Entrance_Frlg": {
       "objects": {
@@ -7449,6 +8229,9 @@
             "flag": "0"
           }
         }
+      },
+      "signs": {
+        "2": "BriskKanto_SevenIsland_SevaultCanyon_Entrance_Frlg_Sign_2"
       }
     },
     "SevenIsland_SevaultCanyon_Frlg": {
@@ -7553,6 +8336,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "2": "BriskKanto_SevenIsland_SevaultCanyon_Frlg_Sign_2"
       }
     },
     "SevenIsland_SevaultCanyon_House_Frlg": {
@@ -7572,7 +8358,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_SevaultCanyon_TanobyKey_Frlg": {
       "objects": {
@@ -7611,10 +8398,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_DilfordChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_Frlg": {
       "objects": {
@@ -7638,25 +8427,32 @@
           "trainer": "TRAINER_BRISK_KANTO_GENTLEMAN_CLIFFORD",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_LiptooChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_MoneanChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_RixyChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_ScufibChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_ViapoisChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TanobyRuins_WeepthChamber_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SevenIsland_TrainerTower_Frlg": {
       "objects": {
@@ -7670,10 +8466,15 @@
           "trainer": "TRAINER_BRISK_KANTO_PSYCHIC_RODETTE",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "4": "BriskKanto_SevenIsland_TrainerTower_Frlg_Sign_4",
+        "5": "BriskKanto_SevenIsland_TrainerTower_Frlg_Sign_5"
       }
     },
     "SevenIsland_UnusedHouse": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SilphCo_10F_Frlg": {
       "objects": {
@@ -7707,6 +8508,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_10F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_10F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_10F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_10F_Frlg_Sign_4",
+        "6": "BriskKanto_SilphCo_10F_Frlg_Sign_6"
       }
     },
     "SilphCo_11F_Frlg": {
@@ -7741,6 +8549,13 @@
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_41",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_11F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_11F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_11F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_11F_Frlg_Sign_4",
+        "6": "BriskKanto_SilphCo_11F_Frlg_Sign_6"
       }
     },
     "SilphCo_1F_Frlg": {
@@ -7750,6 +8565,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_1F_Frlg_Sign_1"
       }
     },
     "SilphCo_2F_Frlg": {
@@ -7779,6 +8597,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_2F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_2F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_2F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_2F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_2F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_2F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_2F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_2F_Frlg_Sign_8",
+        "10": "BriskKanto_SilphCo_2F_Frlg_Sign_10"
       }
     },
     "SilphCo_3F_Frlg": {
@@ -7803,6 +8632,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_3F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_3F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_3F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_3F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_3F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_3F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_3F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_3F_Frlg_Sign_8",
+        "10": "BriskKanto_SilphCo_3F_Frlg_Sign_10"
       }
     },
     "SilphCo_4F_Frlg": {
@@ -7847,6 +8687,17 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_4F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_4F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_4F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_4F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_4F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_4F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_4F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_4F_Frlg_Sign_8",
+        "10": "BriskKanto_SilphCo_4F_Frlg_Sign_10"
       }
     },
     "SilphCo_5F_Frlg": {
@@ -7896,6 +8747,24 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "2": "BriskKanto_SilphCo_5F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_5F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_5F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_5F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_5F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_5F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_5F_Frlg_Sign_8",
+        "9": "BriskKanto_SilphCo_5F_Frlg_Sign_9",
+        "10": "BriskKanto_SilphCo_5F_Frlg_Sign_10",
+        "11": "BriskKanto_SilphCo_5F_Frlg_Sign_11",
+        "12": "BriskKanto_SilphCo_5F_Frlg_Sign_12",
+        "13": "BriskKanto_SilphCo_5F_Frlg_Sign_13",
+        "14": "BriskKanto_SilphCo_5F_Frlg_Sign_14",
+        "15": "BriskKanto_SilphCo_5F_Frlg_Sign_15",
+        "16": "BriskKanto_SilphCo_5F_Frlg_Sign_16",
+        "18": "BriskKanto_SilphCo_5F_Frlg_Sign_18"
       }
     },
     "SilphCo_6F_Frlg": {
@@ -7950,6 +8819,13 @@
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_31",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_6F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_6F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_6F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_6F_Frlg_Sign_4",
+        "6": "BriskKanto_SilphCo_6F_Frlg_Sign_6"
       }
     },
     "SilphCo_7F_Frlg": {
@@ -8009,6 +8885,21 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_7F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_7F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_7F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_7F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_7F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_7F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_7F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_7F_Frlg_Sign_8",
+        "9": "BriskKanto_SilphCo_7F_Frlg_Sign_9",
+        "10": "BriskKanto_SilphCo_7F_Frlg_Sign_10",
+        "11": "BriskKanto_SilphCo_7F_Frlg_Sign_11",
+        "12": "BriskKanto_SilphCo_7F_Frlg_Sign_12",
+        "14": "BriskKanto_SilphCo_7F_Frlg_Sign_14"
       }
     },
     "SilphCo_8F_Frlg": {
@@ -8043,6 +8934,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SilphCo_8F_Frlg_Sign_1",
+        "2": "BriskKanto_SilphCo_8F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_8F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_8F_Frlg_Sign_4",
+        "6": "BriskKanto_SilphCo_8F_Frlg_Sign_6"
       }
     },
     "SilphCo_9F_Frlg": {
@@ -8067,28 +8965,64 @@
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_37",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "2": "BriskKanto_SilphCo_9F_Frlg_Sign_2",
+        "3": "BriskKanto_SilphCo_9F_Frlg_Sign_3",
+        "4": "BriskKanto_SilphCo_9F_Frlg_Sign_4",
+        "5": "BriskKanto_SilphCo_9F_Frlg_Sign_5",
+        "6": "BriskKanto_SilphCo_9F_Frlg_Sign_6",
+        "7": "BriskKanto_SilphCo_9F_Frlg_Sign_7",
+        "8": "BriskKanto_SilphCo_9F_Frlg_Sign_8",
+        "9": "BriskKanto_SilphCo_9F_Frlg_Sign_9",
+        "10": "BriskKanto_SilphCo_9F_Frlg_Sign_10",
+        "11": "BriskKanto_SilphCo_9F_Frlg_Sign_11",
+        "12": "BriskKanto_SilphCo_9F_Frlg_Sign_12",
+        "13": "BriskKanto_SilphCo_9F_Frlg_Sign_13",
+        "14": "BriskKanto_SilphCo_9F_Frlg_Sign_14",
+        "15": "BriskKanto_SilphCo_9F_Frlg_Sign_15",
+        "16": "BriskKanto_SilphCo_9F_Frlg_Sign_16",
+        "17": "BriskKanto_SilphCo_9F_Frlg_Sign_17",
+        "19": "BriskKanto_SilphCo_9F_Frlg_Sign_19"
       }
     },
     "SilphCo_Elevator_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_SilphCo_Elevator_Frlg_Sign_1"
+      }
     },
     "SixIsland_AlteringCave_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SixIsland_DottedHole_1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "SixIsland_DottedHole_B1F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_SixIsland_DottedHole_B1F_Frlg_Sign_1"
+      }
     },
     "SixIsland_DottedHole_B2F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_SixIsland_DottedHole_B2F_Frlg_Sign_1"
+      }
     },
     "SixIsland_DottedHole_B3F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_SixIsland_DottedHole_B3F_Frlg_Sign_1"
+      }
     },
     "SixIsland_DottedHole_B4F_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_SixIsland_DottedHole_B4F_Frlg_Sign_1"
+      }
     },
     "SixIsland_DottedHole_SapphireRoom_Frlg": {
       "objects": {
@@ -8102,6 +9036,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_DottedHole_SapphireRoom_Frlg_Sign_1"
       }
     },
     "SixIsland_Frlg": {
@@ -8116,6 +9053,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_Frlg_Sign_1"
       }
     },
     "SixIsland_GreenPath_Frlg": {
@@ -8125,21 +9065,26 @@
           "trainer": "TRAINER_BRISK_KANTO_PSYCHIC_JACLYN",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_GreenPath_Frlg_Sign_1",
+        "2": "BriskKanto_SixIsland_GreenPath_Frlg_Sign_2"
       }
     },
     "SixIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SixIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_SixIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_House_Frlg": {
       "objects": {
@@ -8148,7 +9093,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_Mart_Frlg": {
       "objects": {
@@ -8167,7 +9113,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_OutcastIsland_Frlg": {
       "objects": {
@@ -8206,7 +9153,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_PatternBush_Frlg": {
       "objects": {
@@ -8270,7 +9218,8 @@
           "trainer": "TRAINER_BRISK_KANTO_RUIN_MANIAC_LAYTON",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -8294,7 +9243,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -8318,7 +9268,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "SixIsland_RuinValley_Frlg": {
       "objects": {
@@ -8407,6 +9358,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_RuinValley_Frlg_Sign_1"
       }
     },
     "SixIsland_WaterPath_Frlg": {
@@ -8456,6 +9410,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_WaterPath_Frlg_Sign_1",
+        "5": "BriskKanto_SixIsland_WaterPath_Frlg_Sign_5"
       }
     },
     "SixIsland_WaterPath_House1_Frlg": {
@@ -8465,6 +9423,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_SixIsland_WaterPath_House1_Frlg_Sign_1"
       }
     },
     "SixIsland_WaterPath_House2_Frlg": {
@@ -8474,7 +9435,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_BerryForest_Frlg": {
       "objects": {
@@ -8548,6 +9510,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ThreeIsland_BerryForest_Frlg_Sign_1",
+        "2": "BriskKanto_ThreeIsland_BerryForest_Frlg_Sign_2"
       }
     },
     "ThreeIsland_BondBridge_Frlg": {
@@ -8597,6 +9563,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ThreeIsland_BondBridge_Frlg_Sign_1",
+        "5": "BriskKanto_ThreeIsland_BondBridge_Frlg_Sign_5"
       }
     },
     "ThreeIsland_DunsparceTunnel_Frlg": {
@@ -8606,7 +9576,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_Frlg": {
       "objects": {
@@ -8680,21 +9651,25 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ThreeIsland_Frlg_Sign_1"
       }
     },
     "ThreeIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_ThreeIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_ThreeIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_House1_Frlg": {
       "objects": {
@@ -8703,6 +9678,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ThreeIsland_House1_Frlg_Sign_1"
       }
     },
     "ThreeIsland_House2_Frlg": {
@@ -8717,7 +9695,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_House3_Frlg": {
       "objects": {
@@ -8726,7 +9705,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_House4_Frlg": {
       "objects": {
@@ -8740,7 +9720,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_House5_Frlg": {
       "objects": {
@@ -8749,7 +9730,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_Mart_Frlg": {
       "objects": {
@@ -8773,7 +9755,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -8797,7 +9780,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -8821,7 +9805,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ThreeIsland_Port_Frlg": {
       "objects": {
@@ -8840,7 +9825,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TradeCenter_Frlg": {
       "objects": {
@@ -8849,7 +9835,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_1F_Frlg": {
       "objects": {
@@ -8859,26 +9846,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_1F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_1F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_1F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_1F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_2F_Frlg": {
       "objects": {
@@ -8888,26 +9876,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_2F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_2F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_2F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_2F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_3F_Frlg": {
       "objects": {
@@ -8917,26 +9906,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_3F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_3F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_3F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_3F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_4F_Frlg": {
       "objects": {
@@ -8946,26 +9936,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_4F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_4F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_4F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_4F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_5F_Frlg": {
       "objects": {
@@ -8975,26 +9966,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_5F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_5F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_5F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_5F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_6F_Frlg": {
       "objects": {
@@ -9004,26 +9996,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_6F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_6F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_6F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_6F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_7F_Frlg": {
       "objects": {
@@ -9033,26 +10026,27 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_7F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_7F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_7F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_7F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_8F_Frlg": {
       "objects": {
@@ -9062,29 +10056,33 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TrainerTower_8F_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_TrainerTower_8F_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_TrainerTower_8F_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_TrainerTower_8F_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "TrainerTower_Elevator_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {
+        "1": "BriskKanto_TrainerTower_Elevator_Frlg_Sign_1"
+      }
     },
     "TrainerTower_Lobby_Frlg": {
       "objects": {
@@ -9113,6 +10111,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_TrainerTower_Lobby_Frlg_Sign_1"
       }
     },
     "TrainerTower_Roof_Frlg": {
@@ -9122,10 +10123,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TwoIsland_CapeBrink_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "TwoIsland_CapeBrink_House_Frlg": {
       "objects": {
@@ -9134,7 +10137,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TwoIsland_Frlg": {
       "objects": {
@@ -9183,21 +10187,27 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_TwoIsland_Frlg_Sign_1",
+        "2": "BriskKanto_TwoIsland_Frlg_Sign_2",
+        "3": "BriskKanto_TwoIsland_Frlg_Sign_3"
       }
     },
     "TwoIsland_Harbor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_TwoIsland_Harbor_Frlg_1",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "2": {
           "script": "BriskKanto_TwoIsland_Harbor_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TwoIsland_House_Frlg": {
       "objects": {
@@ -9206,7 +10216,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TwoIsland_JoyfulGameCorner_Frlg": {
       "objects": {
@@ -9230,6 +10241,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_TwoIsland_JoyfulGameCorner_Frlg_Sign_1",
+        "2": "BriskKanto_TwoIsland_JoyfulGameCorner_Frlg_Sign_2"
       }
     },
     "TwoIsland_PokemonCenter_1F_Frlg": {
@@ -9249,7 +10264,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "TwoIsland_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -9273,7 +10289,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "UndergroundPath_EastEntrance_Frlg": {
       "objects": {
@@ -9282,10 +10299,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "UndergroundPath_EastWestTunnel_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "UndergroundPath_NorthEntrance_Frlg": {
       "objects": {
@@ -9294,10 +10313,12 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "UndergroundPath_NorthSouthTunnel_Frlg": {
-      "objects": {}
+      "objects": {},
+      "signs": {}
     },
     "UndergroundPath_SouthEntrance_Frlg": {
       "objects": {
@@ -9306,7 +10327,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "UndergroundPath_WestEntrance_Frlg": {
       "objects": {
@@ -9315,7 +10337,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "UnionRoom_Frlg": {
       "objects": {
@@ -9325,46 +10348,47 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_UnionRoom_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
-          "script": "BriskKanto_UnionRoom_Frlg_3",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "4": {
-          "script": "BriskKanto_UnionRoom_Frlg_4",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "5": {
-          "script": "BriskKanto_UnionRoom_Frlg_5",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "6": {
-          "script": "BriskKanto_UnionRoom_Frlg_6",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "7": {
-          "script": "BriskKanto_UnionRoom_Frlg_7",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "8": {
-          "script": "BriskKanto_UnionRoom_Frlg_8",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "9": {
-          "script": "BriskKanto_UnionRoom_Frlg_9",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_Frlg": {
       "objects": {
@@ -9408,6 +10432,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_VermilionCity_Frlg_Sign_1",
+        "2": "BriskKanto_VermilionCity_Frlg_Sign_2",
+        "3": "BriskKanto_VermilionCity_Frlg_Sign_3",
+        "4": "BriskKanto_VermilionCity_Frlg_Sign_4",
+        "5": "BriskKanto_VermilionCity_Frlg_Sign_5"
       }
     },
     "VermilionCity_Gym_Frlg": {
@@ -9438,6 +10469,25 @@
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
+      "signs": {
+        "1": "BriskKanto_VermilionCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_VermilionCity_Gym_Frlg_Sign_2",
+        "3": "BriskKanto_VermilionCity_Gym_Frlg_Sign_3",
+        "4": "BriskKanto_VermilionCity_Gym_Frlg_Sign_4",
+        "5": "BriskKanto_VermilionCity_Gym_Frlg_Sign_5",
+        "6": "BriskKanto_VermilionCity_Gym_Frlg_Sign_6",
+        "7": "BriskKanto_VermilionCity_Gym_Frlg_Sign_7",
+        "8": "BriskKanto_VermilionCity_Gym_Frlg_Sign_8",
+        "9": "BriskKanto_VermilionCity_Gym_Frlg_Sign_9",
+        "10": "BriskKanto_VermilionCity_Gym_Frlg_Sign_10",
+        "11": "BriskKanto_VermilionCity_Gym_Frlg_Sign_11",
+        "12": "BriskKanto_VermilionCity_Gym_Frlg_Sign_12",
+        "13": "BriskKanto_VermilionCity_Gym_Frlg_Sign_13",
+        "14": "BriskKanto_VermilionCity_Gym_Frlg_Sign_14",
+        "15": "BriskKanto_VermilionCity_Gym_Frlg_Sign_15",
+        "16": "BriskKanto_VermilionCity_Gym_Frlg_Sign_16",
+        "17": "BriskKanto_VermilionCity_Gym_Frlg_Sign_17"
+      },
       "map_scripts": "BriskKanto_VermilionCity_Gym_Frlg"
     },
     "VermilionCity_House1_Frlg": {
@@ -9447,7 +10497,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_House2_Frlg": {
       "objects": {
@@ -9456,7 +10507,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_House3_Frlg": {
       "objects": {
@@ -9480,6 +10532,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_VermilionCity_House3_Frlg_Sign_1"
       }
     },
     "VermilionCity_Mart_Frlg": {
@@ -9499,7 +10554,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -9538,7 +10594,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -9562,7 +10619,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VermilionCity_PokemonFanClub_Frlg": {
       "objects": {
@@ -9596,6 +10654,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_VermilionCity_PokemonFanClub_Frlg_Sign_1",
+        "2": "BriskKanto_VermilionCity_PokemonFanClub_Frlg_Sign_2"
       }
     },
     "VictoryRoad_1F_Frlg": {
@@ -9635,7 +10697,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "VictoryRoad_2F_Frlg": {
       "objects": {
@@ -9705,6 +10768,7 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_VictoryRoad_2F_Frlg"
     },
     "VictoryRoad_3F_Frlg": {
@@ -9776,6 +10840,7 @@
           "keep_flag": true
         }
       },
+      "signs": {},
       "map_scripts": "BriskKanto_VictoryRoad_3F_Frlg"
     },
     "ViridianCity_Frlg": {
@@ -9798,7 +10863,22 @@
         "4": {
           "script": "BriskKanto_ViridianCity_Frlg_4",
           "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "trainer_type": "TRAINER_TYPE_NONE",
+          "object": {
+            "local_id": "LOCALID_TUTORIAL_MAN",
+            "type": "object",
+            "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+            "x": 21,
+            "y": 6,
+            "elevation": 3,
+            "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+            "movement_range_x": 2,
+            "movement_range_y": 3,
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "ViridianCity_EventScript_TutorialOldMan",
+            "flag": "0"
+          }
         },
         "5": {
           "script": "BriskKanto_ViridianCity_Frlg_5",
@@ -9825,6 +10905,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ViridianCity_Frlg_Sign_1",
+        "2": "BriskKanto_ViridianCity_Frlg_Sign_2",
+        "3": "BriskKanto_ViridianCity_Frlg_Sign_3",
+        "4": "BriskKanto_ViridianCity_Frlg_Sign_4",
+        "5": "BriskKanto_ViridianCity_Frlg_Sign_5"
       }
     },
     "ViridianCity_Gym_Frlg": {
@@ -9879,6 +10966,10 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ViridianCity_Gym_Frlg_Sign_1",
+        "2": "BriskKanto_ViridianCity_Gym_Frlg_Sign_2"
       }
     },
     "ViridianCity_House_Frlg": {
@@ -9898,6 +10989,9 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ViridianCity_House_Frlg_Sign_1"
       }
     },
     "ViridianCity_Mart_Frlg": {
@@ -9917,7 +11011,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ViridianCity_PokemonCenter_1F_Frlg": {
       "objects": {
@@ -9941,7 +11036,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ViridianCity_PokemonCenter_2F_Frlg": {
       "objects": {
@@ -9965,7 +11061,8 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
-      }
+      },
+      "signs": {}
     },
     "ViridianCity_School_Frlg": {
       "objects": {
@@ -9979,6 +11076,13 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ViridianCity_School_Frlg_Sign_1",
+        "2": "BriskKanto_ViridianCity_School_Frlg_Sign_2",
+        "3": "BriskKanto_ViridianCity_School_Frlg_Sign_3",
+        "4": "BriskKanto_ViridianCity_School_Frlg_Sign_4",
+        "5": "BriskKanto_ViridianCity_School_Frlg_Sign_5"
       }
     },
     "ViridianForest_Frlg": {
@@ -10038,6 +11142,14 @@
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
+      },
+      "signs": {
+        "1": "BriskKanto_ViridianForest_Frlg_Sign_1",
+        "2": "BriskKanto_ViridianForest_Frlg_Sign_2",
+        "3": "BriskKanto_ViridianForest_Frlg_Sign_3",
+        "4": "BriskKanto_ViridianForest_Frlg_Sign_4",
+        "5": "BriskKanto_ViridianForest_Frlg_Sign_5",
+        "6": "BriskKanto_ViridianForest_Frlg_Sign_6"
       }
     }
   },

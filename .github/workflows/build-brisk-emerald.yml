@@ -49,6 +49,9 @@ jobs:
       - name: Build Emerald
         run: make -j$(nproc)
 
+      - name: Audit emitted Kanto actors, unique dialogue and postgame encounters
+        run: python3 tools/brisk/check_kanto_content.py
+
       - name: Rename ROM
         run: |
           if [ ! -f "pokeemerald.gba" ]; then

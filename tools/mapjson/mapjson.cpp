@@ -462,6 +462,10 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             const string gfx = json_to_string(event, "graphics_id", true);
             const string script = json_to_string(event, "script", true);
             const string flag = json_to_string(event, "flag", true);
+            // Cutscene props have no postgame controller. Clearing their hide
+            // flags used to spawn the ferry across Cinnabar's shoreline.
+            if (record["omit"].bool_value())
+                continue;
 
             const bool gymLeader = gym && (gfx == "OBJ_EVENT_GFX_GIOVANNI"
                 || gfx == "OBJ_EVENT_GFX_BROCK"
@@ -503,10 +507,12 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
         // League ending; their flag/variable IDs can overlap Hoenn.
         access["coord_events"] = Json::array();
         Json::array signs;
+        unsigned signIndex = 0;
         for (const auto &event : map_data["bg_events"].array_items()) {
+            const string authoredSign = json_to_string(postgame["maps"][mapName]["signs"], std::to_string(++signIndex), true);
             if (json_to_string(event, "type") != "sign") continue;
             Json::object sign = event.object_items();
-            sign["script"] = "BriskKantoAccessOnly_EventScript_NotReady";
+            sign["script"] = authoredSign.empty() ? "BriskKantoAccessOnly_EventScript_NotReady" : authoredSign;
             signs.push_back(sign);
         }
         access["bg_events"] = signs;

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Author Brisk's Kanto postgame trainers and safe champion-visit dialogue."""
 from collections import Counter
+import argparse
 from functools import lru_cache
 import hashlib
 import json
@@ -8,6 +9,7 @@ from pathlib import Path
 import re
 import textwrap
 import author_mode_teams as teams
+from kanto_dialogue import Dialogue, NAMED, source_words, place, battle_words
 
 ROOT = Path(__file__).resolve().parents[2]
 MODES = ('Easy','Normal','Hard','Kaizo')
@@ -121,14 +123,7 @@ def author_dialogue(metadata):
     heal=json.loads((ROOT/'src/data/heal_locations.json').read_text())['heal_locations']
     heals={h['respawn_map']:h['id'] for h in heal if 'respawn_map' in h}
     manifest={'maps':{},'trainers':metadata};out=['@ Authored dialogue for Hoenn Champion visits. No FRLG story state is executed.\n']
-    residents=[
-      "You're the Champion who saved Hoenn! Welcome to Kanto. Our trainers have been preparing for your visit.",
-      "Word of your victory reached us from Hoenn. Kanto's trainers want to see that champion team in action!",
-      "The crisis in Hoenn is over, thanks to you. Take your time exploring Kanto. You've earned this journey.",
-      "Our Gym Leaders heard that Hoenn's Champion was coming. They've trained new teams to welcome you.",
-      "A Champion never stops learning. I hope Kanto gives you battles worthy of everything you achieved in Hoenn.",
-      "We followed the news from Hoenn. It's an honor to meet the Trainer who helped save a whole region!",
-    ]
+    dialogue=Dialogue()
     trainer_count=0
     for name,m in sorted(maps.values()):
         if m.get('region')!='REGION_KANTO' or name=='OrangeStraitEast':continue
@@ -142,7 +137,22 @@ def author_dialogue(metadata):
                     target_obj=(target[1]['object_events'][int(local)-1] if local.isdigit() else next((o for o in target[1]['object_events'] if o.get('local_id')==local),None))
                     if target_obj:
                         obj={**target_obj,'type':'object','x':raw['x'],'y':raw['y']}
+            # Original map-load scripts no longer run, so their graphics
+            # variables must not inherit a Hoenn rival's sprite from the save.
+            if obj.get('graphics_id','').startswith('OBJ_EVENT_GFX_VAR_'):
+                fixed=('OBJ_EVENT_GFX_OLD_MAN_1' if name=='ViridianCity_Frlg' else
+                       'OBJ_EVENT_GFX_OMANYTE' if name=='FuchsiaCity_Frlg' else None)
+                if fixed:
+                    obj={**obj,'graphics_id':fixed}
+                else:
+                    records[str(i)]={'omit':True,'script':'','trainer':''}
+                    continue
             script=obj.get('script','');gfx=obj.get('graphics_id','')
+            # Ferries, sleeping roadblocks and duplicate traveling cutscene
+            # actors have no safe postgame event controller.
+            if gfx in ('OBJ_EVENT_GFX_SEAGALLOP','OBJ_EVENT_GFX_SS_ANNE','OBJ_EVENT_GFX_SNORLAX') or (gfx=='OBJ_EVENT_GFX_BILL' and name!='CinnabarIsland_Frlg'):
+                records[str(i)]={'omit':True,'script':'','trainer':''}
+                continue
             body=scripts.get(script,'')
             match=re.search(r'trainerbattle_(?:single|double|rematch|continue)\s+(TRAINER_\w+)',body)
             tid=match[1] if match and match[1] in metadata else None
@@ -165,20 +175,28 @@ def author_dialogue(metadata):
                 continue
             if tid:
                 trainer_count+=1;t=metadata[tid]
-                intro=(f"I'm {t['name']}. Kanto welcomes the Champion who saved Hoenn! Let's see your champion team in action.")
-                if tid.startswith('TRAINER_LEADER_'):intro=f"{t['name']}: Hoenn's Champion and savior! I've prepared my strongest team for your visit. Welcome to Kanto's Gym challenge!"
-                if tid.startswith('TRAINER_ELITE_FOUR_'):intro=f"{t['name']}: Your achievements in Hoenn are legendary. Our Elite Four will test how far your team has come!"
+                seed=int.from_bytes(hashlib.sha256((name+str(i)+tid).encode()).digest()[:4],'little')
+                intro=battle_words(dialogue,scripts,body,script,name,t['name'],'intro',seed)
+                defeat=battle_words(dialogue,scripts,body,script,name,t['name'],'defeat',seed)
+                after=battle_words(dialogue,scripts,body,script,name,t['name'],'after',seed)
+                if tid.startswith(('TRAINER_LEADER_','TRAINER_ELITE_FOUR_')):
+                    intro=dialogue.unique(f"{t['name']}: Hoenn's Champion and savior! Your team protected a whole region. Let's see that bond in battle!",name,'boss')
                 macro='trainerbattle_double' if t['double'] else 'trainerbattle_single'
                 args=f"{t['id']}, {label}_Intro, {label}_Defeat"+(', BriskKanto_Text_TwoPokemon' if t['double'] else '')
-                out+=[label+'::\n\t'+macro+' '+args+'\n\tmsgbox '+label+'_After, MSGBOX_AUTOCLOSE\n\tend\n\n',text(label+'_Intro',intro),text(label+'_Defeat',"That's the strength of Hoenn's Champion!"),text(label+'_After',"Your title is well deserved. Thank you for bringing a champion's challenge to Kanto!")]
+                out+=[label+'::\n\t'+macro+' '+args+'\n\tmsgbox '+label+'_After, MSGBOX_AUTOCLOSE\n\tend\n\n',text(label+'_Intro',intro),text(label+'_Defeat',defeat),text(label+'_After',after)]
             elif 'NURSE' in gfx:
                 respawn=heals.get(m['id'])
-                out.append(label+'::\n\tlock\n\tfaceplayer\n\tmsgbox BriskKanto_Text_NurseWelcome, MSGBOX_DEFAULT\n\tspecial HealPlayerParty\n'+('\tsetrespawn '+respawn+'\n' if respawn else '')+'\tplayfanfare MUS_HEAL\n\twaitfanfare\n\tmsgbox BriskKanto_Text_NurseDone, MSGBOX_DEFAULT\n\trelease\n\tend\n\n')
+                welcome=dialogue.unique(f"Welcome to {place(name)}, Champion! Let's get your partners ready for the road ahead.",name,gfx)
+                done=dialogue.unique(f"Your team is fully rested. Take care on your travels around {place(name)}!",name,gfx)
+                out.append(label+'::\n\tlock\n\tfaceplayer\n\tmsgbox '+label+'_Welcome, MSGBOX_DEFAULT\n\tclosemessage\n\tapplymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterLeft\n\twaitmovement 0\n\tdofieldeffect FLDEFF_POKECENTER_HEAL\n\twaitfieldeffect FLDEFF_POKECENTER_HEAL\n\tspecial HealPlayerParty\n'+('\tsetrespawn '+respawn+'\n' if respawn else '')+'\tapplymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown\n\twaitmovement 0\n\tapplymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow\n\twaitmovement 0\n\tmsgbox '+label+'_Done, MSGBOX_DEFAULT\n\trelease\n\tend\n\n')
+                out.extend([text(label+'_Welcome',welcome),text(label+'_Done',done)])
             elif 'CLERK' in gfx:
-                out.append(label+'::\n\tlock\n\tfaceplayer\n\tmsgbox BriskKanto_Text_Shop, MSGBOX_DEFAULT\n\tpokemart BriskKanto_PostgameStock\n\trelease\n\tend\n\n')
+                words=dialogue.unique(f"Welcome to {place(name)}! Stocking up before a long journey? We carry supplies for experienced Trainers.",name,gfx)
+                out.append(label+'::\n\tlock\n\tfaceplayer\n\tmsgbox '+label+'_Text, MSGBOX_DEFAULT\n\tpokemart BriskKanto_PostgameStock\n\trelease\n\tend\n\n')
+                out.append(text(label+'_Text',words))
             else:
-                words=residents[(i+sum(map(ord,name)))%len(residents)]
-                if 'SCIENTIST' in gfx:words="Hoenn's savior, here in Kanto! We've recorded unusual activity in Seafoam Islands, Pokemon Mansion, and Victory Road. Keep an eye out for rare Pokemon."
+                words=NAMED.get(gfx.removeprefix('OBJ_EVENT_GFX_')) or source_words(script,scripts)
+                words=dialogue.unique(words,name,gfx)
                 out.extend([label+'::\n\tmsgbox '+label+'_Text, MSGBOX_NPC\n\tend\n\n',text(label+'_Text',words)])
             records[str(i)]=rec
         geometry=[]
@@ -196,7 +214,16 @@ def author_dialogue(metadata):
         elif name in ('VictoryRoad_2F_Frlg','VictoryRoad_3F_Frlg'):
             raw=(ROOT/'data/maps'/name/'scripts.inc').read_text()
             geometry=[line.strip() for line in raw.splitlines() if 'setmetatile' in line and 'Floor_Ledge' in line]
-        entry={'objects':records}
+        signs={}
+        for i,event in enumerate(m.get('bg_events',[]),1):
+            if event.get('type')!='sign':continue
+            label=f'BriskKanto_{name}_Sign_{i}'
+            words=source_words(event.get('script',''),scripts)
+            # Direct sign scripts sometimes use message instead of msgbox.
+            if not words:words=f"{place(name)} - Champion's visit. Travel safely and keep your Pokemon ready for the challenges ahead."
+            out.extend([label+'::\n\tmsgbox '+label+'_Text, MSGBOX_SIGN\n\tend\n\n',text(label+'_Text',words)])
+            signs[str(i)]=label
+        entry={'objects':records,'signs':signs}
         if geometry:
             prefix='BriskKanto_'+name
             entry['map_scripts']=prefix
@@ -215,6 +242,11 @@ def author_dialogue(metadata):
 
 
 def main():
-    metadata=author_rosters();author_dialogue(metadata)
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--dialogue-only',action='store_true',help='Keep the checked-in trainer teams unchanged')
+    args=parser.parse_args()
+    metadata=(json.loads((ROOT/'data/brisk_kanto_postgame.json').read_text())['trainers']
+              if args.dialogue_only else author_rosters())
+    author_dialogue(metadata)
 
 if __name__=='__main__': main()

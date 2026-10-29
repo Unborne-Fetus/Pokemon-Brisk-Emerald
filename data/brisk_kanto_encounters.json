@@ -1,0 +1,2471 @@
+{
+  "description": "Zero-based active slots reserved for replacement with future Fakemon. Valid habitat species occupy them until replaced; do not use SPECIES_NONE. Author overrides below, then rerun this generator.",
+  "overrides": {},
+  "replacement_slots": [
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST",
+      "table": "land_mons",
+      "label": "sBriskKanto_VIRIDIAN_FOREST",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_MOON_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_MOON_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_MOON_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_MOON_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_MOON_B2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_MOON_B2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SSANNE_EXTERIOR",
+      "table": "water_mons",
+      "label": "sBriskKanto_SSANNE_EXTERIOR",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SSANNE_EXTERIOR",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SSANNE_EXTERIOR",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_DIGLETTS_CAVE_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_1F_FRLG",
+      "table": "land_mons",
+      "label": "sBriskKanto_VICTORY_ROAD_1F_FRLG",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_VICTORY_ROAD_2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_VICTORY_ROAD_3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_POKEMON_MANSION_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_MANSION_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_MANSION_2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_MANSION_2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_MANSION_3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_MANSION_3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_MANSION_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_MANSION_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_CENTER",
+      "table": "land_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_CENTER",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_CENTER",
+      "table": "water_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_CENTER",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_CENTER",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_CENTER",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_EAST",
+      "table": "land_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_EAST",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_EAST",
+      "table": "water_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_EAST",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_EAST",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_EAST",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_NORTH_FRLG",
+      "table": "land_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_NORTH_FRLG",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_NORTH_FRLG",
+      "table": "water_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_NORTH_FRLG",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_NORTH_FRLG",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_NORTH_FRLG",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_WEST",
+      "table": "land_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_WEST",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_WEST",
+      "table": "water_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_WEST",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_WEST",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SAFARI_ZONE_WEST",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F",
+      "table": "water_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_1F",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_1F",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F",
+      "table": "water_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_B1F",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_CERULEAN_CAVE_B1F",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 95,
+      "max_level": 100
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROCK_TUNNEL_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROCK_TUNNEL_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "table": "water_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B3F",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B3F",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B4F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "table": "water_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B4F",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SEAFOAM_ISLANDS_B4F",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_TOWER_3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_TOWER_3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_TOWER_4F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_TOWER_4F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_TOWER_5F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_TOWER_5F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_TOWER_6F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_TOWER_6F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POKEMON_TOWER_7F",
+      "table": "land_mons",
+      "label": "sBriskKanto_POKEMON_TOWER_7F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_POWER_PLANT",
+      "table": "land_mons",
+      "label": "sBriskKanto_POWER_PLANT",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_EXTERIOR",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_EXTERIOR",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_SUMMIT_PATH_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_SUMMIT_PATH_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_SUMMIT_PATH_2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_SUMMIT_PATH_2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_SUMMIT_PATH_3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_SUMMIT_PATH_3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_B2F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_B3F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_B1F_STAIRS",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS",
+      "table": "land_mons",
+      "label": "sBriskKanto_MT_EMBER_RUBY_PATH_B2F_STAIRS",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "table": "land_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BERRY_FOREST",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "table": "water_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BERRY_FOREST",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BERRY_FOREST",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "table": "land_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "table": "water_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "table": "land_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "table": "land_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "table": "water_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "table": "land_mons",
+      "label": "sBriskKanto_SIX_ISLAND_PATTERN_BUSH",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM1",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM2",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM3",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM4",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM5",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM6",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM7",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM8",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM9",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM10",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM11",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM12",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM13",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_LOST_CAVE_ROOM14",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "table": "land_mons",
+      "label": "sBriskKanto_ONE_ISLAND_KINDLE_ROAD",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "table": "water_mons",
+      "label": "sBriskKanto_ONE_ISLAND_KINDLE_ROAD",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ONE_ISLAND_KINDLE_ROAD",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+      "table": "land_mons",
+      "label": "sBriskKanto_ONE_ISLAND_TREASURE_BEACH",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+      "table": "water_mons",
+      "label": "sBriskKanto_ONE_ISLAND_TREASURE_BEACH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ONE_ISLAND_TREASURE_BEACH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_TWO_ISLAND_CAPE_BRINK",
+      "table": "land_mons",
+      "label": "sBriskKanto_TWO_ISLAND_CAPE_BRINK",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_TWO_ISLAND_CAPE_BRINK",
+      "table": "water_mons",
+      "label": "sBriskKanto_TWO_ISLAND_CAPE_BRINK",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_TWO_ISLAND_CAPE_BRINK",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_TWO_ISLAND_CAPE_BRINK",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "table": "land_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BOND_BRIDGE",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "table": "water_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BOND_BRIDGE",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_THREE_ISLAND_BOND_BRIDGE",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_THREE_ISLAND_PORT",
+      "table": "land_mons",
+      "label": "sBriskKanto_THREE_ISLAND_PORT",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
+      "table": "water_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_RESORT_GORGEOUS",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_RESORT_GORGEOUS",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_WATER_LABYRINTH",
+      "table": "water_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_WATER_LABYRINTH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_WATER_LABYRINTH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_WATER_LABYRINTH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEADOW",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEADOW",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEADOW",
+      "table": "water_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEADOW",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEADOW",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEADOW",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "table": "land_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "table": "water_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+      "table": "water_mons",
+      "label": "sBriskKanto_SIX_ISLAND_OUTCAST_ISLAND",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SIX_ISLAND_OUTCAST_ISLAND",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "table": "water_mons",
+      "label": "sBriskKanto_SIX_ISLAND_GREEN_PATH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SIX_ISLAND_GREEN_PATH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_WATER_PATH",
+      "table": "land_mons",
+      "label": "sBriskKanto_SIX_ISLAND_WATER_PATH",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_WATER_PATH",
+      "table": "water_mons",
+      "label": "sBriskKanto_SIX_ISLAND_WATER_PATH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_WATER_PATH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SIX_ISLAND_WATER_PATH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_RUIN_VALLEY",
+      "table": "land_mons",
+      "label": "sBriskKanto_SIX_ISLAND_RUIN_VALLEY",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_RUIN_VALLEY",
+      "table": "water_mons",
+      "label": "sBriskKanto_SIX_ISLAND_RUIN_VALLEY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_RUIN_VALLEY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SIX_ISLAND_RUIN_VALLEY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
+      "table": "water_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TRAINER_TOWER",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TRAINER_TOWER",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON",
+      "table": "land_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_SEVAULT_CANYON",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+      "table": "water_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_SEVEN_ISLAND_TANOBY_RUINS",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE1",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE1",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE2",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE2",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE3",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE3",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE4",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE4",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE4",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE4",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE4",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE4",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE5",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE5",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE6",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE6",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE6",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE6",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE6",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE6",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE7",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE7",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE8",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE8",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE9",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE9",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE10",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE10",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE10",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE11",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE11",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE11",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE11",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE11",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE11",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE12",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE12",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE12",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE12",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE12",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE12",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE13",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE13",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE13",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE13",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE13",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE13",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE14",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE14",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE15",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE15",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE16",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE16",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE17",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE17",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE18",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE18",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE19",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE19",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE19",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE19",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE20",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE20",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE20",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE20",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_NORTH",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE21_NORTH",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_NORTH",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE21_NORTH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_NORTH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE21_NORTH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_SOUTH",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE21_SOUTH",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_SOUTH",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE21_SOUTH",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE21_SOUTH",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE21_SOUTH",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE22",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE22",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE22",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE22",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE22",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE22",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE23",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE23",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE23",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE23",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE23",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE23",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE24",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE24",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE24",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE24",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE24",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE24",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE25",
+      "table": "land_mons",
+      "label": "sBriskKanto_ROUTE25",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE25",
+      "table": "water_mons",
+      "label": "sBriskKanto_ROUTE25",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ROUTE25",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ROUTE25",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_PALLET_TOWN",
+      "table": "water_mons",
+      "label": "sBriskKanto_PALLET_TOWN",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_PALLET_TOWN",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_PALLET_TOWN",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY",
+      "table": "water_mons",
+      "label": "sBriskKanto_VIRIDIAN_CITY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_VIRIDIAN_CITY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CERULEAN_CITY",
+      "table": "water_mons",
+      "label": "sBriskKanto_CERULEAN_CITY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CERULEAN_CITY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_CERULEAN_CITY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VERMILION_CITY",
+      "table": "water_mons",
+      "label": "sBriskKanto_VERMILION_CITY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_VERMILION_CITY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_VERMILION_CITY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CELADON_CITY",
+      "table": "water_mons",
+      "label": "sBriskKanto_CELADON_CITY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CELADON_CITY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_CELADON_CITY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY",
+      "table": "water_mons",
+      "label": "sBriskKanto_FUCHSIA_CITY",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FUCHSIA_CITY",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND",
+      "table": "water_mons",
+      "label": "sBriskKanto_CINNABAR_ISLAND",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_CINNABAR_ISLAND",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND",
+      "table": "water_mons",
+      "label": "sBriskKanto_ONE_ISLAND",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_ONE_ISLAND",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_ONE_ISLAND",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND",
+      "table": "water_mons",
+      "label": "sBriskKanto_FOUR_ISLAND",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FOUR_ISLAND",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FOUR_ISLAND",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND",
+      "table": "water_mons",
+      "label": "sBriskKanto_FIVE_ISLAND",
+      "slots": [
+        9,
+        10
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_FIVE_ISLAND",
+      "table": "fishing_mons",
+      "label": "sBriskKanto_FIVE_ISLAND",
+      "slots": [
+        8,
+        9
+      ],
+      "min_level": 90,
+      "max_level": 95
+    },
+    {
+      "map": "MAP_SIX_ISLAND_ALTERING_CAVE",
+      "table": "land_mons",
+      "label": "sBriskKanto_SIX_ISLAND_ALTERING_CAVE",
+      "slots": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "min_level": 90,
+      "max_level": 95
+    }
+  ]
+}

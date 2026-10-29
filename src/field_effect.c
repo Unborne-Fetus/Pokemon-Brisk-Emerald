@@ -1393,7 +1393,9 @@ static u8 CreatePokecenterMonitorSprite(s16 x, s16 y)
 {
     u8 spriteId;
     struct Sprite *sprite;
-    if (IS_FRLG)
+    // Emerald can visit imported Kanto interiors. Choose the monitor from
+    // the actual room layout, rather than the ROM's compile-time version.
+    if (gMapHeader.mapLayout->isFrlg)
     {
         spriteId = CreateSpriteAtEnd(&sSpriteTemplate_PokecenterMonitor_FrLg, x + 4, y, 0);
     }
