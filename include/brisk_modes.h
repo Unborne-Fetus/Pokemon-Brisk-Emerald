@@ -11,6 +11,8 @@
 struct Pokemon;
 bool32 BriskIsKaizoBoss(u32 trainerId);
 bool32 BriskKaizoBossAvailable(void);
+// Only champions challenged inside Route 135's Champions Archive.
+bool32 BriskIsChampionsArchiveTrainer(u32 trainerId);
 
 u32 GetBriskDifficulty(void);
 u32 GetBriskPriceMultiplier(void);

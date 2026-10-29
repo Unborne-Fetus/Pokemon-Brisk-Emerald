@@ -59,6 +59,11 @@ enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
 
 enum DifficultyLevel GetTrainerDifficultyLevel(u16 trainerId)
 {
+    // Freeze all nine Archive opponents to their Normal/base battle data.
+    // In the Hoenn League, Wallace's Easy-mode levels still apply.
+    if (BriskIsChampionsArchiveTrainer(trainerId))
+        return DIFFICULTY_NORMAL;
+
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
 
     if (trainerId >= TRAINERS_COUNT)

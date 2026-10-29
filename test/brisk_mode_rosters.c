@@ -15,6 +15,7 @@
 #include "constants/battle_move_effects.h"
 #include "constants/opponents.h"
 #include "constants/trainers.h"
+#include "constants/layouts.h"
 
 // Test fixtures replace gTrainers. Validate the actual ROM roster separately.
 static const struct Trainer sModeTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
@@ -190,4 +191,48 @@ TEST("Brisk mode rosters preserve League and Meteor Falls Steven fixed levels")
         for (u32 slot = 0; slot < sModeTeams[row][TRAINER_STEVEN].partySize; slot++)
             EXPECT_EQ(sModeTeams[row][TRAINER_STEVEN].party[slot].lvl, 100);
     }
+}
+
+TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every mode")
+{
+    const u16 archive[] = {TRAINER_BLUE, TRAINER_RED2, TRAINER_WALLACE,
+        TRAINER_CYNTHIA, TRAINER_IRIS, TRAINER_DIANTHA, TRAINER_LEON,
+        TRAINER_NEMONA, TRAINER_VOLO};
+    const u64 strongAI = AI_FLAG_BASIC_TRAINER | AI_FLAG_OMNISCIENT
+        | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+        | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO
+        | AI_FLAG_PP_STALL_PREVENTION | AI_FLAG_SMART_TERA
+        | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY
+        | AI_FLAG_CONSERVATIVE;
+    struct MapHeader savedHeader = gMapHeader;
+    u16 savedDifficulty = VarGet(VAR_BRISK_DIFFICULTY);
+    gMapHeader.mapLayoutId = LAYOUT_ROUTE135_ARCHIVES;
+    for (u32 mode = BRISK_MODE_NORMAL; mode <= BRISK_MODE_KAIZO; mode++)
+    {
+        VarSet(VAR_BRISK_DIFFICULTY, mode);
+        for (u32 i = 0; i < ARRAY_COUNT(archive); i++)
+        {
+            const u16 id = archive[i];
+            EXPECT(BriskIsChampionsArchiveTrainer(id));
+            EXPECT_EQ(GetTrainerDifficultyLevel(id), DIFFICULTY_NORMAL);
+            EXPECT_EQ(GetBriskTrainerAiFlagsForTrainer(0, id), strongAI);
+            const struct Trainer *fixed = &sModeTeams[GetTrainerDifficultyLevel(id)][id];
+            const struct Trainer *normal = &sModeTeams[DIFFICULTY_NORMAL][id];
+            EXPECT_EQ(fixed->partySize, normal->partySize);
+            EXPECT_EQ(fixed->party, normal->party);
+            EXPECT_EQ(fixed->trainerPic, normal->trainerPic);
+            EXPECT_EQ(fixed->trainerClass, normal->trainerClass);
+            EXPECT_EQ(fixed->encounterMusic, normal->encounterMusic);
+        }
+        EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_STEVEN));
+        EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_ALLEN));
+    }
+    // Wallace's League fight still uses Easy levels and its usual AI.
+    gMapHeader.mapLayoutId = LAYOUT_EVER_GRANDE_CITY_CHAMPIONS_ROOM;
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
+    EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_WALLACE));
+    EXPECT_EQ(GetTrainerDifficultyLevel(TRAINER_WALLACE), DIFFICULTY_EASY);
+    EXPECT_EQ(GetBriskTrainerAiFlagsForTrainer(0, TRAINER_WALLACE), AI_FLAG_CHECK_BAD_MOVE);
+    gMapHeader = savedHeader;
+    VarSet(VAR_BRISK_DIFFICULTY, savedDifficulty);
 }

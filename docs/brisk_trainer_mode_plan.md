@@ -31,3 +31,20 @@ separate from the authored rosters. Randomizer options still apply when enabled.
 Validate with `python tools/brisk/author_mode_teams.py --check`.
 Regenerating with `--write` replaces manual roster edits with the curated
 archetype output; ordinary builds and validation never regenerate the rosters.
+
+## Champions Archive: one unchanged team, maximum AI
+
+All nine Champions Archive fights on Route 135 — Blue, Red, Wallace, Cynthia,
+Iris, Diantha, Leon, Nemona and Volo — load their existing Normal/base roster
+in **every difficulty mode**. Species, party order, levels, moves, items,
+abilities, EVs/IVs, natures, gimmicks, shinies, and other trainer attributes
+are unchanged. The only adjustment is the AI: the strongest available
+omniscient decision-making, strategic switching, prediction of moves and
+switch-ins, full opponent-party knowledge, PP-stall awareness, HP/KO planning,
+and smart Terastallization. Random party ordering, forced setup and ace-order
+restrictions are deliberately excluded.
+
+This exception applies only while battling these trainers **inside the
+Archive**. Wallace retains his Hoenn League Easy-level-70 variant and the
+normal difficulty rules when encountered elsewhere. Other dedication/Easter
+egg trainers retain their existing AI behavior.

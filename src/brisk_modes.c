@@ -12,6 +12,7 @@
 #include "constants/opponents.h"
 #include "constants/battle_ai.h"
 #include "constants/battle.h"
+#include "constants/layouts.h"
 #include "constants/hold_effects.h"
 
 static u32 ModeHash(u32 value, u32 salt)
@@ -34,6 +35,29 @@ u32 GetBriskDifficulty(void)
 bool32 BriskIsKaizoBoss(u32 trainerId)
 {
     return trainerId == TRAINER_HOODED_FIGURE || trainerId == TRAINER_TANKERSON;
+}
+
+// The same Wallace ID is used by Hoenn's League; scope these rules to
+// the Archive map so the League's Easy levels and usual AI are unaffected.
+bool32 BriskIsChampionsArchiveTrainer(u32 trainerId)
+{
+    if (gMapHeader.mapLayoutId != LAYOUT_ROUTE135_ARCHIVES)
+        return FALSE;
+    switch (trainerId)
+    {
+    case TRAINER_BLUE:
+    case TRAINER_RED2:
+    case TRAINER_WALLACE:
+    case TRAINER_CYNTHIA:
+    case TRAINER_IRIS:
+    case TRAINER_DIANTHA:
+    case TRAINER_LEON:
+    case TRAINER_NEMONA:
+    case TRAINER_VOLO:
+        return TRUE;
+    default:
+        return FALSE;
+    }
 }
 
 bool32 BriskKaizoBossAvailable(void)
@@ -78,6 +102,17 @@ u64 GetBriskTrainerAiFlags(u64 flags)
 
 u64 GetBriskTrainerAiFlagsForTrainer(u64 flags, u32 id)
 {
+    if (BriskIsChampionsArchiveTrainer(id))
+    {
+        // Best strategic AI for all modes. No forced setup, ace order or
+        // randomized leads: only decisions change, never the Pokemon data.
+        return AI_FLAG_BASIC_TRAINER | AI_FLAG_OMNISCIENT
+             | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+             | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO
+             | AI_FLAG_PP_STALL_PREVENTION | AI_FLAG_SMART_TERA
+             | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY
+             | AI_FLAG_CONSERVATIVE;
+    }
     return BriskTrainerDifficultyExempt(id) ? GetLegacyBriskTrainerAiFlags(flags) : GetBriskTrainerAiFlags(flags);
 }
 
