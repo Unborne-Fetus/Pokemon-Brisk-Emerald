@@ -4621,6 +4621,40 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
         priority += 3;
     }
 
+    // Psychic Gravity sets incoming super-effective moves to priority -5.
+    // Use the selected target in doubles; spread moves can strike any foe.
+    if (GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS)
+    {
+        enum MoveTarget targetType = GetMoveTarget(move);
+        enum Type moveType = GetMoveType(move);
+        for (enum BattlerId defender = 0; defender < gBattlersCount; defender++)
+        {
+            enum Type types[3];
+            uq4_12_t effectiveness = UQ_4_12(1.0);
+            bool32 spread;
+            if (defender == battler || IsBattlerAlly(battler, defender)
+             || !IsBattlerAlive(defender)
+             || GetBattlerAbility(defender) != ABILITY_PSYCHIC_GRAVITY)
+                continue;
+
+            spread = targetType == TARGET_BOTH || targetType == TARGET_FOES_AND_ALLY;
+            if (!spread && gBattleStruct->moveTarget[battler] != defender)
+                continue;
+
+            GetBattlerTypes(defender, FALSE, types);
+            effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(moveType, types[0]));
+            if (types[1] != types[0])
+                effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(moveType, types[1]));
+            if (types[2] != TYPE_MYSTERY && types[2] != types[0] && types[2] != types[1])
+                effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(moveType, types[2]));
+            if (effectiveness > UQ_4_12(1.0))
+            {
+                priority = -5;
+                break;
+            }
+        }
+    }
+
     return priority;
 }
 
