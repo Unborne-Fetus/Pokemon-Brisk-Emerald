@@ -243,6 +243,7 @@ static const struct {
     {COMPOUND_STRING("OVERWORLD BALLS"), COMPOUND_STRING("Overworld POKé BALLS only\ncatch at or below your cap.\nRoutes that are too strong\nshow a warning instead.")},
     {COMPOUND_STRING("CATCH CHANCES"), COMPOUND_STRING("During battle, catch-rate\ninformation appears near\nthe POKé BALL selection\nto help choose a ball.")},
     {COMPOUND_STRING("REPELS"), COMPOUND_STRING("Repels now prevent wild\nencounters at all levels,\nregardless of your lead\nPOKéMON's level.")},
+    {COMPOUND_STRING("MEGA MODE"), COMPOUND_STRING("Enable on Options page 5.\nHold a matching Mega Stone\nto stay Mega, even outside\nbattle. No activation needed.")},
     {COMPOUND_STRING("CUSTOM MEGAS"), COMPOUND_STRING("New custom Mega forms use\nnative 80x80 battle art.\nTheir Mega Stones are sold\nin the expanded shops.")},
     {COMPOUND_STRING("STARTER FIXES"), COMPOUND_STRING("Starter natures, gender,\nIVs and shiny chances\nare rolled normally.\nNo fixed Hardy/zero IVs.")},
     {COMPOUND_STRING("ORANGE ISLANDS"), COMPOUND_STRING("Explore Routes 143-150\nand ORANGE CITY. Its mart\nsells custom MEGA STONES.\nThe lookout has a cave.")},
@@ -1557,7 +1558,8 @@ static void DrawBattleOptions(void)
     DrawToggle(VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) != 0, 64);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("TALK ONLY"), 8, 81, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!FlagGet(OW_FLAG_NO_TRAINER_SEE), 80);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 97, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MEGA MODE"), 8, 97, TEXT_SKIP_DRAW, NULL);
+    DrawToggle(!BriskMegaModeEnabled(), 96);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -1571,7 +1573,7 @@ static void Task_BattleOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && row == 6))
+    else if (JOY_NEW(B_BUTTON))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
@@ -1592,6 +1594,8 @@ static void Task_BattleOptions(u8 taskId)
             VarSet(VAR_BRISK_BATTLE_BAG_DISABLED, VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0);
         else if (row == 5)
             FlagToggle(OW_FLAG_NO_TRAINER_SEE);
+        else if (row == 6)
+            SetBriskMegaMode(!BriskMegaModeEnabled());
         DrawBattleOptions();
     }
 }

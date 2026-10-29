@@ -5,6 +5,8 @@
 #include "palette.h"
 #include "menu.h"
 #include "item.h"
+#include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "constants/rgb.h"
 #include "constants/region_map_sections.h"
 #include "constants/map_types.h"
@@ -24,6 +26,30 @@ bool32 BriskMusicMuted(void)
 bool32 BriskCriesMuted(void)
 {
     return gSaveBlock1Ptr != NULL && FlagGet(FLAG_BRISK_MUTE_CRIES);
+}
+
+bool32 BriskMegaModeEnabled(void)
+{
+    return gSaveBlock1Ptr != NULL && FlagGet(FLAG_BRISK_MEGA_MODE);
+}
+
+void SetBriskMegaMode(bool32 enabled)
+{
+    if (enabled)
+        FlagSet(FLAG_BRISK_MEGA_MODE);
+    else
+        FlagClear(FLAG_BRISK_MEGA_MODE);
+    // Apply to every owned Pokemon immediately, including those in storage.
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+        TryFormChange(&gParties[B_TRAINER_PLAYER][i], FORM_CHANGE_BRISK_MEGA_MODE, B_TRAINER_PLAYER);
+    for (u32 box = 0; box < TOTAL_BOXES_COUNT; box++)
+        for (u32 slot = 0; slot < IN_BOX_COUNT; slot++)
+            TryBoxMonFormChange(GetBoxedMonPtr(box, slot), FORM_CHANGE_BRISK_MEGA_MODE);
+    for (u32 i = 0; i < DAYCARE_MON_COUNT; i++)
+        TryBoxMonFormChange(&gSaveBlock1Ptr->daycare.mons[i].mon, FORM_CHANGE_BRISK_MEGA_MODE);
+#if IS_FRLG
+    TryBoxMonFormChange(&gSaveBlock1Ptr->route5DayCareMon.mon, FORM_CHANGE_BRISK_MEGA_MODE);
+#endif
 }
 
 bool32 BriskGimmickGenEnabled(void)

@@ -11,6 +11,8 @@ bool32 BriskDisplayTypes(void);
 bool32 BriskBattleBagAllowed(void);
 bool32 BriskOverworldEncountersEnabled(void);
 bool32 BriskGimmickGenEnabled(void);
+bool32 BriskMegaModeEnabled(void);
+void SetBriskMegaMode(bool32 enabled);
 void BriskRechargeGimmicks(void);
 bool32 BriskSoundMuted(void);
 bool32 BriskMusicMuted(void);

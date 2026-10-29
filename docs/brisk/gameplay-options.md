@@ -67,3 +67,19 @@ The capsule editor now renders two persistent, instant lines with D-pad icons, a
 DexNav lists every unique species in the current encounter tables, skipping empty slots. Land is shown 12 species per page and water 5 per page, with separate saved page positions. Highlight a land or water row and use L/R to change its page; SELECT registers the highlighted seen Pokémon and A starts its search. The overworld R search shortcut is unchanged. The counter shows the focused section; land and water remember their pages independently. Cursor navigation skips empty rows and unused slots on the final page. Completion markers still check the entire table, not just the current page.
 
 DexNav is available from the start menu after receiving the Pokédex. Hidden encounter detection unlocks with the PokéNav. Registration uses unused persistent save variables, and its searching state uses a dedicated unused flag rather than trainer-defeat flags. An interrupted search is cleared safely after a restart.
+
+## Mega Mode (Options page 5)
+
+MEGA MODE defaults to OFF. Press B to save and leave this page. Turn it ON to make matching held Mega Stones
+maintain Mega forms everywhere: the party, summary, PC, overworld followers,
+and battle. Both official and custom stones work, including alternate Mega
+forms. Every eligible team member can be Mega at once, without a Mega Ring
+or a battle activation. The same held-stone rule applies to opponents.
+
+Giving, taking, or swapping stones updates the form. Turning the option off
+restores owned Pokémon to their base forms and brings back standard battle
+Mega Evolution. The option and Mega forms persist in saves; fainting,
+healing, switching, and battle completion do not cancel a matching stone.
+Eggs never transform. Primal Reversion and Ultra Burst retain their existing
+rules. Rayquaza has no Mega Stone in this game, so its Dragon Ascent Mega
+Evolution is available with standard Mega rules (Mega Mode OFF).

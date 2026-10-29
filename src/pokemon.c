@@ -1402,6 +1402,14 @@ void CalculateMonStats(struct Pokemon *mon)
 
 void CalculateMonStatsCont(struct Pokemon *mon, bool32 updateSpeedStat)
 {
+    if (!gMain.inBattle && BriskMegaModeEnabled()
+        && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
+    {
+        enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+        enum Species target = GetBriskMegaModeSpecies(species, GetMonData(mon, MON_DATA_HELD_ITEM));
+        if (target != species)
+            SetMonData(mon, MON_DATA_SPECIES, &target);
+    }
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP);
     s32 currentHP = GetMonData(mon, MON_DATA_HP);
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
@@ -6042,11 +6050,64 @@ enum Species GetFormChangeTargetSpecies(struct Pokemon *mon, enum FormChanges me
     return GetFormChangeTargetSpeciesBoxMon(&mon->box, method);
 }
 
+// Mega form tables are shared by the base species and all its Mega variants.
+// Resolve through the base so swapping X/Y or custom stones works directly.
+enum Species GetBriskMegaModeSpecies(enum Species species, enum Item heldItem)
+{
+    const struct FormChange *forms = GetSpeciesFormChanges(species);
+    enum Species baseSpecies = species;
+    if (gSpeciesInfo[species].isMegaEvolution)
+    {
+        for (u32 i = 0; forms != NULL && forms[i].method != FORM_CHANGE_TERMINATOR; i++)
+        {
+            if (forms[i].method == FORM_CHANGE_END_BATTLE && forms[i].targetSpecies != SPECIES_NONE)
+            {
+                baseSpecies = forms[i].targetSpecies;
+                break;
+            }
+        }
+    }
+    // Zygarde Complete's table uses a battle-state-dependent reversion
+    // (target NONE). Outside battle, recover its stone's non-Mega source form.
+    if (gSpeciesInfo[baseSpecies].isMegaEvolution)
+    {
+        const u16 *family = GetSpeciesFormTable(species);
+        for (u32 i = 0; family != NULL && family[i] != FORM_SPECIES_END; i++)
+        {
+            if (!IsSpeciesEnabled(family[i]) || gSpeciesInfo[family[i]].isMegaEvolution) continue;
+            const struct FormChange *source = GetSpeciesFormChanges(family[i]);
+            for (u32 j = 0; source != NULL && source[j].method != FORM_CHANGE_TERMINATOR; j++)
+                if (source[j].method == FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM && source[j].targetSpecies == species)
+                    baseSpecies = family[i];
+        }
+    }
+    if (BriskMegaModeEnabled())
+    {
+        forms = GetSpeciesFormChanges(baseSpecies);
+        for (u32 i = 0; forms != NULL && forms[i].method != FORM_CHANGE_TERMINATOR; i++)
+            if (forms[i].method == FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM
+                && forms[i].param1 == heldItem && heldItem != ITEM_NONE)
+                return forms[i].targetSpecies;
+    }
+    return baseSpecies;
+}
+
 enum Species GetFormChangeTargetSpecies_Internal(struct FormChangeContext ctx)
 {
     u32 i;
     enum Species targetSpecies = ctx.currentSpecies;
     const struct FormChange *formChanges = GetSpeciesFormChanges(ctx.currentSpecies);
+
+    if (ctx.method == FORM_CHANGE_BRISK_MEGA_MODE
+        || (BriskMegaModeEnabled()
+            && (ctx.method == FORM_CHANGE_ITEM_HOLD || ctx.method == FORM_CHANGE_BEGIN_BATTLE || ctx.method == FORM_CHANGE_BEGIN_WILD_ENCOUNTER
+                || ctx.method == FORM_CHANGE_DEPOSIT || ctx.method == FORM_CHANGE_WITHDRAW
+                || ctx.method == FORM_CHANGE_FAINT || ctx.method == FORM_CHANGE_END_BATTLE)))
+    {
+        enum Species megaSpecies = GetBriskMegaModeSpecies(ctx.currentSpecies, ctx.heldItem);
+        if (megaSpecies != ctx.currentSpecies || gSpeciesInfo[ctx.currentSpecies].isMegaEvolution)
+            return megaSpecies;
+    }
 
     if (formChanges == NULL)
         return ctx.currentSpecies;
@@ -6058,6 +6119,8 @@ enum Species GetFormChangeTargetSpecies_Internal(struct FormChangeContext ctx)
 
         switch (ctx.method)
         {
+        case FORM_CHANGE_BRISK_MEGA_MODE: // Handled above; never stored in a form table.
+            break;
         case FORM_CHANGE_ITEM_HOLD:
             if ((ctx.heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
                 && (ctx.ability == formChanges[i].param2 || formChanges[i].param2 == ABILITY_NONE))

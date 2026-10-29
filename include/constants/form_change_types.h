@@ -166,6 +166,8 @@ enum FormChanges
     FORM_CHANGE_DEPOSIT,
     // Form change for Minior, which appears unchanged when encountered in the wild
     FORM_CHANGE_BEGIN_WILD_ENCOUNTER,
+    // Reconcile owned forms when the persistent Mega Mode option changes.
+    FORM_CHANGE_BRISK_MEGA_MODE,
 };
 
 #endif // GUARD_CONSTANTS_FORM_CHANGE_TYPES_H

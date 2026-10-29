@@ -8749,6 +8749,9 @@ bool32 DoesSpeciesUseHoldItemToChangeForm(enum Species species, enum Item heldIt
 
 bool32 CanMegaEvolve(enum BattlerId battler)
 {
+    if (BriskMegaModeEnabled())
+        return FALSE;
+
     enum HoldEffect holdEffect = GetBattlerHoldEffectIgnoreNegation(battler);
     enum BattlerPosition position = GetBattlerPosition(battler);
 

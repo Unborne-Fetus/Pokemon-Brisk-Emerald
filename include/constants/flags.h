@@ -79,7 +79,7 @@
 #define FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_HASTY_MINT                   0x033
 #define FLAG_ITEM_BRISK_ROUTE143_NAIVE_MINT                            0x034
 #define FLAG_ITEM_BRISK_ROUTE146_SERIOUS_MINT                          0x035
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_BRISK_MEGA_MODE 0x36 // Optional persistent held-stone Mega forms
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag

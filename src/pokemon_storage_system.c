@@ -7131,7 +7131,14 @@ void SetMonFormPSS(struct BoxPokemon *boxMon, enum FormChanges method)
 void SetMonFormPSS_ItemHold(struct BoxPokemon *boxMon)
 {
     if (TryBoxMonFormChange(boxMon, FORM_CHANGE_ITEM_HOLD))
+    {
         sRefreshDisplayMonGfx = TRUE;
+        // The PC also changes held items on party Pokemon. Their stats live
+        // outside BoxPokemon and must follow the new form immediately.
+        for (u32 i = 0; i < PARTY_SIZE; i++)
+            if (boxMon == &gParties[B_TRAINER_PLAYER][i].box)
+                CalculateMonStats(&gParties[B_TRAINER_PLAYER][i]);
+    }
     UpdateSpeciesSpritePSS(boxMon);
 }
 
