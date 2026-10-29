@@ -1812,3 +1812,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/OrangeStraitEast/scripts.inc"
 
 	.include "data/scripts/brisk_kanto_access.inc"
+
+	.include "data/scripts/brisk_kanto_postgame.inc"

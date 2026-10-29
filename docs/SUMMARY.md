@@ -167,6 +167,7 @@
     - [environment lighting](brisk/environment_lighting.md)
     - [orange islands](maps/orange-islands.md)
     - [Kanto connection and Town Map](brisk/kanto-connection.md)
+    - [Kanto postgame trainer teams](brisk/kanto-trainer-teams.md)
     - [Audio mute settings](brisk_audio_mutes.md)
     - [Authored difficulty teams](brisk_authored_mode_teams.md)
     - [Battle retry](brisk_battle_retry.md)

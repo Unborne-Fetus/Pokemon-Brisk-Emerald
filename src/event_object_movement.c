@@ -539,7 +539,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_ChampionLeon, OBJ_EVENT_PAL_TAG_CHAMPION_LEON},
     {gObjectEventPal_ChampionNemona, OBJ_EVENT_PAL_TAG_CHAMPION_NEMONA},
     {gObjectEventPal_ChampionVolo, OBJ_EVENT_PAL_TAG_CHAMPION_VOLO},
-#if IS_FRLG
+#if IS_FRLG || defined(EMERALD)
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_RED},
     {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION},
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_GREEN},
@@ -3219,7 +3219,8 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_NINJA_BOY;
 
-    return gObjectEventGraphicsInfoPointers[graphicsId];
+    const struct ObjectEventGraphicsInfo *info = gObjectEventGraphicsInfoPointers[graphicsId];
+    return info != NULL ? info : gObjectEventGraphicsInfoPointers[OBJ_EVENT_GFX_NINJA_BOY];
 }
 
 static void SetObjectEventDynamicGraphicsId(struct ObjectEvent *objectEvent)

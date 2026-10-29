@@ -273,6 +273,7 @@ struct SaveBlock3
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif
+    u8 kantoTrainerFlags[78] ALIGNED(4); // 624 independent Kanto trainer defeat bits
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

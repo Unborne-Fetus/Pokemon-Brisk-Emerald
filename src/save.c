@@ -1251,3 +1251,11 @@ static void CopyFromSaveBlock3(u32 sectorId, struct SaveSector *sector)
     u32 size = SaveBlock3Size(sectorId);
     memcpy(sector->saveBlock3Chunk, (u8 *)&gSaveblock3 + (sectorId * SAVE_BLOCK_3_CHUNK_SIZE), size);
 }
+
+#if TESTING
+void Test_CopyKantoSaveExtension(u32 sectorId, struct SaveSector *sector, bool32 saving)
+{
+    if (saving) CopyFromSaveBlock3(sectorId, sector);
+    else CopyToSaveBlock3(sectorId, sector);
+}
+#endif

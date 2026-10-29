@@ -150,6 +150,7 @@ static void FieldUpdateRegionMap(void)
     {
     case 0:
         InitRegionMap(&sFieldRegionMapHandler->regionMap, FALSE);
+        EnableRegionMapSwitching();
         CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
         CreateRegionMapCursor(TAG_CURSOR, TAG_CURSOR);
         sFieldRegionMapHandler->state++;
@@ -183,6 +184,11 @@ static void FieldUpdateRegionMap(void)
                 PrintRegionMapSecName();
                 PrintTitleWindowText();
                 break;
+        case MAP_INPUT_L_BUTTON:
+                PlaySE(SE_SELECT);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+                sFieldRegionMapHandler->state = 7;
+                break;
         case MAP_INPUT_A_BUTTON:
         case MAP_INPUT_B_BUTTON:
                 sFieldRegionMapHandler->state++;
@@ -197,6 +203,20 @@ static void FieldUpdateRegionMap(void)
                     ReturnToFieldFromFlyMapSelect();
                 }
         }
+        break;
+    case 7:
+        if (gPaletteFade.active) break;
+        BeginRegionMapSwitch();
+        sFieldRegionMapHandler->state++;
+        break;
+    case 8:
+        if (LoadRegionMapGfx()) break;
+        CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
+        CreateRegionMapCursor(TAG_CURSOR, TAG_CURSOR);
+        PrintRegionMapSecName();
+        PrintTitleWindowText();
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        sFieldRegionMapHandler->state = 3;
         break;
     case 5:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -231,12 +251,12 @@ static void PrintRegionMapSecName(void)
 
 static void PrintTitleWindowText(void)
 {
-    static const u8 FlyPromptText[] = _("{R_BUTTON} FLY");
+    static const u8 FlyPromptText[] = _("{L_BUTTON}/{R_BUTTON} FLY");
     const u8 *region;
-    if (GetCurrentRegion() == REGION_KANTO)
-        region = gText_Kanto;
+    if (GetDisplayedRegionMapType() != REGION_MAP_HOENN)
+        region = COMPOUND_STRING("KANTO {L_BUTTON}");
     else
-        region = gText_Hoenn;
+        region = COMPOUND_STRING("HOENN {L_BUTTON}");
     u32 hoennOffset = GetStringCenterAlignXOffset(FONT_NORMAL, region, 0x38);
     u32 flyOffset = GetStringCenterAlignXOffset(FONT_NORMAL, FlyPromptText, 0x38);
 

@@ -94,11 +94,11 @@ def main():
         text = path.read_text() if path.exists() else ''
         definitions.update({label: (species, flag) for label, species, flag in macro.findall(text)})
     for data in maps.values():
-        if data['name'].endswith('_Frlg'):
-            continue
         name = data['name']
         path = ROOT / 'data/maps' / name / 'scripts.inc'
-        text = path.read_text() if path.exists() else ''
+        # Kanto uses Brisk's authored postgame scripts, not the imported plot.
+        # Its explicit Brisk static objects still count as acquisition sources.
+        text = path.read_text() if path.exists() and not name.endswith('_Frlg') else ''
         # Vanilla event battles and trainer/gift rewards, including ship rooms.
         for species in re.findall(r'\b(?:givemon|setwildbattle|seteventmon)\s+SPECIES_(\w+)', text):
             if family(species):
@@ -108,7 +108,7 @@ def main():
                 else:
                     sources[family(species)].add(name + ' (scripted encounter/reward)')
         for obj in data.get('object_events', []):
-            entry = definitions.get(obj['script'])
+            entry = definitions.get(obj.get('script',''))
             if not entry or not family(entry[0]):
                 continue
             species, flag = entry

@@ -165,19 +165,6 @@
       "flag": "FLAG_DEFEATED_SPECTRIER"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MOLTRES_GALAR)",
-      "x": 25,
-      "y": 25,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "BriskStatic_EventScript_MOLTRES_GALAR",
-      "flag": "FLAG_DEFEATED_MOLTRES_GALAR"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(YVELTAL)",
       "x": 23,
       "y": 27,

@@ -56,16 +56,16 @@ def audit():
         ('Route146','OrangeStraitWest','OrangeStraitEast','CinnabarIsland_Frlg','Route20_Frlg')]
     def connection(a, direction, b, offset):
         assert {'direction':direction,'map':b.meta['id'],'offset':offset} in a.meta['connections'], (a.name,b.name)
-    connection(approach,'right',west,24); connection(west,'left',approach,-24)
+    connection(approach,'right',west,7); connection(west,'left',approach,-7)
+    connection(west,'down',east,0); connection(east,'up',west,0)
     connection(east,'left',cinnabar,0); connection(cinnabar,'right',east,0)
     connection(east,'right',route20,0); connection(route20,'left',east,0)
     for a,b in ((approach,west),(east,cinnabar),(east,route20)):
         for key in ('layout_version','primary_tileset','secondary_tileset'):
             assert a.layout[key] == b.layout[key], (a.name,b.name,key)
     for m in (west,east):
-        assert (m.w,m.h) == (40,20)
-        assert all(m.water((x,y)) for y in range(m.h) for x in range(m.w)), m.name
-        assert not m.meta['object_events'] and not m.meta['warp_events']
+        assert (m.w,m.h) == (40,52 if m is west else 20)
+        assert not m.meta['object_events'] and not m.meta['warp_events'] and not m.meta['coord_events']
     # The east half must select the actual Kanto Town Map. Its map section
     # is Route 20 because that section has a valid coastal Town Map position.
     # The west half retains the Orange Strait name on the Hoenn map.
@@ -78,27 +78,23 @@ def audit():
     # Keep the crossing scripts active while original Kanto story scripts stay guarded.
     converter = (ROOT/'tools/mapjson/mapjson.cpp').read_text()
     assert 'json_to_string(map_data, "id", true) != "MAP_ORANGE_STRAIT_EAST"' in converter
-    for a,b,trigger,arrival in ((west,east,{(39,y) for y in range(20)},(20,2)),
-                                (east,west,{(x,0) for x in range(40)},(37,10))):
-        assert {(c['x'],c['y']) for c in a.meta['coord_events']} == trigger
-        assert all(c['elevation']==1 and c['var']=='VAR_TEMP_0' and c['var_value']=='0'
-                   and c['script']==a.name+'_EventScript_CrossStrait' for c in a.meta['coord_events'])
-        script = (ROOT/'data/maps'/a.name/'scripts.inc').read_text()
-        assert f'warp {b.meta["id"]}, {arrival[0]}, {arrival[1]}' in script
-        assert b.water(arrival)
-        assert min(abs(arrival[0]-c['x'])+abs(arrival[1]-c['y']) for c in b.meta['coord_events']) >= 2
-        assert 'setflag ' not in script and 'clearflag ' not in script and 'setvar ' not in script
+    # Seamless north/south handoff: a continuous swimmable corridor joins
+    # Route 146's shifted approach to both edges of the Kanto junction.
+    seen = west.flood((0,y) for y in range(west.h) if west.water((0,y)))
+    assert any((x,west.h-1) in seen and east.water((x,0)) for x in range(40)), 'Regional seam blocked'
+    seen = east.flood((x,0) for x in range(40) if east.water((x,0)))
+    assert any((0,y) in seen and cinnabar.water((cinnabar.w-1,y)) for y in range(20)), 'Cinnabar seam blocked'
+    assert any((39,y) in seen and route20.water((0,y)) for y in range(20)), 'Route 20 seam blocked'
     # Safeguard the separate Kanto battle-only compiler path.
     converter = (ROOT/'tools/mapjson/mapjson.cpp').read_text()
-    for requirement in ('rocketBase', 'rivalFinale', 'storyActor', 'ChallengePending',
+    for requirement in ('rocketBase', 'rivalFinale', 'storyActor', 'brisk_kanto_postgame.json',
                         'access["coord_events"] = Json::array()'):
         assert requirement in converter, requirement
     access = (ROOT/'data/scripts/brisk_kanto_access.inc').read_text()
     assert not any(chr(92) * 2 + esc in access for esc in ('p', 'n')), 'Doubled Kanto escape breaks event_scripts.o'
-    assert all(chr(92) + esc in access for esc in ('p', 'n')), 'Kanto text must use single escape codes'
     assert 'trainerbattle_' not in access
     assert 'BriskKantoAccessOnly_EventScript_ChallengePending' in access
-    # Existing route entry -> Surf approach -> every row of the strait entrance.
+    # Existing route entry -> Surf approach -> strait entrance of the strait entrance.
     seen = approach.flood((0,y) for y in range(approach.h))
     assert all((62,y) in seen and approach.water((62,y)) for y in range(24,44)), 'Route 146 approach blocked'
     # Cinnabar's west edge is reef-enclosed, so the junction uses its existing

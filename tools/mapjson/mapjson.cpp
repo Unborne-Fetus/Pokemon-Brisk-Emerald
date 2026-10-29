@@ -446,16 +446,23 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
         const bool rivalFinale = mapName == "PokemonLeague_ChampionsRoom_Frlg"
             || mapName == "PalletTown_RivalsHouse_Frlg";
         const bool gym = mapName.find("_Gym_Frlg") != string::npos;
-        const bool league = mapName.find("PokemonLeague_") == 0
-            && mapName.find("Room_Frlg") != string::npos;
+
         access["shared_scripts_map"] = "BriskKantoAccessOnly";
         access.erase("shared_events_map");
+        string postgameError;
+        Json postgame = Json::parse(read_text_file("data/brisk_kanto_postgame.json"), postgameError);
+        if (postgame == Json()) FATAL_ERROR("Invalid Kanto postgame manifest: %s\n", postgameError.c_str());
+        const string mapScripts = json_to_string(postgame["maps"][mapName], "map_scripts", true);
+        if (!mapScripts.empty()) access["shared_scripts_map"] = mapScripts;
         Json::array objects;
-        for (const auto &event : map_data["object_events"].array_items()) {
+        unsigned sourceIndex = 0;
+        for (const auto &sourceEvent : map_data["object_events"].array_items()) {
+            const Json record = postgame["maps"][mapName]["objects"][std::to_string(++sourceIndex)];
+            const Json event = record["object"].is_object() ? record["object"] : sourceEvent;
             const string gfx = json_to_string(event, "graphics_id", true);
             const string script = json_to_string(event, "script", true);
             const string flag = json_to_string(event, "flag", true);
-            const string kind = json_to_string(event, "trainer_type", true);
+
             const bool gymLeader = gym && (gfx == "OBJ_EVENT_GFX_GIOVANNI"
                 || gfx == "OBJ_EVENT_GFX_BROCK"
                 || gfx == "OBJ_EVENT_GFX_MISTY"
@@ -464,12 +471,7 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 || gfx == "OBJ_EVENT_GFX_KOGA"
                 || gfx == "OBJ_EVENT_GFX_SABRINA"
                 || gfx == "OBJ_EVENT_GFX_BLAINE");
-            const bool challenge = (kind != "" && kind != "TRAINER_TYPE_NONE")
-                || gymLeader
-                || (league && (gfx == "OBJ_EVENT_GFX_LORELEI"
-                    || gfx == "OBJ_EVENT_GFX_BRUNO"
-                    || gfx == "OBJ_EVENT_GFX_AGATHA"
-                    || gfx == "OBJ_EVENT_GFX_LANCE"));
+
             const bool storyActor = rocketBase || rivalFinale
                 || gfx.find("ROCKET") != string::npos
                 || gfx == "OBJ_EVENT_GFX_BLUE"
@@ -485,14 +487,15 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             if (storyActor)
                 continue;
             Json::object object = event.object_items();
-            object["trainer_type"] = "TRAINER_TYPE_NONE";
-            object["trainer_sight_or_berry_tree_id"] = "0";
-            object["script"] = challenge
-                ? "BriskKantoAccessOnly_EventScript_ChallengePending"
-                : "BriskKantoAccessOnly_EventScript_NotReady";
-            // Avoid colliding story hide flags making Kanto challenge NPCs vanish.
-            if (challenge)
-                object["flag"] = "0";
+            const string trainer = json_to_string(record, "trainer", true);
+            const string authoredScript = json_to_string(record, "script", true);
+            object["trainer_type"] = trainer.empty() ? "TRAINER_TYPE_NONE" : "TRAINER_TYPE_NORMAL";
+            object["trainer_sight_or_berry_tree_id"] = trainer.empty() ? "0" : "3";
+            object["script"] = authoredScript.empty()
+                ? "BriskKantoAccessOnly_EventScript_NotReady" : authoredScript;
+            // Kanto defeats use their own save-extension bits. No imported
+            // Hoenn-colliding story hide flags are consulted for ordinary NPCs.
+            if (!record["keep_flag"].bool_value()) object["flag"] = "0";
             objects.push_back(object);
         }
         access["object_events"] = objects;

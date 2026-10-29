@@ -1,68 +1,81 @@
 # Orange Islands to Kanto
 
-From Orange City, travel east through Routes 145 and 146. Use Surf on Route
-146's east coast and continue east across **Orange Strait**. A short water
-transition loads Kanto's graphics. On the Kanto side, travel southwest to
-**Cinnabar Island**, or east toward the existing Route 20 and Seafoam Islands.
+From Orange City, travel east through Routes 145 and 146. Surf from Route
+146's east coast into Orange Strait, then south into its Kanto junction.
+Continue west to Cinnabar Island or east toward Route 20 and Seafoam Islands.
+Return by Surfing east from Cinnabar, north through Orange Strait, then west
+to Route 146. The route uses seamless map connections in both directions.
 
-To return, Surf east from Cinnabar into Orange Strait, then north to the
-strait's northern edge. The crossing returns you to the Orange Islands side;
-Surf west to Route 146.
+The regional boundary reloads both tilesets, their palettes and animations,
+and redraws the visible map when switching between Emerald and FRLG formats.
+Kanto NPC graphics and palettes are available in the Emerald ROM, including
+Cinnabar's residents and the trainers on the onward routes.
 
-This adds **exploration access only**. Kanto's existing terrain, scripts, trainers, encounters,
-items, gyms, story flags, and progression have not been reworked. The Emerald
-map builder previously excluded Kanto entirely. It now includes those layouts
-and connections, while building Kanto with inactive story triggers, trainer
-battles, gifts, hidden pickups, and services. Interacting with its residents
-explains that the campaign is not ready. This prevents template events with
-placeholder flags and overlapping Hoenn variables from modifying a Hoenn save.
-Original Kanto JSON, scripts and terrain are retained for a future campaign port.
-There is no claim of a playable second story yet. The existing Cinnabar–Route 20 connection now
-passes through the new sea junction. Both endpoints retain their original
-offset and connect back through that junction. No Kanto maps or layout IDs
-were reordered. No badges, story variables, or story flags are granted or reset.
+## Town Map and Fly
 
-Both halves use their neighboring maps' primary/secondary tilesets and layout
-formats. The regional crossing uses an ordinary field warp in open water,
-which reloads both tilesets and restores Surf from the destination's water
-behavior. Destinations are clear of the reverse crossing triggers.
+Press **L** in the Town Map, Fly screen, or PokeNav map to browse Hoenn and
+Kanto. The player marker appears on the player's current region. Kanto uses
+its existing FRLG map artwork, city names and route labels. Orange Strait's
+Kanto junction shares Route 20's map square.
 
-Route 146's new approach opens only existing ocean tiles in the rectangle
-x=20..62, y=24..43. Existing land, scenery, objects, pickups, and door warps
-are preserved. Existing saves on Route 146 also refresh those water tiles
-when their cached map view is restored.
+Each of Kanto's eleven cities becomes a Fly destination after visiting it.
+Browsing the map does not unlock cities. Visit flags occupy previously unused
+Hoenn flags and do not grant badges or start story scenes. Fly still requires
+the normal Hoenn travel ability. Hoenn destinations retain their existing rules.
 
-## Region Map handoff
+## Champion's visit
 
-The west half of Orange Strait retains its own name on the Hoenn map. The
-Orange Islands do not yet have a dedicated drawn Town Map, so their player
-marker uses the eastern edge of Hoenn instead of indexing unset section
-coordinates. When the player crosses to the east half, the map now selects
-**Kanto**, anchored to the adjacent Route 20 map square; the existing
-FRLG Kanto Town Map artwork, cities and route labels are used automatically.
-The Kanto-side sea junction is specifically exempted from the converter's
-Kanto-story safety suppression so its return Surf trigger keeps working.
+Kanto welcomes the player as Hoenn's Champion and savior. Residents, trainers,
+Gym Leaders and the Elite Four acknowledge that achievement. Pokemon Centers
+heal the party and update the local return point; marts sell postgame supplies.
+Giovanni appears as Viridian's Gym Leader. Rocket, rival and Oak plot scenes
+remain excluded. This is a postgame challenge region rather than the original
+FRLG badge campaign: original badge rewards, forced scenes and colliding quest
+variables stay inactive. Gym and League passage doors are opened by independent
+map-load scripts.
 
-In the Emerald build, Kanto city Fly destinations remain unavailable until
-that region's travel/heal systems are ported and verified. Hoenn Fly destinations
-are unchanged. This change does not activate Kanto gyms, trainers, shops,
-story events, flags, or gifts. Original Kanto terrain and source maps are untouched.
+Every Kanto trainer identity has four explicit parties of six Pokemon, with
+different species lineups in each mode. See [the complete teams](kanto-trainer-teams.md).
 
-## Battle-only Kanto, without a story
+| Mode | Ordinary trainers | Gym Leaders and Elite Four |
+| --- | --- | --- |
+| Easy | 90 | 92 |
+| Normal | 94 | 96 |
+| Hard | 97 | 99 |
+| Kaizo | 100 | 100 |
 
-Kanto in **Brisk Emerald** is intended as a second region devoted to Gyms,
-ordinary trainers, and its Elite Four, **not** the FireRed/LeafGreen campaign.
-Emerald's map compiler excludes rival and Professor Oak plot actors, Team
-Rocket NPCs, Silph Co. plot characters, and the rival Champion finale. The
-original forced story scenes, roadblocks, Rocket encounters, and quest
-triggers remain inactive. Giovanni is retained **only as Viridian City's
-Gym Leader**, not as a Team Rocket boss. This conversion occurs only for
-Emerald; the original FRLG source maps remain intact.
+Parties use mature species, legal moves, abilities and held items, with the
+existing mode rules for IVs, EVs, AI, bag use, prices and experience. Explicit
+parties retain their authored levels instead of being rebuilt by generic
+trainer scaling. Hoenn's dedication, Easter egg and Champions Archive parties
+are unchanged.
 
-All eight Gym Leader NPCs, the four Elite Four NPCs, and ordinary Kanto
-trainer NPCs are preserved and made visible independently of colliding FRLG
-hide flags. **Their trainer battles are not enabled yet.** FRLG's opponent
-IDs and defeat flags overlap with Hoenn, so they require a Kanto-specific
-roster, independent battle records, and safe scripted challenges before they
-can be fought. These characters currently display a short placeholder
-message. Neither badges nor story flags are granted or reset.
+Kanto trainers use their own opponent IDs and saved defeat bits. Hoenn trainer,
+badge and story flag positions remain fixed. The defeat bank extends SaveBlock3
+inside its existing reserved sectors; previously unused bytes in old saves
+initialize the new records as undefeated.
+
+## Relocated legendary encounters
+
+These existing Brisk encounters have moved to Kanto at level 90:
+
+| Pokemon | Location |
+| --- | --- |
+| Articuno | Seafoam Islands B4F |
+| Moltres | Victory Road 3F |
+| Entei | Pokemon Mansion B1F |
+| Suicune | Seafoam Islands 1F |
+| Galarian Moltres | Pokemon Tower 7F |
+| Galarian Zapdos | Route 23 |
+
+Each keeps its original caught flag, so an already caught Pokemon does not
+reappear after updating. Uncaught encounters remain retryable after a knockout,
+flee or loss. Other legendary locations remain unchanged.
+
+## Verification
+
+Static audits check the bidirectional Surf corridor, every authored roster,
+champion dialogue, unique encounter placement and accessible encounter tiles.
+Emulator regression tests cover NPC resources, Surf collision, map selection,
+independent defeat flags and save-extension round trips. These checks do not
+replace a complete playthrough of every Kanto route and interior.

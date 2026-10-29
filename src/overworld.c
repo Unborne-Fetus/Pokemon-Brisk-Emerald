@@ -1,4 +1,5 @@
 #include "global.h"
+#include "region_map.h"
 #include "brisk_lead_weather.h"
 #include "bike.h"
 #include "brisk_lighting.h"
@@ -674,12 +675,14 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+    BriskRecordKantoMapVisit();
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
+    BriskRecordKantoMapVisit();
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -875,6 +878,7 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+    const struct MapLayout *previousLayout = gMapHeader.mapLayout;
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -903,12 +907,21 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
-    CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
-    LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
-
-    ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout)); // palettes [6,12]
-
-    InitSecondaryTilesetAnimation();
+    if (previousLayout->primaryTileset != gMapHeader.mapLayout->primaryTileset
+        || previousLayout->isFrlg != gMapHeader.mapLayout->isFrlg)
+    {
+        CopyMapTilesetsToVram(gMapHeader.mapLayout);
+        LoadMapTilesetPalettes(gMapHeader.mapLayout);
+        ApplyWeatherColorMapToPals(0, NUM_PALS_TOTAL);
+        InitTilesetAnimations();
+    }
+    else
+    {
+        CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
+        LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE);
+        ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout));
+        InitSecondaryTilesetAnimation();
+    }
     UpdateLocationHistoryForRoamer();
     MoveAllRoamers();
     DoCurrentWeather();

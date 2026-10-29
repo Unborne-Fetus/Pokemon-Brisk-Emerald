@@ -80,17 +80,17 @@
 #define FLAG_ITEM_BRISK_ROUTE143_NAIVE_MINT                            0x034
 #define FLAG_ITEM_BRISK_ROUTE146_SERIOUS_MINT                          0x035
 #define FLAG_BRISK_MEGA_MODE 0x36 // Optional persistent held-stone Mega forms
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
+#define FLAG_BRISK_VISITED_PALLET_TOWN    0x37 // Unused Flag
+#define FLAG_BRISK_VISITED_VIRIDIAN_CITY    0x38 // Unused Flag
+#define FLAG_BRISK_VISITED_PEWTER_CITY    0x39 // Unused Flag
+#define FLAG_BRISK_VISITED_CERULEAN_CITY    0x3A // Unused Flag
+#define FLAG_BRISK_VISITED_LAVENDER_TOWN    0x3B // Unused Flag
+#define FLAG_BRISK_VISITED_VERMILION_CITY    0x3C // Unused Flag
+#define FLAG_BRISK_VISITED_CELADON_CITY    0x3D // Unused Flag
+#define FLAG_BRISK_VISITED_FUCHSIA_CITY    0x3E // Unused Flag
+#define FLAG_BRISK_VISITED_CINNABAR_ISLAND    0x3F // Unused Flag
+#define FLAG_BRISK_VISITED_INDIGO_PLATEAU_EXTERIOR    0x40 // Unused Flag
+#define FLAG_BRISK_VISITED_SAFFRON_CITY    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
@@ -1349,7 +1349,7 @@
 // See constants/opponents.h. The values there + FLAG_TRAINER_FLAG_START are the flag IDs
 
 #define TRAINER_FLAGS_START                                         0x500
-#define TRAINER_FLAGS_END                                           (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x85F
+#define TRAINER_FLAGS_END                                           (TRAINER_FLAGS_START + BRISK_HOENN_TRAINERS_COUNT - 1) // Preserve existing save offsets
 
 // System Flags
 
@@ -2392,17 +2392,17 @@
 #define FLAG_SYS_UNLOCKED_TANOBY_RUINS                              0
 
 // World Map Flags
-#define FLAG_WORLD_MAP_PALLET_TOWN                                  0
-#define FLAG_WORLD_MAP_VIRIDIAN_CITY                                0
-#define FLAG_WORLD_MAP_PEWTER_CITY                                  0
-#define FLAG_WORLD_MAP_CERULEAN_CITY                                0
-#define FLAG_WORLD_MAP_LAVENDER_TOWN                                0
-#define FLAG_WORLD_MAP_VERMILION_CITY                               0
-#define FLAG_WORLD_MAP_CELADON_CITY                                 0
-#define FLAG_WORLD_MAP_FUCHSIA_CITY                                 0
-#define FLAG_WORLD_MAP_CINNABAR_ISLAND                              0
-#define FLAG_WORLD_MAP_INDIGO_PLATEAU_EXTERIOR                      0
-#define FLAG_WORLD_MAP_SAFFRON_CITY                                 0
+#define FLAG_WORLD_MAP_PALLET_TOWN                                  FLAG_BRISK_VISITED_PALLET_TOWN
+#define FLAG_WORLD_MAP_VIRIDIAN_CITY                                FLAG_BRISK_VISITED_VIRIDIAN_CITY
+#define FLAG_WORLD_MAP_PEWTER_CITY                                  FLAG_BRISK_VISITED_PEWTER_CITY
+#define FLAG_WORLD_MAP_CERULEAN_CITY                                FLAG_BRISK_VISITED_CERULEAN_CITY
+#define FLAG_WORLD_MAP_LAVENDER_TOWN                                FLAG_BRISK_VISITED_LAVENDER_TOWN
+#define FLAG_WORLD_MAP_VERMILION_CITY                               FLAG_BRISK_VISITED_VERMILION_CITY
+#define FLAG_WORLD_MAP_CELADON_CITY                                 FLAG_BRISK_VISITED_CELADON_CITY
+#define FLAG_WORLD_MAP_FUCHSIA_CITY                                 FLAG_BRISK_VISITED_FUCHSIA_CITY
+#define FLAG_WORLD_MAP_CINNABAR_ISLAND                              FLAG_BRISK_VISITED_CINNABAR_ISLAND
+#define FLAG_WORLD_MAP_INDIGO_PLATEAU_EXTERIOR                      FLAG_BRISK_VISITED_INDIGO_PLATEAU_EXTERIOR
+#define FLAG_WORLD_MAP_SAFFRON_CITY                                 FLAG_BRISK_VISITED_SAFFRON_CITY
 #define FLAG_WORLD_MAP_ONE_ISLAND                                   0
 #define FLAG_WORLD_MAP_TWO_ISLAND                                   0
 #define FLAG_WORLD_MAP_THREE_ISLAND                                 0
@@ -2458,5 +2458,9 @@
 #define TESTING_FLAG_UNUSED_7                   (TESTING_FLAGS_START + 0x7)
 #endif // TESTING
 
+
+// Kanto defeated-trainer bits live in the save extension, outside Hoenn flags.
+#define FLAG_BRISK_KANTO_TRAINER_START 0x6000
+#define FLAG_BRISK_KANTO_TRAINER_END (FLAG_BRISK_KANTO_TRAINER_START + BRISK_KANTO_TRAINER_COUNT)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

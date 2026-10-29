@@ -11,3 +11,6 @@ AUTO_GEN_TARGETS += src/data/debug_trainers.h
 
 %.h: %.party $(TRAINERPROC)
 	$(CPP) $(CPPFLAGS) -traditional-cpp - < $< | $(TRAINERPROC) -o $@ -i $< -
+
+# The four-mode source includes the separate Kanto roster file.
+src/data/brisk_mode_teams.h: src/data/brisk_kanto_teams.party

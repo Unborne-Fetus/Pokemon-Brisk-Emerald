@@ -1,0 +1,50 @@
+[
+  {
+    "species": "ARTICUNO",
+    "from_map": "ShoalCave_LowTideIceRoom_2",
+    "map": "SeafoamIslands_B4F_Frlg",
+    "x": 22,
+    "y": 1,
+    "flag": "FLAG_DEFEATED_ARTICUNO"
+  },
+  {
+    "species": "MOLTRES",
+    "from_map": "FieryPath",
+    "map": "VictoryRoad_3F_Frlg",
+    "x": 15,
+    "y": 19,
+    "flag": "FLAG_DEFEATED_MOLTRES"
+  },
+  {
+    "species": "ENTEI",
+    "from_map": "FieryPath",
+    "map": "PokemonMansion_B1F_Frlg",
+    "x": 14,
+    "y": 3,
+    "flag": "FLAG_DEFEATED_ENTEI"
+  },
+  {
+    "species": "SUICUNE",
+    "from_map": "Route119",
+    "map": "SeafoamIslands_1F_Frlg",
+    "x": 15,
+    "y": 16,
+    "flag": "FLAG_DEFEATED_SUICUNE"
+  },
+  {
+    "species": "MOLTRES_GALAR",
+    "from_map": "MtPyre_Summit",
+    "map": "PokemonTower_7F_Frlg",
+    "x": 10,
+    "y": 5,
+    "flag": "FLAG_DEFEATED_MOLTRES_GALAR"
+  },
+  {
+    "species": "ZAPDOS_GALAR",
+    "from_map": "Route111",
+    "map": "Route23_Frlg",
+    "x": 11,
+    "y": 1,
+    "flag": "FLAG_DEFEATED_ZAPDOS_GALAR"
+  }
+]

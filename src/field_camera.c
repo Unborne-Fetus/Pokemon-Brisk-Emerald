@@ -424,9 +424,14 @@ void CameraUpdateNoObjectRefresh(void)
 
     if (deltaX != 0 || deltaY != 0)
     {
+        const struct MapLayout *previousLayout = gMapHeader.mapLayout;
         CameraMove(deltaX, deltaY);
         AddCameraTileOffset(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
-        RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
+        if (previousLayout->primaryTileset != gMapHeader.mapLayout->primaryTileset
+            || previousLayout->isFrlg != gMapHeader.mapLayout->isFrlg)
+            DrawWholeMapView();
+        else
+            RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
     }
 
     AddCameraPixelOffset(&sFieldCameraOffset, movementSpeedX, movementSpeedY);
@@ -487,12 +492,17 @@ void CameraUpdate(void)
 
     if (deltaX != 0 || deltaY != 0)
     {
+        const struct MapLayout *previousLayout = gMapHeader.mapLayout;
         CameraMove(deltaX, deltaY);
         UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
         RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
         SetBerryTreesSeen();
         AddCameraTileOffset(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
-        RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
+        if (previousLayout->primaryTileset != gMapHeader.mapLayout->primaryTileset
+            || previousLayout->isFrlg != gMapHeader.mapLayout->isFrlg)
+            DrawWholeMapView();
+        else
+            RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
         TryDespawnOWEsCrossingMapConnection();
     }
 

@@ -1096,14 +1096,21 @@ static void TryUpdateGymLeaderRematchFromTrainer(void)
         UpdateGymLeaderRematch();
 }
 
+u16 GetTrainerDefeatFlag(u16 trainerId)
+{
+    if (!IS_FRLG && trainerId >= BRISK_KANTO_TRAINER_BASE && trainerId < TRAINERS_COUNT_EMERALD)
+        return FLAG_BRISK_KANTO_TRAINER_START + trainerId - BRISK_KANTO_TRAINER_BASE;
+    return TRAINER_FLAGS_START + trainerId;
+}
+
 static u16 GetTrainerAFlag(void)
 {
-    return TRAINER_FLAGS_START + TRAINER_BATTLE_PARAM.opponentA;
+    return GetTrainerDefeatFlag(TRAINER_BATTLE_PARAM.opponentA);
 }
 
 static u16 GetTrainerBFlag(void)
 {
-    return TRAINER_FLAGS_START + TRAINER_BATTLE_PARAM.opponentB;
+    return GetTrainerDefeatFlag(TRAINER_BATTLE_PARAM.opponentB);
 }
 
 static bool32 IsPlayerDefeated(u32 battleOutcome)
@@ -1501,7 +1508,7 @@ void ConfigureApproachingFacilityTrainerBattle(struct ApproachingTrainer *approa
 bool32 GetTrainerFlagFromScriptPointer(const u8 *data)
 {
     TrainerBattleParameter *temp = (TrainerBattleParameter*)(data + OPCODE_OFFSET);
-    return FlagGet(TRAINER_FLAGS_START + temp->params.opponentA);
+    return FlagGet(GetTrainerDefeatFlag(temp->params.opponentA));
 }
 
 bool32 GetRematchFromScriptPointer(const u8 *data)
@@ -1558,17 +1565,17 @@ static void UNUSED SetBattledTrainerFlag(void)
 
 bool8 HasTrainerBeenFought(u16 trainerId)
 {
-    return FlagGet(TRAINER_FLAGS_START + trainerId);
+    return FlagGet(GetTrainerDefeatFlag(trainerId));
 }
 
 void SetTrainerFlag(u16 trainerId)
 {
-    FlagSet(TRAINER_FLAGS_START + trainerId);
+    FlagSet(GetTrainerDefeatFlag(trainerId));
 }
 
 void ClearTrainerFlag(u16 trainerId)
 {
-    FlagClear(TRAINER_FLAGS_START + trainerId);
+    FlagClear(GetTrainerDefeatFlag(trainerId));
 }
 
 void BattleSetup_StartTrainerBattle(void)

@@ -203,16 +203,19 @@ u16 VarGetObjectEventGraphicsId(u8 id)
 
 u8 *GetFlagPointer(u16 id)
 {
+    if (id >= FLAG_BRISK_KANTO_TRAINER_START && id < FLAG_BRISK_KANTO_TRAINER_END)
+        return &gSaveBlock3Ptr->kantoTrainerFlags[(id - FLAG_BRISK_KANTO_TRAINER_START) / 8];
     if (id == 0)
         return NULL;
     else if (id < SPECIAL_FLAGS_START)
         return &gSaveBlock1Ptr->flags[id / 8];
 #if TESTING
-    else if (id >= TESTING_FLAGS_START)
+    else if (id >= TESTING_FLAGS_START && id < TESTING_FLAGS_START + TEST_FLAGS_SIZE * 8)
         return &sTestFlags[(id - TESTING_FLAGS_START) / 8];
 #endif // TESTING
-    else
+    else if (id < SPECIAL_FLAGS_START + NUM_SPECIAL_FLAGS)
         return &sSpecialFlags[(id - SPECIAL_FLAGS_START) / 8];
+    return NULL;
 }
 
 u8 FlagSet(u16 id)

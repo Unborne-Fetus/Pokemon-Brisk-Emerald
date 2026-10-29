@@ -23,7 +23,8 @@ enum
     MAP_INPUT_MOVE_END,
     MAP_INPUT_A_BUTTON,
     MAP_INPUT_B_BUTTON,
-    MAP_INPUT_R_BUTTON
+    MAP_INPUT_R_BUTTON,
+    MAP_INPUT_L_BUTTON
 };
 
 enum {
@@ -96,6 +97,9 @@ struct RegionMap {
     /*0x081*/ u8 charBaseIdx;
     /*0x082*/ u8 mapBaseIdx;
     /*0x083*/ bool8 bgManaged;
+    u8 displayMapType;
+    u8 playerMapType;
+    bool8 allowRegionSwitch;
     /*0x084*/ u8 filler_084[0x100];
     /*0x184*/ u8 cursorSmallImage[0x100];
     /*0x284*/ u8 cursorLargeImage[0x600];
@@ -136,6 +140,10 @@ void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 enum RegionMapType GetRegionMapType(u32 mapSecId);
+enum RegionMapType GetDisplayedRegionMapType(void);
+void EnableRegionMapSwitching(void);
+void BeginRegionMapSwitch(void);
+void BriskRecordKantoMapVisit(void);
 
 //Pokenav Fly funcs
 u32 FilterFlyDestination(struct RegionMap* regionMap);

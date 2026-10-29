@@ -76,6 +76,7 @@ static u32 LoopedTask_UpdateInfoAfterCursorMove(s32);
 static u32 LoopedTask_RegionMapZoomOut(s32);
 static u32 LoopedTask_RegionMapZoomIn(s32);
 static u32 LoopedTask_ExitRegionMap(s32);
+static u32 LoopedTask_SwitchRegionMap(s32);
 static u32 LoopedTask_TreatAsPokeNavFlyMap(s32);
 
 extern const u16 gRegionMapCityZoomTiles_Pal[];
@@ -125,6 +126,7 @@ static const LoopedTask sRegionMapLoopTaskFuncs[] =
     [POKENAV_MAP_FUNC_ZOOM_IN]      = LoopedTask_RegionMapZoomIn,
     [POKENAV_MAP_FUNC_EXIT]         = LoopedTask_ExitRegionMap,
     [POKENAV_MAP_FUNC_FLY]          = LoopedTask_TreatAsPokeNavFlyMap,
+    [POKENAV_MAP_FUNC_SWITCH_REGION] = LoopedTask_SwitchRegionMap,
 };
 
 static const struct CompressedSpriteSheet sCityZoomTextSpriteSheet[1] =
@@ -212,6 +214,8 @@ static u32 HandleRegionMapInput(struct Pokenav_RegionMapMenu *state)
     {
     case MAP_INPUT_MOVE_END:
         return POKENAV_MAP_FUNC_CURSOR_MOVED;
+    case MAP_INPUT_L_BUTTON:
+        return POKENAV_MAP_FUNC_SWITCH_REGION;
     case MAP_INPUT_A_BUTTON:
         if (!IsRegionMapZoomed())
             return POKENAV_MAP_FUNC_ZOOM_IN;
@@ -332,6 +336,7 @@ static u32 LoopedTask_OpenRegionMap(s32 taskState)
 
         if (!GetZoomDisabled())
         {
+            EnableRegionMapSwitching();
             CreateRegionMapPlayerIcon(4, 9);
             CreateRegionMapCursor(5, 10);
             TrySetPlayerIconBlink();
@@ -506,6 +511,38 @@ static u32 LoopedTask_TreatAsPokeNavFlyMap(s32 taskState)
         return LT_FINISH;
     }
 
+    return LT_FINISH;
+}
+
+static u32 LoopedTask_SwitchRegionMap(s32 taskState)
+{
+    struct Pokenav_RegionMapGfx *state = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP_ZOOM);
+    switch (taskState)
+    {
+    case 0:
+        PlaySE(SE_SELECT);
+        PokenavFadeScreen(POKENAV_FADE_TO_BLACK);
+        return LT_INC_AND_PAUSE;
+    case 1:
+        if (IsPaletteFadeActive()) return LT_PAUSE;
+        BeginRegionMapSwitch();
+        return LT_INC_AND_PAUSE;
+    case 2:
+        if (LoadRegionMapGfx()) return LT_PAUSE;
+        CreateRegionMapPlayerIcon(4, 9);
+        CreateRegionMapCursor(5, 10);
+        TrySetPlayerIconBlink();
+        UpdateMapSecInfoWindow(state);
+        UpdateRegionMapHelpBarText();
+        return LT_INC_AND_PAUSE;
+    case 3:
+        if (IsDma3ManagerBusyWithBgCopy_(state)) return LT_PAUSE;
+        PokenavFadeScreen(POKENAV_FADE_FROM_BLACK);
+        return LT_INC_AND_PAUSE;
+    case 4:
+        if (IsPaletteFadeActive() || WaitForHelpBar()) return LT_PAUSE;
+        break;
+    }
     return LT_FINISH;
 }
 

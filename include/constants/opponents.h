@@ -875,8 +875,12 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     865
-#define MAX_TRAINERS_COUNT_EMERALD 865
+#define BRISK_HOENN_TRAINERS_COUNT 865
+#define BRISK_KANTO_TRAINER_BASE BRISK_HOENN_TRAINERS_COUNT
+#define BRISK_KANTO_TRAINER_COUNT 624
+#include "constants/brisk_kanto_trainers.h"
+#define TRAINERS_COUNT_EMERALD     (BRISK_KANTO_TRAINER_BASE + BRISK_KANTO_TRAINER_COUNT)
+#define MAX_TRAINERS_COUNT_EMERALD TRAINERS_COUNT_EMERALD
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

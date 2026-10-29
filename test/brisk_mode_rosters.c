@@ -99,6 +99,7 @@ TEST("Brisk mode rosters cover every populated trainer with valid species and us
         for (u32 id = 1; id < TRAINERS_COUNT; id++)
         {
             const struct Trainer *trainer = &sModeTeams[row][id];
+            if (id == BRISK_KANTO_TRAINER_BASE) continue; // Reserved zero opponent in the Kanto bank.
             if (!trainer->authoredParty || trainer->party == NULL || !trainer->partySize || trainer->partySize > PARTY_SIZE)
             {
                 Test_MgbaPrintf("Missing roster row %d trainer %d", row, id);
@@ -218,11 +219,11 @@ TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every 
             EXPECT_EQ(GetBriskTrainerAiFlagsForTrainer(0, id), strongAI);
             const struct Trainer *fixed = &sModeTeams[GetTrainerDifficultyLevel(id)][id];
             const struct Trainer *normal = &sModeTeams[DIFFICULTY_NORMAL][id];
-            EXPECT_EQ(fixed->partySize, normal->partySize);
+            EXPECT_EQ((u32)fixed->partySize, (u32)normal->partySize);
             EXPECT_EQ(fixed->party, normal->party);
             EXPECT_EQ(fixed->trainerPic, normal->trainerPic);
             EXPECT_EQ(fixed->trainerClass, normal->trainerClass);
-            EXPECT_EQ(fixed->encounterMusic, normal->encounterMusic);
+            EXPECT_EQ((u32)fixed->encounterMusic, (u32)normal->encounterMusic);
         }
         EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_STEVEN));
         EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_ALLEN));
@@ -231,7 +232,10 @@ TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every 
     gMapHeader.mapLayoutId = LAYOUT_EVER_GRANDE_CITY_CHAMPIONS_ROOM;
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
     EXPECT(!BriskIsChampionsArchiveTrainer(TRAINER_WALLACE));
-    EXPECT_EQ(GetTrainerDifficultyLevel(TRAINER_WALLACE), DIFFICULTY_EASY);
+    // Battle fixtures replace gTrainers and omit Wallace. Validate the saved
+    // mode and real roster here instead of the fixture table fallback.
+    EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_EASY);
+    EXPECT_EQ(sModeTeams[GetBriskDifficultyLevel()][TRAINER_WALLACE].party[0].lvl, 70);
     EXPECT_EQ(GetBriskTrainerAiFlagsForTrainer(0, TRAINER_WALLACE), AI_FLAG_CHECK_BAD_MOVE);
     gMapHeader = savedHeader;
     VarSet(VAR_BRISK_DIFFICULTY, savedDifficulty);
@@ -243,7 +247,7 @@ TEST("Brisk Kaizo boss appearances stay consistent across authored mode teams")
     {
         EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerPic, TRAINER_PIC_HEX_MANIAC);
         EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerClass, TRAINER_CLASS_HEX_MANIAC);
-        EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].gender, FEMALE);
+        EXPECT_EQ((u32)sModeTeams[row][TRAINER_HOODED_FIGURE].gender, FEMALE);
         EXPECT_EQ(sModeTeams[row][TRAINER_TANKERSON].trainerPic, TRAINER_PIC_VOLO);
         EXPECT_EQ(sModeTeams[row][TRAINER_TANKERSON].trainerClass, TRAINER_CLASS_CHAMPION);
     }

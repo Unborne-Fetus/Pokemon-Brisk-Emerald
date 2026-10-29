@@ -1,6 +1,6 @@
 @ Kanto's story is omitted in Brisk Emerald. Do not re-enable original FRLG
 @ rivals, Rocket scenes or badges: their flags and trainer IDs overlap Hoenn.
-@ Challenge NPCs remain visible until independent battle rosters are ported.
+@ Authored postgame challenges use separate rosters and saved defeat records.
 BriskKantoAccessOnly_MapScripts::
 	.byte 0
 
@@ -15,9 +15,9 @@ BriskKantoAccessOnly_EventScript_ChallengePending::
 	end
 
 BriskKantoAccessOnly_Text_NotReady:
-	.string "KANTO is a region for TRAINERS.\p"
-	.string "The old story has ended here.$"
+	.string "Welcome to KANTO, HOENN CHAMPION!\p"
+	.string "Our Trainers await your challenge.$"
 
 BriskKantoAccessOnly_Text_ChallengePending:
-	.string "This KANTO battle challenge is\n"
-	.string "still being prepared.$"
+	.string "KANTO welcomes HOENN's savior.\p"
+	.string "Enjoy your next challenge!$"

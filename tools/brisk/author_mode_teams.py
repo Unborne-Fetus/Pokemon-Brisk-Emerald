@@ -295,7 +295,7 @@ def mon_block(sp, level, mode, slot, doubles, original=None, train_original=Fals
 
 def render():
     sources=TEAM_RE.findall((ROOT/'src/data/trainers.party').read_text())
-    output=['/* Explicit Brisk mode rosters. Edit these records to tune an encounter.\n'
+    output=['#include "src/data/brisk_kanto_teams.party"\n', '/* Explicit Brisk mode rosters. Edit these records to tune an encounter.\n'
             'Regeneration from curated archetypes: python tools/brisk/author_mode_teams.py --write\n'
             'Validation only (preserves manual edits): python tools/brisk/author_mode_teams.py --check\n*/\n']
     report=['# Brisk Emerald: explicit trainer rosters', '',
