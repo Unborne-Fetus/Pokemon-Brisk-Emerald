@@ -26,6 +26,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewMauville_Entrance_EventScript_ZERAORA",
       "flag": "FLAG_HIDE_NEWMAUVILLE_ZERAORA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUXRAYITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_NEW_MAUVILLE_ENTRANCE_LUXRAYITE"
     }
   ],
   "warp_events": [

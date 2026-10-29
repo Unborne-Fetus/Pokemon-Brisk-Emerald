@@ -132,12 +132,26 @@ LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkTOPRight::
 	lock
 	faceplayer
+	msgbox LilycoveCity_DepartmentStore_4F_Text_CustomMegaStones, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_DepartmentStore_4F_EventScript_CustomMegaStones
 	message gText_HowMayIServeYou
 	waitmessage
 	pokemart LilycoveCity_DepartmentStore_4F_Pokemart_TOPRIGHT
+	goto LilycoveCity_DepartmentStore_4F_EventScript_MegaStonesGoodbye
+
+LilycoveCity_DepartmentStore_4F_EventScript_CustomMegaStones::
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_4F_Pokemart_CustomMegaStones
+
+LilycoveCity_DepartmentStore_4F_EventScript_MegaStonesGoodbye::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+LilycoveCity_DepartmentStore_4F_Text_CustomMegaStones:
+	.string "Looking for custom MEGA STONES?\n"
+	.string "Choose NO for official varieties.$"
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_TOPRIGHT:
@@ -386,4 +400,75 @@ LilycoveCity_DepartmentStore_4F_Pokemart_TOPLEFT:
 	.2byte ITEM_QUICK_POWDER
 	.2byte ITEM_SOUL_DEW
 	.2byte ITEM_THICK_CLUB
+	pokemartlistend
+
+	.align 2
+LilycoveCity_DepartmentStore_4F_Pokemart_CustomMegaStones:
+	.2byte ITEM_AMOONGUSSITE
+	.2byte ITEM_AZUMARILLITE
+	.2byte ITEM_BUTTERFREEITE
+	.2byte ITEM_CONKELDURRITE
+	.2byte ITEM_DARKRANITE_M
+	.2byte ITEM_DUGTRIOITE
+	.2byte ITEM_ELECTIVIREITE
+	.2byte ITEM_EXCADRITE_M
+	.2byte ITEM_FERALIGITE_M
+	.2byte ITEM_FLYGONITE
+	.2byte ITEM_GOLEMITE
+	.2byte ITEM_JUMPLUFFITE
+	.2byte ITEM_KABUTOPSITE
+	.2byte ITEM_MAGMORTARITE
+	.2byte ITEM_MEGANIUMITE_M
+	.2byte ITEM_MILOTICITE
+	.2byte ITEM_OMASTARITE
+	.2byte ITEM_POLIWRATHITE
+	.2byte ITEM_PYROARITE_M
+	.2byte ITEM_SHIFTRYITE
+	.2byte ITEM_SNORLAXITE
+	.2byte ITEM_TORKOALITE
+	.2byte ITEM_TYPHLOSIONITE
+	.2byte ITEM_NIDOQUEENITE
+	.2byte ITEM_NIDOKINGITE
+	.2byte ITEM_TROPIUSITE
+	.2byte ITEM_RILLABOOMITE
+	.2byte ITEM_SAMUROTTITE_H
+	.2byte ITEM_SKELEDIRGITE
+	.2byte ITEM_DUSKNOIRITE
+	.2byte ITEM_EMPOLEONITE_X
+	.2byte ITEM_EMPOLEONITE_Y
+	.2byte ITEM_INFERNITE
+	.2byte ITEM_LUXRAYITE
+	.2byte ITEM_ROSERADITE
+	.2byte ITEM_SLAKINGITE
+	.2byte ITEM_TORTERRITE
+	.2byte ITEM_CLAWITZERITE
+	.2byte ITEM_TINKATONITE
+	.2byte ITEM_ARBOLIVITE
+	.2byte ITEM_CRYOGONALITE
+	.2byte ITEM_HAXORITE
+	.2byte ITEM_DODRIONITE
+	.2byte ITEM_SIGILYPHITE
+	.2byte ITEM_REUNICLUSITE
+	.2byte ITEM_RAPIDASHITE
+	.2byte ITEM_VESPIQUENITE
+	.2byte ITEM_EXPLOUDITE
+	.2byte ITEM_MAMOSWINITE
+	.2byte ITEM_TSAREENITE
+	.2byte ITEM_BRELOOMITE
+	.2byte ITEM_NINETALITE
+	.2byte ITEM_WHIMSICOTTITE
+	.2byte ITEM_DRAGONINITE_CDRX
+	.2byte ITEM_DRIFBLIMITE
+	.2byte ITEM_LAPRASITE
+	.2byte ITEM_SEVIPRITE
+	.2byte ITEM_HYDREIGONITE
+	.2byte ITEM_REGIGIGITE
+	.2byte ITEM_NOIVERNITE
+	.2byte ITEM_KINGDRITE
+	.2byte ITEM_FEAROWITE
+	.2byte ITEM_TOGEKISSITE
+	.2byte ITEM_VOLCARONITE
+	.2byte ITEM_ZANGOOSITE
+	.2byte ITEM_QUAGSIRITE
+	.2byte ITEM_XATUNITE
 	pokemartlistend

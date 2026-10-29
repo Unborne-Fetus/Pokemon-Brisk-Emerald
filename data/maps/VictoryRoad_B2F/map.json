@@ -104,6 +104,32 @@
       "trainer_sight_or_berry_tree_id": "2",
       "script": "VictoryRoad_B2F_EventScript_Felix",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 18,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_METAGROSSITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_METAGROSSITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HASTY_MINT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_HASTY_MINT"
     }
   ],
   "warp_events": [

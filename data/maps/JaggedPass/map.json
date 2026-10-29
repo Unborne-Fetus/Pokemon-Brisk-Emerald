@@ -105,6 +105,45 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Julio",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 19,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUCARIONITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_LUCARIONITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TORKOALITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_TORKOALITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 19,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LAX_MINT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_LAX_MINT"
     }
   ],
   "warp_events": [

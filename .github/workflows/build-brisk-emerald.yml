@@ -26,6 +26,11 @@ jobs:
       - name: Audit explicit Easy Normal Hard and Kaizo rosters
         run: python3 tools/brisk/author_mode_teams.py --check
 
+      - name: Audit Mega Stone and mint distribution
+        run: |
+          python3 tools/brisk/check_item_distribution.py
+          python3 tools/brisk/check_custom_mega_stones.py
+
       - name: Install dependencies
         timeout-minutes: 30
         run: |

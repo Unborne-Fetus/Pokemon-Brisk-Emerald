@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ShoalCave_LowTideEntranceRoom_EventScript_ShellBellExpert",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BRAVE_MINT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM_BRAVE_MINT"
     }
   ],
   "warp_events": [

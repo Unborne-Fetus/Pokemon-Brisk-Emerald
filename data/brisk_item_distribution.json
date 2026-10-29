@@ -1,0 +1,744 @@
+{
+  "official_ratio": 70,
+  "custom_ratio": 30,
+  "placements": [
+    {
+      "map": "PetalburgWoods",
+      "item": "ITEM_BEEDRILLITE",
+      "kind": "official",
+      "x": 37,
+      "y": 23,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_PETALBURG_WOODS_BEEDRILLITE"
+    },
+    {
+      "map": "Route104",
+      "item": "ITEM_PIDGEOTITE",
+      "kind": "official",
+      "x": 2,
+      "y": 11,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE104_PIDGEOTITE"
+    },
+    {
+      "map": "GraniteCave_1F",
+      "item": "ITEM_MAWILITE",
+      "kind": "official",
+      "x": 23,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_GRANITE_CAVE_1_F_MAWILITE"
+    },
+    {
+      "map": "Route106",
+      "item": "ITEM_MEDICHAMITE",
+      "kind": "official",
+      "x": 49,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE106_MEDICHAMITE"
+    },
+    {
+      "map": "GraniteCave_B1F",
+      "item": "ITEM_SABLENITE",
+      "kind": "official",
+      "x": 13,
+      "y": 17,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_GRANITE_CAVE_B1_F_SABLENITE"
+    },
+    {
+      "map": "Route110",
+      "item": "ITEM_MANECTITE",
+      "kind": "official",
+      "x": 33,
+      "y": 66,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE110_MANECTITE"
+    },
+    {
+      "map": "Route117",
+      "item": "ITEM_GARDEVOIRITE",
+      "kind": "official",
+      "x": 12,
+      "y": 16,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE117_GARDEVOIRITE"
+    },
+    {
+      "map": "Route111",
+      "item": "ITEM_AMPHAROSITE",
+      "kind": "official",
+      "x": 32,
+      "y": 99,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE111_AMPHAROSITE"
+    },
+    {
+      "map": "FieryPath",
+      "item": "ITEM_CAMERUPTITE",
+      "kind": "official",
+      "x": 4,
+      "y": 33,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_FIERY_PATH_CAMERUPTITE"
+    },
+    {
+      "map": "JaggedPass",
+      "item": "ITEM_LUCARIONITE",
+      "kind": "official",
+      "x": 19,
+      "y": 21,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_LUCARIONITE"
+    },
+    {
+      "map": "Route113",
+      "item": "ITEM_ABSOLITE",
+      "kind": "official",
+      "x": 82,
+      "y": 8,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE113_ABSOLITE"
+    },
+    {
+      "map": "Route114",
+      "item": "ITEM_ALTARIANITE",
+      "kind": "official",
+      "x": 14,
+      "y": 34,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE114_ALTARIANITE"
+    },
+    {
+      "map": "MeteorFalls_1F_1R",
+      "item": "ITEM_AGGRONITE",
+      "kind": "official",
+      "x": 3,
+      "y": 19,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_METEOR_FALLS_1_F_1_R_AGGRONITE"
+    },
+    {
+      "map": "Route115",
+      "item": "ITEM_AERODACTYLITE",
+      "kind": "official",
+      "x": 26,
+      "y": 26,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE115_AERODACTYLITE"
+    },
+    {
+      "map": "Route118",
+      "item": "ITEM_LOPUNNITE",
+      "kind": "official",
+      "x": 71,
+      "y": 11,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE118_LOPUNNITE"
+    },
+    {
+      "map": "Route119",
+      "item": "ITEM_VENUSAURITE",
+      "kind": "official",
+      "x": 15,
+      "y": 118,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE119_VENUSAURITE"
+    },
+    {
+      "map": "Route120",
+      "item": "ITEM_PINSIRITE",
+      "kind": "official",
+      "x": 17,
+      "y": 82,
+      "elevation": 5,
+      "flag": "FLAG_ITEM_BRISK_ROUTE120_PINSIRITE"
+    },
+    {
+      "map": "MtPyre_1F",
+      "item": "ITEM_BANETTITE",
+      "kind": "official",
+      "x": 11,
+      "y": 6,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MT_PYRE_1_F_BANETTITE"
+    },
+    {
+      "map": "MtPyre_Exterior",
+      "item": "ITEM_GENGARITE",
+      "kind": "official",
+      "x": 15,
+      "y": 38,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MT_PYRE_EXTERIOR_GENGARITE"
+    },
+    {
+      "map": "Route124",
+      "item": "ITEM_SHARPEDONITE",
+      "kind": "official",
+      "x": 71,
+      "y": 50,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE124_SHARPEDONITE"
+    },
+    {
+      "map": "ShoalCave_LowTideIceRoom",
+      "item": "ITEM_GLALITITE",
+      "kind": "official",
+      "x": 15,
+      "y": 12,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_ICE_ROOM_GLALITITE"
+    },
+    {
+      "map": "SootopolisCity",
+      "item": "ITEM_GYARADOSITE",
+      "kind": "official",
+      "x": 49,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SOOTOPOLIS_CITY_GYARADOSITE"
+    },
+    {
+      "map": "Route127",
+      "item": "ITEM_SWAMPERTITE",
+      "kind": "official",
+      "x": 13,
+      "y": 76,
+      "elevation": 1,
+      "flag": "FLAG_ITEM_BRISK_ROUTE127_SWAMPERTITE"
+    },
+    {
+      "map": "SeafloorCavern_Room1",
+      "item": "ITEM_SCIZORITE",
+      "kind": "official",
+      "x": 10,
+      "y": 2,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SEAFLOOR_CAVERN_ROOM1_SCIZORITE"
+    },
+    {
+      "map": "VictoryRoad_B1F",
+      "item": "ITEM_SALAMENCITE",
+      "kind": "official",
+      "x": 43,
+      "y": 4,
+      "elevation": 4,
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B1_F_SALAMENCITE"
+    },
+    {
+      "map": "VictoryRoad_B2F",
+      "item": "ITEM_METAGROSSITE",
+      "kind": "official",
+      "x": 18,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_METAGROSSITE"
+    },
+    {
+      "map": "Route145",
+      "item": "ITEM_CHARIZARDITE_X",
+      "kind": "official",
+      "x": 37,
+      "y": 38,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE145_CHARIZARDITE_X"
+    },
+    {
+      "map": "Route146",
+      "item": "ITEM_BLASTOISINITE",
+      "kind": "official",
+      "x": 20,
+      "y": 26,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE146_BLASTOISINITE"
+    },
+    {
+      "map": "Route109",
+      "item": "ITEM_AZUMARILLITE",
+      "kind": "custom",
+      "x": 22,
+      "y": 3,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE109_AZUMARILLITE"
+    },
+    {
+      "map": "Route116",
+      "item": "ITEM_BUTTERFREEITE",
+      "kind": "custom",
+      "x": 5,
+      "y": 16,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE116_BUTTERFREEITE"
+    },
+    {
+      "map": "Route112",
+      "item": "ITEM_FEAROWITE",
+      "kind": "custom",
+      "x": 12,
+      "y": 49,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE112_FEAROWITE"
+    },
+    {
+      "map": "Route111",
+      "item": "ITEM_FLYGONITE",
+      "kind": "custom",
+      "x": 12,
+      "y": 48,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE111_FLYGONITE"
+    },
+    {
+      "map": "Route119",
+      "item": "ITEM_BRELOOMITE",
+      "kind": "custom",
+      "x": 6,
+      "y": 59,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE119_BRELOOMITE"
+    },
+    {
+      "map": "JaggedPass",
+      "item": "ITEM_TORKOALITE",
+      "kind": "custom",
+      "x": 12,
+      "y": 22,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_TORKOALITE"
+    },
+    {
+      "map": "Route123",
+      "item": "ITEM_ROSERADITE",
+      "kind": "custom",
+      "x": 77,
+      "y": 13,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE123_ROSERADITE"
+    },
+    {
+      "map": "NewMauville_Entrance",
+      "item": "ITEM_LUXRAYITE",
+      "kind": "custom",
+      "x": 2,
+      "y": 5,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_NEW_MAUVILLE_ENTRANCE_LUXRAYITE"
+    },
+    {
+      "map": "ShoalCave_LowTideInnerRoom",
+      "item": "ITEM_KINGDRITE",
+      "kind": "custom",
+      "x": 21,
+      "y": 15,
+      "elevation": 4,
+      "flag": "FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_INNER_ROOM_KINGDRITE"
+    },
+    {
+      "map": "AbandonedShip_Deck",
+      "item": "ITEM_MILOTICITE",
+      "kind": "custom",
+      "x": 10,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ABANDONED_SHIP_DECK_MILOTICITE"
+    },
+    {
+      "map": "Route144",
+      "item": "ITEM_VOLCARONITE",
+      "kind": "custom",
+      "x": 32,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE144_VOLCARONITE"
+    },
+    {
+      "map": "SkyPillar_1F",
+      "item": "ITEM_DRAGONINITE_CDRX",
+      "kind": "custom",
+      "x": 10,
+      "y": 10,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SKY_PILLAR_1_F_DRAGONINITE_CDRX"
+    },
+    {
+      "map": "Route102",
+      "item": "ITEM_ADAMANT_MINT",
+      "kind": "mint",
+      "x": 7,
+      "y": 17,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE102_ADAMANT_MINT"
+    },
+    {
+      "map": "PetalburgWoods",
+      "item": "ITEM_JOLLY_MINT",
+      "kind": "mint",
+      "x": 46,
+      "y": 13,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_PETALBURG_WOODS_JOLLY_MINT"
+    },
+    {
+      "map": "Route104",
+      "item": "ITEM_MODEST_MINT",
+      "kind": "mint",
+      "x": 25,
+      "y": 54,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE104_MODEST_MINT"
+    },
+    {
+      "map": "Route116",
+      "item": "ITEM_TIMID_MINT",
+      "kind": "mint",
+      "x": 58,
+      "y": 15,
+      "elevation": 4,
+      "flag": "FLAG_ITEM_BRISK_ROUTE116_TIMID_MINT"
+    },
+    {
+      "map": "RusturfTunnel",
+      "item": "ITEM_BOLD_MINT",
+      "kind": "mint",
+      "x": 30,
+      "y": 8,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_RUSTURF_TUNNEL_BOLD_MINT"
+    },
+    {
+      "map": "Route106",
+      "item": "ITEM_IMPISH_MINT",
+      "kind": "mint",
+      "x": 54,
+      "y": 14,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE106_IMPISH_MINT"
+    },
+    {
+      "map": "GraniteCave_1F",
+      "item": "ITEM_CALM_MINT",
+      "kind": "mint",
+      "x": 13,
+      "y": 9,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_GRANITE_CAVE_1_F_CALM_MINT"
+    },
+    {
+      "map": "Route109",
+      "item": "ITEM_CAREFUL_MINT",
+      "kind": "mint",
+      "x": 29,
+      "y": 4,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE109_CAREFUL_MINT"
+    },
+    {
+      "map": "Route110",
+      "item": "ITEM_BRAVE_MINT",
+      "kind": "mint",
+      "x": 26,
+      "y": 41,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE110_BRAVE_MINT"
+    },
+    {
+      "map": "Route117",
+      "item": "ITEM_QUIET_MINT",
+      "kind": "mint",
+      "x": 19,
+      "y": 15,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE117_QUIET_MINT"
+    },
+    {
+      "map": "Route111",
+      "item": "ITEM_RELAXED_MINT",
+      "kind": "mint",
+      "x": 24,
+      "y": 119,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE111_RELAXED_MINT"
+    },
+    {
+      "map": "Route112",
+      "item": "ITEM_SASSY_MINT",
+      "kind": "mint",
+      "x": 13,
+      "y": 38,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE112_SASSY_MINT"
+    },
+    {
+      "map": "FieryPath",
+      "item": "ITEM_LONELY_MINT",
+      "kind": "mint",
+      "x": 19,
+      "y": 3,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_FIERY_PATH_LONELY_MINT"
+    },
+    {
+      "map": "Route113",
+      "item": "ITEM_NAUGHTY_MINT",
+      "kind": "mint",
+      "x": 10,
+      "y": 14,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE113_NAUGHTY_MINT"
+    },
+    {
+      "map": "Route114",
+      "item": "ITEM_MILD_MINT",
+      "kind": "mint",
+      "x": 34,
+      "y": 16,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE114_MILD_MINT"
+    },
+    {
+      "map": "Route115",
+      "item": "ITEM_RASH_MINT",
+      "kind": "mint",
+      "x": 26,
+      "y": 73,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE115_RASH_MINT"
+    },
+    {
+      "map": "MeteorFalls_1F_1R",
+      "item": "ITEM_GENTLE_MINT",
+      "kind": "mint",
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_METEOR_FALLS_1_F_1_R_GENTLE_MINT"
+    },
+    {
+      "map": "JaggedPass",
+      "item": "ITEM_LAX_MINT",
+      "kind": "mint",
+      "x": 19,
+      "y": 34,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_JAGGED_PASS_LAX_MINT"
+    },
+    {
+      "map": "Route118",
+      "item": "ITEM_HASTY_MINT",
+      "kind": "mint",
+      "x": 63,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE118_HASTY_MINT"
+    },
+    {
+      "map": "Route119",
+      "item": "ITEM_NAIVE_MINT",
+      "kind": "mint",
+      "x": 9,
+      "y": 97,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE119_NAIVE_MINT"
+    },
+    {
+      "map": "Route120",
+      "item": "ITEM_SERIOUS_MINT",
+      "kind": "mint",
+      "x": 27,
+      "y": 80,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE120_SERIOUS_MINT"
+    },
+    {
+      "map": "Route121",
+      "item": "ITEM_ADAMANT_MINT",
+      "kind": "mint",
+      "x": 43,
+      "y": 14,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE121_ADAMANT_MINT"
+    },
+    {
+      "map": "MtPyre_1F",
+      "item": "ITEM_JOLLY_MINT",
+      "kind": "mint",
+      "x": 17,
+      "y": 14,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MT_PYRE_1_F_JOLLY_MINT"
+    },
+    {
+      "map": "MtPyre_Exterior",
+      "item": "ITEM_MODEST_MINT",
+      "kind": "mint",
+      "x": 22,
+      "y": 14,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MT_PYRE_EXTERIOR_MODEST_MINT"
+    },
+    {
+      "map": "MtPyre_Summit",
+      "item": "ITEM_TIMID_MINT",
+      "kind": "mint",
+      "x": 27,
+      "y": 3,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MT_PYRE_SUMMIT_TIMID_MINT"
+    },
+    {
+      "map": "Route123",
+      "item": "ITEM_BOLD_MINT",
+      "kind": "mint",
+      "x": 24,
+      "y": 15,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE123_BOLD_MINT"
+    },
+    {
+      "map": "AbandonedShip_Deck",
+      "item": "ITEM_IMPISH_MINT",
+      "kind": "mint",
+      "x": 13,
+      "y": 12,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ABANDONED_SHIP_DECK_IMPISH_MINT"
+    },
+    {
+      "map": "NewMauville_Inside",
+      "item": "ITEM_CALM_MINT",
+      "kind": "mint",
+      "x": 37,
+      "y": 24,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_NEW_MAUVILLE_INSIDE_CALM_MINT"
+    },
+    {
+      "map": "MossdeepCity",
+      "item": "ITEM_CAREFUL_MINT",
+      "kind": "mint",
+      "x": 60,
+      "y": 31,
+      "elevation": 5,
+      "flag": "FLAG_ITEM_BRISK_MOSSDEEP_CITY_CAREFUL_MINT"
+    },
+    {
+      "map": "ShoalCave_LowTideEntranceRoom",
+      "item": "ITEM_BRAVE_MINT",
+      "kind": "mint",
+      "x": 25,
+      "y": 11,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM_BRAVE_MINT"
+    },
+    {
+      "map": "MauvilleCity",
+      "item": "ITEM_QUIET_MINT",
+      "kind": "mint",
+      "x": 32,
+      "y": 17,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_MAUVILLE_CITY_QUIET_MINT"
+    },
+    {
+      "map": "SootopolisCity",
+      "item": "ITEM_RELAXED_MINT",
+      "kind": "mint",
+      "x": 23,
+      "y": 7,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SOOTOPOLIS_CITY_RELAXED_MINT"
+    },
+    {
+      "map": "LilycoveCity",
+      "item": "ITEM_SASSY_MINT",
+      "kind": "mint",
+      "x": 63,
+      "y": 35,
+      "elevation": 5,
+      "flag": "FLAG_ITEM_BRISK_LILYCOVE_CITY_SASSY_MINT"
+    },
+    {
+      "map": "SeafloorCavern_Room3",
+      "item": "ITEM_LONELY_MINT",
+      "kind": "mint",
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SEAFLOOR_CAVERN_ROOM3_LONELY_MINT"
+    },
+    {
+      "map": "FortreeCity",
+      "item": "ITEM_NAUGHTY_MINT",
+      "kind": "mint",
+      "x": 36,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_FORTREE_CITY_NAUGHTY_MINT"
+    },
+    {
+      "map": "LavaridgeTown",
+      "item": "ITEM_MILD_MINT",
+      "kind": "mint",
+      "x": 15,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_LAVARIDGE_TOWN_MILD_MINT"
+    },
+    {
+      "map": "SkyPillar_1F",
+      "item": "ITEM_RASH_MINT",
+      "kind": "mint",
+      "x": 5,
+      "y": 2,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_SKY_PILLAR_1_F_RASH_MINT"
+    },
+    {
+      "map": "VictoryRoad_1F",
+      "item": "ITEM_GENTLE_MINT",
+      "kind": "mint",
+      "x": 39,
+      "y": 35,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_1_F_GENTLE_MINT"
+    },
+    {
+      "map": "VictoryRoad_B1F",
+      "item": "ITEM_LAX_MINT",
+      "kind": "mint",
+      "x": 26,
+      "y": 5,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B1_F_LAX_MINT"
+    },
+    {
+      "map": "VictoryRoad_B2F",
+      "item": "ITEM_HASTY_MINT",
+      "kind": "mint",
+      "x": 6,
+      "y": 8,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_HASTY_MINT"
+    },
+    {
+      "map": "Route143",
+      "item": "ITEM_NAIVE_MINT",
+      "kind": "mint",
+      "x": 42,
+      "y": 18,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE143_NAIVE_MINT"
+    },
+    {
+      "map": "Route146",
+      "item": "ITEM_SERIOUS_MINT",
+      "kind": "mint",
+      "x": 22,
+      "y": 32,
+      "elevation": 3,
+      "flag": "FLAG_ITEM_BRISK_ROUTE146_SERIOUS_MINT"
+    }
+  ]
+}

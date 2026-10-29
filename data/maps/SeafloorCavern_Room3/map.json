@@ -130,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SeafloorCavern_Room3_EventScript_Grunt5",
       "flag": "FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LONELY_MINT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_BRISK_SEAFLOOR_CAVERN_ROOM3_LONELY_MINT"
     }
   ],
   "warp_events": [

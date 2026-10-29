@@ -65,20 +65,20 @@
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_ITEM_BRISK_MOSSDEEP_CITY_CAREFUL_MINT                     0x028
+#define FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM_BRAVE_MINT   0x029
+#define FLAG_ITEM_BRISK_MAUVILLE_CITY_QUIET_MINT                       0x02A
+#define FLAG_ITEM_BRISK_SOOTOPOLIS_CITY_RELAXED_MINT                   0x02B
+#define FLAG_ITEM_BRISK_LILYCOVE_CITY_SASSY_MINT                       0x02C
+#define FLAG_ITEM_BRISK_SEAFLOOR_CAVERN_ROOM3_LONELY_MINT              0x02D
+#define FLAG_ITEM_BRISK_FORTREE_CITY_NAUGHTY_MINT                      0x02E
+#define FLAG_ITEM_BRISK_LAVARIDGE_TOWN_MILD_MINT                       0x02F
+#define FLAG_ITEM_BRISK_SKY_PILLAR_1_F_RASH_MINT                       0x030
+#define FLAG_ITEM_BRISK_VICTORY_ROAD_1_F_GENTLE_MINT                   0x031
+#define FLAG_ITEM_BRISK_VICTORY_ROAD_B1_F_LAX_MINT                     0x032
+#define FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_HASTY_MINT                   0x033
+#define FLAG_ITEM_BRISK_ROUTE143_NAIVE_MINT                            0x034
+#define FLAG_ITEM_BRISK_ROUTE146_SERIOUS_MINT                          0x035
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
@@ -1254,74 +1254,74 @@
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
-#define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
-#define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
-#define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
-#define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
-#define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
-#define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
-#define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
-#define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
-#define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
-#define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
-#define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
-#define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
-#define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
-#define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_ITEM_BRISK_PETALBURG_WOODS_BEEDRILLITE                    0x4AC
+#define FLAG_ITEM_BRISK_ROUTE104_PIDGEOTITE                            0x4AD
+#define FLAG_ITEM_BRISK_GRANITE_CAVE_1_F_MAWILITE                      0x4AE
+#define FLAG_ITEM_BRISK_ROUTE106_MEDICHAMITE                           0x4AF
+#define FLAG_ITEM_BRISK_GRANITE_CAVE_B1_F_SABLENITE                    0x4B0
+#define FLAG_ITEM_BRISK_ROUTE110_MANECTITE                             0x4B1
+#define FLAG_ITEM_BRISK_ROUTE117_GARDEVOIRITE                          0x4B2
+#define FLAG_ITEM_BRISK_ROUTE111_AMPHAROSITE                           0x4B3
+#define FLAG_ITEM_BRISK_FIERY_PATH_CAMERUPTITE                         0x4B4
+#define FLAG_ITEM_BRISK_JAGGED_PASS_LUCARIONITE                        0x4B5
+#define FLAG_ITEM_BRISK_ROUTE113_ABSOLITE                              0x4B6
+#define FLAG_ITEM_BRISK_ROUTE114_ALTARIANITE                           0x4B7
+#define FLAG_ITEM_BRISK_METEOR_FALLS_1_F_1_R_AGGRONITE                 0x4B8
+#define FLAG_ITEM_BRISK_ROUTE115_AERODACTYLITE                         0x4B9
+#define FLAG_ITEM_BRISK_ROUTE118_LOPUNNITE                             0x4BA
+#define FLAG_ITEM_BRISK_ROUTE119_VENUSAURITE                           0x4BB
+#define FLAG_ITEM_BRISK_ROUTE120_PINSIRITE                             0x4BC
+#define FLAG_ITEM_BRISK_MT_PYRE_1_F_BANETTITE                          0x4BD
+#define FLAG_ITEM_BRISK_MT_PYRE_EXTERIOR_GENGARITE                     0x4BE
+#define FLAG_ITEM_BRISK_ROUTE124_SHARPEDONITE                          0x4BF
+#define FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_ICE_ROOM_GLALITITE         0x4C0
+#define FLAG_ITEM_BRISK_SOOTOPOLIS_CITY_GYARADOSITE                    0x4C1
+#define FLAG_ITEM_BRISK_ROUTE127_SWAMPERTITE                           0x4C2
+#define FLAG_ITEM_BRISK_SEAFLOOR_CAVERN_ROOM1_SCIZORITE                0x4C3
+#define FLAG_ITEM_BRISK_VICTORY_ROAD_B1_F_SALAMENCITE                  0x4C4
+#define FLAG_ITEM_BRISK_VICTORY_ROAD_B2_F_METAGROSSITE                 0x4C5
+#define FLAG_ITEM_BRISK_ROUTE145_CHARIZARDITE_X                        0x4C6
+#define FLAG_ITEM_BRISK_ROUTE146_BLASTOISINITE                         0x4C7
+#define FLAG_ITEM_BRISK_ROUTE109_AZUMARILLITE                          0x4C8
+#define FLAG_ITEM_BRISK_ROUTE116_BUTTERFREEITE                         0x4C9
+#define FLAG_ITEM_BRISK_ROUTE112_FEAROWITE                             0x4CA
+#define FLAG_ITEM_BRISK_ROUTE111_FLYGONITE                             0x4CB
+#define FLAG_ITEM_BRISK_ROUTE119_BRELOOMITE                            0x4CC
+#define FLAG_ITEM_BRISK_JAGGED_PASS_TORKOALITE                         0x4CD
+#define FLAG_ITEM_BRISK_ROUTE123_ROSERADITE                            0x4CE
+#define FLAG_ITEM_BRISK_NEW_MAUVILLE_ENTRANCE_LUXRAYITE                0x4CF
+#define FLAG_ITEM_BRISK_SHOAL_CAVE_LOW_TIDE_INNER_ROOM_KINGDRITE       0x4D0
+#define FLAG_ITEM_BRISK_ABANDONED_SHIP_DECK_MILOTICITE                 0x4D1
+#define FLAG_ITEM_BRISK_ROUTE144_VOLCARONITE                           0x4D2
+#define FLAG_ITEM_BRISK_SKY_PILLAR_1_F_DRAGONINITE_CDRX                0x4D3
+#define FLAG_ITEM_BRISK_ROUTE102_ADAMANT_MINT                          0x4D4
+#define FLAG_ITEM_BRISK_PETALBURG_WOODS_JOLLY_MINT                     0x4D5
+#define FLAG_ITEM_BRISK_ROUTE104_MODEST_MINT                           0x4D6
+#define FLAG_ITEM_BRISK_ROUTE116_TIMID_MINT                            0x4D7
+#define FLAG_ITEM_BRISK_RUSTURF_TUNNEL_BOLD_MINT                       0x4D8
+#define FLAG_ITEM_BRISK_ROUTE106_IMPISH_MINT                           0x4D9
+#define FLAG_ITEM_BRISK_GRANITE_CAVE_1_F_CALM_MINT                     0x4DA
+#define FLAG_ITEM_BRISK_ROUTE109_CAREFUL_MINT                          0x4DB
+#define FLAG_ITEM_BRISK_ROUTE110_BRAVE_MINT                            0x4DC
+#define FLAG_ITEM_BRISK_ROUTE117_QUIET_MINT                            0x4DD
+#define FLAG_ITEM_BRISK_ROUTE111_RELAXED_MINT                          0x4DE
+#define FLAG_ITEM_BRISK_ROUTE112_SASSY_MINT                            0x4DF
+#define FLAG_ITEM_BRISK_FIERY_PATH_LONELY_MINT                         0x4E0
+#define FLAG_ITEM_BRISK_ROUTE113_NAUGHTY_MINT                          0x4E1
+#define FLAG_ITEM_BRISK_ROUTE114_MILD_MINT                             0x4E2
+#define FLAG_ITEM_BRISK_ROUTE115_RASH_MINT                             0x4E3
+#define FLAG_ITEM_BRISK_METEOR_FALLS_1_F_1_R_GENTLE_MINT               0x4E4
+#define FLAG_ITEM_BRISK_JAGGED_PASS_LAX_MINT                           0x4E5
+#define FLAG_ITEM_BRISK_ROUTE118_HASTY_MINT                            0x4E6
+#define FLAG_ITEM_BRISK_ROUTE119_NAIVE_MINT                            0x4E7
+#define FLAG_ITEM_BRISK_ROUTE120_SERIOUS_MINT                          0x4E8
+#define FLAG_ITEM_BRISK_ROUTE121_ADAMANT_MINT                          0x4E9
+#define FLAG_ITEM_BRISK_MT_PYRE_1_F_JOLLY_MINT                         0x4EA
+#define FLAG_ITEM_BRISK_MT_PYRE_EXTERIOR_MODEST_MINT                   0x4EB
+#define FLAG_ITEM_BRISK_MT_PYRE_SUMMIT_TIMID_MINT                      0x4EC
+#define FLAG_ITEM_BRISK_ROUTE123_BOLD_MINT                             0x4ED
+#define FLAG_ITEM_BRISK_ABANDONED_SHIP_DECK_IMPISH_MINT                0x4EE
+#define FLAG_ITEM_BRISK_NEW_MAUVILLE_INSIDE_CALM_MINT                  0x4EF
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
