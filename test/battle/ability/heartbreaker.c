@@ -1,7 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
-SINGLE_BATTLE_TEST("Heartbreaker takes half of the knockout attacker's maximum HP", s16 damage)
+SINGLE_BATTLE_TEST("Heartbreaker takes half of the knockout attacker's maximum HP")
 {
     GIVEN {
         PLAYER(SPECIES_LUVDISC) { HP(1); Ability(ABILITY_HEARTBREAKER); }
@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Heartbreaker takes half of the knockout attacker's maximum H
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
         ABILITY_POPUP(player, ABILITY_HEARTBREAKER);
-        HP_BAR(opponent, captureDamage: &damage);
+        HP_BAR(opponent);
     } THEN {
-        EXPECT_EQ(damage, 100);
+        EXPECT_EQ(opponent->hp, 100);
     }
 }
 
