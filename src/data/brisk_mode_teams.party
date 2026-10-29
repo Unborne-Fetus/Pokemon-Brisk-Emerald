@@ -5201,7 +5201,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 0 HP
 Nature: Hardy
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 - MOVE_WATERFALL
 - MOVE_HORN_ATTACK
 - MOVE_WATER_PULSE
@@ -5333,7 +5333,7 @@ Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 4 SpD
 Nature: Adamant
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 - MOVE_GIGA_IMPACT
 - MOVE_AQUA_TAIL
 - MOVE_MEGAHORN
@@ -5410,7 +5410,7 @@ Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 4 SpD
 Nature: Adamant
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 Tera Type: WATER
 - MOVE_GIGA_IMPACT
 - MOVE_AQUA_TAIL
@@ -104455,7 +104455,7 @@ Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 0 HP
 Nature: Hardy
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 - MOVE_WATERFALL
 - MOVE_HORN_ATTACK
 - MOVE_WATER_PULSE
@@ -104575,7 +104575,7 @@ Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 4 SpD
 Nature: Adamant
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 - MOVE_GIGA_IMPACT
 - MOVE_AQUA_TAIL
 - MOVE_MEGAHORN
@@ -104652,7 +104652,7 @@ Level: 90
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 HP / 4 SpD
 Nature: Adamant
-Ability: ABILITY_SWIFT_SWIM
+Ability: ABILITY_CRASHER_WAKE
 Tera Type: WATER
 - MOVE_GIGA_IMPACT
 - MOVE_AQUA_TAIL
