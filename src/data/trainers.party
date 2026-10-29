@@ -26513,7 +26513,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TANKERSON ===
 Name: Tankerson
 Class: Champion
-Pic: Hiker
+Pic: volo
 Gender: Male
 Music: Male
 Double Battle: Yes
@@ -27040,10 +27040,10 @@ Giratina Origin
 
 === TRAINER_HOODED_FIGURE ===
 Name: HoodedFig
-Class: Champion
-Pic: Ninja Boy
-Gender: Male
-Music: Male
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
 Double Battle: No
 AI: Smart Trainer / Prediction / Know Opponent Party / HP Aware / Try To 2HKO / Conservative
 

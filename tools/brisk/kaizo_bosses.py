@@ -10,7 +10,7 @@ def sets():
 
 
 def render(t):
-    header = ['Name: '+t['name'], 'Class: Champion', 'Pic: '+t['pic'], 'Gender: Male', 'Music: Male',
+    header = ['Name: '+t['name'], 'Class: '+t.get('class', 'Champion'), 'Pic: '+t['pic'], 'Gender: '+t.get('gender', 'Male'), 'Music: '+t.get('music', 'Male'),
               'Double Battle: '+('Yes' if t['double'] else 'No'),
               'AI: Smart Trainer / Prediction / Know Opponent Party / HP Aware / Try To 2HKO / Conservative']
     blocks = []
@@ -33,6 +33,16 @@ def audit(teams):
     rewards = {'TRAINER_HOODED_FIGURE': ('NECROZMA', 'FLAG_HIDE_ROUTE126_NECROZMA'),
                'TRAINER_TANKERSON': ('GUZZLORD', 'FLAG_DEFEATED_GUZZLORD')}
     if set(curated) != set(labels): errors.append('Expected exactly the two Kaizo bosses')
+    expected_looks = {'TRAINER_HOODED_FIGURE': ('Hex Maniac', 'OBJ_EVENT_GFX_HEX_MANIAC'),
+                      'TRAINER_TANKERSON': ('volo', 'OBJ_EVENT_GFX_VOLO')}
+    for tid, (portrait, sprite) in expected_looks.items():
+        if curated[tid]['pic'] != portrait:
+            errors.append(tid+': incorrect trainer battle portrait')
+        npcs = [o for o in objects if o['script'] == 'OrangeCity_EventScript_'+labels[tid]]
+        if len(npcs) != 1 or npcs[0]['graphics_id'] != sprite:
+            errors.append(tid+': incorrect overworld character graphics')
+    if curated['TRAINER_HOODED_FIGURE'].get('class') != 'Hex Maniac' or curated['TRAINER_HOODED_FIGURE'].get('gender') != 'Female':
+        errors.append('Hooded Figure must use Hex Maniac class and gender')
     ace = curated['TRAINER_TANKERSON']['members'][-1]
     if ace['species'] != 'SPECIES_UMBREON' or not ace.get('shiny') or 'MOVE_FOUL_PLAY' not in ace['moves']:
         errors.append('Tankerson ace must be shiny Umbreon with Foul Play')
@@ -87,6 +97,7 @@ def document():
              'Hooded Figure gives a one-time level-70 Necrozma after a win; Tankerson gives a one-time level-70 Guzzlord. If both party and PC are full, the gift stays unclaimed and can be collected by talking to that trainer again without another win. Existing captures remain claimed. Rematches are still unlimited.', '',
              'These are unrestricted, cross-generation teams with legal species abilities, learnable moves and at most 510 EVs (252 per stat). Legendary Pokemon are allowed. Each team has one Mega candidate; Tankerson uses Mega Mawile rather than Primal Kyogre. No single team is strongest in every matchup.', '',
              'Hooded Figure uses singles offense, with Ground immunity, special walls, hazard removal and multiple sweepers. Tankerson\'s shiny Umbreon is his defensive ace with Foul Play, Snarl, Helping Hand and Protect. Grimmsnarl supplies Prankster screens; Porygon2 sets Trick Room; Amoonguss redirects and heals with Pollen Puff; Mega Mawile pressures Fighting- and Fairy-types; Milotic checks Fire- and Ground-types and punishes Intimidate with Competitive. Zero Speed IVs support the Trick Room core.', '',
+             'Hooded Figure uses the Hex Maniac overworld and battle appearance. Tankerson uses Volo artwork for both sprites, but retains his own name, champion class, team and Guzzlord reward.', '',
              'Existing Extreme saves now display Kaizo without changing the saved mode value. Trainer flag bounds and save structures remain unchanged.', '']
     for tid, t in sets().items():
         lines += ['## '+t['display_name']+' — '+('doubles' if t['double'] else 'singles'), '', '| Pokemon | Item | Ability | Nature; EVs | Moves |', '| --- | --- | --- | --- | --- |']

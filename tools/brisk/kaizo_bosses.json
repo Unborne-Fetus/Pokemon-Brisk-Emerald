@@ -2,7 +2,7 @@
   "TRAINER_HOODED_FIGURE": {
     "name": "HoodedFig",
     "display_name": "Hooded Figure",
-    "pic": "Ninja Boy",
+    "pic": "Hex Maniac",
     "double": false,
     "members": [
       {
@@ -86,12 +86,15 @@
           "MOVE_DRAGON_DANCE"
         ]
       }
-    ]
+    ],
+    "class": "Hex Maniac",
+    "gender": "Female",
+    "music": "Suspicious"
   },
   "TRAINER_TANKERSON": {
     "name": "Tankerson",
     "display_name": "Tankerson",
-    "pic": "Hiker",
+    "pic": "volo",
     "double": true,
     "members": [
       {
