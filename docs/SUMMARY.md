@@ -166,3 +166,4 @@
     - [legendary locations](brisk/legendary-locations.md)
     - [environment lighting](brisk/environment_lighting.md)
     - [orange islands](maps/orange-islands.md)
+    - [Kanto connection and Town Map](brisk/kanto-connection.md)
