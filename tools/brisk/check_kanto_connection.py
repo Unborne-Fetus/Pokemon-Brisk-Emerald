@@ -88,6 +88,14 @@ def audit():
         assert b.water(arrival)
         assert min(abs(arrival[0]-c['x'])+abs(arrival[1]-c['y']) for c in b.meta['coord_events']) >= 2
         assert 'setflag ' not in script and 'clearflag ' not in script and 'setvar ' not in script
+    # Safeguard the separate Kanto battle-only compiler path.
+    converter = (ROOT/'tools/mapjson/mapjson.cpp').read_text()
+    for requirement in ('rocketBase', 'rivalFinale', 'storyActor', 'ChallengePending',
+                        'access["coord_events"] = Json::array()'):
+        assert requirement in converter, requirement
+    access = (ROOT/'data/scripts/brisk_kanto_access.inc').read_text()
+    assert 'trainerbattle_' not in access
+    assert 'BriskKantoAccessOnly_EventScript_ChallengePending' in access
     # Existing route entry -> Surf approach -> every row of the strait entrance.
     seen = approach.flood((0,y) for y in range(approach.h))
     assert all((62,y) in seen and approach.water((62,y)) for y in range(24,44)), 'Route 146 approach blocked'

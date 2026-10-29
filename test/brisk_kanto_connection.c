@@ -15,6 +15,7 @@
 #include "constants/map_scripts.h"
 
 extern const u8 BriskKantoAccessOnly_EventScript_NotReady[];
+extern const u8 BriskKantoAccessOnly_EventScript_ChallengePending[];
 u8 Test_GetInitialPlayerAvatarTransitionFlags(u16 behavior, enum MapType mapType);
 void Test_RepairCachedBriskWarpTiles(u16 layoutId);
 
@@ -48,7 +49,8 @@ TEST("Brisk Kanto access includes original cities and interiors without enabling
             if (obj->kind != OBJ_KIND_CLONE)
             {
                 EXPECT_EQ(obj->trainerType, TRAINER_TYPE_NONE);
-                EXPECT_EQ(obj->script, BriskKantoAccessOnly_EventScript_NotReady);
+                EXPECT(obj->script == BriskKantoAccessOnly_EventScript_NotReady
+                    || obj->script == BriskKantoAccessOnly_EventScript_ChallengePending);
             }
         }
         gMapHeader = *h;
@@ -142,4 +144,40 @@ TEST("Brisk Kanto Town Map switches regions at the Orange Strait without enablin
     EXPECT_EQ(east->events->coordEventCount, 40);
     EXPECT_EQ(west->events->coordEventCount, 20);
     gMapHeader = savedHeader;
+}
+
+TEST("Brisk Kanto removes Rocket and rival story but retains gym and Elite Four encounters")
+{
+    const u16 storyMaps[] = {MAP_ROUTE22, MAP_ROCKET_HIDEOUT_B1F,
+        MAP_ROCKET_HIDEOUT_B4F, MAP_SILPH_CO_1F,
+        MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM, MAP_INDIGO_PLATEAU_EXTERIOR};
+    for (u32 i = 0; i < ARRAY_COUNT(storyMaps); i++)
+    {
+        const struct MapHeader *h = Header(storyMaps[i]);
+        EXPECT_EQ(h->events->coordEventCount, 0);
+        EXPECT_EQ(h->events->objectEventCount, 0);
+    }
+    const u16 challenges[] = {MAP_PEWTER_CITY_GYM, MAP_CERULEAN_CITY_GYM,
+        MAP_SAFFRON_CITY_GYM, MAP_VIRIDIAN_CITY_GYM,
+        MAP_POKEMON_LEAGUE_LORELEIS_ROOM, MAP_POKEMON_LEAGUE_BRUNOS_ROOM,
+        MAP_POKEMON_LEAGUE_AGATHAS_ROOM, MAP_POKEMON_LEAGUE_LANCES_ROOM,
+        MAP_ROUTE20};
+    for (u32 i = 0; i < ARRAY_COUNT(challenges); i++)
+    {
+        const struct MapHeader *h = Header(challenges[i]);
+        EXPECT(h->events->objectEventCount > 0);
+        EXPECT_EQ(h->events->coordEventCount, 0);
+        bool32 hasChallenge = FALSE;
+        for (u32 j = 0; j < h->events->objectEventCount; j++)
+        {
+            const struct ObjectEventTemplate *obj = &h->events->objectEvents[j];
+            if (obj->script == BriskKantoAccessOnly_EventScript_ChallengePending)
+            {
+                hasChallenge = TRUE;
+                EXPECT_EQ(obj->trainerType, TRAINER_TYPE_NONE);
+                EXPECT_EQ(obj->flagId, 0);
+            }
+        }
+        EXPECT(hasChallenge);
+    }
 }

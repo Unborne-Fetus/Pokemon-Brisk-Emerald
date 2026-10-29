@@ -47,3 +47,22 @@ In the Emerald build, Kanto city Fly destinations remain unavailable until
 that region's travel/heal systems are ported and verified. Hoenn Fly destinations
 are unchanged. This change does not activate Kanto gyms, trainers, shops,
 story events, flags, or gifts. Original Kanto terrain and source maps are untouched.
+
+## Battle-only Kanto, without a story
+
+Kanto in **Brisk Emerald** is intended as a second region devoted to Gyms,
+ordinary trainers, and its Elite Four, **not** the FireRed/LeafGreen campaign.
+Emerald's map compiler excludes rival and Professor Oak plot actors, Team
+Rocket NPCs, Silph Co. plot characters, and the rival Champion finale. The
+original forced story scenes, roadblocks, Rocket encounters, and quest
+triggers remain inactive. Giovanni is retained **only as Viridian City's
+Gym Leader**, not as a Team Rocket boss. This conversion occurs only for
+Emerald; the original FRLG source maps remain intact.
+
+All eight Gym Leader NPCs, the four Elite Four NPCs, and ordinary Kanto
+trainer NPCs are preserved and made visible independently of colliding FRLG
+hide flags. **Their trainer battles are not enabled yet.** FRLG's opponent
+IDs and defeat flags overlap with Hoenn, so they require a Kanto-specific
+roster, independent battle records, and safe scripted challenges before they
+can be fought. These characters currently display a short placeholder
+message. Neither badges nor story flags are granted or reset.

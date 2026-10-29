@@ -431,23 +431,73 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
     if (layouts_data == Json())
         FATAL_ERROR("%s\n", layouts_err.c_str());
 
-    // Access-only Kanto: the imported story flags are placeholders in Emerald
-    // and its variable IDs overlap Hoenn. Keep the source maps untouched while
-    // exposing their terrain/warps without running unported story or rewards.
+    // In Brisk Emerald, Kanto is a battle-focused region, not the FRLG story.
+    // Remove rival/Rocket actors and story triggers from the generated map
+    // without altering the imported FRLG JSON for standalone FRLG builds.
+    // Old Kanto trainer IDs and defeated flags collide with Hoenn's save data;
+    // preserve the challenge NPCs but do not activate their battles yet.
     if (version == "emerald" && json_to_string(map_data, "region", true) == "REGION_KANTO"
         && json_to_string(map_data, "id", true) != "MAP_ORANGE_STRAIT_EAST") {
         Json::object access = map_data.object_items();
+        const string mapName = json_to_string(map_data, "name", true);
+        const bool rocketBase = mapName.find("RocketHideout_") == 0
+            || mapName.find("FiveIsland_RocketWarehouse_") == 0
+            || mapName.find("SilphCo_") == 0;
+        const bool rivalFinale = mapName == "PokemonLeague_ChampionsRoom_Frlg"
+            || mapName == "PalletTown_RivalsHouse_Frlg";
+        const bool gym = mapName.find("_Gym_Frlg") != string::npos;
+        const bool league = mapName.find("PokemonLeague_") == 0
+            && mapName.find("Room_Frlg") != string::npos;
         access["shared_scripts_map"] = "BriskKantoAccessOnly";
         access.erase("shared_events_map");
         Json::array objects;
         for (const auto &event : map_data["object_events"].array_items()) {
+            const string gfx = json_to_string(event, "graphics_id", true);
+            const string script = json_to_string(event, "script", true);
+            const string flag = json_to_string(event, "flag", true);
+            const string kind = json_to_string(event, "trainer_type", true);
+            const bool gymLeader = gym && (gfx == "OBJ_EVENT_GFX_GIOVANNI"
+                || gfx == "OBJ_EVENT_GFX_BROCK"
+                || gfx == "OBJ_EVENT_GFX_MISTY"
+                || gfx == "OBJ_EVENT_GFX_LT_SURGE"
+                || gfx == "OBJ_EVENT_GFX_ERIKA"
+                || gfx == "OBJ_EVENT_GFX_KOGA"
+                || gfx == "OBJ_EVENT_GFX_SABRINA"
+                || gfx == "OBJ_EVENT_GFX_BLAINE");
+            const bool challenge = (kind != "" && kind != "TRAINER_TYPE_NONE")
+                || gymLeader
+                || (league && (gfx == "OBJ_EVENT_GFX_LORELEI"
+                    || gfx == "OBJ_EVENT_GFX_BRUNO"
+                    || gfx == "OBJ_EVENT_GFX_AGATHA"
+                    || gfx == "OBJ_EVENT_GFX_LANCE"));
+            const bool storyActor = rocketBase || rivalFinale
+                || gfx.find("ROCKET") != string::npos
+                || gfx == "OBJ_EVENT_GFX_BLUE"
+                || gfx == "OBJ_EVENT_GFX_PROF_OAK"
+                || (gfx == "OBJ_EVENT_GFX_GIOVANNI" && !gymLeader)
+                || script.find("Rival") != string::npos
+                || script.find("Rocket") != string::npos
+                || (script.find("Giovanni") != string::npos && !gymLeader)
+                || flag.find("RIVAL") != string::npos
+                || flag.find("ROCKET") != string::npos
+                || flag.find("CREDITS") != string::npos
+                || flag.find("OAK") != string::npos;
+            if (storyActor)
+                continue;
             Json::object object = event.object_items();
             object["trainer_type"] = "TRAINER_TYPE_NONE";
             object["trainer_sight_or_berry_tree_id"] = "0";
-            object["script"] = "BriskKantoAccessOnly_EventScript_NotReady";
+            object["script"] = challenge
+                ? "BriskKantoAccessOnly_EventScript_ChallengePending"
+                : "BriskKantoAccessOnly_EventScript_NotReady";
+            // Avoid colliding story hide flags making Kanto challenge NPCs vanish.
+            if (challenge)
+                object["flag"] = "0";
             objects.push_back(object);
         }
         access["object_events"] = objects;
+        // Disable FRLG rival ambushes, Rocket story scenes, gates, and the
+        // League ending; their flag/variable IDs can overlap Hoenn.
         access["coord_events"] = Json::array();
         Json::array signs;
         for (const auto &event : map_data["bg_events"].array_items()) {
