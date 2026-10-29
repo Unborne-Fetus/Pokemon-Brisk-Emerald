@@ -15,9 +15,9 @@ BriskKantoAccessOnly_EventScript_ChallengePending::
 	end
 
 BriskKantoAccessOnly_Text_NotReady:
-	.string "KANTO is a region for TRAINERS.\\p"
+	.string "KANTO is a region for TRAINERS.\p"
 	.string "The old story has ended here.$"
 
 BriskKantoAccessOnly_Text_ChallengePending:
-	.string "This KANTO battle challenge is\\n"
+	.string "This KANTO battle challenge is\n"
 	.string "still being prepared.$"
