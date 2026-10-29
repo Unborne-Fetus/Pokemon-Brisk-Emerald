@@ -78,6 +78,13 @@ def audit():
     # Keep the crossing scripts active while original Kanto story scripts stay guarded.
     converter = (ROOT/'tools/mapjson/mapjson.cpp').read_text()
     assert 'json_to_string(map_data, "id", true) != "MAP_ORANGE_STRAIT_EAST"' in converter
+    # Incoming border blocks are briefly interpreted using the current map's
+    # primary tileset before the camera transition loads the neighboring map.
+    for x in range(west.w):
+        block=west.block((x,west.h-1))
+        if west.water((x,west.h-1)):
+            tile=block&1023
+            assert tile<640 and (east.attrs[0][tile]&511) in WATER, 'Return seam decodes as land in Kanto'
     # Seamless north/south handoff: a continuous swimmable corridor joins
     # Route 146's shifted approach to both edges of the Kanto junction.
     seen = west.flood((0,y) for y in range(west.h) if west.water((0,y)))

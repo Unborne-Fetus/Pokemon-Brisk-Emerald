@@ -96,6 +96,15 @@ TEST("Brisk Kanto water crossings resume Surf in both tileset formats and reject
         EXPECT_EQ(CheckForObjectEventCollision(&gObjectEvents[0],x,y,DIR_EAST,behavior), COLLISION_NONE);
         gPlayerAvatar.flags = PLAYER_AVATAR_FLAG_ON_FOOT;
         EXPECT_EQ(CheckForObjectEventCollision(&gObjectEvents[0],x,y,DIR_EAST,behavior), COLLISION_IMPASSABLE);
+        // Connection borders are decoded with the old tileset until the
+        // camera loads the destination. Check the actual incoming edge tile.
+        const struct MapLayout *incoming = Header(maps[1-i])->mapLayout;
+        u32 incomingY = i == 0 ? 0 : incoming->height-1;
+        grid[y*w+x] = incoming->map[incomingY*incoming->width+20];
+        behavior = MapGridGetMetatileBehaviorAt(x,y);
+        EXPECT_EQ(Test_GetInitialPlayerAvatarTransitionFlags(behavior, MAP_TYPE_ROUTE), PLAYER_AVATAR_FLAG_SURFING);
+        gPlayerAvatar.flags = PLAYER_AVATAR_FLAG_SURFING;
+        EXPECT_EQ(CheckForObjectEventCollision(&gObjectEvents[0],x,y,DIR_EAST,behavior), COLLISION_NONE);
         Free(grid);
     }
     if (cruise) FlagSet(FLAG_SYS_CRUISE_MODE);
