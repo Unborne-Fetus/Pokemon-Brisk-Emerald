@@ -3,7 +3,7 @@
 
 // All abilities are tested against the established battle-engine damage
 // and turn-order rules, not only against their species ability slots.
-SINGLE_BATTLE_TEST("Crasher Wake strengthens Water Pulse by using physical stats and halving Defense", s16 damage)
+SINGLE_BATTLE_TEST("Brisk signature: Crasher Wake strengthens Water Pulse by using physical stats and halving Defense", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SWIFT_SWIM; }
@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Crasher Wake strengthens Water Pulse by using physical stats
     }
 }
 
-SINGLE_BATTLE_TEST("Rage Wings makes neutral attacks super effective regardless of type", s16 damage)
+SINGLE_BATTLE_TEST("Brisk signature: Rage Wings makes neutral attacks super effective regardless of type", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SUPER_LUCK; }
@@ -39,7 +39,7 @@ SINGLE_BATTLE_TEST("Rage Wings makes neutral attacks super effective regardless 
     }
 }
 
-SINGLE_BATTLE_TEST("Chromatophores grants STAB to non-Normal attacks", s16 damage)
+SINGLE_BATTLE_TEST("Brisk signature: Chromatophores grants STAB to non-Normal attacks", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_COLOR_CHANGE; }
@@ -57,7 +57,7 @@ SINGLE_BATTLE_TEST("Chromatophores grants STAB to non-Normal attacks", s16 damag
     }
 }
 
-SINGLE_BATTLE_TEST("Psychic Gravity makes super-effective moves hit after Beheeyem's move")
+SINGLE_BATTLE_TEST("Brisk signature: Psychic Gravity makes super-effective moves hit after Beheeyem's move")
 {
     GIVEN {
         PLAYER(SPECIES_BEHEEYEM) { Ability(ABILITY_PSYCHIC_GRAVITY); Speed(20); MaxHP(600); HP(600); }
@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Psychic Gravity makes super-effective moves hit after Beheey
     }
 }
 
-SINGLE_BATTLE_TEST("Master Thief conserves held items when redistributing them")
+SINGLE_BATTLE_TEST("Brisk signature: Master Thief conserves held items when redistributing them")
 {
     GIVEN {
         PLAYER(SPECIES_THIEVUL) { Ability(ABILITY_MASTER_THIEF); Item(ITEM_LEFTOVERS); }
