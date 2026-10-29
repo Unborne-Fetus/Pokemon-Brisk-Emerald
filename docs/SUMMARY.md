@@ -177,6 +177,7 @@
     - [Kaizo-exclusive bosses](brisk_kaizo_bosses.md)
     - [League teams](brisk_league_teams.md)
     - [Difficulty mode targets](brisk_mode_targets.md)
+    - [Trainer legality audit](brisk/trainer-legality.md)
     - [Trainer level spreads](brisk_ordinary_level_spreads.md)
     - [Ordinary trainer rosters](brisk_ordinary_trainers.md)
     - [Signature moves and abilities](brisk_signature_moves_and_abilities.md)

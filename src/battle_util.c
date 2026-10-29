@@ -3450,6 +3450,79 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_MASTER_THIEF:
+            if (shouldAbilityTrigger && IsBattlerAlive(battler))
+            {
+                // Randomly redistribute transferable held items among active
+                // battlers (including Thievul), conserving every item exactly.
+                enum BattlerId slots[MAX_BATTLERS_COUNT];
+                enum Item items[MAX_BATTLERS_COUNT];
+                u32 count = 0, movableItems = 0;
+
+                for (enum BattlerId i = 0; i < gBattlersCount; i++)
+                {
+                    bool32 transferable = TRUE;
+                    if (!IsBattlerAlive(i))
+                        continue;
+                    if (gBattleMons[i].item != ITEM_NONE)
+                    {
+                        for (enum BattlerId j = 0; j < gBattlersCount; j++)
+                        {
+                            if (IsBattlerAlive(j)
+                             && !CanBattlerGetOrLoseItem(i, j, gBattleMons[i].item))
+                            {
+                                transferable = FALSE;
+                                break;
+                            }
+                        }
+                    }
+                    if (!transferable)
+                        continue;
+                    slots[count] = i;
+                    items[count++] = gBattleMons[i].item;
+                    if (gBattleMons[i].item != ITEM_NONE)
+                        movableItems++;
+                }
+
+                if (count > 1 && movableItems > 0)
+                {
+                    for (u32 i = count - 1; i > 0; i--)
+                    {
+                        u32 j = RandomUniform(RNG_TRACE, 0, i);
+                        enum Item temp = items[i];
+                        items[i] = items[j];
+                        items[j] = temp;
+                    }
+
+                    for (u32 i = 0; i < count; i++)
+                    {
+                        enum BattlerId recipient = slots[i];
+                        enum Item oldItem = gBattleMons[recipient].item;
+                        if (oldItem == items[i])
+                            continue;
+
+                        if (oldItem != ITEM_NONE)
+                            TrySaveExchangedItem(recipient, oldItem);
+                        gBattleMons[recipient].item = items[i];
+                        ClearBattlerItemEffectHistory(recipient);
+                        if (items[i] != ITEM_NONE)
+                            gBattleMons[recipient].volatiles.unburdenActive = FALSE;
+                        else
+                            CheckSetUnburden(recipient);
+                        if (GetBattlerAbility(recipient) != ABILITY_GORILLA_TACTICS)
+                            gBattleStruct->choicedMove[recipient] = MOVE_NONE;
+                        BtlController_EmitSetMonData(recipient, B_COMM_TO_CONTROLLER,
+                            REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[recipient].item),
+                            &gBattleMons[recipient].item);
+                        MarkBattlerForControllerExec(recipient);
+                    }
+
+                    gEffectBattler = gBattlerAbility = battler;
+                    BattleScriptCall(BattleScript_AbilityPopUp);
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_WEB_EXCRETANT:
             if (shouldAbilityTrigger && IsBattlerAlive(battler))
             {
@@ -7448,6 +7521,12 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
 
+    // Crasher Wake halves the final physical Defense used for Water attacks,
+    // without changing the opponent's visible stats or stat stages.
+    if (ctx->abilities[ctx->battlerAtk] == ABILITY_CRASHER_WAKE
+     && ctx->moveType == TYPE_WATER && IsBattleMovePhysical(move))
+        return max(1, uq4_12_multiply_by_int_half_down(modifier, defStat) / 2);
+
     return uq4_12_multiply_by_int_half_down(modifier, defStat);
 }
 
@@ -7481,7 +7560,7 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
 {
     bool32 isAdaptability = ctx->abilities[ctx->battlerAtk] == ABILITY_ADAPTABILITY;
 
-    if (IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) && ctx->move != MOVE_STRUGGLE)
+    if ((ctx->abilities[ctx->battlerAtk] == ABILITY_CHROMATOPHORES || IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType)) && ctx->move != MOVE_STRUGGLE)
         return isAdaptability ? UQ_4_12(2.0) : UQ_4_12(1.5);
 
     if (gBattleStruct->pledgeState == PLEDGE_COMBO_ATTACK && IS_BATTLER_OF_TYPE(GetPartnerBattler(ctx->battlerAtk), ctx->moveType))
@@ -8574,6 +8653,19 @@ uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
         }
     }
 
+    // These matchups must affect damage, the effectiveness text and AI
+    // calculations uniformly. Rage Wings can bypass normal type immunities.
+    // Chromatophores resists any attack that would otherwise connect.
+    if (!IsBattleMoveStatus(ctx->move) && ctx->move != MOVE_STRUGGLE)
+    {
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_RAGE_WINGS
+         || ctx->abilities[ctx->battlerAtk] == ABILITY_RAGE_WINGS)
+            modifier = UQ_4_12(2.0);
+        if (ctx->abilities[ctx->battlerDef] == ABILITY_CHROMATOPHORES
+         && modifier != UQ_4_12(0.0))
+            modifier = UQ_4_12(0.5);
+    }
+
     if (ctx->updateFlags)
         UpdateMoveResultFlags(modifier, &gBattleStruct->moveResultFlags[ctx->battlerDef]);
     return modifier;
@@ -9281,6 +9373,10 @@ enum DamageCategory GetBattleMoveCategory(enum Move move)
     if (GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
         return DAMAGE_CATEGORY_STATUS;
 
+    if (inBattle && GetBattlerAbility(gBattlerAttacker) == ABILITY_CRASHER_WAKE
+     && GetBattleMoveType(move) == TYPE_WATER)
+        return DAMAGE_CATEGORY_PHYSICAL;
+
     if (B_PHYSICAL_SPECIAL_SPLIT < GEN_4)
     {
         if (inBattle)
@@ -9352,6 +9448,11 @@ void SetDynamicMoveCategory(enum BattlerId battlerAtk, enum BattlerId battlerDef
             gBattleStruct->dynamicMoveCategory = GetMoveCategory(GetBattlerChosenMove(battlerAtk));
         break;
     }
+
+    if (GetBattlerAbility(battlerAtk) == ABILITY_CRASHER_WAKE
+     && GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS
+     && GetBattleMoveType(move) == TYPE_WATER)
+        gBattleStruct->dynamicMoveCategory = DAMAGE_CATEGORY_PHYSICAL;
 }
 
 static bool32 TryRemoveScreens(enum BattlerId battler)

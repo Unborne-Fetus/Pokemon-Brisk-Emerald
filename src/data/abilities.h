@@ -2663,6 +2663,41 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_CRASHER_WAKE] =
+    {
+        .name = _("Crasher Wake"),
+        .description = COMPOUND_STRING("Water attacks use Attack and halve the foe's Defense."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_MASTER_THIEF] =
+    {
+        .name = _("Master Thief"),
+        .description = COMPOUND_STRING("On entry, randomly redistributes held items."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_PSYCHIC_GRAVITY] =
+    {
+        .name = _("Psychic Gravity"),
+        .description = COMPOUND_STRING("Super-effective attacks against it have -5 priority."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_RAGE_WINGS] =
+    {
+        .name = _("Rage Wings"),
+        .description = COMPOUND_STRING("Its attacks and attacks against it are super effective."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CHROMATOPHORES] =
+    {
+        .name = _("Chromatophores"),
+        .description = COMPOUND_STRING("Resists incoming attacks; all attacks gain STAB."),
+        .aiRating = 9,
+    },
+
     [ABILITY_FLAME_TONGUE] =
     {
         .name = _("Flame Tongue"),
