@@ -750,7 +750,8 @@ static u8 GetSearchLevel(enum Species species)
 {
     u8 searchLevel;
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    searchLevel = gSaveBlock3Ptr->dexNavSearchLevels[species];
+    u8 *savedLevel = GetBriskDexNavSearchLevel(species);
+    searchLevel = savedLevel != NULL ? *savedLevel : 0;
 #else
     searchLevel = 0;
 #endif
@@ -2509,8 +2510,9 @@ u32 CalculateDexNavShinyRolls(void)
 void TryIncrementSpeciesSearchLevel()
 {
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
-        gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies]++;
+    u8 *savedLevel = GetBriskDexNavSearchLevel(gDexNavSpecies);
+    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && savedLevel != NULL && *savedLevel < 255)
+        (*savedLevel)++;
 #endif
 }
 

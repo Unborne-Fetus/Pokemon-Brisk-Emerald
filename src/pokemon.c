@@ -465,6 +465,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/graphics/cdrx73_fakemon.h"
 #include "data/graphics/kfweagz_forms.h"
 #include "data/graphics/sacred_phoenix.h"
+#include "data/graphics/mikitari.h"
 
 #include "data/pokemon/trainer_class_lookups.h"
 #include "data/pokemon/experience_tables.h"
@@ -493,14 +494,17 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/pokemon/cdrx73_learnsets.h"
 #include "data/pokemon/kfweagz_learnsets.h"
 #include "data/pokemon/sacred_phoenix_learnsets.h"
+#include "data/pokemon/mikitari_learnsets.h"
 #include "data/pokemon/teachable_learnsets.h"
 #include "data/pokemon/egg_moves.h"
 #include "data/pokemon/form_species_tables.h"
+#include "data/pokemon/mikitari_forms.h"
 #include "data/pokemon/form_change_tables.h"
 #include "data/pokemon/form_change_table_pointers.h"
 #include "data/pokemon/wild_encounter_ow_behavior.h"
 #include "data/object_events/object_event_pic_tables_followers.h"
 #include "data/pokemon/sacred_phoenix_pic_tables.h"
+#include "data/pokemon/mikitari_pic_tables.h"
 
 #include "data/pokemon/species_info.h"
 

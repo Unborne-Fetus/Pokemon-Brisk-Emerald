@@ -222,3 +222,7 @@ Brisk. **FlorianDX, Amras Anárion / anarlaurendil, Dracoyan, eysselia,
 MikuGoya, frillecho, and splittygjaw** receive the design/art/sprite credits
 specified in the [original supplied credits](resources/sacred_phoenix/cutecreature_credit.txt).
 See [species and role details](docs/sacred_phoenix_fakemon.md).
+
+## Mikitari Fakémon Pack
+
+**Mikitari** — Fakémon designs and supplied normal/shiny front sprites, back sprites, icons, alternate forms, and gender variants used throughout Kanto.

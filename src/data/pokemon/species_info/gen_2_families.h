@@ -1376,6 +1376,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sNoctowlLevelUpLearnset,
         .teachableLearnset = sNoctowlTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_NOCTARCH}),
+        .formSpeciesIdTable = sMikitariNoctowlForms,
     },
 
 // Brisk addition; creator credit: docs/cdrx73_fakemon.md.

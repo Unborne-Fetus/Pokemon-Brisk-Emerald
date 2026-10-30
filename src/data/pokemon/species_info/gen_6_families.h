@@ -3477,6 +3477,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sSpritzeeTeachableLearnset,
         .eggMoveLearnset = sSpritzeeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SACHET, SPECIES_AROMATISSE}),
+        .formSpeciesIdTable = sMikitariSpritzeeForms,
     },
 
     [SPECIES_AROMATISSE] =

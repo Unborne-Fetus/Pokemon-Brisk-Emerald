@@ -7,6 +7,30 @@
 #define DAILY_FLAGS_SIZE    (NUM_DAILY_FLAGS / 8)
 #define TEMP_VARS_SIZE      (NUM_TEMP_VARS * 2)      // 1/2 var per byte
 
+STATIC_ASSERT(NUM_SPECIES - BRISK_LEGACY_SEARCH_LEVEL_COUNT <= BRISK_EXTRA_SEARCH_LEVEL_COUNT, BriskSearchLevelCapacity);
+
+void InitBriskSpeciesExtension(void)
+{
+    if (gSaveBlock3Ptr->speciesExtensionMagic == BRISK_SPECIES_EXTENSION_MAGIC)
+        return;
+    memset(gSaveBlock3Ptr->mikitariDexSeen, 0, sizeof(gSaveBlock3Ptr->mikitariDexSeen));
+    memset(gSaveBlock3Ptr->mikitariDexCaught, 0, sizeof(gSaveBlock3Ptr->mikitariDexCaught));
+    memset(gSaveBlock3Ptr->extraDexNavSearchLevels, 0, sizeof(gSaveBlock3Ptr->extraDexNavSearchLevels));
+    gSaveBlock3Ptr->speciesExtensionMagic = BRISK_SPECIES_EXTENSION_MAGIC;
+}
+
+u8 *GetBriskDexNavSearchLevel(enum Species species)
+{
+    InitBriskSpeciesExtension();
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    if (species < BRISK_LEGACY_SEARCH_LEVEL_COUNT)
+        return &gSaveBlock3Ptr->dexNavSearchLevels[species];
+#endif
+    if (species >= BRISK_LEGACY_SEARCH_LEVEL_COUNT && species < NUM_SPECIES)
+        return &gSaveBlock3Ptr->extraDexNavSearchLevels[species - BRISK_LEGACY_SEARCH_LEVEL_COUNT];
+    return NULL;
+}
+
 EWRAM_DATA u16 gSpecialVar_0x8000 = 0;
 EWRAM_DATA u16 gSpecialVar_0x8001 = 0;
 EWRAM_DATA u16 gSpecialVar_0x8002 = 0;

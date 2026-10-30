@@ -1,6 +1,345 @@
 {
   "description": "Zero-based active slots reserved for replacement with future Fakemon. Valid habitat species occupy them until replaced; do not use SPECIES_NONE. Author overrides below, then rerun this generator.",
-  "overrides": {},
+  "overrides": {
+    "MAP_ROUTE6": {
+      "water_mons": {
+        "0": "SPECIES_BASCULIN_MIKITARI",
+        "7": "SPECIES_TROUTLE"
+      }
+    },
+    "MAP_ROUTE10": {
+      "water_mons": {
+        "0": "SPECIES_BASSTILE"
+      },
+      "land_mons": {
+        "19": "SPECIES_GOOBOLT"
+      }
+    },
+    "MAP_ROUTE11": {
+      "water_mons": {
+        "0": "SPECIES_BASSTILE_1"
+      },
+      "land_mons": {
+        "12": "SPECIES_FLAMBAFEE",
+        "13": "SPECIES_GLANCHOG",
+        "19": "SPECIES_PETALNIA_1",
+        "14": "SPECIES_SPHERTLE"
+      }
+    },
+    "MAP_ROUTE12": {
+      "water_mons": {
+        "0": "SPECIES_BASSTILE_2"
+      },
+      "land_mons": {
+        "19": "SPECIES_CRISHY",
+        "12": "SPECIES_LEDIASTRA",
+        "18": "SPECIES_SPROUTSY"
+      }
+    },
+    "MAP_VIRIDIAN_FOREST": {
+      "land_mons": {
+        "12": "SPECIES_BEELITANT",
+        "19": "SPECIES_KOCOMB",
+        "18": "SPECIES_SHAGGOT"
+      }
+    },
+    "MAP_ROUTE8": {
+      "land_mons": {
+        "19": "SPECIES_BUNEARY_MIKITARI",
+        "12": "SPECIES_ORICORIO_NOCTURNE",
+        "13": "SPECIES_TRAUMATISSE"
+      }
+    },
+    "MAP_MT_MOON_1F": {
+      "land_mons": {
+        "19": "SPECIES_CABAT",
+        "12": "SPECIES_STALASS"
+      }
+    },
+    "MAP_ROUTE3": {
+      "land_mons": {
+        "12": "SPECIES_CASTFORM_SAND",
+        "13": "SPECIES_SLIDUNE"
+      }
+    },
+    "MAP_ROUTE1": {
+      "land_mons": {
+        "12": "SPECIES_CASTFORM_CLOUD",
+        "13": "SPECIES_FLORAMONA_4",
+        "14": "SPECIES_ORICORIO_BALLET",
+        "19": "SPECIES_PETALNIA_6"
+      }
+    },
+    "MAP_ROUTE4": {
+      "land_mons": {
+        "12": "SPECIES_CASTFORM_GALE",
+        "13": "SPECIES_TEKTALON"
+      }
+    },
+    "MAP_POWER_PLANT": {
+      "land_mons": {
+        "12": "SPECIES_CHARGOO"
+      }
+    },
+    "MAP_ROUTE5": {
+      "land_mons": {
+        "19": "SPECIES_CHUBBOINK",
+        "12": "SPECIES_FLORAMONA_5",
+        "13": "SPECIES_ORICORIO_FOLK",
+        "18": "SPECIES_PETIDAW"
+      }
+    },
+    "MAP_ROUTE2": {
+      "land_mons": {
+        "12": "SPECIES_COMMANT",
+        "19": "SPECIES_KOCOMB_1",
+        "13": "SPECIES_SNEEPY"
+      }
+    },
+    "MAP_POKEMON_MANSION_1F": {
+      "land_mons": {
+        "12": "SPECIES_CONFLEVOUR",
+        "13": "SPECIES_SEARPENT"
+      }
+    },
+    "MAP_ROUTE22": {
+      "water_mons": {
+        "0": "SPECIES_CONTAMULLET"
+      },
+      "land_mons": {
+        "12": "SPECIES_GREXCLUB"
+      }
+    },
+    "MAP_ROUTE7": {
+      "land_mons": {
+        "12": "SPECIES_CROOBER",
+        "13": "SPECIES_FLORAMONA_6",
+        "19": "SPECIES_PETALNIA",
+        "14": "SPECIES_PLASMATINA",
+        "15": "SPECIES_RAVENDLER"
+      }
+    },
+    "MAP_SEAFOAM_ISLANDS_1F": {
+      "land_mons": {
+        "12": "SPECIES_CRUNCHILL",
+        "13": "SPECIES_MOURIN"
+      }
+    },
+    "MAP_ROUTE24": {
+      "water_mons": {
+        "0": "SPECIES_DAMPYBARA"
+      },
+      "land_mons": {
+        "12": "SPECIES_FLORAMONA_2",
+        "19": "SPECIES_LILLEO",
+        "18": "SPECIES_PETALNIA_4"
+      }
+    },
+    "MAP_ROUTE19": {
+      "water_mons": {
+        "0": "SPECIES_DOPERAMI",
+        "1": "SPECIES_PHANTABYS"
+      }
+    },
+    "MAP_ROUTE20": {
+      "water_mons": {
+        "7": "SPECIES_DOREWEE",
+        "0": "SPECIES_STORMANTA"
+      }
+    },
+    "MAP_ROUTE9": {
+      "land_mons": {
+        "12": "SPECIES_DUNTESERT",
+        "13": "SPECIES_TEKTALON_1"
+      }
+    },
+    "MAP_SEAFOAM_ISLANDS_B1F": {
+      "land_mons": {
+        "12": "SPECIES_DUNTESERT_1",
+        "19": "SPECIES_MUNCHILL"
+      }
+    },
+    "MAP_POKEMON_MANSION_2F": {
+      "land_mons": {
+        "12": "SPECIES_ERUPTILE",
+        "19": "SPECIES_SKINDLING"
+      }
+    },
+    "MAP_ROUTE16": {
+      "land_mons": {
+        "12": "SPECIES_FALINKS_MIKITARI"
+      }
+    },
+    "MAP_ROUTE21_NORTH": {
+      "water_mons": {
+        "0": "SPECIES_FLAMPY",
+        "1": "SPECIES_WROOMTOISE"
+      },
+      "land_mons": {
+        "12": "SPECIES_GRANEBEE",
+        "19": "SPECIES_RHINPLINK"
+      }
+    },
+    "MAP_POKEMON_MANSION_3F": {
+      "land_mons": {
+        "19": "SPECIES_FLAREPENT",
+        "12": "SPECIES_SKINGNITE"
+      }
+    },
+    "MAP_ROUTE13": {
+      "land_mons": {
+        "12": "SPECIES_FLORAMONA",
+        "19": "SPECIES_HOPIDEY",
+        "18": "SPECIES_PETALNIA_2"
+      }
+    },
+    "MAP_ROUTE15": {
+      "land_mons": {
+        "12": "SPECIES_FLORAMONA_1",
+        "19": "SPECIES_LAMBY",
+        "18": "SPECIES_PETALNIA_3"
+      }
+    },
+    "MAP_ROUTE25": {
+      "land_mons": {
+        "12": "SPECIES_FLORAMONA_3",
+        "13": "SPECIES_MUCHOG",
+        "19": "SPECIES_PETALNIA_5"
+      },
+      "water_mons": {
+        "0": "SPECIES_GLOVET"
+      }
+    },
+    "MAP_POKEMON_MANSION_B1F": {
+      "land_mons": {
+        "12": "SPECIES_FURNADON"
+      }
+    },
+    "MAP_SEAFOAM_ISLANDS_B2F": {
+      "land_mons": {
+        "12": "SPECIES_FURNADON_1",
+        "13": "SPECIES_SLIDUNE_1"
+      }
+    },
+    "MAP_ROUTE14": {
+      "land_mons": {
+        "12": "SPECIES_GASARNET",
+        "13": "SPECIES_PECLAY",
+        "14": "SPECIES_TRUNKORN"
+      }
+    },
+    "MAP_ROUTE17": {
+      "land_mons": {
+        "19": "SPECIES_GEOCKO"
+      }
+    },
+    "MAP_ROUTE18": {
+      "land_mons": {
+        "12": "SPECIES_GEOLIDON",
+        "13": "SPECIES_PORYGONA"
+      }
+    },
+    "MAP_POKEMON_TOWER_3F": {
+      "land_mons": {
+        "12": "SPECIES_GERMEIT",
+        "13": "SPECIES_PLATERIGUS",
+        "19": "SPECIES_YAMASK_MIKITARI"
+      }
+    },
+    "MAP_MT_MOON_B1F": {
+      "land_mons": {
+        "12": "SPECIES_GLYPTOBLOCK"
+      }
+    },
+    "MAP_SEAFOAM_ISLANDS_B3F": {
+      "land_mons": {
+        "12": "SPECIES_GLYPTOBLOCK_1"
+      }
+    },
+    "MAP_ROUTE21_SOUTH": {
+      "water_mons": {
+        "0": "SPECIES_HAUNTRAY"
+      },
+      "land_mons": {
+        "12": "SPECIES_HOMURANT",
+        "13": "SPECIES_RHINTAIN"
+      }
+    },
+    "MAP_POKEMON_TOWER_4F": {
+      "land_mons": {
+        "19": "SPECIES_INHALIS",
+        "12": "SPECIES_PRANKMARE"
+      }
+    },
+    "MAP_SEAFOAM_ISLANDS_B4F": {
+      "land_mons": {
+        "12": "SPECIES_KEERIN"
+      }
+    },
+    "MAP_POKEMON_TOWER_5F": {
+      "land_mons": {
+        "12": "SPECIES_LOPUNNY_MIKITARI",
+        "19": "SPECIES_SPRITZEE_MIKITARI"
+      }
+    },
+    "MAP_CINNABAR_ISLAND": {
+      "water_mons": {
+        "7": "SPECIES_MANTOON"
+      }
+    },
+    "MAP_CERULEAN_CITY": {
+      "water_mons": {
+        "0": "SPECIES_MORTARINE"
+      }
+    },
+    "MAP_POKEMON_TOWER_6F": {
+      "land_mons": {
+        "12": "SPECIES_MURASALEM",
+        "13": "SPECIES_SUFFERUB"
+      }
+    },
+    "MAP_POKEMON_TOWER_7F": {
+      "land_mons": {
+        "12": "SPECIES_NOCTOWL_MIKITARI",
+        "13": "SPECIES_TIMPOT"
+      }
+    },
+    "MAP_VERMILION_CITY": {
+      "water_mons": {
+        "0": "SPECIES_OCTOKINEPUS"
+      }
+    },
+    "MAP_PALLET_TOWN": {
+      "water_mons": {
+        "7": "SPECIES_OCTOLECT"
+      }
+    },
+    "MAP_ROUTE23": {
+      "land_mons": {
+        "12": "SPECIES_ORICORIO_MARTIAL"
+      }
+    },
+    "MAP_MT_MOON_B2F": {
+      "land_mons": {
+        "12": "SPECIES_PACKBATS"
+      }
+    },
+    "MAP_DIGLETTS_CAVE_B1F": {
+      "land_mons": {
+        "12": "SPECIES_PACKBATS_1"
+      }
+    },
+    "MAP_ROCK_TUNNEL_1F": {
+      "land_mons": {
+        "12": "SPECIES_RAKNALEAP"
+      }
+    },
+    "MAP_ROCK_TUNNEL_B1F": {
+      "land_mons": {
+        "12": "SPECIES_STALAD"
+      }
+    }
+  },
   "replacement_slots": [
     {
       "map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",

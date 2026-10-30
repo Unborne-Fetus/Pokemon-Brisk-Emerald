@@ -1,0 +1,1760 @@
+{
+  "BASCULIN_MIKITARI": {
+    "source": "BASCULIN_2",
+    "files": {
+      "Front/BASCULIN_2.png": "fb5116cb7a6c4eedbf5b1d17e8648ebf95b46cfbcb36831b80c59434467e11d4",
+      "Front shiny/BASCULIN_2.png": "adb37ab7a9a123876447827b50e8d30b86d4544ae90bbdb53d9b33b5a5f0ee6a",
+      "Back/BASCULIN_2.png": "d12ada04d3c15b51412a04f8fc6ef4946b890f3f7b4583c37576032c7a214930",
+      "Back shiny/BASCULIN_2.png": "892fa9ca9f593ecd0cefa8766ffcd63e9da3de1de798c35e725fea739175fe89",
+      "Icons/BASCULIN_2.png": "14b1a3a688cab0000b841a7a4356766bf2dc7abad5dd2cfbcdcfaec580e40efb",
+      "Icons shiny/BASCULIN_2.png": "82c8ea51f4bfec2c0b632dc7a49572ff17d582a6d3f30ec81e4022dd2cb769b5"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 15
+  },
+  "BASSTILE": {
+    "source": "BASSTILE",
+    "files": {
+      "Front/BASSTILE.png": "fd070e1037481358f44d592d0aadddbb861d4eaafba677dc0ae9f3c807c29923",
+      "Front shiny/BASSTILE.png": "58d83f6c31ca2de75164ba4cd7c648a451839d478539a8c31e2cbb9de75f85f5",
+      "Back/BASSTILE.png": "9bd9cc9a7477360e2ae17484a3cf6ea06e2e7372cac9cd765541e388a0d3c375",
+      "Back shiny/BASSTILE.png": "6391bd994ad22b6ebbd50ef2e415954d47b97cfb0902fe13755674bee7a8ba8e",
+      "Icons/BASSTILE.png": "33a549c352139ec628432eaa07a4caf4b200306670e99587032c6de18712fe6c",
+      "Icons shiny/BASSTILE.png": "b29f6e6908d89992b2f54b3478d4512c51c275d5fc5980f752c79389bde18da0"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "BASSTILE_1": {
+    "source": "BASSTILE_1",
+    "files": {
+      "Front/BASSTILE_1.png": "edc692147228f04223566f34b442bd21abd1e3f638b327b989141a22e8582e1b",
+      "Front shiny/BASSTILE_1.png": "6217d501028033b7c8bc886cb30bb123c174c43553d750e73cc25646d804a219",
+      "Back/BASSTILE_1.png": "881a4f7fe0196c15e9c3ce45c4a47387fc43c3b52878569074d567aeef629bc7",
+      "Back shiny/BASSTILE_1.png": "e1740007bb2c35b00f46cc5055e2c4e008725e5b80e34b2b8a492f44fa9c6be6",
+      "Icons/BASSTILE_1.png": "d5b4f42632100a2b374336694e06bc13a855ad7d175a05515d88d5d22f943371",
+      "Icons shiny/BASSTILE_1.png": "9bd4b72b27d7b65ed439597eb75493f6a69c2796c8ba06058388c62c10f31340"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 16
+  },
+  "BASSTILE_2": {
+    "source": "BASSTILE_2",
+    "files": {
+      "Front/BASSTILE_2.png": "5bb04c77cb22f28d6b1403d80662572b8adefe33f9379de584e85c6feb8f85ce",
+      "Front shiny/BASSTILE_2.png": "763968e85a21a8d394d00dc012cf4117ff18eaf7edfc34e746540111019feab6",
+      "Back/BASSTILE_2.png": "685f649b70ba032d2048cccee911d97498d3823416733992925627d5eb7f9d4f",
+      "Back shiny/BASSTILE_2.png": "a932c125ee431be507a19110c79c9aff17a11e08e19e6edc6c164eabbb9ab890",
+      "Icons/BASSTILE_2.png": "e6e1f656654d25450ecd39ef800aad9a541a1d692f381a5f12d26771a5303604",
+      "Icons shiny/BASSTILE_2.png": "a853b2c5a08b6b0493b45042516c7facb5712dd8b9b20715da3bef8176009e48"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 15
+  },
+  "BEELITANT": {
+    "source": "BEELITANT",
+    "files": {
+      "Front/BEELITANT.png": "e2d2210ccf9cea0668a8bdb30c6272c841a2a4e6d584f12d6bcacf7a9194532f",
+      "Front shiny/BEELITANT.png": "e9928ecd0db04e5ec889749a2066576ee3aa1a03a2fa3a833f29959ae663cf61",
+      "Back/BEELITANT.png": "4accd812669199ea84ee1c257f79597274903e4b65025881cc8efda525052adb",
+      "Back shiny/BEELITANT.png": "c71340617f1f9aea7b94d7543c26adc82142a65be2df865e2a9e3c46d8a771f1",
+      "Icons/BEELITANT.png": "c5a9ac8e6da86ce64723d90ae350f9c41779535e769690c76962a35f8c1d81d1",
+      "Icons shiny/BEELITANT.png": "7ed4ae07d0c0d0a02fc4eee370fd09bc7b09cf3f98cfdb15f6b065863711b540"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 25
+  },
+  "BUNEARY_MIKITARI": {
+    "source": "BUNEARY_1",
+    "files": {
+      "Front/BUNEARY_1.png": "812e86a8473ae18782b59b4f6eb268d033f9e62aa0db94a402f6dfce6092124c",
+      "Front shiny/BUNEARY_1.png": "4e6253bf7c9b7e1eb04bb542f0004d76fa1ff3d63a416cbd7fea8a6815857da7",
+      "Back/BUNEARY_1.png": "9c65455cef4a2f4c09f8d8e84e5535362064ab4a0b83dcf23d8b1aa367fbdcea",
+      "Back shiny/BUNEARY_1.png": "be0438ab63c6b634cc474147cfda727ce19316324227684ac99be6a35ba2a74a",
+      "Icons/BUNEARY_1.png": "8aeb2c5aaefecee59fc155f6978161ecc054f0b472cb8d5dd5d13155f6b891fc",
+      "Icons shiny/BUNEARY_1.png": "24e16514b618dde3ca6b118177c31ba6e8d1de4a857182f90db0cfd2ffb6d508"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 19
+  },
+  "CABAT": {
+    "source": "CABATmA",
+    "files": {
+      "Front/CABATmA.png": "0bbdac6e25591f308d99d3444984414cd12782d2e8a2da9c803af79fa7c89486",
+      "Front shiny/CABATmA.png": "c93b5dc5ecfe03c6b5ffd808eb1146b71a39c45dd87f6d5f9b80482935e1c8bb",
+      "Back/CABATmA.png": "c443dba9ea7b451e1a051a09cd1bea935dca6d963b46176e0a5e95d4ed13204b",
+      "Back shiny/CABATmA.png": "369f99bd8c0bb8d19df76f375ddae7bf4b11ecfe68fe2825475be2f2c419f629",
+      "Icons/CABATmA.png": "c08ea6820cec9638ca781c49ecc53707ba121ec0d33ba0e48d05eb112b410f6c",
+      "Icons shiny/CABATmA.png": "281a5fea091e75be8a33cc46b581fc2b564ed61d466c4f387cc037d6ff01a385",
+      "Front/CABATfE.png": "e57323acc33f0cb820836297b1d37ba8d127a9bf8f494c8e0f56e0108980eb0e",
+      "Front shiny/CABATfE.png": "1784a0fb0ecd6b1833ea773eb857028f2a9e2b1d90d598c28ec153beefa8b3af",
+      "Back/CABATfE.png": "103794fd6b18c98ed632f3f8731e14bda6a6326fc4b4015c4acd3b384471e53f",
+      "Back shiny/CABATfE.png": "f72f9004f0f4a17b13233731c74684ee217621f3dca9e0737d31fc3a14781635",
+      "Icons/CABATfE.png": "527c20be6c68960df3afad2860d30d2389901cafd89dd2c07b7c8a38232c5f40",
+      "Icons shiny/CABATfE.png": "15661f1401842413f857e6394518779759effebefcfd81e54cfac5df66087207"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 16,
+    "icon_palette_female": 3,
+    "palette_pairs_female": 14
+  },
+  "CASTFORM_SAND": {
+    "source": "CASTFORM_4",
+    "files": {
+      "Front/CASTFORM_4.png": "82d7894999cc33671de56e041a49c0ac3be777be614d1559efc3566ff091dd89",
+      "Front shiny/CASTFORM_4.png": "039fac70260f2409577fc4baf50c2015e9eb0599f970f3c13882f67fa5440d98",
+      "Back/CASTFORM_4.png": "871fcf46ffd52fedd5973ec2978ebf6db02da5216040e5d3ed38d5201b028b9e",
+      "Back shiny/CASTFORM_4.png": "03b988a00574ef2f40de1bb4e9d0df33dee0d28c93e40cbebf10541412db570c",
+      "Icons/CASTFORM_4.png": "0e7f7a0457b98bb3aaddc94aa0fe2b2ef98cd3f5319bb8f53f0b266f9dca1e91",
+      "Icons shiny/CASTFORM_4.png": "d55d1bcc94c434d5dfe86c4ee94409c6c6805dba0e218b64ff00824f6660325f"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 27
+  },
+  "CASTFORM_CLOUD": {
+    "source": "CASTFORM_5",
+    "files": {
+      "Front/CASTFORM_5.png": "5de1ec8dc68638fedaa8608ab2eedd4fd700ecccf39b6b749e31d674f37131b1",
+      "Front shiny/CASTFORM_5.png": "5eb8a0ec28064dd9af93fe71ec552118d48428da797f43c19d547c658b916576",
+      "Back/CASTFORM_5.png": "51908e2b385bedbe3b534353511aac4c9c590b8a9504014530ebb657f4065f0d",
+      "Back shiny/CASTFORM_5.png": "91784b4f83aa405669e1c8bec4ee10926645e9460b13a2b1136781492c2adf86",
+      "Icons/CASTFORM_5.png": "eac315e279174d9906c33f43dbc5c4bbeedfd54d135e539332145b61414aef11",
+      "Icons shiny/CASTFORM_5.png": "f3c41c547d56a769cf1da767f04c2645a40773ce41489df1fe8f3a9924d3b4b4"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 12
+  },
+  "CASTFORM_GALE": {
+    "source": "CASTFORM_6",
+    "files": {
+      "Front/CASTFORM_6.png": "75e5998e2f5b9174c10378c27273d759074d3accb6daa5d2d692c1f99bfa521d",
+      "Front shiny/CASTFORM_6.png": "0e8fcd7088dc53e435e12f1f6d147d9cfa93ae19df7227bd36efdbb61226050c",
+      "Back/CASTFORM_6.png": "aaa6efce2e84d4ab80049cb2b74c90a4dc5db7ebd70ab56ddac0fc5e42def739",
+      "Back shiny/CASTFORM_6.png": "0a35a43977eeddb78efbeb7cb5599e2954862880fbd10ec1641a31cb60939690",
+      "Icons/CASTFORM_6.png": "67aed75219e99f57fe34ea59a40b57a28d6f89af246cf9c11e79e9cdddd1508a",
+      "Icons shiny/CASTFORM_6.png": "6d62a3ac85f70c3ab2927f8f32e81839742e380badbd3ccc06838eecf3bcfffe"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 15
+  },
+  "CHARGOO": {
+    "source": "CHARGOO",
+    "files": {
+      "Front/CHARGOO.png": "949dc226ee806e02f112e2123c2b44bd2b1f6c60964a00f1d71a0dae64358197",
+      "Front shiny/CHARGOO.png": "c74a9d4e306b256a66fb246fe3494d45aab8ae396fe5181af46c20a793bce1ee",
+      "Back/CHARGOO.png": "dbef8f4a7365a8b8d1dc8593099ca319259a77ebfb4a0fd4598fba9b0750c6bf",
+      "Back shiny/CHARGOO.png": "7a937ac8560df0db0b44e0ad9aa4be91cddf98d4517b185170e3b063b7628a45",
+      "Icons/CHARGOO.png": "e537ff9a1fcd0f98b16b07df3924d5d43d1a5a06b284be2663b6d3ad3bbc8ec9",
+      "Icons shiny/CHARGOO.png": "f9f4cacb7460275512671a978c8bf804e069d4fc641f08adc0d0b5d51fb07efe"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 22
+  },
+  "CHUBBOINK": {
+    "source": "CHUBBOINK",
+    "files": {
+      "Front/CHUBBOINK.png": "ead52793c163980893c08c6e1e94167143eb11f9c5b00d7ec922359fc989cf1b",
+      "Front shiny/CHUBBOINK.png": "484d448bab1e5fdbdcd24898da6d79fd95ff7e7ce515be144d5dc3279268708b",
+      "Back/CHUBBOINK.png": "5915ee51117e367009842d4aaab54d6d3ca918bbf95285ca4e151bbf7013d261",
+      "Back shiny/CHUBBOINK.png": "4bb8593c7871a93ee205bc11fe38211b4bb4998590614907bc41e442dc744ee8",
+      "Icons/CHUBBOINK.png": "4c6235210adee10983afd513f62386f223e15454eff73c11ac291d3896bb8273",
+      "Icons shiny/CHUBBOINK.png": "0f91b909bd8529d1ee861535453eb208bceb1814fe4caf652864db155347a472"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 11
+  },
+  "COMMANT": {
+    "source": "COMMANT",
+    "files": {
+      "Front/COMMANT.png": "2034f12b8944f2f1e6e7f9495c5efd930e09e22a7bfab296f07d64c412269a6d",
+      "Front shiny/COMMANT.png": "f449a5f30292895af945df8e4db2dc9925842249db13e84024b5d6fcdb2947eb",
+      "Back/COMMANT.png": "1deba0eab28cda05dedab18acd331697e93f0c3af5cd5a38f6c87ca5de41a1b1",
+      "Back shiny/COMMANT.png": "11ca703089ce9293f54de3dafce9c3bd3ef0cf4b1c5ee996c2e0b184feb621f6",
+      "Icons/COMMANT.png": "cb5720d991b580dd578e36062c18cc06044b67c23062f29c69e5d00408e679a1",
+      "Icons shiny/COMMANT.png": "673a95adb059474ee7ec031bfd1855871768b8aaeb3d9b9b45fb57698febf218"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 16
+  },
+  "CONFLEVOUR": {
+    "source": "CONFLEVOUR",
+    "files": {
+      "Front/CONFLEVOUR.png": "5a91604ca781284ea009cb225da8978efaeca1edc9ff99f84c783b8b82db2c90",
+      "Front shiny/CONFLEVOUR.png": "a378beff13f8832a720b0e283a8e5f3b25db3e0a73cc45cfa60aab2f577afdb3",
+      "Back/CONFLEVOUR.png": "878d51317903d56389bc7a8e97d25264f0d927daaf9f6ce0e7ee15f000b2202f",
+      "Back shiny/CONFLEVOUR.png": "82063ecc8df0cb0640d2cca07cead5d36319cf4aaeeaeca83ad1e84eecec9dfe",
+      "Icons/CONFLEVOUR.png": "acfec418dcd4282fc5a2cd4f01b855583c57f65641935c35abab58d08ab7e25f",
+      "Icons shiny/CONFLEVOUR.png": "2c137c127caf5976523f5e7c8deffd325b633663fe5972ac29c12764cfbca02d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 17
+  },
+  "CONTAMULLET": {
+    "source": "CONTAMULLET",
+    "files": {
+      "Front/CONTAMULLET.png": "24e8a0d3038aba3d63302f5a4944c9a288704cdcbdfeb16cf0f9082c71a7ea9e",
+      "Front shiny/CONTAMULLET.png": "9033697ee81204a308ce8d1605cd2b935aaf7929432e50f3e02bf9fcc4d7460e",
+      "Back/CONTAMULLET.png": "880a465e66145b2221c7dc2e6bf7161ad1a5502b065e355ad1d1f21853faae6e",
+      "Back shiny/CONTAMULLET.png": "cec0c97b44476ae0ab4ba7315d1db09f51eeba771e3a075542bc6cf9baacb3b1",
+      "Icons/CONTAMULLET.png": "7460dec2dd2d1189dc9ab397c2973463ce4217c82a43a073b62a568197cfb098",
+      "Icons shiny/CONTAMULLET.png": "8238bd346761a348261ec42c43b18a0d318f80f078b3a9bfb8b733e9f6e27d6b"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 19
+  },
+  "CRISHY": {
+    "source": "CRISHY",
+    "files": {
+      "Front/CRISHY.png": "476b33a610a30d360240ddab3effe5d11a44adfb509194236c73008d1f36fef1",
+      "Front shiny/CRISHY.png": "1ca6d67c9a50b84e03bf5155334cf5a2966cf550b54d1c65c0856dad7b6ce552",
+      "Back/CRISHY.png": "69284e71d3bea280cec721329652f66ca5be7dccbd8984a235080d1dab49d5b4",
+      "Back shiny/CRISHY.png": "829f033ab6a7adc4150c03ab15aff48b963dc2a2b98f20c1e9546fbf81037b7b",
+      "Icons/CRISHY.png": "c6e65a40d66b9c1d795e632a6c46c9ac3939a75499ba9276aa5d31984dde6a6b",
+      "Icons shiny/CRUSHY.png": "9a5fb51e388d6be506b71cb9438cc92c0bf541d379b4e6c38b4d77ded05e396e"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 5,
+    "palette_pairs": 15
+  },
+  "CROOBER": {
+    "source": "CROOBER",
+    "files": {
+      "Front/CROOBER.png": "fea5676f3c5e765751e5b58bc3d0ee50c8d535b967eceb6b5a50bc40ae1bd97e",
+      "Front shiny/CROOBER.png": "a5f3d4d38943947b05459c49036163d74af3960f4840e05f23f171ab9d40e2bc",
+      "Back/CROOBER.png": "e40dbd1f49fc4b2262baff725361eb48daab4097affc5b50beb1a7fdcf3a6362",
+      "Back shiny/CROOBER.png": "bec27bdcf9bc5e9cf5fd3dab0ca242a451265b6119f898fc117dd33ce448de92",
+      "Icons/CROOBER.png": "bfa70f24b747c62c802c15e56604dc16f5bf097bfdb4aac04e20ee4d550945bf",
+      "Icons shiny/CROOBER.png": "94c681ef62b74ff22f5d9718315ac790f03f7f67bc5247dfbbda88d1bcfefa2f",
+      "Front/CROOBER_female.png": "8be855da3dc67d94965347e2b84df66e69f8ee99586eba633462ced8575cb4af",
+      "Front shiny/CROOBER_female.png": "14210cc6a61b90c0188149f47b5355c7f09d7510b9824435f7d18568b6f8e043",
+      "Back/CROOBER_female.png": "a1d5a298a2067f0f5a03c7cc97453fbfdf4dfba635c9d5dad6f4d022a0e3d679",
+      "Back shiny/CROOBER_female.png": "3aa9e406236707387816168eaf85654f16f01a85141311936ae85ae8801f6ce4",
+      "Icons/CROOBER_female.png": "d6280eb666efa53be8a851efe7c73ad824ada557ecd0948f5d0da0b889e327ee",
+      "Icons shiny/CROOBER_female.png": "30f65525509877b249f08a0ba8926f89f7d796ac3fa1c60c3b6b58ef5b87becf"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 23,
+    "icon_palette_female": 3,
+    "palette_pairs_female": 23
+  },
+  "CRUNCHILL": {
+    "source": "CRUNCHILL",
+    "files": {
+      "Front/CRUNCHILL.png": "985811af6b5b351335163509bdefab0e9aa8849504d0c1d9f065db40bccc9276",
+      "Front shiny/CRUNCHILL.png": "80f982da56b791a853cc0ca943f1b27108bcaac22164fc2a91307bfa095be97a",
+      "Back/CRUNCHILL.png": "3be4908ed0911befc527255ef349dc745de6c897561a5bb81fccf49be438ec29",
+      "Back shiny/CRUNCHILL.png": "0a10050a4265ad2bc56943ab2348f434ecb25f6b36ec3eed0ec951880043d91b",
+      "Icons/CRUNCHILL.png": "4ef7a1a57b6086d864e7affb19508f0926767d1e5fe37c9386de017857f21608",
+      "Icons shiny/CRUNCHILL.png": "1a3979ed64282d89235696d58631aac58bf768aca1ecd4d2a0db006d65de5ca6"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 14
+  },
+  "DAMPYBARA": {
+    "source": "DAMPYBARA",
+    "files": {
+      "Front/DAMPYBARA.png": "f3962581b5b53c1812e6d470987dd34b8eb85d4433843efd55fd218938af25ce",
+      "Front shiny/DAMPYBARA.png": "fcc05eb76ac18fc92d6d835dbf2a40df750590462c2951ee72686ae889b4834b",
+      "Back/DAMPYBARA.png": "4d998dc8e694f77427a38b931068886dac9df132dd55c006c96f6dcd8ca2aca2",
+      "Back shiny/DAMPYBARA.png": "01ebc94c2aa66c89b2031c0cb4423a80a1d4f6cc8186651b3235633aaeac53ad",
+      "Icons/DAMPYBARA.png": "3bbce71be372858398853fe7c37b608a1b35b4fa2e62dd88c7a73ca5d3cbe19a",
+      "Icons shiny/DAMPYBARA.png": "9f2ffc300a83e7eadfdf9dab4fc3f1ec57d1e756b96fbded9236f445fc50e000"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 12
+  },
+  "DOPERAMI": {
+    "source": "DOPERAMI",
+    "files": {
+      "Front/DOPERAMI.png": "11f6f1fc3df1ca2ccf9350b7a69813951b29ceea04840acac82e5bbdb887c55f",
+      "Front shiny/DOPERAMI.png": "0daac54c7ffc52e80f429b73782d29871c4f73ebda155118a71daff4ca8362f3",
+      "Back/DOPERAMI.png": "c418d01df104786010f2d9b1e5e37a7db1b1d6be1a9408b0d0087e2160fe724e",
+      "Back shiny/DOPERAMI.png": "b30caade579ecdca7f2aa4b1078a5928c70f8d1e0a8aa07e6a1778b03976cbc0",
+      "Icons/DOPERAMI.png": "91244383e28dd318aaf2c388eae2df7c3678caea8a12235833146af0f980d3e0",
+      "Icons shiny/DOPERAMI.png": "6010779b11484c94c96f7e6a5faf35db879908da68316cb5dff25c063ff6dd52",
+      "Front/DOPERAMI_female.png": "8b4d0474194a939ce2c428a2cfff33648b2da9fc518ce5f053690628f6f09321",
+      "Front shiny/DOPERAMI_female.png": "fc7dbeb8b98e4070ae3b2bab0592c9346343c33025badab6e37fff938dbca0c5",
+      "Back/DOPERAMI_female.png": "c418d01df104786010f2d9b1e5e37a7db1b1d6be1a9408b0d0087e2160fe724e",
+      "Back shiny/DOPERAMI_female.png": "b30caade579ecdca7f2aa4b1078a5928c70f8d1e0a8aa07e6a1778b03976cbc0",
+      "Icons/DOPERAMI_female.png": "df8c9150b1e82650176d9697ea6087ea8d714f450c740ab1d8a8f1ba93801e3e",
+      "Icons shiny/DOPERAMI_female.png": "5316d1acf1c48d293518359bb81dca033bc7c7a3064dc3dbd84f7ca941056d88"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 1,
+    "palette_pairs": 13,
+    "icon_palette_female": 1,
+    "palette_pairs_female": 13
+  },
+  "DOREWEE": {
+    "source": "DOREWEE",
+    "files": {
+      "Front/DOREWEE.png": "9e33282ed289fafb3536ad091608dd461bf5e2e9983241bf5caeb564f4fc6198",
+      "Front shiny/DOREWEE.png": "2318faf6a2c4fde35ea6985aa875bf88b25b753f2764f475da4e31d633739b9a",
+      "Back/DOREWEE.png": "133cc5364b5bb0091e15a78f48316626b50b99e31e01ebabf4d1e2ce42f0b611",
+      "Back shiny/DOREWEE.png": "438312ed00cb8008c2e7d5c244c73ef3849173d99783c6fc9bac632d529f43b5",
+      "Icons/DOREWEE.png": "e74ebbe89fa99521e5ea9c1beb377a715d1644c2797f158751fb27367454fb24",
+      "Icons shiny/DOREWEE.png": "6072964922e5a8d397eb8a574be7aa01cb109db5460f87fb376a5b8551c6622d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 10
+  },
+  "DUNTESERT": {
+    "source": "DUNTESERT",
+    "files": {
+      "Front/DUNTESERT.png": "5163be9f5c5fb3b210ce8653fc8c74fb23c79e5f21512be82cc9cd2a51d8cb42",
+      "Front shiny/DUNTESERT.png": "70800fd3b797f37ef5eb2c2132c2431cd289c32716478715d4ac762524e24bfc",
+      "Back/DUNTESERT.png": "4be8aacfc2c75d1564b7711cd37ed963e629cd657a6b3cc0452aa8f2b6eef533",
+      "Back shiny/DUNTESERT.png": "874732bb8a252624261c5aab6108c8cf412edffba67c823bcd60ad693f5c9e32",
+      "Icons/DUNTESERT.png": "148d6d28c85d3d557e7f241235de34d55958476f2204a5f18ff63302d4ecb6ee",
+      "Icons shiny/DUNTESERT.png": "7b986b22dc05d9519af7c9383af8cadb2f61b652da75d6d9e9308d20fac1e86c"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 22
+  },
+  "DUNTESERT_1": {
+    "source": "DUNTESERT_1",
+    "files": {
+      "Front/DUNTESERT_1.png": "b519f55689d6f4b28461067c388b482e5e92def5adb362e804f251f61e9610f4",
+      "Front shiny/DUNTESERT_1.png": "ceb902babd1dea5de4e714dbc5d15e58c09362eece85506e8b4e89a95a825f33",
+      "Back/DUNTESERT_1.png": "dec865e644223331ac6f929bf21383cb0f85b9380a3b5dae00302223d5410641",
+      "Back shiny/DUNTESERT_1.png": "7427528a3ec8b4e80b1436ac65611ea99518f2f3ebac21a84974904c34d0acec",
+      "Icons/DUNTESERT_1.png": "62f7514fc47a4171d5d17537007f981a1534217acd08645652b0937697fb357a",
+      "Icons shiny/DUNTESERT_1.png": "ee91319dc60a93002627f22d796cbded3f32b291c4d45d60854f5e4a0ff1c526"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 28
+  },
+  "ERUPTILE": {
+    "source": "ERUPTILE",
+    "files": {
+      "Front/ERUPTILE.png": "4bc8ee567d3cb392a8cbf0bf481e54d84f7c1ccb75b37ce8007843db83a9eea6",
+      "Front shiny/ERUPTILE.png": "079ae670a1d15d2e4db71a50ee2dd60cc46375feb16c2b2588281d8e75a43870",
+      "Back/ERUPTILE.png": "d715fb3e5c08a11df5fdfbc0d06764234f8581e7a4653bce80130b0868d32ad9",
+      "Back shiny/ERUPTILE.png": "9563ddb24054333678b8592aa6b5670a831e0931265d77f59e5952cb384f25c3",
+      "Icons/ERUPTILE.png": "1df51449f3c56a2b9ba2053f367b065f5e776ef557c2980c422b7a5cdfc248cb",
+      "Icons shiny/ERUPTILE.png": "c116a23aa3f8aafafec4c5c41fe2df1030cbadbe7326f424e18a9f80b39b5d6f"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 16
+  },
+  "FALINKS_MIKITARI": {
+    "source": "FALINKS_1",
+    "files": {
+      "Front/FALINKS_1.png": "f02732fc569069db30f976426085474d40e25543f412945dd64e96b7f32b2740",
+      "Front shiny/FALINKS_1.png": "3a04892e32cdc5ca6f1640b6b2e4a60844420854e3b65e3300e37cdcff0753ae",
+      "Back/FALINKS_1.png": "f3d303e74399f9c3279e839b691eb1a20f43d4919333a99a57ce9dad7471ca1c",
+      "Back shiny/FALINKS_1.png": "6d68ac39f84a32d890a12bb3635c871b13077c96d85ea0e152385ce5df30fcea",
+      "Icons/FALINKS_1.png": "3a2b213ff35dd7c50753235d05fb9d7ce25e1418e3ffa7d2c40342be37671fdc",
+      "Icons shiny/FALINKS_1.png": "52ae00a1c0ef72b61d5b131b58bf1fe8814cfe6daf01e3f156f5d809b268ea10"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 14
+  },
+  "FLAMBAFEE": {
+    "source": "FLAMBAFEE",
+    "files": {
+      "Front/FLAMBAFEE.png": "949bea23e4600b3037e242201b8f78f8741fece2d248bcbed5d5682828aa781c",
+      "Front shiny/FLAMBAFEE.png": "530e1ec422db309571977e7260dc99260382bd7d2814e818b1bea7c755661792",
+      "Back/FLAMBAFEE.png": "7a39fcdf5ed851a42cc98277324e1c9bb780d618a17de25eefd4681cb87cc786",
+      "Back shiny/FLAMBAFEE.png": "825b94036020cb6487afb48e3b798030d89948259ae9cb12d10b33508f72f5d3",
+      "Icons/FLAMBAFEE.png": "6d4885dc13ad824d6b840e03bf6d6e5281055d6fbb153dfc55527ca605d7988c",
+      "Icons shiny/FLAMBAFEE.png": "4d60719c5c05f7fb9e9939e61d61396cb26e5c947807fbfaaad5d8a659e71442",
+      "Front/FLAMBAFEE_female.png": "12063cd26958a273527b2fa249d56101ad074f4e24190337fabd457f9882d41e",
+      "Front shiny/FLAMBAFEE_female.png": "7a54f58732343ebb00b888e8574d06e46cdc21e6756aea9b0bf43b287fa65636",
+      "Back/FLAMBAFEE_female.png": "fc51b8600e183ebbde61cb9b224718bc783c436e721deea91be71d6868acee15",
+      "Back shiny/FLAMBAFEE_female.png": "ea3f8ccfc4999877f317b9849ec8f0b6cef2e2b7d98718b56c59af2716258688",
+      "Icons/FLAMBAFEE_female.png": "967758e492c630c6d013afa4b1094f83d25c592e1136ca8a9199652994f79b09",
+      "Icons shiny/FLAMBAFEE_female.png": "728149b34dbcd9e2f043ce5dcf5b76f1ecc2497c7dd3208620a68e606070d6af"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 5,
+    "palette_pairs": 17,
+    "icon_palette_female": 5,
+    "palette_pairs_female": 18
+  },
+  "FLAMPY": {
+    "source": "FLAMPY",
+    "files": {
+      "Front/FLAMPY.png": "d60c9c71f63276ed1fb6fb0b513e6b454fc187f0de6dcc78b0f7ae87bf60c245",
+      "Front shiny/FLAMPY.png": "1354adbaed86873608df52dd3f9036fa585280f48a36af64bd01c3aa10bef92a",
+      "Back/FLAMPY.png": "c2534bb2d57a9c321990b927f2b78168a4d6a6b4111407bf4a7f9b07f221ed1b",
+      "Back shiny/FLAMPY.png": "7f150596cd6dfa6e508c10732ab4d97dd307324835cc54be5efe4e3349cfdbc2",
+      "Icons/FLAMPY.png": "84995e9dbcc850699729c91b42245d74f1daae32e28ac583b63bd5790a7c0b87",
+      "Icons shiny/FLAMPY.png": "0d7ca4d21bd65eff9234692f2712638ca229a2e26aa0d151a0e65e3e9eaf16ec"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 14
+  },
+  "FLAREPENT": {
+    "source": "FLAREPENT",
+    "files": {
+      "Front/FLAREPENT.png": "b134fc7f8c91b3320c328fd8a0b9a8fe6dd104f0fa356eaeb7688458db73e3a6",
+      "Front shiny/FLAREPENT.png": "cddfe7cbd247c32561774953f51a566dbe42e3aa114308f256ad92e2853b6d57",
+      "Back/FLAREPENT.png": "2b86f9269cde222d7c7b37f399de900b23427121a2e793a051d828b53ea937e4",
+      "Back shiny/FLAREPENT.png": "a1dee23e558c7d9f5bdef28e953102a93f6dc832f6dc8e1a2b766bccfa1d71e1",
+      "Icons/FLAREPENT.png": "00b2f9db0b33aaabc9ad77cdc88452c7233d7af539fe8fc79c1ac002e61abb4d",
+      "Icons shiny/FLAREPENT.png": "816690f31c442606a87f4a2929de60c41cb82acbbcba4a52d7571cabbdc92bea"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 14
+  },
+  "FLORAMONA": {
+    "source": "FLORAMONA",
+    "files": {
+      "Front/FLORAMONA.png": "2e17bf69a53fb8647ccc7579069477e345124e16c8bca95e461804a5fa462ca2",
+      "Front shiny/FLORAMONA.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA.png": "73e2dff5ef0ee4db348ba786189f788e980a65398d20047794c2e58673670e77",
+      "Back shiny/FLORAMONA.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA.png": "4cda2bd25f8b6c8591d0aee48ec834f4e6352723946eec4c23d2299f18c3f520",
+      "Icons shiny/FLORAMONA.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 19
+  },
+  "FLORAMONA_1": {
+    "source": "FLORAMONA_1",
+    "files": {
+      "Front/FLORAMONA_1.png": "e0b369d6757c944325704bfd24056f8da6c4a22aa7939860cc5c9c65e8595de2",
+      "Front shiny/FLORAMONA_1.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_1.png": "2276a70e4daa5992b2c4c85518f683594ff4384c0c342c95643b155bf615e9e6",
+      "Back shiny/FLORAMONA_1.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_1.png": "1c9ede5313996f793e5acd30373d302e0df1318f7b84961c6b0dc8c113e85da7",
+      "Icons shiny/FLORAMONA_1.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 24
+  },
+  "FLORAMONA_2": {
+    "source": "FLORAMONA_2",
+    "files": {
+      "Front/FLORAMONA_2.png": "94a33e3f6e0049673e6839c86848425ad073729b63f3da805ae3e1b0f9fa7ae7",
+      "Front shiny/FLORAMONA_2.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_2.png": "81fa6734ab6f52ed460e6861aa56de0f2a48098309ddf41ebccb5cfe50d16d40",
+      "Back shiny/FLORAMONA_2.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_2.png": "ce2d226e111977895f2a174bbba59b921a32f310263b619f57946c6cfe812ad0",
+      "Icons shiny/FLORAMONA_2.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 19
+  },
+  "FLORAMONA_3": {
+    "source": "FLORAMONA_3",
+    "files": {
+      "Front/FLORAMONA_3.png": "43b060c5a957b4904bfcccdc4b2966937a32976c91f9875a61eb221cb8afda2d",
+      "Front shiny/FLORAMONA_3.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_3.png": "cc6bca96a96f732fec533f7c9886f69a5f8c4c39dfff85f03ec7ceeacc2e9cc0",
+      "Back shiny/FLORAMONA_3.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_3.png": "9b26e53e83d51f90117e71b22dfb663bc0fb075a14aa88f6f902b85efb359e91",
+      "Icons shiny/FLORAMONA_3.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 19
+  },
+  "FLORAMONA_4": {
+    "source": "FLORAMONA_4",
+    "files": {
+      "Front/FLORAMONA_4.png": "4ea2341d4c70da6abc8814cc73231345fbb182ef8c656c555af003625322f80a",
+      "Front shiny/FLORAMONA_4.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_4.png": "58dd6e275547c1befcc00d57167779b2924b27c331da0fd629216c9e950fed4d",
+      "Back shiny/FLORAMONA_4.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_4.png": "b79231a4b755913a4212b6e34b3c2d4cdc3347eb265eb2f06b5548724e432796",
+      "Icons shiny/FLORAMONA_4.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 19
+  },
+  "FLORAMONA_5": {
+    "source": "FLORAMONA_5",
+    "files": {
+      "Front/FLORAMONA_5.png": "5945c76ddde3ffc035da06f0233bf7631e6739c54b546916ef8f8545b88b52eb",
+      "Front shiny/FLORAMONA_5.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_5.png": "c9b8f738e122ab83a60f55ba8031cccc65b409299d4669f835dcb57b43686e49",
+      "Back shiny/FLORAMONA_5.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_5.png": "f98130d271e400e8cee64f95192dac02d9930ec72afd355b775012a87ec951ce",
+      "Icons shiny/FLORAMONA_5.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 19
+  },
+  "FLORAMONA_6": {
+    "source": "FLORAMONA_6",
+    "files": {
+      "Front/FLORAMONA_6.png": "c492e0b752647144178c75fb65041efdaa5192b4ecbc4cfd14bbf782f037847a",
+      "Front shiny/FLORAMONA_6.png": "e3f57e0d3f613ce712e4cefcc4ad4a1c9c4373591b5b1703a49d58ac5889ef50",
+      "Back/FLORAMONA_6.png": "2bdee8c78cce690385bd256ec2d011ccda4817c549850f2022d5759de80e9ec2",
+      "Back shiny/FLORAMONA_6.png": "94457208bb5d237bfd0de75f0ae909d12affb2e32bf9d1e27ea14423a9f96d70",
+      "Icons/FLORAMONA_6.png": "0b0a2168d9130449d48817cd2c02b6906d71be7c54bdfc3d77eb2fb62c17c925",
+      "Icons shiny/FLORAMONA_6.png": "c50c814ae283f3c40fda44358b2571c8503aa926d35f2d37819f09cc34125e40"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 19
+  },
+  "FURNADON": {
+    "source": "FURNADON",
+    "files": {
+      "Front/FURNADON.png": "3c537fad20ac8794771660a025ac202658464bcba647f3f16e7c1cc8ac28062a",
+      "Front shiny/FURNADON.png": "980564030b7a99e213d7c2eec524939fd46eecd8e7b03455a1bc65089693f747",
+      "Back/FURNADON.png": "13d3a9fb73c6d2a040f75faf8bc635e194eeb1ddf3b346d60310e94d35d08b1f",
+      "Back shiny/FURNADON.png": "33fd854f21886960503769e9e64713932edc2a56be16cc67e05907abf245cdd5",
+      "Icons/FURNADON.png": "cc57ce12e36e08152b16f3691ae65da462601ecdeb57a4a199bc72771fdef40e",
+      "Icons shiny/FURNADON.png": "e45ed291873acbec15eaec5b14b25d9292ad6e760bf27d5ddf03ca145e4f1573"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 21
+  },
+  "FURNADON_1": {
+    "source": "FURNADON_1",
+    "files": {
+      "Front/FURNADON_1.png": "0691606fb0d993d5c20bd9e497b9f8e0ab94a624c4f5e112584fa96108982a1f",
+      "Front shiny/FURNADON_1.png": "627b8a6eb5c69d3db42985c359f73c0a2fde4f969e9e0fcdffdca35d7e191bfd",
+      "Back/FURNADON_1.png": "364f22d2685cf76e3e6dc83444a0f56c047d72a3592de83dc55bb79dce9c1153",
+      "Back shiny/FURNADON_1.png": "b015889dfc064f1ca33355c695a672ef5b196f2eaa5b9e8828e4e9493f8ba328",
+      "Icons/FURNADON_1.png": "25b02fb73b81b592fa3a152de1ef165cc8b5772e488b6dab7d5f4290cc626a59",
+      "Icons shiny/FURNADON_1.png": "5f26009c7ddb281d07d9be3c48800db8c3416c5e0fd8d1b763fa37794fb75f37"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 17
+  },
+  "GASARNET": {
+    "source": "GASARNET",
+    "files": {
+      "Front/GASARNET.png": "1c20e52f2bad71df176fddfafcb56709290fed70e962ca4bb7fd3f0351965572",
+      "Front shiny/GASARNET.png": "1ea6645cb1ee50e6deb550d5e52535abb1f245a607f31077ea0a301dd65f2fe6",
+      "Back/GASARNET.png": "101a53bd945b69a76ceb121f8ecc69baa2ccef37ce7b95cf0043a207c919194b",
+      "Back shiny/GASARNET.png": "03ad2b09761061792b5aa2fcd700ac2a5b656ebfb4930e55a20c37a5ced030e8",
+      "Icons/GASARNET.png": "daa3fdbe39c14b79c7a10c3bb9593c7370afecff0d4646cbfcfe8ecbaae44590",
+      "Icons shiny/GASARNET.png": "13da0eff96f4624610aaba1392d720d8222db88484139b4021eaf923d5cd584e"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 19
+  },
+  "GEOCKO": {
+    "source": "GEOCKO",
+    "files": {
+      "Front/GEOCKO.png": "63e0b0cbb51db986d23e836df242105d2fd9f457278a16386f55496e60246df1",
+      "Front shiny/GEOCKO.png": "440ef31fadbbbfaa5a1a6b70dc7ef74f2e6801f48464d3d861cca492fc974d32",
+      "Back/GEOCKO.png": "c7809fc6589d0326f1c9fce23191baa49b0cb21eea1c07a9f846d9df229b3bd2",
+      "Back shiny/GEOCKO.png": "a9950ec87b4ec851b45bf641f7408cab633edec5e2295c1a330007b470b09b36",
+      "Icons/GEOCKO.png": "cf1e410a7a4b99f980f2b95b8ae15bd7d5559c706ed8a53317aaabfa75dd7374",
+      "Icons shiny/GEOCKO.png": "3259bc47bbaae843321b3094eb681a1a2e6130f5c5529477c5828a44603180fd"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 12
+  },
+  "GEOLIDON": {
+    "source": "GEOLIDON",
+    "files": {
+      "Front/GEOLIDON.png": "337b8af17881f9437673c5f770e49834f3b918681b6164ec11753853bb6d862d",
+      "Front shiny/GEOLIDON.png": "27e15e61d701e9590de436ff99417b4c1b379a9e8a9da0489021a9727a6825b1",
+      "Back/GEOLIDON.png": "99a734665bbfb7df2193dd454f998ec469507844cd29d2a97516df5aed2e55a4",
+      "Back shiny/GEOLIDON.png": "4d792d0bbae1e03efa9063d3d423af8be55252b50dda460206deafc209e9f564",
+      "Icons/GEOLIDON.png": "39970d29ba19e627c52c6377d24f5152734896bdde90703a1efe8879c2bd97ea",
+      "Icons shiny/GEOLIDON.png": "cf93d76490f29ca90cf4610cd4a4596f334ee7ea861dce4314e34566b02a40d0"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 15
+  },
+  "GERMEIT": {
+    "source": "GERMEIT",
+    "files": {
+      "Front/GERMEIT.png": "b9cbbc5389b1c99b0f315bcf11dd448e279ce21ee2994db5b7b1ba9b9556ea1e",
+      "Front shiny/GERMEIT.png": "ea6f1a9a88b6e695fea1b51cc47a062b71712ecf42f14001e679a60cee30f07c",
+      "Back/GERMEIT.png": "9bc505b8220eec95c71179940e7f1d1a71a247f5418b0a0b2ec7eb5cdbfbea9d",
+      "Back shiny/GERMEIT.png": "26bebd17b35ffc13e9693f874ad9fb7cf5ca5496903b856a059149df5fba95c0",
+      "Icons/GERMEIT.png": "1bdba20dc87cf2d6c6a976a72d0828a11a415f79605c3c9d775c9ba9a7ecdbd9",
+      "Icons shiny/GERMEIT.png": "a5f051040388e40984ce0c33323ce5a7f51441f5b0995f3f8aacd6983a89ff22"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 18
+  },
+  "GLANCHOG": {
+    "source": "GLANCHOG",
+    "files": {
+      "Front/GLANCHOG.png": "666fb951929c5afdaee8089fc21464e248ec32593406817c0521a811ddf512da",
+      "Front shiny/GLANCHOG.png": "8d629d4cd6be007094759d421dbdfa5c759ef66ca555a64541d425484aa68be2",
+      "Back/GLANCHOG.png": "7f6a326b9025308ebad6362cd5520399791998e085db24297c7cc50fa0260952",
+      "Back shiny/GLANCHOG.png": "05b7f40fc159ed157732a6c39172a6bf682e16529ba758b444d2dcb31a39e635",
+      "Icons/GLANCHOG.png": "badd3dc6a26ee3667c6492dc035d9c8a25a7d8da140b6e9fd75c5eb790901a36",
+      "Icons shiny/GLANCHOG.png": "cc0034aa950d5a1ef323ac5f64bae4aaa2bf1f955d7674f14d92e269131caf03"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 19
+  },
+  "GLOVET": {
+    "source": "GLOVET",
+    "files": {
+      "Front/GLOVET.png": "67612a5236f1fde69a1ad780fd0c961b973e1d089defcece3962da7db6ed7933",
+      "Front shiny/GLOVET.png": "7c67d868782c6798828b134a6b22f6eccc0c8ede86853fa4981cdbd153f67ae4",
+      "Back/GLOVET.png": "c1e3a50b19b19f36c4cf779c64f55f20646f1ffa8be6b4acc1f1b039364ae83f",
+      "Back shiny/GLOVET.png": "ee0a03b233d685209a48c51b75fc68f0a249bf9cab3567b4ba7b3cb56fc3e273",
+      "Icons/GLOVET.png": "9a03ff2999e2e9d9e4e112074c16b36ee496fad76552204a8e746501bae01551",
+      "Icons shiny/GLOVET.png": "a8567ef9467596c8a86aa296bbd1d30b76056081de5d0b2491a708e3b7258fa8"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 13
+  },
+  "GLYPTOBLOCK": {
+    "source": "GLYPTOBLOCK",
+    "files": {
+      "Front/GLYPTOBLOCK.png": "a541ac315ebf924bde94b88d52ee70a3cb098bb6f2686d3bb4bda2b7db408f98",
+      "Front shiny/GLYPTOBLOCK.png": "9b36f502d9c1f8afe959d94033a2bff064ac06c7b86d090fb72e43270e914778",
+      "Back/GLYPTOBLOCK.png": "807a56b6fea943b988b3b65235de4049651188399c19673bf99b39b941a96c6c",
+      "Back shiny/GLYPTOBLOCK.png": "2cb1b49296cc0d11cf9853d5266a76718e593af88dcc0b50d140d4cd5032a350",
+      "Icons/GLYPTOBLOCK.png": "dde927b9d13e06f8d64ae61a99fd429b968f2a67fc5c1da9b27141b7e5b688fb",
+      "Icons shiny/GLYPTOBLOCK.png": "7f79efa3111e1ea0995e2f7d4617962718b3168e67e3b9c2477702403c6aa3e3"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 16
+  },
+  "GLYPTOBLOCK_1": {
+    "source": "GLYPTOBLOCK_1",
+    "files": {
+      "Front/GLYPTOBLOCK_1.png": "34cf9116075fbca208f2585e5cacfbe805d616e657452836d3437590037d2176",
+      "Front shiny/GLYPTOBLOCK_1.png": "15caa43fefb616304fd8304681ba0727389f4b67dc089410eb4e87e19a577dc9",
+      "Back/GLYPTOBLOCK_1.png": "2ec14a33864cea70f1b0368ef0d35c9c50272c281a7fda122bab048fbf5dc9c2",
+      "Back shiny/GLYPTOBLOCK_1.png": "ecde2a9e988af6db6ce5749839e14b86b3beae9b09f61868fe9b0f54c1e3ec08",
+      "Icons/GLYPTOBLOCK_1.png": "6faffcf1aa181ece8007f0857c8f3a76863228f8c0d36092c067add9fcca3755",
+      "Icons shiny/GLYPTOBLOCK_1.png": "cb6990734bd4f3ecb968c7fb14b0a09d44ae0a3876f1aa8ebeab6db22e4d2277"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 14
+  },
+  "GOOBOLT": {
+    "source": "GOOBOLT",
+    "files": {
+      "Front/GOOBOLT.png": "76e8305057b3395ea3c1bc1bd9c85331a28e6d553ba194324c13cb823a55e643",
+      "Front shiny/GOOBOLT.png": "c22e55ef6474c0cc15622c22a8ad603b876dc7989cd244fbdcec0d4836f646c9",
+      "Back/GOOBOLT.png": "cfff3cf9c70da8adad35f6576ebb9cca6b3bc715299a5412e52e50b383219884",
+      "Back shiny/GOOBOLT.png": "1f984cc3a3c1045294c3b5cc3a1dc3a26bd941869c64ade518caf9a105d78cf8",
+      "Icons/GOOBOLT.png": "07b82902dc26cde03c2630adcd555da69ec7c0e00ee15d8c4c6076c633d7666e",
+      "Icons shiny/GOOBOLT.png": "8282fb94585d98f43d478621f8e8bec6d6c03ae235c3d21b6b82d212148afe5b"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 15
+  },
+  "GRANEBEE": {
+    "source": "GRANEBEE",
+    "files": {
+      "Front/GRANEBEE.png": "ef1e6622ffa61858eaa5cbab8a4a6dfc56e7d6f28df08d459eb1f1ff2704c5e7",
+      "Front shiny/GRANEBEE.png": "a6ff306b92363d7d729ce0af172f1817dccd0d76203bc7c568ca5a513725c8bb",
+      "Back/GRANEBEE.png": "809b9e6cddc465e86d7ae053dfa0e773bcad5cc5a38e10c8b80729fbf321eabe",
+      "Back shiny/GRANEBEE.png": "d58d3be28f00bd3109b8dd1e974179f7b41626416045c0750004c350ee7bfbe8",
+      "Icons/GRANEBEE.png": "a8414d2efa10731c49bc93deec32980289e9aa2365af434ab1987a59e7c6cc04",
+      "Icons shiny/GRANEBEE.png": "f87e632048d2ba165bf31bfc6f13b480d82de5d83a011d081d42366d3f29eaaf"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 27
+  },
+  "GREXCLUB": {
+    "source": "GREXCLUB",
+    "files": {
+      "Front/GREXCLUB.png": "184af56727fc6b5b4c78709a55d6bf38bcb6c93cb047edeb03c1c985aba58b1b",
+      "Front shiny/GREXCLUB.png": "ef1719ee0716f96924e4a66d36ab4710e8fadba0d441ae5bec4546a1e8d49e89",
+      "Back/GREXCLUB.png": "2ddfb051971726c2edef06fe0dddf64ae143771f756824aaecb06a1cb435bb86",
+      "Back shiny/GREXCLUB.png": "08a620377d96472c390729169e920c874fe418119c629a07b60a80885b9e1690",
+      "Icons/GREXCLUB.png": "feaa656a135cf40ec62a4801c94d2c9066a957bcc03e63e43c902e8fd6396a92",
+      "Icons shiny/GREXCLUB.png": "4ed8b97b7757640627ce6f1ff54911ce38cd83b89062120e1921c90dc8d10edf"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 14
+  },
+  "HAUNTRAY": {
+    "source": "HAUNTRAY",
+    "files": {
+      "Front/HAUNTRAY.png": "6737ee0014f7e80624a8249bb1f69d4a72ecc3ee8e83c893defb7a6523935509",
+      "Front shiny/HAUNTRAY.png": "a76873b26d1e9c7d5f828a97c922a294f62766611f10f3c081be35fbc3fd8c38",
+      "Back/HAUNTRAY.png": "aeeabb141bdd362335860baeb8c5a91b1150a226779b673c8b7fa13eab1e428d",
+      "Back shiny/HAUNTRAY.png": "257516c6a8572948f75846c8970c69ce436d8445c6bd62b4e0a00925dff90e81",
+      "Icons/HAUNTRAY.png": "3af8290de27b1765bfd5bd1f05afa35958e0cad199236eb9b6fc8df86c9ad7d6",
+      "Icons shiny/HAUNTRAY.png": "a73df64dfa8b5d0619d89ad2e41ee657570ba4d4e0348a9e0a4a7a406b7c88b4"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 14
+  },
+  "HOMURANT": {
+    "source": "HOMURANT",
+    "files": {
+      "Front/HOMURANT.png": "0a60c4af2590be1015bc4c20210086d3ef7ca03e5dff69c707e792be932ede66",
+      "Front shiny/HOMURANT.png": "7e5bb98db6f1e6a16f66f7d88a33d2a46b5ce74b85af4dbd124474ddf2769173",
+      "Back/HOMURANT.png": "5a52488e7b2f36b18fe6a38b4127c1a33831e960dafb125a7601f6524147b050",
+      "Back shiny/HOMURANT.png": "93509ff90c48967675a2e4011fb3ba694629a96c2ea1a38fcb592771f32153b7",
+      "Icons/HOMURANT.png": "10a56f64b800f7740638cdb9bbdf37f7bc03ca585b5408d29d0c1c1164360c61",
+      "Icons shiny/HOMURANT.png": "e43c8d0c4820aede25c011a28e59ee243606c35667ff2477ad9e086540e4523d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 16
+  },
+  "HOPIDEY": {
+    "source": "HOPIDEY",
+    "files": {
+      "Front/HOPIDEY.png": "20f43e3d6e1451096bbc2ad6eb45b29decb8c55d9e556600c9abea180167c8e9",
+      "Front shiny/HOPIDEY.png": "ce7155cbda870a3ca5a93957df131315bdcce1f3fff460f74e0878f7bb440f05",
+      "Back/HOPIDEY.png": "210a8c854d96aebbbba82827a4b1d8c0fd51e1de6a2d42dff15d9401f375d783",
+      "Back shiny/HOPIDEY.png": "a741c57a6ce6beb2f73d146b1a5b31f607b8f2a5b81fcae480fe156c358ee6e2",
+      "Icons/HOPIDEY.png": "2393a6d78ac6fe28ba88ee93a614bc0a4a44874424af0458035bb58fcd45ab96",
+      "Icons shiny/HOPIDEY.png": "6856156e2d44368d98437b19faaef0edd6e0195f6717d5731896643b1238fb74"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 1,
+    "palette_pairs": 11
+  },
+  "INHALIS": {
+    "source": "INHALIS",
+    "files": {
+      "Front/INHALIS.png": "7bcdf9979571c0fa54ebbe744623fdc1bd63012be945594c6b7fea2986130333",
+      "Front shiny/INHALIS.png": "51efe2a838c901f46de17af27df49bd141b8fb41958b7ae1470382354b5eddd0",
+      "Back/INHALIS.png": "cfe6f720a256b5e7d351bfaa87804ddfe0392a2770a00a9a45d3d1cd1910c714",
+      "Back shiny/INHALIS.png": "93b7dcc350db534f3f608539dca32cd8bdc8c2a28c85cb5df5d960956d52e6c5",
+      "Icons/INHALIS.png": "180fea36f3b85046ae2fe792d4c0c85606da2158110d225a1d17432c439406d2",
+      "Icons shiny/INHALIS.png": "9ef31342c862ac314e2042082cfbd9f927c20e8a022d244cf7acf1cde9433c9a"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 1,
+    "palette_pairs": 11
+  },
+  "KEERIN": {
+    "source": "KEERIN",
+    "files": {
+      "Front/KEERIN.png": "a6e3e6fb25435ab1c23aebc2ee37ebd06388cfe673416a49bfdd8db058b7260e",
+      "Front shiny/KEERIN.png": "bc6d5579c3807e43a32e40e855c89e8dbcf7b217fe6983b941e8e6fe9b763398",
+      "Back/KEERIN.png": "d3fcabd21b1fd40574bad24eb473b392b3b9453a814a64c7063e5240953a480a",
+      "Back shiny/KEERIN.png": "37df1d0713f09d88edf4e64433b76f905846c135914f7b140c70e13d42e1ae1d",
+      "Icons/KEERIN.png": "619596e53c770ed4c739af450e56011c56a1d126e9ed9e71f3af946ec3e09861",
+      "Icons shiny/KEERIN.png": "7c154231a7303e5dbb92b37e684e090b603be6c611e33d8545643cf4213a41fb"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 15
+  },
+  "KOCOMB": {
+    "source": "KOCOMB",
+    "files": {
+      "Front/KOCOMB.png": "38cba4a625aa82c803603f39d1fd08fdb1db344bf9950d8b1066320ac4caeafc",
+      "Front shiny/KOCOMB.png": "3ea5896e27ac71a82ba095134773f53d67ad75ea435b8a0c1d268427ad0b9b4c",
+      "Back/KOCOMB.png": "07dcd0123ce660a98f62dd1ee9f0caa33190434a97112450371773849414fea9",
+      "Back shiny/KOCOMB.png": "3b401bdc671b11ae2b2537db3676ad7dd99dbfaf04aeaa4a99d36899c09521c5",
+      "Icons/KOCOMB.png": "e541c90752b2a985aef6f56d7be8d339a8c242741cac8a257eb213b3b8ed581e",
+      "Icons shiny/KOCOMB.png": "c3b71f0d36de33ef3daedebccc923bb399aea7fb5da10e23e1ebf8ebe36322c0"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 9
+  },
+  "KOCOMB_1": {
+    "source": "KOCOMB_1",
+    "files": {
+      "Front/KOCOMB_1.png": "7806ff008c76c78e22055eef3a3535d9b9032f313071f03922e74e0b9f2ef1ff",
+      "Front shiny/KOCOMB_1.png": "e69b3687269dde0aca8a18732b6d50ba94cb1c54a7e6f86d8f8c847a7d907cd4",
+      "Back/KOCOMB_1.png": "fc181ff59cefdb7bf9d1f6dfb646857f624bb1305e3d271ba60ed8614a1dfffe",
+      "Back shiny/KOCOMB_1.png": "2a4478ed3a2570365a45f70d08896fc63cfb508e46ab42b376950b7b0bab9dfa",
+      "Icons/KOCOMB_1.png": "aea52be3c2d9ff6a62afc5fa307089328af754be5ce4b01adca3a11ea511a7c4",
+      "Icons shiny/KOCOMB_1.png": "ccde512ea754e8febabb8e759176463979662955070e124754e1407596e09682"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 13
+  },
+  "LAMBY": {
+    "source": "LAMBY",
+    "files": {
+      "Front/LAMBY.png": "99d64e71327176133965cd1c457b2cfc7104d1df6c30783d7e205690f02601b3",
+      "Front shiny/LAMBY.png": "56bb707670f4a9bf9aecff09e10e3046409cd96f8d0b81c3e030722fb00004c1",
+      "Back/LAMBY.png": "97fdef8a2306fdbfb68681dc256d2a67975257b314f0562b8698384b55eb4037",
+      "Back shiny/LAMBY.png": "66dcd4b2f9f337eb92dc6999e3d331a73859cc58b6813cf88e29ebf74ce32ba0",
+      "Icons/LAMBY.png": "cdca197c0630dfcd3f35edcbf5100d694a5c310387b9e424b452751362c21316",
+      "Icons shiny/LAMBY.png": "4c072796478aa1528073f9e9fc409f7b6e3c682f009e7d177e07bd2353c46358"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 11
+  },
+  "LEDIASTRA": {
+    "source": "LEDIASTRA",
+    "files": {
+      "Front/LEDIASTRA.png": "65bcd98f642472dc9f23f6d836aa81d26153c2599c9fdb30a9b059144777cbb3",
+      "Front shiny/LEDIASTRA.png": "5fae0cfbde0456c518ac2897d9490094f9f6fc64f9fcaa8c0844f08e547cad4c",
+      "Back/LEDIASTRA.png": "c9c3673f7fef42e40a920879f87488d302f553984bec1a2d0dc90da71bbcbd87",
+      "Back shiny/LEDIASTRA.png": "75499845b9ccfcbb1396f9838aa224ba7acde05991d40db6e61d347037d5f990",
+      "Icons/LEDIASTRA.png": "8d892d59f0085eda6ba93d0846bd82badd700a5ce4637337eb7b61b3602a1858",
+      "Icons shiny/LEDIASTRA.png": "b85f7dcfba07c311eaf2ffdde24b653f6c3459c671aa2979b9b3cc1daef31e87"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 17
+  },
+  "LILLEO": {
+    "source": "LILLEO",
+    "files": {
+      "Front/LILLEO.png": "eeadd69bc28978f8f9d7c57d66dfa0c1d0c63a12a8b94fffd8c0a076ec545fbb",
+      "Front shiny/LILLEO.png": "2c12efa684630947178517c6bead7c8f6d8a09001b06ddd3030e2eecd6109e06",
+      "Back/LILLEO.png": "c62ccf09c4c8583d56aef7157f189f392feaf07a262d6f0e13ed3a8b0d283868",
+      "Back shiny/LILLEO.png": "d4a01ee3b182fd1c63d5d2d1c37695b67d8d843477da86d98f0e803a0ed924a4",
+      "Icons/LILLEO.png": "d7d9317d05f23ec48c87bdd5b533f115a04eef3c287bc9c4795107c4a52f8e1c",
+      "Icons shiny/LILLEO.png": "b6ddbe77adb56219004c8cf272ff4f4437707d1f3839a8ca856502f473c37782"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 19
+  },
+  "LOPUNNY_MIKITARI": {
+    "source": "LOPUNNY_1",
+    "files": {
+      "Front/LOPUNNY_1.png": "5db2ecd78c8d304fb885402316e7d3401c0772907aa473e8e9ee1b878d18b4af",
+      "Front shiny/LOPUNNY_1.png": "9907b6871553a9bf79d0739f54cf8cb654e27c27657e2844532cd9833b14e17f",
+      "Back/LOPUNNY_1.png": "dbf5d3ddf414f57ef93c9b156a70c9d4b0e8a777d4c0791a774c670db7900694",
+      "Back shiny/LOPUNNY_1.png": "1e13e062e604993873c2c489d58286a7ea2bb293ff8b0346d9a123a209d66e1d",
+      "Icons/LOPUNNY_1.png": "681f024ddd082d009866baca5f989bee8d8bb6adb06b636d1be6e9687ed0e5d8",
+      "Icons shiny/LOPUNNY_1.png": "c397d3f861d2ec3153982e16f32cb78c6c11316c890d5f25803d7c18985f4247"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 23
+  },
+  "MANTOON": {
+    "source": "MANTOON",
+    "files": {
+      "Front/MANTOON.png": "9e427c352ff219693243bbf7eae7230466d2f2a02da7126699649b65429071c2",
+      "Front shiny/MANTOON.png": "d12db3ecdc3fd2a0bd011658b01c0367046f0f7141195f9a1266eaa624c09263",
+      "Back/MANTOON.png": "af387102a6373dd5a615199b463b3fab11371d673604495f6ead9ee43c0a5387",
+      "Back shiny/MANTOON.png": "2bcc7ee58b101a61d3f52f7dffd04831e8ed38e4164a8bf9efe4c96132bfd344",
+      "Icons/MANTOON.png": "57af4425435b123e6fa7778be55f49b315dd83804dd1c0012b10cdec9130e5a4",
+      "Icons shiny/MANTOON.png": "27e6ea540e76e47a3b4b56e7f3a58432a2f747aeb893042d96c805051e5df85c"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 12
+  },
+  "MORTARINE": {
+    "source": "MORTARINE",
+    "files": {
+      "Front/MORTARINE.png": "462ce935dda560e316fb6807ee0645a6725b27775cc76f6de0d0eea4db2942ac",
+      "Front shiny/MORTARINE.png": "0a6b3b4c71bb3251a02e6debd9e04f165c265c602aff746670eca9ccaa3ba9b0",
+      "Back/MORTARINE.png": "09e237d2282c15b3fda80a0549069ea20d3955d9d26046670a21703f5556b91b",
+      "Back shiny/MORTARINE.png": "7bb95b5fd60276d920a080a06412287f4ab05907cb6151b36feba643a93304f0",
+      "Icons/MORTARINE.png": "c0b4d8366233ea303b64a42915eead4cbd7d4827f1284154ce687dfe09cd45db",
+      "Icons shiny/MORTARINE.png": "424944070c2271aaa318df217f6dca7d68a1e7afbecc17ef046d96ab89356308"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 41
+  },
+  "MOURIN": {
+    "source": "MOURIN",
+    "files": {
+      "Front/MOURIN.png": "b05efd74d4c794d21a44505cf1b89571fada8515f022775e7cde667c58488ee5",
+      "Front shiny/MOURIN.png": "d4086040f8a8091900a706bc8d075ad6914899cef358028cc87fdcfeb683f068",
+      "Back/MOURIN.png": "87422f0c0b81a94439f43d35133c741214dcb45287ce70d3d9f3cd153588002e",
+      "Back shiny/MOURIN.png": "8bcf8a6413c970a1a6f8a47d4e3ae3d29b4fd13a297f43e200f6ebc6156de83c",
+      "Icons/MOURIN.png": "30aa5919716763276b9eaf3228a6a3716f24be338370733059cfa171812690c2",
+      "Icons shiny/MOURIN.png": "e9ca18baa3c85ac89cec9b39f7f52fe347d15cf5053d2db3dc7ea6d298fda34a"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 15
+  },
+  "MUCHOG": {
+    "source": "MUCHOG",
+    "files": {
+      "Front/MUCHOG.png": "7246683b66d8db91f97bf38f21b2a3c745dd6a73a1aa6d7c6e1e219ac47b35eb",
+      "Front shiny/MUCHOG.png": "d3b0d2b8772c2003bdf3f45624ad3c7bfcbe24c91e16fa39c02a8bae784b743e",
+      "Back/MUCHOG.png": "83beec72f5fde5a6b93f38f95f0e36347e0e5d815796c22758bae647940b272d",
+      "Back shiny/MUCHOG.png": "eac0a0a110fac31cc3c1ce35dac8d0e31eb3c889288b6068d767d7b73bd46773",
+      "Icons/MUCHOG.png": "30f181eb3f5df643b1ff147e6b92cd51cd7ae9bbb72e72cc912914f4fd760287",
+      "Icons shiny/MUCHOG.png": "7f9131794d905893273cdf70298ca9f0a900af302e13313a6fe0feaa0bd0f68b"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 19
+  },
+  "MUNCHILL": {
+    "source": "MUNCHILL",
+    "files": {
+      "Front/MUNCHILL.png": "f88977d18778f358857a6102f5aee0cbeef681121dafaf749e7b07f65568a03c",
+      "Front shiny/MUNCHILL.png": "8ed444506fd96fa096d449e4419d29e1b80bd945ab6a0d27a4d1dce12a063a70",
+      "Back/MUNCHILL.png": "1bd23fa01cb1f509c629de8cb710e81494130bd9c78e3b8f23cf8f31b06e1784",
+      "Back shiny/MUNCHILL.png": "81ece99ec71b048a5abee5c47bfe1634a7d6980fc231bea973936df7863ec55a",
+      "Icons/MUNCHILL.png": "b7cf2941384ff1803b3168ada7e08357754650c8a012f4bb701840ea50f84fe1",
+      "Icons shiny/MUNCHILL.png": "92467f1eace4f01272791eee02435459f9a09d999f9ee29a2c7647c14ef968d3"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 13
+  },
+  "MURASALEM": {
+    "source": "MURASALEM",
+    "files": {
+      "Front/MURASALEM.png": "34b478f05c2349e35fe84d4181702355a6c5bb896835e5e034f4ea70ed047836",
+      "Front shiny/MURASALEM.png": "a4d604415b594032ad16bd91648c9511d7347df611896a96a4591ea08714bd1b",
+      "Back/MURASALEM.png": "bdf91c521d4cc4d86168952e86a498eeaa56580fd4b770ff97891cc23b535b48",
+      "Back shiny/MURASALEM.png": "81dbee205b62b68154714361a42984f85b0c69b784a8b2c7fa7a725bc6e8cd6e",
+      "Icons/MURASALEM.png": "ca2787b81be5bd7e69878b2f1a5c0fe02ddd258b49d8788926538aee1933ecf1",
+      "Icons shiny/MURASALEM.png": "d07fec9e471c4aebdd8c769064c14cdf0761a258492f79c75f85c02f7dbb552f"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 16
+  },
+  "NOCTOWL_MIKITARI": {
+    "source": "NOCTOWL_100",
+    "files": {
+      "Front/NOCTOWL_100.png": "8c10034838406dfc155d8c3b243f35f00a646a6cd56b3747e01aae20e6026f83",
+      "Front shiny/NOCTOWL_100.png": "cdec5d9651f885098de72000b7bdcb346c598c4a3c7b5ae3b7bd9e77603da3b3",
+      "Back/NOCTOWL_100.png": "0aff0858568fef6ea8365f3ff8c16f3651565c13ca4cb8588e745e7002fa3615",
+      "Back shiny/NOCTOWL_100.png": "9c9ab275244be85dc7aaea2456cf13090359f9ab557e381b667d7e135500fffe",
+      "Icons/NOCTOWL_100.png": "de149df8064d49c4c4a983b58b8a2cbda75c906272a3a459311533890ed39710",
+      "Icons shiny/NOCTOWL_100.png": "b9588274dd64eb1d731876714e554a8603ce5b4186f0a2cd403bd626ee562f04"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 18
+  },
+  "OCTOKINEPUS": {
+    "source": "OCTOKINEPUS",
+    "files": {
+      "Front/OCTOKINEPUS.png": "80a1d242059932f6628e8024a49fd65b14ee69fdd6588dd7634e0cd3d5b92800",
+      "Front shiny/OCTOKINEPUS.png": "40a4b570e4627ad5d64a6f611cece8b6e6a4c60a950d153d700c63fcf906fd11",
+      "Back/OCTOKINEPUS.png": "62daef018d43602681eeb84f37e67f63291f665d41ab0d0f4b38c395c7e7a933",
+      "Back shiny/OCTOKINEPUS.png": "6aaecc53dfd7d93d2294a8ed290ef768439067e40f270541aaff7f94e3ee6d27",
+      "Icons/OCTOKINEPIS.png": "cac4ee93ac056a1e753e746c27b4fea1b310429776d07f6620a6185d6df31b32",
+      "Icons shiny/OCTOKINEPUS.png": "d3de35cff1e52fdac681d5c072d61652ca0f72cfb2cdad22a5bd1b7044948450"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 14
+  },
+  "OCTOLECT": {
+    "source": "OCTOLECT",
+    "files": {
+      "Front/OCTOLECT.png": "6671399fd5642b296e39410b2003ecbc73a4463e9c286d9e58861d6593ad0155",
+      "Front shiny/OCTOLECT.png": "3b95a696c4619cdbd55db17a773132298add55213a8f5e06e9e7f4e64177cdcf",
+      "Back/OCTOLECT.png": "40f47363e4b3729682d4e8a3dc940498863fdeb31c7b45de19e9f5b70702d02b",
+      "Back shiny/OCTOLECT.png": "49c0650b7028fc7b2301172f4389d831e1629b839f1c0c5eca22ac6605c6b8cb",
+      "Icons/OCTOLECT.png": "5aa812e79db93353e686d0fccccbf791d2c2365d1c44c025858992e434268039",
+      "Icons shiny/OCTOLECT.png": "b0a9aa859fbcf9734bfd2e5bad2ebd171d44862db92c083fa9d6d482bba10dd3"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 8
+  },
+  "ORICORIO_NOCTURNE": {
+    "source": "ORICORIO_4",
+    "files": {
+      "Front/ORICORIO_4.png": "e4877458b8dc2134c1e2fae7aaf9a39ede5eca2af8fafea383a26083f931783f",
+      "Front shiny/ORICORIO_4.png": "d3daed63a727998483c10d9baee058c33e5bb1d8b690a8f874a4ec34dd048d23",
+      "Back/ORICORIO_4.png": "fc95eba8f0ccedaeac0d18e43fc24d92abe758e2e93f4abd468ea0a085c00aaf",
+      "Back shiny/ORICORIO_4.png": "d88f5bca4fcb9181bc88459125c4fd59df31ddcf73b441b0234de2f08980d130",
+      "Icons/ORICORIO_4.png": "08111ec23a1943f1a0a202ee0eeda1de7d6a50f1412191515c1f8464aa902c02",
+      "Icons shiny/ORICORIO_4.png": "30f81c600fbce3fe826115c28322dc09640b6d4dd1029175b973d78f8e1598c8"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 14
+  },
+  "ORICORIO_BALLET": {
+    "source": "ORICORIO_5",
+    "files": {
+      "Front/ORICORIO_5.png": "bdc45b58348287afe009792543324f30eecb466682cb50b882bc5c06aea9dfcc",
+      "Front shiny/ORICORIO_5.png": "45b7cd7f805f0b0e7a600def1e6e1dc6dc2c4d46367a7f6f02127e628211218e",
+      "Back/ORICORIO_5.png": "71025c647adf352d95b04309fcff34bf84d21a60ef694c0d755178e7bb589009",
+      "Back shiny/ORICORIO_5.png": "e1858f9a666ccf4f96e9b711ff34c17d56110b3e801ef164a831bf0e6461847f",
+      "Icons/ORICORIO_5.png": "d7ed94a949907ee364d2614bab9f3a0a52093901124d38ce22d122d485b8a4a9",
+      "Icons shiny/ORICORIO_5.png": "d7b9a1a856f1da6bc2a3d2e56921de0902cc71b5c959af545f34c61ade29f98d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 19
+  },
+  "ORICORIO_MARTIAL": {
+    "source": "ORICORIO_6",
+    "files": {
+      "Front/ORICORIO_6.png": "d96619ddf9e77ef9cc5ccd5c5ec7d272a8c9f875358885d0ef0225bffe504c73",
+      "Front shiny/ORICORIO_6.png": "097779405d043e2a00b87649eff6dda18bfb86f5f80c82c5890a5f7afa57501b",
+      "Back/ORICORIO_6.png": "2119660b38122ce88da007d81165b1f67ab441e932317d1890da2ff0fa1666bb",
+      "Back shiny/ORICORIO_6.png": "29ea78bcf9afd727164bca569531af37f548d3470abf519c50f872bec0d79482",
+      "Icons/ORICORIO_6.png": "6519d97a69ee099f5dad3c6d5d0270847068c7928d4aa80df720bc955878e83f",
+      "Icons shiny/ORICORIO_6.png": "4275478d155eed05e3116f5dc097874ffd8bb29e76c62a69a06d49a0841410c9"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 15
+  },
+  "ORICORIO_FOLK": {
+    "source": "ORICORIO_7",
+    "files": {
+      "Front/ORICORIO_7.png": "880a094882d25dcdb0b761162eeaafb979d0a5d913dc5711cc4b0f37ba7f0ef1",
+      "Front shiny/ORICORIO_7.png": "739178229ff9978d0ff7942f8f449b517147c1e35c8daaa445493118c2bdd221",
+      "Back/ORICORIO_7.png": "2ec347bcc124f5a698c12bd357811d504bb9e0d566d8e90f6e0c4ca61515002e",
+      "Back shiny/ORICORIO_7.png": "7f177d03b2e96af5dde1d356f2f7d836c9f4c4964fd79b524db345c1df8adae4",
+      "Icons/ORICORIO_7.png": "5a950632e752c3ab756dd45164e3ba13dfb7c96bb05f739b93f4cba34832ff3b",
+      "Icons shiny/ORICORIO_7.png": "acbc7b14cc22b1f62b3a1dec684845324034a5afb227eb8dbc1c9f1d5fe5eb1f"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 4,
+    "palette_pairs": 12
+  },
+  "PACKBATS": {
+    "source": "PACKBATS",
+    "files": {
+      "Front/PACKBATS.png": "90737192ff3d205ee5e0733527608cefe4981c179bba2a683b18add9e39f8079",
+      "Front shiny/PACKBATS.png": "c508270c2c25a4e10e64ad119d62df75222c1868dabbcd48732aee4b9b45dc0f",
+      "Back/PACKBATS.png": "855957636e379306d277070c7ed1a73dc1e277afe7c7306cc748aeec83f8d182",
+      "Back shiny/PACKBATS.png": "9ba5b5b4bda0344237256fc91dff090a14ce5208c6ab5f61e22f3dba944b3b3b",
+      "Icons/PACKBATS.png": "a0dffae5ad64f9a1856e9d722dfadc2f4b642061f8df79244e79583b18438497",
+      "Icons shiny/PACKBATS.png": "59142e8f54b23693000c47f68ac6573587fd44d866703457efe313585d39b223"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 28
+  },
+  "PACKBATS_1": {
+    "source": "PACKBATS_1",
+    "files": {
+      "Front/PACKBATS_1.png": "148d98eed2da7adbd716a496567f08115fe96e5692f544f2819d48fd6942cd30",
+      "Front shiny/PACKBATS_1.png": "7c2e1a6b680b6e618ee8017b8c8c4207f7260966a7564d71b8ab2934f3e7dedd",
+      "Back/PACKBATS_1.png": "7e3c93a1f4df85ceee079a11755632d8aaafc911da7c89f9bc6a94e4abf9dfe1",
+      "Back shiny/PACKBATS_1.png": "7ba236cb89902d0936674a7c732530d9092e41de79815e21700730c27e9889e0",
+      "Icons/PACKBATS_1.png": "5aee95b692cdfa203102f7c1bcd142632edc47c26fb1d98452a0ec5c81469b48",
+      "Icons shiny/PACKBATS_1.png": "2a6d927be5a6c43491ebd894c3a21da0b648597e5e175bddf45bda1d13361152"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 26
+  },
+  "PECLAY": {
+    "source": "PECLAY",
+    "files": {
+      "Front/PECLAY.png": "5cfc3b8ba95247d4465a5254270dfd3c07e2d758c3148417cffaad97838b22fc",
+      "Front shiny/PECLAY.png": "4891958ac7d8fd40eea941856ee36b627231bd297a364446e35ca46fecaac1c7",
+      "Back/PECLAY.png": "197d90b6348990f86714f75464999176098b98e6e3e3849d735965edfe171a8b",
+      "Back shiny/PECLAY.png": "e5a26cc07775ae7ddafed3b6dacc5f0e513b48aaf87a3b9c7a318b52d1e50fd0",
+      "Icons/PECLAY.png": "9cdd252a1d97d1e5135cd366a2a64495c77328f619a39a0e1717c3264ee9358f",
+      "Icons shiny/PECLAY.png": "a39a26adbb960b7834f878b58e18bb9ea27aeac1a14a9002ba26d18d89fcefa2"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 19
+  },
+  "PETALNIA": {
+    "source": "PETALNIA",
+    "files": {
+      "Front/PETALNIA.png": "35793b870d3630423d5025cec24ffb0bde3da9a95555a1511502a6cad769aa6c",
+      "Front shiny/PETALNIA.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA.png": "e79247690998df7b12784a68af9b362cf5a8ff4b0be5ac703a76cbec2755ea90",
+      "Back shiny/PETALNIA.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA.png": "e58dd72c55bcd31c081646d6c71efe9194408c883db4e8d2455af93e0207e76a",
+      "Icons shiny/PETALNIA.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "PETALNIA_1": {
+    "source": "PETALNIA_1",
+    "files": {
+      "Front/PETALNIA_1.png": "0fb15f97a996c53e4d41164e3224cc425c9096f3205c75b9f1c9debdf6bbabe5",
+      "Front shiny/PETALNIA_1.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_1.png": "a1c313d5f39ece3759c2f5fc2c2fa931b9fe297b3cad3711484f2f70f6251e7d",
+      "Back shiny/PETALNIA_1.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_1.png": "075344c1752a9917ebb54291cc20fd38b3c8e71f391d253bd217694a642b254a",
+      "Icons shiny/PETALNIA_1.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 15
+  },
+  "PETALNIA_2": {
+    "source": "PETALNIA_2",
+    "files": {
+      "Front/PETALNIA_2.png": "ecad0d2bdcaffd992e2b5be32fd2eaaeb22d976dabd82fa84b8836cfd4c4e133",
+      "Front shiny/PETALNIA_2.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_2.png": "f4536a6d1c3101284ab0427f21da96916317d58f21fbc065f87cfa78bf1917b2",
+      "Back shiny/PETALNIA_2.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_2.png": "b4a1a36aacffa20433256d715c897b6e30d1d550989b42eb96a3ac68ed4d2087",
+      "Icons shiny/PETALNIA_2.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "PETALNIA_3": {
+    "source": "PETALNIA_3",
+    "files": {
+      "Front/PETALNIA_3.png": "b35a14d1344fe1821154243148f297195d44969039a08ca137d0f2d17bb738a3",
+      "Front shiny/PETALNIA_3.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_3.png": "cc5f1b155f80fd616ded5a1633ecf369de18019a314de11e2166c0d526f77187",
+      "Back shiny/PETALNIA_3.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_3.png": "a5374b32c6fbda3108cc939827f9d08df3ab409d61c077459e71d66b11763635",
+      "Icons shiny/PETALNIA_3.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 14
+  },
+  "PETALNIA_4": {
+    "source": "PETALNIA_4",
+    "files": {
+      "Front/PETALNIA_4.png": "8d8894cb8174533feb5a0020af8c35dabe2104a595c8a909420fd3be7577bb16",
+      "Front shiny/PETALNIA_4.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_4.png": "f1c6a4f6fa35e13ac98ef16cb4e8b3975259f79af997cb1a665dddccce8a6dc5",
+      "Back shiny/PETALNIA_4.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_4.png": "cc521192d101ed0b0cf3a15c3598eae81d35638daa5b42289466c7beacded277",
+      "Icons shiny/PETALNIA_4.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 14
+  },
+  "PETALNIA_5": {
+    "source": "PETALNIA_5",
+    "files": {
+      "Front/PETALNIA_5.png": "fab75d47e51779530955dadcc7eed5f6053753653d9e71d52e00f3219ee492c3",
+      "Front shiny/PETALNIA_5.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_5.png": "61deb0dc64626597b0cdfbb74ad641a1e2c315ef6215c10927d6ccce58f27879",
+      "Back shiny/PETALNIA_5.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_5.png": "694f4e43b51c456e29fb559be8044196a207045a9df1664f93be3c67627b7153",
+      "Icons shiny/PETALNIA_5.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "PETALNIA_6": {
+    "source": "PETALNIA_6",
+    "files": {
+      "Front/PETALNIA_6.png": "69fee778a323c6e0a35f5d2e72ec275374d3d61442a889d9e56a43cc9281c8eb",
+      "Front shiny/PETALNIA_6.png": "3429976ab9599ee3d5f904ac23656ef2c05576c2cad0d7037bea0ebacc46b5b8",
+      "Back/PETALNIA_6.png": "a1bd7ab3736fa80a81f395f4ce11ab76c5e955c9acf102a09d7d2fb63aacae51",
+      "Back shiny/PETALNIA_6.png": "19d521d771c19766ef462f6fb2c57f2f89501b41cec71fac43157c56489c0683",
+      "Icons/PETALNIA_6.png": "aa117f79f48890a16e51e93fb949eb5ca95f1fd38ad2ea5350f39f585544c2b3",
+      "Icons shiny/PETALNIA_6.png": "34123560ad49f8d901c5f08057b74748f489b12d4ab59dd132bf453925ba9fd1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "PETIDAW": {
+    "source": "PETIDAW",
+    "files": {
+      "Front/PETIDAW.png": "23bf63fe142da329b2455721c02f391dd56f287bd32e3af27ecd4f30cc4134ca",
+      "Front shiny/PETIDAW.png": "57298364e2be7de9ee937a2832d7027b53063e06adeb259731e4254815b02c63",
+      "Back/PETIDAW.png": "619447702287e1704ee466ac1307f07e9878ac6cc25cdbb7b91f596cf6ed4de8",
+      "Back shiny/PETIDAW.png": "67d8ca3f7a51a03a02588fc5266caed31c34802796fb0dc2d8f514038fe85149",
+      "Icons/PETIDAW.png": "776d55bdd3b73196553bc74677e6e8bec825a15ea71e33f3a612b8e3b1074771",
+      "Icons shiny/PETIDAW.png": "e8a45831a2d65dfa6cbfad51c34f2d699284273c219162b555ce3321708d52de",
+      "Front/PETIDAW_female.png": "6f9f923dd7c5a32ef4ce1b02f06162ca70c49404a766c6843b3f7604961001ed",
+      "Front shiny/PETIDAW_female.png": "3d82789effb3e910967c9425ee179f96c53d696a52ac0e45813104b4e060c976",
+      "Back/PETIDAW_female.png": "44a5afd507c968a2a140b4026ef93a0ca2b67179e8ce0a7f8c68b61a8631391f",
+      "Back shiny/PETIDAW_female.png": "8db95c6d32d2527cc3d58755f4117ffa2fcae9650dc4a581faad7414162cf38a",
+      "Icons/PETIDAW_female.png": "836cdf8cb47f17ccf189c9d677958ce287dda63cff80237a1fa6c25657730a48",
+      "Icons shiny/PETIDAW_female.png": "ba10760fdc15dda88a9f64a908bcb9ca27d6c3441f7ef5db85e64e5a733c8eeb"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 16,
+    "icon_palette_female": 0,
+    "palette_pairs_female": 17
+  },
+  "PHANTABYS": {
+    "source": "PHANTABYS",
+    "files": {
+      "Front/PHANTABYS.png": "f7565760db7374450d46870256f43288b8a46c6d756e250c9e4368a4efa3bcdb",
+      "Front shiny/PHANTABYS.png": "fbb97c559617d4801f984afb20f6bb4dc2b54d2c8704a0f566d62fd90f607aa6",
+      "Back/PHANTABYS.png": "cdba542560b567bf6fa80848407d0abcb0ace74300042274c27dfc7762288cbe",
+      "Back shiny/PHANTABYS.png": "185338e7ee879e9c974d006861beac551f96e2b5ec278e7a4da6e0e40a75942f",
+      "Icons/PHANTABYS.png": "1e2e998a4810ce87bee75f776da3880cafab03be011bb6cbb38cbd1d2e6bb31e",
+      "Icons shiny/PHANTABYS.png": "a62ca92e2a8b78c5987b7b77dfd974029e124936297a0a6626189588cd26038b"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 13
+  },
+  "PLASMATINA": {
+    "source": "PLASMATINA",
+    "files": {
+      "Front/PLASMATINA.png": "32d00255d7dac8dc87ceae8e1ba11f8126ccd8d4f00bd3316efe5bae10e41e5d",
+      "Front shiny/PLASMATINA.png": "04072798529697fe713c1293f7ce2a4abb26a78306b4cf70f37c91460ef70c08",
+      "Back/PLASMATINA.png": "e6d854df7e2e1e1aaf4ed2239af83df69f23fcc16af4d208f36f4e9fd76ddbb6",
+      "Back shiny/PLASMATINA.png": "4c270926fdbdf6aa06ad2b8ee730bec59f0d02249447416a07694f6779554fa8",
+      "Icons/PLASMATINA.png": "88f5b373edd047e27665b2acd70bd12a8c502e8176202a072c9beb2f9db209b5",
+      "Icons shiny/PLASMATINA.png": "a5c401d81067bd72c512d049b0c1c384368ecb2c4264d0e50a35d8e0f0578ffa"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 25
+  },
+  "PLATERIGUS": {
+    "source": "PLATERIGUS",
+    "files": {
+      "Front/PLATERIGUS.png": "a695acbeb7564c060fe65fa3dea26e73e4d5d7cfb7682779b4bbcf2c16e3d32c",
+      "Front shiny/PLATERIGUS.png": "1643683b51531db0b567bfcd5c93cfdce80f382a3f6ee771ae8188df714db978",
+      "Back/PLATERIGUS.png": "b292ed9235f8a5d3ee12c63e66762f8c3d971436fea1107ed7845645c01e1b0a",
+      "Back shiny/PLATERIGUS.png": "df06cba6002f16ddfa67d9c190531d05601471f4878f5255fbc12fd61263917a",
+      "Icons/PLATERIGUS.png": "c209be13b2c1a55b66a1cba7ff47bfee317622646f8492ec0ee3199f1345f26e",
+      "Icons shiny/PLATERIGUS.png": "6d42a0013393af0d257afd46f6726e3b6bd8d7090bfdd3baf8c6371a71ffe3f3"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 13
+  },
+  "PORYGONA": {
+    "source": "PORYGONA",
+    "files": {
+      "Front/PORYGONA.png": "c633572cd5bd95521bfe3e25ec18f710836aa11127911e0090a0ce040bf4dba7",
+      "Front shiny/PORYGONA.png": "29dc7e3f8de796d09556c03c2d041e8a5cc2ef8fb452497a088cf7e4b32594ff",
+      "Back/PORYGONA.png": "6549c5bd16932de5cd6b2935fc7eb98027efdcef2fdab4e638b86fc8c6a0e0a3",
+      "Back shiny/PORYGONA.png": "588c286beca10939e227f95de720874fa01b3f3682ad0d2fa6c7d0d367863c3a",
+      "Icons/PORYGONA.png": "6f16d9952901aa7f928a3682369c1112beaf4da20cc80372ffbd8bd102490ef0",
+      "Icons shiny/PORYGONA.png": "8672869cb3e39b57d99ccbca09f7515aea96ef2502d2fe76da6afd7e6a4bff1e"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 12
+  },
+  "PRANKMARE": {
+    "source": "PRANKMARE",
+    "files": {
+      "Front/PRANKMARE.png": "b736b76aff828badf7b26acc26c35cb1b59da43276253752e923c94c0fad750c",
+      "Front shiny/PRANKMARE.png": "e8ff4f11be77a9b5f41edc1a4ff2d853ccbd0a61e914aa2ce443a9cc08c15ecb",
+      "Back/PRANKMARE.png": "9587c9ad1ad4755407237caa15ec3af7660f5c274e5fa552ea1b756a30f5711a",
+      "Back shiny/PRANKMARE.png": "76df51b63c4dad75d53d43b4da42ac47443b304040cd767928433aeea64d178d",
+      "Icons/PRANKMARE.png": "d0e564fc747a4fd4bddc1b10e1a514fe70eec047a248d68a82048f29b4f0f4b0",
+      "Icons shiny/PRANKMARE.png": "cfeb02ec9b4fd275431b6343adee801e56af326c8a415ee5a364893ff9b43d9c"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 11
+  },
+  "RAKNALEAP": {
+    "source": "RAKNALEAP",
+    "files": {
+      "Front/RAKNALEAP.png": "45a581eddf431d01857f58e2d617265ead5e6efda11e856f217c33d17cda0f87",
+      "Front shiny/RAKNALEAP.png": "035b40385b545ed1b693ecb76bc9737b0208be70f3e6c7e6603d55a7e8aa302c",
+      "Back/RAKNALEAP.png": "f106a0761f022d22e0a9333f535fd63a4eed093c9f736e90b792749767095ea6",
+      "Back shiny/RAKNALEAP.png": "1328424ff66d8368a050fb2bd816cde47b6333ee35366a135ca788129f7e5fe3",
+      "Icons/RAKNALEAP.png": "54da2df1744694dace38c52a3194b1c5136a565274e44867d2cc2bb586c445d4",
+      "Icons shiny/RAKNALEAP.png": "8daa9eee0711a2cf16327e697f2a4cd85f934bf6efbc7cee7e859e2266ae2e30"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 16
+  },
+  "RAVENDLER": {
+    "source": "RAVENDLER",
+    "files": {
+      "Front/RAVENDLER.png": "729b77789c51050e2b764593b01b241fa26852c8fbfbc294d0a7c74b9832185f",
+      "Front shiny/RAVENDLER.png": "7901595310760ca09ac1431384abf55b2d9ce3b73b24c17184dddd9deec0b50b",
+      "Back/RAVENDLER.png": "83f951c2359588c44e377316eeea74ef7f1ed61b834b8ace9ab5b28e9072db06",
+      "Back shiny/RAVENDLER.png": "e61a954fbb74cfa04696d20ca27d03fe48c569f70e51b0d7658497ab6eadd30b",
+      "Icons/RAVENDLER.png": "05fcffc86d4d3a44c987e65681f3aeb7a7d857f7d2511990ff4d193b3844595b",
+      "Icons shiny/RAVENDLER.png": "4d5a10ed1f0a7979f7ddf97c4ff9cb38375a12e80e28bbfc51c0f646adaa445a",
+      "Front/RAVENDLER_female.png": "1dfbe3886eb69f90b4392f7bd19067606477b9b33334ef9fdfc54665c5929285",
+      "Front shiny/RAVENDLER_female.png": "834e2918dce58db78f05277953c18cf4b5ff88db5ea34f1121ff9cbc2012d3b9",
+      "Back/RAVENDLER_female.png": "841df8ce9c7444535556471a6fafa93f6d5ec9bb1c7aed059c78a3ccc48ba323",
+      "Back shiny/RAVENDLER_female.png": "abaa5a9c5c567616d9be2c61df93ffde83a27c7633914e83798c8d999ece58ed",
+      "Icons/RAVENDLER_female.png": "70569b2845f935d27dd43d9902f206fe3d5d804cacf228f5dcd0c8d7bb47196e",
+      "Icons shiny/RAVENDLER_female.png": "d3c77aaeeeca58f95e576f20c241b3f12023c947022227ccc3d131452668c778"
+    },
+    "gender_art": true,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 17,
+    "icon_palette_female": 3,
+    "palette_pairs_female": 17
+  },
+  "RHINPLINK": {
+    "source": "RHINPLINK",
+    "files": {
+      "Front/RHINPLINK.png": "fcf2cf8cec329a345a334c939e062d865253c7cbc008d54b19163b4c140cffc1",
+      "Front shiny/RHINPLINK.png": "9888b0fcdbf92170bdd24fd02b4cb66465f7d31b487f5fcb77a4e45c7428cd73",
+      "Back/RHINPLINK.png": "f5a944003db5f2298626c748180ae6f4ec66cc35ec15c7515ec5af522091c600",
+      "Back shiny/RHINPLINK.png": "cb1600029fe7e89461fcad5cd0103ea5d54874abe56afed78afcb36bfb769222",
+      "Icons/RHINPLINK.png": "d6d8bb7b791510e0ab2b4f276bbcfe5e3abf0c499ec2a42e62c05cea1e27f650",
+      "Icons shiny/RHINPLINK.png": "43a2db0b3e769744c11dc051b6ab5b188ac2851809984fbfff2ee44d8a27122e"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 22
+  },
+  "RHINTAIN": {
+    "source": "RHINTAIN",
+    "files": {
+      "Front/RHINTAIN.png": "22de4c0e8b4a2a7f89d525620a05bc77eed116096c241b1b7b55e039c55a3220",
+      "Front shiny/RHINTAIN.png": "59ed23d15eecd22e4c0cb340604afa74c539c0a56d6b4618e5ab77567f98463c",
+      "Back/RHINTAIN.png": "215f6d3515287700a0478ffbf792bf0ae49c8805bb9144afdbd84c9c04590f70",
+      "Back shiny/RHINTAIN.png": "723ba4f357fc8edebf5cc21bff476e4ece839c56fa22f581468fadf1a3919423",
+      "Icons/RHINTAIN.png": "4d1eb34930a2cc537ca4d54d72beeafacbe9cf818e2c69cddf893539f05f4a72",
+      "Icons shiny/RHINTAIN.png": "54681cec86da0a9d635524eeacb7dd91c1879ac764312cc846cbd41ed775f08d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 31
+  },
+  "SEARPENT": {
+    "source": "SEARPENT",
+    "files": {
+      "Front/SEARPENT.png": "87743f1a151be464e016d1dd73786b6c0a7e4e308fc09fec427fe3837aa25e78",
+      "Front shiny/SEARPENT.png": "c157f42802a43f213a4cd38c3f07520c4269ddd4399892c5280f9ed09946eb29",
+      "Back/SEARPENT.png": "cc04d7db54ba38bfa4b489d790df9b0bde0d08993ae829b1fe7c6ed9cb2d0a6b",
+      "Back shiny/SEARPENT.png": "7e8e986ae7670248a85a19ac7c4318259402b340a46b230aae3cd6ee5d40b1f8",
+      "Icons/SEARPENT.png": "515f70ce11340f3fbd503f6985143c99fe5c4fb32155eeeba42c07cc372ef19b",
+      "Icons shiny/SEARPENT.png": "b78ac1d01ef6e1a18a2f172951a4cc9f81277348a3e48b47b3230e3d7bd5e594"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 3,
+    "palette_pairs": 15
+  },
+  "SHAGGOT": {
+    "source": "SHAGGOT",
+    "files": {
+      "Front/SHAGGOT.png": "e059d8a7e1ec0cd5752934dcab057b38c3343f94327e21b094923680623b8bac",
+      "Front shiny/SHAGGOT.png": "3b224e9669ab5db51f397e8f0d7a229719fec295adf45128182f829c674585de",
+      "Back/SHAGGOT.png": "692c9241f0019418770f9aa5511135ce127ae1a84509040d784cd92dfedc6bc6",
+      "Back shiny/SHAGGOT.png": "663e72d335238f8f6b5213cd5c4b10796c8db57b063b0d258183b383fea45d4d",
+      "Icons/SHAGGOT.png": "02d27d0061324e979dda113a9c5e081d12ce9ec4016e0ba4dc5a9ce3b38809bd",
+      "Icons shiny/SHAGGOT.png": "82af5ee43821fd845c4a2c2c9f59cb559c6c21d7c042e596c2bff26c8ce99cf1"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 11
+  },
+  "SKINDLING": {
+    "source": "SKINDLING",
+    "files": {
+      "Front/SKINDLING.png": "4d27e35f5d456e3491112477f935b08c555755096da9d04e3ed7aa82e402a9b4",
+      "Front shiny/SKINDLING.png": "eb85b3aebc1a92731d715b00aa2df5e979bce2debf1d81423b0f24ef24f124fa",
+      "Back/SKINDLING.png": "4290c4d424acd065654a14c207e633d1673eff695e5287b2b57df8c910500bc0",
+      "Back shiny/SKINDLING.png": "15aa64cb6aa29a7ab0ce62caee6a231df1592117aef75b72bd96d0e1a9ea96fd",
+      "Icons/SKINDLING.png": "5d0553d5f270c501ced39028db45dc5def2d7ca765756424d7278a918df2555d",
+      "Icons shiny/SKINDLING.png": "19209ab749da2b7efc7b8676560f2734420618ded9b0efce6e1f70df1c29aa78"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 14
+  },
+  "SKINGNITE": {
+    "source": "SKINGNITE",
+    "files": {
+      "Front/SKINGNITE.png": "05fd46b50bf8f534c8027440e7c018292d07f0c5a7284aadb9af39d5068ae68b",
+      "Front shiny/SKINGNITE.png": "e0d60db0d9779945e315bf45f21f2b1983666ada8eef2a04add1db3b312b3c6b",
+      "Back/SKINGNITE.png": "3356fe9db7c0dc35b3a99cd97eaa9c9d80e89127e6e3346d99d8d88ec0a48abd",
+      "Back shiny/SKINGNITE.png": "24c81f7dd217a0bdfb8f8d08876a45f16b70817b2de45883a175fa859cd5fb6d",
+      "Icons/SKINGNITE.png": "7291db25db48aefae7c5138d2b7bc9ca7dd57df026705f82e6b5108ea7e821a6",
+      "Icons shiny/SKINGNITE.png": "c0c8eadebff98f9b16f1c8be1a1eb9e557c50c507557f5ba006d9277ad6bd1ea"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 18
+  },
+  "SLIDUNE": {
+    "source": "SLIDUNE",
+    "files": {
+      "Front/SLIDUNE.png": "3d43999173c19b06296155bc49018629457a22cad1c191305aafda4d57c636c0",
+      "Front shiny/SLIDUNE.png": "4528d0174b4f7371bdd78bcf05b60ec3be7f8816e7dc18bca923dd8af00cdde3",
+      "Back/SLIDUNE.png": "153062550d3898ecce57168be36ae08caaf5556b33f2e09db9de1325ef31ffe9",
+      "Back shiny/SLIDUNE.png": "7f60da12e779fbb23b5779af74cf0e0619dd3f7c293a225d1ebb9a052b34b379",
+      "Icons/SLIDUNE.png": "944c6e9ea6a973f3325cc03dc06518372f5ff0ee46412f15033aa070a5a0fe41",
+      "Icons shiny/SLIDUNE.png": "28493963343e339054250ab0b5984c3aaa21a1ea6520d1d12f0e8f9aebab9fab"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 1,
+    "palette_pairs": 22
+  },
+  "SLIDUNE_1": {
+    "source": "SLIDUNE_1",
+    "files": {
+      "Front/SLIDUNE_1.png": "ce3f63fe085de2f12cf6c504c5c685dddf9dd987fc8420f0ff1d45184965ea70",
+      "Front shiny/SLIDUNE_1.png": "56d0c0f34b040d6441c5c93195ec7fab3e55c83f3e519b84ac725dd92bfb3db2",
+      "Back/SLIDUNE_1.png": "697f7797d81eee35322934c6a64492d060ff71efc8f7686f7c5e2750973d67ec",
+      "Back shiny/SLIDUNE_1.png": "7c3e1cbc9053fbf05710b27f3261fb5f1cc56e82fa0d0cfb358e6184373a98ee",
+      "Icons/SLIDUNE_1.png": "9cb870ac5543bf9d8cde8f116422b34122a9e5a580c9154a70a3242256b09c73",
+      "Icons shiny/SLIDUNE_1.png": "329ae0c5447e65b23e915c09b38c248d70a571e100b0a76ad549019efb212b05"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 23
+  },
+  "SNEEPY": {
+    "source": "SNEEPY",
+    "files": {
+      "Front/SNEEPY.png": "20c83f293063334c6c4db083119dbe864f397ef4ded67e31792b1020176bc9d1",
+      "Front shiny/SNEEPY.png": "6c84dcdba6ac9f6ec1c3e94c92f39602cc91459570afbac34ff046c4733d3e64",
+      "Back/SNEEPY.png": "b86451b849cb91c3568357b81f6e41c978458da04079229c98203f4b3d3acbc1",
+      "Back shiny/SNEEPY.png": "adbb6e189c60ca269e8456f62fe6154f7cb29170514266d03d372b139f42bf1c",
+      "Icons/SNEEPY.png": "63a200d1dd7e4214c852119770a47d9c5534f359d4bb77657f12adfeaff4863f",
+      "Icons shiny/SNEEPY.png": "d7e7c3fde4890986a8d561aaf549c30d25923a75e14b4cc3d75e8517b448d805"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 5,
+    "palette_pairs": 16
+  },
+  "SPHERTLE": {
+    "source": "SPHERTLE",
+    "files": {
+      "Front/SPHERTLE.png": "1ca5a6e418885bfc047ad1b23e91e342da129cd3e45b383c91344572277536a4",
+      "Front shiny/SPHERTLE.png": "1460af44cba4658b0538e030a108a6f665b587a39732d4efaaae6ad7778db0ec",
+      "Back/SPHERTLE.png": "99741b6e66e24b3bc82d4c83c2c6e7271737776ed37f3af5262e75d6491cc257",
+      "Back shiny/SPHERTLE.png": "90ce234787df037a82f2049203249796cfec5a41ed29486e46cb363b3c4194c2",
+      "Icons/SPHERTLE.png": "95fdb55b4bf223d25c5387666c4d38cedc6d842ba42fffbc94246452f7972c44",
+      "Icons shiny/SPHERTLE.png": "7a087ae8ad85a654c7fc07c476b11dc9540d72734fcfb1c0ff9cb2905af1e4ff"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 14
+  },
+  "SPRITZEE_MIKITARI": {
+    "source": "SPRITZEE_1",
+    "files": {
+      "Front/SPRITZEE_1.png": "964eda85a740fb18963fa4f83c8737af6804b6f82b01b3b6b8716c8ecda0d6af",
+      "Front shiny/SPRITZEE_1.png": "a954f964dc020468aff11b5a36b65f88e1dece368dd77429907b9d575e1caf36",
+      "Back/SPRITZEE_1.png": "2b860b862c41ed1dab790d39ab16a9997643cb7483b5bb78108647fcd0522798",
+      "Back shiny/SPRITZEE_1.png": "e32f15cbd9f54534da6a97314b2035385dbf6af5f2e6965f18924221329da7bb",
+      "Icons/SPRITZEE.png": "1511575c4cf48d5caa10ce74b19a58ebe890d03a76a9224e896a59a57765f35f",
+      "Icons shiny/SPRITZEE_1.png": "0f931a86bf8d9baa0a12f499b2d6c162808f7154daba31791f67d8fbfa22c70e"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 0,
+    "palette_pairs": 13
+  },
+  "SPROUTSY": {
+    "source": "SPROUTSY",
+    "files": {
+      "Front/SPROUTSY.png": "dbcba9ac8b82faa8a41f51aadfb159710c9f55ea33b1e23001d08afa4b05e44d",
+      "Front shiny/SPROUTSY.png": "8b3d77394b890dd2361b747e7fbbac84d0ec59be528ea81d3a441a585b5cece7",
+      "Back/SPROUTSY.png": "5d7147835d2b456084d5cdf25cecd9dff184fbc8d67339461b9e46210e9e2aaa",
+      "Back shiny/SPROUTSY.png": "b0879b250fd7662ca59e4170feb1230827caa79a85eae966df2810672e7db245",
+      "Icons/SPROUTSY.png": "5c3c00c212291360c6f53ecf99379803bdca5f2f769edbf995c770556947f351",
+      "Icons shiny/SPROUTSY.png": "19c71e1472dc1c9bb7f2e52295beae27efa0e8676efb976ddec5f475c702268f"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 1,
+    "palette_pairs": 12
+  },
+  "STALAD": {
+    "source": "STALAD",
+    "files": {
+      "Front/STALAD.png": "40df94ecd385a29ea9351279b2554265284ced01a114937a371ef8ead4d453fa",
+      "Front shiny/STALAD.png": "bb705fd495be49071866641bfce4b101ee8d51ea43ce03b981f7898f0d97da6b",
+      "Back/STALAD.png": "855957636e379306d277070c7ed1a73dc1e277afe7c7306cc748aeec83f8d182",
+      "Back shiny/STALAD.png": "9ba5b5b4bda0344237256fc91dff090a14ce5208c6ab5f61e22f3dba944b3b3b",
+      "Icons/STALAD.png": "313250bb83d6bf0cf99d255c45ab5150ad792008fb22f2149dd56f2d581c3ab7",
+      "Icons shiny/STALAD.png": "b642d337711208b85a92bad7b60e4768e73c3184abde0337b7e4fb16c7ebb9e1"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 17
+  },
+  "STALASS": {
+    "source": "STALASS",
+    "files": {
+      "Front/STALASS.png": "54f729f8106b153eeb6ffbdea60bc87ab3909a1c937b5694965e8b133faf935c",
+      "Front shiny/STALASS.png": "7cdea039073e4ae7fe243d1e1bddc4950d5aa2550fe250ce07c328b36d2ed42d",
+      "Back/STALASS.png": "7e3c93a1f4df85ceee079a11755632d8aaafc911da7c89f9bc6a94e4abf9dfe1",
+      "Back shiny/STALASS.png": "7ba236cb89902d0936674a7c732530d9092e41de79815e21700730c27e9889e0",
+      "Icons/STALASS.png": "d09d6a657ddba0c501f8e3f17765c6cfe657d7756e701743be178fc221790e61",
+      "Icons shiny/STALASS.png": "70eb4bff632b1bffc1665373fbfadd79119d6c69bfd3a054fc639ff80c79c449"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 3,
+    "palette_pairs": 14
+  },
+  "STORMANTA": {
+    "source": "STORMANTA",
+    "files": {
+      "Front/STORMANTA.png": "0c8c014fd3dea78c12cbafe52d9e8fe0e4373facb92293cb2396ca61223152fb",
+      "Front shiny/STORMANTA.png": "1a2252111e3a9bf761c657e630818cb1d21a11b36c68f3db7ce3bd96792e42a4",
+      "Back/STORMANTA.png": "dd24fc062e207a5a9068c9c4eb2e16a3110ee445b012abeac7b581fc3074ef20",
+      "Back shiny/STORMANTA.png": "af665d29ed07384d62422159e5ec0bc340a0b95e5da6d82f79373cad06b65fc5",
+      "Icons/STORMANTA.png": "11620aa93408f20f65a13b21a498970f24c8228cbaefd28288090354757e8f9a",
+      "Icons shiny/STORMANTA.png": "3b4bcc49082cf5bbb619db0b844764f516141caf922dc4cc7406f97d0c6f348a"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 19
+  },
+  "SUFFERUB": {
+    "source": "SUFFERUB",
+    "files": {
+      "Front/SUFFERUB.png": "03da7d0532d60b488c5f8fba4655683294af8bb7356a7f838155551a2b6cbc1d",
+      "Front shiny/SUFFERUB.png": "6fdb3e47a8463048e77de638751ce5c2f2fa6de4f0ff49d4ce73dad1acdb3724",
+      "Back/SUFFERUB.png": "d4a4e6a83f573110bb1ad5389d0d2fd5a60cfe8db7446b54a330500948a0fa97",
+      "Back shiny/SUFFERUB.png": "ae7102ca758da9e3a2e7abd79d54371b2c492da41f293bd85c1472287552ec34",
+      "Icons/SUFFERUB.png": "f7690b807031f0b61304c297f229c6bbdb9ecec9188965c5e43ee718427bfd1b",
+      "Icons shiny/SUFFERUB.png": "b4f403e73c06ac13efc2f0b0745393418d94380ff729520d384d26559ba00b77"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 13
+  },
+  "TEKTALON": {
+    "source": "TEKTALON",
+    "files": {
+      "Front/TEKTALON.png": "6bf9889fc127a4e16776413492864dccf396115d6d3bed51be57e396a91dc626",
+      "Front shiny/TEKTALON.png": "dd87d07fec3e7c7fbaf46f03e2229240ac1cf54caa472c83f97e292136ce8618",
+      "Back/TEKTALON.png": "c6d38f59a5a52655a0a4898151386373f9adf0dfb6505703fffc35506902ba80",
+      "Back shiny/TEKTALON.png": "3bf48dd40d9d31f4a15d0a17213f4e4ad9ad708526e7272bedca26b65505f0e2",
+      "Icons/TEKTALON.png": "150865e893373dc37046bfcf78a38399c7eaa716742a62928c7feab15d3a213a",
+      "Icons shiny/TEKTALON.png": "454b985211fd86046dcc2dc9e6221641e89ef8c1543e68e3e21d51913564c6cd"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 4,
+    "palette_pairs": 23
+  },
+  "TEKTALON_1": {
+    "source": "TEKTALON_1",
+    "files": {
+      "Front/TEKTALON_1.png": "968efe753ff3f80a6a3afb5e7ce4af1631dcc0ad7939b0e02061846b761b4022",
+      "Front shiny/TEKTALON_1.png": "7b6ac97655df27f5016c823fa11ecd0d37112a2212cceb00bbd5de6232db7c1a",
+      "Back/TEKTALON_1.png": "37f1ca5e9781d84d650c06f336c1437cea309f0cd4644586638ed2cbd89b3b9d",
+      "Back shiny/TEKTALON_1.png": "7c1b1116cb947662cb487bf458e76f3c6bad587aed98898dd20e9d5228a0abe8",
+      "Icons/TEKTALON_1.png": "a3994506efe694c2698b3a9bbb632330289d9dd3d3fa29c8e3cbc6e278e28a36",
+      "Icons shiny/TEKTALON_1.png": "42f38e624583604a74975fcccd4abfe3d897562fd08d7ff3a3ab812b9b901d7d"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 24
+  },
+  "TIMPOT": {
+    "source": "TIMPOT",
+    "files": {
+      "Front/TIMPOT.png": "14a31626c3976afadf0267e1e8a0f91c8e43987f0f9d126220d098a5f4677a48",
+      "Front shiny/TIMPOT.png": "043090279992f32baf5da3c4ee1c36080aaab07f3c7b8646440ee8230090481f",
+      "Back/TIMPOT.png": "2e0fa7a2759ae293bacb392d9575f1edf8ff64176c0147a1e7d632c7c162e023",
+      "Back shiny/TIMPOT.png": "054a321508c496962ddcbc48bf3aeaa5333e852bdb7b312ef99a604176edfd3f",
+      "Icons/TIMPOT.png": "a83e43721086ddaed45958b9c408565599a0a30f4d07b6356abecfa6fd0404eb",
+      "Icons shiny/TIMPOT.png": "225c3d81e10bae39509fabd89891733d6e22b6fa7f80007db5e6b9910a9574c5"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 2,
+    "palette_pairs": 12
+  },
+  "TRAUMATISSE": {
+    "source": "TRAUMATISSE",
+    "files": {
+      "Front/TRAUMATISSE.png": "a6ec582224787c91b8449bb2491b04954e90ce07d9f2ac8bbf38d133aa44b7b1",
+      "Front shiny/TRAUMATISSE.png": "f7392075ea7d77159f392479caad7ce8e3edc2562f9b4cdebe980976ff1a3967",
+      "Back/TRAUMATISSE.png": "535bf4443febf23fde67c494d5410fda0499510ec2084e32929c1a6bd2e23371",
+      "Back shiny/TRAUMATISSE.png": "87a25025a50cf7b5d5a956d01d7bf9bc22593dab1eccf6edbd30edaf5101e00c",
+      "Icons/TRAUMATISSE.png": "c8e96470ce3b8577526f4c932f481e0f7644d606537bca2b2789e9eb30aca7d6",
+      "Icons shiny/TRAUMATISSE.png": "6927aba05726ad62d318b970c3c2e62e948d7dc8063abfbeecf418b7812f6d61"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 14
+  },
+  "TROUTLE": {
+    "source": "TROUTLE",
+    "files": {
+      "Front/TROUTLE.png": "2c250ffaf5004dd983dfaabef5969546332233c3f989831c90e604803d7f4ea5",
+      "Front shiny/TROUTLE.png": "48f96193a1dee7ec3ae554ff826f02d97b2d8e913ad6fd63e8a5b231feee2ed4",
+      "Back/TROUTLE.png": "65f463b9c6c41747a2934cff6dea4f418b660a549b51921e3783d29247c4f167",
+      "Back shiny/TROUTLE.png": "7207396d6936477ce2c69cd54a2d825ec04e9d59e30cd5531e842219c4529292",
+      "Icons/TROUTLE.png": "ca5f7dafad60707458dcf1af5a958d9c6088c082cbe14c8217af21c3ddbd4b04",
+      "Icons shiny/TROUTLE.png": "a658f268454c8b9ec847843b45e4d14acab48506ff923a6b55a33a46c672c0d4"
+    },
+    "gender_art": false,
+    "native_size": 64,
+    "icon_palette": 0,
+    "palette_pairs": 12
+  },
+  "TRUNKORN": {
+    "source": "TRUNKORN",
+    "files": {
+      "Front/TRUNKORN.png": "a5f7fab39d416b301a436861cec84ac3656614583b62caf1738c2908694e6ae4",
+      "Front shiny/TRUNKORN.png": "0428071093e5cc80c4b2ee158245bb59c2a5f6f5af1f2c09ca7b01ef6c7d6d42",
+      "Back/TRUNKORN.png": "77b941a637212add75480135546350c0d87f6ae844805f2c1311a80a658224c4",
+      "Back shiny/TRUNKORN.png": "658a215275a72ba2d739481c60a00a91f7ddb42d919e1a90c435c36e45655371",
+      "Icons/TRUNKORN.png": "01ee61306823bf98174dccb4449275d2312353504fcb55ccade06d94422faeb1",
+      "Icons shiny/TRUNKORN.png": "fab7325b680e03fbe0564706c054ae155da5d290fe348148c8bea6b83a355654"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 28
+  },
+  "WROOMTOISE": {
+    "source": "WROOMTOISE",
+    "files": {
+      "Front/WROOMTOISE.png": "40dbf6c2087e092bc9019cf25fda8d4a887d65aaae09feed338a0db3a2f39bd2",
+      "Front shiny/WROOMTOISE.png": "638d2e82f75a1f9f570f764e588ffad4c9e74968ee5364fcb3817c437e4401a9",
+      "Back/WROOMTOISE.png": "9574233a698d7e003f9d5f1fc6c90eb56ca7f01cbbc014481a3902f1bddca749",
+      "Back shiny/WROOMTOISE.png": "0f6a414b078fd2c1e38ad243a8d1fccbc98644a79cd8c5d9a87da357c7ca8a24",
+      "Icons/WROOMTOISE.png": "a962ad07b906f955829700a8f87cf12da653a1c9d73b4e00b386bc013ca216f2",
+      "Icons shiny/WROOMTOISE.png": "f57e6451a57591863d74126c3f2ca752708adcd99810794d5fe186a4a6811ebf"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 2,
+    "palette_pairs": 16
+  },
+  "YAMASK_MIKITARI": {
+    "source": "YAMASK_2",
+    "files": {
+      "Front/YAMASK_2.png": "fadd329e7c43daa4c9aae8940c3a8e6acc46e439af47c521327576fa51cd803a",
+      "Front shiny/YAMASK_2.png": "64afb4207ee4d40df8daecc1be4d614fe57f3fc0879ad7aa39dede6b11c802c2",
+      "Back/YAMASK_2.png": "22621f2023cf742b73caf87ce8a9e85bc3949bcbb7beb8524b311c826f600be0",
+      "Back shiny/YAMASK_2.png": "5bd83ed1ac739c2411f91d0cb5890e08f1992b953262b49718ad30da66e400b1",
+      "Icons/YAMASK_2.png": "f105650241c127b2dfe368c48ff2eab3dbecb28f87e163247a9d305e2cfab33b",
+      "Icons shiny/YAMASK_2.png": "0d557e0190e9bf6d80bf76de93ca21a6ca6429355447f04304103bc0d93cfefb"
+    },
+    "gender_art": false,
+    "native_size": 80,
+    "icon_palette": 1,
+    "palette_pairs": 10
+  }
+}

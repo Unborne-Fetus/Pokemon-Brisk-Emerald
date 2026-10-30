@@ -255,6 +255,13 @@ struct NPCFollower
 #include "constants/items.h"
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
+// Freeze the pre-Mikitari DexNav bank so new species cannot move the existing
+// chain, apricorn, or Kanto defeat bytes in older saves.
+#define BRISK_LEGACY_SEARCH_LEVEL_COUNT 1695
+#define BRISK_EXTRA_SEARCH_LEVEL_COUNT 256
+#define BRISK_EXTRA_DEX_BYTES 32
+#define BRISK_SPECIES_EXTENSION_MAGIC 0x4D4B5431 // MKT1
+
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
@@ -267,14 +274,18 @@ struct SaveBlock3
     u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    u8 dexNavSearchLevels[NUM_SPECIES];
+    u8 dexNavSearchLevels[BRISK_LEGACY_SEARCH_LEVEL_COUNT];
 #endif
     u8 dexNavChain;
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif
     u8 kantoTrainerFlags[78] ALIGNED(4); // 624 independent Kanto trainer defeat bits
-}; /* max size 1624 bytes */
+    u32 speciesExtensionMagic;
+    u8 mikitariDexSeen[BRISK_EXTRA_DEX_BYTES];
+    u8 mikitariDexCaught[BRISK_EXTRA_DEX_BYTES];
+    u8 extraDexNavSearchLevels[BRISK_EXTRA_SEARCH_LEVEL_COUNT];
+}; // Must fit the reserved per-slot chunks; enforced in save.c.
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
 

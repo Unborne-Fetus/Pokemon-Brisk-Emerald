@@ -207,6 +207,7 @@ static void ClearSearchParameterBoxText(void);
 #include "data/pokemon/pokedex_orders.h"
 
 STATIC_ASSERT(NATIONAL_DEX_BOARHORN - NATIONAL_DEX_STEAM_SHELL <= 16, SacredDexCapacity);
+STATIC_ASSERT(NATIONAL_DEX_COUNT - NATIONAL_DEX_BOARHORN <= BRISK_EXTRA_DEX_BYTES * 8, MikitariDexCapacity);
 STATIC_ASSERT(NATIONAL_DEX_STEAM_SHELL - NATIONAL_DEX_PECHARUNT <= 28, CustomDexCapacity);
 
 static const struct OamData sOamData_ScrollBar =
@@ -4514,6 +4515,19 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         return 0;
     u8 *seen = gSaveBlock1Ptr->dexSeen;
     u8 *caught = gSaveBlock1Ptr->dexCaught;
+    if (nationalDexNo > NATIONAL_DEX_BOARHORN)
+    {
+        InitBriskSpeciesExtension();
+        u32 number = nationalDexNo - NATIONAL_DEX_BOARHORN - 1;
+        u8 *flags = (caseID == FLAG_GET_CAUGHT || caseID == FLAG_SET_CAUGHT)
+            ? gSaveBlock3Ptr->mikitariDexCaught : gSaveBlock3Ptr->mikitariDexSeen;
+        u32 flag = 1u << (number % 8);
+        if (caseID == FLAG_SET_SEEN || caseID == FLAG_SET_CAUGHT)
+            flags[number / 8] |= flag;
+        else if (caseID == FLAG_GET_SEEN || caseID == FLAG_GET_CAUGHT)
+            return (flags[number / 8] & flag) != 0;
+        return 0;
+    }
     if (nationalDexNo > NATIONAL_DEX_STEAM_SHELL)
     {
         // Separate unused save variables hold these twelve species' bits.

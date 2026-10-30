@@ -2,6 +2,8 @@
 #define GUARD_EVENT_DATA_H
 
 void InitEventData(void);
+void InitBriskSpeciesExtension(void);
+u8 *GetBriskDexNavSearchLevel(enum Species species);
 void ClearTempFieldEventData(void);
 void ClearDailyFlags(void);
 void DisableNationalPokedex(void);

@@ -27,7 +27,7 @@ jobs:
             libpng-dev \
             gcc-arm-none-eabi \
             binutils-arm-none-eabi
-          python3 -m pip install --user pyelftools
+          python3 -m pip install --user pyelftools Pillow
 
       - name: Build Emerald
         run: make -j$(nproc)
@@ -64,6 +64,9 @@ jobs:
 
       - name: Audit emitted Kanto actors, unique dialogue and postgame encounters
         run: python3 tools/brisk/check_kanto_content.py
+
+      - name: Audit Mikitari art coverage, Kanto availability and future slots
+        run: python3 tools/brisk/check_mikitari.py
 
       - name: Verify stale trainer caches cannot ship old parties
         run: python3 tools/brisk/check_trainer_header.py

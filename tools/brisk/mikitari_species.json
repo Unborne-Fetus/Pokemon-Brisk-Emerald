@@ -1,0 +1,3192 @@
+{
+  "credit": "Mikitari",
+  "gameplay_note": "Types, stats, abilities, evolution links and learnsets are authored for Brisk Emerald; the supplied archive contains artwork only.",
+  "species": [
+    {
+      "id": "BASCULIN_MIKITARI",
+      "name": "Basculin",
+      "source": "BASCULIN_2",
+      "types": [
+        "WATER"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "ADAPTABILITY",
+        "ADAPTABILITY",
+        "MOLD_BREAKER"
+      ],
+      "habitat": "river",
+      "role": "fast",
+      "dex": "BASCULIN",
+      "evolutions": [
+        {
+          "target": "BASSTILE",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "BASSTILE",
+      "name": "Basstile",
+      "source": "BASSTILE",
+      "types": [
+        "WATER",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "STRONG_JAW",
+        "STRONG_JAW",
+        "MOLD_BREAKER"
+      ],
+      "habitat": "river",
+      "role": "physical",
+      "dex": "BASSTILE",
+      "evolutions": []
+    },
+    {
+      "id": "BASSTILE_1",
+      "name": "Basstile",
+      "source": "BASSTILE_1",
+      "types": [
+        "WATER",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "STRONG_JAW",
+        "STRONG_JAW",
+        "MOLD_BREAKER"
+      ],
+      "habitat": "river",
+      "role": "physical",
+      "dex": "BASSTILE",
+      "evolutions": []
+    },
+    {
+      "id": "BASSTILE_2",
+      "name": "Basstile",
+      "source": "BASSTILE_2",
+      "types": [
+        "WATER",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "STRONG_JAW",
+        "STRONG_JAW",
+        "MOLD_BREAKER"
+      ],
+      "habitat": "river",
+      "role": "physical",
+      "dex": "BASSTILE",
+      "evolutions": []
+    },
+    {
+      "id": "BEELITANT",
+      "name": "Beelitant",
+      "source": "BEELITANT",
+      "types": [
+        "BUG",
+        "FIGHTING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "IRON_FIST",
+        "IRON_FIST",
+        "DEFIANT"
+      ],
+      "habitat": "forest",
+      "role": "physical",
+      "dex": "BEELITANT",
+      "evolutions": []
+    },
+    {
+      "id": "BUNEARY_MIKITARI",
+      "name": "Buneary",
+      "source": "BUNEARY_1",
+      "types": [
+        "GHOST"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "RUN_AWAY",
+        "RUN_AWAY",
+        "INSOMNIA"
+      ],
+      "habitat": "ghost",
+      "role": "baby",
+      "dex": "BUNEARY",
+      "evolutions": [
+        {
+          "target": "LOPUNNY_MIKITARI",
+          "level": 30
+        }
+      ]
+    },
+    {
+      "id": "CABAT",
+      "name": "Cabat",
+      "source": "CABATmA",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "INNER_FOCUS",
+        "INNER_FOCUS",
+        "INFILTRATOR"
+      ],
+      "habitat": "cave",
+      "role": "baby",
+      "dex": "CABAT",
+      "evolutions": [
+        {
+          "target": "STALAD",
+          "level": 18,
+          "gender": "MALE"
+        },
+        {
+          "target": "STALASS",
+          "level": 18,
+          "gender": "FEMALE"
+        }
+      ],
+      "female_source": "CABATfE"
+    },
+    {
+      "id": "CASTFORM_SAND",
+      "name": "Castform",
+      "source": "CASTFORM_4",
+      "types": [
+        "GROUND"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "SAND_VEIL",
+        "SAND_VEIL",
+        "SAND_RUSH"
+      ],
+      "habitat": "mountain",
+      "role": "special",
+      "dex": "CASTFORM",
+      "evolutions": []
+    },
+    {
+      "id": "CASTFORM_CLOUD",
+      "name": "Castform",
+      "source": "CASTFORM_5",
+      "types": [
+        "FAIRY",
+        "FLYING"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "CLOUD_NINE",
+        "CLOUD_NINE",
+        "COMPETITIVE"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "CASTFORM",
+      "evolutions": []
+    },
+    {
+      "id": "CASTFORM_GALE",
+      "name": "Castform",
+      "source": "CASTFORM_6",
+      "types": [
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "WIND_RIDER",
+        "WIND_RIDER",
+        "CLOUD_NINE"
+      ],
+      "habitat": "mountain",
+      "role": "fast",
+      "dex": "CASTFORM",
+      "evolutions": []
+    },
+    {
+      "id": "CHARGOO",
+      "name": "Chargoo",
+      "source": "CHARGOO",
+      "types": [
+        "ELECTRIC",
+        "DRAGON"
+      ],
+      "stats": [
+        75,
+        65,
+        75,
+        45,
+        90,
+        75
+      ],
+      "abilities": [
+        "STATIC",
+        "STATIC",
+        "SAP_SIPPER"
+      ],
+      "habitat": "electric",
+      "role": "tank",
+      "dex": "CHARGOO",
+      "evolutions": [
+        {
+          "target": "PLASMATINA",
+          "level": 48
+        }
+      ]
+    },
+    {
+      "id": "CHUBBOINK",
+      "name": "Chubboink",
+      "source": "CHUBBOINK",
+      "types": [
+        "NORMAL",
+        "GROUND"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "THICK_FAT",
+        "THICK_FAT",
+        "GLUTTONY"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "CHUBBOINK",
+      "evolutions": [
+        {
+          "target": "MUCHOG",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "COMMANT",
+      "name": "Commant",
+      "source": "COMMANT",
+      "types": [
+        "BUG",
+        "FIGHTING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "SWARM",
+        "SWARM",
+        "DEFIANT"
+      ],
+      "habitat": "forest",
+      "role": "physical",
+      "dex": "COMMANT",
+      "evolutions": [
+        {
+          "target": "HOMURANT",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "CONFLEVOUR",
+      "name": "Conflevour",
+      "source": "CONFLEVOUR",
+      "types": [
+        "FIRE",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "BLAZE",
+        "BLAZE",
+        "SHED_SKIN"
+      ],
+      "habitat": "fire",
+      "role": "special",
+      "dex": "CONFLEVOUR",
+      "evolutions": []
+    },
+    {
+      "id": "CONTAMULLET",
+      "name": "Contamullet",
+      "source": "CONTAMULLET",
+      "types": [
+        "WATER",
+        "POISON"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "POISON_POINT",
+        "POISON_POINT",
+        "SWIFT_SWIM"
+      ],
+      "habitat": "river",
+      "role": "fast",
+      "dex": "CONTAMULLET",
+      "evolutions": []
+    },
+    {
+      "id": "CRISHY",
+      "name": "Crishy",
+      "source": "CRISHY",
+      "types": [
+        "BUG"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "SWARM",
+        "SWARM",
+        "COMPOUND_EYES"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "CRISHY",
+      "evolutions": [
+        {
+          "target": "RAKNALEAP",
+          "level": 30
+        }
+      ]
+    },
+    {
+      "id": "CROOBER",
+      "name": "Croober",
+      "source": "CROOBER",
+      "types": [
+        "DARK",
+        "FLYING"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "SUPER_LUCK"
+      ],
+      "habitat": "meadow",
+      "role": "middle",
+      "dex": "CROOBER",
+      "evolutions": [
+        {
+          "target": "RAVENDLER",
+          "level": 36
+        }
+      ],
+      "female_source": "CROOBER_female"
+    },
+    {
+      "id": "CRUNCHILL",
+      "name": "Crunchill",
+      "source": "CRUNCHILL",
+      "types": [
+        "ICE"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "THICK_FAT",
+        "THICK_FAT",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "tank",
+      "dex": "CRUNCHILL",
+      "evolutions": []
+    },
+    {
+      "id": "DAMPYBARA",
+      "name": "Dampybara",
+      "source": "DAMPYBARA",
+      "types": [
+        "WATER"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "WATER_ABSORB",
+        "WATER_ABSORB",
+        "UNAWARE"
+      ],
+      "habitat": "river",
+      "role": "tank",
+      "dex": "DAMPYBARA",
+      "evolutions": []
+    },
+    {
+      "id": "DOPERAMI",
+      "name": "Doperami",
+      "source": "DOPERAMI",
+      "types": [
+        "WATER",
+        "DARK"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "TORRENT",
+        "TORRENT",
+        "DEFIANT"
+      ],
+      "habitat": "coast",
+      "role": "tank",
+      "dex": "DOPERAMI",
+      "evolutions": [],
+      "female_source": "DOPERAMI_female"
+    },
+    {
+      "id": "DOREWEE",
+      "name": "Dorewee",
+      "source": "DOREWEE",
+      "types": [
+        "WATER"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "TORRENT",
+        "TORRENT",
+        "SWIFT_SWIM"
+      ],
+      "habitat": "coast",
+      "role": "baby",
+      "dex": "DOREWEE",
+      "evolutions": [
+        {
+          "target": "FLAMPY",
+          "level": 18
+        }
+      ]
+    },
+    {
+      "id": "DUNTESERT",
+      "name": "Duntesert",
+      "source": "DUNTESERT",
+      "types": [
+        "GROUND"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "SAND_RUSH",
+        "SAND_RUSH",
+        "SAND_FORCE"
+      ],
+      "habitat": "mountain",
+      "role": "physical",
+      "dex": "DUNTESERT",
+      "evolutions": []
+    },
+    {
+      "id": "DUNTESERT_1",
+      "name": "Duntesert",
+      "source": "DUNTESERT_1",
+      "types": [
+        "ICE",
+        "GROUND"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "physical",
+      "dex": "DUNTESERT",
+      "evolutions": []
+    },
+    {
+      "id": "ERUPTILE",
+      "name": "Eruptile",
+      "source": "ERUPTILE",
+      "types": [
+        "FIRE",
+        "ROCK"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "SOLID_ROCK",
+        "SOLID_ROCK",
+        "FLASH_FIRE"
+      ],
+      "habitat": "fire",
+      "role": "tank",
+      "dex": "ERUPTILE",
+      "evolutions": []
+    },
+    {
+      "id": "FALINKS_MIKITARI",
+      "name": "Falinks",
+      "source": "FALINKS_1",
+      "types": [
+        "STEEL",
+        "FIGHTING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "BATTLE_ARMOR",
+        "BATTLE_ARMOR",
+        "DEFIANT"
+      ],
+      "habitat": "mountain",
+      "role": "physical",
+      "dex": "FALINKS",
+      "evolutions": []
+    },
+    {
+      "id": "FLAMBAFEE",
+      "name": "Flambafee",
+      "source": "FLAMBAFEE",
+      "types": [
+        "GRASS",
+        "DRAGON"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "RIPEN"
+      ],
+      "habitat": "meadow",
+      "role": "tank",
+      "dex": "FLAMBAFEE",
+      "evolutions": [],
+      "female_source": "FLAMBAFEE_female"
+    },
+    {
+      "id": "FLAMPY",
+      "name": "Flampy",
+      "source": "FLAMPY",
+      "types": [
+        "WATER"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "TORRENT",
+        "TORRENT",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "coast",
+      "role": "middle",
+      "dex": "FLAMPY",
+      "evolutions": [
+        {
+          "target": "DOPERAMI",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "FLAREPENT",
+      "name": "Flarepent",
+      "source": "FLAREPENT",
+      "types": [
+        "FIRE"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "BLAZE",
+        "BLAZE",
+        "SHED_SKIN"
+      ],
+      "habitat": "fire",
+      "role": "baby",
+      "dex": "FLAREPENT",
+      "evolutions": [
+        {
+          "target": "SEARPENT",
+          "level": 20
+        }
+      ]
+    },
+    {
+      "id": "FLORAMONA",
+      "name": "Floramona",
+      "source": "FLORAMONA",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_1",
+      "name": "Floramona",
+      "source": "FLORAMONA_1",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_2",
+      "name": "Floramona",
+      "source": "FLORAMONA_2",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_3",
+      "name": "Floramona",
+      "source": "FLORAMONA_3",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_4",
+      "name": "Floramona",
+      "source": "FLORAMONA_4",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_5",
+      "name": "Floramona",
+      "source": "FLORAMONA_5",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FLORAMONA_6",
+      "name": "Floramona",
+      "source": "FLORAMONA_6",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "special",
+      "dex": "FLORAMONA",
+      "evolutions": []
+    },
+    {
+      "id": "FURNADON",
+      "name": "Furnadon",
+      "source": "FURNADON",
+      "types": [
+        "FIRE",
+        "STEEL"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "FLASH_FIRE",
+        "FLASH_FIRE",
+        "SHEER_FORCE"
+      ],
+      "habitat": "fire",
+      "role": "tank",
+      "dex": "FURNADON",
+      "evolutions": []
+    },
+    {
+      "id": "FURNADON_1",
+      "name": "Furnadon",
+      "source": "FURNADON_1",
+      "types": [
+        "ICE",
+        "STEEL"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "tank",
+      "dex": "FURNADON",
+      "evolutions": []
+    },
+    {
+      "id": "GASARNET",
+      "name": "Gasarnet",
+      "source": "GASARNET",
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "POISON_POINT",
+        "POISON_POINT",
+        "TINTED_LENS"
+      ],
+      "habitat": "forest",
+      "role": "physical",
+      "dex": "GASARNET",
+      "evolutions": []
+    },
+    {
+      "id": "GEOCKO",
+      "name": "Geocko",
+      "source": "GEOCKO",
+      "types": [
+        "GROUND"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "STURDY",
+        "STURDY",
+        "SAND_FORCE"
+      ],
+      "habitat": "mountain",
+      "role": "baby",
+      "dex": "GEOCKO",
+      "evolutions": [
+        {
+          "target": "GREXCLUB",
+          "level": 20
+        }
+      ]
+    },
+    {
+      "id": "GEOLIDON",
+      "name": "Geolidon",
+      "source": "GEOLIDON",
+      "types": [
+        "GROUND",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "STURDY",
+        "STURDY",
+        "SAND_FORCE"
+      ],
+      "habitat": "mountain",
+      "role": "physical",
+      "dex": "GEOLIDON",
+      "evolutions": []
+    },
+    {
+      "id": "GERMEIT",
+      "name": "Germeit",
+      "source": "GERMEIT",
+      "types": [
+        "DARK",
+        "POISON"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "INTIMIDATE",
+        "INTIMIDATE",
+        "CORROSION"
+      ],
+      "habitat": "ghost",
+      "role": "physical",
+      "dex": "GERMEIT",
+      "evolutions": []
+    },
+    {
+      "id": "GLANCHOG",
+      "name": "Glanchog",
+      "source": "GLANCHOG",
+      "types": [
+        "NORMAL",
+        "FIGHTING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "IRON_FIST",
+        "IRON_FIST",
+        "GUTS"
+      ],
+      "habitat": "meadow",
+      "role": "physical",
+      "dex": "GLANCHOG",
+      "evolutions": []
+    },
+    {
+      "id": "GLOVET",
+      "name": "Glovet",
+      "source": "GLOVET",
+      "types": [
+        "WATER",
+        "FIGHTING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "TORRENT",
+        "TORRENT",
+        "IRON_FIST"
+      ],
+      "habitat": "river",
+      "role": "fast",
+      "dex": "GLOVET",
+      "evolutions": [
+        {
+          "target": "MORTARINE",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "GLYPTOBLOCK",
+      "name": "Glyptoblock",
+      "source": "GLYPTOBLOCK",
+      "types": [
+        "ROCK",
+        "STEEL"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "STURDY",
+        "STURDY",
+        "BATTLE_ARMOR"
+      ],
+      "habitat": "cave",
+      "role": "tank",
+      "dex": "GLYPTOBLOCK",
+      "evolutions": []
+    },
+    {
+      "id": "GLYPTOBLOCK_1",
+      "name": "Glyptoblock",
+      "source": "GLYPTOBLOCK_1",
+      "types": [
+        "ICE",
+        "ROCK"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "tank",
+      "dex": "GLYPTOBLOCK",
+      "evolutions": []
+    },
+    {
+      "id": "GOOBOLT",
+      "name": "Goobolt",
+      "source": "GOOBOLT",
+      "types": [
+        "ELECTRIC"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "STATIC",
+        "STATIC",
+        "VOLT_ABSORB"
+      ],
+      "habitat": "electric",
+      "role": "baby",
+      "dex": "GOOBOLT",
+      "evolutions": [
+        {
+          "target": "CHARGOO",
+          "level": 24
+        }
+      ]
+    },
+    {
+      "id": "GRANEBEE",
+      "name": "Granebee",
+      "source": "GRANEBEE",
+      "types": [
+        "BUG"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "SWARM",
+        "SWARM",
+        "HONEY_GATHER"
+      ],
+      "habitat": "forest",
+      "role": "middle",
+      "dex": "GRANEBEE",
+      "evolutions": [
+        {
+          "target": "BEELITANT",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "GREXCLUB",
+      "name": "Grexclub",
+      "source": "GREXCLUB",
+      "types": [
+        "GROUND"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "STURDY",
+        "STURDY",
+        "SAND_FORCE"
+      ],
+      "habitat": "mountain",
+      "role": "middle",
+      "dex": "GREXCLUB",
+      "evolutions": [
+        {
+          "target": "GEOLIDON",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "HAUNTRAY",
+      "name": "Hauntray",
+      "source": "HAUNTRAY",
+      "types": [
+        "WATER",
+        "GHOST"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "LEVITATE",
+        "LEVITATE",
+        "INFILTRATOR"
+      ],
+      "habitat": "coast",
+      "role": "middle",
+      "dex": "HAUNTRAY",
+      "evolutions": [
+        {
+          "target": "PHANTABYS",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "HOMURANT",
+      "name": "Homurant",
+      "source": "HOMURANT",
+      "types": [
+        "BUG",
+        "FIRE"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "FLAME_BODY",
+        "FLAME_BODY",
+        "SWARM"
+      ],
+      "habitat": "forest",
+      "role": "special",
+      "dex": "HOMURANT",
+      "evolutions": []
+    },
+    {
+      "id": "HOPIDEY",
+      "name": "Hopidey",
+      "source": "HOPIDEY",
+      "types": [
+        "NORMAL"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "RUN_AWAY",
+        "RUN_AWAY",
+        "PICKUP"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "HOPIDEY",
+      "evolutions": [
+        {
+          "target": "GLANCHOG",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "INHALIS",
+      "name": "Inhalis",
+      "source": "INHALIS",
+      "types": [
+        "GHOST"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "INSOMNIA",
+        "INSOMNIA",
+        "INFILTRATOR"
+      ],
+      "habitat": "ghost",
+      "role": "baby",
+      "dex": "INHALIS",
+      "evolutions": [
+        {
+          "target": "PRANKMARE",
+          "level": 22
+        }
+      ]
+    },
+    {
+      "id": "KEERIN",
+      "name": "Keerin",
+      "source": "KEERIN",
+      "types": [
+        "ICE",
+        "FAIRY"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "fast",
+      "dex": "KEERIN",
+      "evolutions": []
+    },
+    {
+      "id": "KOCOMB",
+      "name": "Kocomb",
+      "source": "KOCOMB",
+      "types": [
+        "BUG"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "SHIELD_DUST",
+        "SHIELD_DUST",
+        "HONEY_GATHER"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "KOCOMB",
+      "evolutions": [
+        {
+          "target": "GRANEBEE",
+          "level": 18
+        }
+      ]
+    },
+    {
+      "id": "KOCOMB_1",
+      "name": "Kocomb",
+      "source": "KOCOMB_1",
+      "types": [
+        "BUG"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "SHIELD_DUST",
+        "SHIELD_DUST",
+        "HONEY_GATHER"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "KOCOMB",
+      "evolutions": [
+        {
+          "target": "GRANEBEE",
+          "level": 18
+        }
+      ]
+    },
+    {
+      "id": "LAMBY",
+      "name": "Lamby",
+      "source": "LAMBY",
+      "types": [
+        "NORMAL",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLUFFY",
+        "FLUFFY",
+        "CUTE_CHARM"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "LAMBY",
+      "evolutions": [
+        {
+          "target": "SPHERTLE",
+          "level": 24
+        }
+      ]
+    },
+    {
+      "id": "LEDIASTRA",
+      "name": "Lediastra",
+      "source": "LEDIASTRA",
+      "types": [
+        "BUG",
+        "FIGHTING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "IRON_FIST",
+        "IRON_FIST",
+        "SPEED_BOXER"
+      ],
+      "habitat": "forest",
+      "role": "fast",
+      "dex": "LEDIASTRA",
+      "evolutions": []
+    },
+    {
+      "id": "LILLEO",
+      "name": "Lilleo",
+      "source": "LILLEO",
+      "types": [
+        "DARK"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "INTIMIDATE"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "LILLEO",
+      "evolutions": [
+        {
+          "target": "GERMEIT",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "LOPUNNY_MIKITARI",
+      "name": "Lopunny",
+      "source": "LOPUNNY_1",
+      "types": [
+        "GHOST",
+        "FIGHTING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "SCRAPPY",
+        "SCRAPPY",
+        "INSOMNIA"
+      ],
+      "habitat": "ghost",
+      "role": "fast",
+      "dex": "LOPUNNY",
+      "evolutions": []
+    },
+    {
+      "id": "MANTOON",
+      "name": "Mantoon",
+      "source": "MANTOON",
+      "types": [
+        "WATER",
+        "GHOST"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "LEVITATE",
+        "LEVITATE",
+        "INFILTRATOR"
+      ],
+      "habitat": "coast",
+      "role": "baby",
+      "dex": "MANTOON",
+      "evolutions": [
+        {
+          "target": "HAUNTRAY",
+          "level": 20
+        }
+      ]
+    },
+    {
+      "id": "MORTARINE",
+      "name": "Mortarine",
+      "source": "MORTARINE",
+      "types": [
+        "WATER",
+        "STEEL"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "MEGA_LAUNCHER",
+        "MEGA_LAUNCHER",
+        "IRON_FIST"
+      ],
+      "habitat": "river",
+      "role": "physical",
+      "dex": "MORTARINE",
+      "evolutions": []
+    },
+    {
+      "id": "MOURIN",
+      "name": "Mourin",
+      "source": "MOURIN",
+      "types": [
+        "ICE",
+        "FAIRY"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "middle",
+      "dex": "MOURIN",
+      "evolutions": []
+    },
+    {
+      "id": "MUCHOG",
+      "name": "Muchog",
+      "source": "MUCHOG",
+      "types": [
+        "NORMAL",
+        "GROUND"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "THICK_FAT",
+        "THICK_FAT",
+        "GUTS"
+      ],
+      "habitat": "meadow",
+      "role": "tank",
+      "dex": "MUCHOG",
+      "evolutions": []
+    },
+    {
+      "id": "MUNCHILL",
+      "name": "Munchill",
+      "source": "MUNCHILL",
+      "types": [
+        "ICE"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "THICK_FAT",
+        "THICK_FAT",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "baby",
+      "dex": "MUNCHILL",
+      "evolutions": [
+        {
+          "target": "CRUNCHILL",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "MURASALEM",
+      "name": "Murasalem",
+      "source": "MURASALEM",
+      "types": [
+        "DARK",
+        "PSYCHIC"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "PRANKSTER",
+        "PRANKSTER",
+        "MAGIC_GUARD"
+      ],
+      "habitat": "ghost",
+      "role": "special",
+      "dex": "MURASALEM",
+      "evolutions": []
+    },
+    {
+      "id": "NOCTOWL_MIKITARI",
+      "name": "Noctowl",
+      "source": "NOCTOWL_100",
+      "types": [
+        "PSYCHIC",
+        "FLYING"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "INSOMNIA",
+        "INSOMNIA",
+        "TINTED_LENS"
+      ],
+      "habitat": "ghost",
+      "role": "special",
+      "dex": "NOCTOWL",
+      "evolutions": []
+    },
+    {
+      "id": "OCTOKINEPUS",
+      "name": "Octokinepus",
+      "source": "OCTOKINEPUS",
+      "types": [
+        "WATER",
+        "PSYCHIC"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "SUCTION_CUPS",
+        "SUCTION_CUPS",
+        "TELEPATHY"
+      ],
+      "habitat": "coast",
+      "role": "special",
+      "dex": "OCTOKINEPUS",
+      "evolutions": []
+    },
+    {
+      "id": "OCTOLECT",
+      "name": "Octolect",
+      "source": "OCTOLECT",
+      "types": [
+        "WATER",
+        "PSYCHIC"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "SUCTION_CUPS",
+        "SUCTION_CUPS",
+        "TELEPATHY"
+      ],
+      "habitat": "coast",
+      "role": "baby",
+      "dex": "OCTOLECT",
+      "evolutions": [
+        {
+          "target": "OCTOKINEPUS",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "ORICORIO_NOCTURNE",
+      "name": "Oricorio",
+      "source": "ORICORIO_4",
+      "types": [
+        "DARK",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "DANCER",
+        "DANCER",
+        "DANCER"
+      ],
+      "habitat": "ghost",
+      "role": "fast",
+      "dex": "ORICORIO",
+      "evolutions": []
+    },
+    {
+      "id": "ORICORIO_BALLET",
+      "name": "Oricorio",
+      "source": "ORICORIO_5",
+      "types": [
+        "FAIRY",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "DANCER",
+        "DANCER",
+        "DANCER"
+      ],
+      "habitat": "meadow",
+      "role": "fast",
+      "dex": "ORICORIO",
+      "evolutions": []
+    },
+    {
+      "id": "ORICORIO_MARTIAL",
+      "name": "Oricorio",
+      "source": "ORICORIO_6",
+      "types": [
+        "FIGHTING",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "DANCER",
+        "DANCER",
+        "DANCER"
+      ],
+      "habitat": "mountain",
+      "role": "fast",
+      "dex": "ORICORIO",
+      "evolutions": []
+    },
+    {
+      "id": "ORICORIO_FOLK",
+      "name": "Oricorio",
+      "source": "ORICORIO_7",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "DANCER",
+        "DANCER",
+        "DANCER"
+      ],
+      "habitat": "meadow",
+      "role": "fast",
+      "dex": "ORICORIO",
+      "evolutions": []
+    },
+    {
+      "id": "PACKBATS",
+      "name": "Packbats",
+      "source": "PACKBATS",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "INNER_FOCUS",
+        "INNER_FOCUS",
+        "INFILTRATOR"
+      ],
+      "habitat": "cave",
+      "role": "physical",
+      "dex": "PACKBATS",
+      "evolutions": []
+    },
+    {
+      "id": "PACKBATS_1",
+      "name": "Packbats",
+      "source": "PACKBATS_1",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "INNER_FOCUS",
+        "INNER_FOCUS",
+        "INFILTRATOR"
+      ],
+      "habitat": "cave",
+      "role": "physical",
+      "dex": "PACKBATS",
+      "evolutions": []
+    },
+    {
+      "id": "PECLAY",
+      "name": "Peclay",
+      "source": "PECLAY",
+      "types": [
+        "GRASS",
+        "GROUND"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "middle",
+      "dex": "PECLAY",
+      "evolutions": [
+        {
+          "target": "SNEEPY",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA",
+      "name": "Petalnia",
+      "source": "PETALNIA",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_1",
+      "name": "Petalnia",
+      "source": "PETALNIA_1",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_1",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_2",
+      "name": "Petalnia",
+      "source": "PETALNIA_2",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_2",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_3",
+      "name": "Petalnia",
+      "source": "PETALNIA_3",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_3",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_4",
+      "name": "Petalnia",
+      "source": "PETALNIA_4",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_4",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_5",
+      "name": "Petalnia",
+      "source": "PETALNIA_5",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_5",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETALNIA_6",
+      "name": "Petalnia",
+      "source": "PETALNIA_6",
+      "types": [
+        "GRASS",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "FLOWER_VEIL",
+        "FLOWER_VEIL",
+        "CHLOROPHYLL"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETALNIA",
+      "evolutions": [
+        {
+          "target": "FLORAMONA_6",
+          "level": 34
+        }
+      ]
+    },
+    {
+      "id": "PETIDAW",
+      "name": "Petidaw",
+      "source": "PETIDAW",
+      "types": [
+        "DARK",
+        "FLYING"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "SUPER_LUCK"
+      ],
+      "habitat": "meadow",
+      "role": "baby",
+      "dex": "PETIDAW",
+      "evolutions": [
+        {
+          "target": "CROOBER",
+          "level": 18
+        }
+      ],
+      "female_source": "PETIDAW_female"
+    },
+    {
+      "id": "PHANTABYS",
+      "name": "Phantabys",
+      "source": "PHANTABYS",
+      "types": [
+        "WATER",
+        "GHOST"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "LEVITATE",
+        "LEVITATE",
+        "INFILTRATOR"
+      ],
+      "habitat": "coast",
+      "role": "tank",
+      "dex": "PHANTABYS",
+      "evolutions": []
+    },
+    {
+      "id": "PLASMATINA",
+      "name": "Plasmatina",
+      "source": "PLASMATINA",
+      "types": [
+        "ELECTRIC",
+        "DRAGON"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "STATIC",
+        "STATIC",
+        "SAP_SIPPER"
+      ],
+      "habitat": "electric",
+      "role": "special",
+      "dex": "PLASMATINA",
+      "evolutions": []
+    },
+    {
+      "id": "PLATERIGUS",
+      "name": "Platerigus",
+      "source": "PLATERIGUS",
+      "types": [
+        "GHOST",
+        "STEEL"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "MUMMY",
+        "MUMMY",
+        "WANDERING_SPIRIT"
+      ],
+      "habitat": "ghost",
+      "role": "tank",
+      "dex": "PLATERIGUS",
+      "evolutions": []
+    },
+    {
+      "id": "PORYGONA",
+      "name": "Porygona",
+      "source": "PORYGONA",
+      "types": [
+        "NORMAL",
+        "ELECTRIC"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "DOWNLOAD",
+        "DOWNLOAD",
+        "ANALYTIC"
+      ],
+      "habitat": "electric",
+      "role": "special",
+      "dex": "PORYGONA",
+      "evolutions": []
+    },
+    {
+      "id": "PRANKMARE",
+      "name": "Prankmare",
+      "source": "PRANKMARE",
+      "types": [
+        "GHOST"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "INSOMNIA",
+        "INSOMNIA",
+        "INFILTRATOR"
+      ],
+      "habitat": "ghost",
+      "role": "middle",
+      "dex": "PRANKMARE",
+      "evolutions": [
+        {
+          "target": "MURASALEM",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "RAKNALEAP",
+      "name": "Raknaleap",
+      "source": "RAKNALEAP",
+      "types": [
+        "BUG",
+        "ROCK"
+      ],
+      "stats": [
+        80,
+        110,
+        80,
+        85,
+        60,
+        85
+      ],
+      "abilities": [
+        "BATTLE_ARMOR",
+        "BATTLE_ARMOR",
+        "TECHNICIAN"
+      ],
+      "habitat": "cave",
+      "role": "physical",
+      "dex": "RAKNALEAP",
+      "evolutions": []
+    },
+    {
+      "id": "RAVENDLER",
+      "name": "Ravendler",
+      "source": "RAVENDLER",
+      "types": [
+        "DARK",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "SUPER_LUCK"
+      ],
+      "habitat": "meadow",
+      "role": "fast",
+      "dex": "RAVENDLER",
+      "evolutions": [],
+      "female_source": "RAVENDLER_female"
+    },
+    {
+      "id": "RHINPLINK",
+      "name": "Rhinplink",
+      "source": "RHINPLINK",
+      "types": [
+        "GRASS"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "RHINPLINK",
+      "evolutions": [
+        {
+          "target": "TRUNKORN",
+          "level": 22
+        }
+      ]
+    },
+    {
+      "id": "RHINTAIN",
+      "name": "Rhintain",
+      "source": "RHINTAIN",
+      "types": [
+        "GRASS",
+        "GROUND"
+      ],
+      "stats": [
+        100,
+        90,
+        110,
+        40,
+        75,
+        95
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "tank",
+      "dex": "RHINTAIN",
+      "evolutions": []
+    },
+    {
+      "id": "SEARPENT",
+      "name": "Searpent",
+      "source": "SEARPENT",
+      "types": [
+        "FIRE"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "BLAZE",
+        "BLAZE",
+        "SHED_SKIN"
+      ],
+      "habitat": "fire",
+      "role": "middle",
+      "dex": "SEARPENT",
+      "evolutions": [
+        {
+          "target": "CONFLEVOUR",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "SHAGGOT",
+      "name": "Shaggot",
+      "source": "SHAGGOT",
+      "types": [
+        "BUG"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "SHIELD_DUST",
+        "SHIELD_DUST",
+        "COMPOUND_EYES"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "SHAGGOT",
+      "evolutions": [
+        {
+          "target": "CRISHY",
+          "level": 12
+        }
+      ]
+    },
+    {
+      "id": "SKINDLING",
+      "name": "Skindling",
+      "source": "SKINDLING",
+      "types": [
+        "FIRE"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "BLAZE",
+        "BLAZE",
+        "FLASH_FIRE"
+      ],
+      "habitat": "fire",
+      "role": "baby",
+      "dex": "SKINDLING",
+      "evolutions": [
+        {
+          "target": "SKINGNITE",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "SKINGNITE",
+      "name": "Skingnite",
+      "source": "SKINGNITE",
+      "types": [
+        "FIRE",
+        "DARK"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "BLAZE",
+        "BLAZE",
+        "FLASH_FIRE"
+      ],
+      "habitat": "fire",
+      "role": "fast",
+      "dex": "SKINGNITE",
+      "evolutions": []
+    },
+    {
+      "id": "SLIDUNE",
+      "name": "Slidune",
+      "source": "SLIDUNE",
+      "types": [
+        "GROUND",
+        "DRAGON"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "SAND_VEIL",
+        "SAND_VEIL",
+        "SAND_RUSH"
+      ],
+      "habitat": "mountain",
+      "role": "fast",
+      "dex": "SLIDUNE",
+      "evolutions": []
+    },
+    {
+      "id": "SLIDUNE_1",
+      "name": "Slidune",
+      "source": "SLIDUNE_1",
+      "types": [
+        "ICE",
+        "DRAGON"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "SNOW_CLOAK",
+        "SNOW_CLOAK",
+        "SLUSH_RUSH"
+      ],
+      "habitat": "ice",
+      "role": "fast",
+      "dex": "SLIDUNE",
+      "evolutions": []
+    },
+    {
+      "id": "SNEEPY",
+      "name": "Sneepy",
+      "source": "SNEEPY",
+      "types": [
+        "GRASS"
+      ],
+      "stats": [
+        85,
+        95,
+        80,
+        80,
+        70,
+        90
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "middle",
+      "dex": "SNEEPY",
+      "evolutions": []
+    },
+    {
+      "id": "SPHERTLE",
+      "name": "Sphertle",
+      "source": "SPHERTLE",
+      "types": [
+        "NORMAL",
+        "FAIRY"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "FLUFFY",
+        "FLUFFY",
+        "CUTE_CHARM"
+      ],
+      "habitat": "meadow",
+      "role": "middle",
+      "dex": "SPHERTLE",
+      "evolutions": [
+        {
+          "target": "KEERIN",
+          "level": 40
+        }
+      ]
+    },
+    {
+      "id": "SPRITZEE_MIKITARI",
+      "name": "Spritzee",
+      "source": "SPRITZEE_1",
+      "types": [
+        "DARK",
+        "FAIRY"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "AROMA_VEIL",
+        "AROMA_VEIL",
+        "PRANKSTER"
+      ],
+      "habitat": "ghost",
+      "role": "baby",
+      "dex": "SPRITZEE",
+      "evolutions": [
+        {
+          "target": "TRAUMATISSE",
+          "level": 32
+        }
+      ]
+    },
+    {
+      "id": "SPROUTSY",
+      "name": "Sproutsy",
+      "source": "SPROUTSY",
+      "types": [
+        "GRASS"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "baby",
+      "dex": "SPROUTSY",
+      "evolutions": [
+        {
+          "target": "PECLAY",
+          "level": 20
+        }
+      ]
+    },
+    {
+      "id": "STALAD",
+      "name": "Stalad",
+      "source": "STALAD",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "INNER_FOCUS",
+        "INNER_FOCUS",
+        "INFILTRATOR"
+      ],
+      "habitat": "cave",
+      "role": "middle",
+      "dex": "STALAD",
+      "evolutions": [
+        {
+          "target": "PACKBATS",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "STALASS",
+      "name": "Stalass",
+      "source": "STALASS",
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "INNER_FOCUS",
+        "INNER_FOCUS",
+        "INFILTRATOR"
+      ],
+      "habitat": "cave",
+      "role": "middle",
+      "dex": "STALASS",
+      "evolutions": [
+        {
+          "target": "PACKBATS",
+          "level": 36
+        }
+      ]
+    },
+    {
+      "id": "STORMANTA",
+      "name": "Stormanta",
+      "source": "STORMANTA",
+      "types": [
+        "WATER",
+        "ELECTRIC"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "VOLT_ABSORB",
+        "VOLT_ABSORB",
+        "SWIFT_SWIM"
+      ],
+      "habitat": "coast",
+      "role": "fast",
+      "dex": "STORMANTA",
+      "evolutions": []
+    },
+    {
+      "id": "SUFFERUB",
+      "name": "Sufferub",
+      "source": "SUFFERUB",
+      "types": [
+        "BUG",
+        "GHOST"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "SHED_SKIN",
+        "SHED_SKIN",
+        "INSOMNIA"
+      ],
+      "habitat": "ghost",
+      "role": "middle",
+      "dex": "SUFFERUB",
+      "evolutions": []
+    },
+    {
+      "id": "TEKTALON",
+      "name": "Tektalon",
+      "source": "TEKTALON",
+      "types": [
+        "GROUND",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "SAND_RUSH"
+      ],
+      "habitat": "mountain",
+      "role": "fast",
+      "dex": "TEKTALON",
+      "evolutions": []
+    },
+    {
+      "id": "TEKTALON_1",
+      "name": "Tektalon",
+      "source": "TEKTALON_1",
+      "types": [
+        "GROUND",
+        "FLYING"
+      ],
+      "stats": [
+        70,
+        95,
+        70,
+        115,
+        85,
+        70
+      ],
+      "abilities": [
+        "KEEN_EYE",
+        "KEEN_EYE",
+        "SAND_RUSH"
+      ],
+      "habitat": "mountain",
+      "role": "fast",
+      "dex": "TEKTALON",
+      "evolutions": []
+    },
+    {
+      "id": "TIMPOT",
+      "name": "Timpot",
+      "source": "TIMPOT",
+      "types": [
+        "GHOST",
+        "PSYCHIC"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "LEVITATE",
+        "LEVITATE",
+        "PRANKSTER"
+      ],
+      "habitat": "ghost",
+      "role": "special",
+      "dex": "TIMPOT",
+      "evolutions": []
+    },
+    {
+      "id": "TRAUMATISSE",
+      "name": "Traumatisse",
+      "source": "TRAUMATISSE",
+      "types": [
+        "DARK",
+        "FAIRY"
+      ],
+      "stats": [
+        80,
+        60,
+        75,
+        85,
+        110,
+        90
+      ],
+      "abilities": [
+        "AROMA_VEIL",
+        "AROMA_VEIL",
+        "PRANKSTER"
+      ],
+      "habitat": "ghost",
+      "role": "special",
+      "dex": "TRAUMATISSE",
+      "evolutions": []
+    },
+    {
+      "id": "TROUTLE",
+      "name": "Troutle",
+      "source": "TROUTLE",
+      "types": [
+        "WATER"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "TORRENT",
+        "TORRENT",
+        "IRON_FIST"
+      ],
+      "habitat": "river",
+      "role": "baby",
+      "dex": "TROUTLE",
+      "evolutions": [
+        {
+          "target": "GLOVET",
+          "level": 20
+        }
+      ]
+    },
+    {
+      "id": "TRUNKORN",
+      "name": "Trunkorn",
+      "source": "TRUNKORN",
+      "types": [
+        "GRASS"
+      ],
+      "stats": [
+        65,
+        75,
+        65,
+        65,
+        65,
+        65
+      ],
+      "abilities": [
+        "OVERGROW",
+        "OVERGROW",
+        "SAP_SIPPER"
+      ],
+      "habitat": "forest",
+      "role": "middle",
+      "dex": "TRUNKORN",
+      "evolutions": [
+        {
+          "target": "RHINTAIN",
+          "level": 42
+        }
+      ]
+    },
+    {
+      "id": "WROOMTOISE",
+      "name": "Wroomtoise",
+      "source": "WROOMTOISE",
+      "types": [
+        "WATER",
+        "STEEL"
+      ],
+      "stats": [
+        90,
+        105,
+        115,
+        60,
+        80,
+        80
+      ],
+      "abilities": [
+        "MEGA_LAUNCHER",
+        "MEGA_LAUNCHER",
+        "SHELL_ARMOR"
+      ],
+      "habitat": "coast",
+      "role": "tank",
+      "dex": "WROOMTOISE",
+      "evolutions": []
+    },
+    {
+      "id": "YAMASK_MIKITARI",
+      "name": "Yamask",
+      "source": "YAMASK_2",
+      "types": [
+        "GHOST",
+        "STEEL"
+      ],
+      "stats": [
+        50,
+        55,
+        45,
+        45,
+        45,
+        45
+      ],
+      "abilities": [
+        "MUMMY",
+        "MUMMY",
+        "WANDERING_SPIRIT"
+      ],
+      "habitat": "ghost",
+      "role": "baby",
+      "dex": "YAMASK",
+      "evolutions": [
+        {
+          "target": "PLATERIGUS",
+          "level": 34
+        }
+      ]
+    }
+  ]
+}
