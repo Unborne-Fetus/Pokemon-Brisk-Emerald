@@ -127,34 +127,64 @@ static bool32 UNUSED IsInBstRangeFilterFunc(enum Species species, const struct F
 #if !TESTING
 static u8 GetWonderTradeMinimumLevel(enum Species species)
 {
+    // Walk the chain from the earliest stage to the requested species.
+    // A second level-up evolution requires another level gain, even when
+    // two evolution thresholds are equal.
+    enum Species stages[10];
+    u32 count = 0;
     u8 minimumLevel = 1;
 
-    // Match Brisk Dex: follow the evolution chain and only level-gate
-    // evolutions whose method explicitly requires a level.
-    for (u32 depth = 0; depth < 10; depth++)
+    while (count < ARRAY_COUNT(stages))
     {
         enum Species preEvolution = GetSpeciesPreEvolution(species);
-        const struct Evolution *evolutions;
 
-        if (preEvolution == SPECIES_NONE)
+        if (preEvolution == SPECIES_NONE || preEvolution == species)
             break;
 
-        evolutions = GetSpeciesEvolutions(preEvolution);
-        if (evolutions != NULL)
-        {
-            for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
-            {
-                if (SanitizeSpeciesId(evolutions[i].targetSpecies) != species)
-                    continue;
+        stages[count++] = species;
+        species = preEvolution;
+    }
 
-                if ((evolutions[i].method == EVO_LEVEL || evolutions[i].method == EVO_LEVEL_BATTLE_ONLY)
-                 && evolutions[i].param > minimumLevel)
-                    minimumLevel = min(evolutions[i].param, MAX_LEVEL);
-                break;
+    while (count > 0)
+    {
+        enum Species targetSpecies = stages[--count];
+        const struct Evolution *evolutions = GetSpeciesEvolutions(species);
+        bool32 found = FALSE;
+
+        if (evolutions == NULL)
+            return MAX_LEVEL + 1;
+
+        for (u32 i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+        {
+            if (SanitizeSpeciesId(evolutions[i].targetSpecies) != targetSpecies
+             || evolutions[i].method == EVO_NONE)
+                continue;
+
+            found = TRUE;
+            if (evolutions[i].method == EVO_LEVEL || evolutions[i].method == EVO_LEVEL_BATTLE_ONLY)
+            {
+                minimumLevel = max(minimumLevel + 1, evolutions[i].param);
             }
+            else if (evolutions[i].method == EVO_SPLIT_FROM_EVO)
+            {
+                // Shedinja-like splits happen alongside a real evolution.
+                for (u32 j = 0; evolutions[j].method != EVOLUTIONS_END; j++)
+                {
+                    if (evolutions[j].targetSpecies == evolutions[i].param
+                     && (evolutions[j].method == EVO_LEVEL || evolutions[j].method == EVO_LEVEL_BATTLE_ONLY))
+                    {
+                        minimumLevel = max(minimumLevel + 1, evolutions[j].param);
+                        break;
+                    }
+                }
+            }
+            break;
         }
 
-        species = preEvolution;
+        if (!found || minimumLevel > MAX_LEVEL)
+            return MAX_LEVEL + 1;
+
+        species = targetSpecies;
     }
 
     return minimumLevel;
