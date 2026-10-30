@@ -880,7 +880,12 @@ u8 HandleSavingData(u8 saveType)
     u32 *backupVar = gTrainerHillVBlankCounter;
 
     if (BriskMultiSave_IsActive())
+    {
+        // The legacy special sectors are owned by compact snapshots now.
+        if (saveType == SAVE_HALL_OF_FAME && GetGameStat(GAME_STAT_ENTERED_HOF) < 999)
+            IncrementGameStat(GAME_STAT_ENTERED_HOF);
         return BriskMultiSave_Save();
+    }
 
     gTrainerHillVBlankCounter = NULL;
     UpdateSaveAddresses();
@@ -1109,6 +1114,10 @@ u8 LoadGameSave(u8 saveType)
                 RepairExpandedPokemonStorageMetadata();
         }
         CopyPartyAndObjectsFromSave();
+        // A valid compact Slot 2 intentionally occupies what Emerald used
+        // as Slot 1's rotating fallback, so do not call that corruption.
+        if (status == SAVE_STATUS_ERROR && BriskMultiSave_SlotOccupied(1))
+            status = SAVE_STATUS_OK;
         gSaveFileStatus = status;
         BriskMultiSave_NoticeLegacy(status);
         gGameContinueCallback = NULL;
