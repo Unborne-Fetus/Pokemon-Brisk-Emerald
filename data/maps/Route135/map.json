@@ -46,6 +46,13 @@
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE135_BOSS_RUSH_LOBBY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
@@ -57,6 +64,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route101_EventScript_Arch"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route135_EventScript_BossRushSign"
     }
   ],
   "region": "REGION_HOENN"

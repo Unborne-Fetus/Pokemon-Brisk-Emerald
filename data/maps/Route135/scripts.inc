@@ -16,3 +16,11 @@ Route135_Text_Cheatersden:
 Route135_Text_Archives:
 	.string "Champions Archives!\n"
 	.string "“A place for all...”$"
+
+Route135_EventScript_BossRushSign::
+	msgbox Route135_Text_BossRushSign, MSGBOX_SIGN
+	end
+
+Route135_Text_BossRushSign:
+	.string "SCOTT'S TRAINER SUMMIT\n"
+	.string "BOSS RUSH - All challengers welcome!$"

@@ -1190,7 +1190,9 @@
     "SevenIsland_SevaultCanyon_House_Frlg"
   ],
   "gMapGroup_IndoorRoute135": [
-    "Route135_Archives"
+    "Route135_Archives",
+    "Route135_BossRushLobby",
+    "Route135_BossRushRoom"
   ],
   "gMapGroup_IndoorOrangeCity": [
     "OrangeCity_PokemonCenter_1F",

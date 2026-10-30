@@ -1,4 +1,17 @@
 // multichoice lists
+static const struct MenuAction sMultichoiceList_BriskRushMain[] = {
+    {COMPOUND_STRING("BOSS RUSH")},
+    {COMPOUND_STRING("MODIFIERS")},
+    {COMPOUND_STRING("EXPLAIN")},
+    {gText_Exit},
+};
+static const struct MenuAction sMultichoiceList_BriskRushRules[] = {
+    {COMPOUND_STRING("HEAL BETWEEN")},
+    {COMPOUND_STRING("BATTLE BAG")},
+    {COMPOUND_STRING("DIFFICULTY")},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
     {COMPOUND_STRING("PETALBURG")},
@@ -1294,6 +1307,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_BRISK_BOSS_RUSH_MAIN] = MULTICHOICE(sMultichoiceList_BriskRushMain),
+    [MULTI_BRISK_BOSS_RUSH_RULES] = MULTICHOICE(sMultichoiceList_BriskRushRules),
 };
 
 const u8 *const gStdStrings[] =
