@@ -32,6 +32,13 @@ class StagingTests(unittest.TestCase):
         with self.assertRaisesRegex(SaveValidationError, 'bad stage sector'):
             read_staged_profile(damaged, 0)
 
+    def test_staged_footer_counter_mismatch_rejected(self):
+        staged, _ = stage_in_memory(sample_flash())
+        damaged = bytearray(staged)
+        damaged[4092:4096] = (99).to_bytes(4, 'little')
+        with self.assertRaisesRegex(SaveValidationError, 'staging counters'):
+            read_staged_profile(damaged, 0)
+
     def test_uncompressible_overflow_rejected(self):
         raw = random.Random(789).randbytes(LOGICAL_BYTES)
         with self.assertRaisesRegex(SaveValidationError, 'cannot fit'):
