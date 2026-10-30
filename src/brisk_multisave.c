@@ -380,6 +380,7 @@ u8 BriskMultiSave_LoadCurrent(void)
     if (!ok || outputAt != rawSize)
         return SAVE_STATUS_CORRUPT;
     RestoreSecurePokemon();
+    gSaveCounter = profile->generation;
     return SAVE_STATUS_OK;
 }
 
