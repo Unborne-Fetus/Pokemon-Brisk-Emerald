@@ -9,7 +9,7 @@ import zlib
 from pathlib import Path
 from brisk_multisave_probe import (
     FLASH_BYTES, SECTOR_BYTES, SECTOR_DATA_BYTES, SECTORS_PER_BANK,
-    STAGING_CAPACITY, SaveValidationError, get_logical_state,
+    STAGING_CAPACITY, LOGICAL_BYTES, SaveValidationError, get_logical_state,
     gba_lz77_compress, gba_lz77_decompress, reversible_box_xor,
     read_sector, sector_checksum,
 )
@@ -46,6 +46,8 @@ def unpack_profile(data: bytes) -> tuple[bytes, int]:
         raise SaveValidationError('unknown compact staging version/slot')
     if zlib.crc32(data[:28]) != header_crc:
         raise SaveValidationError('compact header checksum mismatch')
+    if raw_len != LOGICAL_BYTES:
+        raise SaveValidationError('incorrect logical state size')
     if packed_len > STAGING_CAPACITY - HEADER_BYTES or len(data) < HEADER_BYTES + packed_len:
         raise SaveValidationError('compact payload length invalid')
     packed = data[HEADER_BYTES:HEADER_BYTES + packed_len]
@@ -98,13 +100,17 @@ def read_staged_profile(flash: bytes, bank: int) -> bytes:
     if len(flash) < FLASH_BYTES or bank not in (0, 1):
         raise SaveValidationError('bad staged flash or bank')
     payload = bytearray()
+    counters = set()
     for i in range(SECTORS_PER_BANK):
         sector = read_sector(flash, bank * SECTORS_PER_BANK + i)
         if (sector['id'] != 0x200 + i or sector['signature'] != STAGE_MAGIC
                 or sector_checksum(sector['data']) != sector['checksum']):
             raise SaveValidationError(f'bad stage sector {i}')
         payload.extend(sector['data'])
-    restored, _ = unpack_profile(payload)
+        counters.add(sector['counter'])
+    restored, counter = unpack_profile(payload)
+    if counters != {counter}:
+        raise SaveValidationError('mixed or incorrect staging counters')
     return restored
 
 
