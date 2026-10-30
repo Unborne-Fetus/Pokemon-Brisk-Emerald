@@ -25,7 +25,7 @@ def sample_flash(counter0=11, counter1=12):
     flash = bytearray(b'\xff' * probe.FLASH_BYTES)
     pc = bytearray(13 * 3968)
     for i in range(600):
-        pc[1 + 80*i + 19] = 2  # hasSpecies flag; a synthetic fixture, not legal Pokémon data
+        pc[4 + 80*i + 19] = 2  # hasSpecies flag; a synthetic fixture, not legal Pokémon data
     for bank, counter in enumerate((counter0, counter1)):
         for idx in range(14):
             section_id = (idx + 2) % 14  # exercise rotated sector IDs
