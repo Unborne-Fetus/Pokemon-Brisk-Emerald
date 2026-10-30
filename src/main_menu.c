@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_multisave.h"
 #include "trainer_pokemon_sprites.h"
 #include "bg.h"
 #include "constants/rgb.h"
@@ -180,6 +181,8 @@ static u8 sBirchSpeechMainTaskId;
 
 static u32 InitMainMenu(bool8);
 static void Task_MainMenuCheckSaveFile(u8);
+static void Task_DrawBriskSaveSlots(u8);
+static void Task_SelectBriskSaveSlot(u8);
 static void Task_MainMenuCheckBattery(u8);
 static void Task_WaitForSaveFileErrorWindow(u8);
 static void CreateMainMenuErrorWindow(const u8 *);
@@ -263,6 +266,10 @@ static const u8 gText_BatteryRunDry[] = _("The internal battery has run dry.\nTh
 
 static const u8 gText_MainMenuNewGame[] = _("NEW GAME");
 static const u8 gText_MainMenuContinue[] = _("CONTINUE");
+static const u8 sText_Slot1Used[] = _("SLOT 1 - CONTINUE");
+static const u8 sText_Slot1Empty[] = _("SLOT 1 - NEW GAME");
+static const u8 sText_Slot2Used[] = _("SLOT 2 - CONTINUE");
+static const u8 sText_Slot2Empty[] = _("SLOT 2 - NEW GAME");
 static const u8 gText_MainMenuOption[] = _("OPTION");
 static const u8 gText_MainMenuMysteryGift[] = _("MYSTERY GIFT");
 static const u8 gText_MainMenuMysteryGift2[] = _("MYSTERY GIFT");
@@ -628,7 +635,7 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     ShowBg(0);
     HideBg(1);
-    CreateTask(Task_MainMenuCheckSaveFile, 0);
+    CreateTask(Task_DrawBriskSaveSlots, 0);
 
     return 0;
 }
@@ -641,6 +648,66 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 #define tWirelessAdapterConnected data[15]
 
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
+
+// Slot chooser lives in the ROM, before Emerald's Continue/New Game menu.
+static void Task_DrawBriskSaveSlots(u8 taskId)
+{
+    const u8 *first;
+    const u8 *second;
+    s16 *data = gTasks[taskId].data;
+    if (gPaletteFade.active)
+        return;
+
+    first = BriskMultiSave_SlotOccupied(0) ? sText_Slot1Used : sText_Slot1Empty;
+    second = BriskMultiSave_SlotOccupied(1) ? sText_Slot2Used : sText_Slot2Empty;
+
+    SetGpuReg(REG_OFFSET_WIN0H, MENU_WIN_HCOORDS);
+    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG0 | WININ_WIN0_OBJ);
+    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG0);
+    SetGpuReg(REG_OFFSET_BLDY, 7);
+    FillWindowPixelBuffer(2, PIXEL_FILL(0xA));
+    FillWindowPixelBuffer(3, PIXEL_FILL(0xA));
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, first);
+    AddTextPrinterParameterized3(3, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, second);
+    PutWindowTilemap(2);
+    PutWindowTilemap(3);
+    CopyWindowToVram(2, COPYWIN_GFX);
+    CopyWindowToVram(3, COPYWIN_GFX);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[2], MAIN_MENU_BORDER_TILE);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[3], MAIN_MENU_BORDER_TILE);
+    tMenuType = HAS_SAVED_GAME;
+    tCurrItem = 0;
+    tItemCount = 2;
+    HighlightSelectedMainMenuItem(HAS_SAVED_GAME, 0, FALSE);
+    gTasks[taskId].func = Task_SelectBriskSaveSlot;
+}
+
+static void Task_SelectBriskSaveSlot(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
+    {
+        tCurrItem ^= 1;
+        HighlightSelectedMainMenuItem(HAS_SAVED_GAME, tCurrItem, FALSE);
+        PlaySE(SE_SELECT);
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        BriskMultiSave_Select(tCurrItem);
+        ClearStdWindowAndFrame(2, TRUE);
+        ClearStdWindowAndFrame(3, TRUE);
+        gTasks[taskId].func = Task_MainMenuCheckSaveFile;
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        FreeAllWindowBuffers();
+        SetMainCallback2(CB2_InitTitleScreen);
+        DestroyTask(taskId);
+    }
+}
 
 static void Task_MainMenuCheckSaveFile(u8 taskId)
 {
