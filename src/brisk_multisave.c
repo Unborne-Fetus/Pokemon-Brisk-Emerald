@@ -103,41 +103,11 @@ static u8 *RawPointer(u32 position)
     return (u8 *)gSaveBlock3Ptr + position - size;
 }
 
-// Brisk already stores encrypted BoxPokemon secure data. XOR normalization
-// allows repeated species to compress well without changing the on-disk Mon.
-static u8 NormalizedByte(u32 position)
+// Compress the exact on-flash representation of every Pokemon record.
+// Avoid per-byte secure-data transforms: the GBA CPU is too slow for them.
+static u8 RawByte(u32 position)
 {
-    u8 byte = *RawPointer(position);
-    u32 offset = sizeof(*gSaveBlock2Ptr) + sizeof(*gSaveBlock1Ptr);
-    u32 first = offsetof(struct PokemonStorage, boxes);
-    u32 count = TOTAL_BOXES_COUNT * IN_BOX_COUNT;
-    if (position >= offset + first
-     && position < offset + first + count * sizeof(struct BoxPokemon))
-    {
-        u32 boxRelative = position - offset - first;
-        u32 which = boxRelative / sizeof(struct BoxPokemon);
-        u32 within = boxRelative % sizeof(struct BoxPokemon);
-        if (within >= offsetof(struct BoxPokemon, secure))
-        {
-            const struct BoxPokemon *mon = &gPokemonStoragePtr->boxes[which / IN_BOX_COUNT][which % IN_BOX_COUNT];
-            u32 key = mon->personality ^ mon->otId;
-            byte ^= (key >> (8 * ((within - offsetof(struct BoxPokemon, secure)) & 3))) & 0xFF;
-        }
-    }
-    return byte;
-}
-
-static void RestoreSecurePokemon(void)
-{
-    u32 b, m, j;
-    for (b = 0; b < TOTAL_BOXES_COUNT; ++b)
-        for (m = 0; m < IN_BOX_COUNT; ++m)
-        {
-            struct BoxPokemon *mon = &gPokemonStoragePtr->boxes[b][m];
-            u32 key = mon->personality ^ mon->otId;
-            for (j = 0; j < ARRAY_COUNT(mon->secure.raw); ++j)
-                mon->secure.raw[j] ^= key;
-        }
+    return *RawPointer(position);
 }
 
 static u16 BriskChecksum(const u8 *data)
@@ -380,7 +350,6 @@ u8 BriskMultiSave_LoadCurrent(void)
     }
     if (!ok || outputAt != rawSize)
         return SAVE_STATUS_CORRUPT;
-    RestoreSecurePokemon();
     gSaveCounter = profile->generation;
     return SAVE_STATUS_OK;
 }
@@ -413,9 +382,9 @@ static u32 HashAt(u32 at, u32 total)
 {
     if (at + 2 >= total)
         return 0;
-    return ((u32)NormalizedByte(at) * 13
-          + (u32)NormalizedByte(at+1) * 17
-          + (u32)NormalizedByte(at+2) * 31) & (BRISK_HASH_SIZE - 1);
+    return ((u32)RawByte(at) * 13
+          + (u32)RawByte(at+1) * 17
+          + (u32)RawByte(at+2) * 31) & (BRISK_HASH_SIZE - 1);
 }
 
 static void IndexAt(u32 at, u32 total)
@@ -433,7 +402,7 @@ static u8 MatchLength(u32 pos, u32 previous, u32 total)
     u8 length = 0;
     u8 max = min(18, total - pos);
     while (length < max
-     && NormalizedByte(previous + length) == NormalizedByte(pos + length))
+     && RawByte(previous + length) == RawByte(pos + length))
         ++length;
     return length;
 }
@@ -562,7 +531,7 @@ static void Compress(void)
             }
             else
             {
-                group[groupLen++] = NormalizedByte(at);
+                group[groupLen++] = RawByte(at);
                 step = 1;
             }
             for (i = 0; i < step; ++i)
