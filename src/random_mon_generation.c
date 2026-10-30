@@ -132,6 +132,7 @@ static u8 GetWonderTradeMinimumLevel(enum Species species)
     // two evolution thresholds are equal.
     enum Species stages[10];
     u32 count = 0;
+    u32 evolutionStage = 0;
     u8 minimumLevel = 1;
 
     while (count < ARRAY_COUNT(stages))
@@ -161,6 +162,7 @@ static u8 GetWonderTradeMinimumLevel(enum Species species)
                 continue;
 
             found = TRUE;
+            evolutionStage++;
             if (evolutions[i].method == EVO_LEVEL || evolutions[i].method == EVO_LEVEL_BATTLE_ONLY)
             {
                 minimumLevel = max(minimumLevel + 1, evolutions[i].param);
@@ -177,6 +179,13 @@ static u8 GetWonderTradeMinimumLevel(enum Species species)
                         break;
                     }
                 }
+            }
+            else
+            {
+                // An item/trade/special evolution can happen very early in
+                // principle, but Wonder Trade should not distribute its
+                // stronger evolved stages at levels like 8.
+                minimumLevel = max(minimumLevel, evolutionStage == 1 ? 16 : 30);
             }
             break;
         }
