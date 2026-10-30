@@ -7,12 +7,20 @@ from __future__ import annotations
 import struct
 import zlib
 from pathlib import Path
-from brisk_multisave_probe import (
-    FLASH_BYTES, SECTOR_BYTES, SECTOR_DATA_BYTES, SECTORS_PER_BANK,
-    STAGING_CAPACITY, LOGICAL_BYTES, SaveValidationError, get_logical_state,
-    gba_lz77_compress, gba_lz77_decompress, reversible_box_xor,
-    read_sector, sector_checksum,
-)
+try:
+    from .brisk_multisave_probe import (
+        FLASH_BYTES, SECTOR_BYTES, SECTOR_DATA_BYTES, SECTORS_PER_BANK,
+        STAGING_CAPACITY, LOGICAL_BYTES, SaveValidationError, get_logical_state,
+        gba_lz77_compress, gba_lz77_decompress, reversible_box_xor,
+        read_sector, sector_checksum,
+    )
+except ImportError:  # direct CLI execution instead of a module import
+    from brisk_multisave_probe import (
+        FLASH_BYTES, SECTOR_BYTES, SECTOR_DATA_BYTES, SECTORS_PER_BANK,
+        STAGING_CAPACITY, LOGICAL_BYTES, SaveValidationError, get_logical_state,
+        gba_lz77_compress, gba_lz77_decompress, reversible_box_xor,
+        read_sector, sector_checksum,
+    )
 
 STAGE_MAGIC = 0x42525332  # '2SRB' little-endian; deliberately NOT legacy sector signature
 HEADER_MAGIC = b'BR2P'
