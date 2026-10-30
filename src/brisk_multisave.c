@@ -91,7 +91,7 @@ static u8 sChunkCount;
 static u8 sWritingSlot;
 static bool8 sWriting;
 static bool8 sWriteFailed;
-static u8 sCachePhysical = 0xFF;
+static EWRAM_DATA u8 sCachePhysical = 0; // Reinitialized to 0xFF before reads
 
 static u32 RawSize(void)
 {
