@@ -2954,7 +2954,7 @@ static bool32 DoWonderTrade(void)
     // the offered level before the +/- 5 adjustment.
     struct FilterFuncArgs filterArgs = { .arg1 = receivedLevel, .arg2 = offeredSpecies };
     receivedSpecies = GetRandomSpecies(SPECIES_GENERATOR_WONDER_TRADE, &filterArgs);
-    if (receivedSpecies == SPECIES_NONE || receivedSpecies == INVALID_RANDOM_SPECIES)
+    if (receivedSpecies == SPECIES_NONE)
         return FALSE;
 
     receivedShiny = offeredShiny || RandomUniform(RNG_NONE, 0, 511) == 0;
