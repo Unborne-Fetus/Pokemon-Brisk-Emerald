@@ -226,3 +226,7 @@ See [species and role details](docs/sacred_phoenix_fakemon.md).
 ## Mikitari Fakémon Pack
 
 **Mikitari** — Fakémon designs and supplied normal/shiny front sprites, back sprites, icons, alternate forms, and gender variants used throughout Kanto.
+
+## onigin_pixelart Fakémon
+
+**onigin_pixelart** — Original front and back sprite artwork from `onigin_pixelart.png`, used for nine Kanto Fakémon. Names, gameplay, shiny palettes, and reduced icon/follower fallbacks are Brisk adaptations.

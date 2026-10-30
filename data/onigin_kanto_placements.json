@@ -1,0 +1,56 @@
+[
+  {
+    "species": "BUDCHIRP",
+    "map": "MAP_VIRIDIAN_FOREST",
+    "table": "land_mons",
+    "slot": 17
+  },
+  {
+    "species": "VERDWING",
+    "map": "MAP_ROUTE14",
+    "table": "land_mons",
+    "slot": 15
+  },
+  {
+    "species": "ROSPLASH",
+    "map": "MAP_ROUTE6",
+    "table": "water_mons",
+    "slot": 6
+  },
+  {
+    "species": "ROSAFIN",
+    "map": "MAP_ROUTE25",
+    "table": "water_mons",
+    "slot": 7
+  },
+  {
+    "species": "FERRUNT",
+    "map": "MAP_ROCK_TUNNEL_1F",
+    "table": "land_mons",
+    "slot": 18
+  },
+  {
+    "species": "FERRADON",
+    "map": "MAP_ROCK_TUNNEL_B1F",
+    "table": "land_mons",
+    "slot": 18
+  },
+  {
+    "species": "FERRAGON",
+    "map": "MAP_VICTORY_ROAD_2F",
+    "table": "land_mons",
+    "slot": 12
+  },
+  {
+    "species": "JELLUME",
+    "map": "MAP_ROUTE19",
+    "table": "water_mons",
+    "slot": 7
+  },
+  {
+    "species": "VOLTIJELLY",
+    "map": "MAP_ROUTE20",
+    "table": "water_mons",
+    "slot": 6
+  }
+]

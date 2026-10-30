@@ -160,6 +160,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #include "species_info/gen_8_families.h"
     #include "species_info/gen_9_families.h"
     #include "species_info/mikitari.h"
+    #include "species_info/onigin_pixelart.h"
 
     [SPECIES_EGG] =
     {

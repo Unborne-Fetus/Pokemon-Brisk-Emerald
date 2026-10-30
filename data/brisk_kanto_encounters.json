@@ -4,7 +4,8 @@
     "MAP_ROUTE6": {
       "water_mons": {
         "0": "SPECIES_BASCULIN_MIKITARI",
-        "7": "SPECIES_TROUTLE"
+        "7": "SPECIES_TROUTLE",
+        "6": "SPECIES_ROSPLASH"
       }
     },
     "MAP_ROUTE10": {
@@ -40,7 +41,8 @@
       "land_mons": {
         "12": "SPECIES_BEELITANT",
         "19": "SPECIES_KOCOMB",
-        "18": "SPECIES_SHAGGOT"
+        "18": "SPECIES_SHAGGOT",
+        "17": "SPECIES_BUDCHIRP"
       }
     },
     "MAP_ROUTE8": {
@@ -138,13 +140,15 @@
     "MAP_ROUTE19": {
       "water_mons": {
         "0": "SPECIES_DOPERAMI",
-        "1": "SPECIES_PHANTABYS"
+        "1": "SPECIES_PHANTABYS",
+        "7": "SPECIES_JELLUME"
       }
     },
     "MAP_ROUTE20": {
       "water_mons": {
         "7": "SPECIES_DOREWEE",
-        "0": "SPECIES_STORMANTA"
+        "0": "SPECIES_STORMANTA",
+        "6": "SPECIES_VOLTIJELLY"
       }
     },
     "MAP_ROUTE9": {
@@ -207,7 +211,8 @@
         "19": "SPECIES_PETALNIA_5"
       },
       "water_mons": {
-        "0": "SPECIES_GLOVET"
+        "0": "SPECIES_GLOVET",
+        "7": "SPECIES_ROSAFIN"
       }
     },
     "MAP_POKEMON_MANSION_B1F": {
@@ -225,7 +230,8 @@
       "land_mons": {
         "12": "SPECIES_GASARNET",
         "13": "SPECIES_PECLAY",
-        "14": "SPECIES_TRUNKORN"
+        "14": "SPECIES_TRUNKORN",
+        "15": "SPECIES_VERDWING"
       }
     },
     "MAP_ROUTE17": {
@@ -331,12 +337,19 @@
     },
     "MAP_ROCK_TUNNEL_1F": {
       "land_mons": {
-        "12": "SPECIES_RAKNALEAP"
+        "12": "SPECIES_RAKNALEAP",
+        "18": "SPECIES_FERRUNT"
       }
     },
     "MAP_ROCK_TUNNEL_B1F": {
       "land_mons": {
-        "12": "SPECIES_STALAD"
+        "12": "SPECIES_STALAD",
+        "18": "SPECIES_FERRADON"
+      }
+    },
+    "MAP_VICTORY_ROAD_2F": {
+      "land_mons": {
+        "12": "SPECIES_FERRAGON"
       }
     }
   },

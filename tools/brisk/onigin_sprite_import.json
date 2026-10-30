@@ -1,0 +1,149 @@
+{
+  "source_sha256": "1b32e8d33347ac9ad1046caab5a5756427eeac159f33dec305d20510f10cf479",
+  "sprites": {
+    "BUDCHIRP": {
+      "front": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "back": [
+        128,
+        0,
+        192,
+        64
+      ],
+      "palette_pairs": 15,
+      "icon_palette": 1
+    },
+    "VERDWING": {
+      "front": [
+        64,
+        0,
+        128,
+        64
+      ],
+      "back": [
+        192,
+        0,
+        256,
+        64
+      ],
+      "palette_pairs": 14,
+      "icon_palette": 1
+    },
+    "ROSPLASH": {
+      "front": [
+        256,
+        0,
+        320,
+        64
+      ],
+      "back": [
+        384,
+        0,
+        448,
+        64
+      ],
+      "palette_pairs": 12,
+      "icon_palette": 2
+    },
+    "ROSAFIN": {
+      "front": [
+        320,
+        0,
+        384,
+        64
+      ],
+      "back": [
+        448,
+        0,
+        512,
+        64
+      ],
+      "palette_pairs": 11,
+      "icon_palette": 5
+    },
+    "FERRUNT": {
+      "front": [
+        0,
+        64,
+        64,
+        128
+      ],
+      "back": [
+        192,
+        64,
+        256,
+        128
+      ],
+      "palette_pairs": 13,
+      "icon_palette": 2
+    },
+    "FERRADON": {
+      "front": [
+        64,
+        64,
+        128,
+        128
+      ],
+      "back": [
+        256,
+        64,
+        320,
+        128
+      ],
+      "palette_pairs": 14,
+      "icon_palette": 2
+    },
+    "FERRAGON": {
+      "front": [
+        128,
+        64,
+        192,
+        128
+      ],
+      "back": [
+        320,
+        64,
+        384,
+        128
+      ],
+      "palette_pairs": 14,
+      "icon_palette": 3
+    },
+    "JELLUME": {
+      "front": [
+        0,
+        128,
+        64,
+        192
+      ],
+      "back": [
+        128,
+        128,
+        192,
+        192
+      ],
+      "palette_pairs": 10,
+      "icon_palette": 3
+    },
+    "VOLTIJELLY": {
+      "front": [
+        64,
+        128,
+        128,
+        192
+      ],
+      "back": [
+        192,
+        128,
+        256,
+        192
+      ],
+      "palette_pairs": 12,
+      "icon_palette": 3
+    }
+  }
+}

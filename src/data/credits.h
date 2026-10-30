@@ -41,6 +41,7 @@ enum
     PAGE_ARTWORK_2,
     PAGE_ARTWORK_3,
     PAGE_MIKITARI,
+    PAGE_ONIGIN,
     PAGE_COORDINATORS,
     PAGE_ENGLISH_VERSION,
     PAGE_TRANSLATOR,
@@ -64,6 +65,7 @@ enum
 #define ENTRIES_PER_PAGE 5
 
 static const u8 sCreditsText_EmptyString[]                    = _("");
+static const u8 sCreditsText_Onigin[] = _("onigin_pixelart");
 static const u8 sCreditsText_Mikitari[]                       = _("Mikitari");
 static const u8 sCreditsText_MikitariArt[]                    = _("Kanto Fakémon Artwork");
 static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON EMERALD VERSION");
@@ -387,6 +389,8 @@ static const struct CreditsEntry sCreditsEntry_ErikJohnson                      
 static const struct CreditsEntry sCreditsEntry_Mikitari = {11, FALSE, sCreditsText_Mikitari};
 static const struct CreditsEntry sCreditsEntry_MikitariArt = { 0, TRUE, sCreditsText_MikitariArt};
 
+static const struct CreditsEntry sCreditsEntry_Onigin = {8, FALSE, sCreditsText_Onigin};
+
 #define _ &sCreditsEntry_EmptyString
 static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][ENTRIES_PER_PAGE] =
 {
@@ -674,6 +678,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         _,
         &sCreditsEntry_MikitariArt,
         &sCreditsEntry_Mikitari,
+        _,
+        _,
+    },
+    [PAGE_ONIGIN] = {
+        _,
+        &sCreditsEntry_MikitariArt,
+        &sCreditsEntry_Onigin,
         _,
         _,
     },
