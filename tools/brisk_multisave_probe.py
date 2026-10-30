@@ -105,7 +105,7 @@ def get_logical_state(file_bytes: bytes) -> tuple[bytes, dict]:
     sb3 = b''.join(sections[i]['sb3'] for i in range(14))
     result = sb2 + sb1 + pc + sb3
     assert len(result) == LOGICAL_BYTES
-    offset = 1
+    offset = 4  # BoxPokemon starts 4-byte aligned after currentBox
     occupied = sum(bool(pc[offset + i * MON_BYTES + 19] & 2)
                    for i in range(BOX_COUNT * MONS_PER_BOX))
     info = {'active_bank': current['bank'], 'save_counter': current['counter'],
@@ -121,7 +121,7 @@ def reversible_box_xor(state: bytes) -> bytes:
     out = bytearray(state)
     pc_offset = 5 * SECTOR_DATA_BYTES
     for index in range(BOX_COUNT * MONS_PER_BOX):
-        start = pc_offset + 1 + index * MON_BYTES
+        start = pc_offset + 4 + index * MON_BYTES
         personality, ot_id = struct.unpack_from('<II', out, start)
         key = personality ^ ot_id
         for offset in range(32, 80, 4):
