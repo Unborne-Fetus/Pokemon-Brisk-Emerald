@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_boss_rush.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
@@ -130,6 +131,8 @@ u32 GetBriskBattleStyle(u32 preference)
 
 bool32 BriskBattleItemsAllowed(void)
 {
+    if (BriskBossRushIsActive())
+        return BriskBossRushBagAllowed();
     return GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL;
 }
 
