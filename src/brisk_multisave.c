@@ -580,6 +580,78 @@ static bool8 AllocateSectors(u8 count)
     return FALSE;
 }
 
+// Decode the staged compressed data against the LIVE save before committing
+// sector zero. This checks codec correctness AND all flash writes with no
+// change to the running game. Failed validation leaves prior saves intact.
+static u8 ReadStagedByte(u32 *position, bool8 *ok)
+{
+    u32 at = (*position)++;
+    u8 physical;
+    if (at >= sExpectedSize)
+    {
+        *ok = FALSE;
+        return 0;
+    }
+    if (at < BRISK_CHUNK_BYTES)
+        return sFirstChunk[at];
+    physical = sAllocated[at / BRISK_CHUNK_BYTES];
+    if (sCachePhysical != physical)
+        ReadPhysical(physical);
+    return gSaveDataBuffer.data[at % BRISK_CHUNK_BYTES];
+}
+
+static bool8 VerifyStagedProfile(void)
+{
+    u32 input = 0, output = 0, i;
+    u32 rawSize = RawSize();
+    bool8 ok = TRUE;
+    sCachePhysical = 0xFF;
+    if (ReadStagedByte(&input, &ok) != 0x10)
+        return FALSE;
+    {
+        u32 advertised = 0;
+        for (i = 0; i < 3; ++i)
+            advertised |= (u32)ReadStagedByte(&input, &ok) << (8 * i);
+        if (!ok || advertised != rawSize)
+            return FALSE;
+    }
+
+    while (output < rawSize && ok)
+    {
+        u8 flags = ReadStagedByte(&input, &ok);
+        u8 bit;
+        for (bit = 0; bit < 8 && output < rawSize && ok; ++bit)
+        {
+            if (flags & (0x80 >> bit))
+            {
+                u8 hi = ReadStagedByte(&input, &ok);
+                u8 lo = ReadStagedByte(&input, &ok);
+                u32 length = (hi >> 4) + 3;
+                u32 distance = (((u32)hi & 15) << 8 | lo) + 1;
+                if (!ok || distance > output || output + length > rawSize)
+                    return FALSE;
+                while (length--)
+                {
+                    u8 value = sRing[(output - distance) % BRISK_WINDOW];
+                    if (RawByte(output) != value)
+                        return FALSE;
+                    sRing[output % BRISK_WINDOW] = value;
+                    ++output;
+                }
+            }
+            else
+            {
+                u8 value = ReadStagedByte(&input, &ok);
+                if (!ok || RawByte(output) != value)
+                    return FALSE;
+                sRing[output % BRISK_WINDOW] = value;
+                ++output;
+            }
+        }
+    }
+    return ok && output == rawSize;
+}
+
 u8 BriskMultiSave_Save(void)
 {
     u32 savedSize, savedHash;
@@ -617,6 +689,10 @@ u8 BriskMultiSave_Save(void)
         if (!WriteChunk(last, sOutputChunk))
             return SAVE_STATUS_ERROR;
     }
+    // Verify the staged flash image decompresses to every original byte.
+    if (!VerifyStagedProfile())
+        return SAVE_STATUS_ERROR;
+
     // COMMIT: all non-zero chunks are verified. Only now write index zero.
     if (!WriteChunk(0, sFirstChunk))
         return SAVE_STATUS_ERROR;
