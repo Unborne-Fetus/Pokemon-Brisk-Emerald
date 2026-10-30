@@ -62,6 +62,27 @@ support until valid worst-case data is bounded.
 - A straightforward 16+16 split leaves no spare backup bank. It is **not
   power-loss safe** simply because it has checksums.
 
+## Protected legacy-staging simulation
+
+The additional `tools/brisk_multisave_stage.py` prototype builds a 32-byte,
+versioned, checksummed compact profile in memory; writes a test-only profile
+image into the **older** legacy backup bank in a copy of the flash; reads it
+back; and requires a byte-for-byte match. The newest legacy bank, extension
+sectors 28–31, and optional trailing emulator metadata must remain unchanged.
+
+- The 600-Pokémon test save staged in bank 0 and verified at **11,088 bytes**.
+- Staging intentionally uses a **different sector signature** from the legacy
+  format and is **not** readable by the current ROM.
+- The simulator does **not** produce a usable migrated .sav and does not
+  perform any on-device writes. It is a safety test for the future migrator.
+- If the compressed profile is too large, the simulator rejects it before
+  changing even its in-memory flash copy. Missing/corrupt sectors, incorrect
+  headers, inconsistent counters, and CRC mismatches are rejected.
+
+Run `python tools/brisk_multisave_stage.py path/to/pokeemerald.sav`.
+Run `python -m unittest tools/test_brisk_multisave_stage.py` to verify
+staging and fault cases without private fixture data.
+
 ## Work remaining before enabling in-game saves
 
 1. Prove an on-device deterministic compressor/decoder and a lossless
