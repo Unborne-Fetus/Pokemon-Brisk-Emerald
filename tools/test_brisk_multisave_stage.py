@@ -1,10 +1,10 @@
 """Unit tests for in-memory migration staging; no user save is embedded."""
 import unittest
 import random
-from brisk_multisave_stage import (stage_in_memory, read_staged_profile, make_profile,
+from tools.brisk_multisave_stage import (stage_in_memory, read_staged_profile, make_profile,
                                   STAGING_CAPACITY, SaveValidationError)
-from brisk_multisave_probe import get_logical_state, LOGICAL_BYTES
-from test_brisk_multisave_probe import sample_flash
+from tools.brisk_multisave_probe import get_logical_state, LOGICAL_BYTES
+from tools.test_brisk_multisave_probe import sample_flash
 
 
 class StagingTests(unittest.TestCase):
