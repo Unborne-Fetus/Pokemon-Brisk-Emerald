@@ -5,6 +5,7 @@
 // On overflow, returns SAVE_STATUS_ERROR rather than discarding Pokemon.
 #include "global.h"
 #include "agb_flash.h"
+#include "gba/flash_internal.h"
 #include "brisk_multisave.h"
 #include "load_save.h"
 #include "pokemon_storage_system.h"
