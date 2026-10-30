@@ -8,6 +8,7 @@
 #include "gba/flash_internal.h"
 #include "brisk_multisave.h"
 #include "load_save.h"
+#include "malloc.h"
 #include "pokemon_storage_system.h"
 #include "save.h"
 #include "string.h"
@@ -59,11 +60,22 @@ struct BriskProfile
 
 static EWRAM_DATA struct BriskChunkInfo sChunkInfo[BRISK_SECTOR_COUNT] = {0};
 static EWRAM_DATA struct BriskProfile sProfiles[2] = {0};
-static EWRAM_DATA u32 sHashHeads[BRISK_HASH_SIZE] = {0};
-static EWRAM_DATA u32 sHashPrev[BRISK_WINDOW] = {0};
-static EWRAM_DATA u8 sFirstChunk[BRISK_CHUNK_BYTES] = {0};
-static EWRAM_DATA u8 sOutputChunk[BRISK_CHUNK_BYTES] = {0};
+// A 28 KiB compressor workspace must not permanently occupy EWRAM.
+// Boot-time scanning/decompression occurs before InitHeap(), so the small
+// decoder ring remains static; the heavy encoder is allocated only on save.
+struct BriskEncoderWorkspace
+{
+    u32 heads[BRISK_HASH_SIZE];
+    u32 prev[BRISK_WINDOW];
+    u8 firstChunk[BRISK_CHUNK_BYTES];
+    u8 outputChunk[BRISK_CHUNK_BYTES];
+};
+static EWRAM_DATA struct BriskEncoderWorkspace *sWork = NULL;
 static EWRAM_DATA u8 sRing[BRISK_WINDOW] = {0};
+#define sHashHeads (sWork->heads)
+#define sHashPrev (sWork->prev)
+#define sFirstChunk (sWork->firstChunk)
+#define sOutputChunk (sWork->outputChunk)
 static EWRAM_DATA u8 sAllocated[BRISK_MAX_CHUNKS] = {0};
 static EWRAM_DATA u8 sActiveSlot = 0;
 static EWRAM_DATA bool8 sLegacyAvailable = FALSE;
@@ -652,7 +664,7 @@ static bool8 VerifyStagedProfile(void)
     return ok && output == rawSize;
 }
 
-u8 BriskMultiSave_Save(void)
+static u8 SaveCompactInternal(void)
 {
     u32 savedSize, savedHash;
     u8 last;
@@ -703,3 +715,18 @@ u8 BriskMultiSave_Save(void)
     return SAVE_STATUS_OK;
 }
 
+
+u8 BriskMultiSave_Save(void)
+{
+    u8 status;
+    if (gFlashMemoryPresent != TRUE)
+        return SAVE_STATUS_ERROR;
+    // The normal GBA save menu has already initialized gHeap.
+    sWork = Alloc(sizeof(*sWork));
+    if (sWork == NULL)
+        return SAVE_STATUS_ERROR;
+    status = SaveCompactInternal();
+    Free(sWork);
+    sWork = NULL;
+    return status;
+}
