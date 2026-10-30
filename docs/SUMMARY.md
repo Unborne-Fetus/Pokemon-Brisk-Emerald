@@ -188,3 +188,4 @@
     - [Trainer progression](brisk_trainer_progression.md)
     - [Mikitari Fakémon](mikitari_fakemon.md)
     - [Onigin Fakémon](onigin_fakemon.md)
+    - [In-game two-slot save research](brisk/two-slot-save-research.md)
