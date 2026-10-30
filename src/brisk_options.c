@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_options.h"
+#include "brisk_boss_rush.h"
 #include "dynamax_adventure.h"
 #include "event_data.h"
 #include "palette.h"
@@ -73,6 +74,8 @@ bool32 BriskOverworldEncountersEnabled(void)
 
 bool32 BriskBattleBagAllowed(void)
 {
+    if (BriskBossRushIsActive())
+        return BriskBossRushBagAllowed();
     return !IsDynamaxAdventureBattle() && VarGet(VAR_BRISK_BATTLE_BAG_DISABLED) == 0;
 }
 

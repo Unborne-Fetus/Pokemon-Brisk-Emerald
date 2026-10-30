@@ -644,3 +644,13 @@ gSpecials::
         def_special UnlockWallaceOutfit
 
 	def_special RunDynamaxAdventure
+	def_special BriskBossRushInitRules
+	def_special BriskBossRushBufferRules
+	def_special BriskBossRushToggleHeal
+	def_special BriskBossRushToggleBag
+	def_special BriskBossRushCycleDifficulty
+	def_special BriskBossRushPrepare
+	def_special BriskBossRushCheckActive
+	def_special BriskBossRushBufferNext
+	def_special BriskBossRushFight, waitstate=1
+	def_special BriskBossRushEndRound

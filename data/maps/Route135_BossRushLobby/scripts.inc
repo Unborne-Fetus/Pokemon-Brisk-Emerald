@@ -1,0 +1,111 @@
+Route135_BossRushLobby_MapScripts::
+    .byte 0
+
+Route135_BossRushLobby_EventScript_Nurse::
+    setvar VAR_0x800B, 1
+    call Common_EventScript_PkmnCenterNurse
+    waitmessage
+    waitbuttonpress
+    release
+    end
+
+Route135_BossRushLobby_EventScript_PC::
+    lockall
+    msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+    special ShowPokemonStorageSystemPC
+    releaseall
+    end
+
+Route135_BossRushLobby_EventScript_Door::
+    msgbox Route135_BossRushLobby_Text_GuardedDoor, MSGBOX_SIGN
+    end
+
+Route135_BossRushLobby_EventScript_Scott::
+    lock
+    faceplayer
+    special BriskBossRushInitRules
+    msgbox Route135_BossRushLobby_Text_ScottIntro, MSGBOX_DEFAULT
+Route135_BossRushLobby_EventScript_MainMenu::
+    multichoice 0, 0, MULTI_BRISK_BOSS_RUSH_MAIN, FALSE
+    switch VAR_RESULT
+    case 0, Route135_BossRushLobby_EventScript_Start
+    case 1, Route135_BossRushLobby_EventScript_Modifiers
+    case 2, Route135_BossRushLobby_EventScript_Explain
+    release
+    end
+
+Route135_BossRushLobby_EventScript_Explain::
+    msgbox Route135_BossRushLobby_Text_Explain, MSGBOX_DEFAULT
+    goto Route135_BossRushLobby_EventScript_MainMenu
+
+Route135_BossRushLobby_EventScript_Modifiers::
+    special BriskBossRushBufferRules
+    msgbox Route135_BossRushLobby_Text_Rules, MSGBOX_DEFAULT
+    multichoice 0, 0, MULTI_BRISK_BOSS_RUSH_RULES, FALSE
+    switch VAR_RESULT
+    case 0, Route135_BossRushLobby_EventScript_ToggleHeal
+    case 1, Route135_BossRushLobby_EventScript_ToggleBag
+    case 2, Route135_BossRushLobby_EventScript_CycleMode
+    goto Route135_BossRushLobby_EventScript_MainMenu
+
+Route135_BossRushLobby_EventScript_ToggleHeal::
+    special BriskBossRushToggleHeal
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_ToggleBag::
+    special BriskBossRushToggleBag
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_CycleMode::
+    special BriskBossRushCycleDifficulty
+    goto Route135_BossRushLobby_EventScript_Modifiers
+
+Route135_BossRushLobby_EventScript_Start::
+    msgbox Route135_BossRushLobby_Text_Confirm, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, Route135_BossRushLobby_EventScript_MainMenu
+    specialvar VAR_RESULT, BriskBossRushPrepare
+    goto_if_eq VAR_RESULT, 0, Route135_BossRushLobby_EventScript_NoTrainers
+    msgbox Route135_BossRushLobby_Text_Begin, MSGBOX_DEFAULT
+    closemessage
+    warp MAP_ROUTE135_BOSS_RUSH_ROOM, 5, 7
+    waitstate
+    release
+    end
+
+Route135_BossRushLobby_EventScript_NoTrainers::
+    msgbox Route135_BossRushLobby_Text_NoTrainers, MSGBOX_DEFAULT
+    goto Route135_BossRushLobby_EventScript_MainMenu
+
+Route135_BossRushLobby_Text_ScottIntro:
+    .string "SCOTT: Hi, {PLAYER}!\p"
+    .string "I've gathered all the TRAINERS\n"
+    .string "you've beaten in your travels!\p"
+    .string "They want another chance.\n"
+    .string "Welcome to my TRAINER SUMMIT!$"
+
+Route135_BossRushLobby_Text_Explain:
+    .string "Every beaten TRAINER is invited\n"
+    .string "to battle you again!\p"
+    .string "The order is random each time.\n"
+    .string "One loss ends the challenge.\p"
+    .string "No story gifts are repeated.$"
+
+Route135_BossRushLobby_Text_Rules:
+    .string "SCOTT: Set your modifiers!\p"
+    .string "Healing: {STR_VAR_1}\n"
+    .string "Battle Bag: {STR_VAR_2}\n"
+    .string "Difficulty: {STR_VAR_3}$"
+
+Route135_BossRushLobby_Text_Confirm:
+    .string "SCOTT: Battle everyone you've\n"
+    .string "defeated? Ready for the rush?$"
+
+Route135_BossRushLobby_Text_Begin:
+    .string "SCOTT: The crowd is waiting!\n"
+    .string "Good luck out there!$"
+
+Route135_BossRushLobby_Text_NoTrainers:
+    .string "SCOTT: No defeated TRAINERS\n"
+    .string "are eligible yet!$"
+
+Route135_BossRushLobby_Text_GuardedDoor:
+    .string "SCOTT'S TRAINER SUMMIT\n"
+    .string "Ask SCOTT before entering.$"
