@@ -14,11 +14,11 @@ Route135_BossRushLobby_EventScript_NurseCancel::
     end
 
 Route135_BossRushLobby_Text_NurseOffer:
-    .string "Welcome to the TRAINER SUMMIT!\\p"
+    .string "Welcome to the TRAINER SUMMIT!\p"
     .string "Shall I restore your POKéMON?$"
 
 Route135_BossRushLobby_Text_NurseHealed:
-    .string "All your POKéMON are ready!\\n"
+    .string "All your POKéMON are ready!\n"
     .string "Good luck in the arena!$"
 
 Route135_BossRushLobby_EventScript_PC::
