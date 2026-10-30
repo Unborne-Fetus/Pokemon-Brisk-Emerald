@@ -445,6 +445,9 @@ void GiveUnborneAshGreninja(void)
 
     // Battle Bond Greninja transforms into Ash-Greninja after a KO.
     CreateRandomMon(&mon, SPECIES_GRENINJA_BATTLE_BOND, level);
+    // Unborne's gift is guaranteed shiny, including its Ash-Greninja form.
+    u8 isShiny = TRUE;
+    SetMonData(&mon, MON_DATA_IS_SHINY, &isShiny);
     HealPokemon(&mon);
     MonRestorePP(&mon);
     gSpecialVar_Result = GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
