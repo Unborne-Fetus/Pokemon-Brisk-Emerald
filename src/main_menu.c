@@ -666,20 +666,20 @@ static void Task_DrawBriskSaveSlots(u8 taskId)
     SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG0 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_EFFECT_DARKEN | BLDCNT_TGT1_BG0);
     SetGpuReg(REG_OFFSET_BLDY, 7);
-    FillWindowPixelBuffer(2, PIXEL_FILL(0xA));
-    FillWindowPixelBuffer(3, PIXEL_FILL(0xA));
-    AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, first);
-    AddTextPrinterParameterized3(3, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, second);
-    PutWindowTilemap(2);
-    PutWindowTilemap(3);
-    CopyWindowToVram(2, COPYWIN_GFX);
-    CopyWindowToVram(3, COPYWIN_GFX);
-    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[2], MAIN_MENU_BORDER_TILE);
-    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[3], MAIN_MENU_BORDER_TILE);
-    tMenuType = HAS_SAVED_GAME;
+    FillWindowPixelBuffer(0, PIXEL_FILL(0xA));
+    FillWindowPixelBuffer(1, PIXEL_FILL(0xA));
+    AddTextPrinterParameterized3(0, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, first);
+    AddTextPrinterParameterized3(1, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, second);
+    PutWindowTilemap(0);
+    PutWindowTilemap(1);
+    CopyWindowToVram(0, COPYWIN_GFX);
+    CopyWindowToVram(1, COPYWIN_GFX);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[0], MAIN_MENU_BORDER_TILE);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[1], MAIN_MENU_BORDER_TILE);
+    tMenuType = HAS_NO_SAVED_GAME;
     tCurrItem = 0;
     tItemCount = 2;
-    HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_SAVED_GAME, 0, FALSE);
+    HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_NO_SAVED_GAME, 0, FALSE);
     gTasks[taskId].func = Task_SelectBriskSaveSlot;
 }
 
@@ -689,15 +689,15 @@ static void Task_SelectBriskSaveSlot(u8 taskId)
     if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
     {
         tCurrItem ^= 1;
-        HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_SAVED_GAME, tCurrItem, FALSE);
+        HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_NO_SAVED_GAME, tCurrItem, FALSE);
         PlaySE(SE_SELECT);
     }
     else if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
         BriskMultiSave_Select(tCurrItem);
-        ClearStdWindowAndFrame(2, TRUE);
-        ClearStdWindowAndFrame(3, TRUE);
+        ClearStdWindowAndFrame(0, TRUE);
+        ClearStdWindowAndFrame(1, TRUE);
         gTasks[taskId].func = Task_MainMenuCheckSaveFile;
     }
     else if (JOY_NEW(B_BUTTON))
