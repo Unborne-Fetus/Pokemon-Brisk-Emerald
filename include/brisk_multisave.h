@@ -6,6 +6,7 @@
 void BriskMultiSave_Scan(void);
 void BriskMultiSave_NoticeLegacy(u8 status);
 bool8 BriskMultiSave_HasCompactCurrent(void);
+u8 BriskMultiSave_CurrentSlot(void);
 bool8 BriskMultiSave_IsActive(void);
 bool8 BriskMultiSave_SlotOccupied(u8 slot);
 bool8 BriskMultiSave_OtherSlotOccupied(void);
