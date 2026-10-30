@@ -28,7 +28,7 @@ UnborneRoom_Text_UnbornePostBattle:
 	.string "These past 3 routes have been\n"
 	.string "Full of my favorite Pokemon.\p"
 	.string "This is my absolute favorite.\n"
-	.string "YOU RECEIVED MEGA SCIZOR\p"
+	.string "YOU RECEIVED BATTLE BOND GRENINJA\p"
 	.string "After leaving this room, walk\n"
 	.string "straight to the east.\p"
 	.string "That's where you can continue your\n"
@@ -48,7 +48,7 @@ UnborneRoom_EventScript_Unborne::
 
 UnborneRoom_EventScript_UnborneDefeated::
 	msgbox UnborneRoom_Text_UnbornePostBattle, MSGBOX_DEFAULT
-	special GiveUnborneScizor
+	special GiveUnborneAshGreninja
 	release
 	end
 
