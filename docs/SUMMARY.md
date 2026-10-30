@@ -186,3 +186,5 @@
     - [Ten signature abilities](brisk_ten_signature_abilities.md)
     - [Trainer mode plans](brisk_trainer_mode_plan.md)
     - [Trainer progression](brisk_trainer_progression.md)
+    - [Mikitari Fakémon](mikitari_fakemon.md)
+    - [Onigin Fakémon](onigin_fakemon.md)
