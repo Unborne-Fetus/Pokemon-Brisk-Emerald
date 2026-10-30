@@ -1,4 +1,5 @@
 #include "global.h"
+#include "brisk_multisave.h"
 #include "dynamax_adventure.h"
 #include "agb_flash.h"
 #include "gba/flash_internal.h"
@@ -878,6 +879,14 @@ u8 HandleSavingData(u8 saveType)
     u8 i;
     u32 *backupVar = gTrainerHillVBlankCounter;
 
+    if (BriskMultiSave_IsActive())
+    {
+        // The legacy special sectors are owned by compact snapshots now.
+        if (saveType == SAVE_HALL_OF_FAME && GetGameStat(GAME_STAT_ENTERED_HOF) < 999)
+            IncrementGameStat(GAME_STAT_ENTERED_HOF);
+        return BriskMultiSave_Save();
+    }
+
     gTrainerHillVBlankCounter = NULL;
     UpdateSaveAddresses();
     switch (saveType)
@@ -944,6 +953,22 @@ u8 TrySavingData(u8 saveType)
         return SAVE_STATUS_ERROR;
     }
 
+    if (BriskMultiSave_IsActive())
+    {
+        if (saveType == SAVE_HALL_OF_FAME && GetGameStat(GAME_STAT_ENTERED_HOF) < 999)
+            IncrementGameStat(GAME_STAT_ENTERED_HOF);
+        gSaveAttemptStatus = BriskMultiSave_Save();
+        if (gSaveAttemptStatus == SAVE_STATUS_OK)
+        {
+            gSaveFileStatus = SAVE_STATUS_OK;
+            return SAVE_STATUS_OK;
+        }
+        // Capacity or verification failure is NOT sector damage: let the
+        // normal in-game Save Error dialog appear without wiping any flash.
+        // Both previously committed profiles remain intact.
+        return SAVE_STATUS_ERROR;
+    }
+
     HandleSavingData(saveType);
     if (!gDamagedSaveSectors)
     {
@@ -960,6 +985,8 @@ u8 TrySavingData(u8 saveType)
 
 bool8 LinkFullSave_Init(void)
 {
+    if (BriskMultiSave_IsActive())
+        return TrySavingData(SAVE_LINK) != SAVE_STATUS_OK;
     if (gFlashMemoryPresent != TRUE)
         return TRUE;
     UpdateSaveAddresses();
@@ -970,6 +997,8 @@ bool8 LinkFullSave_Init(void)
 
 bool8 LinkFullSave_WriteSector(void)
 {
+    if (BriskMultiSave_IsActive())
+        return TRUE;
     u8 status = HandleWriteIncrementalSector(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
@@ -985,6 +1014,8 @@ bool8 LinkFullSave_WriteSector(void)
 
 bool8 LinkFullSave_ReplaceLastSector(void)
 {
+    if (BriskMultiSave_IsActive())
+        return FALSE;
     HandleReplaceSectorAndVerify(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
@@ -993,6 +1024,8 @@ bool8 LinkFullSave_ReplaceLastSector(void)
 
 bool8 LinkFullSave_SetLastSectorSignature(void)
 {
+    if (BriskMultiSave_IsActive())
+        return FALSE;
     CopySectorSignatureByte(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
@@ -1001,6 +1034,8 @@ bool8 LinkFullSave_SetLastSectorSignature(void)
 
 bool8 WriteSaveBlock2(void)
 {
+    if (BriskMultiSave_IsActive())
+        return BriskMultiSave_Save() != SAVE_STATUS_OK;
     if (gFlashMemoryPresent != TRUE)
         return TRUE;
 
@@ -1019,6 +1054,8 @@ bool8 WriteSaveBlock2(void)
 // It returns TRUE when finished.
 bool8 WriteSaveBlock1Sector(void)
 {
+    if (BriskMultiSave_IsActive())
+        return TRUE;
     bool32 finished = FALSE;
     u16 sectorId = ++gIncrementalSectorId; // Because WriteSaveBlock2 will have been called prior, this will be SECTOR_ID_SAVEBLOCK1_START
     if (sectorId <= SECTOR_ID_SAVEBLOCK1_END)
@@ -1053,6 +1090,24 @@ u8 LoadGameSave(u8 saveType)
     }
 
     UpdateSaveAddresses();
+    if (saveType == SAVE_NORMAL)
+    {
+        BriskMultiSave_Scan();
+        if (BriskMultiSave_HasCompactCurrent())
+        {
+            status = BriskMultiSave_LoadCurrent();
+            if (status == SAVE_STATUS_OK)
+                CopyPartyAndObjectsFromSave();
+            gSaveFileStatus = status;
+            gGameContinueCallback = NULL;
+            return status;
+        }
+        if (BriskMultiSave_CurrentSlot() != 0)
+        {
+            gSaveFileStatus = SAVE_STATUS_EMPTY;
+            return SAVE_STATUS_EMPTY;
+        }
+    }
     switch (saveType)
     {
     case SAVE_NORMAL:
@@ -1066,7 +1121,12 @@ u8 LoadGameSave(u8 saveType)
                 RepairExpandedPokemonStorageMetadata();
         }
         CopyPartyAndObjectsFromSave();
+        // A valid compact Slot 2 intentionally occupies what Emerald used
+        // as Slot 1's rotating fallback, so do not call that corruption.
+        if (status == SAVE_STATUS_ERROR && BriskMultiSave_SlotOccupied(1))
+            status = SAVE_STATUS_OK;
         gSaveFileStatus = status;
+        BriskMultiSave_NoticeLegacy(status);
         gGameContinueCallback = NULL;
         break;
     case SAVE_HALL_OF_FAME:
@@ -1088,6 +1148,9 @@ u16 GetSaveBlocksPointersBaseOffset(void)
     if (gFlashMemoryPresent != TRUE)
         return 0;
     UpdateSaveAddresses();
+    BriskMultiSave_Scan();
+    if (BriskMultiSave_HasCompactCurrent())
+        return 0;
     GetSaveValidStatus(gRamSaveSectorLocations);
     slotOffset = NUM_SECTORS_PER_SLOT * (gSaveCounter % NUM_SAVE_SLOTS);
     for (i = 0; i < NUM_SECTORS_PER_SLOT; i++)
@@ -1159,6 +1222,15 @@ u32 TryWriteSpecialSaveSector(u8 sector, u8 *src)
 void Task_LinkFullSave(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+
+    // The old incremental link writer must never write into another profile.
+    if (BriskMultiSave_IsActive() && tState == 0)
+    {
+        TrySavingData(SAVE_NORMAL);
+        gSoftResetDisabled = FALSE;
+        DestroyTask(taskId);
+        return;
+    }
 
     switch (tState)
     {
