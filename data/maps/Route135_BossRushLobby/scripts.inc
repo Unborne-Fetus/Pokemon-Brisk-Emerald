@@ -2,7 +2,7 @@ Route135_BossRushLobby_MapScripts::
     .byte 0
 
 Route135_BossRushLobby_EventScript_Nurse::
-    setvar VAR_0x800B, 1
+    setvar VAR_0x800B, LOCALID_ROUTE135_RUSH_NURSE
     call Common_EventScript_PkmnCenterNurse
     waitmessage
     waitbuttonpress
