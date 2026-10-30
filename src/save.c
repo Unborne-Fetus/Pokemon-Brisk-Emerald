@@ -963,7 +963,9 @@ u8 TrySavingData(u8 saveType)
             gSaveFileStatus = SAVE_STATUS_OK;
             return SAVE_STATUS_OK;
         }
-        DoSaveFailedScreen(saveType);
+        // Capacity or verification failure is NOT sector damage: let the
+        // normal in-game Save Error dialog appear without wiping any flash.
+        // Both previously committed profiles remain intact.
         return SAVE_STATUS_ERROR;
     }
 
