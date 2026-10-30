@@ -2,12 +2,24 @@ Route135_BossRushLobby_MapScripts::
     .byte 0
 
 Route135_BossRushLobby_EventScript_Nurse::
-    setvar VAR_0x800B, LOCALID_ROUTE135_RUSH_NURSE
-    call Common_EventScript_PkmnCenterNurse
-    waitmessage
-    waitbuttonpress
+    lock
+    faceplayer
+    msgbox Route135_BossRushLobby_Text_NurseOffer, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, Route135_BossRushLobby_EventScript_NurseCancel
+    special HealPlayerParty
+    callnative UpdateFollowingPokemon
+    msgbox Route135_BossRushLobby_Text_NurseHealed, MSGBOX_DEFAULT
+Route135_BossRushLobby_EventScript_NurseCancel::
     release
     end
+
+Route135_BossRushLobby_Text_NurseOffer:
+    .string "Welcome to the TRAINER SUMMIT!\\p"
+    .string "Shall I restore your POKéMON?$"
+
+Route135_BossRushLobby_Text_NurseHealed:
+    .string "All your POKéMON are ready!\\n"
+    .string "Good luck in the arena!$"
 
 Route135_BossRushLobby_EventScript_PC::
     lockall
