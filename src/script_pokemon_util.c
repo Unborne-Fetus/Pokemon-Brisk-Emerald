@@ -421,34 +421,30 @@ u32 ScriptGiveStarterMon(const struct PokemonTemplate *monTemplate)
     return GiveMonParameterized(B_SIDE_PLAYER, PARTY_SIZE, &starter, FALSE);
 }
 
-void GiveUnborneScizor(void)
+void GiveUnborneAshGreninja(void)
 {
     const struct Trainer *trainer = GetTrainerStructFromId(TRAINER_UNBORNE);
-    struct TrainerGenerator trainerGen = {0};
     struct Pokemon mon;
-    bool32 found = FALSE;
+    u8 level = 100;
     u32 i;
 
-    MakeTrainerGenerator(&trainerGen, trainer);
-
-    // Generate the party in the same order as the battle so the Scizor uses
-    // the same trainer data and deterministic personality generation.
+    // Preserve the level of Unborne's original Scizor reward.
     for (i = 0; i < trainer->partySize; i++)
     {
-        GenerateMonFromTrainerMon(&mon, &trainer->party[i], &trainerGen);
         if (trainer->party[i].species == SPECIES_SCIZOR)
         {
-            found = TRUE;
+            struct TrainerGenerator trainerGen = {0};
+            u32 j;
+            MakeTrainerGenerator(&trainerGen, trainer);
+            for (j = 0; j <= i; j++)
+                GenerateMonFromTrainerMon(&mon, &trainer->party[j], &trainerGen);
+            level = GetMonData(&mon, MON_DATA_LEVEL);
             break;
         }
     }
 
-    if (!found)
-    {
-        gSpecialVar_Result = MON_CANT_GIVE;
-        return;
-    }
-
+    // Battle Bond Greninja transforms into Ash-Greninja after a KO.
+    CreateRandomMon(&mon, SPECIES_GRENINJA_BATTLE_BOND, level);
     HealPokemon(&mon);
     MonRestorePP(&mon);
     gSpecialVar_Result = GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
