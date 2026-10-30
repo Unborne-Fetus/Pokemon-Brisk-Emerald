@@ -955,9 +955,14 @@ u8 TrySavingData(u8 saveType)
 
     if (BriskMultiSave_IsActive())
     {
+        if (saveType == SAVE_HALL_OF_FAME && GetGameStat(GAME_STAT_ENTERED_HOF) < 999)
+            IncrementGameStat(GAME_STAT_ENTERED_HOF);
         gSaveAttemptStatus = BriskMultiSave_Save();
         if (gSaveAttemptStatus == SAVE_STATUS_OK)
+        {
+            gSaveFileStatus = SAVE_STATUS_OK;
             return SAVE_STATUS_OK;
+        }
         DoSaveFailedScreen(saveType);
         return SAVE_STATUS_ERROR;
     }
