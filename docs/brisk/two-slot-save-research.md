@@ -38,12 +38,13 @@ The private supplied save was analyzed locally and was **not** committed.
 - Bank 0 has all 14 checksum-valid sections, save counter 222.
 - Bank 1 has all 14 checksum-valid sections, save counter 223, and is newer.
 - Sectors 28–31 have the matching extension counter 223 and valid checksums.
-- The 20 boxes each contain 30 occupied records (600/600).
+- The 20 boxes each contain 30 occupied records (600/600). BoxPokemon starts
+  at a 4-byte aligned offset after the one-byte currentBox field.
 - Logical uncompressed state including padded save blocks: **73,048 bytes**.
-- Greedy GBA BIOS-compatible LZ77 output: **11,580 bytes**, or **11,612**
+- Greedy GBA BIOS-compatible LZ77 output: **11,056 bytes**, or **11,088**
   after allowing a proposed 32-byte profile header.
-- The optional reversible secure-box XOR transform was tested but did not
-  improve this particular synthetic/repetitive save.
+- The reversible secure-box XOR transform improved the packed size on
+  this particular synthetic/repetitive save.
 
 This is only one unusually compressible specimen. The unit tests deliberately
 include an incompressible full-sized logical state; it **does not fit** the
