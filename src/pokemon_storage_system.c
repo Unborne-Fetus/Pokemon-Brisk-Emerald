@@ -2933,23 +2933,30 @@ static bool32 DoWonderTrade(void)
     enum Species offeredSpecies = GetBoxMonData(offered, MON_DATA_SPECIES);
     u8 offeredLevel = GetLevelFromBoxMonExp(offered);
     bool32 offeredShiny = GetBoxMonData(offered, MON_DATA_IS_SHINY);
-    struct FilterFuncArgs filterArgs = { .arg1 = offeredLevel, .arg2 = offeredSpecies };
-    enum Species receivedSpecies = GetRandomSpecies(SPECIES_GENERATOR_WONDER_TRADE, &filterArgs);
-    s32 levelOffset;
+    s32 levelOffset = (s32)RandomUniform(RNG_NONE, 0, 10) - 5;
+    s32 rolledLevel = (s32)offeredLevel + levelOffset;
     u8 receivedLevel;
+    enum Species receivedSpecies;
     bool32 receivedShiny;
     struct PokemonTemplate monTemplate = {0};
     static const u8 sWonderTradeOtName[] = _("WONDER");
 
-    if (receivedSpecies == SPECIES_NONE)
+    // Clamp before converting to u8. Otherwise negative rolls wrap around
+    // and can unexpectedly become level 100.
+    if (rolledLevel < 1)
+        receivedLevel = 1;
+    else if (rolledLevel > MAX_LEVEL)
+        receivedLevel = MAX_LEVEL;
+    else
+        receivedLevel = rolledLevel;
+
+    // Check evolution legality at the *actual received level*, not at
+    // the offered level before the +/- 5 adjustment.
+    struct FilterFuncArgs filterArgs = { .arg1 = receivedLevel, .arg2 = offeredSpecies };
+    receivedSpecies = GetRandomSpecies(SPECIES_GENERATOR_WONDER_TRADE, &filterArgs);
+    if (receivedSpecies == SPECIES_NONE || receivedSpecies == INVALID_RANDOM_SPECIES)
         return FALSE;
 
-    levelOffset = (s32)RandomUniform(RNG_NONE, 0, 10) - 5;
-    receivedLevel = (s32)offeredLevel + levelOffset;
-    if (receivedLevel < 1)
-        receivedLevel = 1;
-    else if (receivedLevel > MAX_LEVEL)
-        receivedLevel = MAX_LEVEL;
     receivedShiny = offeredShiny || RandomUniform(RNG_NONE, 0, 511) == 0;
 
     monTemplate.species = receivedSpecies;
