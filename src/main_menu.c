@@ -679,7 +679,7 @@ static void Task_DrawBriskSaveSlots(u8 taskId)
     tMenuType = HAS_SAVED_GAME;
     tCurrItem = 0;
     tItemCount = 2;
-    HighlightSelectedMainMenuItem(HAS_SAVED_GAME, 0, FALSE);
+    HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_SAVED_GAME, 0, FALSE);
     gTasks[taskId].func = Task_SelectBriskSaveSlot;
 }
 
@@ -689,7 +689,7 @@ static void Task_SelectBriskSaveSlot(u8 taskId)
     if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
     {
         tCurrItem ^= 1;
-        HighlightSelectedMainMenuItem(HAS_SAVED_GAME, tCurrItem, FALSE);
+        HighlightSelectedMainMenuItem((enum PartyMenuType)HAS_SAVED_GAME, tCurrItem, FALSE);
         PlaySE(SE_SELECT);
     }
     else if (JOY_NEW(A_BUTTON))
