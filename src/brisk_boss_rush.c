@@ -5,6 +5,7 @@
 #include "data.h"
 #include "event_data.h"
 #include "pokemon.h"
+#include "script_pokemon_util.h"
 #include "random.h"
 #include "string_util.h"
 #include "constants/battle.h"
