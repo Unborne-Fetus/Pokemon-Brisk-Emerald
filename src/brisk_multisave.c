@@ -290,6 +290,11 @@ bool8 BriskMultiSave_HasCompactCurrent(void)
     return sProfiles[sActiveSlot].valid;
 }
 
+u8 BriskMultiSave_CurrentSlot(void)
+{
+    return sActiveSlot;
+}
+
 bool8 BriskMultiSave_IsActive(void)
 {
     return sReady;
