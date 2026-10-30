@@ -61,6 +61,7 @@ static EWRAM_DATA struct BriskProfile sProfiles[2] = {0};
 static EWRAM_DATA u32 sHashHeads[BRISK_HASH_SIZE] = {0};
 static EWRAM_DATA u32 sHashPrev[BRISK_WINDOW] = {0};
 static EWRAM_DATA u8 sFirstChunk[BRISK_CHUNK_BYTES] = {0};
+static EWRAM_DATA u8 sOutputChunk[BRISK_CHUNK_BYTES] = {0};
 static EWRAM_DATA u8 sRing[BRISK_WINDOW] = {0};
 static EWRAM_DATA u8 sAllocated[BRISK_MAX_CHUNKS] = {0};
 static EWRAM_DATA u8 sActiveSlot = 0;
@@ -511,7 +512,6 @@ static void EmitByte(u8 value)
         // The output buffer is the *data* portion of a full sector.
         // A completed sector is written immediately; sector zero waits.
         u32 within = position % BRISK_CHUNK_BYTES;
-        static EWRAM_DATA u8 sOutputChunk[BRISK_CHUNK_BYTES] = {0};
         if (within == 0)
             memset(sOutputChunk, 0, sizeof(sOutputChunk));
         sOutputChunk[within] = value;
@@ -638,12 +638,7 @@ u8 BriskMultiSave_Save(void)
     {
         // EmitByte keeps the incomplete output chunk in the shared scratch.
         // It must be copied out before writing its footer.
-        extern u8 BriskMultiSave_GetPendingOutputByte(u16);
-        u8 scratch[BRISK_CHUNK_BYTES];
-        u32 i;
-        for (i = 0; i < BRISK_CHUNK_BYTES; ++i)
-            scratch[i] = BriskMultiSave_GetPendingOutputByte(i);
-        if (!WriteChunk(last, scratch))
+        if (!WriteChunk(last, sOutputChunk))
             return SAVE_STATUS_ERROR;
     }
     // COMMIT: all non-zero chunks are verified. Only now write index zero.
@@ -656,4 +651,3 @@ u8 BriskMultiSave_Save(void)
     return SAVE_STATUS_OK;
 }
 
-// Shared last-chunk scratch, defined below; compressor writes into this buffer.
