@@ -41,11 +41,20 @@ Route135_BossRushLobby_EventScript_Explain::
 Route135_BossRushLobby_EventScript_Modifiers::
     special BriskBossRushBufferRules
     msgbox Route135_BossRushLobby_Text_Rules, MSGBOX_DEFAULT
+    special BriskBossRushBufferExtras
+    msgbox Route135_BossRushLobby_Text_Extras, MSGBOX_DEFAULT
+    special BriskBossRushBufferBattleRules
+    msgbox Route135_BossRushLobby_Text_BattleRules, MSGBOX_DEFAULT
     multichoice 0, 0, MULTI_BRISK_BOSS_RUSH_RULES, FALSE
     switch VAR_RESULT
     case 0, Route135_BossRushLobby_EventScript_ToggleHeal
     case 1, Route135_BossRushLobby_EventScript_ToggleBag
     case 2, Route135_BossRushLobby_EventScript_CycleMode
+    case 3, Route135_BossRushLobby_EventScript_ToggleStatus
+    case 4, Route135_BossRushLobby_EventScript_TogglePP
+    case 5, Route135_BossRushLobby_EventScript_CycleEnemyLevels
+    case 6, Route135_BossRushLobby_EventScript_ToggleBattleStyle
+    case 7, Route135_BossRushLobby_EventScript_ToggleGimmicks
     goto Route135_BossRushLobby_EventScript_MainMenu
 
 Route135_BossRushLobby_EventScript_ToggleHeal::
@@ -56,6 +65,22 @@ Route135_BossRushLobby_EventScript_ToggleBag::
     goto Route135_BossRushLobby_EventScript_Modifiers
 Route135_BossRushLobby_EventScript_CycleMode::
     special BriskBossRushCycleDifficulty
+    goto Route135_BossRushLobby_EventScript_Modifiers
+
+Route135_BossRushLobby_EventScript_ToggleStatus::
+    special BriskBossRushToggleStatus
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_TogglePP::
+    special BriskBossRushTogglePP
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_CycleEnemyLevels::
+    special BriskBossRushCycleEnemyLevels
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_ToggleBattleStyle::
+    special BriskBossRushToggleBattleStyle
+    goto Route135_BossRushLobby_EventScript_Modifiers
+Route135_BossRushLobby_EventScript_ToggleGimmicks::
+    special BriskBossRushToggleGimmicks
     goto Route135_BossRushLobby_EventScript_Modifiers
 
 Route135_BossRushLobby_EventScript_Start::
@@ -94,6 +119,15 @@ Route135_BossRushLobby_Text_Rules:
     .string "Battle Bag: {STR_VAR_2}\n"
     .string "Difficulty: {STR_VAR_3}$"
 
+Route135_BossRushLobby_Text_Extras:
+    .string "Cure status: {STR_VAR_1}\n"
+    .string "Refill PP: {STR_VAR_2}\n"
+    .string "Enemy levels: {STR_VAR_3}$"
+
+Route135_BossRushLobby_Text_BattleRules:
+    .string "Battle style: {STR_VAR_1}\n"
+    .string "Gimmick recharge: {STR_VAR_2}$"
+
 Route135_BossRushLobby_Text_Confirm:
     .string "SCOTT: Battle everyone you've\n"
     .string "defeated? Ready for the rush?$"
@@ -107,5 +141,5 @@ Route135_BossRushLobby_Text_NoTrainers:
     .string "are eligible yet!$"
 
 Route135_BossRushLobby_Text_GuardedDoor:
-    .string "SCOTT'S TRAINER SUMMIT\n"
-    .string "Ask SCOTT before entering.$"
+    .string "TRAINER SUMMIT - Arena Access\n"
+    .string "Please check in with SCOTT.$"

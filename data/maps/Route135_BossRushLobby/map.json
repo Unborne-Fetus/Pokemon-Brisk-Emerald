@@ -1,8 +1,8 @@
 {
   "id": "MAP_ROUTE135_BOSS_RUSH_LOBBY",
   "name": "Route135_BossRushLobby",
-  "layout": "LAYOUT_POKEMON_CENTER_1F",
-  "music": "MUS_POKE_CENTER",
+  "layout": "LAYOUT_BATTLE_TENT_LOBBY",
+  "music": "MUS_B_TOWER_RS",
   "region_map_section": "MAPSEC_ROUTE_135",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -17,10 +17,10 @@
     {
       "local_id": "LOCALID_ROUTE135_RUSH_NURSE",
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 7,
-      "y": 2,
+      "x": 10,
+      "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -31,7 +31,7 @@
     {
       "local_id": "LOCALID_ROUTE135_RUSH_SCOTT",
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
-      "x": 2,
+      "x": 6,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -46,15 +46,15 @@
   "warp_events": [
     {
       "x": 6,
-      "y": 8,
-      "elevation": 3,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE135",
       "dest_warp_id": "3"
     },
     {
       "x": 7,
-      "y": 8,
-      "elevation": 3,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE135",
       "dest_warp_id": "3"
     }
@@ -63,25 +63,17 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 1,
-      "y": 2,
-      "elevation": 3,
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route135_BossRushLobby_EventScript_PC"
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 2,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route135_BossRushLobby_EventScript_PC"
-    },
-    {
-      "type": "sign",
-      "x": 2,
-      "y": 6,
-      "elevation": 3,
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route135_BossRushLobby_EventScript_Door"
     }
