@@ -13,4 +13,5 @@ u16 BriskBossRushCheckActive(void);
 u16 BriskBossRushBufferNext(void);
 u16 BriskBossRushFight(void);
 u16 BriskBossRushEndRound(void);
+u16 BriskBossRushForfeit(void);
 #endif

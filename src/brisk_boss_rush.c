@@ -169,3 +169,9 @@ u16 BriskBossRushEndRound(void)
         HealPlayerParty();
     return 1;
 }
+
+u16 BriskBossRushForfeit(void)
+{
+    EndChallenge();
+    return TRUE;
+}

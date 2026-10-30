@@ -654,3 +654,4 @@ gSpecials::
 	def_special BriskBossRushBufferNext
 	def_special BriskBossRushFight, waitstate=1
 	def_special BriskBossRushEndRound
+	def_special BriskBossRushForfeit
