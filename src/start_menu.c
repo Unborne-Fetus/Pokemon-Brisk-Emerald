@@ -219,7 +219,7 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
 static const u8 sText_MenuTitle[] = _("TITLE");
-static const u8 sText_ReturnToTitlePrompt[] = _("Return to title screen?\\nUnsaved progress will be lost.");
+static const u8 sText_ReturnToTitlePrompt[] = _("Return to title screen?\nUnsaved progress will be lost.");
 
 static const struct MenuAction sStartMenuItems[] =
 {
