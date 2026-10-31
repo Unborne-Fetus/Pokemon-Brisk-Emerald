@@ -45,6 +45,7 @@
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
+#include "title_screen.h"
 #include "trainer_card.h"
 #include "window.h"
 #include "union_room.h"
@@ -72,6 +73,7 @@ enum
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_RETURN_TITLE,
 };
 
 // Save status
@@ -110,6 +112,10 @@ static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
 static bool8 StartMenuOptionCallback(void);
 static bool8 StartMenuExitCallback(void);
+static bool8 StartMenuReturnToTitleCallback(void);
+static bool8 StartMenuReturnToTitleConfirm(void);
+static bool8 StartMenuReturnToTitleInput(void);
+static bool8 StartMenuReturnToTitleWaitFade(void);
 static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
@@ -212,6 +218,8 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 };
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
+static const u8 sText_MenuTitle[] = _("TITLE");
+static const u8 sText_ReturnToTitlePrompt[] = _("Return to title screen?\nUnsaved progress will be lost.");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -230,6 +238,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
+    [MENU_ACTION_RETURN_TITLE]    = {sText_MenuTitle,   {.u8_void = StartMenuReturnToTitleCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -380,7 +389,8 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    AddStartMenuAction(MENU_ACTION_EXIT);
+    // B/START still close the Start menu; this entry returns to the title.
+    AddStartMenuAction(MENU_ACTION_RETURN_TITLE);
 }
 
 static void BuildDebugStartMenu(void)
@@ -397,6 +407,7 @@ static void BuildDebugStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
+    AddStartMenuAction(MENU_ACTION_RETURN_TITLE);
 }
 
 static void BuildSafariZoneStartMenu(void)
@@ -738,6 +749,7 @@ static bool8 HandleStartMenuInput(void)
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
+            && gMenuCallback != StartMenuReturnToTitleCallback
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
@@ -865,6 +877,59 @@ static bool8 StartMenuOptionCallback(void)
     }
 
     return FALSE;
+}
+
+// Only available from the ordinary overworld Start menu. The current slot
+// is NOT autosaved on return; a confirmation prevents accidental progress loss.
+static bool8 StartMenuReturnToTitleCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+    ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
+    RemoveStartMenuWindow();
+    // Reuse the standard message window but not the saving state machine.
+    ShowSaveMessage(sText_ReturnToTitlePrompt, NULL);
+    gMenuCallback = StartMenuReturnToTitleConfirm;
+    return FALSE;
+}
+
+static bool8 StartMenuReturnToTitleConfirm(void)
+{
+    if (RunTextPrintersAndIsPrinter0Active())
+        return FALSE;
+
+    // No is the default. Pressing B is equivalent to No.
+    DisplayYesNoMenuWithDefault(1);
+    gMenuCallback = StartMenuReturnToTitleInput;
+    return FALSE;
+}
+
+static bool8 StartMenuReturnToTitleInput(void)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0: // Yes: leave the current session; do not modify flash.
+        FadeScreen(FADE_TO_BLACK, MENU_FADE_DELAY);
+        gMenuCallback = StartMenuReturnToTitleWaitFade;
+        break;
+    case MENU_B_PRESSED:
+    case 1: // No: restore the original in-game Start menu.
+        ClearDialogWindowAndFrameToTransparent(0, FALSE);
+        InitStartMenu();
+        gMenuCallback = HandleStartMenuInput;
+        break;
+    }
+    return FALSE;
+}
+
+static bool8 StartMenuReturnToTitleWaitFade(void)
+{
+    if (gPaletteFade.active)
+        return FALSE;
+
+    ClearDialogWindowAndFrameToTransparent(0, FALSE);
+    CleanupOverworldWindowsAndTilemaps();
+    SetMainCallback2(CB2_InitTitleScreen);
+    return TRUE;
 }
 
 static bool8 StartMenuExitCallback(void)
