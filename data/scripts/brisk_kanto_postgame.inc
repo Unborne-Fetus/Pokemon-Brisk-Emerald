@@ -696,11 +696,10 @@ BriskKanto_CeladonCity_Frlg_1::
 	end
 
 BriskKanto_CeladonCity_Frlg_1_Text:
-	.string "A quiet afternoon can be more\n"
-	.string "valuable than a big purchase.\p"
-	.string "I brought extra food today. My\n"
-	.string "Pokemon never forget snack\p"
-	.string "time.$"
+	.string "The old Team Rocket hideout is\n"
+	.string "history now. We've used these\p"
+	.string "ten quiet years to train and\n"
+	.string "build a stronger city.$"
 
 BriskKanto_CeladonCity_Frlg_2::
 	msgbox BriskKanto_CeladonCity_Frlg_2_Text, MSGBOX_NPC
@@ -1831,10 +1830,11 @@ BriskKanto_CeruleanCity_Frlg_1::
 	end
 
 BriskKanto_CeruleanCity_Frlg_1_Text:
-	.string "I follow the river when I need\n"
-	.string "to clear my head. I brought\p"
-	.string "extra food today. My Pokemon\n"
-	.string "never forget snack time.$"
+	.string "Misty says Kanto's wild\n"
+	.string "Pokemon grew strong during ten\p"
+	.string "peaceful years after Team\n"
+	.string "Rocket's collapse. Her team\p"
+	.string "did, too.$"
 
 BriskKanto_CeruleanCity_Frlg_2::
 	msgbox BriskKanto_CeruleanCity_Frlg_2_Text, MSGBOX_NPC
@@ -2027,10 +2027,11 @@ BriskKanto_CeruleanCity_Gym_Frlg_3::
 	end
 
 BriskKanto_CeruleanCity_Gym_Frlg_3_Intro:
-	.string "MISTY: Hoenn's Champion and\n"
-	.string "savior! Your team protected a\p"
-	.string "whole region. Let's see that\n"
-	.string "bond in battle!$"
+	.string "MISTY: Kanto's waters had ten\n"
+	.string "peaceful years to flourish\p"
+	.string "after Rocket's fall. These\n"
+	.string "Pokemon won't go easy on a\p"
+	.string "Champion!$"
 
 BriskKanto_CeruleanCity_Gym_Frlg_3_Defeat:
 	.string "MISTY: I needed a better\n"
@@ -2353,10 +2354,10 @@ BriskKanto_CinnabarIsland_Frlg_2::
 	end
 
 BriskKanto_CinnabarIsland_Frlg_2_Text:
-	.string "Scientists conduct experiments\n"
-	.string "in the burned-out building.\p"
-	.string "You know, the one they call\n"
-	.string "the POKéMON MANSION.$"
+	.string "Our researchers have measured\n"
+	.string "stronger wild Pokemon across\p"
+	.string "Kanto. Ten years of peace made\n"
+	.string "a real difference.$"
 
 BriskKanto_CinnabarIsland_Frlg_3::
 	msgbox BriskKanto_CinnabarIsland_Frlg_3_Text, MSGBOX_NPC
@@ -4701,10 +4702,10 @@ BriskKanto_FuchsiaCity_Frlg_2::
 	end
 
 BriskKanto_FuchsiaCity_Frlg_2_Text:
-	.string "The wildlife here deserves\n"
-	.string "room to roam. I used to rush\p"
-	.string "everywhere. My partner taught\n"
-	.string "me to slow down.$"
+	.string "A decade free from Rocket\n"
+	.string "poachers let Kanto's habitats\p"
+	.string "recover. These wild Pokemon\n"
+	.string "can challenge even veterans.$"
 
 BriskKanto_FuchsiaCity_Frlg_3::
 	msgbox BriskKanto_FuchsiaCity_Frlg_3_Text, MSGBOX_NPC
@@ -5578,11 +5579,10 @@ BriskKanto_LavenderTown_Frlg_3::
 	end
 
 BriskKanto_LavenderTown_Frlg_3_Text:
-	.string "The tower is a place to\n"
-	.string "remember the partners we have\p"
-	.string "lost. I used to rush\n"
-	.string "everywhere. My partner taught\p"
-	.string "me to slow down.$"
+	.string "After Team Rocket dissolved,\n"
+	.string "Pokemon here could finally\p"
+	.string "grow without fear. Strength\n"
+	.string "can come from kindness, too.$"
 
 BriskKanto_LavenderTown_Frlg_Sign_1::
 	msgbox BriskKanto_LavenderTown_Frlg_Sign_1_Text, MSGBOX_SIGN
@@ -7315,10 +7315,10 @@ BriskKanto_PalletTown_Frlg_3::
 	end
 
 BriskKanto_PalletTown_Frlg_3_Text:
-	.string "The sea breeze carries all the\n"
-	.string "way up Route 1. I used to rush\p"
-	.string "everywhere. My partner taught\n"
-	.string "me to slow down.$"
+	.string "Ten years ago, Team Rocket\n"
+	.string "dissolved. Professor Oak says\p"
+	.string "Kanto's Pokemon have had a\n"
+	.string "decade to grow undisturbed.$"
 
 BriskKanto_PalletTown_Frlg_Sign_1::
 	msgbox BriskKanto_PalletTown_Frlg_Sign_1_Text, MSGBOX_SIGN
@@ -7614,12 +7614,11 @@ BriskKanto_PewterCity_Frlg_3::
 	end
 
 BriskKanto_PewterCity_Frlg_3_Text:
-	.string "There aren't many serious\n"
-	.string "POKéMON TRAINERS here. They're\p"
-	.string "all like BUG CATCHERS, you\n"
-	.string "know, just hobbyists. But\p"
-	.string "PEWTER GYM's BROCK isn't like\n"
-	.string "that, not one bit.$"
+	.string "Pewter isn't just for\n"
+	.string "beginners anymore. Ten years\p"
+	.string "after Team Rocket fell, our\n"
+	.string "Trainers have become serious\p"
+	.string "challengers.$"
 
 BriskKanto_PewterCity_Frlg_4::
 	msgbox BriskKanto_PewterCity_Frlg_4_Text, MSGBOX_NPC
@@ -7698,10 +7697,11 @@ BriskKanto_PewterCity_Gym_Frlg_1::
 	end
 
 BriskKanto_PewterCity_Gym_Frlg_1_Intro:
-	.string "BROCK: Hoenn's Champion and\n"
-	.string "savior! Your team protected a\p"
-	.string "whole region. Let's see that\n"
-	.string "bond in battle!$"
+	.string "BROCK: Ten years since Rocket\n"
+	.string "collapsed, Kanto's Pokemon and\p"
+	.string "Trainers have grown stronger.\n"
+	.string "Let's show Hoenn's Champion\p"
+	.string "just how much!$"
 
 BriskKanto_PewterCity_Gym_Frlg_1_Defeat:
 	.string "BROCK: Now I see how you\n"
@@ -8292,10 +8292,11 @@ BriskKanto_PokemonLeague_LancesRoom_Frlg_1::
 	end
 
 BriskKanto_PokemonLeague_LancesRoom_Frlg_1_Intro:
-	.string "LANCE: Hoenn's Champion and\n"
-	.string "savior! Your team protected a\p"
-	.string "whole region. Let's see that\n"
-	.string "bond in battle!$"
+	.string "LANCE: Team Rocket dissolved a\n"
+	.string "decade ago. Kanto used that\p"
+	.string "peace to forge exceptional\n"
+	.string "teams. Show us what Hoenn's\p"
+	.string "savior can do!$"
 
 BriskKanto_PokemonLeague_LancesRoom_Frlg_1_Defeat:
 	.string "LANCE: You made every Pokemon\n"
@@ -11288,11 +11289,10 @@ BriskKanto_Route15_Frlg_11::
 	end
 
 BriskKanto_Route15_Frlg_11_Text:
-	.string "Route 15 has become a training\n"
-	.string "ground for experienced teams.\p"
-	.string "I used to rush everywhere. My\n"
-	.string "partner taught me to slow\p"
-	.string "down.$"
+	.string "Ever since Team Rocket\n"
+	.string "disbanded ten years ago, Route\p"
+	.string "15 has been a training ground\n"
+	.string "for experienced teams.$"
 
 BriskKanto_Route15_Frlg_12::
 	trainerbattle_double TRAINER_BRISK_KANTO_CRUSH_KIN_RON_MYA, BriskKanto_Route15_Frlg_12_Intro, BriskKanto_Route15_Frlg_12_Defeat, BriskKanto_Text_TwoPokemon
@@ -12135,11 +12135,11 @@ BriskKanto_Route1_Frlg_2::
 	end
 
 BriskKanto_Route1_Frlg_2_Text:
-	.string "See those ledges along the\n"
-	.string "road? It's a bit scary, but\p"
-	.string "you can jump from them. You\n"
-	.string "can get back to PALLET TOWN\p"
-	.string "quicker that way.$"
+	.string "The wild Pokemon here seem\n"
+	.string "tough, don't they? Ten years\p"
+	.string "without Team Rocket's\n"
+	.string "interference gave them time to\p"
+	.string "grow strong.$"
 
 BriskKanto_Route1_Frlg_Sign_1::
 	msgbox BriskKanto_Route1_Frlg_Sign_1_Text, MSGBOX_SIGN
@@ -15264,10 +15264,10 @@ BriskKanto_SaffronCity_Frlg_2::
 	end
 
 BriskKanto_SaffronCity_Frlg_2_Text:
-	.string "The dojo and the Gym offer\n"
-	.string "very different lessons. I used\p"
-	.string "to rush everywhere. My partner\n"
-	.string "taught me to slow down.$"
+	.string "Silph rebuilt after Team\n"
+	.string "Rocket's fall. Ten years of\p"
+	.string "new training methods made our\n"
+	.string "city's Pokemon formidable.$"
 
 BriskKanto_SaffronCity_Frlg_3::
 	msgbox BriskKanto_SaffronCity_Frlg_3_Text, MSGBOX_NPC
@@ -20816,9 +20816,11 @@ BriskKanto_VermilionCity_Frlg_5::
 	end
 
 BriskKanto_VermilionCity_Frlg_5_Text:
-	.string "The S.S. ANNE is a famous\n"
-	.string "luxury cruise ship. It visits\p"
-	.string "VERMILION once a year.$"
+	.string "Sailors who return after ten\n"
+	.string "years barely recognize our\p"
+	.string "battles. With Rocket gone,\n"
+	.string "everyone kept raising their\p"
+	.string "teams.$"
 
 BriskKanto_VermilionCity_Frlg_6::
 	msgbox BriskKanto_VermilionCity_Frlg_6_Text, MSGBOX_NPC
@@ -21511,11 +21513,11 @@ BriskKanto_VictoryRoad_1F_Frlg_3::
 	end
 
 BriskKanto_VictoryRoad_1F_Frlg_3_Text:
-	.string "Here in Victory Road, i keep a\n"
-	.string "notebook of the Pokemon I meet\p"
-	.string "on my travels. I used to rush\n"
-	.string "everywhere. My partner taught\p"
-	.string "me to slow down.$"
+	.string "Ten years of uninterrupted\n"
+	.string "training have made Victory\p"
+	.string "Road tougher than ever. Even\n"
+	.string "visiting Champions must\p"
+	.string "prepare.$"
 
 BriskKanto_VictoryRoad_1F_Frlg_4::
 	msgbox BriskKanto_VictoryRoad_1F_Frlg_4_Text, MSGBOX_NPC
@@ -21832,11 +21834,11 @@ BriskKanto_ViridianCity_Frlg_4::
 	end
 
 BriskKanto_ViridianCity_Frlg_4_Text:
-	.string "Route 22 attracts Trainers\n"
-	.string "preparing for Victory Road. I\p"
-	.string "used to rush everywhere. My\n"
-	.string "partner taught me to slow\p"
-	.string "down.$"
+	.string "Since Team Rocket broke apart\n"
+	.string "ten years ago, Kanto's\p"
+	.string "Trainers have trained in\n"
+	.string "peace. Even the roads to\p"
+	.string "Viridian are tougher now.$"
 
 BriskKanto_ViridianCity_Frlg_5::
 	msgbox BriskKanto_ViridianCity_Frlg_5_Text, MSGBOX_NPC
@@ -22413,10 +22415,10 @@ BriskKanto_ViridianForest_Frlg_6::
 	end
 
 BriskKanto_ViridianForest_Frlg_6_Text:
-	.string "I always pack supplies before\n"
-	.string "heading toward Pewter. I used\p"
-	.string "to rush everywhere. My partner\n"
-	.string "taught me to slow down.$"
+	.string "Team Rocket stopped hunting\n"
+	.string "Pokemon here a decade ago. Now\p"
+	.string "the forest's Pokemon are\n"
+	.string "stronger than ever!$"
 
 BriskKanto_ViridianForest_Frlg_7::
 	msgbox BriskKanto_ViridianForest_Frlg_7_Text, MSGBOX_NPC
