@@ -1,0 +1,291 @@
+{
+  "description": "Deterministic Hoenn biome- and level-compatible swaps. Existing rarity, levels, fishing tiers, encounter rates, and method-specific species counts preserved.",
+  "sourceCommit": "b8474e686e4f6160210d24e0dcbd3cefed712edb",
+  "sourceBlob": "ec2af89c73ecb25278efa5c4e7724cb2c11b4f08",
+  "swapPairs": 733,
+  "affectedMaps": 100,
+  "changesByMethod": {
+    "land_mons": 584,
+    "fishing_mons": 43,
+    "water_mons": 106
+  },
+  "preservedSpeciesByMethod": {
+    "land_mons": 879,
+    "water_mons": 152,
+    "fishing_mons": 44,
+    "rock_smash_mons": 10
+  },
+  "excluded": "Victory Road, Kanto, Orange Islands, Safari Zone, Evolution Cave, dedicated/special encounters",
+  "sampleSwaps": [
+    {
+      "mapA": "MAP_ROUTE118",
+      "mapB": "MAP_ROUTE117",
+      "type": "land_mons",
+      "levelA": 25,
+      "levelB": 17,
+      "from": "SPECIES_PINCURCHIN",
+      "to": "SPECIES_FURFROU_KABUKI"
+    },
+    {
+      "mapA": "MAP_ROUTE115",
+      "mapB": "MAP_ROUTE111",
+      "type": "fishing_mons",
+      "levelA": 32.5,
+      "levelB": 42.5,
+      "from": "SPECIES_WAILMER",
+      "to": "SPECIES_BARBOACH"
+    },
+    {
+      "mapA": "MAP_ROUTE120",
+      "mapB": "MAP_ROUTE119",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 30,
+      "from": "SPECIES_FLITTLE",
+      "to": "SPECIES_SKIDDO"
+    },
+    {
+      "mapA": "MAP_MT_PYRE_1F",
+      "mapB": "MAP_NEW_MAUVILLE_INSIDE",
+      "type": "land_mons",
+      "levelA": 35,
+      "levelB": 30,
+      "from": "SPECIES_DROWZEE",
+      "to": "SPECIES_ELECTABUZZ"
+    },
+    {
+      "mapA": "MAP_NEW_MAUVILLE_INSIDE",
+      "mapB": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
+      "type": "land_mons",
+      "levelA": 22,
+      "levelB": 34,
+      "from": "SPECIES_PAWMI",
+      "to": "SPECIES_SABLEYE"
+    },
+    {
+      "mapA": "MAP_ROUTE104",
+      "mapB": "MAP_ROUTE119",
+      "type": "water_mons",
+      "levelA": 27.5,
+      "levelB": 20,
+      "from": "SPECIES_FEEBAS",
+      "to": "SPECIES_ARROKUDA"
+    },
+    {
+      "mapA": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
+      "mapB": "MAP_MT_PYRE_4F",
+      "type": "land_mons",
+      "levelA": 35,
+      "levelB": 35,
+      "from": "SPECIES_ZUBAT",
+      "to": "SPECIES_GOTHITA"
+    },
+    {
+      "mapA": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
+      "mapB": "MAP_CAVE_OF_ORIGIN_1F",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 33,
+      "from": "SPECIES_CUBCHOO",
+      "to": "SPECIES_SHIELDON"
+    },
+    {
+      "mapA": "MAP_MAGMA_HIDEOUT_1F",
+      "mapB": "MAP_ROUTE115",
+      "type": "land_mons",
+      "levelA": 28,
+      "levelB": 30,
+      "from": "SPECIES_TORKOAL",
+      "to": "SPECIES_LITLEO"
+    },
+    {
+      "mapA": "MAP_ROUTE127",
+      "mapB": "MAP_ROUTE122",
+      "type": "water_mons",
+      "levelA": 27.5,
+      "levelB": 27.5,
+      "from": "SPECIES_DREDNAW",
+      "to": "SPECIES_QWILFISH_HISUI"
+    },
+    {
+      "mapA": "MAP_SEAFLOOR_CAVERN_ROOM8",
+      "mapB": "MAP_MT_PYRE_3F",
+      "type": "land_mons",
+      "levelA": 34,
+      "levelB": 35,
+      "from": "SPECIES_ONIX",
+      "to": "SPECIES_SABLEYE"
+    },
+    {
+      "mapA": "MAP_SKY_PILLAR_3F",
+      "mapB": "MAP_MT_PYRE_4F",
+      "type": "land_mons",
+      "levelA": 38,
+      "levelB": 35,
+      "from": "SPECIES_CLAYDOL",
+      "to": "SPECIES_MISDREAVUS"
+    },
+    {
+      "mapA": "MAP_SEAFLOOR_CAVERN_ROOM2",
+      "mapB": "MAP_MT_PYRE_6F",
+      "type": "land_mons",
+      "levelA": 33,
+      "levelB": 35,
+      "from": "SPECIES_DIGLETT_ALOLA",
+      "to": "SPECIES_MISDREAVUS"
+    },
+    {
+      "mapA": "MAP_DESERT_UNDERPASS",
+      "mapB": "MAP_ROUTE114",
+      "type": "land_mons",
+      "levelA": 25,
+      "levelB": 27,
+      "from": "SPECIES_DITTO",
+      "to": "SPECIES_LILLIPUP"
+    },
+    {
+      "mapA": "MAP_SKY_PILLAR_3F",
+      "mapB": "MAP_MT_PYRE_SUMMIT",
+      "type": "land_mons",
+      "levelA": 33,
+      "levelB": 37,
+      "from": "SPECIES_SABLEYE",
+      "to": "SPECIES_DARUMAKA"
+    },
+    {
+      "mapA": "MAP_MAGMA_HIDEOUT_2F_2R",
+      "mapB": "MAP_ROUTE111",
+      "type": "land_mons",
+      "levelA": 27,
+      "levelB": 20,
+      "from": "SPECIES_CHARMELEON",
+      "to": "SPECIES_VIBRAVA"
+    },
+    {
+      "mapA": "MAP_MIRAGE_TOWER_4F",
+      "mapB": "MAP_MAGMA_HIDEOUT_1F",
+      "type": "land_mons",
+      "levelA": 22,
+      "levelB": 29,
+      "from": "SPECIES_XATU",
+      "to": "SPECIES_ARCANINE"
+    },
+    {
+      "mapA": "MAP_MIRAGE_TOWER_4F",
+      "mapB": "MAP_ROUTE112",
+      "type": "land_mons",
+      "levelA": 23,
+      "levelB": 23,
+      "from": "SPECIES_CUFANT",
+      "to": "SPECIES_SKORUPI"
+    },
+    {
+      "mapA": "MAP_MAGMA_HIDEOUT_3F_2R",
+      "mapB": "MAP_ROUTE115",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 30,
+      "from": "SPECIES_GOLEM",
+      "to": "SPECIES_FLETCHLING"
+    },
+    {
+      "mapA": "MAP_ROUTE111",
+      "mapB": "MAP_MAGMA_HIDEOUT_2F_1R",
+      "type": "land_mons",
+      "levelA": 20,
+      "levelB": 28,
+      "from": "SPECIES_KANGASKHAN",
+      "to": "SPECIES_NINETALES"
+    },
+    {
+      "mapA": "MAP_MT_PYRE_SUMMIT",
+      "mapB": "MAP_MT_PYRE_6F",
+      "type": "land_mons",
+      "levelA": 37,
+      "levelB": 35,
+      "from": "SPECIES_SNORUNT",
+      "to": "SPECIES_ZORUA"
+    },
+    {
+      "mapA": "MAP_ROUTE102",
+      "mapB": "MAP_ROUTE103",
+      "type": "land_mons",
+      "levelA": 9,
+      "levelB": 8,
+      "from": "SPECIES_LEDYBA",
+      "to": "SPECIES_MINCCINO"
+    },
+    {
+      "mapA": "MAP_ROUTE101",
+      "mapB": "MAP_ROUTE103",
+      "type": "land_mons",
+      "levelA": 7,
+      "levelB": 8,
+      "from": "SPECIES_STARLY",
+      "to": "SPECIES_TATSUGIRI"
+    },
+    {
+      "mapA": "MAP_ROUTE102",
+      "mapB": "MAP_ROUTE116",
+      "type": "land_mons",
+      "levelA": 9,
+      "levelB": 13,
+      "from": "SPECIES_ZIGZAGOON_GALAR",
+      "to": "SPECIES_DEDENNE"
+    },
+    {
+      "mapA": "MAP_MIRAGE_TOWER_3F",
+      "mapB": "MAP_ROUTE111",
+      "type": "land_mons",
+      "levelA": 21,
+      "levelB": 20,
+      "from": "SPECIES_TRAPINCH",
+      "to": "SPECIES_TORKOAL"
+    },
+    {
+      "mapA": "MAP_MIRAGE_TOWER_1F",
+      "mapB": "MAP_MAGMA_HIDEOUT_2F_1R",
+      "type": "land_mons",
+      "levelA": 22,
+      "levelB": 30,
+      "from": "SPECIES_DURANT",
+      "to": "SPECIES_MAGMORTAR"
+    },
+    {
+      "mapA": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
+      "mapB": "MAP_METEOR_FALLS_1F_1R",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 20,
+      "from": "SPECIES_SNEASEL_HISUI",
+      "to": "SPECIES_MORELULL"
+    },
+    {
+      "mapA": "MAP_SEAFLOOR_CAVERN_ROOM8",
+      "mapB": "MAP_MT_PYRE_EXTERIOR",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 37,
+      "from": "SPECIES_SLOWPOKE",
+      "to": "SPECIES_SNEASEL_HISUI"
+    },
+    {
+      "mapA": "MAP_MAGMA_HIDEOUT_3F_2R",
+      "mapB": "MAP_MIRAGE_TOWER_3F",
+      "type": "land_mons",
+      "levelA": 31,
+      "levelB": 23,
+      "from": "SPECIES_MONFERNO",
+      "to": "SPECIES_AXEW"
+    },
+    {
+      "mapA": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
+      "mapB": "MAP_MT_PYRE_4F",
+      "type": "land_mons",
+      "levelA": 30,
+      "levelB": 35,
+      "from": "SPECIES_AMAURA",
+      "to": "SPECIES_DEINO"
+    }
+  ]
+}
