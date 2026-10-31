@@ -22,5 +22,4 @@ Route135_EventScript_BossRushSign::
 	end
 
 Route135_Text_BossRushSign:
-	.string "SCOTT'S TRAINER SUMMIT\n"
-	.string "BOSS RUSH - All challengers welcome!$"
+	.string "Scott's trainer summit$"

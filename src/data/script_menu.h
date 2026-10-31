@@ -6,9 +6,14 @@ static const struct MenuAction sMultichoiceList_BriskRushMain[] = {
     {gText_Exit},
 };
 static const struct MenuAction sMultichoiceList_BriskRushRules[] = {
-    {COMPOUND_STRING("HEAL BETWEEN")},
+    {COMPOUND_STRING("HEALING")},
     {COMPOUND_STRING("BATTLE BAG")},
     {COMPOUND_STRING("DIFFICULTY")},
+    {COMPOUND_STRING("CURE STATUS")},
+    {COMPOUND_STRING("REFILL PP")},
+    {COMPOUND_STRING("ENEMY LEVELS")},
+    {COMPOUND_STRING("SWITCH STYLE")},
+    {COMPOUND_STRING("RECHARGE GIMMICKS")},
     {gText_Exit},
 };
 

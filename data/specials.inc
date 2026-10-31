@@ -655,3 +655,10 @@ gSpecials::
 	def_special BriskBossRushFight, waitstate=1
 	def_special BriskBossRushEndRound
 	def_special BriskBossRushForfeit
+	def_special BriskBossRushBufferExtras
+	def_special BriskBossRushBufferBattleRules
+	def_special BriskBossRushToggleStatus
+	def_special BriskBossRushTogglePP
+	def_special BriskBossRushCycleEnemyLevels
+	def_special BriskBossRushToggleBattleStyle
+	def_special BriskBossRushToggleGimmicks

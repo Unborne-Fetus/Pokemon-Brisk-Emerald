@@ -55,6 +55,8 @@ void SetBriskMegaMode(bool32 enabled)
 
 bool32 BriskGimmickGenEnabled(void)
 {
+    if (BriskBossRushIsActive())
+        return BriskBossRushGimmicksRecharge();
     return FlagGet(FLAG_BRISK_GIMMICK_GEN);
 }
 

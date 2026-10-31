@@ -119,6 +119,8 @@ u64 GetBriskTrainerAiFlagsForTrainer(u64 flags, u32 id)
 
 u32 GetBriskBattleStyle(u32 preference)
 {
+    if (BriskBossRushIsActive())
+        return BriskBossRushShiftAllowed() ? OPTIONS_BATTLE_STYLE_SHIFT : OPTIONS_BATTLE_STYLE_SET;
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: return OPTIONS_BATTLE_STYLE_SHIFT;
