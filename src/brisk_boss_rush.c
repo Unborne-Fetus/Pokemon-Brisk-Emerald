@@ -3,12 +3,16 @@
 #include "battle.h"
 #include "battle_setup.h"
 #include "data.h"
+#include "item.h"
+#include "dynamax_adventure.h"
 #include "event_data.h"
 #include "pokemon.h"
 #include "script_pokemon_util.h"
 #include "random.h"
 #include "string_util.h"
 #include "constants/battle.h"
+#include "constants/items.h"
+#include "constants/hold_effects.h"
 #include "constants/brisk_modes.h"
 #include "constants/event_objects.h"
 #include "constants/vars.h"
@@ -26,6 +30,9 @@ static EWRAM_DATA struct
     u8 difficulty, healAmount, enemyMinLevel;
     bool8 initialized, active, allowBag, cureStatus, restorePP;
     bool8 allowShift, rechargeGimmicks;
+    // Only one unclaimed prize exists at a time. Never reroll on a failed claim.
+    u16 pendingSpecies, pendingItem;
+    u8 pendingReward;
 } sBossRush;
 
 static void EndChallenge(void)
@@ -207,6 +214,173 @@ static void RestorePartyBetweenRounds(void)
     }
 }
 
+// These are *consecutive wins in the current run*, not lifetime battle totals.
+// Keep the reward schedule independent of difficulty until further balancing.
+u16 BriskBossRushRewardForWins(u16 wins)
+{
+    if (wins >= 1 && wins < 10)
+        return BRISK_RUSH_REWARD_MEGA_STONE;
+    if (wins == 10)
+        return BRISK_RUSH_REWARD_RANDOM_MON;
+    if (wins == 25)
+        return BRISK_RUSH_REWARD_SHINY_MON;
+    if (wins == 50)
+        return BRISK_RUSH_REWARD_LEGENDARY;
+    if (wins >= 75 && wins % 25 == 0)
+        return BRISK_RUSH_REWARD_SHINY_LEGENDARY;
+    return BRISK_RUSH_REWARD_NONE;
+}
+
+static bool32 IsRewardSpecies(enum Species species, bool32 legendaryOnly)
+{
+    if (species == SPECIES_NONE || species == SPECIES_EGG || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
+        return FALSE;
+
+    const struct SpeciesInfo *info = &gSpeciesInfo[species];
+
+    // Reject battle-only forms, while preserving permanent species and
+    // independently obtainable regional forms.
+    if (info->isMegaEvolution || info->isPrimalReversion || info->isUltraBurst
+        || info->isGigantamax || info->isTeraForm)
+        return FALSE;
+    if (GET_BASE_SPECIES_ID(species) != species
+        && !info->isAlolanForm && !info->isGalarianForm
+        && !info->isHisuianForm && !info->isPaldeanForm)
+        return FALSE;
+
+    if (legendaryOnly)
+        return (info->isRestrictedLegendary || info->isSubLegendary) && !info->isUltraBeast;
+    return TRUE; // Includes normal Pokémon, legendaries and mythicals.
+}
+
+static enum Species ChooseRewardSpecies(bool32 legendaryOnly)
+{
+    // Reservoir sample to keep the odds uniform without a massive ROM table.
+    enum Species chosen = SPECIES_NONE;
+    u32 count = 0;
+    for (u32 species = 1; species < NUM_SPECIES; species++)
+    {
+        if (IsRewardSpecies(species, legendaryOnly))
+        {
+            count++;
+            if (Random() % count == 0)
+                chosen = species;
+        }
+    }
+    return chosen;
+}
+
+static enum Item ChooseRewardMegaStone(void)
+{
+    enum Item chosen = ITEM_NONE;
+    u32 count = 0;
+    for (u32 item = 1; item < ITEMS_COUNT; item++)
+    {
+        // Both official and custom Brisk Mega Stones share this hold effect.
+        if (GetItemHoldEffect(item) == HOLD_EFFECT_MEGA_STONE)
+        {
+            count++;
+            if (Random() % count == 0)
+                chosen = item;
+        }
+    }
+    return chosen;
+}
+
+static void PreparePrize(void)
+{
+    sBossRush.pendingReward = BriskBossRushRewardForWins(sBossRush.current);
+    sBossRush.pendingSpecies = SPECIES_NONE;
+    sBossRush.pendingItem = ITEM_NONE;
+    if (sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE)
+        sBossRush.pendingItem = ChooseRewardMegaStone();
+    else if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
+        sBossRush.pendingSpecies = ChooseRewardSpecies(
+            sBossRush.pendingReward == BRISK_RUSH_REWARD_LEGENDARY
+            || sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_LEGENDARY);
+
+    // The pool should never be empty, but don't lock the run if it is.
+    if ((sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE && sBossRush.pendingItem == ITEM_NONE)
+        || (sBossRush.pendingReward != BRISK_RUSH_REWARD_MEGA_STONE
+            && sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE
+            && sBossRush.pendingSpecies == SPECIES_NONE))
+        sBossRush.pendingReward = BRISK_RUSH_REWARD_NONE;
+}
+
+u16 BriskBossRushRewardIsItem(void)
+{
+    return sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE;
+}
+
+u16 BriskBossRushBufferReward(void)
+{
+    static const u8 *const names[] = {
+        [BRISK_RUSH_REWARD_MEGA_STONE] = COMPOUND_STRING("MEGA STONE"),
+        [BRISK_RUSH_REWARD_RANDOM_MON] = COMPOUND_STRING("RANDOM POKéMON"),
+        [BRISK_RUSH_REWARD_SHINY_MON] = COMPOUND_STRING("SHINY POKéMON"),
+        [BRISK_RUSH_REWARD_LEGENDARY] = COMPOUND_STRING("LEGENDARY"),
+        [BRISK_RUSH_REWARD_SHINY_LEGENDARY] = COMPOUND_STRING("SHINY LEGENDARY"),
+    };
+    if (sBossRush.pendingReward == BRISK_RUSH_REWARD_NONE)
+        return FALSE;
+    if (sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE)
+        StringCopy(gStringVar1, GetItemName(sBossRush.pendingItem));
+    else
+        StringCopy(gStringVar1, GetSpeciesName(sBossRush.pendingSpecies));
+    ConvertIntToDecimalStringN(gStringVar2, sBossRush.current, STR_CONV_MODE_LEFT_ALIGN, 4);
+    StringCopy(gStringVar3, names[sBossRush.pendingReward]);
+    return TRUE;
+}
+
+u16 BriskBossRushClaimReward(void)
+{
+    if (!sBossRush.active || sBossRush.pendingReward == BRISK_RUSH_REWARD_NONE)
+        return FALSE;
+
+    if (sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE)
+    {
+        if (AddBagItem(sBossRush.pendingItem, 1))
+            StringCopy(gStringVar3, COMPOUND_STRING("YOUR BAG"));
+        else if (AddPCItem(sBossRush.pendingItem, 1))
+            StringCopy(gStringVar3, COMPOUND_STRING("ITEM PC"));
+        else
+            return FALSE;
+    }
+    else
+    {
+        struct Pokemon prize;
+        u8 shiny = sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_MON
+                || sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_LEGENDARY;
+        CreateRandomMon(&prize, sBossRush.pendingSpecies, 50);
+        if (shiny)
+            SetMonData(&prize, MON_DATA_IS_SHINY, &shiny);
+        u32 result = GiveScriptedMonToPlayer(&prize, PARTY_SIZE);
+        if (result == MON_CANT_GIVE)
+            return FALSE;
+        StringCopy(gStringVar3, result == MON_GIVEN_TO_PARTY
+            ? COMPOUND_STRING("YOUR PARTY") : COMPOUND_STRING("YOUR PC"));
+    }
+
+    sBossRush.pendingReward = BRISK_RUSH_REWARD_NONE;
+    sBossRush.pendingItem = ITEM_NONE;
+    sBossRush.pendingSpecies = SPECIES_NONE;
+    return TRUE;
+}
+
+u16 BriskBossRushFinishReward(void)
+{
+    // Never allow skipping an unclaimed reward, including on the final win.
+    if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
+        return 3;
+    if (sBossRush.current >= sBossRush.total)
+    {
+        EndChallenge();
+        return 2;
+    }
+    RestorePartyBetweenRounds();
+    return 1;
+}
+
 u16 BriskBossRushPrepare(void)
 {
     u32 id, mode, i;
@@ -214,6 +388,9 @@ u16 BriskBossRushPrepare(void)
     EndChallenge();
     sBossRush.total = 0;
     sBossRush.current = 0;
+    sBossRush.pendingReward = BRISK_RUSH_REWARD_NONE;
+    sBossRush.pendingSpecies = SPECIES_NONE;
+    sBossRush.pendingItem = ITEM_NONE;
 
     for (id = 1; id < TRAINERS_COUNT; id++)
     {
@@ -286,6 +463,9 @@ u16 BriskBossRushEndRound(void)
         return 0;
     }
     sBossRush.current++;
+    PreparePrize();
+    if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
+        return 3; // Collect this prize before advancing or finishing.
     if (sBossRush.current >= sBossRush.total)
     {
         EndChallenge();
