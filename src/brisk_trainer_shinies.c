@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_trainer_shinies.h"
+#include "constants/opponents.h"
 
 // Incidental opponent shinies: around one ordinary trainer in twenty.
 // Hashing the trainer ID avoids correlated stretches of adjacent trainers,
