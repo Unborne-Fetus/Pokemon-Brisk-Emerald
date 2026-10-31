@@ -33,6 +33,7 @@ static EWRAM_DATA struct
     // Only one unclaimed prize exists at a time. Never reroll on a failed claim.
     u16 pendingSpecies, pendingItem;
     u8 pendingReward;
+    struct Pokemon pendingMon; // Preserve IVs, nature and shiny status across retries.
 } sBossRush;
 
 static void EndChallenge(void)
@@ -295,9 +296,19 @@ static void PreparePrize(void)
     if (sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE)
         sBossRush.pendingItem = ChooseRewardMegaStone();
     else if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
+    {
         sBossRush.pendingSpecies = ChooseRewardSpecies(
             sBossRush.pendingReward == BRISK_RUSH_REWARD_LEGENDARY
             || sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_LEGENDARY);
+        if (sBossRush.pendingSpecies != SPECIES_NONE)
+        {
+            u8 shiny = TRUE;
+            CreateRandomMon(&sBossRush.pendingMon, sBossRush.pendingSpecies, 50);
+            if (sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_MON
+                || sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_LEGENDARY)
+                SetMonData(&sBossRush.pendingMon, MON_DATA_IS_SHINY, &shiny);
+        }
+    }
 
     // The pool should never be empty, but don't lock the run if it is.
     if ((sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE && sBossRush.pendingItem == ITEM_NONE)
@@ -348,13 +359,7 @@ u16 BriskBossRushClaimReward(void)
     }
     else
     {
-        struct Pokemon prize;
-        u8 shiny = sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_MON
-                || sBossRush.pendingReward == BRISK_RUSH_REWARD_SHINY_LEGENDARY;
-        CreateRandomMon(&prize, sBossRush.pendingSpecies, 50);
-        if (shiny)
-            SetMonData(&prize, MON_DATA_IS_SHINY, &shiny);
-        u32 result = GiveScriptedMonToPlayer(&prize, PARTY_SIZE);
+        u32 result = GiveScriptedMonToPlayer(&sBossRush.pendingMon, PARTY_SIZE);
         if (result == MON_CANT_GIVE)
             return FALSE;
         StringCopy(gStringVar3, result == MON_GIVEN_TO_PARTY
