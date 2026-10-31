@@ -129,11 +129,11 @@ Route135_BossRushLobby_Text_Explain:
 Route135_BossRushLobby_Text_Prizes:
     .string "SCOTT: Each win earns its place!\p"
     .string "WINS 1-9: A random MEGA STONE\p"
-    .string "WIN 10: A random POKéMON\p"
-    .string "WIN 25: A random shiny POKéMON\p"
-    .string "WIN 50: A random LEGENDARY\p"
-    .string "WIN 75: A shiny LEGENDARY\p"
-    .string "Every 25 more wins earns\l"
+    .string "WIN 10: Stone + random POKéMON\p"
+    .string "WIN 25: Above + shiny POKéMON\p"
+    .string "WIN 50: Above + LEGENDARY\p"
+    .string "WIN 75: Above + shiny LEGENDARY\p"
+    .string "Each 25 wins after 75 adds\l"
     .string "another shiny LEGENDARY!$"
 
 Route135_BossRushLobby_Text_Rules:

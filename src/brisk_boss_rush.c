@@ -33,6 +33,7 @@ static EWRAM_DATA struct
     // Only one unclaimed prize exists at a time. Never reroll on a failed claim.
     u16 pendingSpecies, pendingItem;
     u8 pendingReward;
+    u16 pendingIndex, pendingCount;
     struct Pokemon pendingMon; // Preserve IVs, nature and shiny status across retries.
 } sBossRush;
 
@@ -232,6 +233,40 @@ u16 BriskBossRushRewardForWins(u16 wins)
     return BRISK_RUSH_REWARD_NONE;
 }
 
+// Milestone payouts stack: a 25-win bundle contains a stone, a
+// random Pokémon and a shiny Pokémon, not just the newest reward tier.
+// After 75, each 25-win milestone adds one more shiny legendary to its
+// payout (75 -> 1, 100 -> 2, 125 -> 3, ...).
+u16 BriskBossRushRewardCountForWins(u16 wins)
+{
+    if (wins >= 1 && wins < 10)
+        return 1;
+    if (wins == 10)
+        return 2;
+    if (wins == 25)
+        return 3;
+    if (wins == 50)
+        return 4;
+    if (wins >= 75 && wins % 25 == 0)
+        return 5 + (wins - 75) / 25;
+    return 0;
+}
+
+u16 BriskBossRushRewardAtIndex(u16 wins, u16 index)
+{
+    if (index >= BriskBossRushRewardCountForWins(wins))
+        return BRISK_RUSH_REWARD_NONE;
+    if (index == 0)
+        return BRISK_RUSH_REWARD_MEGA_STONE;
+    if (index == 1)
+        return BRISK_RUSH_REWARD_RANDOM_MON;
+    if (index == 2)
+        return BRISK_RUSH_REWARD_SHINY_MON;
+    if (index == 3)
+        return BRISK_RUSH_REWARD_LEGENDARY;
+    return BRISK_RUSH_REWARD_SHINY_LEGENDARY;
+}
+
 static bool32 IsRewardSpecies(enum Species species, bool32 legendaryOnly)
 {
     if (species == SPECIES_NONE || species == SPECIES_EGG || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
@@ -290,7 +325,7 @@ static enum Item ChooseRewardMegaStone(void)
 
 static void PreparePrize(void)
 {
-    sBossRush.pendingReward = BriskBossRushRewardForWins(sBossRush.current);
+    sBossRush.pendingReward = BriskBossRushRewardAtIndex(sBossRush.current, sBossRush.pendingIndex);
     sBossRush.pendingSpecies = SPECIES_NONE;
     sBossRush.pendingItem = ITEM_NONE;
     if (sBossRush.pendingReward == BRISK_RUSH_REWARD_MEGA_STONE)
@@ -377,6 +412,15 @@ u16 BriskBossRushFinishReward(void)
     // Never allow skipping an unclaimed reward, including on the final win.
     if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
         return 3;
+    if (sBossRush.pendingIndex + 1 < sBossRush.pendingCount)
+    {
+        sBossRush.pendingIndex++;
+        PreparePrize();
+        if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
+            return 3; // Script displays and claims the next prize.
+    }
+    sBossRush.pendingCount = 0;
+    sBossRush.pendingIndex = 0;
     if (sBossRush.current >= sBossRush.total)
     {
         EndChallenge();
@@ -396,6 +440,8 @@ u16 BriskBossRushPrepare(void)
     sBossRush.pendingReward = BRISK_RUSH_REWARD_NONE;
     sBossRush.pendingSpecies = SPECIES_NONE;
     sBossRush.pendingItem = ITEM_NONE;
+    sBossRush.pendingIndex = 0;
+    sBossRush.pendingCount = 0;
 
     for (id = 1; id < TRAINERS_COUNT; id++)
     {
@@ -468,7 +514,10 @@ u16 BriskBossRushEndRound(void)
         return 0;
     }
     sBossRush.current++;
-    PreparePrize();
+    sBossRush.pendingIndex = 0;
+    sBossRush.pendingCount = BriskBossRushRewardCountForWins(sBossRush.current);
+    if (sBossRush.pendingCount != 0)
+        PreparePrize();
     if (sBossRush.pendingReward != BRISK_RUSH_REWARD_NONE)
         return 3; // Collect this prize before advancing or finishing.
     if (sBossRush.current >= sBossRush.total)

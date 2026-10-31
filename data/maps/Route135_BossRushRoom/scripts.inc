@@ -33,6 +33,7 @@ Route135_BossRushRoom_EventScript_ClaimPrize::
     msgbox Route135_BossRushRoom_Text_PrizeReceived, MSGBOX_DEFAULT
     specialvar VAR_RESULT, BriskBossRushFinishReward
     goto_if_eq VAR_RESULT, 2, Route135_BossRushRoom_EventScript_Clear
+    goto_if_eq VAR_RESULT, 3, Route135_BossRushRoom_EventScript_Prize
     goto Route135_BossRushRoom_EventScript_Next
 
 Route135_BossRushRoom_EventScript_NoPrizeSpace::

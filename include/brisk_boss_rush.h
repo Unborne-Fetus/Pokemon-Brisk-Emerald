@@ -12,6 +12,8 @@ enum BriskRushReward
 };
 
 u16 BriskBossRushRewardForWins(u16 wins);
+u16 BriskBossRushRewardCountForWins(u16 wins);
+u16 BriskBossRushRewardAtIndex(u16 wins, u16 index);
 u16 BriskBossRushRewardIsItem(void);
 u16 BriskBossRushBufferReward(void);
 u16 BriskBossRushClaimReward(void);
