@@ -16,8 +16,11 @@ BriskKantoAccessOnly_EventScript_ChallengePending::
 
 BriskKantoAccessOnly_Text_NotReady:
 	.string "Welcome to KANTO, HOENN CHAMPION!\p"
-	.string "Our Trainers await your challenge.$"
+	.string "Ten years since TEAM ROCKET\n"
+	.string "dissolved, wild POKéMON and\p"
+	.string "Trainers have grown stronger.$"
 
 BriskKantoAccessOnly_Text_ChallengePending:
-	.string "KANTO welcomes HOENN's savior.\p"
-	.string "Enjoy your next challenge!$"
+	.string "TEAM ROCKET fell ten years ago.\p"
+	.string "KANTO's POKéMON grew stronger\n"
+	.string "in peace. Enjoy the challenge!$"
