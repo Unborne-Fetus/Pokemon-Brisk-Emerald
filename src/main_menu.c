@@ -650,6 +650,23 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
 
 // Slot chooser lives in the ROM, before Emerald's Continue/New Game menu.
+// The slot picker is shown before Task_DisplayMainMenu, which normally
+// initializes these dynamic text colours. Without them, palette entry 10
+// remains black and both slot panels appear as unreadable black rectangles.
+static void MainMenu_LoadWindowTextPalette(void)
+{
+    u16 color;
+
+    color = RGB_BLACK;
+    LoadPalette(&color, BG_PLTT_ID(15) + 14, PLTT_SIZEOF(1));
+    color = RGB_WHITE;
+    LoadPalette(&color, BG_PLTT_ID(15) + 10, PLTT_SIZEOF(1));
+    color = RGB(12, 12, 12);
+    LoadPalette(&color, BG_PLTT_ID(15) + 11, PLTT_SIZEOF(1));
+    color = RGB(26, 26, 25);
+    LoadPalette(&color, BG_PLTT_ID(15) + 12, PLTT_SIZEOF(1));
+}
+
 static void Task_DrawBriskSaveSlots(u8 taskId)
 {
     const u8 *first;
@@ -658,6 +675,8 @@ static void Task_DrawBriskSaveSlots(u8 taskId)
     if (gPaletteFade.active)
         return;
 
+    // Prepare window fill and text colors before rendering the first slot.
+    MainMenu_LoadWindowTextPalette();
     first = BriskMultiSave_SlotOccupied(0) ? sText_Slot1Used : sText_Slot1Empty;
     second = BriskMultiSave_SlotOccupied(1) ? sText_Slot2Used : sText_Slot2Empty;
 
@@ -839,17 +858,7 @@ static void Task_DisplayMainMenu(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
         SetGpuReg(REG_OFFSET_BLDY, 7);
 
-        palette = RGB_BLACK;
-        LoadPalette(&palette, BG_PLTT_ID(15) + 14, PLTT_SIZEOF(1));
-
-        palette = RGB_WHITE;
-        LoadPalette(&palette, BG_PLTT_ID(15) + 10, PLTT_SIZEOF(1));
-
-        palette = RGB(12, 12, 12);
-        LoadPalette(&palette, BG_PLTT_ID(15) + 11, PLTT_SIZEOF(1));
-
-        palette = RGB(26, 26, 25);
-        LoadPalette(&palette, BG_PLTT_ID(15) + 12, PLTT_SIZEOF(1));
+        MainMenu_LoadWindowTextPalette();
 
         // Note: If there is no save file, the save block is zeroed out,
         // so the default gender is MALE.
