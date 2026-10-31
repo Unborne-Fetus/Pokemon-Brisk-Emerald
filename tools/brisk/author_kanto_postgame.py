@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 import textwrap
 import author_mode_teams as teams
-from kanto_dialogue import Dialogue, NAMED, source_words, place, battle_words
+from kanto_dialogue import Dialogue, NAMED, ROCKET_ERA_RESIDENTS, ROCKET_ERA_BOSS_INTROS, source_words, place, battle_words
 
 ROOT = Path(__file__).resolve().parents[2]
 MODES = ('Easy','Normal','Hard','Kaizo')
@@ -180,7 +180,7 @@ def author_dialogue(metadata):
                 defeat=battle_words(dialogue,scripts,body,script,name,t['name'],'defeat',seed)
                 after=battle_words(dialogue,scripts,body,script,name,t['name'],'after',seed)
                 if tid.startswith(('TRAINER_LEADER_','TRAINER_ELITE_FOUR_')):
-                    intro=dialogue.unique(f"{t['name']}: Hoenn's Champion and savior! Your team protected a whole region. Let's see that bond in battle!",name,'boss')
+                    intro=dialogue.unique(ROCKET_ERA_BOSS_INTROS.get(tid, f"{t['name']}: Hoenn's Champion and savior! Your team protected a whole region. Let's see that bond in battle!"),name,'boss')
                 macro='trainerbattle_double' if t['double'] else 'trainerbattle_single'
                 args=f"{t['id']}, {label}_Intro, {label}_Defeat"+(', BriskKanto_Text_TwoPokemon' if t['double'] else '')
                 out+=[label+'::\n\t'+macro+' '+args+'\n\tmsgbox '+label+'_After, MSGBOX_AUTOCLOSE\n\tend\n\n',text(label+'_Intro',intro),text(label+'_Defeat',defeat),text(label+'_After',after)]
@@ -195,7 +195,7 @@ def author_dialogue(metadata):
                 out.append(label+'::\n\tlock\n\tfaceplayer\n\tmsgbox '+label+'_Text, MSGBOX_DEFAULT\n\tpokemart BriskKanto_PostgameStock\n\trelease\n\tend\n\n')
                 out.append(text(label+'_Text',words))
             else:
-                words=NAMED.get(gfx.removeprefix('OBJ_EVENT_GFX_')) or source_words(script,scripts)
+                words=ROCKET_ERA_RESIDENTS.get((name,i)) or NAMED.get(gfx.removeprefix('OBJ_EVENT_GFX_')) or source_words(script,scripts)
                 words=dialogue.unique(words,name,gfx)
                 out.extend([label+'::\n\tmsgbox '+label+'_Text, MSGBOX_NPC\n\tend\n\n',text(label+'_Text',words)])
             records[str(i)]=rec
