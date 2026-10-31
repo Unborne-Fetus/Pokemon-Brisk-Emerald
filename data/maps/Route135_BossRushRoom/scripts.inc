@@ -27,6 +27,7 @@ Route135_BossRushRoom_EventScript_Prize::
     special BriskBossRushBufferReward
     msgbox Route135_BossRushRoom_Text_Prize, MSGBOX_DEFAULT
 Route135_BossRushRoom_EventScript_ClaimPrize::
+    special BriskBossRushBufferReward
     specialvar VAR_RESULT, BriskBossRushClaimReward
     goto_if_eq VAR_RESULT, 0, Route135_BossRushRoom_EventScript_NoPrizeSpace
     msgbox Route135_BossRushRoom_Text_PrizeReceived, MSGBOX_DEFAULT
