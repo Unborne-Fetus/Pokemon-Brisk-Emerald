@@ -1,5 +1,7 @@
 #include "global.h"
 #include "brisk_difficulty.h"
+#include "brisk_modes.h"
+#include "brisk_trainer_shinies.h"
 #include "brisk_boss_rush.h"
 #include "dynamax_adventure.h"
 #include "brisk_options.h"
@@ -1374,25 +1376,53 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
     Free(trainerGen);
 }
 
+// Incidental shinies are rare, persistent accents on ordinary scripted
+// trainer battles, not an extra random roll on each individual Pokemon.
+// This runs after mode-specific party construction and its size changes.
+static void BriskGiveTrainerIncidentalShiny(struct Pokemon *party, u16 trainerNum)
+{
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerNum);
+    u32 count = 0;
+    u32 chosen;
+    u32 shiny = TRUE;
+
+    // Do not interfere with curated bosses, rivals, League champions, or
+    // battle-facility rentals. Explicit authored shinies always win.
+    if (trainerNum == TRAINER_NONE || BriskIsImportantTrainer(trainer->trainerClass))
+        return;
+
+    for (count = 0; count < PARTY_SIZE; ++count)
+    {
+        if (GetMonData(&party[count], MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        if (GetMonData(&party[count], MON_DATA_IS_SHINY))
+            return;
+    }
+    chosen = BriskTrainerShinyPartySlot(trainerNum, count);
+    if (chosen < count)
+        SetMonData(&party[chosen], MON_DATA_IS_SHINY, &shiny);
+}
+
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));
-        return;
+    }
+    else
+    {
+        struct Trainer tempTrainer;
+        const struct Trainer *origTrainer;
+        memcpy(&tempTrainer, GetTrainerStructFromId(trainerNum), sizeof(struct Trainer));
+        origTrainer = GetTrainerStructFromId(tempTrainer.overrideTrainer);
+        tempTrainer.party = origTrainer->party;
+        tempTrainer.poolSize = origTrainer->poolSize;
+        if (tempTrainer.partySize == 0)
+            tempTrainer.partySize = origTrainer->partySize;
+        CreateNPCTrainerPartyFromTrainer(party, &tempTrainer);
     }
 
-    struct Trainer tempTrainer;
-    memcpy(&tempTrainer, GetTrainerStructFromId(trainerNum), sizeof(struct Trainer));
-    const struct Trainer *origTrainer = GetTrainerStructFromId(tempTrainer.overrideTrainer);
-
-    tempTrainer.party = origTrainer->party;
-
-    tempTrainer.poolSize = origTrainer->poolSize;
-    if (tempTrainer.partySize == 0)
-        tempTrainer.partySize = origTrainer->partySize;
-
-    CreateNPCTrainerPartyFromTrainer(party, (const struct Trainer *)(&tempTrainer));
+    BriskGiveTrainerIncidentalShiny(party, trainerNum);
 }
 
 void ConfigureTrainerBattle(struct ScriptContext *ctx)

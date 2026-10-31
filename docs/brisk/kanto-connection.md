@@ -23,6 +23,31 @@ Browsing the map does not unlock cities. Visit flags occupy previously unused
 Hoenn flags and do not grant badges or start story scenes. Fly still requires
 the normal Hoenn travel ability. Hoenn destinations retain their existing rules.
 
+## Ten years after Team Rocket
+
+Kanto's postgame takes place **ten years after Team Rocket's dissolution**.
+During that decade, wild Pokemon have been able to mature without Rocket
+poaching and interference, while Trainers have practiced openly and built
+stronger teams. This explains why wild encounters and ordinary Trainers in
+Kanto are far above the usual FireRed/LeafGreen campaign levels.
+
+Residents discuss this recovery in Pallet, Viridian, Pewter, Cerulean,
+Vermilion, Lavender, Celadon, Saffron, Fuchsia, Cinnabar, Viridian Forest,
+Routes 1 and 15, and Victory Road. Brock, Misty, and Lance reinforce the
+history in their introductory battle dialogue. The old Rocket quest remains
+**inactive**: these lines are history, not a new Rocket storyline.
+
+## Trainer shiny encounters
+
+Approximately **one out of twenty ordinary scripted Trainer identities**
+has one shiny Pokemon in its team. The choice is deterministic from the
+Trainer's ID, not re-rolled for every battle or Pokemon; it stays consistent
+across modes and rematches. A trainer already carrying a specifically
+authored shiny never receives an extra one. Important characters (Gym
+Leaders, rivals, Elite Four, champions, faction bosses) and rental/Frontier
+teams retain their designed appearances. This affects Trainers in Hoenn and
+Kanto without altering wild shiny odds, species, moves, levels, or rewards.
+
 ## Champion's visit
 
 Kanto welcomes the player as Hoenn's Champion and savior. Residents, trainers,

@@ -5,6 +5,32 @@ of FRLG's badge campaign. Do not execute any imported event script.
 """
 import re
 
+# A decade of recovery after Team Rocket's dissolution explains the
+# postgame region's unusually high wild and trainer Pokemon levels. Each
+# line belongs to one specific resident, not every generic NPC.
+ROCKET_ERA_RESIDENTS = {
+    ("PalletTown_Frlg", 3): "Ten years ago, Team Rocket dissolved. Professor Oak says Kanto's Pokemon have had a decade to grow undisturbed.",
+    ("Route1_Frlg", 2): "The wild Pokemon here seem tough, don't they? Ten years without Team Rocket's interference gave them time to grow strong.",
+    ("ViridianCity_Frlg", 4): "Since Team Rocket broke apart ten years ago, Kanto's Trainers have trained in peace. Even the roads to Viridian are tougher now.",
+    ("ViridianForest_Frlg", 6): "Team Rocket stopped hunting Pokemon here a decade ago. Now the forest's Pokemon are stronger than ever!",
+    ("PewterCity_Frlg", 3): "Pewter isn't just for beginners anymore. Ten years after Team Rocket fell, our Trainers have become serious challengers.",
+    ("CeruleanCity_Frlg", 1): "Misty says Kanto's wild Pokemon grew strong during ten peaceful years after Team Rocket's collapse. Her team did, too.",
+    ("VermilionCity_Frlg", 5): "Sailors who return after ten years barely recognize our battles. With Rocket gone, everyone kept raising their teams.",
+    ("LavenderTown_Frlg", 3): "After Team Rocket dissolved, Pokemon here could finally grow without fear. Strength can come from kindness, too.",
+    ("CeladonCity_Frlg", 1): "The old Team Rocket hideout is history now. We've used these ten quiet years to train and build a stronger city.",
+    ("SaffronCity_Frlg", 2): "Silph rebuilt after Team Rocket's fall. Ten years of new training methods made our city's Pokemon formidable.",
+    ("FuchsiaCity_Frlg", 2): "A decade free from Rocket poachers let Kanto's habitats recover. These wild Pokemon can challenge even veterans.",
+    ("CinnabarIsland_Frlg", 2): "Our researchers have measured stronger wild Pokemon across Kanto. Ten years of peace made a real difference.",
+    ("Route15_Frlg", 11): "Ever since Team Rocket disbanded ten years ago, Route 15 has been a training ground for experienced teams.",
+    ("VictoryRoad_1F_Frlg", 3): "Ten years of uninterrupted training have made Victory Road tougher than ever. Even visiting Champions must prepare.",
+}
+
+ROCKET_ERA_BOSS_INTROS = {
+    "TRAINER_LEADER_BROCK": "BROCK: Ten years since Rocket collapsed, Kanto's Pokemon and Trainers have grown stronger. Let's show Hoenn's Champion just how much!",
+    "TRAINER_LEADER_MISTY": "MISTY: Kanto's waters had ten peaceful years to flourish after Rocket's fall. These Pokemon won't go easy on a Champion!",
+    "TRAINER_ELITE_FOUR_LANCE": "LANCE: Team Rocket dissolved a decade ago. Kanto used that peace to forge exceptional teams. Show us what Hoenn's savior can do!",
+}
+
 TOPICS = {
  'PalletTown': ["The sea breeze carries all the way up Route 1.", "Oak's research started with the Pokemon living right outside town.", "Small towns send Trainers on very long journeys.", "I like watching travelers return with partners from distant regions.", "From here, the southern sea leads toward Cinnabar.", "Our quiet mornings are worth coming home for."],
  'Viridian': ["The forest paths are cool even at midday.", "Route 22 attracts Trainers preparing for Victory Road.", "The Gym draws visitors from all over Kanto.", "I walk north before the forest gets busy.", "The pond is my favorite place to rest after training.", "I always pack supplies before heading toward Pewter."],
