@@ -252,7 +252,7 @@ static void ApplyLoadout(struct Pokemon *mon, u32 mode, u32 maximumPower)
         return;
     }
     SelectAbility(mon, easy);
-    if (mode == BRISK_MODE_HARD && maximumPower == 0)
+    if ((mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXPERT) && maximumPower == 0)
         return;
     struct MoveContext ctx;
     InitMoveContext(&ctx, mon);
