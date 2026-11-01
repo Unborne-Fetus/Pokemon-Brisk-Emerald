@@ -1364,11 +1364,11 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
     bool32 expertExpand = trainer->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT
         && !trainerGen->protectedRoster && !trainerGen->leagueLevels
         && !trainerGen->championSet && !trainerGen->kaizoBoss
-        && (trainerGen->fairLoadout || trainerGen->storyLoadout);
+        && (trainerGen->fairLoadout || trainerGen->storyLoadout || trainerGen->kantoPostgame);
     u32 target = (trainer->authoredParty && !expertExpand) ? trainer->partySize
         : BriskDifficultyPartySize(trainer->partySize, trainerGen->highestLevel,
             trainerGen->storyLoadout, trainerGen->leagueLevels || trainerGen->championSet,
-            trainerGen->fairLoadout || trainerGen->storyLoadout);
+            trainerGen->fairLoadout || trainerGen->storyLoadout || trainerGen->kantoPostgame);
     if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && (B_MULTI_HALF_TEAMS || trainer->multiTeamSize == MULTI_TEAM_SIZE_HALF))
         target = min(target, PARTY_SIZE / 2);
     monsCount = min(target, trainer->partySize);
