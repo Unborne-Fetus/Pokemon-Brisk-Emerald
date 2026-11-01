@@ -1,5 +1,6 @@
 #include "global.h"
 #include "brisk_boss_rush.h"
+#include "difficulty.h"
 #include "battle.h"
 #include "battle_setup.h"
 #include "data.h"
@@ -55,7 +56,7 @@ u16 BriskBossRushInitRules(void)
     {
         sBossRush.initialized = TRUE;
         sBossRush.difficulty = VarGet(VAR_BRISK_DIFFICULTY);
-        if (sBossRush.difficulty > BRISK_MODE_KAIZO)
+        if (sBossRush.difficulty > BRISK_MODE_MAX)
             sBossRush.difficulty = BRISK_MODE_NORMAL;
         sBossRush.healAmount = RUSH_HEAL_FULL;
         sBossRush.allowBag = FALSE;
@@ -75,6 +76,7 @@ u16 BriskBossRushBufferRules(void)
         [BRISK_MODE_EASY] = COMPOUND_STRING("EASY"),
         [BRISK_MODE_HARD] = COMPOUND_STRING("HARD"),
         [BRISK_MODE_KAIZO] = COMPOUND_STRING("KAIZO"),
+        [BRISK_MODE_EXPERT] = COMPOUND_STRING("EXPERT"),
     };
     static const u8 *const sHealNames[] = {
         COMPOUND_STRING("NONE"),
@@ -135,7 +137,13 @@ u16 BriskBossRushTogglePP(void)
 
 u16 BriskBossRushCycleDifficulty(void)
 {
-    sBossRush.difficulty = (sBossRush.difficulty + 1) % (BRISK_MODE_KAIZO + 1);
+    // Keep stored values stable, but cycle in natural difficulty order.
+    static const u8 order[] = {BRISK_MODE_EASY, BRISK_MODE_NORMAL, BRISK_MODE_EXPERT, BRISK_MODE_HARD, BRISK_MODE_KAIZO};
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(order); ++i)
+        if (order[i] == sBossRush.difficulty)
+            break;
+    sBossRush.difficulty = order[(i + 1) % ARRAY_COUNT(order)];
     return sBossRush.difficulty;
 }
 
@@ -484,7 +492,7 @@ u16 BriskBossRushBufferNext(void)
 {
     if (!BriskBossRushCheckActive())
         return FALSE;
-    StringCopyN(gStringVar1, gTrainers[sBossRush.difficulty][sBossRush.trainers[sBossRush.current]].trainerName, TRAINER_NAME_LENGTH + 1);
+    StringCopyN(gStringVar1, gTrainers[GetTrainerDifficultyLevel(sBossRush.trainers[sBossRush.current])][sBossRush.trainers[sBossRush.current]].trainerName, TRAINER_NAME_LENGTH + 1);
     ConvertIntToDecimalStringN(gStringVar2, sBossRush.current + 1, STR_CONV_MODE_LEFT_ALIGN, 4);
     ConvertIntToDecimalStringN(gStringVar3, sBossRush.total, STR_CONV_MODE_LEFT_ALIGN, 4);
     return TRUE;
