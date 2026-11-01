@@ -17,9 +17,6 @@
 #include "text_window.h"
 #include "trig.h"
 #include "wallclock.h"
-#if BRISK_NATIVE
-#include <time.h>
-#endif
 #include "window.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -688,21 +685,13 @@ void CB2_StartWallClock(void)
 
     taskId = CreateTask(Task_SetClock_WaitFadeIn, 0);
 #if BRISK_NATIVE
-    // The desktop game has a host clock: seed the wall clock from local time.
+    // Read the simulated RTC, which uses the computer's local wall time in
+    // the embedded native engine. Avoid linking host libc from GBA game code.
     {
-        time_t now = time(NULL);
-        struct tm *local = now == (time_t)-1 ? NULL : localtime(&now);
-        if (local != NULL)
-        {
-            gTasks[taskId].tHours = local->tm_hour;
-            gTasks[taskId].tMinutes = local->tm_min;
-        }
-        else
-        {
-            RtcCalcLocalTime();
-            gTasks[taskId].tHours = gLocalTime.hours;
-            gTasks[taskId].tMinutes = gLocalTime.minutes;
-        }
+        struct SiiRtcInfo rtc;
+        RtcGetInfo(&rtc);
+        gTasks[taskId].tHours = ConvertBcdToBinary(rtc.hour & 0x3F);
+        gTasks[taskId].tMinutes = ConvertBcdToBinary(rtc.minute);
     }
 #else
     gTasks[taskId].tHours = gLocalTime.hours;
