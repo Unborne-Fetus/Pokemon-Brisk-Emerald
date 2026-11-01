@@ -67,14 +67,20 @@ TEST("Expert fills late authored ordinary teams and keeps the original ace last"
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXPERT);
     VarSet(VAR_BRISK_RANDOMIZER, 0);
     gBattleTypeFlags = 0;
-    Test_BriskTrainerSource(&sExpertTestTrainer, TRAINER_SAWYER_1);
+    // Run the same late-team contract in Hoenn and Kanto: the second region
+    // must not silently fall back to unmodified Hard difficulty.
+    const u16 testIds[] = {TRAINER_SAWYER_1, BRISK_KANTO_TRAINER_BASE + 1};
     struct Pokemon party[PARTY_SIZE];
-    CreateNPCTrainerPartyFromTrainer(party, &sExpertTestTrainer);
-    for (u32 i = 0; i < PARTY_SIZE; i++)
-        EXPECT_NE(GetMonData(&party[i], MON_DATA_SPECIES), SPECIES_NONE);
-    EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_SPECIES), SPECIES_RATICATE);
-    EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_LEVEL), 67);
-    Test_BriskTrainerSource(NULL, 0);
+    for (u32 region = 0; region < ARRAY_COUNT(testIds); region++)
+    {
+        Test_BriskTrainerSource(&sExpertTestTrainer, testIds[region]);
+        CreateNPCTrainerPartyFromTrainer(party, &sExpertTestTrainer);
+        for (u32 i = 0; i < PARTY_SIZE; i++)
+            EXPECT_NE(GetMonData(&party[i], MON_DATA_SPECIES), SPECIES_NONE);
+        EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_SPECIES), SPECIES_RATICATE);
+        EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_LEVEL), 67);
+        Test_BriskTrainerSource(NULL, 0);
+    }
 
     gBattleTypeFlags = previousBattleFlags;
     VarSet(VAR_BRISK_RANDOMIZER, previousRandomizer);
