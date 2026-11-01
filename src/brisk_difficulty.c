@@ -161,6 +161,12 @@ void BriskExpandTrainerParty(struct Pokemon *party, u32 count, u32 target, struc
     {
         struct TrainerMon reserve = {0};
         reserve.lvl = max(1, generator->highestLevel - min(generator->highestLevel-1, 1+(count-originalCount)%2));
+        if (generator->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT)
+        {
+            // Authored Hard levels are already tuned. Invert the Expert's ~10%
+            // ordinary/story level boost to build a reserve just under its ace.
+            reserve.lvl = max(1, (generator->highestLevel * 8 / 10) - 1 - (count-originalCount)%2);
+        }
         u32 actualLevel = generator->storyLoadout ? ScaleBriskStoryTrainerLevel(reserve.lvl,generator->highestLevel)
                                                 : ScaleBriskOrdinaryTrainerLevel(reserve.lvl,generator->highestLevel);
         reserve.species = PickReserve(party,count,actualLevel,generator->trainerClass, (u32)generator->localRngState.a);
@@ -169,7 +175,16 @@ void BriskExpandTrainerParty(struct Pokemon *party, u32 count, u32 target, struc
         reserve.ball = BALL_POKE;
         reserve.teraType = TYPE_MYSTERY;
         reserve.nature = GetSpeciesBaseAttack(reserve.species) >= GetSpeciesBaseSpAttack(reserve.species) ? NATURE_ADAMANT : NATURE_MODEST;
-        GenerateMonFromTrainerMon(&party[count++], &reserve, generator);
+        if (generator->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT)
+        {
+            // Only the new reserve is generated dynamically. Existing authored
+            // opponents and their moves, identities, gimmicks remain intact.
+            generator->authoredParty = FALSE;
+            GenerateMonFromTrainerMon(&party[count++], &reserve, generator);
+            generator->authoredParty = TRUE;
+        }
+        else
+            GenerateMonFromTrainerMon(&party[count++], &reserve, generator);
     }
     if (count > originalCount)
     {
