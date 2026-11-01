@@ -16,6 +16,7 @@
 #include "constants/opponents.h"
 #include "data/brisk_ordinary_trainers.h"
 #include "data/brisk_story_trainers.h"
+#include "data/brisk_exempt_trainers.h"
 
 // Optional Kaizo challenges retain their curated endgame sets.
 static const bool8 sBriskKaizoBoss[TRAINERS_COUNT] =
@@ -160,6 +161,7 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
     trainerGen->authoredParty = trainer->authoredParty;
+    trainerGen->protectedRoster = UsesTrainerPolicy(trainer, sBriskExemptTrainer);
     trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
     trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
     trainerGen->leagueLevels = UsesTrainerPolicy(trainer, sBriskLeagueTrainer);
@@ -182,6 +184,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *partner)
 {
     trainerGen->authoredParty = FALSE;
+    trainerGen->protectedRoster = FALSE;
     u32 otID;
     trainerGen->fairLoadout = FALSE;
     trainerGen->storyLoadout = FALSE;
@@ -208,6 +211,13 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon, bool32 tuned)
         return;
 
     u32 ivs = mode == BRISK_MODE_EASY ? 0 : 0x3FFFFFFF; // Six 5-bit IVs.
+    if (mode == BRISK_MODE_EXPERT)
+    {
+        // Expert's intermediate, reliable IV spread; Hard remains perfect.
+        ivs = 0;
+        for (u32 stat = 0; stat < NUM_STATS; stat++)
+            ivs |= 28u << (5 * stat);
+    }
     if (mode == BRISK_MODE_NORMAL)
     {
         u32 level = GetMonData(mon, MON_DATA_LEVEL);
@@ -219,7 +229,7 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon, bool32 tuned)
     SetMonData(mon, MON_DATA_IVS, &ivs);
 
     u8 evs[NUM_STATS] = {0};
-    if (mode == BRISK_MODE_EXTREME || mode == BRISK_MODE_HARD || mode == BRISK_MODE_NORMAL)
+    if (mode == BRISK_MODE_EXTREME || mode == BRISK_MODE_HARD || mode == BRISK_MODE_NORMAL || mode == BRISK_MODE_EXPERT)
     {
         enum Species species = GetMonData(mon, MON_DATA_SPECIES);
         u16 scores[NUM_STATS];
@@ -252,6 +262,8 @@ static void ApplyBriskTrainerTraining(struct Pokemon *mon, bool32 tuned)
         u32 budget = mode == BRISK_MODE_EXTREME ? 510 : level < 20 ? 128 : level < 35 ? 256 : level < 50 ? 384 : 510;
         if (tuned && mode == BRISK_MODE_HARD)
             budget = level < 20 ? 256 : level < 35 ? 384 : 510;
+        if (mode == BRISK_MODE_EXPERT)
+            budget = level < 20 ? 192 : level < 35 ? 320 : level < 50 ? 384 : 448;
         if (mode == BRISK_MODE_NORMAL)
             budget = level < 15 ? 0 : level < 25 ? 64 : level < 40 ? 128 : level < 60 ? 256 : 384;
         if (mode == BRISK_MODE_HARD || mode == BRISK_MODE_NORMAL)
@@ -286,7 +298,12 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
         if (trainer->authoredParty)
         {
-            // Levels, like the rest of the roster, are authored per encounter.
+            // Expert uses Hard's full authored teams, with a modest level relief.
+            // Preserve protected characters and fixed endgame challenge levels.
+            if (GetBriskDifficulty() == BRISK_MODE_EXPERT && !trainer->protectedRoster
+             && !trainer->leagueLevels && !trainer->championSet && !trainer->kaizoBoss
+             && (trainer->fairLoadout || trainer->storyLoadout) && adjusted.lvl < MAX_LEVEL)
+                adjusted.lvl = max(1, adjusted.lvl - (adjusted.lvl >= 35 ? 3 : adjusted.lvl >= 15 ? 2 : 0));
         }
         else if (trainer->kaizoBoss || trainer->championSet)
             adjusted.lvl = 100;
@@ -449,6 +466,22 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             if (trainer->fairLoadout || trainer->storyLoadout)
                 BriskDifficultyHeldItem(mon);
         }
+    }
+
+    if (trainer->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT && !trainer->protectedRoster
+     && !trainer->leagueLevels && !trainer->championSet && !trainer->kaizoBoss
+     && (trainer->fairLoadout || trainer->storyLoadout))
+    {
+        // Keep the move/ability/item synergy of authored Hard teams, but soften
+        // the raw stat advantage. Never change a curated boss or dedication team.
+        u32 ivs = 0;
+        for (u32 stat = 0; stat < NUM_STATS; stat++)
+        {
+            ivs |= min(28, GetMonData(mon, MON_DATA_HP_IV + stat)) << (5 * stat);
+            u8 ev = GetMonData(mon, MON_DATA_HP_EV + stat) * 3 / 4;
+            SetMonData(mon, MON_DATA_HP_EV + stat, &ev);
+        }
+        SetMonData(mon, MON_DATA_IVS, &ivs);
     }
 
     CalculateMonStats(mon);
