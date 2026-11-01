@@ -317,7 +317,18 @@ void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct T
 void RtcCalcLocalTime(void)
 {
     RtcGetInfo(&sRtc);
+#if BRISK_NATIVE
+    // Use the host-synchronized RTC for the time of day, even on an existing
+    // save whose original wall clock was set manually. Retain the save's day
+    // anchor for berries and other elapsed-day mechanics without rewriting it.
+    struct Time clockOffset = gSaveBlock2Ptr->localTimeOffset;
+    clockOffset.hours = 0;
+    clockOffset.minutes = 0;
+    clockOffset.seconds = 0;
+    RtcCalcTimeDifference(&sRtc, &gLocalTime, &clockOffset);
+#else
     RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
+#endif
 }
 
 bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
