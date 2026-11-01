@@ -30,7 +30,7 @@ static u32 ModeHash(u32 value, u32 salt)
 u32 GetBriskDifficulty(void)
 {
     u32 mode = VarGet(VAR_BRISK_DIFFICULTY);
-    return mode <= BRISK_MODE_EXTREME ? mode : BRISK_MODE_NORMAL;
+    return mode <= BRISK_MODE_MAX ? mode : BRISK_MODE_NORMAL;
 }
 
 bool32 BriskIsKaizoBoss(u32 trainerId)
@@ -68,7 +68,7 @@ bool32 BriskKaizoBossAvailable(void)
 
 u32 GetBriskPriceMultiplier(void)
 {
-    static const u8 multipliers[] = {2, 1, 4, 10};
+    static const u8 multipliers[] = {2, 1, 4, 10, 3};
     return multipliers[GetBriskDifficulty()];
 }
 
@@ -79,6 +79,7 @@ static u64 GetLegacyBriskTrainerAiFlags(u64 flags)
     case BRISK_MODE_EASY: return AI_FLAG_CHECK_BAD_MOVE;
     // Some legacy parties only specify viability (or no flags). Knowledge and
     // switch selection alone do not enable the basic move-scoring scripts.
+    case BRISK_MODE_EXPERT: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
     case BRISK_MODE_HARD: return flags | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_SMART_TERA | AI_FLAG_PP_STALL_PREVENTION;
     case BRISK_MODE_EXTREME: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
     default: return flags;
@@ -94,6 +95,12 @@ u64 GetBriskTrainerAiFlags(u64 flags)
         return (flags & ~(AI_FLAG_OMNISCIENT | AI_FLAG_ABILITY_OMNISCIENCE | AI_FLAG_ITEM_OMNISCIENCE
             | AI_FLAG_MOVE_OMNISCIENCE | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_FORCE_SETUP_FIRST_TURN))
             | AI_FLAG_BASIC_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_SMART_MON_CHOICES;
+    case BRISK_MODE_EXPERT:
+        // Strong team selection and switching, but never clairvoyant.
+        return (flags & ~(AI_FLAG_OMNISCIENT | AI_FLAG_ABILITY_OMNISCIENCE | AI_FLAG_ITEM_OMNISCIENCE
+            | AI_FLAG_MOVE_OMNISCIENCE | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_FORCE_SETUP_FIRST_TURN))
+            | AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+            | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_SMART_TERA;
     case BRISK_MODE_HARD: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
     case BRISK_MODE_EXTREME: return flags | AI_FLAG_SMART_TRAINER | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO
         | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY | AI_FLAG_CONSERVATIVE;
@@ -125,6 +132,7 @@ u32 GetBriskBattleStyle(u32 preference)
     {
     case BRISK_MODE_EASY: return OPTIONS_BATTLE_STYLE_SHIFT;
     case BRISK_MODE_NORMAL:
+    case BRISK_MODE_EXPERT:
     case BRISK_MODE_HARD:
     case BRISK_MODE_EXTREME: return OPTIONS_BATTLE_STYLE_SET;
     default: return preference;
@@ -135,7 +143,7 @@ bool32 BriskBattleItemsAllowed(void)
 {
     if (BriskBossRushIsActive())
         return BriskBossRushBagAllowed();
-    return GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL;
+    return GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL || GetBriskDifficulty() == BRISK_MODE_EXPERT;
 }
 
 bool32 BriskCanUseBattleItem(enum Item item)
@@ -205,6 +213,7 @@ u32 ScaleBriskLevel(u32 level, u32 salt)
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: level = (level + 1) / 2; break;
+    case BRISK_MODE_EXPERT: level += max(1, level / 20); break;
     case BRISK_MODE_HARD: level += max(1, level / 10); break;
     case BRISK_MODE_EXTREME: level += max(2, level / 5); break;
     }
@@ -216,6 +225,7 @@ u32 ScaleBriskTrainerLevel(u32 level, u32 salt)
     // Trainer-only increases; wild encounter difficulty remains unchanged.
     switch (GetBriskDifficulty())
     {
+    case BRISK_MODE_EXPERT: level += max(2, level / 10); break;
     case BRISK_MODE_HARD: level += max(3, level / 5); break;
     case BRISK_MODE_EXTREME: level += max(4, level * 3 / 10); break;
     default: level = ScaleBriskLevel(level, salt); break;
@@ -242,6 +252,9 @@ u32 ScaleBriskOrdinaryTrainerLevel(u32 level, u32 highestLevel)
         // A lower-level support must not round up to the ace's Easy level.
         if (originalLevel < highestLevel && level == ace && level > 1)
             level -= 1;
+        break;
+    case BRISK_MODE_EXPERT:
+        level += max(1, level / 10);
         break;
     case BRISK_MODE_HARD:
         level += max(2, level / 5);
@@ -271,6 +284,7 @@ u32 ScaleBriskStoryTrainerLevel(u32 level, u32 highestLevel)
     switch (GetBriskDifficulty())
     {
     case BRISK_MODE_EASY: return max(1, (level + 1) / 2);
+    case BRISK_MODE_EXPERT: level += max(2, level / 8); break;
     case BRISK_MODE_HARD: level += max(3, level / 4); break;
     case BRISK_MODE_EXTREME: level += max(5, level * 45 / 100); break;
     default: return max(1, min(level, MAX_LEVEL));
