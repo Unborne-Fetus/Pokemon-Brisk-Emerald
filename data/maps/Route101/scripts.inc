@@ -37,6 +37,10 @@ Route101_EventScript_StartBirchRescue::
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchFaceZigzagoon
 	waitmovement 0
+	@ Birch finishes the chase a tile north of Zigzagoon, as in the rescue scene.
+	@ Keep his running path on the lower grass, rather than moving the chase onto the ledge.
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchStepNorth
+	waitmovement 0
 	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_ROUTE101_STATE, 2
@@ -178,6 +182,9 @@ Route101_EventScript_BirchsBag::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	special StartNewPokeballCaseUI
+	@ Return from the raised plea-for-help position before walking toward the bag.
+	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchStepSouth
+	waitmovement 0
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
 	waitmovement 0
 	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
@@ -203,6 +210,16 @@ Route101_EventScript_HideMayInBedroom::
 Route101_EventScript_HideBrendanInBedroom::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	return
+
+Route101_Movement_BirchStepNorth:
+	walk_fast_up
+	face_down
+	step_end
+
+Route101_Movement_BirchStepSouth:
+	walk_fast_down
+	face_down
+	step_end
 
 Route101_Movement_BirchApproachPlayer:
 	@ Stop beside the bag, never walk onto the western ledge.
