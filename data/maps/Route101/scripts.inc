@@ -21,8 +21,10 @@ Route101_EventScript_StartBirchRescue::
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
-	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 15
-	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 0, 16
+	@ Keep the rescue scene on the same side of Route 101's cliff as the player.
+	@ The old (0,15)/(0,16) start points put both actors behind the western wall.
+	setobjectxy LOCALID_ROUTE101_BIRCH, 11, 14
+	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 10, 14
 	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunAway1
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
@@ -81,55 +83,30 @@ Route101_Movement_PreventExitNorth:
 	step_end
 
 Route101_Movement_ZigzagoonChaseInCircles:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
 	walk_fast_left
 	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
 	walk_fast_left
 	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
+	walk_fast_left
+	walk_fast_left
 	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
+	walk_fast_right
 	step_end
 
 Route101_Movement_ZigzagoonChase1:
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
 	step_end
 
 @ Leftover data? This command is unused.
 	step_end
 
 Route101_Movement_ZigzagoonFaceBirch:
-	walk_in_place_fast_left
-	walk_in_place_fast_left
-	walk_in_place_fast_left
-	walk_in_place_fast_left
+	walk_in_place_fast_right
 	step_end
 
 Route101_Movement_EnterScene:
@@ -141,55 +118,30 @@ Route101_Movement_EnterScene:
 	step_end
 
 Route101_Movement_BirchRunInCircles:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
 	walk_fast_left
 	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
 	walk_fast_left
 	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
+	walk_fast_left
+	walk_fast_left
 	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+	walk_fast_right
 	step_end
 
 Route101_Movement_BirchRunAway1:
 	walk_fast_right
 	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
 	step_end
 
 @ Leftover data? This command is unused.
 	step_end
 
 Route101_Movement_BirchFaceZigzagoon:
-	walk_in_place_fast_right
-	walk_in_place_fast_right
-	walk_in_place_fast_right
-	walk_in_place_fast_right
+	walk_in_place_fast_left
 	step_end
 
 Route101_Movement_Unused1:
@@ -253,7 +205,11 @@ Route101_EventScript_HideBrendanInBedroom::
 	return
 
 Route101_Movement_BirchApproachPlayer:
-	face_right
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	face_down
 	step_end
 
 Route101_Text_HelpMe:
