@@ -17,6 +17,9 @@
 #include "text_window.h"
 #include "trig.h"
 #include "wallclock.h"
+#if BRISK_NATIVE
+#include <time.h>
+#endif
 #include "window.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -684,8 +687,27 @@ void CB2_StartWallClock(void)
     DecompressDataWithHeaderVram(gWallClockStart_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
 
     taskId = CreateTask(Task_SetClock_WaitFadeIn, 0);
+#if BRISK_NATIVE
+    // The desktop game has a host clock: seed the wall clock from local time.
+    {
+        time_t now = time(NULL);
+        struct tm *local = now == (time_t)-1 ? NULL : localtime(&now);
+        if (local != NULL)
+        {
+            gTasks[taskId].tHours = local->tm_hour;
+            gTasks[taskId].tMinutes = local->tm_min;
+        }
+        else
+        {
+            RtcCalcLocalTime();
+            gTasks[taskId].tHours = gLocalTime.hours;
+            gTasks[taskId].tMinutes = gLocalTime.minutes;
+        }
+    }
+#else
     gTasks[taskId].tHours = gLocalTime.hours;
     gTasks[taskId].tMinutes = gLocalTime.minutes;
+#endif
     gTasks[taskId].tMoveDir = 0;
     gTasks[taskId].tPeriod = gTasks[taskId].tHours / 12;
     gTasks[taskId].tMoveSpeed = 0;
@@ -778,7 +800,12 @@ static void Task_SetClock_WaitFadeIn(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+#if BRISK_NATIVE
+        // Complete the standard story event automatically on desktop.
+        gTasks[taskId].func = Task_SetClock_Confirmed;
+#else
         gTasks[taskId].func = Task_SetClock_HandleInput;
+#endif
     }
 }
 

@@ -110,11 +110,10 @@ Route101_Movement_ZigzagoonFaceBirch:
 	step_end
 
 Route101_Movement_EnterScene:
+	@ Approach the starter bag without climbing into the raised terrain.
+	@ The rescue begins at (10,19) or (11,19); stop on the lower path at y=18.
 	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_in_place_faster_left
+	walk_in_place_faster_up
 	step_end
 
 Route101_Movement_BirchRunInCircles:
