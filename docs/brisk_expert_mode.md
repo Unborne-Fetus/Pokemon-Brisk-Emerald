@@ -40,8 +40,10 @@ create a fifth copy of every trainer in the ROM.
 - **Dynamax Adventures:** standard boss HP multiplier; recover 75% of
   maximum HP between rounds (less than Easy/Normal, more than Hard).
 - **Scott's Trainer Summit:** Expert appears in its difficulty selector.
+- **Kanto postgame:** the Hard roster is also retuned and expanded for
+  Expert, including properly supported six-member postgame parties.
 - **Protected encounters:** dedication/Easter egg trainers, the Champions
-  Archive, the five League teams, Meteor Falls Steven and Kaizo-exclusive
+  Archive, the five Hoenn League teams, Meteor Falls Steven and Kaizo-exclusive
   trainers keep their protected roster behavior. League is still level 100
   outside Easy; Kaizo-only opponents are not unlocked.
 
