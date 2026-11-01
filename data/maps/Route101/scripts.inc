@@ -103,7 +103,8 @@ Route101_Movement_ZigzagoonChase1:
 	step_end
 
 Route101_Movement_ZigzagoonFaceBirch:
-	walk_in_place_fast_right
+	@ Zigzagoon stands east of Birch, so it must face west (toward Birch).
+	walk_in_place_fast_left
 	step_end
 
 Route101_Movement_EnterScene:
@@ -132,7 +133,8 @@ Route101_Movement_BirchRunAway1:
 	step_end
 
 Route101_Movement_BirchFaceZigzagoon:
-	walk_in_place_fast_left
+	@ Birch stands west of Zigzagoon, so he must face east (toward Zigzagoon).
+	walk_in_place_fast_right
 	step_end
 
 Route101_Movement_Unused1:
