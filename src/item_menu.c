@@ -1705,7 +1705,17 @@ static void OpenContextMenu(u8 taskId)
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_ItemsPocket);
                 memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_ItemsPocket, sizeof(sContextMenuItems_ItemsPocket));
                 if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
+                {
                     gBagMenu->contextMenuItemsBuffer[0] = ACTION_CHECK;
+                }
+                else if (GetItemFieldFunc(gSpecialVar_ItemId) == NULL
+                      || GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_CannotUse)
+                {
+                    // Passive held items cannot be used from the Bag. Make GIVE
+                    // the primary action instead of showing a misleading USE.
+                    gBagMenu->contextMenuItemsBuffer[0] = ACTION_GIVE;
+                    gBagMenu->contextMenuItemsBuffer[1] = ACTION_DUMMY;
+                }
                 break;
             case POCKET_KEY_ITEMS:
                 gBagMenu->contextMenuItemsPtr = gBagMenu->contextMenuItemsBuffer;
