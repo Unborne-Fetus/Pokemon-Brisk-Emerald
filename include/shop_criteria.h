@@ -2,7 +2,9 @@
 #define GUARD_SHOP_CRITERIA_H
 
 void TryBuildDynamicShopItemList(const u16 **ogItemList, u16 *resultingTotal);
-void TryFreeDynamicShopItemList(const u16 **ogItemList);
+void TryFreeDynamicShopItemList(const u16 **ogItemList, u16 *resultingTotal);
+
+bool32 ShopCriteriaExpCandy(enum Item item);
 
 // Add new Criterias below!
 

@@ -47,6 +47,9 @@ jobs:
             tools/wav2agb/wav2agb
           key: tools-${{ runner.os }}-${{ hashFiles('tools/*/Makefile', 'tools/**/*.c', 'tools/**/*.cpp', 'tools/**/*.h') }}
 
+      - name: Audit Hoenn habitats, progression and species availability
+        run: python3 tools/brisk/author_hoenn_encounters.py --check
+
       - name: ROM (Emerald)
         env:
           GAME_VERSION: EMERALD

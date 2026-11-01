@@ -6,6 +6,7 @@
 #include "shop_criteria.h"
 
 static EWRAM_DATA const u16 *sDynamicShopItemListRef = NULL;
+static EWRAM_DATA u16 sDynamicShopItemListTotal = 0;
 
 // Remove the UNUSED if you'll use the functions!
 static UNUSED bool32 ShopCriteriaByBadgeCount(u32 count);
@@ -15,6 +16,7 @@ static UNUSED bool32 ShopCriteriaByVar(u32 varId, u32 varValue);
 void TryBuildDynamicShopItemList(const u16 **ogItemList, u16 *resultingTotal)
 {
     sDynamicShopItemListRef = *ogItemList;
+    sDynamicShopItemListTotal = *resultingTotal;
 
     u16 *list = AllocZeroed((*resultingTotal + 1) * sizeof(u16));
     u32 overallIdx = 0, idx = 0;
@@ -38,10 +40,11 @@ void TryBuildDynamicShopItemList(const u16 **ogItemList, u16 *resultingTotal)
     *resultingTotal = overallIdx;
 }
 
-void TryFreeDynamicShopItemList(const u16 **ogItemList)
+void TryFreeDynamicShopItemList(const u16 **ogItemList, u16 *resultingTotal)
 {
     Free((u16 *)*ogItemList);
     *ogItemList = sDynamicShopItemListRef;
+    *resultingTotal = sDynamicShopItemListTotal;
 }
 
 // Add new Criterias below!
@@ -80,4 +83,18 @@ static UNUSED bool32 ShopCriteriaByVar(u32 varId, u32 varValue)
         return TRUE;
 
     return FALSE;
+}
+
+// Apply to both badge-based general marts and explicitly authored inventories.
+bool32 ShopCriteriaExpCandy(enum Item item)
+{
+    switch (item)
+    {
+    case ITEM_EXP_CANDY_XS: return ShopCriteriaByBadgeCount(3);
+    case ITEM_EXP_CANDY_S:  return ShopCriteriaByBadgeCount(4);
+    case ITEM_EXP_CANDY_M:  return ShopCriteriaByBadgeCount(5);
+    case ITEM_EXP_CANDY_L:  return ShopCriteriaByBadgeCount(7);
+    case ITEM_EXP_CANDY_XL: return ShopCriteriaByBadgeCount(8);
+    default: return FALSE;
+    }
 }

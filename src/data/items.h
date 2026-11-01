@@ -1978,6 +1978,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XS"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
+        .shopCriteriaFunc = ShopCriteriaExpCandy,
         .price = 20,
         .holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
@@ -1998,6 +1999,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy S"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies S"),
+        .shopCriteriaFunc = ShopCriteriaExpCandy,
         .price = 25,
         .holdEffectParam = EXP_800,
         .description = COMPOUND_STRING(
@@ -2018,6 +2020,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy M"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies M"),
+        .shopCriteriaFunc = ShopCriteriaExpCandy,
         .price = 80,
         .holdEffectParam = EXP_3000,
         .description = COMPOUND_STRING(
@@ -2038,6 +2041,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy L"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies L"),
+        .shopCriteriaFunc = ShopCriteriaExpCandy,
         .price = 150,
         .holdEffectParam = EXP_10000,
         .description = COMPOUND_STRING(
@@ -2058,6 +2062,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XL"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XL"),
+        .shopCriteriaFunc = ShopCriteriaExpCandy,
         .price = 250,
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(

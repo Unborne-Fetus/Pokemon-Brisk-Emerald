@@ -172,8 +172,6 @@ static const u16 sShopInventory_ZeroBadges[] = {
     ITEM_AWAKENING,
     ITEM_PARALYZE_HEAL,
     ITEM_REVIVE,
-    ITEM_EXP_CANDY_XS,
-    ITEM_EXP_CANDY_S,
     ITEM_NONE
 };
 
@@ -189,7 +187,6 @@ static const u16 sShopInventory_OneBadge[] = {
     ITEM_AWAKENING,
     ITEM_PARALYZE_HEAL,
     ITEM_REVIVE,
-    ITEM_EXP_CANDY_S,
     ITEM_NONE
 };
 
@@ -206,8 +203,6 @@ static const u16 sShopInventory_TwoBadges[] = {
     ITEM_PARALYZE_HEAL,
     ITEM_REVIVE,
     ITEM_POKE_DOLL,
-    ITEM_EXP_CANDY_S,
-    ITEM_EXP_CANDY_M,
     ITEM_NONE
 };
 
@@ -224,9 +219,7 @@ static const u16 sShopInventory_ThreeBadges[] = {
     ITEM_REVIVE,
     ITEM_REPEL,
     ITEM_POKE_DOLL,
-    ITEM_EXP_CANDY_S,
-    ITEM_EXP_CANDY_M,
-    ITEM_EXP_CANDY_L,
+    ITEM_EXP_CANDY_XS,
     ITEM_NONE
 };
 
@@ -244,10 +237,9 @@ static const u16 sShopInventory_FourBadges[] = {
     ITEM_REVIVE,
     ITEM_REPEL,
     ITEM_POKE_DOLL,
-    ITEM_EXP_CANDY_S,
-    ITEM_EXP_CANDY_M,
-    ITEM_EXP_CANDY_L,
     ITEM_RARE_CANDY,
+    ITEM_EXP_CANDY_XS,
+    ITEM_EXP_CANDY_S,
     ITEM_NONE
 };
 
@@ -267,10 +259,10 @@ static const u16 sShopInventory_FiveBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_POKE_DOLL,
+    ITEM_RARE_CANDY,
+    ITEM_EXP_CANDY_XS,
     ITEM_EXP_CANDY_S,
     ITEM_EXP_CANDY_M,
-    ITEM_EXP_CANDY_L,
-    ITEM_RARE_CANDY,
     ITEM_NONE
 };
 
@@ -291,10 +283,10 @@ static const u16 sShopInventory_SixBadges[] = {
     ITEM_REPEL,
     ITEM_SUPER_REPEL,
     ITEM_POKE_DOLL,
+    ITEM_RARE_CANDY,
+    ITEM_EXP_CANDY_XS,
     ITEM_EXP_CANDY_S,
     ITEM_EXP_CANDY_M,
-    ITEM_EXP_CANDY_L,
-    ITEM_RARE_CANDY,
     ITEM_NONE
 };
 
@@ -317,11 +309,11 @@ static const u16 sShopInventory_SevenBadges[] = {
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
     ITEM_POKE_DOLL,
+    ITEM_RARE_CANDY,
+    ITEM_EXP_CANDY_XS,
     ITEM_EXP_CANDY_S,
     ITEM_EXP_CANDY_M,
     ITEM_EXP_CANDY_L,
-    ITEM_EXP_CANDY_XL,
-    ITEM_RARE_CANDY,
     ITEM_NONE
 };
 
@@ -345,12 +337,13 @@ static const u16 sShopInventory_EightBadges[] = {
     ITEM_SUPER_REPEL,
     ITEM_MAX_REPEL,
     ITEM_POKE_DOLL,
+    ITEM_RARE_CANDY,
+    ITEM_DYNAMAX_CANDY,
+    ITEM_EXP_CANDY_XS,
     ITEM_EXP_CANDY_S,
     ITEM_EXP_CANDY_M,
     ITEM_EXP_CANDY_L,
     ITEM_EXP_CANDY_XL,
-    ITEM_RARE_CANDY,
-    ITEM_DYNAMAX_CANDY,
     ITEM_NONE
 };
 
@@ -626,7 +619,7 @@ bool32 Test_BriskGeneralMartSells(u16 item)
 {
     SetShopItemsForSale(NULL);
     for (u32 i = 0; i < sMartInfo.itemCount; i++)
-        if (sMartInfo.itemList[i] == item)
+        if (sMartInfo.itemList[i] == item && IsItemShopCriteriaFulfilled(item))
             return TRUE;
     return FALSE;
 }
@@ -792,7 +785,7 @@ static void CB2_InitBuyMenu(void)
 static void BuyMenuFreeMemory(void)
 {
     if (sMartInfo.martType == MART_TYPE_NORMAL)
-        TryFreeDynamicShopItemList(&sMartInfo.itemList);
+        TryFreeDynamicShopItemList(&sMartInfo.itemList, &sMartInfo.itemCount);
 
     Free(sShopData);
     Free(sListMenuItems);
