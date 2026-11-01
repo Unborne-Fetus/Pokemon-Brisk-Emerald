@@ -31,6 +31,11 @@ u32 BriskDifficultyPartySize(u32 count, u32 highestLevel, bool32 story, bool32 l
     case BRISK_MODE_NORMAL:
         target = highestLevel < 20 ? 2 : highestLevel < 40 ? 3 : 4;
         break;
+    case BRISK_MODE_EXPERT:
+        // Full six-member late-game battles, with gentler training and AI.
+        target = story ? (highestLevel < 20 ? 4 : highestLevel < 35 ? 5 : 6)
+                       : (highestLevel < 20 ? 3 : highestLevel < 35 ? 4 : highestLevel < 50 ? 5 : 6);
+        break;
     case BRISK_MODE_HARD:
         target = story ? (highestLevel < 25 ? 4 : highestLevel < 40 ? 5 : 6)
                        : (highestLevel < 20 ? 3 : highestLevel < 40 ? 4 : 5);
@@ -175,11 +180,11 @@ void BriskExpandTrainerParty(struct Pokemon *party, u32 count, u32 target, struc
 
 void BriskDifficultyHeldItem(struct Pokemon *mon)
 {
-    if (GetBriskDifficulty() != BRISK_MODE_HARD && GetBriskDifficulty() != BRISK_MODE_EXTREME) return;
+    if (GetBriskDifficulty() != BRISK_MODE_EXPERT && GetBriskDifficulty() != BRISK_MODE_HARD && GetBriskDifficulty() != BRISK_MODE_EXTREME) return;
     enum Item item = GetMonData(mon,MON_DATA_HELD_ITEM);
     if (item != ITEM_NONE && item != ITEM_ORAN_BERRY && item != ITEM_SITRUS_BERRY && item != ITEM_EXPERT_BELT) return;
     u32 level = GetMonData(mon,MON_DATA_LEVEL);
-    item = level < 25 ? ITEM_ORAN_BERRY : level < 40 ? ITEM_SITRUS_BERRY : ITEM_LIFE_ORB;
+    item = level < 25 ? ITEM_ORAN_BERRY : level < 40 ? ITEM_SITRUS_BERRY : (GetBriskDifficulty() == BRISK_MODE_EXPERT ? ITEM_EXPERT_BELT : ITEM_LIFE_ORB);
     if (GetMonAbility(mon) == ABILITY_GUTS && level >= 30) item = ITEM_FLAME_ORB;
     else if (level >= 40)
         for (u32 i = 0; i < MAX_MON_MOVES; i++)
