@@ -13,6 +13,7 @@ struct TrainerGenerator
     bool8 kaizoBoss;
     bool8 championSet;
     bool8 authoredParty;
+    bool8 protectedRoster; // Dedication, Archive and other exempt identities.
     u8 highestLevel;
     u8 name[TRAINER_NAME_LENGTH + 1];
     struct OriginalTrainerId otID;
