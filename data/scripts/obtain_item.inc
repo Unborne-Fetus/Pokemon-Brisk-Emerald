@@ -6,7 +6,19 @@ Std_ObtainItem::
 	copyvar VAR_0x8006, ITEMID
 	additem ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT
+	goto_if_eq VAR_0x8007, FALSE, EventScript_StoreGiftItemInPC
 	call EventScript_ObtainItemMessage
+	return
+
+EventScript_StoreGiftItemInPC::
+	callnative BriskTryStoreGiftItemInPC
+	goto_if_eq VAR_RESULT, FALSE, EventScript_NoRoomForItem
+	bufferitemnameplural STR_VAR_2, ITEMID, AMOUNT
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gText_ObtainedTheItem, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox gText_TheDecorWasTransferredToThePC, MSGBOX_DEFAULT
+	setvar VAR_RESULT, TRUE
 	return
 
 EventScript_ObtainItemMessage::
@@ -118,8 +130,19 @@ Std_FindItem::
 	checkitemtype ITEMID
 	call EventScript_BufferPocketNameAndTryFanfare
 	call_if_eq VAR_0x8007, TRUE, EventScript_PickUpItem
-	call_if_eq VAR_0x8007, FALSE, EventScript_NoRoomToPickUpItem
+	call_if_eq VAR_0x8007, FALSE, EventScript_TryStoreFoundItemInPC
 	release
+	return
+
+EventScript_TryStoreFoundItemInPC::
+	callnative BriskTryStoreFoundItemInPC
+	goto_if_eq VAR_RESULT, FALSE, EventScript_NoRoomToPickUpItem
+	removeobject VAR_LAST_TALKED
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gText_PlayerFoundOneItem, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox gText_TheDecorWasTransferredToThePC, MSGBOX_DEFAULT
+	setvar VAR_RESULT, TRUE
 	return
 
 EventScript_PickUpItem::
@@ -188,7 +211,20 @@ EventScript_HiddenItemScript::
 	checkitemtype VAR_0x8005
 	call EventScript_BufferPocketNameAndTryFanfare
 	goto_if_eq VAR_0x8007, TRUE, EventScript_PickUpHiddenItem
-	goto_if_eq VAR_0x8007, FALSE, EventScript_NoRoomForHiddenItem
+	goto_if_eq VAR_0x8007, FALSE, EventScript_TryStoreHiddenItemInPC
+	end
+
+EventScript_TryStoreHiddenItemInPC::
+	callnative BriskTryStoreHiddenItemInPC
+	goto_if_eq VAR_RESULT, FALSE, EventScript_NoRoomForHiddenItem
+	callnative Script_ClearDowsingColor
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox gText_PlayerFoundOneItem, MSGBOX_DEFAULT
+	waitfanfare
+	msgbox gText_TheDecorWasTransferredToThePC, MSGBOX_DEFAULT
+	special SetHiddenItemFlag
+	callnative Script_UpdateDowseState
+	releaseall
 	end
 
 EventScript_PickUpHiddenItem::
