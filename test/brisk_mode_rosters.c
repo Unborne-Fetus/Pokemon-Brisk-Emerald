@@ -77,10 +77,10 @@ TEST("Brisk mode rosters preserve every dedication and Easter egg party field in
     EXPECT_EQ(protectedCount, 27);
 }
 
-TEST("Brisk mode rosters map saved Normal Easy Hard Kaizo values to Expansion rows")
+TEST("Brisk mode rosters preserve legacy IDs and map Expert to the full Hard row")
 {
     u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
-    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO};
+    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_HARD};
     for (u32 mode = 0; mode < ARRAY_COUNT(rows); mode++)
     {
         VarSet(VAR_BRISK_DIFFICULTY, mode);
