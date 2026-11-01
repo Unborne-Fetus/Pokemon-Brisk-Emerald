@@ -817,13 +817,13 @@ s8 Menu_ProcessInputNoWrapAround_other(void)
     {
         return MENU_B_PRESSED;
     }
-    else if (JOY_REPEAT(DPAD_ANY) == DPAD_UP)
+    else if (JOY_REPEAT(DPAD_UP))
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(-1))
             PlaySE(SE_SELECT);
         return MENU_NOTHING_CHOSEN;
     }
-    else if (JOY_REPEAT(DPAD_ANY) == DPAD_DOWN)
+    else if (JOY_REPEAT(DPAD_DOWN))
     {
         if (oldPos != Menu_MoveCursorNoWrapAround(1))
             PlaySE(SE_SELECT);
