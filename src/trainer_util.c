@@ -71,6 +71,26 @@ static bool32 UsesTrainerPolicy(const struct Trainer *trainer, const bool8 *poli
 #endif
 }
 
+// Identify postgame Kanto records without touching the stored trainer IDs.
+static bool32 IsKantoPostgameTrainer(const struct Trainer *trainer)
+{
+#if TESTING
+    if (trainer == sTestPolicyTrainer)
+        return sTestPolicyId >= BRISK_KANTO_TRAINER_BASE && sTestPolicyId < TRAINERS_COUNT;
+#endif
+#ifndef EMERALD
+    return FALSE;
+#else
+    u32 address = (u32)trainer;
+    u32 start = (u32)gTrainers;
+    if (address < start || address >= start + sizeof(gTrainers))
+        return FALSE;
+    u32 offset = address - start;
+    return offset % sizeof(struct Trainer) == 0
+        && ((offset / sizeof(struct Trainer)) % TRAINERS_COUNT) >= BRISK_KANTO_TRAINER_BASE;
+#endif
+}
+
 rng_value_t GeneratePartySeed(const struct Trainer *trainer)
 {
     u32 seed = Crc32B((const u8 *)trainer, sizeof(struct Trainer)) ^ READ_OTID_FROM_SAVE;
@@ -162,13 +182,14 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 {
     trainerGen->authoredParty = trainer->authoredParty;
     trainerGen->protectedRoster = UsesTrainerPolicy(trainer, sBriskExemptTrainer);
+    trainerGen->kantoPostgame = IsKantoPostgameTrainer(trainer);
     trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
     trainerGen->storyLoadout = UsesTrainerPolicy(trainer, sBriskStoryTrainer);
     trainerGen->leagueLevels = UsesTrainerPolicy(trainer, sBriskLeagueTrainer);
     trainerGen->kaizoBoss = UsesTrainerPolicy(trainer, sBriskKaizoBoss);
     trainerGen->championSet = UsesTrainerPolicy(trainer, sBriskChampionSet);
     trainerGen->highestLevel = 0;
-    if (trainerGen->fairLoadout || trainerGen->storyLoadout)
+    if (trainerGen->fairLoadout || trainerGen->storyLoadout || trainerGen->kantoPostgame)
         for (u32 i = 0; i < max(trainer->partySize, trainer->poolSize); i++)
             trainerGen->highestLevel = max(trainerGen->highestLevel, trainer->party[i].lvl);
     trainerGen->gender = trainer->gender;
@@ -185,6 +206,7 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 {
     trainerGen->authoredParty = FALSE;
     trainerGen->protectedRoster = FALSE;
+    trainerGen->kantoPostgame = FALSE;
     u32 otID;
     trainerGen->fairLoadout = FALSE;
     trainerGen->storyLoadout = FALSE;
@@ -302,7 +324,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             // Preserve protected characters and fixed endgame challenge levels.
             if (GetBriskDifficulty() == BRISK_MODE_EXPERT && !trainer->protectedRoster
              && !trainer->leagueLevels && !trainer->championSet && !trainer->kaizoBoss
-             && (trainer->fairLoadout || trainer->storyLoadout) && adjusted.lvl < MAX_LEVEL)
+             && (trainer->fairLoadout || trainer->storyLoadout || trainer->kantoPostgame) && adjusted.lvl < MAX_LEVEL)
                 adjusted.lvl = max(1, adjusted.lvl - (adjusted.lvl >= 35 ? 3 : adjusted.lvl >= 15 ? 2 : 0));
         }
         else if (trainer->kaizoBoss || trainer->championSet)
@@ -463,14 +485,14 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
             else
                 ApplyBriskTrainerLoadout(mon);
             ApplyBriskTrainerTraining(mon, trainer->fairLoadout || trainer->storyLoadout);
-            if (trainer->fairLoadout || trainer->storyLoadout)
+            if (trainer->fairLoadout || trainer->storyLoadout || trainer->kantoPostgame)
                 BriskDifficultyHeldItem(mon);
         }
     }
 
     if (trainer->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT && !trainer->protectedRoster
      && !trainer->leagueLevels && !trainer->championSet && !trainer->kaizoBoss
-     && (trainer->fairLoadout || trainer->storyLoadout))
+     && (trainer->fairLoadout || trainer->storyLoadout || trainer->kantoPostgame))
     {
         // Keep the move/ability/item synergy of authored Hard teams, but soften
         // the raw stat advantage. Never change a curated boss or dedication team.
