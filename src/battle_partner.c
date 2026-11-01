@@ -33,7 +33,7 @@ static void GenerateNamedPartnerParty(const struct Trainer *partner, u16 trainer
     if (trainerId == TRAINER_PARTNER(PARTNER_STEVEN))
     {
         partnerGen.otID = OTID_STRUCT_PRESET(STEVEN_OTID);
-        if (GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL)
+        if (GetBriskDifficulty() == BRISK_MODE_EASY || GetBriskDifficulty() == BRISK_MODE_NORMAL || GetBriskDifficulty() == BRISK_MODE_EXPERT)
             lastIndex = min(lastIndex, 3);
     }
     for (u32 i = 0; i < lastIndex && i < partner->partySize; i++)
