@@ -4,6 +4,7 @@
 #include "item.h"
 #include "battle_pyramid.h"
 #include "constants/event_objects.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 
 static u32 GetItemBallAmountFromTemplate(u32);
