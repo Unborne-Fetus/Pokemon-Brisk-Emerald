@@ -560,7 +560,9 @@ bool32 DynamaxAdventure_FinishBattle(u32 outcome)
     {
         struct Pokemon *mon = &sAdventure->team[i];
         u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
-        u32 heal = sAdventure->difficulty <= BRISK_MODE_NORMAL ? maxHP
+        // Expert recovers more than Hard without Easy's status cures.
+        u32 heal = (sAdventure->difficulty == BRISK_MODE_EASY || sAdventure->difficulty == BRISK_MODE_NORMAL) ? maxHP
+                 : sAdventure->difficulty == BRISK_MODE_EXPERT ? max(1, maxHP * 3 / 4)
                  : max(1, maxHP / (sAdventure->difficulty == BRISK_MODE_HARD ? 2 : 4));
         u16 hp = min(maxHP, GetMonData(mon, MON_DATA_HP) + heal);
         SetMonData(mon, MON_DATA_HP, &hp);
