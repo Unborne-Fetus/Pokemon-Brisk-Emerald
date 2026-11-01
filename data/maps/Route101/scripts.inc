@@ -22,9 +22,9 @@ Route101_EventScript_StartBirchRescue::
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
 	@ Keep the rescue scene on the same side of Route 101's cliff as the player.
-	@ The old (0,15)/(0,16) start points put both actors behind the western wall.
-	setobjectxy LOCALID_ROUTE101_BIRCH, 11, 14
-	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 10, 14
+	@ Both initial spawns and scripted movement now remain in the lower grass corridor.
+	setobjectxy LOCALID_ROUTE101_BIRCH, 11, 16
+	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 10, 16
 	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunAway1
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
@@ -173,8 +173,9 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROUTE101_ZIGZAGOON
-	setobjectxy LOCALID_PLAYER, 9, 15
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	@ Keep the player on the lower path, facing the starter bag.
+	setobjectxy LOCALID_PLAYER, 10, 18
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	special StartNewPokeballCaseUI
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
@@ -204,8 +205,7 @@ Route101_EventScript_HideBrendanInBedroom::
 	return
 
 Route101_Movement_BirchApproachPlayer:
-	walk_fast_left
-	walk_fast_left
+	@ Stop beside the bag, never walk onto the western ledge.
 	walk_fast_left
 	walk_fast_left
 	face_down
