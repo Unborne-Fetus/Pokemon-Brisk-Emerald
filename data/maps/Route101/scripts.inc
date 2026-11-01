@@ -21,10 +21,10 @@ Route101_EventScript_StartBirchRescue::
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
-	@ Keep the rescue scene on the same side of Route 101's cliff as the player.
-	@ Both initial spawns and scripted movement now remain in the lower grass corridor.
-	setobjectxy LOCALID_ROUTE101_BIRCH, 11, 16
-	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 10, 16
+	@ Reference positions from the original Brisk Emerald Route 101 map.
+	@ Do not override these with separate native-only offsets.
+	setobjectxy LOCALID_ROUTE101_BIRCH, 8, 15
+	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 9, 15
 	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunAway1
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
@@ -37,11 +37,8 @@ Route101_EventScript_StartBirchRescue::
 	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
 	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchFaceZigzagoon
 	waitmovement 0
-	@ The north tile here is a raised cliff, not walkable grass.
-	@ Keep Birch on the lower safe path; move Zigzagoon south after its chase
-	@ so Birch stands visibly north of the attacker without clipping the ledge.
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonStepSouth
-	waitmovement 0
+	@ The chase animation must end at the original event coordinates:
+	@ Birch (8,15), Zigzagoon (9,15).
 	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_ROUTE101_STATE, 2
@@ -88,23 +85,18 @@ Route101_Movement_PreventExitNorth:
 	step_end
 
 Route101_Movement_ZigzagoonChaseInCircles:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
+	@ Jog and turn without traversing solid terrain or changing the reference tile.
+	walk_in_place_fast_left
+	walk_in_place_fast_right
+	walk_in_place_fast_left
+	walk_in_place_fast_right
+	walk_in_place_fast_left
+	walk_in_place_fast_right
 	step_end
 
 Route101_Movement_ZigzagoonChase1:
-	walk_fast_right
-	walk_fast_right
+	walk_in_place_fast_left
+	walk_in_place_fast_right
 	step_end
 
 @ Leftover data? This command is unused.
@@ -122,23 +114,18 @@ Route101_Movement_EnterScene:
 	step_end
 
 Route101_Movement_BirchRunInCircles:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
-	walk_fast_left
-	walk_fast_left
-	walk_fast_right
-	walk_fast_right
+	@ Preserve the original tile while animating Birch's panic.
+	walk_in_place_fast_left
+	walk_in_place_fast_right
+	walk_in_place_fast_left
+	walk_in_place_fast_right
+	walk_in_place_fast_left
+	walk_in_place_fast_right
 	step_end
 
 Route101_Movement_BirchRunAway1:
-	walk_fast_right
-	walk_fast_right
+	walk_in_place_fast_right
+	walk_in_place_fast_left
 	step_end
 
 @ Leftover data? This command is unused.
@@ -178,6 +165,9 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROUTE101_ZIGZAGOON
+	@ After the rescue, reposition Birch while the field is faded out, so his
+	@ walk to the unchanged bag never crosses the western rock wall.
+	setobjectxy LOCALID_ROUTE101_BIRCH, 11, 16
 	@ Keep the player on the lower path, facing the starter bag.
 	setobjectxy LOCALID_PLAYER, 10, 18
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -210,14 +200,8 @@ Route101_EventScript_HideBrendanInBedroom::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	return
 
-Route101_Movement_ZigzagoonStepSouth:
-	walk_fast_down
-	walk_in_place_fast_right
-	step_end
-
 Route101_Movement_BirchApproachPlayer:
-	@ Stop beside the bag, never walk onto the western ledge.
-	walk_fast_left
+	@ From (11,16), stop on (10,16) above the unchanged bag at (10,17).
 	walk_fast_left
 	face_down
 	step_end
