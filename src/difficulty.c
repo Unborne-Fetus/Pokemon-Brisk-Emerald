@@ -12,6 +12,8 @@ enum DifficultyLevel GetBriskDifficultyLevel(void)
     {
     case BRISK_MODE_EASY: return DIFFICULTY_EASY;
     case BRISK_MODE_HARD: return DIFFICULTY_HARD;
+    // Expert uses Hard's full authored rosters with softer runtime tuning.
+    case BRISK_MODE_EXPERT: return DIFFICULTY_HARD;
     case BRISK_MODE_KAIZO: return DIFFICULTY_KAIZO;
     default: return DIFFICULTY_NORMAL;
     }
