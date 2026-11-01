@@ -1402,7 +1402,7 @@ static void Task_OptionMenuProcessInput_Pg3(u8 taskId)
 
 static void DrawModesChoices(void)
 {
-    static const u8 *const modes[] = {COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}EASY"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}HARD"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}KAIZO")};
+    static const u8 *const modes[] = {COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}NORMAL"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}EASY"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}HARD"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}KAIZO"), COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}EXPERT")};
     FillWindowPixelRect(WIN_OPTIONS, PIXEL_FILL(1), 104, 0, 104, 16);
     DrawOptionMenuChoice(modes[GetBriskDifficulty()], 104, 0, TRUE);
     u32 settings = VarGet(VAR_BRISK_RANDOMIZER);
@@ -1440,7 +1440,18 @@ static void Task_OptionMenuProcessInput_Pg4(u8 taskId)
     {
         u32 row = gTasks[taskId].tMenuSelection;
         if (row == MENUITEM_DIFFICULTY)
-            VarSet(VAR_BRISK_DIFFICULTY, (GetBriskDifficulty() + (JOY_REPEAT(DPAD_RIGHT) ? 1 : 3)) % 4);
+        {
+            // Display order differs from the saved IDs; never renumber old saves.
+            static const u8 order[] = {BRISK_MODE_EASY, BRISK_MODE_NORMAL, BRISK_MODE_EXPERT, BRISK_MODE_HARD, BRISK_MODE_KAIZO};
+            u32 index;
+            for (index = 0; index < ARRAY_COUNT(order); index++)
+                if (order[index] == GetBriskDifficulty())
+                    break;
+            if (index == ARRAY_COUNT(order))
+                index = 1;
+            index = (index + (JOY_REPEAT(DPAD_RIGHT) ? 1 : ARRAY_COUNT(order) - 1)) % ARRAY_COUNT(order);
+            VarSet(VAR_BRISK_DIFFICULTY, order[index]);
+        }
         else if (row >= MENUITEM_RANDOM_WILD && row <= MENUITEM_RANDOM_ALL)
             VarSet(VAR_BRISK_RANDOMIZER, VarGet(VAR_BRISK_RANDOMIZER) ^ (1 << (row - MENUITEM_RANDOM_WILD)));
         DrawModesChoices();
