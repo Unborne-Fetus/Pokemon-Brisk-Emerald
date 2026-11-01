@@ -381,11 +381,12 @@ static void CreateHandSprite()
 
 static void DestroyHandSprite()
 {
-    u8 i = 0;
-    for(i = 0; i < 9; i++)
+    // The cursor is its own sprite. Destroying ball sprites here a second
+    // time corrupts the sprite allocator when the opening case closes.
+    if (sBirchCaseDataPtr->handSpriteId != SPRITE_NONE)
     {
-        DestroySprite(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[i]]);
-        sBirchCaseDataPtr->pokeballSpriteIds[i] = SPRITE_NONE;
+        DestroySprite(&gSprites[sBirchCaseDataPtr->handSpriteId]);
+        sBirchCaseDataPtr->handSpriteId = SPRITE_NONE;
     }
 }
 
@@ -432,8 +433,11 @@ static void DestroyPokeballSprites()
     u8 i = 0;
     for(i = 0; i < 9; i++)
     {
-        DestroySprite(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[i]]);
-        sBirchCaseDataPtr->pokeballSpriteIds[i] = SPRITE_NONE;
+        if (sBirchCaseDataPtr->pokeballSpriteIds[i] != SPRITE_NONE)
+        {
+            DestroySprite(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[i]]);
+            sBirchCaseDataPtr->pokeballSpriteIds[i] = SPRITE_NONE;
+        }
     }
 }
 
@@ -577,6 +581,7 @@ void BirchCase_Init(MainCallback callback)
     sBirchCaseDataPtr->savedCallback = callback;
 
     sBirchCaseDataPtr->handSpriteId = SPRITE_NONE;
+    sBirchCaseDataPtr->monSpriteId = SPRITE_NONE;
 
     for(i=0; i < 9; i++)
     {
@@ -671,21 +676,34 @@ static bool8 BirchCaseDoGfxSetup(void)
     return FALSE;
 }
 
-#define try_free(ptr) ({        \
-    void ** ptr__ = (void **)&(ptr);   \
-    if (*ptr__ != NULL)                \
+#define try_free(ptr) ({                \
+    void **ptr__ = (void **)&(ptr);    \
+    if (*ptr__ != NULL) {              \
         Free(*ptr__);                  \
+        *ptr__ = NULL;                 \
+    }                                 \
 })
 
 static void BirchCaseFreeResources(void)
 {
-    try_free(sBirchCaseDataPtr);
+    // Keep menu state alive until every sprite using its IDs is destroyed.
+    // The old order freed sBirchCaseDataPtr and then dereferenced it.
+    if (sBirchCaseDataPtr != NULL)
+    {
+        if (sBirchCaseDataPtr->monSpriteId != SPRITE_NONE)
+        {
+            FreeResourcesAndDestroySprite(&gSprites[sBirchCaseDataPtr->monSpriteId], sBirchCaseDataPtr->monSpriteId);
+            sBirchCaseDataPtr->monSpriteId = SPRITE_NONE;
+        }
+        DestroyHandSprite();
+        DestroyPokeballSprites();
+        FreeSpriteTilesByTag(TAG_POKEBALL_CURSOR);
+        FreeSpritePaletteByTag(TAG_POKEBALL_CURSOR);
+    }
     try_free(sBg1TilemapBuffer);
     try_free(sBg2TilemapBuffer);
-    FreeResourcesAndDestroySprite(&gSprites[sBirchCaseDataPtr->monSpriteId], sBirchCaseDataPtr->monSpriteId);
-    DestroyPokeballSprites();
-    DestroyHandSprite();
     FreeAllWindowBuffers();
+    try_free(sBirchCaseDataPtr);
 }
 
 static void Task_BirchCaseWaitFadeAndBail(u8 taskId)
