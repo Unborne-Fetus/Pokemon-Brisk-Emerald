@@ -12,7 +12,7 @@ full TrainerMon structures in ROM.
 import argparse
 import json
 from pathlib import Path
-from build_expert_teams import read_sources, pokemon_species
+from build_expert_teams import read_sources, pokemon_species, pokemon_level
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "src/data/brisk_expert_patch.h"
@@ -40,6 +40,11 @@ def get_patches():
             for target in targets:
                 for source_idx, mon in enumerate(other):
                     species = pokemon_species(mon)
+                    # Do not import an evolved or overleveled source member
+                    # into a weaker Expert encounter. Its legal authored level
+                    # must not exceed the Hard target it replaces.
+                    if pokemon_level(mon) > pokemon_level(hard[target]):
+                        continue
                     if species == hard_species[target]:
                         continue
                     if species in (sp for i, sp in enumerate(hard_species) if i != target):
