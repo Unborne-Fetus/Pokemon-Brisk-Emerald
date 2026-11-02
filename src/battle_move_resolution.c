@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_arena.h"
+#include "data.h"
 #include "battle_environment.h"
 #include "battle_hold_effects.h"
 #include "battle_ai_record.h"
@@ -2949,6 +2950,24 @@ static enum CancelerResult CancelerSkipFrame(struct BattleCalcValues *cv)
     return CANCELER_RESULT_RUN_SCRIPT_AND_INCREMENT;
 }
 
+// An enemy-only battle modifier, deliberately NOT a species ability.
+// Trace, Skill Swap, Ability Patch, catching and saved Pokemon cannot obtain it.
+static bool32 IsXiphosProtocolBattler(enum BattlerId battler)
+{
+    u32 trainerId;
+
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || IsOnPlayerSide(battler)
+     || (gBattleTypeFlags & BATTLE_TYPE_LINK))
+        return FALSE;
+    if (GetBattlerTrainer(battler) == B_TRAINER_OPPONENT_B)
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+    else if (GetBattlerTrainer(battler) == B_TRAINER_OPPONENT_A)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        return FALSE;
+    return trainerId < TRAINERS_COUNT && GetTrainerStructFromId(trainerId)->xiphosProtocol;
+}
+
 static enum CancelerResult CancelerHealthBarUpdate(struct BattleCalcValues *cv)
 {
     for (enum BattlerId battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
@@ -2963,6 +2982,19 @@ static enum CancelerResult CancelerHealthBarUpdate(struct BattleCalcValues *cv)
          || DoesDisguiseBlockMove(battlerDef, cv->move)
          || DoesIceFaceBlockMove(battlerDef, cv->move))
             continue;
+
+        // Once per switch-in: first damaging hit is halved, then grants
+        // +2 Attack, Special Attack and Speed after damage is applied.
+        if (IsXiphosProtocolBattler(battlerDef)
+         && !gBattleStruct->battlerState[battlerDef].containmentUsed
+         && gBattleStruct->moveDamage[battlerDef] > 0
+         && gBattleMons[battlerDef].hp > 0)
+        {
+            gBattleStruct->moveDamage[battlerDef] =
+                max(1, (gBattleStruct->moveDamage[battlerDef] + 1) / 2);
+            gBattleStruct->battlerState[battlerDef].containmentUsed = TRUE;
+            gBattleStruct->battlerState[battlerDef].containmentPending = TRUE;
+        }
 
         s32 dmgUpdate = min(gBattleStruct->moveDamage[battlerDef], 10000);
         BtlController_EmitHealthBarUpdate(battlerDef, B_COMM_TO_CONTROLLER, dmgUpdate);
@@ -3042,6 +3074,17 @@ static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
             }
 
             hpLost = hpBefore - gBattleMons[cv->battlerDef].hp;
+            if (gBattleStruct->battlerState[cv->battlerDef].containmentPending)
+            {
+                gBattleStruct->battlerState[cv->battlerDef].containmentPending = FALSE;
+                if (hpLost != 0 && gBattleMons[cv->battlerDef].hp != 0)
+                {
+                    const enum Stat boosted[] = {STAT_ATK, STAT_SPATK, STAT_SPEED};
+                    for (u32 i = 0; i < ARRAY_COUNT(boosted); i++)
+                        gBattleMons[cv->battlerDef].statStages[boosted[i]] =
+                            min(MAX_STAT_STAGE, gBattleMons[cv->battlerDef].statStages[boosted[i]] + 2);
+                }
+            }
             if (hpLost != 0)
                 gBattleStruct->innardsOutHpLost[cv->battlerDef] += hpLost;
 
