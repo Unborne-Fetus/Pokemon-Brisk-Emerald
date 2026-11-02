@@ -22,5 +22,5 @@ src/data/brisk_expert_teams.party: src/data/brisk_mode_teams.party src/data/bris
 # Compare contents so unchanged tables do not force data.o to rebuild.
 src/data/brisk_mode_teams.h: src/data/brisk_mode_teams.party src/data/brisk_kanto_teams.party src/data/brisk_expert_teams.party $(TRAINERPROC) FORCE
 	@set -e; trap 'rm -f $@.tmp' EXIT; \
-	{ cat $<; printf '\\n#include "src/data/brisk_expert_teams.party"\\n'; } | $(CPP) $(CPPFLAGS) -traditional-cpp - | $(TRAINERPROC) -o $@.tmp -i $< -; \
+	{ cat $<; printf '\n#include "src/data/brisk_expert_teams.party"\n'; } | $(CPP) $(CPPFLAGS) -traditional-cpp - | $(TRAINERPROC) -o $@.tmp -i $< -; \
 	if ! cmp -s $@.tmp $@; then mv $@.tmp $@; fi
