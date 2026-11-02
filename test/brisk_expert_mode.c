@@ -23,7 +23,7 @@ TEST("Expert is an accessible full-team mode with save-compatible ID")
     gBattleTypeFlags = 0;
 
     EXPECT_EQ(GetBriskDifficulty(), BRISK_MODE_EXPERT);
-    EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_HARD);
+    EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_EXPERT);
     EXPECT_EQ(GetBriskPriceMultiplier(), 3);
     EXPECT(BriskBattleItemsAllowed());
     EXPECT_EQ(GetBriskBattleStyle(OPTIONS_BATTLE_STYLE_SHIFT), OPTIONS_BATTLE_STYLE_SET);
@@ -59,7 +59,7 @@ static const struct Trainer sExpertTestTrainer =
     .trainerName = _("EXPERT"),
 };
 
-TEST("Expert fills late authored ordinary teams and keeps the original ace last")
+TEST("Expert preserves each authored party and keeps its original ace last")
 {
     u16 previousMode = VarGet(VAR_BRISK_DIFFICULTY);
     u16 previousRandomizer = VarGet(VAR_BRISK_RANDOMIZER);
@@ -67,18 +67,20 @@ TEST("Expert fills late authored ordinary teams and keeps the original ace last"
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXPERT);
     VarSet(VAR_BRISK_RANDOMIZER, 0);
     gBattleTypeFlags = 0;
-    // Run the same late-team contract in Hoenn and Kanto: the second region
-    // must not silently fall back to unmodified Hard difficulty.
+    // Neither Hoenn nor Kanto may receive random reserves after loading its
+    // independent Expert-mode authored party.
     const u16 testIds[] = {TRAINER_SAWYER_1, BRISK_KANTO_TRAINER_BASE + 1};
     struct Pokemon party[PARTY_SIZE];
     for (u32 region = 0; region < ARRAY_COUNT(testIds); region++)
     {
         Test_BriskTrainerSource(&sExpertTestTrainer, testIds[region]);
         CreateNPCTrainerPartyFromTrainer(party, &sExpertTestTrainer);
-        for (u32 i = 0; i < PARTY_SIZE; i++)
-            EXPECT_NE(GetMonData(&party[i], MON_DATA_SPECIES), SPECIES_NONE);
-        EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_SPECIES), SPECIES_RATICATE);
-        EXPECT_EQ(GetMonData(&party[PARTY_SIZE - 1], MON_DATA_LEVEL), 67);
+        EXPECT_EQ(GetMonData(&party[0], MON_DATA_SPECIES), SPECIES_PIKACHU);
+        EXPECT_EQ(GetMonData(&party[1], MON_DATA_SPECIES), SPECIES_RATICATE);
+        for (u32 i = 2; i < PARTY_SIZE; i++)
+            EXPECT_EQ(GetMonData(&party[i], MON_DATA_SPECIES), SPECIES_NONE);
+        EXPECT_EQ(GetMonData(&party[1], MON_DATA_SPECIES), SPECIES_RATICATE);
+        EXPECT_EQ(GetMonData(&party[1], MON_DATA_LEVEL), 67);
         Test_BriskTrainerSource(NULL, 0);
     }
 
