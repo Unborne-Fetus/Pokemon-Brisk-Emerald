@@ -23,7 +23,7 @@ TEST("Expert is an accessible full-team mode with save-compatible ID")
     gBattleTypeFlags = 0;
 
     EXPECT_EQ(GetBriskDifficulty(), BRISK_MODE_EXPERT);
-    EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_HARD);
+    EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_EXPERT);
     EXPECT_EQ(GetBriskPriceMultiplier(), 3);
     EXPECT(BriskBattleItemsAllowed());
     EXPECT_EQ(GetBriskBattleStyle(OPTIONS_BATTLE_STYLE_SHIFT), OPTIONS_BATTLE_STYLE_SET);
