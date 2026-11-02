@@ -7,7 +7,6 @@ enum DifficultyLevel
     DIFFICULTY_NORMAL, //If you rename this, the word "Normal" in fprint_trainers must be replaced with the new difficulty name.
     DIFFICULTY_HARD,
     DIFFICULTY_KAIZO,
-    DIFFICULTY_EXPERT, // Fifth authored trainer row. Save-mode IDs remain unchanged.
 #if TESTING
     DIFFICULTY_TEST,
 #endif 
