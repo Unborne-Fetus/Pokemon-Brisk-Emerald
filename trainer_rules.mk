@@ -17,6 +17,7 @@ AUTO_GEN_TARGETS += src/data/debug_trainers.h
 AUTO_GEN_TARGETS += src/data/brisk_expert_patch.h
 src/data/brisk_expert_patch.h: src/data/brisk_mode_teams.party src/data/brisk_kanto_teams.party tools/brisk/build_compact_expert.py FORCE
 	@python3 tools/brisk/build_compact_expert.py --write
+	@python3 tools/brisk/check_all_mode_balance.py
 
 $(C_BUILDDIR)/battle_setup.o: c_dep += src/data/brisk_expert_patch.h
 
