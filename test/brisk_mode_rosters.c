@@ -208,7 +208,7 @@ TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every 
     struct MapHeader savedHeader = gMapHeader;
     u16 savedDifficulty = VarGet(VAR_BRISK_DIFFICULTY);
     gMapHeader.mapLayoutId = LAYOUT_ROUTE135_ARCHIVES;
-    for (u32 mode = BRISK_MODE_NORMAL; mode <= BRISK_MODE_KAIZO; mode++)
+    for (u32 mode = BRISK_MODE_NORMAL; mode <= BRISK_MODE_MAX; mode++)
     {
         VarSet(VAR_BRISK_DIFFICULTY, mode);
         for (u32 i = 0; i < ARRAY_COUNT(archive); i++)
