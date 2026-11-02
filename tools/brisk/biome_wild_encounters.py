@@ -35,7 +35,7 @@ EARLY = {
     "MAP_ROUTE104": (5, 12, "WURMPLE TAILLOW SHROOMISH SEEDOT LOTAD HOOTHOOT BUDEW FLETCHLING COMBEE CATERPIE PIDOVE"),
     "MAP_PETALBURG_WOODS": (5, 13, "WURMPLE SILCOON CASCOON SHROOMISH SEEDOT ODDISH CATERPIE WEEDLE SEWADDLE VENIPEDE SPINARAK"),
     "MAP_ROUTE116": (9, 17, "NINCADA WHISMUR SKITTY TAILLOW POOCHYENA SHROOMISH NICKIT YAMPER LILLIPUP WOOPER"),
-    "MAP_ROUTE117": (13, 24, "ROSELIA MARILL VOLBEAT ILLUMISE ODDISH ELECTRIKE SKITTY RALTS FLAFFY HOPPIP"),
+    "MAP_ROUTE117": (13, 24, "ROSELIA MARILL VOLBEAT ILLUMISE ODDISH ELECTRIKE SKITTY RALTS FLAAFFY HOPPIP"),
 }
 # A limited set of additional Fakemon from *already installed* packs.
 # Baby-stage species were selected for low/medium-level Hoenn zones.
@@ -87,6 +87,18 @@ def slots(data):
 
 
 def rebalance(data, strict=True):
+    # Catch misspelled species before the GBA C compiler tries to parse a
+    # many-megabyte generated wild header.
+    import re
+    species_header = (ROOT / "include/constants/species.h").read_text(encoding="utf-8")
+    known = set(re.findall(r"\\bSPECIES_[A-Z0-9_]+\\b", species_header))
+    referenced = {"SPECIES_" + name
+                  for _map, (_low, _high, pool) in EARLY.items()
+                  for name in pool.split()}
+    referenced.update("SPECIES_" + name for name in FAKEMON_PLACEMENTS.values())
+    missing = sorted(referenced - known)
+    if missing and strict:
+        raise ValueError("Undefined species in habitat pools: " + ", ".join(missing))
     all_slots = list(slots(data))
     freq = Counter(mon["species"] for _e, _f, _i, mon in all_slots)
     originals = set(freq)
