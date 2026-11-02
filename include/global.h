@@ -280,7 +280,7 @@ struct SaveBlock3
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif
-    u8 kantoTrainerFlags[78] ALIGNED(4); // 624 independent Kanto trainer defeat bits
+    u8 kantoTrainerFlags[80] ALIGNED(4); // 640 Kanto trainer bits; uses two former alignment bytes, preserving all following offsets
     u32 speciesExtensionMagic;
     u8 mikitariDexSeen[BRISK_EXTRA_DEX_BYTES];
     u8 mikitariDexCaught[BRISK_EXTRA_DEX_BYTES];
