@@ -3,8 +3,9 @@
 Hoenn contains authored Easy, Normal, Hard and Kaizo trainer records in
 `src/data/brisk_mode_teams.party`. Independent Expert records are generated into
 `src/data/brisk_expert_teams.party` during compilation. These records are
-selected by difficulty; the game
-does not expand, scale, devolve or optimize their parties at battle time.
+selected by difficulty; the game does not add random party members or
+replace the selected species at battle time. Expert still uses its own
+mode-specific level/IV/EV tuning.
 
 See [every trainer and mode roster](brisk_authored_mode_teams.md) for the
 complete species and level list, including rivals, gym rematches and bosses.
