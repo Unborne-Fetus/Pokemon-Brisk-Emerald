@@ -376,7 +376,8 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         enum HoldEffect holdEffect = GetItemHoldEffect(adjusted.heldItem);
         if ((holdEffect == HOLD_EFFECT_MEGA_STONE || holdEffect == HOLD_EFFECT_Z_CRYSTAL
           || holdEffect == HOLD_EFFECT_PRIMAL_ORB)
-         && !(adjusted.species == SPECIES_MAGEARNA && adjusted.heldItem == ITEM_MAGEARNITE))
+         && !(trainer->trainerClass == TRAINER_CLASS_XIPHOS_DIRECTOR
+           && adjusted.species == SPECIES_MAGEARNA && adjusted.heldItem == ITEM_MAGEARNITE))
             adjusted.heldItem = ITEM_LEFTOVERS;
     }
     trainerMon = &adjusted;
