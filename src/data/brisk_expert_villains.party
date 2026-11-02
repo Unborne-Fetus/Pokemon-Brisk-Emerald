@@ -1,0 +1,4855 @@
+/* Curated from the existing Hard, Normal and Kaizo villain teams.
+ * Explicit fifth-mode rosters: never used for League, dedication or Archive.
+ * These records are separate from the generated four-mode authoring tool.
+ */
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_BLASTOISE @ ITEM_EVIOLITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_TORRENT
+- MOVE_HYDRO_CANNON
+- MOVE_HYPER_BEAM
+- MOVE_FLASH_CANNON
+- MOVE_FOCUS_BLAST
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_FERALIGATR @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_TORRENT
+- MOVE_OUTRAGE
+- MOVE_GIGA_IMPACT
+- MOVE_AQUA_TAIL
+- MOVE_SUPERPOWER
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_SLOWBRO @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_REGENERATOR
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_SLACK_OFF
+
+
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_TSAREENA @ ITEM_ASSAULT_VEST
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_QUEENLY_MAJESTY
+- MOVE_POWER_WHIP
+- MOVE_HIGH_JUMP_KICK
+- MOVE_U_TURN
+- MOVE_KNOCK_OFF
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_GYARADOS @ ITEM_WACAN_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_WATERFALL
+- MOVE_ICE_FANG
+- MOVE_DRAGON_DANCE
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_SHARPEDO @ ITEM_EVIOLITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_ROUGH_SKIN
+- MOVE_GIGA_IMPACT
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_TATSUGIRI @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+- MOVE_HYPER_BEAM
+- MOVE_HYDRO_PUMP
+- MOVE_DRAGON_PULSE
+- MOVE_ICY_WIND
+
+
+=== TRAINER_GRUNT_PETALBURG_WOODS ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_WINGULL @ ITEM_EVIOLITE
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_KEEN_EYE
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_UPROAR
+- MOVE_AIR_CUTTER
+
+SPECIES_WOOPER @ ITEM_EVIOLITE
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 Atk / 192 HP
+Nature: Adamant
+Ability: ABILITY_DAMP
+- MOVE_DIG
+- MOVE_TAKE_DOWN
+- MOVE_ICE_PUNCH
+- MOVE_LIQUIDATION
+
+SPECIES_CHINCHOU @ ITEM_EVIOLITE
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 SpA / 192 HP
+Nature: Modest
+Ability: ABILITY_VOLT_ABSORB
+- MOVE_MUDDY_WATER
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+- MOVE_DAZZLING_GLEAM
+
+SPECIES_QUAGSIRE @ ITEM_SITRUS_BERRY
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 Atk / 192 HP
+Nature: Adamant
+Ability: ABILITY_DAMP
+- MOVE_AQUA_TAIL
+- MOVE_DIG
+- MOVE_TAKE_DOWN
+- MOVE_BODY_PRESS
+
+
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_GOLISOPOD @ ITEM_ASSAULT_VEST
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_EMERGENCY_EXIT
+- MOVE_FIRST_IMPRESSION
+- MOVE_LIQUIDATION
+- MOVE_LEECH_LIFE
+- MOVE_AQUA_JET
+
+
+=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PSYDUCK @ ITEM_EVIOLITE
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Modest
+Ability: ABILITY_DAMP
+- MOVE_MUDDY_WATER
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_TERA_BLAST
+
+SPECIES_WOOPER @ ITEM_EVIOLITE
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 Atk / 192 HP
+Nature: Adamant
+Ability: ABILITY_DAMP
+- MOVE_DIG
+- MOVE_TAKE_DOWN
+- MOVE_ICE_PUNCH
+- MOVE_LIQUIDATION
+
+SPECIES_CHINCHOU @ ITEM_EVIOLITE
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 SpA / 192 HP
+Nature: Modest
+Ability: ABILITY_VOLT_ABSORB
+- MOVE_MUDDY_WATER
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+- MOVE_DAZZLING_GLEAM
+
+SPECIES_DEWOTT @ ITEM_EVIOLITE
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 192 SpA / 192 HP
+Nature: Modest
+Ability: ABILITY_TORRENT
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_TERA_BLAST
+- MOVE_AIR_SLASH
+
+
+=== TRAINER_GRUNT_WEATHER_INST_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_TSAREENA @ ITEM_ASSAULT_VEST
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_QUEENLY_MAJESTY
+- MOVE_POWER_WHIP
+- MOVE_HIGH_JUMP_KICK
+- MOVE_U_TURN
+- MOVE_KNOCK_OFF
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_QUAGSIRE @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_DAMP
+- MOVE_EARTHQUAKE
+- MOVE_GIGA_IMPACT
+- MOVE_AQUA_TAIL
+- MOVE_DYNAMIC_PUNCH
+
+
+=== TRAINER_GRUNT_WEATHER_INST_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_TSAREENA @ ITEM_ASSAULT_VEST
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_QUEENLY_MAJESTY
+- MOVE_POWER_WHIP
+- MOVE_HIGH_JUMP_KICK
+- MOVE_U_TURN
+- MOVE_KNOCK_OFF
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_CASTFORM_SNOWY @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_FORECAST
+- MOVE_DOUBLE_EDGE
+- MOVE_BLIZZARD
+- MOVE_FUTURE_SIGHT
+- MOVE_FIRE_BLAST
+
+
+=== TRAINER_GRUNT_WEATHER_INST_3 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_SHARPEDO @ ITEM_EVIOLITE
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_ROUGH_SKIN
+- MOVE_GIGA_IMPACT
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_MUSEUM_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+- MOVE_HYPER_BEAM
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_OMASTAR @ ITEM_SITRUS_BERRY
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_METEOR_BEAM
+- MOVE_HYPER_BEAM
+- MOVE_BLIZZARD
+- MOVE_MUDDY_WATER
+
+
+=== TRAINER_GRUNT_MUSEUM_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+- MOVE_HYPER_BEAM
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_CARRACOSTA @ ITEM_SITRUS_BERRY
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SOLID_ROCK
+- MOVE_GIGA_IMPACT
+- MOVE_STONE_EDGE
+- MOVE_AQUA_TAIL
+- MOVE_SUPERPOWER
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_1 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_IRON_MOTH @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_QUARK_DRIVE
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+- MOVE_SLUDGE_WAVE
+- MOVE_METEOR_BEAM
+
+
+=== TRAINER_GRUNT_MT_PYRE_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_SEAKING @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_CRASHER_WAKE
+- MOVE_GIGA_IMPACT
+- MOVE_AQUA_TAIL
+- MOVE_MEGAHORN
+- MOVE_BOUNCE
+
+
+=== TRAINER_GRUNT_MT_PYRE_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_TSAREENA @ ITEM_ASSAULT_VEST
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_QUEENLY_MAJESTY
+- MOVE_POWER_WHIP
+- MOVE_HIGH_JUMP_KICK
+- MOVE_U_TURN
+- MOVE_KNOCK_OFF
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_VAPOREON @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Modest
+Ability: ABILITY_WATER_ABSORB
+- MOVE_HYDRO_PUMP
+- MOVE_HYPER_BEAM
+- MOVE_BLIZZARD
+- MOVE_ALLURING_VOICE
+
+
+=== TRAINER_GRUNT_MT_PYRE_3 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_OCTILLERY @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SUCTION_CUPS
+- MOVE_GIGA_IMPACT
+- MOVE_LIQUIDATION
+- MOVE_GUNK_SHOT
+- MOVE_BOUNCE
+
+
+=== TRAINER_GRUNT_WEATHER_INST_4 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_TSAREENA @ ITEM_ASSAULT_VEST
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_QUEENLY_MAJESTY
+- MOVE_POWER_WHIP
+- MOVE_HIGH_JUMP_KICK
+- MOVE_U_TURN
+- MOVE_KNOCK_OFF
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_MANTINE @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_HURRICANE
+- MOVE_HYDRO_PUMP
+- MOVE_HYPER_BEAM
+- MOVE_BLIZZARD
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_WAILORD @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_WATER_VEIL
+- MOVE_GIGA_IMPACT
+- MOVE_STEEL_ROLLER
+- MOVE_LIQUIDATION
+- MOVE_EARTHQUAKE
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+
+=== TRAINER_MATT ===
+Name: MATT
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_SHARPEDO @ ITEM_EVIOLITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_ROUGH_SKIN
+- MOVE_GIGA_IMPACT
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_CRUNCH
+
+
+=== TRAINER_SHELLY_WEATHER_INSTITUTE ===
+Name: SHELLY
+Class: Aqua Admin
+Pic: Aqua Admin F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_SWAMPERT @ ITEM_SWAMPERTITE
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_TORRENT
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_ICE_PUNCH
+- MOVE_PROTECT
+
+
+=== TRAINER_SHELLY_SEAFLOOR_CAVERN ===
+Name: SHELLY
+Class: Aqua Admin
+Pic: Aqua Admin F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_SLOWBRO @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_REGENERATOR
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_SLACK_OFF
+
+
+=== TRAINER_ARCHIE ===
+Name: ARCHIE
+Class: Aqua Leader
+Pic: Aqua Leader Archie
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_SWAMPERT @ ITEM_SWAMPERTITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_TORRENT
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_ICE_PUNCH
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_2 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_BLAZIKEN @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_BLAZE
+- MOVE_CLOSE_COMBAT
+- MOVE_FLARE_BLITZ
+- MOVE_GIGA_IMPACT
+- MOVE_BRAVE_BIRD
+
+
+=== TRAINER_GRUNT_MT_CHIMNEY_1 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_CHARIZARD @ ITEM_LIFE_ORB
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_SOLAR_POWER
+- MOVE_HEAT_WAVE
+- MOVE_AIR_SLASH
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_TENTACRUEL @ ITEM_BLACK_SLUDGE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LIQUID_OOZE
+- MOVE_SURF
+- MOVE_SLUDGE_BOMB
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_DONDOZO @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_UNAWARE
+- MOVE_WAVE_CRASH
+- MOVE_GIGA_IMPACT
+- MOVE_OUTRAGE
+- MOVE_EARTHQUAKE
+
+
+=== TRAINER_TABITHA_MOSSDEEP ===
+Name: TABITHA
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_SEAFLOOR_CAVERN_5 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_CROBAT @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_INNER_FOCUS
+- MOVE_SKY_ATTACK
+- MOVE_GIGA_IMPACT
+- MOVE_CROSS_POISON
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_UNUSED ===
+Name: GRUNT
+Class: Team Magma
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_COALOSSAL @ ITEM_LEFTOVERS
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Relaxed
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_ROCK_SLIDE
+- MOVE_STEALTH_ROCK
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MT_PYRE_4 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_GASTRODON @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 100 Def / 156 SpD
+Nature: Calm
+- MOVE_EARTH_POWER
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_BARRASKEWDA @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_LIQUIDATION
+- MOVE_CLOSE_COMBAT
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_LUDICOLO @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_TOXAPEX @ ITEM_BLACK_SLUDGE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_REGENERATOR
+- MOVE_SCALD
+- MOVE_RECOVER
+- MOVE_HAZE
+- MOVE_TOXIC_SPIKES
+
+
+=== TRAINER_GRUNT_JAGGED_PASS ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MT_CHIMNEY_2 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_3 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_MUK @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_POISON_TOUCH
+- MOVE_GUNK_SHOT
+- MOVE_GIGA_IMPACT
+- MOVE_LASH_OUT
+- MOVE_DYNAMIC_PUNCH
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_4 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_SALAZZLE @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CORROSION
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+- MOVE_SLUDGE_WAVE
+- MOVE_DRAGON_PULSE
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_5 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_6 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CROBAT @ ITEM_SITRUS_BERRY
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_INNER_FOCUS
+- MOVE_SKY_ATTACK
+- MOVE_GIGA_IMPACT
+- MOVE_CROSS_POISON
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_SPACE_CENTER_7 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_WEATHER_INST_5 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_PELIPPER @ ITEM_DAMP_ROCK
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Bold
+Ability: ABILITY_DRIZZLE
+- MOVE_HURRICANE
+- MOVE_SURF
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_SWIFT_SWIM
+- MOVE_MUDDY_WATER
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_SITRUS_BERRY
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_HUGE_POWER
+- MOVE_AQUA_JET
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_PROTECT
+
+SPECIES_STARMIE @ ITEM_LIFE_ORB
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_NATURAL_CURE
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 SpD
+Nature: Bold
+Ability: ABILITY_COMPETITIVE
+- MOVE_SCALD
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_PROTECT
+
+SPECIES_WAILORD @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_WATER_VEIL
+- MOVE_GIGA_IMPACT
+- MOVE_STEEL_ROLLER
+- MOVE_LIQUIDATION
+- MOVE_EARTHQUAKE
+
+
+=== TRAINER_TABITHA_MT_CHIMNEY ===
+Name: TABITHA
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
+Name: MAXIE
+Class: Magma Leader
+Pic: Magma Leader Maxie
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_MAXIE_MT_CHIMNEY ===
+Name: MAXIE
+Class: Magma Leader
+Pic: Magma Leader Maxie
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_1 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_2 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_3 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CROBAT @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_INNER_FOCUS
+- MOVE_SKY_ATTACK
+- MOVE_GIGA_IMPACT
+- MOVE_CROSS_POISON
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_WEEZING @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_LEVITATE
+- MOVE_GUNK_SHOT
+- MOVE_GIGA_IMPACT
+- MOVE_ZAP_CANNON
+- MOVE_FIRE_BLAST
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_CENTISKORCH @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_FLASH_FIRE
+- MOVE_FLARE_BLITZ
+- MOVE_GIGA_IMPACT
+- MOVE_LEECH_LIFE
+- MOVE_POWER_WHIP
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_MUK @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_POISON_TOUCH
+- MOVE_GUNK_SHOT
+- MOVE_GIGA_IMPACT
+- MOVE_LASH_OUT
+- MOVE_DYNAMIC_PUNCH
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_WEEZING @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Adamant
+Ability: ABILITY_LEVITATE
+- MOVE_GUNK_SHOT
+- MOVE_GIGA_IMPACT
+- MOVE_ZAP_CANNON
+- MOVE_FIRE_BLAST
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_CROBAT @ ITEM_SITRUS_BERRY
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Adamant
+Ability: ABILITY_INNER_FOCUS
+- MOVE_SKY_ATTACK
+- MOVE_GIGA_IMPACT
+- MOVE_CROSS_POISON
+- MOVE_CRUNCH
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_KROOKODILE @ ITEM_CHOICE_SCARF
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_EARTHQUAKE
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_CLOSE_COMBAT
+
+
+=== TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt F
+Gender: Female
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_ARCANINE @ ITEM_SITRUS_BERRY
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 SpD
+Nature: Jolly
+Ability: ABILITY_INTIMIDATE
+- MOVE_FLARE_BLITZ
+- MOVE_EXTREME_SPEED
+- MOVE_SNARL
+- MOVE_WILL_O_WISP
+
+SPECIES_HOUNDOOM @ ITEM_LIFE_ORB
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLASH_FIRE
+- MOVE_HEAT_WAVE
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_PROTECT
+
+
+=== TRAINER_TABITHA_MAGMA_HIDEOUT ===
+Name: TABITHA
+Class: Magma Admin
+Pic: Magma Admin
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_VENUSAUR @ ITEM_LIFE_ORB
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_ENERGY_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_SLEEP_POWDER
+- MOVE_PROTECT
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_SCOVILLAIN @ ITEM_LIFE_ORB
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Modest
+Ability: ABILITY_CHLOROPHYLL
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+- MOVE_FIRE_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+
+=== TRAINER_MAXIE_MOSSDEEP ===
+Name: MAXIE
+Class: Magma Leader
+Pic: Magma Leader Maxie
+Gender: Male
+Music: Magma
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_DROUGHT
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_INCINEROAR @ ITEM_SITRUS_BERRY
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 SpD
+Nature: Careful
+Ability: ABILITY_INTIMIDATE
+- MOVE_FAKE_OUT
+- MOVE_FLARE_BLITZ
+- MOVE_KNOCK_OFF
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_HEAT @ ITEM_SITRUS_BERRY
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_LEVITATE
+- MOVE_THUNDERBOLT
+- MOVE_VOLT_SWITCH
+- MOVE_WILL_O_WISP
+- MOVE_HYPER_VOICE
+
+SPECIES_TORKOAL @ ITEM_HEAT_ROCK
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_DROUGHT
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_SOLAR_BEAM
+- MOVE_PROTECT
+
+SPECIES_VOLCARONA @ ITEM_SITRUS_BERRY
+Level: 89
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+Nature: Timid
+Ability: ABILITY_FLAME_BODY
+- MOVE_HEAT_WAVE
+- MOVE_BUG_BUZZ
+- MOVE_QUIVER_DANCE
+- MOVE_PROTECT
+
+SPECIES_CAMERUPT @ ITEM_CAMERUPTITE
+Level: 90
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+Nature: Quiet
+Ability: ABILITY_SOLID_ROCK
+- MOVE_HEAT_WAVE
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
