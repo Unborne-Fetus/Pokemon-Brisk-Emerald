@@ -11,6 +11,8 @@ with tempfile.TemporaryDirectory() as directory:
     temp=Path(directory);data=temp/'src/data';data.mkdir(parents=True)
     for name in ('brisk_mode_teams.party','brisk_kanto_teams.party'):
         shutil.copy2(ROOT/'src/data'/name,data/name)
+    script=temp/'tools/brisk/build_expert_teams.py';script.parent.mkdir(parents=True)
+    shutil.copy2(ROOT/'tools/brisk/build_expert_teams.py',script)
     makefile=temp/'check.mk'
     makefile.write_text('TRAINERPROC := '+str(ROOT/'tools/trainerproc/trainerproc')+'\nCPP := cpp\nCPPFLAGS := -DMODERN=1 -DTESTING=0 -DEMERALD\ninclude '+str(ROOT/'trainer_rules.mk')+'\n.PHONY: FORCE\nFORCE:\n')
     def build():
