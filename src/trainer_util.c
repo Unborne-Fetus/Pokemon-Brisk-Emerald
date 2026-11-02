@@ -320,7 +320,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         u32 category = BriskIsImportantTrainer(trainer->trainerClass) ? BRISK_RAND_IMPORTANT : BRISK_RAND_TRAINERS;
         if (trainer->authoredParty)
         {
-            // Expert uses Hard's full authored teams, with a modest level relief.
+            // Expert has its own authored team, with modest level relief.
             // Preserve protected characters and fixed endgame challenge levels.
             if (GetBriskDifficulty() == BRISK_MODE_EXPERT && !trainer->protectedRoster
              && !trainer->leagueLevels && !trainer->championSet && !trainer->kaizoBoss
