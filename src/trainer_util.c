@@ -181,6 +181,7 @@ static bool32 SetCorrectAbilityNum(struct Pokemon *mon, enum Species species, en
 void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *trainer)
 {
     trainerGen->authoredParty = trainer->authoredParty;
+    trainerGen->xiphosProtocol = trainer->xiphosProtocol;
     trainerGen->protectedRoster = UsesTrainerPolicy(trainer, sBriskExemptTrainer);
     trainerGen->kantoPostgame = IsKantoPostgameTrainer(trainer);
     trainerGen->fairLoadout = UsesTrainerPolicy(trainer, sBriskFairTrainer);
@@ -205,6 +206,7 @@ void MakeTrainerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trainer *partner)
 {
     trainerGen->authoredParty = FALSE;
+    trainerGen->xiphosProtocol = FALSE;
     trainerGen->protectedRoster = FALSE;
     trainerGen->kantoPostgame = FALSE;
     u32 otID;
@@ -366,6 +368,16 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         enum HoldEffect effect = GetItemHoldEffect(adjusted.heldItem);
         if (effect == HOLD_EFFECT_MEGA_STONE || effect == HOLD_EFFECT_PRIMAL_ORB || effect == HOLD_EFFECT_Z_CRYSTAL)
             adjusted.heldItem = adjusted.lvl >= 20 ? ITEM_SITRUS_BERRY : ITEM_ORAN_BERRY;
+    }
+    // The organization uses weapons, not bond-based Z-Moves or Megas.
+    // The sole exception is Director Jessie's Mega Magearna.
+    if (trainer->xiphosProtocol)
+    {
+        enum HoldEffect holdEffect = GetItemHoldEffect(adjusted.heldItem);
+        if ((holdEffect == HOLD_EFFECT_MEGA_STONE || holdEffect == HOLD_EFFECT_Z_CRYSTAL
+          || holdEffect == HOLD_EFFECT_PRIMAL_ORB)
+         && !(adjusted.species == SPECIES_MAGEARNA && adjusted.heldItem == ITEM_MAGEARNITE))
+            adjusted.heldItem = ITEM_LEFTOVERS;
     }
     trainerMon = &adjusted;
     u32 data;
