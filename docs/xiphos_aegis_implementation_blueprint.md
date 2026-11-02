@@ -92,6 +92,20 @@ All Commander and Jessie encounters are **Doubles** with six Pokémon. Different
 - Jessie: **only Mega on the team: Mega Magearna**. No other member may Mega; no Xiphos Z-Moves. Any Jessie Dynamax should be carefully tested against the same-battle gimmick limitation and never displace her signature Mega finale.
 - If Mega Magearna requires a custom Mega Stone or trigger and it is not available to trainers, add it explicitly and test. Her mega should **not** result in the player gaining a transferable Containment Protocol ability.
 
+## Roster-design validation
+
+Run `python tools/brisk/validate_xiphos_blueprint.py` to check the
+nine example archetypes each have five nonempty, distinct draft teams and that
+Commander/Jessie teams have six members. This checks **the design matrix
+only**. It does not confirm that any trainer ID has been placed or that the
+five-mode engine selection exists.
+
+For the eventual playable implementation, add a second audit that enumerates
+**all actual Xiphos trainer IDs** and fails the build/test if **any ID** lacks
+one of the five independently authored and loadable parties. That game-data
+audit must also confirm that choosing Expert never falls back to the Hard
+trainer roster for Xiphos.
+
 ## Acceptance tests (currently not executed)
 
 - Each Xiphos ID loads distinct authored teams for all five modes, without global trainer rewriting.
