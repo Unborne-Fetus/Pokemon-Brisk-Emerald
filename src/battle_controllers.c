@@ -2939,11 +2939,13 @@ static void Task_StartSendOutAnim(u8 taskId)
         enum BattlerId battlerPartner;
         enum BattlerId battler = gTasks[taskId].tBattlerId;
 
-        // Fast retail intros can reach this task while four trainer pictures
-        // and their party trays still own OBJ tiles. Wait for this trainer's
-        // exit callback before allocating its Pokemon, ball and effect sprites.
+        // Four-trainer intros can keep a trainer picture and seven party-tray
+        // sprites alive while the send-out tries to allocate its Pokemon and
+        // Pokeball effects. Wait for this battler's entire intro UI to be freed,
+        // not just the trainer picture, before allocating additional sprites.
         if ((gBattleTypeFlags & BATTLE_TYPE_MULTI)
-         && gBattleStruct->trainerSlideSpriteIds[battler] < MAX_SPRITES)
+         && (gBattleStruct->trainerSlideSpriteIds[battler] < MAX_SPRITES
+          || gBattleSpritesDataPtr->healthBoxesData[battler].partyStatusSummaryShown))
             return;
 
         if (TwoMonsAtSendOut(battler))
