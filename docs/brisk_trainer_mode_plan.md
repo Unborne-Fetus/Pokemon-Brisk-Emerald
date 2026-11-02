@@ -1,11 +1,11 @@
 # Brisk trainer plan by difficulty
 
 Hoenn contains authored Easy, Normal, Hard and Kaizo trainer records in
-`src/data/brisk_mode_teams.party`. Independent Expert records are generated into
-`src/data/brisk_expert_teams.party` during compilation. These records are
-selected by difficulty; the game does not add random party members or
-replace the selected species at battle time. Expert still uses its own
-mode-specific level/IV/EV tuning.
+`src/data/brisk_mode_teams.party`. To stay below the 32 MB GBA ROM limit,
+Expert uses a compact, deterministic per-trainer authored alternate set in
+`src/data/brisk_expert_patch.h`. It selects one legal support Pokémon from
+that trainer's other authored teams, instead of adding random party members.
+Expert retains mode-specific level/IV/EV tuning.
 
 See [every trainer and mode roster](brisk_authored_mode_teams.md) for the
 complete species and level list, including rivals, gym rematches and bosses.
@@ -33,7 +33,8 @@ Existing mode AI, battle style, EXP, item-use and randomizer settings remain
 separate from the authored rosters. Randomizer options still apply when enabled.
 
 Validate with `python tools/brisk/author_mode_teams.py --check` and
-`python3 tools/brisk/build_expert_teams.py --check` after a build.
+`python3 tools/brisk/build_compact_expert.py --check` after a build.
+The all-trainer audit is `python3 tools/brisk/check_all_mode_balance.py`.
 Regenerating with `--write` replaces manual roster edits with the curated
 archetype output; ordinary builds and validation never regenerate the rosters.
 
