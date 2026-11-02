@@ -70,6 +70,7 @@ static void DoTrainerBattle(void);
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "fishing.h"
+#include "data/brisk_expert_patch.h"
 
 enum TransitionType
 {
@@ -1407,6 +1408,50 @@ static void BriskGiveTrainerIncidentalShiny(struct Pokemon *party, u16 trainerNu
         SetMonData(&party[chosen], MON_DATA_IS_SHINY, &shiny);
 }
 
+// Apply a separately authored Expert alternate party using just a compact
+// per-trainer source/target index. A fifth full gTrainers row overflowed ROM.
+static void BriskApplyCompactExpertParty(struct Pokemon *party, u16 trainerNum)
+{
+    if (GetBriskDifficulty() != BRISK_MODE_EXPERT
+     || trainerNum == TRAINER_NONE || trainerNum >= TRAINERS_COUNT
+     || BriskIsChampionsArchiveTrainer(trainerNum))
+        return;
+
+    u16 code = sBriskExpertPatch[trainerNum];
+    if (!code)
+        return;
+
+    u16 packed = code - 1;
+    u32 targetSlot = packed & 7;
+    u32 sourceSlot = (packed >> 4) & 7;
+    u32 sourceRow = (packed >> 8) & 3;
+    static const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_KAIZO, DIFFICULTY_EASY};
+    if (sourceRow >= ARRAY_COUNT(rows))
+        return;
+
+    const struct Trainer *hard = &gTrainers[DIFFICULTY_HARD][trainerNum];
+    const struct Trainer *source = &gTrainers[rows[sourceRow]][trainerNum];
+    if (hard->overrideTrainer || !hard->authoredParty
+     || targetSlot >= hard->partySize || sourceSlot >= source->partySize
+     || source->party == NULL || hard->party == NULL
+     || GetMonData(&party[targetSlot], MON_DATA_SPECIES) == SPECIES_NONE)
+        return;
+
+    // The already-authored source has a legally compatible move set, item,
+    // ability and training values. Keep Expert's progression near the Hard
+    // encounter without exceeding 100 or weakening evolved source species.
+    struct TrainerMon selected = source->party[sourceSlot];
+    selected.lvl = max(selected.lvl, hard->party[targetSlot].lvl);
+    selected.lvl = min(MAX_LEVEL, selected.lvl);
+
+    struct TrainerGenerator *generator = AllocZeroed(sizeof(*generator));
+    if (generator == NULL)
+        return;
+    MakeTrainerGenerator(generator, hard);
+    GenerateMonFromTrainerMon(&party[targetSlot], &selected, generator);
+    Free(generator);
+}
+
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
@@ -1426,6 +1471,7 @@ static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
         CreateNPCTrainerPartyFromTrainer(party, &tempTrainer);
     }
 
+    BriskApplyCompactExpertParty(party, trainerNum);
     BriskGiveTrainerIncidentalShiny(party, trainerNum);
 }
 
