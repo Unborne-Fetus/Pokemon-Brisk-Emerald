@@ -19,7 +19,12 @@ def normalize(value,prefix):
 
 def audit():
     errors=[];counts=Counter();entries=0
-    for path in ('src/data/trainers.party','src/data/brisk_mode_teams.party','src/data/brisk_kanto_teams.party'):
+    sources=['src/data/trainers.party','src/data/brisk_mode_teams.party','src/data/brisk_kanto_teams.party']
+    # The fifth-mode records are generated from the four authored modes at build time.
+    expert=author.ROOT/'src/data/brisk_expert_teams.party'
+    if expert.exists():
+        sources.append('src/data/brisk_expert_teams.party')
+    for path in sources:
         for tid,body in author.TEAM_RE.findall((author.ROOT/path).read_text()):
             if tid=='TRAINER_NONE' or tid in author.POLICY['metadata_only']:continue
             mode_match=re.search(r'^Difficulty:\s*(\w+)',body,re.M)
