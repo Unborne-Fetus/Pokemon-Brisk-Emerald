@@ -3,6 +3,7 @@
 
 AUTO_GEN_TARGETS += src/data/trainers.h
 AUTO_GEN_TARGETS += src/data/brisk_mode_teams.h
+AUTO_GEN_TARGETS += src/data/brisk_expert_villains.h
 AUTO_GEN_TARGETS += src/data/trainers_frlg.h
 AUTO_GEN_TARGETS += src/data/battle_partners.h
 AUTO_GEN_TARGETS += test/battle/trainer_control.h
