@@ -25,6 +25,47 @@ These are **new postgame Kanto Team Xiphos Aegis trainers**. Do not apply the en
 - `src/brisk_difficulty.c` currently scales ordinary parties by difficulty. New Xiphos authored teams must bypass any global level/party-size/evolution reshuffling that contradicts this dedicated postgame spec.
 - `graphics/pokemon/magearna/mega` already exists. **Graphics alone do not prove an executable trainer Mega path.**
 
+## Mandatory five-team rule for EVERY individual Xiphos trainer
+
+This is a **hard requirement for the entire Xiphos Aegis organization**, including every
+patrol agent, grunt, scientist, senior agent, commander, and Director Jessie,
+not merely the nine archetypes below.
+
+1. Each placed Xiphos **trainer ID** must have **exactly five explicitly authored, nonempty party definitions**:
+   Easy, Normal, Hard, Expert, Kaizo. One team belongs to one difficulty mode;
+   every encounter selects that mode's team deterministically.
+2. These are **five separate, meaningful teams**, not a single team with changed
+   levels, a four-mode roster plus a runtime Expert modifier, or a fallback to
+   another difficulty. Differing species, order, moves, items, abilities, natures,
+   EVs, IVs, or tactical roles can make a team unique. At least one substantive
+   roster/set difference must distinguish every pair of modes for the same trainer.
+   Reusing a signature ace or some support species is expected.
+3. Two different placed Xiphos NPCs must never share an entire identical
+   five-mode team matrix. Archetypes are inspiration **only**: each real trainer
+   requires its own authored five-team identity. Rematches also need five teams
+   when assigned their own trainer IDs.
+4. Do not silently take a Normal/Hard/Kaizo party when a mode is missing. Treat
+   a missing entry as an implementation/validation failure before shipping.
+   Preserve the story-intended ace, battle format, and supported gimmicks in
+   each team. Commanders and Jessie have six members and Doubles in all modes.
+5. Stored Brisk mode IDs are **Normal=0, Easy=1, Hard=2, Kaizo=3, Expert=4**.
+   Keep these IDs unchanged for save compatibility. Critically,
+   `GetBriskDifficultyLevel` currently maps Expert to the Expansion's Hard
+   trainer table, and the generator can retune/expand it. **That shared-row
+   path does NOT satisfy this rule for Xiphos.** Implement an Xiphos-specific
+   five-mode party selector/data table (including a truly independent Expert
+   roster), selected by trainer ID + `GetBriskDifficulty()`. Do not modify
+   global difficulty behavior or older trainers to accomplish this.
+6. While creating new trainer IDs/placing NPCs, register and fill all five
+   parties together. Verify correct team loading, no runtime reshuffling,
+   full moves/items/abilities/EVs/IVs, and each mode's intended levels.
+   Do not mark Xiphos finished until every placed ID passes that audit.
+
+The matrix below defines **nine archetype examples**, or 45 draft teams.
+It is **not** a complete list of final placed trainer IDs and does not
+mean any Xiphos team is currently integrated into the game. As NPCs are
+introduced, their individual five-team sets must be added and verified.
+
 ## Five-mode roster matrix — planning targets, not yet inserted in game
 
 Every roster is postgame, with optimized legal moves/items/EVs and deliberate overlapping counters. Levels progress across Kanto, generally Easy 90–94, Normal 93–96, Hard 95–98, Expert 97–100, Kaizo 98–100. Jessie is Lv100 on every mode. Species listed in lead-to-ace order, but actual battle leads and doubles strategies should be authored.
@@ -37,9 +78,9 @@ Every roster is postgame, with optimized legal moves/items/EVs and deliberate ov
 | Senior Agent Alpha | Gardevoir, Scizor, Kingdra, Kommo-o, Metagross | Grimmsnarl, Kingdra, Gallade, Corviknight, Kommo-o, Metagross | Grimmsnarl, Rotom-Wash, Dragapult, Corviknight, Lucario, Metagross | Grimmsnarl, Rotom-Wash, Dragapult, Iron Valiant, Corviknight, Kingambit | Grimmsnarl, Rotom-Wash, Garchomp, Dragapult, Corviknight, Kingambit |
 | Fairy Commander | Grimmsnarl, Togekiss, Tinkaton, Kingdra, Lucario, Hatterene | Grimmsnarl, Togekiss, Tinkaton, Rotom-Wash, Metagross, Hatterene | Grimmsnarl, Togekiss, Iron Valiant, Rotom-Wash, Metagross, Hatterene | Grimmsnarl, Whimsicott, Iron Valiant, Corviknight, Metagross, Hatterene | Grimmsnarl, Whimsicott, Iron Valiant, Rotom-Wash, Metagross, Hatterene |
 | Fighting Commander | Hitmontop, Gallade, Lucario, Kingdra, Corviknight, Kommo-o | Hitmontop, Gallade, Lucario, Rotom-Wash, Corviknight, Kommo-o | Hitmontop, Iron Valiant, Lucario, Dragapult, Corviknight, Kommo-o | Hitmontop, Iron Valiant, Urshifu-Rapid-Strike, Dragapult, Corviknight, Kommo-o | Hitmontop, Iron Valiant, Urshifu-Rapid-Strike, Dragapult, Corviknight, Annihilape |
-| Steel Commander | Bronzong, Corviknight, Excadrill, Kingdra, Metagross, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Metagross, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Metagross, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Iron Valiant, Kingambit | Bronzong, Corviknight, Rotom-Wash, Garchomp, Metagross, Kingambit |
-| Dragon Commander | Flygon, Kingdra, Dragalge, Hisuian Goodra, Corviknight, Baxcalibur | Flygon, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult | Garchomp, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult | Garchomp, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult | Garchomp, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult |
-| Director Jessie | Grimmsnarl, Kingdra, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Kingdra, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Rotom-Wash, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Kingdra, Landorus-Therian, Magearna, Aegislash, Archaludon | Grimmsnarl, Landorus-Therian, Incineroar, Magearna, Aegislash, Archaludon |
+| Steel Commander | Bronzong, Corviknight, Excadrill, Kingdra, Metagross, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Metagross, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Gholdengo, Kingambit | Bronzong, Corviknight, Rotom-Wash, Excadrill, Iron Valiant, Kingambit | Bronzong, Corviknight, Rotom-Wash, Garchomp, Metagross, Kingambit |
+| Dragon Commander | Flygon, Kingdra, Dragalge, Hisuian Goodra, Corviknight, Baxcalibur | Flygon, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult | Garchomp, Kingdra, Dragalge, Hisuian Goodra, Grimmsnarl, Dragapult | Garchomp, Kingdra, Dragalge, Hisuian Goodra, Corviknight, Dragapult | Garchomp, Dragalge, Hisuian Goodra, Grimmsnarl, Baxcalibur, Dragapult |
+| Director Jessie | Grimmsnarl, Goodra, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Kingdra, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Rotom-Wash, Flamigo, Magearna, Aegislash, Archaludon | Grimmsnarl, Kingdra, Landorus-Therian, Magearna, Aegislash, Archaludon | Grimmsnarl, Landorus-Therian, Incineroar, Magearna, Aegislash, Archaludon |
 
 All Commander and Jessie encounters are **Doubles** with six Pokémon. Different species may repeat between archetypes but **each placed trainer must receive an individual party**, not an identical copy. Add further patrol and scientist templates/variants when actual trainer placement is decided. For Jessie preserve the narrative intention to have Aegislash and Archaludon be the final simultaneous pair; forcing this requires battle AI/party replacement coordination, not just party order.
 
