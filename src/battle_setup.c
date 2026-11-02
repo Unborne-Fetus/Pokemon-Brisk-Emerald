@@ -1452,6 +1452,63 @@ static void BriskApplyCompactExpertParty(struct Pokemon *party, u16 trainerNum)
     Free(generator);
 }
 
+// A small, themed set of actual NPC battles showcases the already-installed
+// Mikitari Fakemon. Wild habitats remain their primary acquisition method.
+// Avoid story bosses and keep every trainer's original lead and ace.
+static void BriskApplyKantoFakemonShowcase(struct Pokemon *party, u16 trainerNum)
+{
+    if (trainerNum < BRISK_KANTO_TRAINER_BASE || trainerNum >= TRAINERS_COUNT
+     || trainerNum % 11 != 0)
+        return;
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerNum);
+    if (trainer->partySize != PARTY_SIZE || !trainer->authoredParty
+     || GetMonData(&party[1], MON_DATA_SPECIES) == SPECIES_NONE)
+        return;
+
+    enum Species species = SPECIES_NONE;
+    switch (trainer->trainerClass)
+    {
+    case TRAINER_CLASS_BUG_CATCHER: species = SPECIES_BEELITANT; break;
+    case TRAINER_CLASS_HIKER: species = SPECIES_GLYPTOBLOCK; break;
+    case TRAINER_CLASS_BIRD_KEEPER: species = SPECIES_RAVENDLER; break;
+    case TRAINER_CLASS_SWIMMER_M:
+    case TRAINER_CLASS_SWIMMER_F:
+    case TRAINER_CLASS_FISHERMAN: species = SPECIES_BASSTILE; break;
+    case TRAINER_CLASS_BLACK_BELT:
+    case TRAINER_CLASS_BATTLE_GIRL: species = SPECIES_LEDIASTRA; break;
+    case TRAINER_CLASS_HEX_MANIAC: species = SPECIES_PLATERIGUS; break;
+    default: return;
+    }
+    if (!IsSpeciesEnabled(species))
+        return;
+    for (u32 slot = 0; slot < PARTY_SIZE; slot++)
+        if (GetMonData(&party[slot], MON_DATA_SPECIES) == species)
+            return;
+
+    u32 level = GetMonData(&party[1], MON_DATA_LEVEL);
+    // Expert applies a three-level discount inside the generator.
+    if (GetBriskDifficulty() == BRISK_MODE_EXPERT && level < MAX_LEVEL)
+        level = min(MAX_LEVEL, level + 3);
+
+    static u8 trainedEvs[NUM_STATS] = {4, 252, 0, 0, 0, 252};
+    struct TrainerMon replacement = {0};
+    replacement.species = species;
+    replacement.lvl = level;
+    replacement.iv = 0x3FFFFFFF;
+    replacement.ev = trainedEvs;
+    replacement.nature = NATURE_ADAMANT;
+    replacement.gender = TRAINER_MON_RANDOM_GENDER;
+    replacement.ball = BALL_POKE;
+    replacement.heldItem = ITEM_SITRUS_BERRY;
+    // Omitted moves intentionally use this species' native level-up set.
+    struct TrainerGenerator *generator = AllocZeroed(sizeof(*generator));
+    if (generator == NULL)
+        return;
+    MakeTrainerGenerator(generator, trainer);
+    GenerateMonFromTrainerMon(&party[1], &replacement, generator);
+    Free(generator);
+}
+
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
@@ -1472,6 +1529,7 @@ static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
     }
 
     BriskApplyCompactExpertParty(party, trainerNum);
+    BriskApplyKantoFakemonShowcase(party, trainerNum);
     BriskGiveTrainerIncidentalShiny(party, trainerNum);
 }
 
