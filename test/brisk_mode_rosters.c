@@ -28,6 +28,7 @@ static const struct Trainer sOriginalTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #include "../src/data/trainers.h"
 };
 #include "../src/data/brisk_exempt_trainers.h"
+#include "../src/data/brisk_expert_patch.h"
 
 TEST("Brisk mode rosters preserve every dedication and Easter egg party field in all modes")
 {
@@ -77,7 +78,7 @@ TEST("Brisk mode rosters preserve every dedication and Easter egg party field in
     EXPECT_EQ(protectedCount, 27);
 }
 
-TEST("Brisk mode rosters preserve legacy IDs and give Expert its own row")
+TEST("Brisk mode rosters preserve legacy IDs and use compact Expert teams")
 {
     u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
     const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_HARD};
@@ -89,6 +90,34 @@ TEST("Brisk mode rosters preserve legacy IDs and give Expert its own row")
     VarSet(VAR_BRISK_DIFFICULTY, 0xFFFF);
     EXPECT_EQ(GetBriskDifficultyLevel(), DIFFICULTY_NORMAL);
     VarSet(VAR_BRISK_DIFFICULTY, oldMode);
+}
+
+TEST("All compact Expert trainer substitutions reference valid authored parties")
+{
+    u32 replacements = 0;
+    for (u32 id = 1; id < TRAINERS_COUNT; id++)
+    {
+        u16 code = sBriskExpertPatch[id];
+        if (!code)
+            continue;
+        u16 packed = code - 1;
+        u32 target = packed & 7;
+        u32 sourceSlot = (packed >> 4) & 7;
+        u32 sourceRow = (packed >> 8) & 3;
+        const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_KAIZO, DIFFICULTY_EASY};
+        EXPECT_LT(sourceRow, ARRAY_COUNT(rows));
+        if (sourceRow >= ARRAY_COUNT(rows))
+            continue;
+        const struct Trainer *hard = &sModeTeams[DIFFICULTY_HARD][id];
+        const struct Trainer *source = &sModeTeams[rows[sourceRow]][id];
+        EXPECT_LT(target, hard->partySize);
+        EXPECT_LT(sourceSlot, source->partySize);
+        if (target >= hard->partySize || sourceSlot >= source->partySize)
+            continue;
+        EXPECT_NE(hard->party[target].species, source->party[sourceSlot].species);
+        replacements++;
+    }
+    EXPECT_GT(replacements, 600);
 }
 
 TEST("Brisk mode rosters cover every populated trainer with valid species and usable attacks")
