@@ -1,5 +1,4 @@
 #include "global.h"
-#include "brisk_multisave.h"
 #include "config/dexnav.h"
 #include "outfit_menu.h"
 #include "clock.h"
@@ -176,8 +175,7 @@ void NewGameInitData(void)
 #if IS_FRLG
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
 #endif
-    if ((gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
-     && !BriskMultiSave_OtherSlotOccupied())
+    if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
 
 #if IS_FRLG
