@@ -643,6 +643,21 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
 
 #define tArrowTaskIsScrolled data[15]   // For scroll indicator arrow task
 
+// Emerald's menu still needs the dynamic text palette initialization;
+// only the old two-slot picker was removed.
+static void MainMenu_LoadWindowTextPalette(void)
+{
+    u16 color;
+    color = RGB_BLACK;
+    LoadPalette(&color, BG_PLTT_ID(15) + 14, PLTT_SIZEOF(1));
+    color = RGB_WHITE;
+    LoadPalette(&color, BG_PLTT_ID(15) + 10, PLTT_SIZEOF(1));
+    color = RGB(12, 12, 12);
+    LoadPalette(&color, BG_PLTT_ID(15) + 11, PLTT_SIZEOF(1));
+    color = RGB(26, 26, 25);
+    LoadPalette(&color, BG_PLTT_ID(15) + 12, PLTT_SIZEOF(1));
+}
+
 static void Task_MainMenuCheckSaveFile(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
