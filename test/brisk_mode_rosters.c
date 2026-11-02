@@ -21,6 +21,7 @@
 static const struct Trainer sModeTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 {
 #include "../src/data/brisk_mode_teams.h"
+#include "../src/data/brisk_expert_villains.h"
 };
 
 static const struct Trainer sOriginalTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
