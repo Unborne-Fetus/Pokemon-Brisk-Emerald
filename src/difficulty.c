@@ -12,8 +12,8 @@ enum DifficultyLevel GetBriskDifficultyLevel(void)
     {
     case BRISK_MODE_EASY: return DIFFICULTY_EASY;
     case BRISK_MODE_HARD: return DIFFICULTY_HARD;
-    // Expert uses Hard's full authored rosters with softer runtime tuning.
-    case BRISK_MODE_EXPERT: return DIFFICULTY_HARD;
+    // Expert has independently authored parties for all Hoenn/Kanto trainers.
+    case BRISK_MODE_EXPERT: return DIFFICULTY_EXPERT;
     case BRISK_MODE_KAIZO: return DIFFICULTY_KAIZO;
     default: return DIFFICULTY_NORMAL;
     }
