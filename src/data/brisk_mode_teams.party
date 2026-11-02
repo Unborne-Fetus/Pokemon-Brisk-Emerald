@@ -1,4 +1,5 @@
 #include "src/data/brisk_kanto_teams.party"
+#include "src/data/brisk_xiphos_teams.party"
 /* Explicit Brisk mode rosters. Edit these records to tune an encounter.
 Regeneration from curated archetypes: python tools/brisk/author_mode_teams.py --write
 Validation only (preserves manual edits): python tools/brisk/author_mode_teams.py --check

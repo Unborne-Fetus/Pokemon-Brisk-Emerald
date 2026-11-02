@@ -1,0 +1,6321 @@
+/* Five authored postgame Team Xiphos Aegis rosters for each of 16 trainers.
+ * All use a NON-INHERITABLE trainer-side Containment Protocol modifier.
+ * Dynamax/G-Max are reserved for selected party members, no Z-Moves.
+ * Jessie's Magearna is the only Xiphos Mega. Trainer pics are placeholders.
+ */
+
+=== TRAINER_XIPHOS_AGENT_A ===
+Name: AGENT A
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 90
+Ability: ABILITY_SERENE_GRACE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 91
+Ability: ABILITY_INNER_FOCUS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 90
+Ability: ABILITY_CLEAR_BODY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_SWIFT_SWIM
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_A ===
+Name: AGENT A
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 94
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 93
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_A ===
+Name: AGENT A
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 95
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 96
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_A ===
+Name: AGENT A
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 98
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_A ===
+Name: AGENT A
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_HUGE_POWER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_B ===
+Name: AGENT B
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 90
+Ability: ABILITY_PRANKSTER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 91
+Ability: ABILITY_SHARPNESS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_BULLETPROOF
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 90
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 91
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 92
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_B ===
+Name: AGENT B
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 94
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_B ===
+Name: AGENT B
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 95
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 96
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_B ===
+Name: AGENT B
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_COPPERAJAH @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_SHEER_FORCE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_HEAVY_SLAM
+- MOVE_HIGH_HORSEPOWER
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_B ===
+Name: AGENT B
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_C ===
+Name: AGENT C
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 90
+Ability: ABILITY_PRANKSTER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 91
+Ability: ABILITY_INTIMIDATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_ROUGH_SKIN
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 90
+Ability: ABILITY_TECHNICIAN
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 91
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 92
+Ability: ABILITY_SERENE_GRACE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_C ===
+Name: AGENT C
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 94
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 95
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_C ===
+Name: AGENT C
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 96
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 97
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_C ===
+Name: AGENT C
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 98
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 99
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_C ===
+Name: AGENT C
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GARDEVOIR @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_TRACE
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PSYCHIC
+- MOVE_MOONBLAST
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_D ===
+Name: AGENT D
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 90
+Ability: ABILITY_PRANKSTER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 91
+Ability: ABILITY_INNER_FOCUS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 90
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 91
+Ability: ABILITY_SWIFT_SWIM
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_DISGUISE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_D ===
+Name: AGENT D
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 94
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_D ===
+Name: AGENT D
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_HUGE_POWER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 96
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 95
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_D ===
+Name: AGENT D
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 98
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_D ===
+Name: AGENT D
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_E ===
+Name: AGENT E
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 90
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 90
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 91
+Ability: ABILITY_HUGE_POWER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_CLEAR_BODY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_E ===
+Name: AGENT E
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_HUGE_POWER
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_E ===
+Name: AGENT E
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_COPPERAJAH @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_SHEER_FORCE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_HEAVY_SLAM
+- MOVE_HIGH_HORSEPOWER
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_HUGE_POWER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_E ===
+Name: AGENT E
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 98
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_E ===
+Name: AGENT E
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_F ===
+Name: AGENT F
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 90
+Ability: ABILITY_DISGUISE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 91
+Ability: ABILITY_SHARPNESS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 92
+Ability: ABILITY_INNER_FOCUS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 90
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_STURDY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_F ===
+Name: AGENT F
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 94
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 93
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_F ===
+Name: AGENT F
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 96
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_F ===
+Name: AGENT F
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_F ===
+Name: AGENT F
+Class: Xiphos Agent
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_G ===
+Name: AGENT G
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 90
+Ability: ABILITY_HUGE_POWER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 91
+Ability: ABILITY_INTIMIDATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 92
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 90
+Ability: ABILITY_MOLD_BREAKER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_SWIFT_SWIM
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_G ===
+Name: AGENT G
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 93
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 94
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 93
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_G ===
+Name: AGENT G
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GARDEVOIR @ ITEM_FOCUS_SASH
+Level: 95
+Ability: ABILITY_TRACE
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PSYCHIC
+- MOVE_MOONBLAST
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 96
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_G ===
+Name: AGENT G
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 97
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 98
+Ability: ABILITY_UNBURDEN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_AGENT_G ===
+Name: AGENT G
+Class: Xiphos Agent
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_A ===
+Name: SCIENTIST A
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_STURDY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_CLEAR_BODY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_A ===
+Name: SCIENTIST A
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 94
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_LEVITATE
+Nature: Calm
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_A ===
+Name: SCIENTIST A
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 96
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_A ===
+Name: SCIENTIST A
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 99
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_LEVITATE
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_A ===
+Name: SCIENTIST A
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 100
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SCIENTIST_B ===
+Name: SCIENTIST B
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 91
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 92
+Ability: ABILITY_STURDY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 91
+Ability: ABILITY_STALWART
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 92
+Ability: ABILITY_SWIFT_SWIM
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 93
+Ability: ABILITY_PRANKSTER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+=== TRAINER_XIPHOS_SCIENTIST_B ===
+Name: SCIENTIST B
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 94
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 94
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 96
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+=== TRAINER_XIPHOS_SCIENTIST_B ===
+Name: SCIENTIST B
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+=== TRAINER_XIPHOS_SCIENTIST_B ===
+Name: SCIENTIST B
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 98
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 99
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+=== TRAINER_XIPHOS_SCIENTIST_B ===
+Name: SCIENTIST B
+Class: Xiphos Scientist
+Pic: Scientist Frlg
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_PORYGON_Z @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 100
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+=== TRAINER_XIPHOS_SENIOR_A ===
+Name: SENIOR A
+Class: Xiphos Senior
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 93
+Ability: ABILITY_SERENE_GRACE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 94
+Ability: ABILITY_INNER_FOCUS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_BULLETPROOF
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 93
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_A ===
+Name: SENIOR A
+Class: Xiphos Senior
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 95
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 96
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_A ===
+Name: SENIOR A
+Class: Xiphos Senior
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 98
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_A ===
+Name: SENIOR A
+Class: Xiphos Senior
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 99
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_A ===
+Name: SENIOR A
+Class: Xiphos Senior
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_HUGE_POWER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_B ===
+Name: SENIOR B
+Class: Xiphos Senior
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 94
+Ability: ABILITY_SHARPNESS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_BULLETPROOF
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 93
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_CLEAR_BODY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_DISGUISE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_B ===
+Name: SENIOR B
+Class: Xiphos Senior
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 95
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 96
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_B ===
+Name: SENIOR B
+Class: Xiphos Senior
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 98
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_B ===
+Name: SENIOR B
+Class: Xiphos Senior
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 99
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 100
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_SENIOR_B ===
+Name: SENIOR B
+Class: Xiphos Senior
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FAIRY ===
+Name: FAIRY
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 94
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Dynamax Level: 10
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 95
+Ability: ABILITY_PRANKSTER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_AZUMARILL @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_HUGE_POWER
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_LIQUIDATION
+- MOVE_AQUA_JET
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 94
+Ability: ABILITY_SERENE_GRACE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_DISGUISE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FAIRY ===
+Name: FAIRY
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 97
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 97
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FAIRY ===
+Name: FAIRY
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 98
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 99
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FAIRY ===
+Name: FAIRY
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 99
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_ALCREMIE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SWEET_VEIL
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DAZZLING_GLEAM
+- MOVE_RECOVER
+- MOVE_DECORATE
+- MOVE_PROTECT
+
+SPECIES_HATTERENE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MAGIC_BOUNCE
+Nature: Quiet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_PSYCHIC
+- MOVE_TRICK_ROOM
+- MOVE_PROTECT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 99
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FAIRY ===
+Name: FAIRY
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GARDEVOIR @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_TRACE
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_PSYCHIC
+- MOVE_MOONBLAST
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_WHIMSICOTT @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_TAILWIND
+- MOVE_MOONBLAST
+- MOVE_ENCORE
+- MOVE_HELPING_HAND
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_SERENE_GRACE
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_KLEFKI @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+- MOVE_FOUL_PLAY
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DISGUISE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_SNEAK
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FIGHTING ===
+Name: FIGHTING
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 94
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 95
+Ability: ABILITY_UNBURDEN
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 96
+Ability: ABILITY_INTIMIDATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 94
+Ability: ABILITY_INNER_FOCUS
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_BULLETPROOF
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FIGHTING ===
+Name: FIGHTING
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 97
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 98
+Ability: ABILITY_UNBURDEN
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 99
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 97
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FIGHTING ===
+Name: FIGHTING
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 99
+Ability: ABILITY_UNBURDEN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 98
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_ANNIHILAPE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_DEFIANT
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_RAGE_FIST
+- MOVE_DRAIN_PUNCH
+- MOVE_BULK_UP
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FIGHTING ===
+Name: FIGHTING
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 99
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 99
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_UNBURDEN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_FIGHTING ===
+Name: FIGHTING
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_MACHAMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_NO_GUARD
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_DYNAMIC_PUNCH
+- MOVE_KNOCK_OFF
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_HAWLUCHA @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_UNBURDEN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_ACROBATICS
+- MOVE_CLOSE_COMBAT
+- MOVE_TAILWIND
+- MOVE_PROTECT
+
+SPECIES_HITMONTOP @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_INTIMIDATE
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_FAKE_OUT
+- MOVE_CLOSE_COMBAT
+- MOVE_WIDE_GUARD
+- MOVE_FEINT
+
+SPECIES_LUCARIO @ ITEM_FOCUS_SASH
+Level: 100
+Ability: ABILITY_INNER_FOCUS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_METEOR_MASH
+- MOVE_EXTREME_SPEED
+- MOVE_PROTECT
+
+SPECIES_GALLADE @ ITEM_EXPERT_BELT
+Level: 100
+Ability: ABILITY_SHARPNESS
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SACRED_SWORD
+- MOVE_PSYCHO_CUT
+- MOVE_NIGHT_SLASH
+- MOVE_WIDE_GUARD
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_STEEL ===
+Name: STEEL
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_TECHNICIAN
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 95
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 96
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_STURDY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_CLEAR_BODY
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_DEFIANT
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_STEEL ===
+Name: STEEL
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_STEEL ===
+Name: STEEL
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TINKATON @ ITEM_LEFTOVERS
+Level: 98
+Ability: ABILITY_MOLD_BREAKER
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GIGATON_HAMMER
+- MOVE_PLAY_ROUGH
+- MOVE_KNOCK_OFF
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 98
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_METAGROSS @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_METEOR_MASH
+- MOVE_ZEN_HEADBUTT
+- MOVE_BULLET_PUNCH
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_STEEL ===
+Name: STEEL
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_DURALUDON @ ITEM_EVIOLITE
+Level: 100
+Ability: ABILITY_STALWART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Gigantamax: Yes
+- MOVE_DRACO_METEOR
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_PROTECT
+
+SPECIES_EXCADRILL @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_MOLD_BREAKER
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_IRON_HEAD
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_STEEL ===
+Name: STEEL
+Class: Xiphos Commander
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_COPPERAJAH @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SHEER_FORCE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_HEAVY_SLAM
+- MOVE_HIGH_HORSEPOWER
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Gigantamax: Yes
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_BRONZONG @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Sassy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GYRO_BALL
+- MOVE_TRICK_ROOM
+- MOVE_BODY_PRESS
+- MOVE_PROTECT
+
+SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STURDY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_VOLT_SWITCH
+- MOVE_PROTECT
+
+SPECIES_SCIZOR @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_TECHNICIAN
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BULLET_PUNCH
+- MOVE_U_TURN
+- MOVE_SWORDS_DANCE
+- MOVE_PROTECT
+
+SPECIES_KINGAMBIT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_DEFIANT
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KOWTOW_CLEAVE
+- MOVE_SUCKER_PUNCH
+- MOVE_IRON_HEAD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_DRAGON ===
+Name: DRAGON
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 94
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_LEVITATE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 94
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+Dynamax Level: 10
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 95
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 96
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_DRAGON ===
+Name: DRAGON
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 97
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 97
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_DRAGON ===
+Name: DRAGON
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 98
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 98
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Dynamax Level: 10
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_DRAGON ===
+Name: DRAGON
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_FLYGON @ ITEM_LIFE_ORB
+Level: 99
+Ability: ABILITY_LEVITATE
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 99
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_COMMANDER_DRAGON ===
+Name: DRAGON
+Class: Xiphos Commander
+Pic: Cooltrainer M Frlg
+Gender: Male
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_KOMMO_O @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_BULLETPROOF
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_CLANGING_SCALES
+- MOVE_AURA_SPHERE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_DRAGALGE @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ADAPTABILITY
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_DRACO_METEOR
+- MOVE_FOCUS_BLAST
+- MOVE_PROTECT
+
+SPECIES_GARCHOMP @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_ROUGH_SKIN
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_PROTECT
+
+SPECIES_GOODRA_HISUI @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_SHELL_ARMOR
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Dynamax Level: 10
+- MOVE_FLASH_CANNON
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_PROTECT
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+SPECIES_BAXCALIBUR @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_THERMAL_EXCHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_ICE_SHARD
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_JESSIE ===
+Name: JESSIE
+Class: Xiphos Director
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Easy
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_TOGEKISS @ ITEM_SITRUS_BERRY
+Level: 100
+Ability: ABILITY_SERENE_GRACE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_AIR_SLASH
+- MOVE_DAZZLING_GLEAM
+- MOVE_FOLLOW_ME
+- MOVE_PROTECT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_FLAMIGO @ ITEM_COVERT_CLOAK
+Level: 100
+Ability: ABILITY_COSTAR
+Nature: Adamant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_BRAVE_BIRD
+- MOVE_ROOST
+- MOVE_PROTECT
+
+SPECIES_MAGEARNA @ ITEM_MAGEARNITE
+Level: 100
+Ability: ABILITY_SOUL_HEART
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_FLASH_CANNON
+- MOVE_AURA_SPHERE
+- MOVE_PROTECT
+
+SPECIES_AEGISLASH_SHIELD @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STANCE_CHANGE
+Nature: Hardy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 Atk / 100 Spe
+- MOVE_KINGS_SHIELD
+- MOVE_SHADOW_BALL
+- MOVE_SACRED_SWORD
+- MOVE_WIDE_GUARD
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 100 HP / 100 SpA / 100 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_JESSIE ===
+Name: JESSIE
+Class: Xiphos Director
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Normal
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_FLAMIGO @ ITEM_COVERT_CLOAK
+Level: 100
+Ability: ABILITY_COSTAR
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_BRAVE_BIRD
+- MOVE_ROOST
+- MOVE_PROTECT
+
+SPECIES_MAGEARNA @ ITEM_MAGEARNITE
+Level: 100
+Ability: ABILITY_SOUL_HEART
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_FLASH_CANNON
+- MOVE_AURA_SPHERE
+- MOVE_PROTECT
+
+SPECIES_AEGISLASH_SHIELD @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STANCE_CHANGE
+Nature: Adamant
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KINGS_SHIELD
+- MOVE_SHADOW_BALL
+- MOVE_SACRED_SWORD
+- MOVE_WIDE_GUARD
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_JESSIE ===
+Name: JESSIE
+Class: Xiphos Director
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Expert
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_CORVIKNIGHT @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_MIRROR_ARMOR
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_BODY_PRESS
+- MOVE_ROOST
+- MOVE_TAILWIND
+
+SPECIES_MAGEARNA @ ITEM_MAGEARNITE
+Level: 100
+Ability: ABILITY_SOUL_HEART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_FLASH_CANNON
+- MOVE_AURA_SPHERE
+- MOVE_PROTECT
+
+SPECIES_AEGISLASH_SHIELD @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STANCE_CHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KINGS_SHIELD
+- MOVE_SHADOW_BALL
+- MOVE_SACRED_SWORD
+- MOVE_WIDE_GUARD
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_JESSIE ===
+Name: JESSIE
+Class: Xiphos Director
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer / Smart Switching / HP Aware / Try To 2HKO / Smart Tera
+Difficulty: Hard
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_ROTOM_WASH @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_LEVITATE
+Nature: Calm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DISCHARGE
+- MOVE_THUNDERBOLT
+- MOVE_WILL_O_WISP
+- MOVE_PROTECT
+
+SPECIES_FLAMIGO @ ITEM_COVERT_CLOAK
+Level: 100
+Ability: ABILITY_COSTAR
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_BRAVE_BIRD
+- MOVE_ROOST
+- MOVE_PROTECT
+
+SPECIES_MAGEARNA @ ITEM_MAGEARNITE
+Level: 100
+Ability: ABILITY_SOUL_HEART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_FLASH_CANNON
+- MOVE_AURA_SPHERE
+- MOVE_PROTECT
+
+SPECIES_AEGISLASH_SHIELD @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STANCE_CHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KINGS_SHIELD
+- MOVE_SHADOW_BALL
+- MOVE_SACRED_SWORD
+- MOVE_WIDE_GUARD
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+
+=== TRAINER_XIPHOS_JESSIE ===
+Name: JESSIE
+Class: Xiphos Director
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: OMNISCIENT
+Difficulty: Kaizo
+Authored Party: Yes
+Xiphos Protocol: Yes
+
+SPECIES_GRIMMSNARL @ ITEM_LIGHT_CLAY
+Level: 100
+Ability: ABILITY_PRANKSTER
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+- MOVE_SPIRIT_BREAK
+- MOVE_PARTING_SHOT
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_SWIFT_SWIM
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DRACO_METEOR
+- MOVE_MUDDY_WATER
+- MOVE_ICE_BEAM
+- MOVE_PROTECT
+
+SPECIES_DRAGAPULT @ ITEM_LIFE_ORB
+Level: 100
+Ability: ABILITY_CLEAR_BODY
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_DRAGON_DARTS
+- MOVE_PHANTOM_FORCE
+- MOVE_U_TURN
+- MOVE_PROTECT
+
+SPECIES_MAGEARNA @ ITEM_MAGEARNITE
+Level: 100
+Ability: ABILITY_SOUL_HEART
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_DAZZLING_GLEAM
+- MOVE_FLASH_CANNON
+- MOVE_AURA_SPHERE
+- MOVE_PROTECT
+
+SPECIES_AEGISLASH_SHIELD @ ITEM_LEFTOVERS
+Level: 100
+Ability: ABILITY_STANCE_CHANGE
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- MOVE_KINGS_SHIELD
+- MOVE_SHADOW_BALL
+- MOVE_SACRED_SWORD
+- MOVE_WIDE_GUARD
+
+SPECIES_ARCHALUDON @ ITEM_POWER_HERB
+Level: 100
+Ability: ABILITY_STAMINA
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- MOVE_ELECTRO_SHOT
+- MOVE_DRAGON_PULSE
+- MOVE_FLASH_CANNON
+- MOVE_PROTECT
+

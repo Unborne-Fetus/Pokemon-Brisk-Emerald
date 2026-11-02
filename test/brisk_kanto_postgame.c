@@ -8,6 +8,7 @@
 #include "save.h"
 #include "battle.h"
 #include "pokemon.h"
+#include "item.h"
 #include "trainer_util.h"
 #include "test/test.h"
 #include "constants/battle_ai.h"
@@ -127,4 +128,61 @@ TEST("Brisk Kanto authored trainer generation keeps postgame levels moves items 
     VarSet(VAR_BRISK_DIFFICULTY,mode);
     VarSet(VAR_BRISK_RANDOMIZER,random);
     gBattleTypeFlags = flags;
+}
+
+
+TEST("Xiphos has five independent six-member postgame teams and cannot use forbidden gimmicks")
+{
+    const u32 modes[] = {DIFFICULTY_EASY, DIFFICULTY_NORMAL, DIFFICULTY_EXPERT,
+                         DIFFICULTY_HARD, DIFFICULTY_KAIZO};
+    const u32 base = TRAINER_XIPHOS_AGENT_A;
+    const u32 end = TRAINER_XIPHOS_JESSIE + 1;
+    for (u32 id = base; id < end; id++)
+    {
+        for (u32 i = 0; i < ARRAY_COUNT(modes); i++)
+        {
+            const struct Trainer *trainer = &sActualTeams[modes[i]][id];
+            EXPECT(trainer->authoredParty);
+            EXPECT(trainer->xiphosProtocol);
+            EXPECT_EQ(trainer->partySize, PARTY_SIZE);
+            EXPECT(trainer->party != NULL);
+            bool32 hasDynamax = FALSE;
+            bool32 hasMegaMagearna = FALSE;
+            for (u32 slot = 0; slot < PARTY_SIZE; slot++)
+            {
+                const struct TrainerMon *mon = &trainer->party[slot];
+                EXPECT(mon->lvl >= 90 && mon->lvl <= 100);
+                EXPECT(IsSpeciesEnabled(mon->species));
+                bool32 validAbility = FALSE;
+                for (u32 a = 0; a < NUM_ABILITY_SLOTS; a++)
+                    if (mon->ability == gSpeciesInfo[mon->species].abilities[a])
+                        validAbility = TRUE;
+                EXPECT(validAbility);
+                enum HoldEffect effect = GetItemHoldEffect(mon->heldItem);
+                if (effect == HOLD_EFFECT_MEGA_STONE || effect == HOLD_EFFECT_Z_CRYSTAL
+                 || effect == HOLD_EFFECT_PRIMAL_ORB)
+                {
+                    EXPECT_EQ(id, TRAINER_XIPHOS_JESSIE);
+                    EXPECT_EQ(mon->species, SPECIES_MAGEARNA);
+                    EXPECT_EQ(mon->heldItem, ITEM_MAGEARNITE);
+                    hasMegaMagearna = TRUE;
+                }
+                if (mon->shouldUseDynamax)
+                    hasDynamax = TRUE;
+            }
+            if (id == TRAINER_XIPHOS_JESSIE)
+                EXPECT(hasMegaMagearna);
+            else
+                EXPECT(hasDynamax);
+            for (u32 j = 0; j < i; j++)
+            {
+                bool32 different = FALSE;
+                const struct Trainer *prior = &sActualTeams[modes[j]][id];
+                for (u32 slot = 0; slot < PARTY_SIZE; slot++)
+                    if (trainer->party[slot].species != prior->party[slot].species)
+                        different = TRUE;
+                EXPECT(different);
+            }
+        }
+    }
 }

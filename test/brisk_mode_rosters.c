@@ -21,6 +21,7 @@
 static const struct Trainer sModeTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 {
 #include "../src/data/brisk_mode_teams.h"
+#include "../src/data/brisk_expert_villains.h"
 };
 
 static const struct Trainer sOriginalTeams[DIFFICULTY_COUNT][TRAINERS_COUNT] =
@@ -80,7 +81,7 @@ TEST("Brisk mode rosters preserve every dedication and Easter egg party field in
 TEST("Brisk mode rosters preserve legacy IDs and map Expert to the full Hard row")
 {
     u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
-    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_HARD};
+    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_EXPERT};
     for (u32 mode = 0; mode < ARRAY_COUNT(rows); mode++)
     {
         VarSet(VAR_BRISK_DIFFICULTY, mode);

@@ -539,7 +539,9 @@ struct BattlerState
     u16 notOnField:1;
     u16 originalBattlerPartyId:4;
     u16 isFirstTurn:2; // Starts at 2 on switch in and counts down during end turn
-    u16 padding:8;
+    u16 containmentUsed:1;
+    u16 containmentPending:1;
+    u16 padding:6;
     // End of Word
 };
 
