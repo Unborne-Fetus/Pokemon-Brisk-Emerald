@@ -278,9 +278,12 @@ u8 BriskMultiSave_CurrentSlot(void)
     return sActiveSlot;
 }
 
+// Only existing compact slot-1 files stay on the legacy writer path.
+// Fresh games and original 20-box saves always use the standard single-profile
+// Emerald sector writer. Old slot 2 remains untouched for Brisk Dex migration.
 bool8 BriskMultiSave_IsActive(void)
 {
-    return sReady;
+    return sProfiles[0].valid;
 }
 
 bool8 BriskMultiSave_SlotOccupied(u8 slot)
