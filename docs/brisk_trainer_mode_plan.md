@@ -14,6 +14,7 @@ four modes: party size, species, levels, moves, items, training and cosmetics.
 | --- | --- |
 | Easy | Smaller traditional teams, modest moves, no EV investment |
 | Normal | Original encounter species plus fixed themed supports |
+| Expert | Separately compiled hybrid roster with fairer AI and stat pressure |
 | Hard | Stronger themed rosters, role sets, trained support and sweepers |
 | Kaizo | Coordinated teams, full training, competitive items and support |
 
