@@ -7,8 +7,22 @@ warnings for balance judgment; fails for missing, malformed or unsafe parties.
 """
 from collections import Counter
 import re
-from build_compact_expert import get_patches, SOURCES, pokemon_species
+from build_compact_expert import get_patches, SOURCES
 from build_expert_teams import pokemon_level
+
+
+def pokemon_species(block):
+    """Read competitive-syntax headers, including nicknames and gender."""
+    first = block.splitlines()[0].split("@", 1)[0].strip()
+    explicit = re.search(r"SPECIES_[A-Z0-9_]+", first)
+    if explicit:
+        return explicit.group()
+    names = re.findall(r"\\(([^)]+)\\)", first)
+    species = next((value for value in names if value not in ("M", "F")), None)
+    if species is None:
+        species = re.sub(r"\\s*\\([MF]\\)\\s*$", "", first).strip()
+    return "SPECIES_" + re.sub(r"[^A-Z0-9]+", "_", species.upper()).strip("_")
+
 
 MODES = ("Easy", "Normal", "Expert", "Hard", "Kaizo")
 
