@@ -12,8 +12,7 @@ enum DifficultyLevel GetBriskDifficultyLevel(void)
     {
     case BRISK_MODE_EASY: return DIFFICULTY_EASY;
     case BRISK_MODE_HARD: return DIFFICULTY_HARD;
-    // Expert uses Hard's full authored rosters with softer runtime tuning.
-    case BRISK_MODE_EXPERT: return DIFFICULTY_HARD;
+    case BRISK_MODE_EXPERT: return DIFFICULTY_EXPERT;
     case BRISK_MODE_KAIZO: return DIFFICULTY_KAIZO;
     default: return DIFFICULTY_NORMAL;
     }
@@ -75,7 +74,13 @@ enum DifficultyLevel GetTrainerDifficultyLevel(u16 trainerId)
         return DIFFICULTY_NORMAL;
 
     if (gTrainers[difficulty][trainerId].party == NULL)
+    {
+        // Expert's standalone villain records take precedence; the other
+        // trainers retain their existing authored Hard composition and tuning.
+        if (difficulty == DIFFICULTY_EXPERT && gTrainers[DIFFICULTY_HARD][trainerId].party != NULL)
+            return DIFFICULTY_HARD;
         return DIFFICULTY_NORMAL;
+    }
 
     return difficulty;
 }
