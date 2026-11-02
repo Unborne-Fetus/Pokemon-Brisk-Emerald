@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_arena.h"
 #include "data.h"
+#include "battle_setup.h"
 #include "battle_environment.h"
 #include "battle_hold_effects.h"
 #include "battle_ai_record.h"
