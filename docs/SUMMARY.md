@@ -171,6 +171,7 @@
     - [Xiphos Aegis villain battle roster foundation](brisk/xiphos-villain-battles.md)
     - [Audio mute settings](brisk_audio_mutes.md)
     - [Authored difficulty teams](brisk_authored_mode_teams.md)
+    - [Expert difficulty mode](brisk_expert_mode.md)
     - [Battle retry](brisk_battle_retry.md)
     - [Flash, Freeze and Solar Fleet](brisk_flash_freeze_solar_fleet.md)
     - [Gimmick regeneration](brisk_gimmick_gen.md)
