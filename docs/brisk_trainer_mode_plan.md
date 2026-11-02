@@ -1,14 +1,16 @@
 # Brisk trainer plan by difficulty
 
-Hoenn now uses explicit Easy, Normal, Hard and Kaizo trainer records in
-`src/data/brisk_mode_teams.party`. These records are authoritative: the game
+Hoenn contains authored Easy, Normal, Hard and Kaizo trainer records in
+`src/data/brisk_mode_teams.party`. Independent Expert records are generated into
+`src/data/brisk_expert_teams.party` during compilation. These records are
+selected by difficulty; the game
 does not expand, scale, devolve or optimize their parties at battle time.
 
 See [every trainer and mode roster](brisk_authored_mode_teams.md) for the
 complete species and level list, including rivals, gym rematches and bosses.
 
 Dedication/Easter egg trainers retain their complete original teams in all
-four modes: party size, species, levels, moves, items, training and cosmetics.
+five modes: party size, species, levels, moves, items, training and cosmetics.
 
 | Mode | Team design |
 | --- | --- |
@@ -29,7 +31,8 @@ formats may limit each trainer to three members.
 Existing mode AI, battle style, EXP, item-use and randomizer settings remain
 separate from the authored rosters. Randomizer options still apply when enabled.
 
-Validate with `python tools/brisk/author_mode_teams.py --check`.
+Validate with `python tools/brisk/author_mode_teams.py --check` and
+`python3 tools/brisk/build_expert_teams.py --check` after a build.
 Regenerating with `--write` replaces manual roster edits with the curated
 archetype output; ordinary builds and validation never regenerate the rosters.
 
