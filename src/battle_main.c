@@ -3056,6 +3056,9 @@ static void ClearSetDataOnLeave(enum BattlerId battler)
 
 void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCopy)
 {
+    // Xiphos Protocol is renewed on each entry, not carried across switches.
+    gBattleStruct->battlerState[battler].containmentUsed = FALSE;
+    gBattleStruct->battlerState[battler].containmentPending = FALSE;
     enum BattleMoveEffects effect = GetMoveEffect(gCurrentMove);
 
     // Data cleared both on switch and faint
