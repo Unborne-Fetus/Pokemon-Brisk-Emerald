@@ -145,6 +145,8 @@ struct Trainer
     u8 poolPickIndex;
     u8 poolPruneIndex;
     u16 overrideTrainer;
+    // Battle-only Xiphos modifier. Never stored on a Pokemon or inherited by the player.
+    bool8 xiphosProtocol;
 };
 
 struct TrainerClass
