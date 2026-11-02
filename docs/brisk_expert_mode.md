@@ -14,19 +14,21 @@ The persistent game variable keeps the historical values untouched:
 | Easy | 1 | Easy |
 | Hard | 2 | Hard |
 | Kaizo | 3 | Kaizo |
-| Expert | 4 | Expert — independently compiled fifth trainer row |
+| Expert | 4 | Compact per-trainer Expert alternate, backed by Hard plus an authored source member |
 
 This makes old single saves and the two-slot profiles forward-compatible without
-rewriting the serialized Bag or party save data. The build now generates a
-fifth trainer-row entry for every Hoenn and postgame Kanto trainer.
+rewriting the serialized Bag or party save data. A full fifth trainer-table
+row exceeded the GBA's 32 MB ROM limit, so Expert now uses a compact authored
+replacement for eligible trainer teams. The original four tables remain.
 
 ## Rules
 
 - **Fuller teams:** early trainers ramp up progressively; ordinary trainers at
   higher levels and late story opponents can have six members. The
-  Expert roster is generated deterministically from the authored Hard, Normal
-  and Kaizo compositions as a full separate trainerproc record; postgame teams
-  can be completed to six members while preserving the original ace last.
+  Expert roster uses the authored Hard party as its base, substituting one
+  battle-ready Pokemon from the trainer's Normal, Kaizo or Easy sets. The
+  substitutions are stored explicitly in a compact per-trainer index; no
+  arbitrary runtime random team expansion occurs.
   Tutorial battles and two-opponent half-team limits are respected.
 - **Fairer opponents:** Expert removes all trainer AI omniscience and
   move prediction, retaining sensible switching, opponent selection,
@@ -41,8 +43,8 @@ fifth trainer-row entry for every Hoenn and postgame Kanto trainer.
 - **Dynamax Adventures:** standard boss HP multiplier; recover 75% of
   maximum HP between rounds (less than Easy/Normal, more than Hard).
 - **Scott's Trainer Summit:** Expert appears in its difficulty selector.
-- **Kanto postgame:** all 623 Kanto trainer identities receive their own
-  compiled Expert party record, with six-member postgame parties.
+- **Kanto postgame:** all eligible Kanto trainer identities participate in
+  compact Expert party selection and keep their six-member postgame format.
 - **Protected encounters:** dedication/Easter egg trainers, the Champions
   Archive, the five Hoenn League teams, Meteor Falls Steven and Kaizo-exclusive
   trainers keep their protected roster behavior. League is still level 100
@@ -52,8 +54,8 @@ fifth trainer-row entry for every Hoenn and postgame Kanto trainer.
 
 `test/brisk_expert_mode.c` checks the stored mode ID, trainer-row mapping,
 battle settings and AI restrictions, party integrity and final-ace
-preservation. `python3 tools/brisk/build_expert_teams.py --check` validates
-that the fifth-mode source exists and matches the four-mode source data.
+preservation. `python3 tools/brisk/build_compact_expert.py --check` validates
+that each compact Expert variant matches the four existing mode sources.
 Review the Build Pokemon Brisk Emerald and CI GitHub Actions runs before
 publishing a build. Runtime playtesting is still required to
 confirm intended difficulty across different badges and save histories.
