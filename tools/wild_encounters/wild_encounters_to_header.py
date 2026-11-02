@@ -1,5 +1,12 @@
 import json
 import re
+import sys
+from pathlib import Path
+
+# Keep the large checked-in JSON stable: repair biomes in the generated ROM
+# header, preserving all existing tables and the assigned custom species.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'brisk'))
+from biome_wild_encounters import rebalance
 
 class Config:
     def __init__(self, config_file_name, rtc_constants_file_name, encounters_json_data):
@@ -270,6 +277,10 @@ def ConvertToHeaderFile(json_data):
 def main():
     with open('src/data/wild_encounters.json', 'r') as json_file:
         json_data = json.load(json_file)
+        report = rebalance(json_data)
+        print('Brisk habitat audit:', report['corrected'],
+              'wild species retained:', report['previous_species'],
+              'wild species after:', report['available_species'])
         ConvertToHeaderFile(json_data)
         
 
