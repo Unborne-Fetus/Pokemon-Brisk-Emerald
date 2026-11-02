@@ -419,6 +419,11 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RUIN_MANIAC_FRLG] =     { _("RUIN MANIAC"), 12 },
     [TRAINER_CLASS_LADY_FRLG] =            { _("LADY"), 50 },
     [TRAINER_CLASS_PAINTER_FRLG] =         { _("PAINTER"), 4 },
+    [TRAINER_CLASS_XIPHOS_AGENT] =         { _("XIPHOS AGENT"), 18, BALL_ULTRA },
+    [TRAINER_CLASS_XIPHOS_SCIENTIST] =     { _("XIPHOS SCI"), 20, BALL_ULTRA },
+    [TRAINER_CLASS_XIPHOS_SENIOR] =        { _("XIPHOS ELITE"), 22, BALL_ULTRA },
+    [TRAINER_CLASS_XIPHOS_COMMANDER] =     { _("XIPHOS CMD"), 25, BALL_ULTRA },
+    [TRAINER_CLASS_XIPHOS_DIRECTOR] =      { _("DIRECTOR"), 30, BALL_PREMIER },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
