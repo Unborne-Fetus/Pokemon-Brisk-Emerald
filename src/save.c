@@ -879,9 +879,15 @@ u8 HandleSavingData(u8 saveType)
     u8 i;
     u32 *backupVar = gTrainerHillVBlankCounter;
 
+    // A historical file containing only compact Slot 2 is not a fresh
+    // standalone save. Refuse destructive standard writes until Brisk Dex
+    // imports that profile into its own two-slot library.
+    if (!BriskMultiSave_IsActive() && BriskMultiSave_SlotOccupied(1))
+        return SAVE_STATUS_ERROR;
+
     if (BriskMultiSave_IsActive())
     {
-        // The legacy special sectors are owned by compact snapshots now.
+        // Legacy compact Slot 1 remains writable for existing users.
         if (saveType == SAVE_HALL_OF_FAME && GetGameStat(GAME_STAT_ENTERED_HOF) < 999)
             IncrementGameStat(GAME_STAT_ENTERED_HOF);
         return BriskMultiSave_Save();
