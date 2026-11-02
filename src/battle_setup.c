@@ -1359,13 +1359,9 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
 
     struct TrainerGenerator *trainerGen = AllocZeroed(sizeof(struct TrainerGenerator));
     MakeTrainerGenerator(trainerGen, trainer);
-    // Expert uses the authored Hard roster but fills late ordinary teams to six.
-    // Exempt/dedication, League, Steven and special Kaizo-only parties remain fixed.
-    bool32 expertExpand = trainer->authoredParty && GetBriskDifficulty() == BRISK_MODE_EXPERT
-        && !trainerGen->protectedRoster && !trainerGen->leagueLevels
-        && !trainerGen->championSet && !trainerGen->kaizoBoss
-        && (trainerGen->fairLoadout || trainerGen->storyLoadout || trainerGen->kantoPostgame);
-    u32 target = (trainer->authoredParty && !expertExpand) ? trainer->partySize
+    // Every difficulty has its own explicitly authored team. Never expand
+    // Expert from Hard or replace its selected species at battle creation.
+    u32 target = trainer->authoredParty ? trainer->partySize
         : BriskDifficultyPartySize(trainer->partySize, trainerGen->highestLevel,
             trainerGen->storyLoadout, trainerGen->leagueLevels || trainerGen->championSet,
             trainerGen->fairLoadout || trainerGen->storyLoadout || trainerGen->kantoPostgame);
@@ -1379,7 +1375,7 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
         monIndices[monsCount-1] = trainer->partySize-1;
     for (i = 0; i < monsCount; i++)
         GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndices[i]], trainerGen);
-    if (!trainer->authoredParty || expertExpand)
+    if (!trainer->authoredParty)
         BriskExpandTrainerParty(party, monsCount, target, trainerGen);
     Free(trainerGen);
 }
