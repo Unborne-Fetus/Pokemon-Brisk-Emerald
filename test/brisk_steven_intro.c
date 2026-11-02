@@ -65,7 +65,18 @@ TEST("Brisk Steven four trainer trays share graphics and send-outs wait for trai
     }
     RunTasks();
     for (u32 i=0;i<4;i++) EXPECT_EQ(gBattlerSpriteIds[i], MAX_SPRITES);
-    for (u32 frame=0;frame<85;frame++) { AnimateSprites(); RunTasks(); }
+    for (u32 frame = 0; frame < 85; frame++)
+    {
+        AnimateSprites();
+        RunTasks();
+        // No battler can allocate its send-out sprite while its intro tray
+        // still holds seven sprite slots and shared OBJ resources.
+        for (u32 i = 0; i < 4; i++)
+        {
+            if (gBattleSpritesDataPtr->healthBoxesData[i].partyStatusSummaryShown)
+                EXPECT_EQ(gBattlerSpriteIds[i], MAX_SPRITES);
+        }
+    }
     for (u32 i=0;i<4;i++)
     {
         EXPECT_EQ(gBattleStruct->trainerSlideSpriteIds[i], MAX_SPRITES);
