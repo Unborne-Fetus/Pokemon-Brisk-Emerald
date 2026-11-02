@@ -38,7 +38,7 @@ TEST("Brisk mode rosters preserve every dedication and Easter egg party field in
             continue;
         protectedCount++;
         const struct Trainer *baseline = &sOriginalTeams[DIFFICULTY_NORMAL][id];
-        for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_EXPERT; row++)
+        for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_KAIZO; row++)
         {
             const struct Trainer *trainer = &sModeTeams[row][id];
             EXPECT_EQ((u32)trainer->partySize, (u32)baseline->partySize);
@@ -80,7 +80,7 @@ TEST("Brisk mode rosters preserve every dedication and Easter egg party field in
 TEST("Brisk mode rosters preserve legacy IDs and give Expert its own row")
 {
     u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
-    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_EXPERT};
+    const u8 rows[] = {DIFFICULTY_NORMAL, DIFFICULTY_EASY, DIFFICULTY_HARD, DIFFICULTY_KAIZO, DIFFICULTY_HARD};
     for (u32 mode = 0; mode < ARRAY_COUNT(rows); mode++)
     {
         VarSet(VAR_BRISK_DIFFICULTY, mode);
@@ -94,7 +94,7 @@ TEST("Brisk mode rosters preserve legacy IDs and give Expert its own row")
 TEST("Brisk mode rosters cover every populated trainer with valid species and usable attacks")
 {
     bool32 valid = TRUE;
-    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_EXPERT; row++)
+    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_KAIZO; row++)
     {
         for (u32 id = 1; id < TRAINERS_COUNT; id++)
         {
@@ -184,7 +184,7 @@ TEST("Brisk mode rosters generate exact authored species levels moves items and 
 TEST("Brisk mode rosters preserve League and Meteor Falls Steven fixed levels")
 {
     const u16 league[] = {TRAINER_SIDNEY,TRAINER_PHOEBE,TRAINER_GLACIA,TRAINER_DRAKE,TRAINER_WALLACE};
-    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_EXPERT; row++)
+    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_KAIZO; row++)
     {
         for (u32 i = 0; i < ARRAY_COUNT(league); i++)
             for (u32 slot = 0; slot < sModeTeams[row][league[i]].partySize; slot++)
@@ -243,7 +243,7 @@ TEST("Brisk Champions Archive uses fixed champion teams and maximal AI in every 
 
 TEST("Brisk Kaizo boss appearances stay consistent across authored mode teams")
 {
-    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_EXPERT; row++)
+    for (u32 row = DIFFICULTY_EASY; row <= DIFFICULTY_KAIZO; row++)
     {
         EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerPic, TRAINER_PIC_HEX_MANIAC);
         EXPECT_EQ(sModeTeams[row][TRAINER_HOODED_FIGURE].trainerClass, TRAINER_CLASS_HEX_MANIAC);
