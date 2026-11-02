@@ -53,7 +53,11 @@ enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
         return DIFFICULTY_NORMAL;
 
     if (gBattlePartners[difficulty][partnerId].party == NULL)
+    {
+        if (difficulty == DIFFICULTY_EXPERT && gBattlePartners[DIFFICULTY_HARD][partnerId].party != NULL)
+            return DIFFICULTY_HARD;
         return DIFFICULTY_NORMAL;
+    }
 
     return difficulty;
 }
