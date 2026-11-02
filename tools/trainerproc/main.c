@@ -147,6 +147,8 @@ struct Trainer
     int difficulty_line;
     bool authored_party;
     int authored_party_line;
+    bool xiphos_protocol;
+    int xiphos_protocol_line;
 
     int party_size;
     int party_size_line;
@@ -1281,6 +1283,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             if (!token_human_identifiers(p, &value, trainer->starting_status, &trainer->starting_status_n, STARTING_STATUS_COUNT))
                 any_error = !show_parse_error(p);
         }
+        else if (is_literal_token(&key, "Xiphos Protocol"))
+        {
+            if (trainer->xiphos_protocol_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Xiphos Protocol'");
+            trainer->xiphos_protocol_line = value.location.line;
+            if (!token_bool(p, &value, &trainer->xiphos_protocol))
+                any_error = !show_parse_error(p);
+        }
         else if (is_literal_token(&key, "Authored Party"))
         {
             if (trainer->authored_party_line)
@@ -1836,6 +1846,8 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
         fprintf(f, "    {\n");
         if (trainer->authored_party)
             fprintf(f, "        .authoredParty = TRUE,\n");
+        if (trainer->xiphos_protocol)
+            fprintf(f, "        .xiphosProtocol = TRUE,\n");
 
         if (!is_empty_string(trainer->name))
         {
