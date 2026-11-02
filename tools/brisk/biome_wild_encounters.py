@@ -91,7 +91,7 @@ def rebalance(data, strict=True):
     # many-megabyte generated wild header.
     import re
     species_header = (ROOT / "include/constants/species.h").read_text(encoding="utf-8")
-    known = set(re.findall(r"\\bSPECIES_[A-Z0-9_]+\\b", species_header))
+    known = set(re.findall(r"\bSPECIES_[A-Z0-9_]+\b", species_header))
     referenced = {"SPECIES_" + name
                   for _map, (_low, _high, pool) in EARLY.items()
                   for name in pool.split()}
