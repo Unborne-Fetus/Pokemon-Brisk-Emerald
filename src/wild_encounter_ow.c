@@ -375,17 +375,28 @@ void StartWildBattleWithOWE(struct ScriptContext *ctx)
     u32 localId = VarGet(ScriptReadHalfword(ctx));
     u32 objEventId = GetObjectEventIdByLocalId(localId);
     u32 headerId = GetCurrentMapWildMonHeaderId();
-    struct ObjectEvent *owe = &gObjectEvents[objEventId];
-    enum CategoryOWE category = GetOWECategory(owe);
+    struct ObjectEvent *owe;
+    enum CategoryOWE category;
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    assertf(objEventId < OBJECT_EVENTS_COUNT && IsOverworldWildEncounter(owe, OWE_ANY), "cannot start overworld wild enocunter as the selected object is invalid.\nlocalId: %d", localId)
+    // Object IDs can become stale when a visible wild Pokémon despawns
+    // during the transition into battle. Check the index before accessing
+    // gObjectEvents: the old code dereferenced it before its assertion.
+    if (objEventId >= OBJECT_EVENTS_COUNT)
     {
         UnlockPlayerFieldControls();
         UnfreezeObjectEvents();
         return;
     }
+    owe = &gObjectEvents[objEventId];
+    if (!IsOverworldWildEncounter(owe, OWE_ANY))
+    {
+        UnlockPlayerFieldControls();
+        UnfreezeObjectEvents();
+        return;
+    }
+    category = GetOWECategory(owe);
 
     if (category < ROAMER_COUNT && StartWildBattleWithOWE_CheckRoamer(category))
         return;
@@ -698,6 +709,8 @@ void TryTriggerOverworldWildEncounter(struct ObjectEvent *obstacle, struct Objec
 const u8 *GetOverworlWildEncounterScript(u32 objectEventId)
 {
     const u8 *script;
+    if (objectEventId >= OBJECT_EVENTS_COUNT)
+        return InteractWithOverworldWildEncounter;
     if (GetOverworldWildEncounterType(&gObjectEvents[objectEventId]) == OWE_MANUAL
      && (script = GetObjectEventScriptPointerByObjectEventId(objectEventId)) != NULL)
         return script;
