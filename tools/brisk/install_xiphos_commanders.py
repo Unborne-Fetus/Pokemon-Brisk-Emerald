@@ -97,8 +97,8 @@ with p.open("a",encoding="utf-8") as f:
 # Actual mode switch is independent of the four expansion Trainer rows.
 code=["// Five separately authored battle-only team matrices: Easy/Normal/Hard/Kaizo/Expert.",
       "// Stored mode IDs: Normal 0, Easy 1, Hard 2, Kaizo 3, Expert 4.",
-      "static const u8 sXiphosPhysicalEvs[NUM_STATS] = {4,252,0,252,0,0};",
-      "static const u8 sXiphosSpecialEvs[NUM_STATS] = {252,0,0,0,252,4};"]
+      "static const u8 sXiphosPhysicalEvs[NUM_STATS] = {4,252,0,0,0,252};",
+      "static const u8 sXiphosSpecialEvs[NUM_STATS] = {252,0,0,252,4,0};"]
 for name,short in names.items():
     for mode in modes:
         var="sXiphos"+short.title()+mode
