@@ -2,6 +2,9 @@
 #include "constants/event_objects.h"
 
 #if MODERN == 0
+static const u8 sText_OutfitName_KantoClassic[] = _("KANTO CLASSIC");
+static const u8 sText_OutfitDesc_KantoClassic[] = _("Red and Leaf styles from Kanto.");
+
 static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
 static const u8 sText_OutfitDesc_UsualGreen[] = _(
     "The usual, but basic OUTFIT.");
@@ -24,6 +27,10 @@ static const u16 sRegionMapPlayerIcon_RSMayGfx[] = INCBIN_U16("graphics/pokenav/
 static const u8 sFrontierPassPlayerIcons_BrendanMay_Gfx[] = INCBIN_U8("graphics/frontier_pass/map_heads.4bpp");
 
 static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphics/frontier_pass/rs_map_heads.4bpp");
+
+static const u16 sRegionMapPlayerIcon_KantoClassicRedGfx[] = INCGFX_U16("graphics/pokenav/region_map/kanto_classic_red_icon.png", ".4bpp", "-mwidth 2 -mheight 2");
+static const u16 sRegionMapPlayerIcon_KantoClassicLeafGfx[] = INCGFX_U16("graphics/pokenav/region_map/kanto_classic_leaf_icon.png", ".4bpp", "-mwidth 2 -mheight 2");
+static const u8 sFrontierPassPlayerIcons_KantoClassicGfx[] = INCGFX_U8("graphics/frontier_pass/kanto_classic_heads.png", ".4bpp", "-mwidth 2 -mheight 2");
 
 #define REGION_MAP_GFX(m, f) { sRegionMapPlayerIcon_ ## m ## Gfx, sRegionMapPlayerIcon_ ## f ## Gfx }
 
@@ -179,5 +186,51 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         },
         .iconsRM = { sRegionMapPlayerIcon_RSBrendanGfx, sRegionMapPlayerIcon_RSMayGfx },
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
+    },
+    [OUTFIT_KANTO_CLASSIC] = {
+        .isHidden = TRUE, // Jessie reward only; cannot buy
+        .prices = {0, 0},
+#if MODERN == 1
+        .name = COMPOUND_STRING("KANTO CLASSIC"),
+        .desc = COMPOUND_STRING("Red and Leaf styles from Kanto."),
+#else
+        .name = sText_OutfitName_KantoClassic,
+        .desc = sText_OutfitDesc_KantoClassic,
+#endif
+        .trainerPics = { [MALE] = {TRAINER_PIC_RED, TRAINER_PIC_RED}, [FEMALE] = {TRAINER_PIC_LEAF, TRAINER_PIC_LEAF} },
+        .avatarGfxIds = {
+            [MALE] = {
+                [PLAYER_AVATAR_STATE_NORMAL] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_NORMAL,
+                [PLAYER_AVATAR_STATE_MACH_BIKE] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_MACH_BIKE,
+                [PLAYER_AVATAR_STATE_ACRO_BIKE] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_ACRO_BIKE,
+                [PLAYER_AVATAR_STATE_SURFING] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_SURFING,
+                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_UNDERWATER,
+            },
+            [FEMALE] = {
+                [PLAYER_AVATAR_STATE_NORMAL] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_NORMAL,
+                [PLAYER_AVATAR_STATE_MACH_BIKE] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_MACH_BIKE,
+                [PLAYER_AVATAR_STATE_ACRO_BIKE] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_ACRO_BIKE,
+                [PLAYER_AVATAR_STATE_SURFING] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_SURFING,
+                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_UNDERWATER,
+            },
+        },
+        .animGfxIds = {
+            [MALE] = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] = OBJ_EVENT_GFX_KANTO_CLASSIC_RED_FIELD_MOVE,
+            },
+            [FEMALE] = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] = OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_FIELD_MOVE,
+            },
+        },
+        .iconsRM = { sRegionMapPlayerIcon_KantoClassicRedGfx, sRegionMapPlayerIcon_KantoClassicLeafGfx },
+        .iconsFP = sFrontierPassPlayerIcons_KantoClassicGfx,
     },
 };
