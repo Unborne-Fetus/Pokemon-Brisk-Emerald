@@ -2752,6 +2752,78 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Always gets Eviolite-like Defense and Sp. Def boosts."),
         .aiRating = 9,
     },
+    [ABILITY_QUEENS_GAMBIT] =
+    {
+        .name = _("Queen's Gambit"),
+        .description = COMPOUND_STRING("If an ally has fainted, gains +2 in five battle stats."),
+        .aiRating = 9,
+    },
+    [ABILITY_MOMENTUM_BUILD] =
+    {
+        .name = _("Momentum Build"),
+        .description = COMPOUND_STRING("Each turn may raise Speed; also ignores foe abilities."),
+        .aiRating = 9,
+    },
+    [ABILITY_LUNAR_POWER] =
+    {
+        .name = _("Lunar Power"),
+        .description = COMPOUND_STRING("Holding a Moon Stone boosts all five stats by one stage."),
+        .aiRating = 9,
+    },
+    [ABILITY_MAGIC_TAIL] =
+    {
+        .name = _("Magic Tail"),
+        .description = COMPOUND_STRING("Special moves are always super effective."),
+        .aiRating = 9,
+    },
+    [ABILITY_SWEET_SONG] =
+    {
+        .name = _("Sweet Song"),
+        .description = COMPOUND_STRING("Sound attacks may cause sleep; cannot be put to sleep."),
+        .aiRating = 9,
+    },
+    [ABILITY_HOLOPARASITE] =
+    {
+        .name = _("Holoparasite"),
+        .description = COMPOUND_STRING("Absorbs Water/Grass; resists Bug and gains Speed."),
+        .aiRating = 9,
+    },
+    [ABILITY_WEDDING_GIFT] =
+    {
+        .name = _("Wedding Gift"),
+        .description = COMPOUND_STRING("Contact with the opposite gender inflicts poison."),
+        .aiRating = 9,
+    },
+    [ABILITY_DEEP_DIVE] =
+    {
+        .name = _("Deep Dive"),
+        .description = COMPOUND_STRING("Doubles Ground damage; blocks spread moves."),
+        .aiRating = 9,
+    },
+    [ABILITY_DOUBLE_COAT] =
+    {
+        .name = _("Double Coat"),
+        .description = COMPOUND_STRING("Immune to status; halves Fighting damage."),
+        .aiRating = 9,
+    },
+    [ABILITY_PSYCHIC_POWERS] =
+    {
+        .name = _("Psychic Powers"),
+        .description = COMPOUND_STRING("Normal moves become Psychic-type."),
+        .aiRating = 9,
+    },
+    [ABILITY_PANHUS_LINEAGE] =
+    {
+        .name = _("Panhu's Lineage"),
+        .description = COMPOUND_STRING("Raises Attack by two stages upon a knockout."),
+        .aiRating = 9,
+    },
+    [ABILITY_SILENT_GOLAITH] =
+    {
+        .name = _("Silent Golaith"),
+        .description = COMPOUND_STRING("Starts at +2 Evasion; sound moves reset Evasion."),
+        .aiRating = 9,
+    },
     [ABILITY_FLAME_TONGUE] =
     {
         .name = _("Flame Tongue"),
