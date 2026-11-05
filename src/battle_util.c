@@ -8777,7 +8777,9 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
     // Damage prediction and runtime resolve the same first-hit multiplier.
     // Do not consume the shield until a real HP hit (not a Substitute hit).
     if (damage > 0 && BriskXiphosProtocolReady(ctx->battlerDef)
-     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty
+     && !(gBattleMons[ctx->battlerDef].volatiles.substituteHP
+       && DoesSubstituteBlockMove(ctx->battlerAtk, ctx->battlerDef, ctx->move)))
         damage = max(1, damage / 2);
     return GetAdjustedDamage(ctx, damage);
 }
@@ -8822,7 +8824,9 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
     if (damage > 0 && BriskXiphosProtocolReady(ctx->battlerDef)
-     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty
+     && !(gBattleMons[ctx->battlerDef].volatiles.substituteHP
+       && DoesSubstituteBlockMove(ctx->battlerAtk, ctx->battlerDef, ctx->move)))
         damage = max(1, damage / 2);
     return damage;
 }
