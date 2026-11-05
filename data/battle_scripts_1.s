@@ -32,6 +32,11 @@ BattleScript_TryRevertWeatherformLoop:
 	jumpifbytenotequal gEffectBattler, gBattlersCount, BattleScript_TryRevertWeatherformLoop
 	return
 
+BattleScript_XiphosContainmentProtocol::
+    printstring STRINGID_XIPHOSCONTAINMENTPROTOCOL
+    waitmessage B_WAIT_TIME_LONG
+    return
+
 BattleScript_FickleBeamMessage::
 	pause B_WAIT_TIME_SHORTEST
 	printstring STRINGID_FICKLEBEAMDOUBLED

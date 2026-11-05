@@ -2,6 +2,7 @@
 #include "brisk_options.h"
 #include "brisk_battle_retry.h"
 #include "brisk_battle_format.h"
+#include "brisk_xiphos.h"
 #include "dynamax_adventure.h"
 #include "brisk_modes.h"
 #include "battle.h"
@@ -3005,6 +3006,7 @@ static void ClearSetDataOnLeave(enum BattlerId battler)
     gSpecialStatuses[battler].queuedSwitch = NO_QUEUED_SWITCH;
     gSpecialStatuses[battler].shellBellEmergencyExit = FALSE;
     gBattleStruct->battlerState[battler].isFirstTurn = 2;
+    gBattleStruct->battlerState[battler].xiphosProtocolUsed = FALSE;
     gBattleStruct->battlerState[battler].stompingTantrumTimer = 0;
     gBattleStruct->battlerState[battler].canPickupItem = FALSE;
     gBattleStruct->battlerState[battler].wasAboveHalfHp = gBattleMons[battler].hp > gBattleMons[battler].maxHP / 2;

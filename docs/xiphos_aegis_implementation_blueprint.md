@@ -4,7 +4,7 @@ Status: **design/data specification only; NOT integrated into trainer engine or 
 
 ## Scope and distinction
 
-These are **new postgame Kanto Team Xiphos Aegis trainers**. Do not apply the enemy-only ability to Hoenn's Team Aqua or Team Magma, wild encounters, player Pokémon, PvP, gifts, or rental Pokémon. Every Xiphos Pokémon gets Containment Protocol **as a battle-scoped modifier**, unless an explicit exception is listed. **Jessie's Aegislash keeps Stance Change**. The Mega Magearna request requires identifying its existing Mega evolution item, ability and actual supported trainer-gimmick logic before activation is implemented. Magearna should be Jessie's only Mega. Other Xiphos members use no Mega Evolutions or Z-Moves.
+These are **new postgame Kanto Team Xiphos Aegis trainers**. Do not apply the enemy-only ability to Hoenn's Team Aqua or Team Magma, wild encounters, player Pokémon, PvP, gifts, or rental Pokémon. Every Xiphos Pokémon gets Containment Protocol **as a battle-scoped modifier**, unless an explicit exception is listed. **Jessie's Aegislash keeps Stance Change, and Jessie’s regular/Mega Magearna keeps Soul-Heart**. The Mega Magearna request requires identifying its existing Mega evolution item, ability and actual supported trainer-gimmick logic before activation is implemented. Magearna should be Jessie's only Mega. Other Xiphos members use no Mega Evolutions or Z-Moves.
 
 ## Containment Protocol — battle-scoped rules
 
@@ -14,7 +14,7 @@ These are **new postgame Kanto Team Xiphos Aegis trainers**. Do not apply the en
 4. Reset the consumed flag when that specific battler Pokémon switches out, not every turn. Handle double battles and both opponent slots independently.
 5. The modifier is **not a species ability and not a stored or inheritable MON_DATA_ABILITY**. Avoid modifying gEnemyParty or Pokémon save structures. It must not be copied with Trace/Role Play/Skill Swap, inherited by Receiver/Power of Alchemy, suppressed by Neutralizing Gas, retained by Transform, or transferred via trade/capture. Treat it as trainer technology, not an actual innate ability.
 6. Present a visible text/activation notification for fairness. Test damage calculation and AI estimations against the modifier so they agree. In Double Battles, the first damage received must trigger only that recipient's protection.
-7. **Exceptions:** Jessie Aegislash: Stance Change, no modifier. Other exceptions require an explicit ID/party-slot entry. Gimmicks must not clear/reset the flag mid-switch-in.
+7. **Exceptions:** Jessie Aegislash: Stance Change, no modifier. Jessie Magearna (including Mega Magearna): Soul-Heart, no modifier. Other exceptions require an explicit ID/party-slot entry. Gimmicks must not clear/reset the flag mid-switch-in.
 8. Do not apply overlay in battle replay, multiplayer, battle facilities, or battle-partner slots unless specifically enabled.
 
 ## Engine inspection already confirmed
