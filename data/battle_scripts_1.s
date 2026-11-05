@@ -2722,6 +2722,10 @@ BattleScript_FaintBattler::
 	tryactivatereceiver BS_FAINTED
 	tryactivatesoulheart
 	trytrainerslidemsgfirstoff BS_FAINTED
+	@ Award EXP before residual damage or switch-in effects can end the battle.
+	@ The later fainted-action EXP check skips foes already rewarded.
+	setbyte sGIVEEXP_STATE, 0
+	getexp BS_FAINTED
 	return
 
 BattleScript_GiveExp::
