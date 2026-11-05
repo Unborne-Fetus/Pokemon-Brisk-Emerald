@@ -52,6 +52,9 @@ jobs:
       - name: Audit explicit Easy Normal Hard and Kaizo rosters
         run: python3 tools/brisk/author_mode_teams.py --check
 
+      - name: Audit all five distinct Xiphos commander teams
+        run: python3 tools/brisk/validate_xiphos_commanders.py
+
       - name: Audit Mega Stone and mint distribution
         run: |
           python3 tools/brisk/check_item_distribution.py
