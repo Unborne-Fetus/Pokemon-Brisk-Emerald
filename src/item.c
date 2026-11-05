@@ -491,15 +491,22 @@ static void NONNULL BagPocket_CompactItems(struct BagPocket *pocket)
 void RemovePCItem(u8 index, u16 count)
 {
     struct BagPocket dummyPocket = DUMMY_PC_BAG_POCKET;
+    struct ItemSlot tempItem;
+    u16 remaining;
 
-    // Get id, quantity at slot
-    struct ItemSlot tempItem = BagPocket_GetSlotData(&dummyPocket, index);
+    if (index >= dummyPocket.capacity || count == 0)
+        return;
 
-    // Remove quantity
-    BagPocket_SetSlotItemIdAndCount(&dummyPocket, index, tempItem.itemId, tempItem.quantity - count);
+    tempItem = BagPocket_GetSlotData(&dummyPocket, index);
+    if (tempItem.itemId == ITEM_NONE || count > tempItem.quantity)
+        return;
 
-    // Compact if necessary
-    if (tempItem.quantity == 0)
+    remaining = tempItem.quantity - count;
+    // A depleted stack must become a genuinely empty slot, not an
+    // ITEM_ID-with-zero-quantity entry which can hide later PC items.
+    BagPocket_SetSlotItemIdAndCount(&dummyPocket, index,
+                                   remaining ? tempItem.itemId : ITEM_NONE, remaining);
+    if (remaining == 0)
         BagPocket_CompactItems(&dummyPocket);
 }
 
