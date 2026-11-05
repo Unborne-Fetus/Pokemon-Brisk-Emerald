@@ -27504,3 +27504,6 @@ Nature: Jolly
 - MOVE_SHADOW_BALL
 - MOVE_THUNDERBOLT
 - MOVE_PROTECT
+
+/* Commander metadata for Easy, Normal, Hard, and Kaizo; Expert is battle-scoped. */
+#include "src/data/brisk_xiphos_mode_metadata.party"
