@@ -2698,6 +2698,60 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 9,
     },
 
+    [ABILITY_POISON_WART] =
+    {
+        .name = _("Poison Wart"),
+        .description = COMPOUND_STRING("Contact attacks made or received have a 50% chance to poison the other Pokémon."),
+        .aiRating = 8,
+    },
+    [ABILITY_FLAME_TAIL] =
+    {
+        .name = _("Flame Tail"),
+        .description = COMPOUND_STRING("Tail attacks deal 1.5x damage and have a 50% chance to burn."),
+        .aiRating = 9,
+    },
+    [ABILITY_POWER_CANNONS] =
+    {
+        .name = _("Power Cannons"),
+        .description = COMPOUND_STRING("Moves that force a recharge turn deal double damage."),
+        .aiRating = 9,
+    },
+    [ABILITY_HEMLOCK_WINGS] =
+    {
+        .name = _("Hemlock Wings"),
+        .description = COMPOUND_STRING("Contact attackers are paralyzed (70%) or put to sleep (30%)."),
+        .aiRating = 9,
+    },
+    [ABILITY_PETIOLE] =
+    {
+        .name = _("Petiole"),
+        .description = COMPOUND_STRING("Raises Speed one stage for every successful hit on a foe."),
+        .aiRating = 9,
+    },
+    [ABILITY_BLIND_DIVE] =
+    {
+        .name = _("Blind Dive"),
+        .description = COMPOUND_STRING("Recoil moves deal 1.5x damage without recoil."),
+        .aiRating = 9,
+    },
+    [ABILITY_LIGHTNING_BILL] =
+    {
+        .name = _("Lightning Bill"),
+        .description = COMPOUND_STRING("Flying-type moves gain +1 priority."),
+        .aiRating = 9,
+    },
+    [ABILITY_HOOD_FLARE] =
+    {
+        .name = _("Hood Flare"),
+        .description = COMPOUND_STRING("Damaging moves have 2x power but all moves lose 1 priority."),
+        .aiRating = 10,
+    },
+    [ABILITY_EVOLUTION_DENIAL] =
+    {
+        .name = _("Evolution Denial"),
+        .description = COMPOUND_STRING("Always gets Eviolite-like Defense and Sp. Def boosts."),
+        .aiRating = 9,
+    },
     [ABILITY_FLAME_TONGUE] =
     {
         .name = _("Flame Tongue"),

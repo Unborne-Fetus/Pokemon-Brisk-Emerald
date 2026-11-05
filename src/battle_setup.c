@@ -1490,7 +1490,7 @@ static void BriskApplyKantoFakemonShowcase(struct Pokemon *party, u16 trainerNum
     if (GetBriskDifficulty() == BRISK_MODE_EXPERT && level < MAX_LEVEL)
         level = min(MAX_LEVEL, level + 3);
 
-    static u8 trainedEvs[NUM_STATS] = {4, 252, 0, 0, 0, 252};
+    static const u8 trainedEvs[NUM_STATS] = {4, 252, 0, 0, 0, 252};
     struct TrainerMon replacement = {0};
     replacement.species = species;
     replacement.lvl = level;

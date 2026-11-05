@@ -365,6 +365,16 @@ enum __attribute__((packed)) Ability
     ABILITY_PSYCHIC_GRAVITY,
     ABILITY_RAGE_WINGS,
     ABILITY_CHROMATOPHORES,
+    // Abilities assigned from the Brisk Emerald signature catalogue (through Raichu).
+    ABILITY_POISON_WART,
+    ABILITY_FLAME_TAIL,
+    ABILITY_POWER_CANNONS,
+    ABILITY_HEMLOCK_WINGS,
+    ABILITY_PETIOLE,
+    ABILITY_BLIND_DIVE,
+    ABILITY_LIGHTNING_BILL,
+    ABILITY_HOOD_FLARE,
+    ABILITY_EVOLUTION_DENIAL,
     ABILITIES_COUNT,
 };
 

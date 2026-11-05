@@ -4590,6 +4590,10 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
     // Negative-priority moves retain their relative drawbacks.
     if (ability == ABILITY_CLEARWATER)
         priority++;
+    if (ability == ABILITY_LIGHTNING_BILL && GetMoveType(move) == TYPE_FLYING)
+        priority++;
+    if (ability == ABILITY_HOOD_FLARE)
+        priority--;
 
     // Max Guard check
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
