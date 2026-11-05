@@ -5988,6 +5988,10 @@ void SetTypeBeforeUsingMove(enum Move move, enum BattlerId battler, enum Ability
      || gBattleMons[battler].volatiles.electrified)
         gBattleStruct->dynamicMoveType = TYPE_ELECTRIC;
 
+    // Psychic Powers converts damaging Normal attacks into Psychic attacks.
+    if (ability == ABILITY_PSYCHIC_POWERS && GetMoveType(move) == TYPE_NORMAL && !IsBattleMoveStatus(move))
+        gBattleStruct->dynamicMoveType = TYPE_PSYCHIC;
+
     // Check if a gem should activate.
     u32 effect = GetMoveEffect(move);
     if (holdEffect == HOLD_EFFECT_GEMS

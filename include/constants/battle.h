@@ -319,7 +319,11 @@ enum VolatileFlags
     F(VOLATILE_ACTIVATE_DANCER,             activateDancer,                (u32, 1)) \
     F(VOLATILE_TRACE_ACTIVATED,             traceActivated,                (u32, 1)) \
     F(VOLATILE_SPEED_SWAP,                  speedSwapped,                  (u32, 1)) \
-    F(VOLATILE_NINE_LIVES_USED,             nineLivesUsed,                 (u32, 1))
+    F(VOLATILE_NINE_LIVES_USED,             nineLivesUsed,                 (u32, 1)) \
+    F(VOLATILE_QUEENS_GAMBIT_USED,          queensGambitUsed,              (u32, 1)) \
+    F(VOLATILE_LUNAR_POWER_USED,            lunarPowerUsed,                (u32, 1)) \
+    F(VOLATILE_SILENT_GOLAITH_PRIMED,       silentGolaithPrimed,           (u32, 1)) \
+    F(VOLATILE_SILENT_GOLAITH_SPENT,        silentGolaithSpent,            (u32, 1))
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */
