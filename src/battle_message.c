@@ -194,6 +194,7 @@ static const u8 sText_TerrainReturnedToNormal[] = _("The terrain returned to nor
 
 const u8 *const gBattleStringsTable[STRINGID_COUNT] =
 {
+    [STRINGID_XIPHOSCONTAINMENTPROTOCOL]            = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s Containment Protocol activated! Its offensive stats and Speed rose sharply!"),
     [STRINGID_TRAINER1LOSETEXT]                     = COMPOUND_STRING("{B_TRAINER1_LOSE_TEXT}"),
     [STRINGID_PKMNGAINEDEXP]                        = COMPOUND_STRING("{B_BUFF1} gained{B_BUFF2} {B_BUFF3} Exp. Points!\p"),
     [STRINGID_PKMNGREWTOLV]                         = COMPOUND_STRING("{B_BUFF1} grew to Lv. {B_BUFF2}!{WAIT_SE}\p"),

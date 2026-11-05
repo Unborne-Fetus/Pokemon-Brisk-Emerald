@@ -71,6 +71,7 @@ static void DoTrainerBattle(void);
 #include "constants/weather.h"
 #include "fishing.h"
 #include "data/brisk_expert_patch.h"
+#include "data/brisk_xiphos_teams.h"
 
 enum TransitionType
 {
@@ -1511,6 +1512,8 @@ static void BriskApplyKantoFakemonShowcase(struct Pokemon *party, u16 trainerNum
 
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
+    if (BriskLoadXiphosCommanderParty(party, trainerNum))
+        return; // No generic roster rewriting for these five-mode commanders.
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));

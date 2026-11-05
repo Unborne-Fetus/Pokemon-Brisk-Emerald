@@ -6,6 +6,7 @@
 #include "battle_ai_record.h"
 #include "battle_util.h"
 #include "battle_move_resolution.h"
+#include "brisk_xiphos.h"
 #include "battle_script_commands.h"
 #include "battle_stat_change.h"
 #include "battle_scripts.h"
@@ -2976,6 +2977,7 @@ static enum CancelerResult CancelerHealthBarUpdate(struct BattleCalcValues *cv)
 
 static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
 {
+    bool8 xiphosActivated = FALSE;
     if (DoesSubstituteBlockMove(cv->battlerAtk, cv->battlerDef, cv->move) && gBattleMons[cv->battlerDef].volatiles.substituteHP)
     {
         if (gBattleMons[cv->battlerDef].volatiles.substituteHP >= gBattleStruct->moveDamage[cv->battlerDef])
@@ -3043,7 +3045,11 @@ static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
 
             hpLost = hpBefore - gBattleMons[cv->battlerDef].hp;
             if (hpLost != 0)
+            {
                 gBattleStruct->innardsOutHpLost[cv->battlerDef] += hpLost;
+                if (!gSpecialStatuses[cv->battlerAtk].attackerInParty)
+                    xiphosActivated = BriskXiphosProtocolTrigger(cv->battlerDef);
+            }
 
             gProtectStructs[cv->battlerDef].assuranceDoubled = TRUE;
             gProtectStructs[cv->battlerDef].revengeDoubled |= 1u << cv->battlerAtk;
@@ -3074,6 +3080,12 @@ static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
 
     GetBattlerPartyState(cv->battlerDef)->timesGotHit++;
     gSpecialStatuses[cv->battlerDef].damagedByAttack = TRUE;
+    if (xiphosActivated)
+    {
+        gBattleScripting.battler = cv->battlerDef;
+        BattleScriptCall(BattleScript_XiphosContainmentProtocol);
+        return TRUE;
+    }
     return FALSE;
 }
 

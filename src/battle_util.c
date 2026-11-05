@@ -3,6 +3,7 @@
 #include "caps.h"
 #include "brisk_modes.h"
 #include "brisk_options.h"
+#include "brisk_xiphos.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_anim_scripts.h"
@@ -8677,6 +8678,51 @@ s32 GetAdjustedDamage(struct DamageContext *ctx, s32 damage)
     return damage;
 }
 
+// Xiphos containment hardware is NOT a real ability: no copied/suppressed/held
+// ability or MON_DATA_ABILITY is ever changed.
+bool32 BriskXiphosProtocolReady(enum BattlerId battler)
+{
+    u32 disallowed = BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED
+                   | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER
+                   | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_TWO_OPPONENTS
+                   | BATTLE_TYPE_MULTI | BATTLE_TYPE_TRAINER_HILL;
+    enum Species species;
+
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (gBattleTypeFlags & disallowed)
+        || IsOnPlayerSide(battler)
+        || GetBattlerTrainer(battler) != B_TRAINER_OPPONENT_A
+        || gTrainerBattleOpponent_A < TRAINER_XIPHOS_COMMANDER_FAIRY
+        || gTrainerBattleOpponent_A > TRAINER_XIPHOS_COMMANDER_DRAGON
+        || gBattleStruct->battlerState[battler].xiphosProtocolUsed)
+        return FALSE;
+
+    species = gBattleMons[battler].species;
+    // Jessie exemptions stay explicit: Soul-Heart and Stance Change remain intact.
+    if (species == SPECIES_MAGEARNA || species == SPECIES_MAGEARNA_ORIGINAL
+     || species == SPECIES_MAGEARNA_MEGA || species == SPECIES_MAGEARNA_ORIGINAL_MEGA
+     || species == SPECIES_AEGISLASH || species == SPECIES_AEGISLASH_BLADE)
+        return FALSE;
+    return TRUE;
+}
+
+bool32 BriskXiphosProtocolTrigger(enum BattlerId battler)
+{
+    static const enum Stat stages[] = {STAT_ATK, STAT_SPATK, STAT_SPEED};
+    if (!BriskXiphosProtocolReady(battler))
+        return FALSE;
+
+    gBattleStruct->battlerState[battler].xiphosProtocolUsed = TRUE;
+    // The first successful hit was already halved in CalculateMoveDamage.
+    // There is no stat gain after a fatal blow.
+    if (gBattleMons[battler].hp == 0)
+        return FALSE;
+
+    for (u32 i = 0; i < ARRAY_COUNT(stages); i++)
+        gBattleMons[battler].statStages[stages[i]]
+            = min(MAX_STAT_STAGE, gBattleMons[battler].statStages[stages[i]] + 2);
+    return TRUE;
+}
+
 s32 CalculateMoveDamage(struct DamageContext *ctx)
 {
     s32 damage = 0;
@@ -8728,6 +8774,11 @@ s32 CalculateMoveDamage(struct DamageContext *ctx)
 
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
+    // Damage prediction and runtime resolve the same first-hit multiplier.
+    // Do not consume the shield until a real HP hit (not a Substitute hit).
+    if (damage > 0 && BriskXiphosProtocolReady(ctx->battlerDef)
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+        damage = max(1, damage / 2);
     return GetAdjustedDamage(ctx, damage);
 }
 
@@ -8770,6 +8821,9 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
 
     if (IsDynamaxAdventureBattle() && !IsOnPlayerSide(ctx->battlerAtk) && IsOnPlayerSide(ctx->battlerDef))
         damage *= DynamaxAdventure_GetBossDamageMultiplier();
+    if (damage > 0 && BriskXiphosProtocolReady(ctx->battlerDef)
+     && !gSpecialStatuses[ctx->battlerAtk].attackerInParty)
+        damage = max(1, damage / 2);
     return damage;
 }
 

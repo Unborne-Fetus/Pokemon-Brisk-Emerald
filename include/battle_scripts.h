@@ -737,6 +737,7 @@ extern const u8 BattleScript_TooScaredToMove[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
 extern const u8 BattleScript_StatChangeFailed[];
 extern const u8 BattleScript_ToxicThread[];
+extern const u8 BattleScript_XiphosContainmentProtocol[];
 extern const u8 BattleScript_PlayMoveAnim[];
 extern const u8 BattleScript_PlayTidyUp[];
 extern const u8 BattleScript_PlayMoveAnimAndChangeHP[];

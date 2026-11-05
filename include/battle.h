@@ -539,7 +539,8 @@ struct BattlerState
     u16 notOnField:1;
     u16 originalBattlerPartyId:4;
     u16 isFirstTurn:2; // Starts at 2 on switch in and counts down during end turn
-    u16 padding:8;
+    u16 xiphosProtocolUsed:1; // Per-battler, per-switch-in NPC technology.
+    u16 padding:7;
     // End of Word
 };
 
