@@ -234,3 +234,49 @@ AI_ONE_VS_TWO_BATTLE_TEST("Both opponent's Pokemon give experience in battle aga
         EXPECT_EQ(GetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_EXP), expectedXp);
     }
 }
+
+
+WILD_BATTLE_TEST("Indirect damage: poison and burn knockouts award EXP")
+{
+    u32 status;
+    PARAMETRIZE { status = STATUS1_POISON; }
+    PARAMETRIZE { status = STATUS1_BURN; }
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Level(5); }
+        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); Status1(status); }
+    } WHEN {
+        TURN { }
+    } SCENE {
+        MESSAGE("The wild Caterpie fainted!");
+        EXPERIENCE_BAR(player);
+    }
+}
+
+WILD_BATTLE_TEST("Indirect damage: opponent recoil knockout awards EXP")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Level(5); }
+        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_DOUBLE_EDGE); }
+    } SCENE {
+        MESSAGE("The wild Caterpie fainted!");
+        EXPERIENCE_BAR(player);
+    }
+}
+
+SINGLE_BATTLE_TEST("Indirect damage: Stealth Rock knockout awards EXP")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Level(5); }
+        OPPONENT(SPECIES_WOBBUFFET) { Level(5); }
+        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_STEALTH_ROCK); }
+        TURN { SWITCH(opponent, 1); }
+    } SCENE {
+        MESSAGE("The opposing Caterpie fainted!");
+        EXPERIENCE_BAR(player);
+    }
+}
