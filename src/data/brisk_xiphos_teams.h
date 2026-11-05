@@ -1,7 +1,7 @@
 // Five separately authored battle-only team matrices: Easy/Normal/Hard/Kaizo/Expert.
 // Stored mode IDs: Normal 0, Easy 1, Hard 2, Kaizo 3, Expert 4.
-static const u8 sXiphosPhysicalEvs[NUM_STATS] = {4,252,0,252,0,0};
-static const u8 sXiphosSpecialEvs[NUM_STATS] = {252,0,0,0,252,4};
+static const u8 sXiphosPhysicalEvs[NUM_STATS] = {4,252,0,0,0,252};
+static const u8 sXiphosSpecialEvs[NUM_STATS] = {252,0,0,252,4,0};
 static const struct TrainerMon sXiphosFairyNormal[PARTY_SIZE] = {
     {.species=SPECIES_GRIMMSNARL, .lvl=95, .iv=831283992, .ability=ABILITY_PRANKSTER, .heldItem=ITEM_LIGHT_CLAY, .nature=NATURE_JOLLY, .gender=TRAINER_MON_RANDOM_GENDER, .friendship=255, .ball=BALL_POKE, .ev=sXiphosPhysicalEvs, .moves={MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_SPIRIT_BREAK, MOVE_THUNDER_WAVE}},
     {.species=SPECIES_TOGEKISS, .lvl=95, .iv=831283992, .ability=ABILITY_SERENE_GRACE, .heldItem=ITEM_SITRUS_BERRY, .nature=NATURE_JOLLY, .gender=TRAINER_MON_RANDOM_GENDER, .friendship=255, .ball=BALL_POKE, .ev=sXiphosPhysicalEvs, .moves={MOVE_AIR_SLASH, MOVE_DAZZLING_GLEAM, MOVE_FOLLOW_ME, MOVE_HELPING_HAND}},
