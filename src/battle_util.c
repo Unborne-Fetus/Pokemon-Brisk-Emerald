@@ -8691,8 +8691,8 @@ bool32 BriskXiphosProtocolReady(enum BattlerId battler)
     if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (gBattleTypeFlags & disallowed)
         || IsOnPlayerSide(battler)
         || GetBattlerTrainer(battler) != B_TRAINER_OPPONENT_A
-        || gTrainerBattleOpponent_A < TRAINER_XIPHOS_COMMANDER_FAIRY
-        || gTrainerBattleOpponent_A > TRAINER_XIPHOS_COMMANDER_DRAGON
+        || gTrainerBattleParameter.params.opponentA < TRAINER_XIPHOS_COMMANDER_FAIRY
+        || gTrainerBattleParameter.params.opponentA > TRAINER_XIPHOS_COMMANDER_DRAGON
         || gBattleStruct->battlerState[battler].xiphosProtocolUsed)
         return FALSE;
 
