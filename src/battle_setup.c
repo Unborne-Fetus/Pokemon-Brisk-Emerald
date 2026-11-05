@@ -71,7 +71,7 @@ static void DoTrainerBattle(void);
 #include "constants/weather.h"
 #include "fishing.h"
 #include "data/brisk_expert_patch.h"
-#include "data/brisk_xiphos_teams.h"
+#include "data/brisk_xiphos_loader.h"
 
 enum TransitionType
 {
