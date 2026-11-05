@@ -962,7 +962,7 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
 
 u16 *GetOutfitPointer(u16 id)
 {
-    if (id > OUTFIT_COUNT)
+    if (id == OUTFIT_NONE || id >= OUTFIT_COUNT)
         return NULL;
     else
         return &gSaveBlock2Ptr->outfits[id / 8];

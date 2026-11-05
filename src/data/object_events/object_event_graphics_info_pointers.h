@@ -409,7 +409,43 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nemona;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volo;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicRedDecorating;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KantoClassicLeafDecorating;
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_NORMAL] = &gObjectEventGraphicsInfo_KantoClassicRedNormal,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_MACH_BIKE] = &gObjectEventGraphicsInfo_KantoClassicRedMachBike,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_ACRO_BIKE] = &gObjectEventGraphicsInfo_KantoClassicRedAcroBike,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_SURFING] = &gObjectEventGraphicsInfo_KantoClassicRedSurfing,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_UNDERWATER] = &gObjectEventGraphicsInfo_KantoClassicRedUnderwater,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_FIELD_MOVE] = &gObjectEventGraphicsInfo_KantoClassicRedFieldMove,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_FISHING] = &gObjectEventGraphicsInfo_KantoClassicRedFishing,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_WATERING] = &gObjectEventGraphicsInfo_KantoClassicRedWatering,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_RED_DECORATING] = &gObjectEventGraphicsInfo_KantoClassicRedDecorating,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_NORMAL] = &gObjectEventGraphicsInfo_KantoClassicLeafNormal,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_MACH_BIKE] = &gObjectEventGraphicsInfo_KantoClassicLeafMachBike,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_ACRO_BIKE] = &gObjectEventGraphicsInfo_KantoClassicLeafAcroBike,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_SURFING] = &gObjectEventGraphicsInfo_KantoClassicLeafSurfing,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_UNDERWATER] = &gObjectEventGraphicsInfo_KantoClassicLeafUnderwater,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_FIELD_MOVE] = &gObjectEventGraphicsInfo_KantoClassicLeafFieldMove,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_FISHING] = &gObjectEventGraphicsInfo_KantoClassicLeafFishing,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_WATERING] = &gObjectEventGraphicsInfo_KantoClassicLeafWatering,
+    [OBJ_EVENT_GFX_KANTO_CLASSIC_LEAF_DECORATING] = &gObjectEventGraphicsInfo_KantoClassicLeafDecorating,
     [OBJ_EVENT_GFX_DIANTHA] = &gObjectEventGraphicsInfo_Diantha,
     [OBJ_EVENT_GFX_LEON] = &gObjectEventGraphicsInfo_Leon,
     [OBJ_EVENT_GFX_NEMONA] = &gObjectEventGraphicsInfo_Nemona,

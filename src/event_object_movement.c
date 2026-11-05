@@ -532,6 +532,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_KantoClassicRed, OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED},
+    {gObjectEventPal_KantoClassicRedReflection, OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED_REFLECTION},
+    {gObjectEventPal_KantoClassicLeaf, OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF},
+    {gObjectEventPal_KantoClassicLeafReflection, OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF_REFLECTION},
     {gObjectEventPal_ChampionBlue, OBJ_EVENT_PAL_TAG_CHAMPION_BLUE},
     {gObjectEventPal_ChampionCynthia, OBJ_EVENT_PAL_TAG_CHAMPION_CYNTHIA},
     {gObjectEventPal_ChampionIris, OBJ_EVENT_PAL_TAG_CHAMPION_IRIS},
@@ -620,10 +624,26 @@ static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
 };
 
+static const u16 sReflectionPaletteTags_KantoClassicRed[] = {
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_KantoClassicLeaf[] = {
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF_REFLECTION,
+    OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF_REFLECTION,
+};
+
 static const struct PairedPalettes sPlayerReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_BRENDAN,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,               sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER, sReflectionPaletteTags_PlayerUnderwater},
+    {OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED, sReflectionPaletteTags_KantoClassicRed},
+    {OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF, sReflectionPaletteTags_KantoClassicLeaf},
     {OBJ_EVENT_PAL_TAG_NONE,              NULL},
 };
 
@@ -718,6 +738,8 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_NPC_3,            sReflectionPaletteTags_Npc3},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
+    {OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_RED, sReflectionPaletteTags_KantoClassicRed},
+    {OBJ_EVENT_PAL_TAG_KANTO_CLASSIC_LEAF, sReflectionPaletteTags_KantoClassicLeaf},
     {OBJ_EVENT_PAL_TAG_NONE,             NULL},
 };
 

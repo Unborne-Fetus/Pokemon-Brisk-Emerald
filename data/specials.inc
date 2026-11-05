@@ -666,3 +666,6 @@ gSpecials::
 	def_special BriskBossRushCycleEnemyLevels
 	def_special BriskBossRushToggleBattleStyle
 	def_special BriskBossRushToggleGimmicks
+
+	@ Jessie victory secondary reward; append after the main prize.
+	def_special UnlockJessieKantoClassicOutfit
