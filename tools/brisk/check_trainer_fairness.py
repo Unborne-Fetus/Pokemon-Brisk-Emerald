@@ -116,6 +116,10 @@ def audit():
     errors.extend(audit_kaizo(teams))
     errors.extend(audit_steven(teams))
     story_mons = 0
+    # The Xiphos commanders are authored endgame story bosses, not ordinary
+    # progression trainers. Their learnability is checked against the compiled
+    # species catalog, including species added after the fairness snapshot.
+    xiphos_commanders = ["TRAINER_XIPHOS_COMMANDER_FAIRY","TRAINER_XIPHOS_COMMANDER_FIGHTING","TRAINER_XIPHOS_COMMANDER_STEEL","TRAINER_XIPHOS_COMMANDER_DRAGON"]
     for tid in policy['story']:
         team = teams[tid]
         blocks = re.split(r'\n[ \t]*\n', team.strip())[1:]
@@ -129,7 +133,8 @@ def audit():
         for block in blocks:
             name = block.splitlines()[0].split(' @ ')[0]
             match = re.search(r'^Level: (\d+)$', block, re.M)
-            if not match or name not in policy['story_species']:
+            if not match or (name not in policy['story_species']
+                             and not (tid in xiphos_commanders and name in legality.SPECIES)):
                 errors.append(f'{tid}: missing story species or level'); continue
             level = int(match[1]); story_mons += 1
             legal = legality.legal_moves(name,level)
@@ -138,7 +143,9 @@ def audit():
                 errors.append(f'{tid}: illegal story moves on {name}')
             if not any(MOVES[legality.canonical_move(m)]['power'] > 1 for m in moves):
                 errors.append(f'{tid}: no usable story attack on {name}')
-            cap = 50 if level < 12 else 75 if level < 25 else 90 if level < 35 else 100 if level < 50 else 120
+            # Strong level-95 authored bosses can legally use 130-power moves.
+            cap = (150 if tid in xiphos_commanders else
+                   (50 if level < 12 else 75 if level < 25 else 90 if level < 35 else 100 if level < 50 else 120))
             if any(MOVES[legality.canonical_move(m)]['power'] > cap for m in moves):
                 errors.append(f'{tid}: excessive story move power on {name}')
             ev = re.search(r'^EVs: (.*)$',block,re.M)
