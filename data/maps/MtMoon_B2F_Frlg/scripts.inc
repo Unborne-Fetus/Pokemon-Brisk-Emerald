@@ -4,11 +4,17 @@ MtMoon_B2F_Frlg_MapScripts::
 
 MtMoon_B2F_OnTransition::
 	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
+	call_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_HideFossils
 	end
 
 MtMoon_B2F_EventScript_ShowFossils::
 	clearflag FLAG_HIDE_DOME_FOSSIL
 	clearflag FLAG_HIDE_HELIX_FOSSIL
+	return
+
+MtMoon_B2F_EventScript_HideFossils::
+	setflag FLAG_HIDE_DOME_FOSSIL
+	setflag FLAG_HIDE_HELIX_FOSSIL
 	return
 
 MtMoon_B2F_EventScript_MiguelTrigger::
@@ -50,13 +56,19 @@ MtMoon_B2F_EventScript_MiguelGoPickFossil::
 	release
 	end
 
+@ Selecting a fossil is the choice; avoid the unreliable Yes/No menu.
 MtMoon_B2F_EventScript_DomeFossil::
 	lock
 	faceplayer
-	msgbox MtMoon_B2F_Text_YouWantDomeFossil, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
-	removeobject LOCALID_DOME_FOSSIL
+	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_FossilAlreadyTaken
+	checkitemspace ITEM_DOME_FOSSIL, 1
+	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_FossilBagFull
 	giveitem_msg MtMoon_B2F_Text_ObtainedDomeFossil, ITEM_DOME_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_DOME_FOSSIL
+	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setflag FLAG_HIDE_DOME_FOSSIL
+	setflag FLAG_HIDE_HELIX_FOSSIL
+	removeobject LOCALID_DOME_FOSSIL
 	closemessage
 	delay 10
 	applymovement LOCALID_MIGUEL, MtMoon_B2F_Movement_MiguelToHelixFossil
@@ -68,8 +80,6 @@ MtMoon_B2F_EventScript_DomeFossil::
 	waitmessage
 	waitfanfare
 	removeobject LOCALID_HELIX_FOSSIL
-	setflag FLAG_GOT_DOME_FOSSIL
-	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
 	release
 	end
 
@@ -83,10 +93,15 @@ MtMoon_B2F_Movement_MiguelToHelixFossil::
 MtMoon_B2F_EventScript_HelixFossil::
 	lock
 	faceplayer
-	msgbox MtMoon_B2F_Text_YouWantHelixFossil, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
-	removeobject LOCALID_HELIX_FOSSIL
+	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_FossilAlreadyTaken
+	checkitemspace ITEM_HELIX_FOSSIL, 1
+	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_FossilBagFull
 	giveitem_msg MtMoon_B2F_Text_ObtainedHelixFossil, ITEM_HELIX_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_HELIX_FOSSIL
+	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setflag FLAG_HIDE_DOME_FOSSIL
+	setflag FLAG_HIDE_HELIX_FOSSIL
+	removeobject LOCALID_HELIX_FOSSIL
 	closemessage
 	delay 10
 	applymovement LOCALID_MIGUEL, MtMoon_B2F_Movement_MiguelToDomeFossil
@@ -98,12 +113,16 @@ MtMoon_B2F_EventScript_HelixFossil::
 	waitmessage
 	waitfanfare
 	removeobject LOCALID_DOME_FOSSIL
-	setflag FLAG_GOT_HELIX_FOSSIL
-	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
 	release
 	end
 
-MtMoon_B2F_EventScript_DontTakeFossil::
+MtMoon_B2F_EventScript_FossilBagFull::
+	msgbox MtMoon_B2F_Text_FossilBagFull
+	release
+	end
+
+MtMoon_B2F_EventScript_FossilAlreadyTaken::
+	msgbox MtMoon_B2F_Text_FossilAlreadyTaken
 	release
 	end
 
@@ -205,15 +224,14 @@ MtMoon_B2F_Text_Grunt4PostBattle::
 	.string "POKéMON lived here long before\n"
 	.string "people came.$"
 
-MtMoon_B2F_Text_YouWantDomeFossil::
-	.string "Do you want the DOME FOSSIL?$"
-
-MtMoon_B2F_Text_YouWantHelixFossil::
-	.string "Do you want the HELIX FOSSIL?$"
-
 MtMoon_B2F_Text_ObtainedHelixFossil::
 	.string "Obtained the HELIX FOSSIL!$"
 
 MtMoon_B2F_Text_ObtainedDomeFossil::
 	.string "Obtained the DOME FOSSIL!$"
 
+MtMoon_B2F_Text_FossilBagFull::
+	.string "There's no room in the BAG!$"
+
+MtMoon_B2F_Text_FossilAlreadyTaken::
+	.string "You've already taken a fossil.$"
