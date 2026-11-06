@@ -11,7 +11,8 @@ for leader in leaders:
     sets=[]
     for mode in modes:
         name="sXiphos"+leader+mode
-        matches=re.findall(r"static const struct TrainerMon "+name+r"\[PARTY_SIZE\] = \{(.*?)\n\};",code,re.S)
+        # Arrays have external linkage because battle_setup.c loads them from data.c.
+        matches=re.findall(r"^const struct TrainerMon\s+"+re.escape(name)+r"\[PARTY_SIZE\]\s*=\s*\{(.*?)\n\};",code,re.M|re.S)
         assert len(matches)==1,(name,"missing/duplicate")
         species=re.findall(r"\.species=SPECIES_([A-Z0-9_]+)",matches[0])
         assert len(species)==6 and len(set(species))==6,(name,species)
@@ -32,7 +33,7 @@ for leader in leaders:
         key="sXiphos"+leader+mode
         assert (".party = "+key+",") in meta, (leader, mode, "missing engine trainer metadata")
         assert ("extern const struct TrainerMon "+key+"[PARTY_SIZE];") in loader
-assert len(re.findall(r"\\[DIFFICULTY_(?:NORMAL|EASY|HARD|KAIZO)\\]\\[TRAINER_XIPHOS_COMMANDER_",meta))==16
+assert len(re.findall(r"\[DIFFICULTY_(?:NORMAL|EASY|HARD|KAIZO)\]\[TRAINER_XIPHOS_COMMANDER_",meta))==16
 assert meta.count(".battleType = TRAINER_BATTLE_TYPE_DOUBLES") == 16
 assert "species == SPECIES_MAGEARNA" in battle
 assert "species == SPECIES_MAGEARNA_MEGA" in battle
