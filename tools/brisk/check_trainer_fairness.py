@@ -143,8 +143,8 @@ def audit():
                 errors.append(f'{tid}: illegal story moves on {name}')
             if not any(MOVES[legality.canonical_move(m)]['power'] > 1 for m in moves):
                 errors.append(f'{tid}: no usable story attack on {name}')
-            # Strong level-95 authored bosses can legally use 130-power moves.
-            cap = (150 if tid in xiphos_commanders else
+            # Author-built endgame bosses may use Gigaton Hammer (160 power).
+            cap = (160 if tid in xiphos_commanders else
                    (50 if level < 12 else 75 if level < 25 else 90 if level < 35 else 100 if level < 50 else 120))
             if any(MOVES[legality.canonical_move(m)]['power'] > cap for m in moves):
                 errors.append(f'{tid}: excessive story move power on {name}')
