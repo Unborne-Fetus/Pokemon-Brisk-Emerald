@@ -165,6 +165,15 @@ def author_dialogue(metadata):
             label=f'BriskKanto_{name}_{i}'
             rec={'script':label,'trainer':metadata[tid]['id'] if tid else '', 'trainer_type':'TRAINER_TYPE_NORMAL' if tid else 'TRAINER_TYPE_NONE'}
             if obj is not raw:rec['object']=obj
+            # Preserve physical world props. Never author spoken NPC dialogue
+            # for an item ball, field obstacle, or Mt Moon fossil.
+            if gfx == 'OBJ_EVENT_GFX_ITEM_BALL' or script in (
+                'EventScript_CutTree', 'EventScript_RockSmash',
+                'EventScript_StrengthBoulder') or (gfx == 'OBJ_EVENT_GFX_FOSSIL_FRLG'
+                and name == 'MtMoon_B2F_Frlg'):
+                records[str(i)] = {'script':script, 'trainer':'',
+                                   'trainer_type':'TRAINER_TYPE_NONE', 'keep_flag':True}
+                continue
             # Preserve explicit Brisk legendary encounters and their own flags.
             if script.startswith('BriskStatic_EventScript_'):
                 rec={'script':script,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
