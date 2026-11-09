@@ -229,6 +229,8 @@ u8 *GetFlagPointer(u16 id)
 {
     if (id >= FLAG_BRISK_KANTO_TRAINER_START && id < FLAG_BRISK_KANTO_TRAINER_END)
         return &gSaveBlock3Ptr->kantoTrainerFlags[(id - FLAG_BRISK_KANTO_TRAINER_START) / 8];
+    if (id >= FLAG_BRISK_KANTO_OBJECT_START && id < FLAG_BRISK_KANTO_OBJECT_END)
+        return &gSaveBlock3Ptr->kantoObjectFlags[(id - FLAG_BRISK_KANTO_OBJECT_START) / 8];
     if (id == 0)
         return NULL;
     else if (id < SPECIAL_FLAGS_START)
