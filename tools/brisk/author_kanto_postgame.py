@@ -162,6 +162,7 @@ def author_dialogue(metadata):
                 special={
                     'PowerPlant_EventScript_Electrode1':'BriskKanto_EventScript_Electrode',
                     'PowerPlant_EventScript_Electrode2':'BriskKanto_EventScript_Electrode',
+                    'CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall':'BriskKanto_EventScript_GiftEevee',
                     'SaffronCity_Dojo_EventScript_HitmonleeBall':'BriskKanto_EventScript_GiftHitmonlee',
                     'SaffronCity_Dojo_EventScript_HitmonchanBall':'BriskKanto_EventScript_GiftHitmonchan',
                 }
