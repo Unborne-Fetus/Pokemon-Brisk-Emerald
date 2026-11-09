@@ -37,7 +37,7 @@ def audit():
     # The Emerald map converter overrides the generated dialogue manifest for
     # world props, so validate the imported source data and available scripts.
     item_scripts=(ROOT/'data/scripts/item_ball_scripts_frlg.inc').read_text()
-    pickup_labels=set(re.findall(r'^(\\w+)::\\s*\\n\\s*finditem\\s+ITEM_\\w+',item_scripts,re.M))
+    pickup_labels=set(re.findall(r'^(\w+)::\s*\n\s*finditem\s+ITEM_\w+',item_scripts,re.M))
     map_ball_count=0
     for name in manifest['maps']:
         raw=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
