@@ -1715,7 +1715,7 @@
 #define FLAG_HIDE_ROUTE_12_SNORLAX                         0
 #define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0
 #define FLAG_HIDE_OLD_AMBER                                0
-#define FLAG_HIDE_EEVEE_BALL                               0
+#define FLAG_HIDE_EEVEE_BALL                               (FLAG_BRISK_KANTO_PICKUP_START + 168)
 #define FLAG_HIDE_VICTORY_ROAD_2F_BOULDER                  0
 #define FLAG_HIDE_VICTORY_ROAD_3F_BOULDER                  0
 #define FLAG_HIDE_OAK_IN_CHAMP_ROOM                        0
@@ -2025,7 +2025,7 @@
 #define FLAG_0x260                                       0
 #define FLAG_0x261                                       0
 #define FLAG_0x262                                       0
-#define FLAG_GOT_EEVEE                                   0
+#define FLAG_GOT_EEVEE                                   FLAG_HIDE_EEVEE_BALL
 #define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0
 #define FLAG_CINNABAR_GYM_QUIZ_1                         0
 #define FLAG_CINNABAR_GYM_QUIZ_2                         0
