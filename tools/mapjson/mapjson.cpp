@@ -516,6 +516,12 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             if (record["omit"].bool_value())
                 continue;
 
+            // These Rocket-era quest props cannot be collected in the completed
+            // postgame; leave their rooms intact without obsolete key items.
+            if (script == "RocketHideout_B4F_EventScript_SilphScope"
+                || script == "RocketHideout_B4F_EventScript_LiftKey")
+                continue;
+
             // Physical objects must retain their gameplay meaning. The FRLG
             // postgame dialogue manifest was treating item balls like citizens:
             // those balls spoke but never yielded their items. Derive pickups
@@ -543,6 +549,12 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                         || script == "PowerPlant_EventScript_Electrode2") {
                     // These two fake Poké Balls initiate a wild battle.
                     object["script"] = "BriskKanto_EventScript_Electrode";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftBulbasaur";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_SquirtleBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftSquirtle";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_CharmanderBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftCharmander";
                 } else if (script == "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall") {
                     object["script"] = "BriskKanto_EventScript_GiftEevee";
                 } else if (script == "SaffronCity_Dojo_EventScript_HitmonleeBall") {
@@ -570,6 +582,16 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                     ? "EventScript_StrengthBoulder" : gfx == "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG"
                     ? "EventScript_CutTree" : "EventScript_RockSmash";
                 // Keep event flags local to the map; never use FRLG story flags.
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            if (gfx == "OBJ_EVENT_GFX_POKEDEX") {
+                Json::object object = event.object_items();
+                object["script"] = "BriskKanto_EventScript_LabPokedex";
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
                 object["flag"] = "0";
                 objects.push_back(object);
                 continue;
