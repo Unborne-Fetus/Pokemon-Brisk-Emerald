@@ -231,3 +231,77 @@ BriskKanto_Text_ChooseEeveeGift:
 
 BriskKanto_Text_EeveeGiftReceived:
     .string "EEVEE joined your collection!$"
+
+
+@ Professor Oak's three display balls now offer one Kanto starter as a postgame gift.
+@ The single reward bit and individual hide flags survive saves without using FRLG story flags.
+BriskKanto_EventScript_GiftBulbasaur::
+    setvar VAR_TEMP_1, SPECIES_BULBASAUR
+    goto BriskKanto_EventScript_GiveOakStarter
+    end
+
+BriskKanto_EventScript_GiftSquirtle::
+    setvar VAR_TEMP_1, SPECIES_SQUIRTLE
+    goto BriskKanto_EventScript_GiveOakStarter
+    end
+
+BriskKanto_EventScript_GiftCharmander::
+    setvar VAR_TEMP_1, SPECIES_CHARMANDER
+    goto BriskKanto_EventScript_GiveOakStarter
+    end
+
+BriskKanto_EventScript_GiveOakStarter::
+    lock
+    faceplayer
+    goto_if_set FLAG_BRISK_KANTO_STARTER_REWARD, BriskKanto_EventScript_StarterAlreadyClaimed
+    msgbox BriskKanto_Text_ChooseStarterGift, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, BriskKanto_EventScript_StarterCancel
+    givemon VAR_TEMP_1, 90
+    goto_if_eq VAR_RESULT, 2, BriskKanto_EventScript_StarterNoRoom
+    setflag FLAG_BRISK_KANTO_STARTER_REWARD
+    setflag FLAG_BRISK_KANTO_STARTER_BULBASAUR
+    setflag FLAG_BRISK_KANTO_STARTER_SQUIRTLE
+    setflag FLAG_BRISK_KANTO_STARTER_CHARMANDER
+    removeobject 4
+    removeobject 5
+    removeobject 6
+    msgbox BriskKanto_Text_StarterGiftReceived, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_EventScript_StarterCancel::
+    release
+    end
+
+BriskKanto_EventScript_StarterNoRoom::
+    msgbox BriskKanto_Text_StarterNoRoom, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_EventScript_StarterAlreadyClaimed::
+    msgbox BriskKanto_Text_StarterAlreadyClaimed, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_Text_ChooseStarterGift:
+    .string "One KANTO starter may join your\n"
+    .string "team, CHAMPION. Choose this one?$"
+
+BriskKanto_Text_StarterGiftReceived:
+    .string "Your new starter is ready for\n"
+    .string "a journey across KANTO!$"
+
+BriskKanto_Text_StarterNoRoom:
+    .string "There is no space for a new\n"
+    .string "POKéMON. Make room first.$"
+
+BriskKanto_Text_StarterAlreadyClaimed:
+    .string "You already chose a starter.$"
+
+BriskKanto_EventScript_LabPokedex::
+    msgbox BriskKanto_Text_LabPokedex, MSGBOX_SIGN
+    end
+
+BriskKanto_Text_LabPokedex:
+    .string "Professor OAK's POKéDEX\n"
+    .string "research station is on display.$"
