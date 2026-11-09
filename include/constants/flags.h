@@ -2459,4 +2459,10 @@
 #define FLAG_BRISK_KANTO_TRAINER_START 0x6000
 #define FLAG_BRISK_KANTO_TRAINER_END (FLAG_BRISK_KANTO_TRAINER_START + BRISK_KANTO_TRAINER_COUNT)
 
+// Isolated collectible flags: FRLG pickup flags must not overlap Hoenn.
+// Indices follow data/scripts/item_ball_scripts_frlg.inc in source order.
+#define BRISK_KANTO_PICKUP_COUNT 192
+#define FLAG_BRISK_KANTO_PICKUP_START 0x6300
+#define FLAG_BRISK_KANTO_PICKUP_END (FLAG_BRISK_KANTO_PICKUP_START + BRISK_KANTO_PICKUP_COUNT)
+
 #endif // GUARD_CONSTANTS_FLAGS_H
