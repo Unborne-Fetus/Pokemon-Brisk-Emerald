@@ -98,19 +98,24 @@ TEST("Brisk Easy early gym species devolve to level-appropriate stages and tutor
     gBattleTypeFlags = flags; VarSet(VAR_BRISK_DIFFICULTY,mode);
 }
 
-TEST("Brisk Hard enforces EXP caps by default and Extreme always enforces them")
+TEST("Normal Expert and Hard honor optional EXP caps while Kaizo always enforces them")
 {
     u16 mode = VarGet(VAR_BRISK_DIFFICULTY), setting = VarGet(VAR_BRISK_NO_LEVEL_CAP);
-    for (u32 m = 0; m < 4; m++)
+    for (u32 m = 0; m <= BRISK_MODE_MAX; m++)
     for (u32 off = 0; off < 2; off++)
     {
         VarSet(VAR_BRISK_DIFFICULTY,m); VarSet(VAR_BRISK_NO_LEVEL_CAP,off);
-        bool32 enforced = m == BRISK_MODE_EXTREME || (m == BRISK_MODE_HARD && !off);
+        bool32 enforced = m == BRISK_MODE_EXTREME || (m != BRISK_MODE_EASY && !off);
         EXPECT_EQ(BriskUsesExpCap(),enforced);
         if (enforced)
         {
             EXPECT_EQ(GetCurrentLevelCap(),GetProgressionLevelCap());
             EXPECT_EQ(GetSoftLevelCapExpValue(GetCurrentLevelCap(),100),0);
+        }
+        else
+        {
+            EXPECT_EQ(GetCurrentLevelCap(), MAX_LEVEL);
+            EXPECT_EQ(GetSoftLevelCapExpValue(25, 100), 100);
         }
     }
     VarSet(VAR_BRISK_DIFFICULTY,mode); VarSet(VAR_BRISK_NO_LEVEL_CAP,setting);
