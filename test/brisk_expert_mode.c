@@ -18,8 +18,10 @@ void Test_BriskTrainerSource(const struct Trainer *trainer, u32 id);
 TEST("Expert is an accessible full-team mode with save-compatible ID")
 {
     u16 previousMode = VarGet(VAR_BRISK_DIFFICULTY);
+    u16 previousCapSetting = VarGet(VAR_BRISK_NO_LEVEL_CAP);
     u32 previousBattleFlags = gBattleTypeFlags;
     VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EXPERT);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, 1);
     gBattleTypeFlags = 0;
 
     EXPECT_EQ(GetBriskDifficulty(), BRISK_MODE_EXPERT);
@@ -28,6 +30,9 @@ TEST("Expert is an accessible full-team mode with save-compatible ID")
     EXPECT(BriskBattleItemsAllowed());
     EXPECT_EQ(GetBriskBattleStyle(OPTIONS_BATTLE_STYLE_SHIFT), OPTIONS_BATTLE_STYLE_SET);
     EXPECT(!BriskUsesExpCap());
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, 0);
+    EXPECT(BriskUsesExpCap());
+    EXPECT_EQ(GetSoftLevelCapExpValue(GetCurrentLevelCap(), 100), 0);
     EXPECT_EQ(ScaleBriskSharedExp(100), 100);
 
     u64 flags = GetBriskTrainerAiFlags(AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION);
@@ -41,6 +46,7 @@ TEST("Expert is an accessible full-team mode with save-compatible ID")
     EXPECT_EQ(BriskDifficultyPartySize(2, 12, FALSE, FALSE, TRUE), 3);
 
     VarSet(VAR_BRISK_DIFFICULTY, previousMode);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, previousCapSetting);
     gBattleTypeFlags = previousBattleFlags;
 }
 

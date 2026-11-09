@@ -2369,7 +2369,8 @@
 #define FLAG_0x82B                                                  0
 #define FLAG_SYS_SET_TRAINER_CARD_PROFILE                           0
 #define FLAG_0x82E                                                  0
-#define FLAG_SYS_ON_CYCLING_ROAD                                    0
+// FRLG Cycling Road uses the same bike-lock state as Hoenn's Cycling Road.
+#define FLAG_SYS_ON_CYCLING_ROAD                                    FLAG_SYS_CYCLING_ROAD
 #define FLAG_0x831                                                  0
 #define FLAG_0x832                                                  0
 #define FLAG_0x833                                                  0
