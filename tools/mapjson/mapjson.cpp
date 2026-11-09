@@ -512,6 +512,10 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             // postgame NPC's generic dialogue. A dedicated flag bank keeps
             // collected items from reappearing or altering Hoenn story flags.
             if (gfx == "OBJ_EVENT_GFX_ITEM_BALL") {
+                // Oak's three starter balls belong to the old FRLG campaign.
+                // This is a postgame visit, not a fresh Kanto starter selection.
+                if (mapName == "PalletTown_ProfessorOaksLab_Frlg")
+                    continue;
                 const auto &indices = kanto_item_script_indices();
                 const auto it = indices.find(script);
                 // Celadon's rooftop ball grants Eevee, not a bag item.
