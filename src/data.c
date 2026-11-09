@@ -228,6 +228,10 @@ const union AnimCmd *const gAnims_Trainer[] ={
 
 const u8 gText_HoodedFigureTrainerName[] = _("Hooded Figure");
 
+// A single globally defined set of Xiphos commander teams is shared by the
+// trainer metadata and the battle-only Expert team selector.
+#include "data/brisk_xiphos_teams.h"
+
 #if !TESTING
 const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 {
@@ -235,6 +239,7 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #include "data/trainers_frlg.h"
 #else
 #include "data/brisk_mode_teams.h"
+#include "data/brisk_xiphos_trainer_info.h"
 #endif
 };
 #endif

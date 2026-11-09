@@ -1242,11 +1242,6 @@
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
@@ -1680,8 +1675,8 @@
 #define FLAG_HIDE_OAK_IN_PALLET_TOWN                       0
 #define FLAG_HIDE_RIVAL_IN_LAB                             0
 #define FLAG_HIDE_PEWTER_CITY_GYM_GUIDE                    0
-#define FLAG_HIDE_DOME_FOSSIL                              0
-#define FLAG_HIDE_HELIX_FOSSIL                             0
+#define FLAG_HIDE_DOME_FOSSIL                              0x4A3
+#define FLAG_HIDE_HELIX_FOSSIL                             0x4A4
 #define FLAG_HIDE_NUGGET_BRIDGE_ROCKET                     0
 #define FLAG_HIDE_BILL_CLEFAIRY                            0
 #define FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE                   0
@@ -1981,7 +1976,7 @@
 #define STORY_FLAGS_START                                0
 #define FLAG_GOT_POTION_ON_ROUTE_1                       0
 #define FLAG_GOT_TM34_FROM_SURGE                         0
-#define FLAG_GOT_FOSSIL_FROM_MT_MOON                     0
+#define FLAG_GOT_FOSSIL_FROM_MT_MOON                     0x4A0
 #define FLAG_HELPED_BILL_IN_SEA_COTTAGE                  0
 #define FLAG_GOT_SS_TICKET                               0
 #define FLAG_GOT_SS_TICKET_DUP                           0
@@ -2044,8 +2039,8 @@
 #define FLAG_GOT_20_COINS_FROM_GAMBLER                   0
 #define FLAG_GOT_20_COINS_FROM_GAMBLER_2                 0
 #define FLAG_GOT_BICYCLE                                 0
-#define FLAG_GOT_DOME_FOSSIL                             0
-#define FLAG_GOT_HELIX_FOSSIL                            0
+#define FLAG_GOT_DOME_FOSSIL                             0x4A1
+#define FLAG_GOT_HELIX_FOSSIL                            0x4A2
 #define FLAG_DID_ESPHERE_TRADE                           0
 #define FLAG_DID_TANGENY_TRADE                           0
 #define FLAG_DID_SEELOR_TRADE                            0

@@ -5777,3 +5777,8 @@ void UnlockWallaceOutfit(void)
 {
     UnlockOutfit(OUTFIT_UNUSUAL_RED);
 }
+
+void UnlockJessieKantoClassicOutfit(void)
+{
+    UnlockOutfit(OUTFIT_KANTO_CLASSIC);
+}

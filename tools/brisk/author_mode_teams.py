@@ -286,7 +286,9 @@ def mon_block(sp, level, mode, slot, doubles, original=None, train_original=Fals
 
 
 def render():
-    sources=TEAM_RE.findall((ROOT/'src/data/trainers.party').read_text())
+    # Xiphos has a separate 5-mode battle matrix and trainer metadata records.
+    sources=[(tid,body) for tid,body in TEAM_RE.findall((ROOT/'src/data/trainers.party').read_text())
+             if not tid.startswith('TRAINER_XIPHOS_COMMANDER_')]
     output=['#include "src/data/brisk_kanto_teams.party"\n', '/* Explicit Brisk mode rosters. Edit these records to tune an encounter.\n'
             'Regeneration from curated archetypes: python tools/brisk/author_mode_teams.py --write\n'
             'Validation only (preserves manual edits): python tools/brisk/author_mode_teams.py --check\n*/\n']
@@ -400,7 +402,8 @@ def render():
 
 def audit(source):
     """Check actual checked-in records; no generator equality requirement."""
-    errors=[];records={};base=dict(TEAM_RE.findall((ROOT/'src/data/trainers.party').read_text()))
+    errors=[];records={};base={tid:body for tid,body in TEAM_RE.findall((ROOT/'src/data/trainers.party').read_text())
+                              if not tid.startswith('TRAINER_XIPHOS_COMMANDER_')}
     for tid,body in TEAM_RE.findall(source):
         mode_match=re.search(r'^Difficulty: (\w+)$',body,re.M)
         if not mode_match:errors.append(f'{tid}: no mode');continue

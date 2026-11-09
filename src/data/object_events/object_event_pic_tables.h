@@ -2519,3 +2519,164 @@ static const struct SpriteFrameImage sPicTable_Nemona[] = {
 static const struct SpriteFrameImage sPicTable_Volo[] = {
     overworld_ascending_frames(gObjectEventPic_Volo, 4, 4),
 };
+
+// KANTO CLASSIC: Pawkkie FRLG-style player costumes.
+static const struct SpriteFrameImage sPicTable_KantoClassicRedMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicRedMachBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicRedAcroBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedSurfing[] = {
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicRedSurfing, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedUnderwater[] = {
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedUnderwater, 4, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicRedFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicRedFishing, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedWatering[] = {
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicRedWatering, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_KantoClassicRedDecorating),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicLeafMachBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicLeafAcroBike, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafSurfing[] = {
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicLeafSurfing, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafUnderwater[] = {
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafUnderwater, 4, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicLeafFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_KantoClassicLeafFishing, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafWatering[] = {
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWatering, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_KantoClassicLeafDecorating),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicRedNormal[] = {
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 6),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 7),
+    overworld_frame(gObjectEventPic_KantoClassicRedWalking, 2, 4, 8),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 6),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 7),
+    overworld_frame(gObjectEventPic_KantoClassicRedRunning, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_KantoClassicLeafNormal[] = {
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 6),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 7),
+    overworld_frame(gObjectEventPic_KantoClassicLeafWalking, 4, 4, 8),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 0),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 1),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 2),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 4),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 5),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 6),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 7),
+    overworld_frame(gObjectEventPic_KantoClassicLeafRunning, 4, 4, 8),
+};

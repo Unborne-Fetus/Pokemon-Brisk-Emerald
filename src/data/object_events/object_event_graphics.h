@@ -652,3 +652,29 @@ const u16 gObjectEventPic_Nemona[] = INCGFX_U16("graphics/object_events/pics/peo
 
 const u16 gObjectEventPal_ChampionVolo[] = INCGFX_U16("graphics/object_events/palettes/champion_volo.pal", ".gbapal");
 const u16 gObjectEventPic_Volo[] = INCGFX_U16("graphics/object_events/pics/people/volo.png", ".4bpp", "-mwidth 4 -mheight 4");
+
+// KANTO CLASSIC: Pawkkie FRLG-style player costumes.
+const u32 gObjectEventPic_KantoClassicRedWalking[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/walking.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedRunning[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/running.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedMachBike[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedSurfing[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedFishing[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedWatering[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicRedDecorating[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_red/decorating.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_KantoClassicRed[] = INCGFX_U16("graphics/object_events/palettes/kanto_classic_red.pal", ".gbapal");
+const u16 gObjectEventPal_KantoClassicRedReflection[] = INCGFX_U16("graphics/object_events/palettes/kanto_classic_red_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_KantoClassicLeafWalking[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/walking.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafRunning[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/running.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafMachBike[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafSurfing[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafFishing[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafWatering[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_KantoClassicLeafDecorating[] = INCGFX_U32("graphics/object_events/pics/people/kanto_classic_leaf/decorating.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_KantoClassicLeaf[] = INCGFX_U16("graphics/object_events/palettes/kanto_classic_leaf.pal", ".gbapal");
+const u16 gObjectEventPal_KantoClassicLeafReflection[] = INCGFX_U16("graphics/object_events/palettes/kanto_classic_leaf_reflection.pal", ".gbapal");
