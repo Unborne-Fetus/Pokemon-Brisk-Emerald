@@ -155,6 +155,12 @@ def author_dialogue(metadata):
             if gfx in ('OBJ_EVENT_GFX_SEAGALLOP','OBJ_EVENT_GFX_SS_ANNE','OBJ_EVENT_GFX_SNORLAX') or (gfx=='OBJ_EVENT_GFX_BILL' and name!='CinnabarIsland_Frlg'):
                 records[str(i)]={'omit':True,'script':'','trainer':''}
                 continue
+            # Rocket-era key items are unused when the original Rocket quest is
+            # retired; keep them hidden rather than producing talking Poké Balls.
+            if script in ('RocketHideout_B4F_EventScript_SilphScope',
+                          'RocketHideout_B4F_EventScript_LiftKey'):
+                records[str(i)]={'omit':True,'script':'','trainer':''}
+                continue
             # Preserve interaction semantics rather than writing resident
             # speeches for physical objects. The Emerald map converter builds
             # safe pickups with separate SaveBlock3 hide flags.
@@ -162,6 +168,9 @@ def author_dialogue(metadata):
                 special={
                     'PowerPlant_EventScript_Electrode1':'BriskKanto_EventScript_Electrode',
                     'PowerPlant_EventScript_Electrode2':'BriskKanto_EventScript_Electrode',
+                    'PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall':'BriskKanto_EventScript_GiftBulbasaur',
+                    'PalletTown_ProfessorOaksLab_EventScript_SquirtleBall':'BriskKanto_EventScript_GiftSquirtle',
+                    'PalletTown_ProfessorOaksLab_EventScript_CharmanderBall':'BriskKanto_EventScript_GiftCharmander',
                     'CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall':'BriskKanto_EventScript_GiftEevee',
                     'SaffronCity_Dojo_EventScript_HitmonleeBall':'BriskKanto_EventScript_GiftHitmonlee',
                     'SaffronCity_Dojo_EventScript_HitmonchanBall':'BriskKanto_EventScript_GiftHitmonchan',
@@ -200,6 +209,10 @@ def author_dialogue(metadata):
                 continue
             if gfx in ('OBJ_EVENT_GFX_RUBY','OBJ_EVENT_GFX_SAPPHIRE'):
                 records[str(i)]={'script':'BriskKanto_EventScript_GemDisplay',
+                    'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                continue
+            if gfx=='OBJ_EVENT_GFX_POKEDEX':
+                records[str(i)]={'script':'BriskKanto_EventScript_LabPokedex',
                     'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
                 continue
             if gfx=='OBJ_EVENT_GFX_OLD_AMBER':
