@@ -26,7 +26,10 @@ def audit():
                 if 'OBJ_EVENT_GFX_ITEM_BALL' in line:
                     assert ('FLAG_BRISK_KANTO_PICKUP_START' in line or
                             (name == 'CeladonCity_Condominiums_RoofRoom_Frlg'
-                             and 'FLAG_HIDE_EEVEE_BALL' in line)), (name,'untracked item ball',line)
+                             and 'FLAG_HIDE_EEVEE_BALL' in line) or
+                            (name == 'PowerPlant_Frlg' and
+                             ('FLAG_BRISK_KANTO_ELECTRODE_1' in line or
+                              'FLAG_BRISK_KANTO_ELECTRODE_2' in line))), (name,'untracked item ball',line)
                     assert 'BriskKanto_' not in line, (name,'talking item ball',line)
                 elif any(gfx in line for gfx in ('OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG',
                                                   'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG',
@@ -54,6 +57,8 @@ def audit():
     pickup_labels=set(re.findall(r'^(\w+)::\s*\n\s*finditem\s+ITEM_\w+',item_scripts,re.M))
     # Celadon's visible Poké Ball is a one-time Eevee gift, not a bag pickup.
     pickup_labels.add('CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall')
+    pickup_labels.update(('PowerPlant_EventScript_Electrode1',
+                          'PowerPlant_EventScript_Electrode2'))
     map_ball_count=0
     for name in manifest['maps']:
         raw=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
