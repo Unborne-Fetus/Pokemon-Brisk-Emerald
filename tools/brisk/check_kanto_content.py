@@ -16,6 +16,15 @@ def audit():
     blocks=dict(re.findall(r'^(\w+)::?\s*\n(.*?)(?=^\w+::?|\Z)',scripts,re.M|re.S))
     speeches=Counter(''.join(re.findall(r'\.string "(.*)"',body)) for label,body in blocks.items() if '.string' in body and '_Sign_' not in label)
     assert all(n==1 for n in speeches.values()),'Duplicate NPC dialogue'
+    item_scripts=dict(re.findall(r'^(\\w+)::\\s*\\n\\s*finditem\\s+(ITEM_\\w+)',
+        (ROOT/'data/scripts/item_ball_scripts_frlg.inc').read_text(),re.M))
+    exceptional_balls={
+        'PowerPlant_EventScript_Electrode1':'BriskKanto_EventScript_Electrode',
+        'PowerPlant_EventScript_Electrode2':'BriskKanto_EventScript_Electrode',
+        'SaffronCity_Dojo_EventScript_HitmonleeBall':'BriskKanto_EventScript_GiftHitmonlee',
+        'SaffronCity_Dojo_EventScript_HitmonchanBall':'BriskKanto_EventScript_GiftHitmonchan',
+    }
+    physical_count=0
     with tempfile.TemporaryDirectory() as temp:
         for name,entry in manifest['maps'].items():
             subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
@@ -24,6 +33,25 @@ def audit():
             assert 'OBJ_EVENT_GFX_SEAGALLOP' not in emitted,(name,'cutscene ferry')
             if name=='ViridianCity_Frlg':assert 'OBJ_EVENT_GFX_OLD_MAN_1' in emitted
             if name=='CinnabarIsland_Frlg':assert 'OBJ_EVENT_GFX_BILL' in emitted
+            original=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
+            for original_obj in original['object_events']:
+                gfx=original_obj.get('graphics_id','')
+                script=original_obj.get('script','')
+                if gfx in ('OBJ_EVENT_GFX_ITEM_BALL','OBJ_EVENT_GFX_FOSSIL_FRLG'):
+                    physical_count+=1
+                    if script in item_scripts or script in ('MtMoon_B2F_EventScript_DomeFossil','MtMoon_B2F_EventScript_HelixFossil'):
+                        target='Common_EventScript_FindItem'
+                    else:
+                        target=exceptional_balls.get(script)
+                    assert target is not None,(name,script,'unsupported Kanto ball')
+                    assert target in emitted,(name,script,target,'missing correct pickup/battle')
+                    assert 'FLAG_BRISK_KANTO_OBJECT_START' in emitted,(name,script,'untracked pickup')
+                elif gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG'):
+                    physical_count+=1
+                    expected={'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG':'EventScript_StrengthBoulder',
+                        'OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG':'EventScript_CutTree',
+                        'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG':'EventScript_RockSmash'}[gfx]
+                    assert expected in emitted,(name,gfx,'field obstacle became dialogue')
             for rec in entry['objects'].values():
                 if rec.get('omit'):continue
                 label=rec['script']
@@ -58,6 +86,6 @@ def audit():
         table=bymap[rec['map']][rec['table']]['mons']
         assert len(rec['slots'])==(4 if rec['table']=='land_mons' else 2)
         for i in rec['slots']:assert table[i]['species']!='SPECIES_NONE'
-    print(f'PASS: {len(manifest["maps"])} emitted maps; no uninitialized actors or ferries; {len(speeches)} unique NPC speeches; {len(entries)} postgame encounter maps and {len(reserved)} future-Fakemon slot groups.')
+    print(f'PASS: {len(manifest["maps"])} emitted maps; {physical_count} physical props checked for non-dialogue interactions; no uninitialized actors or ferries; {len(speeches)} unique NPC speeches; {len(entries)} postgame encounter maps and {len(reserved)} future-Fakemon slot groups.')
 
 if __name__=='__main__':audit()
