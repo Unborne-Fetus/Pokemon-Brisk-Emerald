@@ -33,6 +33,25 @@ def audit():
                     assert 'FLDEFF_POKECENTER_HEAL' in body
                     assert 'Movement_PkmnCenterNurse_Bow' in body
                     assert body.index('waitfieldeffect')<body.index('HealPlayerParty')
+    # Every genuine item ball must remain an item pickup, never a person.
+    # The Emerald map converter overrides the generated dialogue manifest for
+    # world props, so validate the imported source data and available scripts.
+    item_scripts=(ROOT/'data/scripts/item_ball_scripts_frlg.inc').read_text()
+    pickup_labels=set(re.findall(r'^(\\w+)::\\s*\\n\\s*finditem\\s+ITEM_\\w+',item_scripts,re.M))
+    map_ball_count=0
+    for name in manifest['maps']:
+        raw=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
+        if raw.get('region')!='REGION_KANTO':continue
+        for obj in raw.get('object_events',[]):
+            if obj.get('graphics_id')=='OBJ_EVENT_GFX_ITEM_BALL':
+                assert obj['script'] in pickup_labels, (name,obj['script'],'item ball without item')
+                map_ball_count+=1
+    converter=(ROOT/'tools/mapjson/mapjson.cpp').read_text()
+    for marker in ('kanto_item_script_indices()', 'FLAG_BRISK_KANTO_PICKUP_START',
+                   'OBJ_EVENT_GFX_ITEM_BALL', 'EventScript_CutTree',
+                   'EventScript_RockSmash', 'EventScript_StrengthBoulder'):
+        assert marker in converter,marker
+    assert map_ball_count > 50, ('Kanto item audit unexpectedly empty',map_ball_count)
     wild=json.loads((ROOT/'src/data/wild_encounters.json').read_text())['wild_encounter_groups'][0]
     entries=[e for e in wild['encounters'] if e['base_label'].startswith('sBriskKanto_')]
     bymap={e['map']:e for e in entries};assert len(bymap)==len(entries)
