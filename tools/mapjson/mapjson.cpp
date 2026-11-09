@@ -528,6 +528,21 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                     objects.push_back(gift);
                     continue;
                 }
+                // Power Plant's deceptive Poké Balls are actual Electrode
+                // encounters. Retain their native battle scripts, but move
+                // their hide flags into Brisk's collision-free save bank.
+                if (mapName == "PowerPlant_Frlg"
+                    && (script == "PowerPlant_EventScript_Electrode1"
+                     || script == "PowerPlant_EventScript_Electrode2")) {
+                    Json::object encounter = event.object_items();
+                    encounter["script"] = script;
+                    encounter["trainer_type"] = "TRAINER_TYPE_NONE";
+                    encounter["trainer_sight_or_berry_tree_id"] = "0";
+                    encounter["flag"] = script == "PowerPlant_EventScript_Electrode1"
+                        ? "FLAG_BRISK_KANTO_ELECTRODE_1" : "FLAG_BRISK_KANTO_ELECTRODE_2";
+                    objects.push_back(encounter);
+                    continue;
+                }
                 if (it == indices.end())
                     FATAL_ERROR("Unrecognized Kanto item ball on %s: %s\n", mapName.c_str(), script.c_str());
                 Json::object pickup = event.object_items();
