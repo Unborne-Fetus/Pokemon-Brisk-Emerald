@@ -92,18 +92,18 @@ BriskKanto_EventScript_DojoAlreadyClaimed::
     end
 
 BriskKanto_Text_ChooseDojoGift:
-    .string "The DOJO offers one partner to a\\n"
+    .string "The DOJO offers one partner to a\n"
     .string "worthy CHAMPION. Take this one?$"
 
 BriskKanto_Text_DojoGiftReceived:
     .string "You received your DOJO partner!$"
 
 BriskKanto_Text_DojoNoRoom:
-    .string "There's no room for this POKéMON.\\n"
+    .string "There's no room for this POKéMON.\n"
     .string "Make room and try again.$"
 
 BriskKanto_Text_DojoAlreadyClaimed:
-    .string "You've already claimed your\\n"
+    .string "You've already claimed your\n"
     .string "FIGHTING DOJO reward.$"
 
 BriskKanto_EventScript_OldAmberExhibit::
@@ -111,7 +111,7 @@ BriskKanto_EventScript_OldAmberExhibit::
     end
 
 BriskKanto_Text_OldAmberExhibit:
-    .string "An OLD AMBER specimen from\\n"
+    .string "An OLD AMBER specimen from\n"
     .string "KANTO's prehistoric past.$"
 
 BriskKanto_EventScript_ZooSlowpoke::
@@ -205,5 +205,29 @@ BriskKanto_EventScript_GemDisplay::
     end
 
 BriskKanto_Text_GemDisplay:
-    .string "An ancient gemstone glitters in\\n"
-    .string "the stone. The old quest is over.$"
+    .string "A rare gemstone rests deep in\n"
+    .string "the stone, firmly embedded.$"
+
+@ Celadon City's rooftop ball is a one-time Eevee gift.
+BriskKanto_EventScript_GiftEevee::
+    lock
+    faceplayer
+    msgbox BriskKanto_Text_ChooseEeveeGift, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, BriskKanto_EventScript_EeveeCancel
+    givemon SPECIES_EEVEE, 90
+    goto_if_eq VAR_RESULT, 2, BriskKanto_EventScript_DojoNoRoom
+    removeobject VAR_LAST_TALKED
+    msgbox BriskKanto_Text_EeveeGiftReceived, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_EventScript_EeveeCancel::
+    release
+    end
+
+BriskKanto_Text_ChooseEeveeGift:
+    .string "An EEVEE is resting in this ball.\n"
+    .string "Would you like to take it?$"
+
+BriskKanto_Text_EeveeGiftReceived:
+    .string "EEVEE joined your collection!$"
