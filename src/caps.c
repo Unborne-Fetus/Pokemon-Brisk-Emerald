@@ -14,7 +14,11 @@ bool32 IsExtremeExpCap(void)
 bool32 BriskUsesExpCap(void)
 {
     u32 mode = GetBriskDifficulty();
-    return mode == BRISK_MODE_EXTREME || (mode == BRISK_MODE_HARD && !VarGet(VAR_BRISK_NO_LEVEL_CAP));
+    // Easy is uncapped; Kaizo is always capped. Normal, Expert and Hard
+    // honor the saved Level Caps option (VAR_BRISK_NO_LEVEL_CAP is inverted).
+    if (mode == BRISK_MODE_EASY)
+        return FALSE;
+    return mode == BRISK_MODE_EXTREME || !VarGet(VAR_BRISK_NO_LEVEL_CAP);
 }
 
 u32 GetProgressionLevelCap(void)
