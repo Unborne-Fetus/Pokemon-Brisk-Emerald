@@ -543,6 +543,8 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                         || script == "PowerPlant_EventScript_Electrode2") {
                     // These two fake Poké Balls initiate a wild battle.
                     object["script"] = "BriskKanto_EventScript_Electrode";
+                } else if (script == "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftEevee";
                 } else if (script == "SaffronCity_Dojo_EventScript_HitmonleeBall") {
                     object["script"] = "BriskKanto_EventScript_GiftHitmonlee";
                 } else if (script == "SaffronCity_Dojo_EventScript_HitmonchanBall") {
