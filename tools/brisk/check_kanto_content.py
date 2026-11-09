@@ -58,6 +58,12 @@ def audit():
         if raw.get('region')!='REGION_KANTO':continue
         for obj in raw.get('object_events',[]):
             if obj.get('graphics_id')=='OBJ_EVENT_GFX_ITEM_BALL':
+                if name=='PalletTown_ProfessorOaksLab_Frlg':
+                    assert obj['script'] in {
+                        'PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall',
+                        'PalletTown_ProfessorOaksLab_EventScript_SquirtleBall',
+                        'PalletTown_ProfessorOaksLab_EventScript_CharmanderBall'}
+                    continue
                 assert obj['script'] in pickup_labels, (name,obj['script'],'item ball without item')
                 map_ball_count+=1
     converter=(ROOT/'tools/mapjson/mapjson.cpp').read_text()
