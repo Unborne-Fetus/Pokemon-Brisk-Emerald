@@ -24,7 +24,9 @@ def audit():
                 if not line.strip().startswith('object_event '):
                     continue
                 if 'OBJ_EVENT_GFX_ITEM_BALL' in line:
-                    assert 'FLAG_BRISK_KANTO_PICKUP_START' in line, (name,'untracked item ball',line)
+                    assert ('FLAG_BRISK_KANTO_PICKUP_START' in line or
+                            (name == 'CeladonCity_Condominiums_RoofRoom_Frlg'
+                             and 'FLAG_HIDE_EEVEE_BALL' in line)), (name,'untracked item ball',line)
                     assert 'BriskKanto_' not in line, (name,'talking item ball',line)
                 elif any(gfx in line for gfx in ('OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG',
                                                   'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG',
