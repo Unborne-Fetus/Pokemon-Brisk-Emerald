@@ -22,6 +22,9 @@ def audit():
         'PowerPlant_EventScript_Electrode1':'BriskKanto_EventScript_Electrode',
         'PowerPlant_EventScript_Electrode2':'BriskKanto_EventScript_Electrode',
         'CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall':'BriskKanto_EventScript_GiftEevee',
+        'PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall':'BriskKanto_EventScript_GiftBulbasaur',
+        'PalletTown_ProfessorOaksLab_EventScript_SquirtleBall':'BriskKanto_EventScript_GiftSquirtle',
+        'PalletTown_ProfessorOaksLab_EventScript_CharmanderBall':'BriskKanto_EventScript_GiftCharmander',
         'SaffronCity_Dojo_EventScript_HitmonleeBall':'BriskKanto_EventScript_GiftHitmonlee',
         'SaffronCity_Dojo_EventScript_HitmonchanBall':'BriskKanto_EventScript_GiftHitmonchan',
     }
