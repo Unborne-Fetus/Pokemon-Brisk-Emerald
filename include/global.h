@@ -286,7 +286,7 @@ struct SaveBlock3
     u8 mikitariDexCaught[BRISK_EXTRA_DEX_BYTES];
     u8 extraDexNavSearchLevels[BRISK_EXTRA_SEARCH_LEVEL_COUNT];
     // Independent FRLG object-hide flags; appended to preserve existing save offsets.
-    u8 kantoObjectFlags[64];
+    u8 kantoObjectFlags[65];
 }; // Must fit the reserved per-slot chunks; enforced in save.c.
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
