@@ -172,13 +172,34 @@ def author_dialogue(metadata):
                 assert action is not None,(name,i,gfx,script,'unclassified physical object')
                 records[str(i)]={'script':action,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
                 continue
-            if gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG'):
+            if gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_PUSHABLE_BOULDER','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK'):
                 action={
                     'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG':'EventScript_StrengthBoulder',
+                    'OBJ_EVENT_GFX_PUSHABLE_BOULDER':'EventScript_StrengthBoulder',
                     'OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG':'EventScript_CutTree',
                     'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG':'EventScript_RockSmash',
+                    'OBJ_EVENT_GFX_BREAKABLE_ROCK':'EventScript_RockSmash',
                 }[gfx]
                 records[str(i)]={'script':action,'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                continue
+            # Other physical props are exhibits or static wild encounters,
+            # never ordinary citizens. Their Emerald events are map-converted.
+            special_static={
+                'PowerPlant_EventScript_Zapdos':'BriskKanto_EventScript_Zapdos',
+                'MtEmber_Summit_EventScript_Moltres':'BriskKanto_EventScript_Moltres',
+                'CeruleanCave_B1F_EventScript_Mewtwo':'BriskKanto_EventScript_Mewtwo',
+            }
+            if script in special_static:
+                records[str(i)]={'script':special_static[script],
+                    'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
+                continue
+            if script=='FourIsland_LoreleisHouse_EventScript_Doll' or gfx=='OBJ_EVENT_GFX_LAPRAS_DOLL':
+                records[str(i)]={'script':'BriskKanto_EventScript_PokemonDoll',
+                    'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                continue
+            if gfx in ('OBJ_EVENT_GFX_RUBY','OBJ_EVENT_GFX_SAPPHIRE'):
+                records[str(i)]={'script':'BriskKanto_EventScript_GemDisplay',
+                    'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
                 continue
             if gfx=='OBJ_EVENT_GFX_OLD_AMBER':
                 records[str(i)]={'script':'BriskKanto_EventScript_OldAmberExhibit','trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
