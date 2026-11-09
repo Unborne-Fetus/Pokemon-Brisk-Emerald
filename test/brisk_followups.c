@@ -21,25 +21,28 @@ TEST("Brisk difficulty progression caps use full, regular and raised challenge l
 {
     static const u16 flags[] = {FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET, FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET, FLAG_IS_CHAMPION};
     bool8 saved[ARRAY_COUNT(flags)];
+    u16 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
+    u16 savedCapSetting = VarGet(VAR_BRISK_NO_LEVEL_CAP);
     for (u32 i = 0; i < ARRAY_COUNT(flags); i++) { saved[i] = FlagGet(flags[i]); FlagClear(flags[i]); }
     VarSet(VAR_BRISK_NO_LEVEL_CAP, 0);
     static const u8 expected[] = {25, 35, 45, 50, 55, 65, 75, 100, 100};
     static const u8 challenge[] = {25, 35, 45, 50, 55, 65, 75, 90, 100};
     for (u32 stage = 0; stage <= ARRAY_COUNT(expected); stage++)
     {
-        for (u32 mode = 0; mode < 4; mode++)
+        for (u32 mode = 0; mode <= BRISK_MODE_MAX; mode++)
         {
             VarSet(VAR_BRISK_DIFFICULTY, mode);
             u32 cap = MAX_LEVEL;
             if (stage < ARRAY_COUNT(expected) && mode != BRISK_MODE_EASY)
-                cap = mode >= BRISK_MODE_HARD ? challenge[stage] : expected[stage];
+                cap = (mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME) ? challenge[stage] : expected[stage];
             EXPECT_EQ(GetProgressionLevelCap(), cap);
-            EXPECT_EQ(GetCurrentLevelCap(), mode == BRISK_MODE_EXTREME ? cap : MAX_LEVEL);
+            EXPECT_EQ(GetCurrentLevelCap(), cap);
         }
         if (stage < ARRAY_COUNT(flags)) FlagSet(flags[stage]);
     }
     for (u32 i = 0; i < ARRAY_COUNT(flags); i++) if (saved[i]) FlagSet(flags[i]); else FlagClear(flags[i]);
-    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_NORMAL);
+    VarSet(VAR_BRISK_DIFFICULTY, savedMode);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, savedCapSetting);
 }
 
 TEST("Brisk Extreme candies stop at the cap and never lower an existing over-cap Pokemon")
