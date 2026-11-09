@@ -24,3 +24,134 @@ BriskKantoAccessOnly_Text_ChallengePending:
 	.string "TEAM ROCKET fell ten years ago.\p"
 	.string "KANTO's POKéMON grew stronger\n"
 	.string "in peace. Enjoy the challenge!$"
+
+@ Kanto's physical objects must not use the generic resident dialogue.
+@ Every hidden item/reward gets an independent SaveBlock3 object flag.
+
+BriskKanto_EventScript_Electrode::
+    lock
+    faceplayer
+    msgbox BriskKanto_Text_ElectrodeSurprise, MSGBOX_DEFAULT
+    setwildbattle SPECIES_ELECTRODE, 95
+    setflag FLAG_SYS_CTRL_OBJ_DELETE
+    dowildbattle
+    clearflag FLAG_SYS_CTRL_OBJ_DELETE
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, BriskKanto_EventScript_ElectrodeFinished
+    goto_if_eq VAR_RESULT, B_OUTCOME_WON, BriskKanto_EventScript_ElectrodeFinished
+    release
+    end
+
+BriskKanto_EventScript_ElectrodeFinished::
+    removeobject VAR_LAST_TALKED
+    release
+    end
+
+BriskKanto_Text_ElectrodeSurprise:
+    .string "The POKé BALL was an ELECTRODE!$"
+
+BriskKanto_EventScript_GiftHitmonlee::
+    setvar VAR_TEMP_1, SPECIES_HITMONLEE
+    goto BriskKanto_EventScript_GiveDojoHitmon
+    end
+
+BriskKanto_EventScript_GiftHitmonchan::
+    setvar VAR_TEMP_1, SPECIES_HITMONCHAN
+    goto BriskKanto_EventScript_GiveDojoHitmon
+    end
+
+BriskKanto_EventScript_GiveDojoHitmon::
+    lock
+    faceplayer
+    goto_if_set FLAG_BRISK_KANTO_DOJO_REWARD, BriskKanto_EventScript_DojoAlreadyClaimed
+    msgbox BriskKanto_Text_ChooseDojoGift, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, BriskKanto_EventScript_DojoCancel
+    givemon VAR_TEMP_1, 90
+    goto_if_eq VAR_RESULT, 2, BriskKanto_EventScript_DojoNoRoom
+    setflag FLAG_BRISK_KANTO_DOJO_REWARD
+    setflag FLAG_BRISK_KANTO_DOJO_HITMONLEE
+    setflag FLAG_BRISK_KANTO_DOJO_HITMONCHAN
+    removeobject 6
+    removeobject 7
+    msgbox BriskKanto_Text_DojoGiftReceived, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_EventScript_DojoCancel::
+    release
+    end
+
+BriskKanto_EventScript_DojoNoRoom::
+    msgbox BriskKanto_Text_DojoNoRoom, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_EventScript_DojoAlreadyClaimed::
+    msgbox BriskKanto_Text_DojoAlreadyClaimed, MSGBOX_DEFAULT
+    release
+    end
+
+BriskKanto_Text_ChooseDojoGift:
+    .string "The DOJO offers one partner to a\\n"
+    .string "worthy CHAMPION. Take this one?$"
+
+BriskKanto_Text_DojoGiftReceived:
+    .string "You received your DOJO partner!$"
+
+BriskKanto_Text_DojoNoRoom:
+    .string "There's no room for this POKéMON.\\n"
+    .string "Make room and try again.$"
+
+BriskKanto_Text_DojoAlreadyClaimed:
+    .string "You've already claimed your\\n"
+    .string "FIGHTING DOJO reward.$"
+
+BriskKanto_EventScript_OldAmberExhibit::
+    msgbox BriskKanto_Text_OldAmberExhibit, MSGBOX_SIGN
+    end
+
+BriskKanto_Text_OldAmberExhibit:
+    .string "An OLD AMBER specimen from\\n"
+    .string "KANTO's prehistoric past.$"
+
+BriskKanto_EventScript_ZooSlowpoke::
+    msgbox BriskKanto_Text_ZooSlowpoke, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooSlowpoke:
+    .string "SLOWPOKE is dozing peacefully.$"
+
+BriskKanto_EventScript_ZooVoltorb::
+    msgbox BriskKanto_Text_ZooVoltorb, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooVoltorb:
+    .string "VOLTORB rolls around its enclosure.$"
+
+BriskKanto_EventScript_ZooChansey::
+    msgbox BriskKanto_Text_ZooChansey, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooChansey:
+    .string "CHANSEY is carefully tending an EGG.$"
+
+BriskKanto_EventScript_ZooLapras::
+    msgbox BriskKanto_Text_ZooLapras, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooLapras:
+    .string "LAPRAS watches the water quietly.$"
+
+BriskKanto_EventScript_ZooOmanyte::
+    msgbox BriskKanto_Text_ZooOmanyte, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooOmanyte:
+    .string "OMANYTE examines the aquarium.$"
+
+BriskKanto_EventScript_ZooKangaskhan::
+    msgbox BriskKanto_Text_ZooKangaskhan, MSGBOX_NPC
+    end
+
+BriskKanto_Text_ZooKangaskhan:
+    .string "KANGASKHAN protects its youngster.$"
