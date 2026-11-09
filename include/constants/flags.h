@@ -2026,6 +2026,9 @@
 #define FLAG_0x261                                       0
 #define FLAG_0x262                                       0
 #define FLAG_GOT_EEVEE                                   FLAG_HIDE_EEVEE_BALL
+// Power Plant's two deceptive Poké Balls are wild Electrode encounters.
+#define FLAG_BRISK_KANTO_ELECTRODE_1 (FLAG_BRISK_KANTO_PICKUP_START + 169)
+#define FLAG_BRISK_KANTO_ELECTRODE_2 (FLAG_BRISK_KANTO_PICKUP_START + 170)
 #define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0
 #define FLAG_CINNABAR_GYM_QUIZ_1                         0
 #define FLAG_CINNABAR_GYM_QUIZ_2                         0
