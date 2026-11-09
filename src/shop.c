@@ -41,6 +41,7 @@
 #include "constants/decorations.h"
 #include "constants/event_objects.h"
 #include "constants/items.h"
+#include "constants/maps.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -367,6 +368,29 @@ static const u16 *const sShopInventories[] =
     sShopInventory_EightBadges
 };
 
+// Slateport must stock Harbor Mail for Mauville's Coin Case trade. Preserve
+// the shared badge-scaled Mart inventory instead of replacing the entire shop.
+static u16 sSlateportMartStock[ARRAY_COUNT(sShopInventory_EightBadges) + 1];
+
+static const u16 *GetMartInventoryForMap(u8 badgeCount, u8 mapGroup, u8 mapNum)
+{
+    const u16 *stock = sShopInventories[badgeCount];
+    u32 count = 0;
+
+    if (mapGroup != MAP_GROUP(MAP_SLATEPORT_CITY_MART)
+     || mapNum != MAP_NUM(MAP_SLATEPORT_CITY_MART))
+        return stock;
+
+    while (stock[count] != ITEM_NONE && count < ARRAY_COUNT(sSlateportMartStock) - 2)
+    {
+        sSlateportMartStock[count] = stock[count];
+        count++;
+    }
+    sSlateportMartStock[count++] = ITEM_HARBOR_MAIL;
+    sSlateportMartStock[count] = ITEM_NONE;
+    return sSlateportMartStock;
+}
+
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
     BuyMenuTryMakePurchase,
@@ -609,7 +633,8 @@ static void SetShopItemsForSale(const u16 *items)
     u8 badgeCount = GetNumberOfBadges();
 
     if (items == NULL)
-        sMartInfo.itemList = sShopInventories[badgeCount];
+        sMartInfo.itemList = GetMartInventoryForMap(badgeCount,
+            gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     else
         sMartInfo.itemList = items;
 
@@ -622,6 +647,15 @@ static void SetShopItemsForSale(const u16 *items)
 }
 
 #if TESTING
+bool32 Test_BriskMartInventorySells(u8 mapGroup, u8 mapNum, u16 item)
+{
+    const u16 *stock = GetMartInventoryForMap(0, mapGroup, mapNum);
+    for (u32 i = 0; stock[i] != ITEM_NONE; i++)
+        if (stock[i] == item)
+            return TRUE;
+    return FALSE;
+}
+
 bool32 Test_BriskGeneralMartSells(u16 item)
 {
     SetShopItemsForSale(NULL);
