@@ -514,6 +514,16 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             if (gfx == "OBJ_EVENT_GFX_ITEM_BALL") {
                 const auto &indices = kanto_item_script_indices();
                 const auto it = indices.find(script);
+                // Celadon's rooftop ball grants Eevee, not a bag item.
+                if (script == "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall") {
+                    Json::object gift = event.object_items();
+                    gift["script"] = script;
+                    gift["trainer_type"] = "TRAINER_TYPE_NONE";
+                    gift["trainer_sight_or_berry_tree_id"] = "0";
+                    gift["flag"] = "FLAG_HIDE_EEVEE_BALL";
+                    objects.push_back(gift);
+                    continue;
+                }
                 if (it == indices.end())
                     FATAL_ERROR("Unrecognized Kanto item ball on %s: %s\n", mapName.c_str(), script.c_str());
                 Json::object pickup = event.object_items();
