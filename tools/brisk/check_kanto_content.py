@@ -34,7 +34,8 @@ def audit():
             if name=='ViridianCity_Frlg':assert 'OBJ_EVENT_GFX_OLD_MAN_1' in emitted
             if name=='CinnabarIsland_Frlg':assert 'OBJ_EVENT_GFX_BILL' in emitted
             original=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
-            for original_obj in original['object_events']:
+            for index,original_obj in enumerate(original['object_events'],1):
+                if entry['objects'].get(str(index),{}).get('omit'):continue
                 gfx=original_obj.get('graphics_id','')
                 script=original_obj.get('script','')
                 if gfx in ('OBJ_EVENT_GFX_ITEM_BALL','OBJ_EVENT_GFX_FOSSIL_FRLG'):
@@ -46,11 +47,13 @@ def audit():
                     assert target is not None,(name,script,'unsupported Kanto ball')
                     assert target in emitted,(name,script,target,'missing correct pickup/battle')
                     assert 'FLAG_BRISK_KANTO_OBJECT_START' in emitted,(name,script,'untracked pickup')
-                elif gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG'):
+                elif gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_PUSHABLE_BOULDER','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK'):
                     physical_count+=1
                     expected={'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG':'EventScript_StrengthBoulder',
+                        'OBJ_EVENT_GFX_PUSHABLE_BOULDER':'EventScript_StrengthBoulder',
                         'OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG':'EventScript_CutTree',
-                        'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG':'EventScript_RockSmash'}[gfx]
+                        'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG':'EventScript_RockSmash',
+                        'OBJ_EVENT_GFX_BREAKABLE_ROCK':'EventScript_RockSmash'}[gfx]
                     assert expected in emitted,(name,gfx,'field obstacle became dialogue')
             for rec in entry['objects'].values():
                 if rec.get('omit'):continue
