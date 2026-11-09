@@ -557,6 +557,17 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 objects.push_back(fossil);
                 continue;
             }
+            // A source object with no interaction script is scenery (for
+            // example Fuchsia's zoo Pokémon). Do not invent human dialogue.
+            if (script == "0x0" || script == "0") {
+                Json::object scenery = event.object_items();
+                scenery["script"] = "0x0";
+                scenery["trainer_type"] = "TRAINER_TYPE_NONE";
+                scenery["trainer_sight_or_berry_tree_id"] = "0";
+                scenery["flag"] = "0";
+                objects.push_back(scenery);
+                continue;
+            }
             if (storyActor)
                 continue;
             Json::object object = event.object_items();
