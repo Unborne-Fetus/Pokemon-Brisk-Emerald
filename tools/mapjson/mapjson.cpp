@@ -508,8 +508,6 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 || flag.find("ROCKET") != string::npos
                 || flag.find("CREDITS") != string::npos
                 || flag.find("OAK") != string::npos;
-            if (storyActor)
-                continue;
             // Physical item balls must give the underlying item, never the
             // postgame NPC's generic dialogue. A dedicated flag bank keeps
             // collected items from reappearing or altering Hoenn story flags.
@@ -545,6 +543,8 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 objects.push_back(fossil);
                 continue;
             }
+            if (storyActor)
+                continue;
             Json::object object = event.object_items();
             const string trainer = json_to_string(record, "trainer", true);
             const string authoredScript = json_to_string(record, "script", true);
