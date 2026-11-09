@@ -557,12 +557,14 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
 
             // Physical field-move obstacles never deliver resident dialogue.
             if (gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG"
+                || gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER"
                 || gfx == "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG"
-                || gfx == "OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG") {
+                || gfx == "OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG"
+                || gfx == "OBJ_EVENT_GFX_BREAKABLE_ROCK") {
                 Json::object object = event.object_items();
                 object["trainer_type"] = "TRAINER_TYPE_NONE";
                 object["trainer_sight_or_berry_tree_id"] = "0";
-                object["script"] = gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG"
+                object["script"] = gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG" || gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER"
                     ? "EventScript_StrengthBoulder" : gfx == "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG"
                     ? "EventScript_CutTree" : "EventScript_RockSmash";
                 // Keep event flags local to the map; never use FRLG story flags.
@@ -596,6 +598,40 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 object["trainer_type"] = "TRAINER_TYPE_NONE";
                 object["trainer_sight_or_berry_tree_id"] = "0";
                 object["script"] = zoo->second;
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            // Original Kanto static legendaries retain encounters, not human dialogue.
+            static const map<string, string> legendaryScripts = {
+                {"PowerPlant_EventScript_Zapdos", "BriskKanto_EventScript_Zapdos"},
+                {"MtEmber_Summit_EventScript_Moltres", "BriskKanto_EventScript_Moltres"},
+                {"CeruleanCave_B1F_EventScript_Mewtwo", "BriskKanto_EventScript_Mewtwo"},
+            };
+            const auto legendary = legendaryScripts.find(script);
+            if (legendary != legendaryScripts.end()) {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = legendary->second;
+                object["flag"] = kanto_object_hide_flag(flag, mapName);
+                objects.push_back(object);
+                continue;
+            }
+
+            // Lorelei's house contains plush figures, not Pokémon that talk.
+            // Ruby and Sapphire are inert remnants of the retired Sevii quest.
+            if (script == "FourIsland_LoreleisHouse_EventScript_Doll"
+                || gfx == "OBJ_EVENT_GFX_LAPRAS_DOLL"
+                || gfx == "OBJ_EVENT_GFX_RUBY"
+                || gfx == "OBJ_EVENT_GFX_SAPPHIRE") {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = gfx == "OBJ_EVENT_GFX_RUBY" || gfx == "OBJ_EVENT_GFX_SAPPHIRE"
+                    ? "BriskKanto_EventScript_GemDisplay"
+                    : "BriskKanto_EventScript_PokemonDoll";
                 object["flag"] = "0";
                 objects.push_back(object);
                 continue;
