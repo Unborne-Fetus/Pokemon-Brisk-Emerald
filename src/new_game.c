@@ -273,6 +273,7 @@ static void ResetDexNav(void)
 #endif
     gSaveBlock3Ptr->dexNavChain = 0;
     memset(gSaveBlock3Ptr->kantoTrainerFlags, 0, sizeof(gSaveBlock3Ptr->kantoTrainerFlags));
+    memset(gSaveBlock3Ptr->kantoObjectFlags, 0, sizeof(gSaveBlock3Ptr->kantoObjectFlags));
     gSaveBlock3Ptr->speciesExtensionMagic = 0;
     InitBriskSpeciesExtension();
 }
