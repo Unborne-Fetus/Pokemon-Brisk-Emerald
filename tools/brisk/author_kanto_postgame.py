@@ -119,6 +119,8 @@ def author_dialogue(metadata):
     # Rocket/rival quests, rewards, badges or shared Hoenn variables.
     source='\n'.join(p.read_text() for p in sorted((ROOT/'data').rglob('*.inc')) if not any(x in p.parts for x in ('layouts','tilesets')) and p.name not in ('events.inc','header.inc','connections.inc','brisk_kanto_postgame.inc'))
     scripts={k:v for k,v in re.findall(r'^(\w+)::?\s*\n(.*?)(?=^\w+::?|\Z)',source,re.M|re.S)}
+    item_scripts=dict(re.findall(r'^(\w+)::\s*\n\s*finditem\s+(ITEM_\w+)',
+        (ROOT/'data/scripts/item_ball_scripts_frlg.inc').read_text(),re.M))
     maps={json.loads(p.read_text())['id']:(p.parent.name,json.loads(p.read_text())) for p in (ROOT/'data/maps').glob('*/map.json')}
     heal=json.loads((ROOT/'src/data/heal_locations.json').read_text())['heal_locations']
     heals={h['respawn_map']:h['id'] for h in heal if 'respawn_map' in h}
@@ -152,6 +154,46 @@ def author_dialogue(metadata):
             # actors have no safe postgame event controller.
             if gfx in ('OBJ_EVENT_GFX_SEAGALLOP','OBJ_EVENT_GFX_SS_ANNE','OBJ_EVENT_GFX_SNORLAX') or (gfx=='OBJ_EVENT_GFX_BILL' and name!='CinnabarIsland_Frlg'):
                 records[str(i)]={'omit':True,'script':'','trainer':''}
+                continue
+            # Preserve interaction semantics rather than writing resident
+            # speeches for physical objects. The Emerald map converter builds
+            # safe pickups with separate SaveBlock3 hide flags.
+            if gfx in ('OBJ_EVENT_GFX_ITEM_BALL','OBJ_EVENT_GFX_FOSSIL_FRLG'):
+                special={
+                    'PowerPlant_EventScript_Electrode1':'BriskKanto_EventScript_Electrode',
+                    'PowerPlant_EventScript_Electrode2':'BriskKanto_EventScript_Electrode',
+                    'SaffronCity_Dojo_EventScript_HitmonleeBall':'BriskKanto_EventScript_GiftHitmonlee',
+                    'SaffronCity_Dojo_EventScript_HitmonchanBall':'BriskKanto_EventScript_GiftHitmonchan',
+                }
+                if script in item_scripts or script in ('MtMoon_B2F_EventScript_DomeFossil','MtMoon_B2F_EventScript_HelixFossil'):
+                    action='Common_EventScript_FindItem'
+                else:
+                    action=special.get(script)
+                assert action is not None,(name,i,gfx,script,'unclassified physical object')
+                records[str(i)]={'script':action,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
+                continue
+            if gfx in ('OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG','OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG','OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG'):
+                action={
+                    'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG':'EventScript_StrengthBoulder',
+                    'OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG':'EventScript_CutTree',
+                    'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG':'EventScript_RockSmash',
+                }[gfx]
+                records[str(i)]={'script':action,'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                continue
+            if gfx=='OBJ_EVENT_GFX_OLD_AMBER':
+                records[str(i)]={'script':'BriskKanto_EventScript_OldAmberExhibit','trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                continue
+            zoo={
+                'OBJ_EVENT_GFX_SLOWPOKE':'BriskKanto_EventScript_ZooSlowpoke',
+                'OBJ_EVENT_GFX_VOLTORB':'BriskKanto_EventScript_ZooVoltorb',
+                'OBJ_EVENT_GFX_CHANSEY':'BriskKanto_EventScript_ZooChansey',
+                'OBJ_EVENT_GFX_LAPRAS':'BriskKanto_EventScript_ZooLapras',
+                'OBJ_EVENT_GFX_OMANYTE':'BriskKanto_EventScript_ZooOmanyte',
+                'OBJ_EVENT_GFX_KANGASKHAN':'BriskKanto_EventScript_ZooKangaskhan',
+            }
+            if name=='FuchsiaCity_Frlg' and gfx in zoo:
+                records[str(i)]={'script':zoo[gfx],'trainer':'','trainer_type':'TRAINER_TYPE_NONE'}
+                if obj is not raw:records[str(i)]['object']=obj
                 continue
             body=scripts.get(script,'')
             match=re.search(r'trainerbattle_(?:single|double|rematch|continue)\s+(TRAINER_\w+)',body)
