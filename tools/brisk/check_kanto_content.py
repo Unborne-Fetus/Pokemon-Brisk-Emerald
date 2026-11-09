@@ -20,6 +20,18 @@ def audit():
         for name,entry in manifest['maps'].items():
             subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
             emitted=(Path(temp)/'events.inc').read_text()
+            for line in emitted.splitlines():
+                if not line.strip().startswith('object_event '):
+                    continue
+                if 'OBJ_EVENT_GFX_ITEM_BALL' in line:
+                    assert 'FLAG_BRISK_KANTO_PICKUP_START' in line, (name,'untracked item ball',line)
+                    assert 'BriskKanto_' not in line, (name,'talking item ball',line)
+                elif any(gfx in line for gfx in ('OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG',
+                                                  'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG',
+                                                  'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG')):
+                    assert 'BriskKanto_' not in line, (name,'speaking field obstacle',line)
+                elif 'OBJ_EVENT_GFX_FOSSIL_FRLG' in line:
+                    assert 'BriskKanto_' not in line, (name,'speaking Mt Moon fossil',line)
             assert 'OBJ_EVENT_GFX_VAR_' not in emitted,(name,'uninitialized sprite')
             assert 'OBJ_EVENT_GFX_SEAGALLOP' not in emitted,(name,'cutscene ferry')
             if name=='ViridianCity_Frlg':assert 'OBJ_EVENT_GFX_OLD_MAN_1' in emitted
