@@ -155,3 +155,55 @@ BriskKanto_EventScript_ZooKangaskhan::
 
 BriskKanto_Text_ZooKangaskhan:
     .string "KANGASKHAN protects its youngster.$"
+
+@ Original static Kanto encounters remain wild battles rather than talkative NPCs.
+BriskKanto_EventScript_Zapdos::
+    lock
+    faceplayer
+    setwildbattle SPECIES_ZAPDOS, 95
+    goto BriskKanto_EventScript_StartWildLegendary
+    end
+
+BriskKanto_EventScript_Moltres::
+    lock
+    faceplayer
+    setwildbattle SPECIES_MOLTRES, 95
+    goto BriskKanto_EventScript_StartWildLegendary
+    end
+
+BriskKanto_EventScript_Mewtwo::
+    lock
+    faceplayer
+    setwildbattle SPECIES_MEWTWO, 100
+    goto BriskKanto_EventScript_StartWildLegendary
+    end
+
+BriskKanto_EventScript_StartWildLegendary::
+    setflag FLAG_SYS_CTRL_OBJ_DELETE
+    dowildbattle
+    clearflag FLAG_SYS_CTRL_OBJ_DELETE
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, BriskKanto_EventScript_StaticBattleFinished
+    goto_if_eq VAR_RESULT, B_OUTCOME_WON, BriskKanto_EventScript_StaticBattleFinished
+    release
+    end
+
+BriskKanto_EventScript_StaticBattleFinished::
+    removeobject VAR_LAST_TALKED
+    release
+    end
+
+BriskKanto_EventScript_PokemonDoll::
+    msgbox BriskKanto_Text_PokemonDoll, MSGBOX_SIGN
+    end
+
+BriskKanto_Text_PokemonDoll:
+    .string "A carefully arranged POKéMON doll.$"
+
+BriskKanto_EventScript_GemDisplay::
+    msgbox BriskKanto_Text_GemDisplay, MSGBOX_SIGN
+    end
+
+BriskKanto_Text_GemDisplay:
+    .string "An ancient gemstone glitters in\\n"
+    .string "the stone. The old quest is over.$"
