@@ -13,6 +13,12 @@ special={
     'SaffronCity_Dojo_EventScript_HitmonleeBall':'HITMONLEE',
     'SaffronCity_Dojo_EventScript_HitmonchanBall':'HITMONCHAN',
     'CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall':'EEVEE',
+    'PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall':'BULBASAUR',
+    'PalletTown_ProfessorOaksLab_EventScript_SquirtleBall':'SQUIRTLE',
+    'PalletTown_ProfessorOaksLab_EventScript_CharmanderBall':'CHARMANDER',
+    # These two belong to the removed Rocket storyline and must be omitted.
+    'RocketHideout_B4F_EventScript_SilphScope':'RETIRED',
+    'RocketHideout_B4F_EventScript_LiftKey':'RETIRED',
     'MtMoon_B2F_EventScript_DomeFossil':'DOME_FOSSIL',
     'MtMoon_B2F_EventScript_HelixFossil':'HELIX_FOSSIL',
 }
