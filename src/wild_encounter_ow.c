@@ -375,10 +375,21 @@ void StartWildBattleWithOWE(struct ScriptContext *ctx)
     u32 localId = VarGet(ScriptReadHalfword(ctx));
     u32 objEventId = GetObjectEventIdByLocalId(localId);
     u32 headerId = GetCurrentMapWildMonHeaderId();
-    struct ObjectEvent *owe = &gObjectEvents[objEventId];
-    enum CategoryOWE category = GetOWECategory(owe);
+    struct ObjectEvent *owe;
+    enum CategoryOWE category;
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    // A follower collision can outlive the object that started the script.
+    // Check the resolved event ID before taking its address or reading data.
+    if (objEventId >= OBJECT_EVENTS_COUNT)
+    {
+        UnlockPlayerFieldControls();
+        UnfreezeObjectEvents();
+        return;
+    }
+    owe = &gObjectEvents[objEventId];
+    category = GetOWECategory(owe);
 
     assertf(objEventId < OBJECT_EVENTS_COUNT && IsOverworldWildEncounter(owe, OWE_ANY), "cannot start overworld wild enocunter as the selected object is invalid.\nlocalId: %d", localId)
     {
@@ -663,6 +674,11 @@ void SetMinimumOWESpawnTimer(void)
 
 void TryTriggerOverworldWildEncounter(struct ObjectEvent *obstacle, struct ObjectEvent *collider)
 {
+    // Follower movement can collide while another field script is running.
+    // Do not replace that script with a second battle transition.
+    if (obstacle == NULL || collider == NULL || ArePlayerFieldControlsLocked())
+        return;
+
     if (WE_OWE_NO_REPEL_DEXNAV_COLLISION && (FlagGet(DN_FLAG_SEARCHING) || REPEL_STEP_COUNT))
         return;
 
@@ -1482,6 +1498,9 @@ bool32 IsOWENextToPlayer(struct ObjectEvent *owe)
 
 static bool32 IsOWENextToObject(struct ObjectEvent *owe, struct ObjectEvent *object)
 {
+    if (owe == NULL || object == NULL || !object->active)
+        return FALSE;
+
     if ((owe->currentCoords.x != object->currentCoords.x && owe->currentCoords.y != object->currentCoords.y) || (owe->currentCoords.x < object->currentCoords.x - 1 || owe->currentCoords.x > object->currentCoords.x + 1 || owe->currentCoords.y < object->currentCoords.y - 1 || owe->currentCoords.y > object->currentCoords.y + 1))
         return FALSE;
 
@@ -1653,7 +1672,7 @@ static void Task_OWEApproachForBattle(u8 taskId)
         if (CheckRestrictedOWEMovement(OWE, OWE->movementDirection))
         {
             u32 idFollowerNPC = GetFollowerNPCObjectId();
-            struct ObjectEvent *followerNPC = &gObjectEvents[idFollowerNPC];
+            struct ObjectEvent *followerNPC = idFollowerNPC < OBJECT_EVENTS_COUNT ? &gObjectEvents[idFollowerNPC] : NULL;
             s16 x = OWE->currentCoords.x;
             s16 y = OWE->currentCoords.y;
             u32 collidingObject;
@@ -1661,13 +1680,17 @@ static void Task_OWEApproachForBattle(u8 taskId)
             MoveCoords(OWE->movementDirection, &x, &y);
             collidingObject = GetObjectObjectCollidesWith(OWE, x, y, FALSE);
 
-            if (collidingObject == GetObjectEventIdByLocalId(followerMon->localId) && followerMon != NULL && !followerMon->invisible)
+            if (followerMon != NULL && followerMon->active && !followerMon->invisible
+             && followerMon->spriteId < MAX_SPRITES
+             && collidingObject == GetObjectEventIdByLocalId(followerMon->localId))
             {
                 ClearObjectEventMovement(followerMon, &gSprites[followerMon->spriteId]);
                 gSprites[followerMon->spriteId].animCmdIndex = 0;
                 ObjectEventSetHeldMovement(followerMon, MOVEMENT_ACTION_ENTER_POKEBALL);
             }
-            else if (collidingObject == idFollowerNPC && FNPC_ENABLE_NPC_FOLLOWERS && PlayerHasFollowerNPC() && !followerNPC->invisible)
+            else if (FNPC_ENABLE_NPC_FOLLOWERS && PlayerHasFollowerNPC()
+                  && followerNPC != NULL && followerNPC->active && !followerNPC->invisible
+                  && followerNPC->spriteId < MAX_SPRITES && collidingObject == idFollowerNPC)
             {
                 enum Direction direction = DetermineFollowerNPCDirection(&gObjectEvents[gPlayerAvatar.objectEventId], followerNPC);
                 ClearObjectEventMovement(followerNPC, &gSprites[followerNPC->spriteId]);
