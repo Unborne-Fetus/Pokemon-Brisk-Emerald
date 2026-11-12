@@ -266,7 +266,7 @@ static bool32 BriskAutoBattleCanDefeat(struct ObjectEvent *owe, struct Pokemon *
         return FALSE;
 
     wildLevel = owe->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG;
-    if (wildLevel < MIN_LEVEL || wildLevel > MAX_LEVEL || level + 3 < wildLevel
+    if (wildLevel < MIN_LEVEL || wildLevel > MAX_LEVEL || level + 7 < wildLevel
      || level >= MAX_LEVEL || (BriskUsesExpCap() && level >= GetCurrentLevelCap()))
         return FALSE;
 
