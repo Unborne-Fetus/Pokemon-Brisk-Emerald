@@ -1569,6 +1569,20 @@ static void Task_OptionMenuProcessInput_Help(u8 taskId)
 }
 
 #if TESTING
+u8 Test_OpenBriskAutoBattleOptions(void)
+{
+    ResetTasks();
+    InitBgsFromTemplates(0, sOptionMenuBgTemplates, ARRAY_COUNT(sOptionMenuBgTemplates));
+    InitWindows(sOptionMenuWinTemplates);
+    DeactivateAllTextPrinters();
+    sCurrPage = 7;
+    u8 taskId = CreateTask(Task_ChangePage, 0);
+    ReadAllCurrentSettings(taskId);
+    Task_ChangePage(taskId);
+    gPaletteFade.active = FALSE;
+    return taskId;
+}
+
 u8 Test_OpenBriskWorldOptions(void)
 {
     ResetTasks();
