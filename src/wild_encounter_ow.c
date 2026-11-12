@@ -378,16 +378,11 @@ static void UpdateBriskAutoBattle(void)
             return;
         }
 
-        if (sAutoBattleWindup)
-        {
-            sAutoBattleWindup--;
-            // Flash the wild sprite during the attack, without hiding or
-            // replacing the following Pokemon's movement state.
-            gSprites[target->spriteId].invisible = (sAutoBattleWindup & 3) == 0;
-            if (sAutoBattleWindup)
-                return;
-            gSprites[target->spriteId].invisible = FALSE;
-        }
+        // The short windup is visualized by the follower facing its target.
+        // Do not mutate a wild sprite's invisible bit: scripts and map changes
+        // can interrupt auto-battles and must not strand invisible objects.
+        if (sAutoBattleWindup && --sAutoBattleWindup)
+            return;
 
         BriskAutoBattleAwardExp(mon, OW_SPECIES(target), sAutoBattleTargetLevel);
         PlaySE(SE_BANG);
