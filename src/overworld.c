@@ -1688,6 +1688,8 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     {
         // Switching is instantaneous, not a script that locks field controls.
         // Consume L here before its optional L=A mapping can start dialogue.
+        if (TryBriskAutoBattleInput(newKeys, heldKeys))
+            return;
         if (TrySwitchBikeMode(newKeys))
             return;
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
@@ -1904,6 +1906,7 @@ static void OverworldBasic(void)
         }
     }
     UpdateOverworldWildEncounter();
+    BriskAutoBattle_Update();
 }
 
 // This CB2 is used when starting

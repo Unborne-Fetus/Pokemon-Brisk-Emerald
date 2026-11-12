@@ -70,8 +70,24 @@ void BriskRechargeGimmicks(void)
 
 bool32 BriskOverworldEncountersEnabled(void)
 {
-    // Zero preserves the existing behavior in old saves.
-    return VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) != 1;
+    // Bit 0 keeps the original OFF flag. Bits 1-2 are auto-battle mode.
+    // Existing saves (0/1) always load with auto-battles disabled.
+    return (VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) & 1) == 0;
+}
+
+enum BriskAutoBattleMode GetBriskAutoBattleMode(void)
+{
+    u32 value = (VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) >> 1) & 3;
+    return value < BRISK_AUTOBATTLE_MODE_COUNT ? value : BRISK_AUTOBATTLE_OFF;
+}
+
+void SetBriskAutoBattleMode(enum BriskAutoBattleMode mode)
+{
+    if (mode >= BRISK_AUTOBATTLE_MODE_COUNT)
+        mode = BRISK_AUTOBATTLE_OFF;
+
+    VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED,
+           (VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) & 1) | (mode << 1));
 }
 
 bool32 BriskBattleBagAllowed(void)

@@ -49,6 +49,44 @@ TEST("Brisk overworld encounters toggle persists in Options 7 and restores rando
     VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, saved);
 }
 
+bool32 Test_BriskAutoBattleLevelAllowed(u32 followerLevel, u32 wildLevel);
+
+TEST("Brisk auto battle allows 7-level difference but prevents an 8-level knockout")
+{
+    EXPECT(Test_BriskAutoBattleLevelAllowed(10, 10));
+    EXPECT(Test_BriskAutoBattleLevelAllowed(10, 17));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(10, 18));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(10, 30));
+    EXPECT(Test_BriskAutoBattleLevelAllowed(93, 100));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(92, 100));
+}
+
+TEST("Brisk auto battle modes persist without altering the overworld encounter toggle")
+{
+    u16 saved = VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED);
+
+    VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, 0);
+    EXPECT_EQ(GetBriskAutoBattleMode(), BRISK_AUTOBATTLE_OFF);
+    EXPECT(BriskOverworldEncountersEnabled());
+
+    SetBriskAutoBattleMode(BRISK_AUTOBATTLE_SEND);
+    EXPECT_EQ(GetBriskAutoBattleMode(), BRISK_AUTOBATTLE_SEND);
+    EXPECT(BriskOverworldEncountersEnabled());
+
+    // The Options 7 encounters toggle must only change the legacy low bit.
+    VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) ^ 1);
+    EXPECT(!BriskOverworldEncountersEnabled());
+    EXPECT_EQ(GetBriskAutoBattleMode(), BRISK_AUTOBATTLE_SEND);
+
+    SetBriskAutoBattleMode(BRISK_AUTOBATTLE_PASSIVE);
+    EXPECT(!BriskOverworldEncountersEnabled());
+    EXPECT_EQ(GetBriskAutoBattleMode(), BRISK_AUTOBATTLE_PASSIVE);
+
+    SetBriskAutoBattleMode(BRISK_AUTOBATTLE_OFF);
+    EXPECT_EQ(GetBriskAutoBattleMode(), BRISK_AUTOBATTLE_OFF);
+    VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, saved);
+}
+
 TEST("Brisk turning overworld encounters off preserves scripted Pokemon and followers and prevents generated contacts")
 {
     struct ObjectEvent saved[OBJECT_EVENTS_COUNT];
