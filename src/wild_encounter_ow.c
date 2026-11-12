@@ -386,6 +386,8 @@ static void UpdateBriskAutoBattle(void)
 
         BriskAutoBattleAwardExp(mon, OW_SPECIES(target), sAutoBattleTargetLevel);
         PlaySE(SE_BANG);
+        // Spawn a grass/dust/water impact at the target's last position.
+        DoOWEDespawnAnim(target);
         RemoveObjectEvent(target);
         SetNewOWESpawnCountdown();
         sAutoBattleTargetLocalId = LOCALID_NONE;
