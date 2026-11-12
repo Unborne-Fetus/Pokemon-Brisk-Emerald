@@ -328,6 +328,13 @@ static void BriskAutoBattleAwardExp(struct Pokemon *mon, enum Species foeSpecies
     }
 }
 
+#if TESTING
+void Test_BriskAutoBattleAwardExp(struct Pokemon *mon, enum Species foeSpecies, u32 foeLevel)
+{
+    BriskAutoBattleAwardExp(mon, foeSpecies, foeLevel);
+}
+#endif
+
 static void UpdateBriskAutoBattle(void)
 {
     u32 mode = BriskAutoBattleMode();
@@ -399,7 +406,7 @@ static void UpdateBriskAutoBattle(void)
         return;
 
     if (mode == BRISK_AUTO_BATTLE_GO
-     && (!(gMain.newKeys & SELECT_BUTTON) || !(gMain.heldKeys & L_BUTTON)))
+     && (!(gMain.newKeysRaw & SELECT_BUTTON) || !(gMain.heldKeysRaw & L_BUTTON)))
         return;
 
     struct ObjectEvent *nearest = NULL;
