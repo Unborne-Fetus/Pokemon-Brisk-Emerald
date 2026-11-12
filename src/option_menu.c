@@ -210,7 +210,7 @@ static const struct {
     {COMPOUND_STRING("AUDIO MUTES"), COMPOUND_STRING("Options 7 has three mutes:\nSOUND: clicks and effects.\nMUSIC: BGM and fanfares.\nCRIES: POKéMON voices only.")},
     {COMPOUND_STRING("GIMMICK GEN"), COMPOUND_STRING("Options 7: GIMMICK GEN ON/OFF.\nON recharges your TERA ORB\nafter each battle. Per-battle\nlimits and required items stay.")},
     {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
-    {COMPOUND_STRING("AUTO BATTLES"), COMPOUND_STRING("Options 8: OFF/GO/PASSIVE.\nGO: Hold L, press SELECT.\nPASSIVE: fights while idle.\nOnly ordinary wild spawns.\nRare and shiny mons are safe.")},
+    {COMPOUND_STRING("AUTO BATTLES"), COMPOUND_STRING("Options 8: OFF/GO/PASSIVE.\nGO: Hold L+SELECT.\nPASSIVE fights while idle.\nShinies/rares stay safe.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
     {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
     {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
