@@ -95,8 +95,10 @@ enum
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
 
-#define PAGE_COUNT 7
+#define PAGE_COUNT 8
 
+static void DrawAutoBattleOptions(void);
+static void Task_AutoBattleOptions(u8 taskId);
 static void DrawDebugOptions(void);
 static void Task_DebugOptions(u8 taskId);
 static void CB2_ReturnToFieldDebug(void);
@@ -208,6 +210,7 @@ static const struct {
     {COMPOUND_STRING("AUDIO MUTES"), COMPOUND_STRING("Options 7 has three mutes:\nSOUND: clicks and effects.\nMUSIC: BGM and fanfares.\nCRIES: POKéMON voices only.")},
     {COMPOUND_STRING("GIMMICK GEN"), COMPOUND_STRING("Options 7: GIMMICK GEN ON/OFF.\nON recharges your TERA ORB\nafter each battle. Per-battle\nlimits and required items stay.")},
     {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
+    {COMPOUND_STRING("AUTO BATTLES"), COMPOUND_STRING("Options 8: OFF/GO/PASSIVE.\nGO: Hold L, press SELECT.\nPASSIVE: fights while idle.\nOnly ordinary wild spawns.\nRare and shiny mons are safe.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
     {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
     {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
@@ -433,6 +436,12 @@ static void Task_ChangePage(u8 taskId)
         HighlightOptionMenuItem(0);
         gTasks[taskId].func = Task_DebugOptions;
         break;
+    case 7:
+        gTasks[taskId].tMenuSelection = 0;
+        DrawAutoBattleOptions();
+        HighlightOptionMenuItem(0);
+        gTasks[taskId].func = Task_AutoBattleOptions;
+        break;
     }
 }
 
@@ -545,6 +554,12 @@ void CB2_InitOptionMenu(void)
             taskId = CreateTask(Task_DebugOptions, 0);
             ReadAllCurrentSettings(taskId);
             DrawDebugOptions();
+            HighlightOptionMenuItem(0);
+            break;
+        case 7:
+            taskId = CreateTask(Task_AutoBattleOptions, 0);
+            ReadAllCurrentSettings(taskId);
+            DrawAutoBattleOptions();
             HighlightOptionMenuItem(0);
             break;
         }
@@ -813,6 +828,52 @@ static void CB2_ReturnToFieldDebug(void)
 {
     gFieldCallback2 = FieldCB_OptionsDebug;
     CB2_ReturnToField();
+}
+
+
+static void DrawAutoBattleOptions(void)
+{
+    u32 mode = BriskAutoBattleMode();
+
+    FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("AUTO BATTLE"), 8, 1, TEXT_SKIP_DRAW, NULL);
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF"), 90, 0, mode == BRISK_AUTO_BATTLE_OFF);
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}GO"), 127, 0, mode == BRISK_AUTO_BATTLE_GO);
+    DrawOptionMenuChoice(COMPOUND_STRING("{COLOR GREEN}{SHADOW LIGHT_GREEN}PASSIVE"), 156, 0, mode == BRISK_AUTO_BATTLE_PASSIVE);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("GO: HOLD L + PRESS SELECT"), 8, 17, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("PASSIVE: FIGHTS WHILE IDLE"), 8, 33, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("FOLLOWER MUST BE VISIBLE"), 8, 49, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("SHINIES AND RARES ARE SAFE"), 8, 65, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("REDUCED EXP; LEVEL CAPS APPLY"), 8, 81, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("B: SAVE   L/R: CHANGE PAGE"), 8, 97, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
+}
+
+static void Task_AutoBattleOptions(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+
+    if (JOY_NEW(L_BUTTON | R_BUTTON))
+    {
+        StoreAllCurrentSettings(taskId);
+        sCurrPage = Process_ChangePage(sCurrPage);
+        gTasks[taskId].func = Task_ChangePage;
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        gTasks[taskId].func = Task_OptionMenuSave;
+    }
+    else if (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT))
+    {
+        u32 mode = BriskAutoBattleMode();
+        if (JOY_REPEAT(DPAD_LEFT))
+            mode = (mode + BRISK_AUTO_BATTLE_PASSIVE) % (BRISK_AUTO_BATTLE_PASSIVE + 1);
+        else
+            mode = (mode + 1) % (BRISK_AUTO_BATTLE_PASSIVE + 1);
+        VarSet(VAR_BRISK_AUTO_BATTLE_MODE, mode);
+        DrawAutoBattleOptions();
+    }
 }
 
 static void DrawDebugOptions(void)
@@ -1204,7 +1265,7 @@ static void ButtonMode_DrawChoices(u8 selection)
 static void DrawHeaderText(void)
 {
     u32 i, widthOptions, xMid;
-    u8 pageDots[16] = _("");  // Array size should be at least (2 * PAGE_COUNT) -1
+    u8 pageDots[20] = _("");  // Array size should be at least (2 * PAGE_COUNT) -1
     widthOptions = GetStringWidth(FONT_NORMAL, gText_Option, 0);
 
     for (i = 0; i < PAGE_COUNT; i++)
