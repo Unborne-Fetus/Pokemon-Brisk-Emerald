@@ -68,6 +68,13 @@ void BriskRechargeGimmicks(void)
         FlagSet(B_FLAG_TERA_ORB_CHARGED);
 }
 
+u32 BriskAutoBattleMode(void)
+{
+    // The old save value is zero, so auto-battles are opt-in.
+    u32 mode = gSaveBlock1Ptr != NULL ? VarGet(VAR_BRISK_AUTO_BATTLE_MODE) : 0;
+    return mode <= BRISK_AUTO_BATTLE_PASSIVE ? mode : BRISK_AUTO_BATTLE_OFF;
+}
+
 bool32 BriskOverworldEncountersEnabled(void)
 {
     // Zero preserves the existing behavior in old saves.
