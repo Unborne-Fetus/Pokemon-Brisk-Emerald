@@ -20686,7 +20686,7 @@ gBattleAnimMove_RockThrow::
 	end
 
 gBattleAnimMove_RockSlide::
-	monbg ANIM_DEF_PARTNER
+	@ Avoid partner-only background operations in single encounters.
 	shake_mon_or_platform velocity=7, shake_timer=1, shake_duration=11, type=SHAKE_BG_Y
 	createsprite gFallingRockSpriteTemplate, ANIM_TARGET, 2, -5, 1, -5, 1
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
@@ -20700,12 +20700,10 @@ gBattleAnimMove_RockSlide::
 	createsprite gFallingRockSpriteTemplate, ANIM_TARGET, 2, -23, 2, -10, 1
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 5, 50, 1
-	createvisualtask AnimTask_ShakeMon, 2, ANIM_DEF_PARTNER, 0, 5, 50, 1
 	delay 2
 	call RockSlideRocks
 	call RockSlideRocks
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
 	end
 
 RockSlideRocks:
