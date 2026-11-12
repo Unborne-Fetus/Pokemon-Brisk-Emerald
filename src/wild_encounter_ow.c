@@ -253,6 +253,19 @@ static enum Species sBriskAutoBattleSpecies;
 static u16 sBriskAutoBattleCooldown;
 static u8 sBriskAutoBattleWindup;
 
+static bool32 BriskAutoBattleLevelAllowed(u32 followerLevel, u32 wildLevel)
+{
+    // A 7-level disadvantage is allowed; 8 or more always fails.
+    return wildLevel <= followerLevel + 7;
+}
+
+#if TESTING
+bool32 Test_BriskAutoBattleLevelAllowed(u32 followerLevel, u32 wildLevel)
+{
+    return BriskAutoBattleLevelAllowed(followerLevel, wildLevel);
+}
+#endif
+
 static bool32 BriskAutoBattleCanDefeat(struct ObjectEvent *owe, struct Pokemon *mon)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
@@ -266,7 +279,7 @@ static bool32 BriskAutoBattleCanDefeat(struct ObjectEvent *owe, struct Pokemon *
         return FALSE;
 
     wildLevel = owe->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG;
-    if (wildLevel < MIN_LEVEL || wildLevel > MAX_LEVEL || level + 7 < wildLevel
+    if (wildLevel < MIN_LEVEL || wildLevel > MAX_LEVEL || !BriskAutoBattleLevelAllowed(level, wildLevel)
      || level >= MAX_LEVEL || (BriskUsesExpCap() && level >= GetCurrentLevelCap()))
         return FALSE;
 
