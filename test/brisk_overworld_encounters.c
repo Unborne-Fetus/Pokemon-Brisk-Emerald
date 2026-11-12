@@ -54,3 +54,25 @@ TEST("An empty or absent second encounter table leaves the visible Pokemon intac
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_SPECIES), SPECIES_NONE);
     ZeroEnemyPartyMons();
 }
+
+bool32 Test_IsOWENextToObject(struct ObjectEvent *, struct ObjectEvent *);
+
+TEST("Overworld encounter handles an absent or inactive follower safely")
+{
+    struct ObjectEvent wild = {0};
+    struct ObjectEvent follower = {0};
+    wild.active = TRUE;
+    wild.currentCoords.x = 12;
+    wild.currentCoords.y = 9;
+    follower.currentCoords.x = 13;
+    follower.currentCoords.y = 9;
+
+    EXPECT(!Test_IsOWENextToObject(&wild, NULL));
+    EXPECT(!Test_IsOWENextToObject(NULL, &follower));
+    EXPECT(!Test_IsOWENextToObject(&wild, &follower));
+
+    follower.active = TRUE;
+    EXPECT(Test_IsOWENextToObject(&wild, &follower));
+    follower.currentCoords.x = 15;
+    EXPECT(!Test_IsOWENextToObject(&wild, &follower));
+}
