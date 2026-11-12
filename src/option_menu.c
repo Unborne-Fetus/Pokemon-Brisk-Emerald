@@ -833,8 +833,8 @@ static void DrawDebugOptions(void)
     DrawToggle(!BriskCriesMuted(), 80);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("AUTO BATTLE"), 8, 97, TEXT_SKIP_DRAW, NULL);
     DrawOptionMenuChoice(COMPOUND_STRING("OFF"), 104, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
-    DrawOptionMenuChoice(COMPOUND_STRING("SEND"), 139, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
-    DrawOptionMenuChoice(COMPOUND_STRING("PASSIVE"), 177, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
+    DrawOptionMenuChoice(COMPOUND_STRING("SEND"), 131, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
+    DrawOptionMenuChoice(COMPOUND_STRING("PASSIVE"), 160, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
