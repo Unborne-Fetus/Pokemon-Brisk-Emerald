@@ -1,5 +1,9 @@
 #include "global.h"
 #include "brisk_options.h"
+#include "caps.h"
+#include "event_object_movement.h"
+#include "main.h"
+#include "pokemon.h"
 #include "wild_encounter_ow.h"
 #include "battle_setup.h"
 #include "battle_main.h"
@@ -230,8 +234,223 @@ const struct FieldEffectInfoOWE gOverworldWildEncounterFieldEffectInfo[] =
 };
 
 
+
+#define BRISK_AUTO_BATTLE_REACH         5
+#define BRISK_AUTO_BATTLE_COOLDOWN      100 // Frames between completed battles
+#define BRISK_AUTO_BATTLE_WINDUP        16  // Small overworld attack animation
+
+static EWRAM_DATA u8 sAutoBattleCooldown = 0;
+static EWRAM_DATA u8 sAutoBattleWindup = 0;
+static EWRAM_DATA u8 sAutoBattleTargetLocalId = LOCALID_NONE;
+static EWRAM_DATA u8 sAutoBattleTargetLevel = 0;
+static EWRAM_DATA u16 sAutoBattleTargetSpecies = SPECIES_NONE;
+static EWRAM_DATA u8 sAutoBattleTargetMapNum = 0;
+static EWRAM_DATA u8 sAutoBattleTargetMapGroup = 0;
+
+// Auto-battle targets are intentionally stricter than normal encounters: never
+// touch story encounters, roamers, shinies, outbreaks, or unusual rare species.
+static bool32 BriskAutoBattleCanTarget(struct ObjectEvent *owe)
+{
+    enum Species species;
+    u32 level;
+
+    if (!IsOverworldWildEncounter(owe, OWE_GENERATED)
+     || GetOWECategory(owe) != OWE_CATEGORY_WILD
+     || HasOWENoDespawnFlag(owe)
+     || OW_SHINY(owe))
+        return FALSE;
+
+    species = OW_SPECIES(owe);
+    level = owe->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG;
+    if (species == SPECIES_NONE || level < MIN_LEVEL || level > MAX_LEVEL)
+        return FALSE;
+
+    if (gSpeciesInfo[species].isRestrictedLegendary
+     || gSpeciesInfo[species].isSubLegendary
+     || gSpeciesInfo[species].isMythical
+     || gSpeciesInfo[species].isUltraBeast
+     || gSpeciesInfo[species].isParadox
+     || gSpeciesInfo[species].isTotem)
+        return FALSE;
+
+    return TRUE;
+}
+
+static u32 BriskAutoBattleDistance(struct ObjectEvent *first, struct ObjectEvent *second)
+{
+    s32 dx = first->currentCoords.x - second->currentCoords.x;
+    s32 dy = first->currentCoords.y - second->currentCoords.y;
+    return (dx < 0 ? -dx : dx) + (dy < 0 ? -dy : dy);
+}
+
+// An overworld fight awards a fraction of normal wild EXP, without sending the
+// player through battle UI. Empty move slots learn level-up moves; full sets
+// are preserved for the existing move relearner instead of being overwritten.
+static void BriskAutoBattleAwardExp(struct Pokemon *mon, enum Species foeSpecies, u32 foeLevel)
+{
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+    u32 level = GetMonData(mon, MON_DATA_LEVEL);
+    u32 cap = min(MAX_LEVEL, GetCurrentLevelCap());
+    u32 oldExp = GetMonData(mon, MON_DATA_EXP);
+    u32 capExp;
+    u32 gainedExp;
+    u32 newExp;
+    u16 hp = GetMonData(mon, MON_DATA_HP);
+
+    if (species == SPECIES_NONE || level >= cap || hp == 0)
+        return;
+
+    capExp = gExperienceTables[gSpeciesInfo[species].growthRate][cap];
+    if (oldExp >= capExp)
+        return;
+
+    // Approximately one third of regular, unboosted single wild battle EXP.
+    gainedExp = max(1, ((u32)gSpeciesInfo[foeSpecies].expYield * foeLevel) / 21);
+    gainedExp = GetSoftLevelCapExpValue(level, gainedExp);
+    newExp = oldExp + min(gainedExp, capExp - oldExp);
+    SetMonData(mon, MON_DATA_EXP, &newExp);
+
+    for (u32 i = 0; i < MAX_LEVEL && TryIncrementMonLevel(mon); i++)
+    {
+        bool8 firstMove = TRUE;
+        enum Move learnedMove;
+        while ((learnedMove = MonTryLearningNewMove(mon, firstMove)) != MOVE_NONE)
+            firstMove = FALSE;
+    }
+    CalculateMonStats(mon);
+
+    // Small fatigue cost makes long passive sessions safe and finite; never
+    // faint or change the saved Pokemon's move set.
+    if (hp > 1)
+    {
+        hp--;
+        SetMonData(mon, MON_DATA_HP, &hp);
+    }
+}
+
+#if TESTING
+void Test_BriskAutoBattleAwardExp(struct Pokemon *mon, enum Species foeSpecies, u32 foeLevel)
+{
+    BriskAutoBattleAwardExp(mon, foeSpecies, foeLevel);
+}
+#endif
+
+static void UpdateBriskAutoBattle(void)
+{
+    u32 mode = BriskAutoBattleMode();
+    struct ObjectEvent *follower = GetFollowerObject();
+    struct Pokemon *mon = GetFirstLiveMon();
+    u32 level;
+    u32 hp;
+    u32 maxHp;
+
+    if (sAutoBattleCooldown)
+        sAutoBattleCooldown--;
+
+    if (!BriskOverworldEncountersEnabled() || mode == BRISK_AUTO_BATTLE_OFF
+     || ArePlayerFieldControlsLocked() || FlagGet(DN_FLAG_SEARCHING)
+     || follower == NULL || follower->invisible || !IsFollowerVisible()
+     || mon == NULL || PlayerHasFollowerNPC())
+    {
+        sAutoBattleTargetLocalId = LOCALID_NONE;
+        sAutoBattleWindup = 0;
+        return;
+    }
+
+    level = GetMonData(mon, MON_DATA_LEVEL);
+    hp = GetMonData(mon, MON_DATA_HP);
+    maxHp = GetMonData(mon, MON_DATA_MAX_HP);
+
+    if (level >= GetCurrentLevelCap() || hp <= max(2, maxHp / 4 + 1))
+    {
+        sAutoBattleTargetLocalId = LOCALID_NONE;
+        sAutoBattleWindup = 0;
+        return;
+    }
+
+    if (sAutoBattleTargetLocalId != LOCALID_NONE)
+    {
+        u32 id = GetObjectEventIdByLocalId(sAutoBattleTargetLocalId);
+        struct ObjectEvent *target = id < OBJECT_EVENTS_COUNT ? &gObjectEvents[id] : NULL;
+
+        if (gSaveBlock1Ptr->location.mapNum != sAutoBattleTargetMapNum
+         || gSaveBlock1Ptr->location.mapGroup != sAutoBattleTargetMapGroup
+         || target == NULL || !BriskAutoBattleCanTarget(target)
+         || OW_SPECIES(target) != sAutoBattleTargetSpecies
+         || (target->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG) != sAutoBattleTargetLevel
+         || BriskAutoBattleDistance(follower, target) > BRISK_AUTO_BATTLE_REACH + 1)
+        {
+            sAutoBattleTargetLocalId = LOCALID_NONE;
+            sAutoBattleWindup = 0;
+            return;
+        }
+
+        // The short windup is visualized by the follower facing its target.
+        // Do not mutate a wild sprite's invisible bit: scripts and map changes
+        // can interrupt auto-battles and must not strand invisible objects.
+        if (sAutoBattleWindup && --sAutoBattleWindup)
+            return;
+
+        BriskAutoBattleAwardExp(mon, OW_SPECIES(target), sAutoBattleTargetLevel);
+        PlaySE(SE_BANG);
+        // Spawn a grass/dust/water impact at the target's last position.
+        DoOWEDespawnAnim(target);
+        RemoveObjectEvent(target);
+        SetNewOWESpawnCountdown();
+        sAutoBattleTargetLocalId = LOCALID_NONE;
+        sAutoBattleCooldown = BRISK_AUTO_BATTLE_COOLDOWN;
+        return;
+    }
+
+    if (sAutoBattleCooldown)
+        return;
+
+    if (mode == BRISK_AUTO_BATTLE_GO
+     && (!(gMain.newKeysRaw & SELECT_BUTTON) || !(gMain.heldKeysRaw & L_BUTTON)))
+        return;
+
+    struct ObjectEvent *nearest = NULL;
+    u32 nearestDistance = BRISK_AUTO_BATTLE_REACH + 1;
+    for (u32 i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        struct ObjectEvent *owe = &gObjectEvents[i];
+        u32 distance;
+        if (!BriskAutoBattleCanTarget(owe))
+            continue;
+        if ((owe->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG) > level)
+            continue;
+
+        distance = BriskAutoBattleDistance(follower, owe);
+        if (distance < nearestDistance)
+        {
+            nearest = owe;
+            nearestDistance = distance;
+        }
+    }
+
+    if (nearest != NULL)
+    {
+        s32 dx = nearest->currentCoords.x - follower->currentCoords.x;
+        s32 dy = nearest->currentCoords.y - follower->currentCoords.y;
+        enum Direction direction;
+        if ((dx < 0 ? -dx : dx) > (dy < 0 ? -dy : dy))
+            direction = dx > 0 ? DIR_EAST : DIR_WEST;
+        else
+            direction = dy > 0 ? DIR_SOUTH : DIR_NORTH;
+
+        ObjectEventTurn(follower, direction);
+        sAutoBattleTargetLocalId = nearest->localId;
+        sAutoBattleTargetSpecies = OW_SPECIES(nearest);
+        sAutoBattleTargetLevel = nearest->sOverworldEncounterLevel & ~OWE_NO_DESPAWN_FLAG;
+        sAutoBattleTargetMapNum = gSaveBlock1Ptr->location.mapNum;
+        sAutoBattleTargetMapGroup = gSaveBlock1Ptr->location.mapGroup;
+        sAutoBattleWindup = BRISK_AUTO_BATTLE_WINDUP;
+    }
+}
+
 void UpdateOverworldWildEncounter(void)
 {
+    UpdateBriskAutoBattle();
     // Run before field-control/DexNav/header checks so disabling the option
     // also clears existing generated spawns after returning from Options.
     if (!BriskOverworldEncountersEnabled())

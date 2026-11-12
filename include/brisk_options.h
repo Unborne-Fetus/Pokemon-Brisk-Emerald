@@ -2,6 +2,12 @@
 #define GUARD_BRISK_OPTIONS_H
 
 #define BRISK_SHINY_CHOICES 9
+
+#define BRISK_AUTO_BATTLE_OFF     0
+#define BRISK_AUTO_BATTLE_GO      1
+#define BRISK_AUTO_BATTLE_PASSIVE 2
+
+u32 BriskAutoBattleMode(void);
 u32 GetBriskShinyDenominator(void);
 u32 GetBriskShinyDenominatorForSetting(u32 setting);
 u32 GetBriskShinyThreshold(void);

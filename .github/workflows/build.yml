@@ -135,7 +135,9 @@ jobs:
         # with Brisk's intentional gameplay changes. Gate on dedicated,
         # passing signature ability regressions; run the full suite separately
         # via the manually-triggered Full Regression workflow.
-        run: make -j$(nproc) check TESTS='Brisk signature'
+        run: |
+          make -j$(nproc) check TESTS='Brisk signature'
+          make -j$(nproc) check TESTS='Brisk auto'
 
   # Gate job: satisfies the "build" branch protection rule.
   # Passes only when all parallel build/test jobs succeed.

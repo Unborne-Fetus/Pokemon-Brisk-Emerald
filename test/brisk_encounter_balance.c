@@ -17,6 +17,8 @@
 #include "constants/trainer_types.h"
 
 u8 Test_OpenBriskWorldOptions(void);
+u8 Test_OpenBriskAutoBattleOptions(void);
+void Test_BriskAutoBattleAwardExp(struct Pokemon *mon, enum Species foeSpecies, u32 foeLevel);
 void Test_CloseBriskThemeOption(u8 taskId);
 bool32 Test_ShouldDisableRandomEncounters(void);
 
@@ -47,6 +49,63 @@ TEST("Brisk overworld encounters toggle persists in Options 7 and restores rando
     gMain.newKeys = 0;
     Test_CloseBriskThemeOption(task);
     VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, saved);
+}
+
+TEST("Brisk auto battle modes are opt-in and persist on Options 8")
+{
+    u16 saved = VarGet(VAR_BRISK_AUTO_BATTLE_MODE);
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, 0);
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+
+    u8 task = Test_OpenBriskAutoBattleOptions();
+    gMain.newAndRepeatedKeys = 0;
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_GO);
+
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_PASSIVE);
+
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+
+    Test_CloseBriskThemeOption(task);
+    gMain.newKeys = 0;
+    gMain.newAndRepeatedKeys = 0;
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, 4);
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, saved);
+}
+
+TEST("Brisk auto battle gives reduced EXP and stops at a level cap")
+{
+    struct Pokemon mon;
+    u16 oldMode = VarGet(VAR_BRISK_DIFFICULTY);
+    u16 oldCapSetting = VarGet(VAR_BRISK_NO_LEVEL_CAP);
+    u32 expBefore;
+    u32 expAfter;
+    u32 hpBefore;
+    u32 levelBefore;
+
+    VarSet(VAR_BRISK_DIFFICULTY, BRISK_MODE_EASY);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, 1);
+    CreateMonWithIVs(&mon, SPECIES_ZIGZAGOON, 10, 0, OTID_STRUCT_PRESET(0), 0);
+    GiveMonInitialMoveset(&mon);
+    expBefore = GetMonData(&mon, MON_DATA_EXP);
+    hpBefore = GetMonData(&mon, MON_DATA_HP);
+    levelBefore = GetMonData(&mon, MON_DATA_LEVEL);
+
+    Test_BriskAutoBattleAwardExp(&mon, SPECIES_CHANSEY, 10);
+    expAfter = GetMonData(&mon, MON_DATA_EXP);
+    EXPECT_GT(expAfter, expBefore);
+    EXPECT_LT(expAfter - expBefore, ((u32)gSpeciesInfo[SPECIES_CHANSEY].expYield * 10) / 7);
+    EXPECT_GE(GetMonData(&mon, MON_DATA_LEVEL), levelBefore);
+    EXPECT_EQ(GetMonData(&mon, MON_DATA_HP), hpBefore - 1);
+
+    VarSet(VAR_BRISK_DIFFICULTY, oldMode);
+    VarSet(VAR_BRISK_NO_LEVEL_CAP, oldCapSetting);
 }
 
 TEST("Brisk turning overworld encounters off preserves scripted Pokemon and followers and prevents generated contacts")
