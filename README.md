@@ -12,6 +12,14 @@
 
 Pokemon Brisk Emerald is a combo of the features of pokeemerald expansion, and my own work.
 
+# [Community Feature Tutorials](docs/tutorials/brisk/README.md)
+
+Want to bring Brisk's custom systems into your own pokeemerald-expansion ROM hack?
+The [community tutorial hub](docs/tutorials/brisk/README.md) has source-guided
+walkthroughs for follower auto-battles, difficulty modes and caps, shiny odds,
+reusable gimmicks, Mega Mode and Ball Capsules. Tutorials explain dependencies
+and testing; they are not guaranteed drop-in patches for unrelated forks.
+
 # [Credits](CREDITS.md)
 
 Custom Mega Clawitzer, Tinkaton, Arboliva, Cryogonal, Haxorus, Dodrio, Sigilyph and Reuniclus designs
