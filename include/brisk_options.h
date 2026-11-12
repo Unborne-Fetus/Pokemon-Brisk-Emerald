@@ -2,6 +2,18 @@
 #define GUARD_BRISK_OPTIONS_H
 
 #define BRISK_SHINY_CHOICES 9
+
+// Stored alongside the OW encounters toggle, preserving old save layouts.
+enum BriskAutoBattleMode
+{
+    BRISK_AUTOBATTLE_OFF,
+    BRISK_AUTOBATTLE_SEND,
+    BRISK_AUTOBATTLE_PASSIVE,
+    BRISK_AUTOBATTLE_MODE_COUNT,
+};
+
+enum BriskAutoBattleMode GetBriskAutoBattleMode(void);
+void SetBriskAutoBattleMode(enum BriskAutoBattleMode mode);
 u32 GetBriskShinyDenominator(void);
 u32 GetBriskShinyDenominatorForSetting(u32 setting);
 u32 GetBriskShinyThreshold(void);
