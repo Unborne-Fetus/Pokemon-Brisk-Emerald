@@ -48,7 +48,7 @@ Prefer copying a **small, auditable algorithm** to copying a whole source file. 
 ~~~sh
 make -j$(nproc)
 # After configuring the project's supported test toolchain:
-make test
+make check -j
 ~~~
 
 Use the existing [testing-system tutorial](../how_to_testing_system.md) for test-runner setup; targets vary by fork. Then test the built ROM in a GBA emulator with a new save and a backed-up existing save.
