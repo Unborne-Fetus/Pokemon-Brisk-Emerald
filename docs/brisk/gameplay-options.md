@@ -98,7 +98,7 @@ brief windup, and earns approximately half the normal base wild-KO EXP
 (without EVs). No battle screen or catch happens. The system never touches
 scripted/story encounters, roaming Pokémon, mass outbreaks, non-despawning
 spawns, or shiny overworld Pokémon. It does not auto-win against wild Pokémon
-more than three levels above the follower. It also pauses during scripts,
+eight or more levels above the follower. It also pauses during scripts,
 menus, map transitions, surfing, DexNav searches, and when the follower is
 hidden or at low HP. EXP respects Brisk's existing mode-dependent level caps.
 Moves are learned automatically when a free slot exists; existing moves are
