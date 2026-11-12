@@ -13,6 +13,7 @@
 #include "fieldmap.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
+#include "field_screen_effect.h"
 #include "follower_npc.h"
 #include "mass_outbreak.h"
 #include "metatile_behavior.h"
@@ -252,13 +253,13 @@ static enum Species sBriskAutoBattleSpecies;
 static u16 sBriskAutoBattleCooldown;
 static u8 sBriskAutoBattleWindup;
 
-static bool32 BriskAutoBattleCanDefeat(const struct ObjectEvent *owe, struct Pokemon *mon)
+static bool32 BriskAutoBattleCanDefeat(struct ObjectEvent *owe, struct Pokemon *mon)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
     u32 level = GetMonData(mon, MON_DATA_LEVEL);
     u32 wildLevel;
 
-    if (!owe->active || !IsOverworldWildEncounter((struct ObjectEvent *)owe, OWE_GENERATED)
+    if (!owe->active || !IsOverworldWildEncounter(owe, OWE_GENERATED)
      || GetOWECategory(owe) != OWE_CATEGORY_WILD || HasOWENoDespawnFlag(owe)
      || OW_SHINY(owe) || OW_SPECIES(owe) == SPECIES_NONE
      || species == SPECIES_NONE || GetMonData(mon, MON_DATA_HP) * 4 <= GetMonData(mon, MON_DATA_MAX_HP))
