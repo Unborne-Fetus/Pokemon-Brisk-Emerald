@@ -208,6 +208,7 @@ static const struct {
     {COMPOUND_STRING("AUDIO MUTES"), COMPOUND_STRING("Options 7 has three mutes:\nSOUND: clicks and effects.\nMUSIC: BGM and fanfares.\nCRIES: POKéMON voices only.")},
     {COMPOUND_STRING("GIMMICK GEN"), COMPOUND_STRING("Options 7: GIMMICK GEN ON/OFF.\nON recharges your TERA ORB\nafter each battle. Per-battle\nlimits and required items stay.")},
     {COMPOUND_STRING("OVERWORLD ENCOUNTERS"), COMPOUND_STRING("Options 7: OW ENCOUNTERS.\nOFF removes roaming spawns;\nrandom grass and water fights\nremain. Story encounters stay.")},
+    {COMPOUND_STRING("AUTO BATTLE"), COMPOUND_STRING("Options 7: OFF/SEND/PASSIVE.\nSEND: press R+B to toggle.\nPASSIVE: fights while idle.\nNo shinies; obeys EXP caps.")},
     {COMPOUND_STRING("BATTLE FORMAT"), COMPOUND_STRING("Options 5: REGULAR keeps teams.\nSINGLES uses one active per side.\nDOUBLES uses two when available.\nWild doubles add a second wild mon.")},
     {COMPOUND_STRING("BATTLE BAG"), COMPOUND_STRING("Options 5: BATTLE BAG ON/OFF.\nOFF blocks items and ball throws.\nDifficulty rules still apply.\nAdventures always block the Bag.")},
     {COMPOUND_STRING("DISPLAY TYPES"), COMPOUND_STRING("Options 5: DISPLAY TYPES ON/OFF.\nShows known types in battles.\nAdventure battles always hide\nthe floating type icons.")},
@@ -829,7 +830,10 @@ static void DrawDebugOptions(void)
     DrawToggle(!BriskMusicMuted(), 64);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE CRIES"), 8, 81, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskCriesMuted(), 80);
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, gText_OptionMenuCancel, 8, 97, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("AUTO BATTLE"), 8, 97, TEXT_SKIP_DRAW, NULL);
+    DrawOptionMenuChoice(COMPOUND_STRING("OFF"), 104, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
+    DrawOptionMenuChoice(COMPOUND_STRING("SEND"), 139, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
+    DrawOptionMenuChoice(COMPOUND_STRING("PASSIVE"), 177, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
@@ -843,7 +847,7 @@ static void Task_DebugOptions(u8 taskId)
         sCurrPage = Process_ChangePage(sCurrPage);
         gTasks[taskId].func = Task_ChangePage;
     }
-    else if (JOY_NEW(B_BUTTON) || (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 6))
+    else if (JOY_NEW(B_BUTTON))
         gTasks[taskId].func = Task_OptionMenuSave;
     else if (JOY_REPEAT(DPAD_UP | DPAD_DOWN))
     {
@@ -852,7 +856,7 @@ static void Task_DebugOptions(u8 taskId)
     }
     else if (gTasks[taskId].tMenuSelection == 1 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
     {
-        VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, BriskOverworldEncountersEnabled());
+        VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED) ^ 1);
         DrawDebugOptions();
     }
     else if (gTasks[taskId].tMenuSelection == 2 && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
@@ -867,6 +871,13 @@ static void Task_DebugOptions(u8 taskId)
         static const u16 flags[] = {FLAG_BRISK_MUTE_SOUND, FLAG_BRISK_MUTE_MUSIC, FLAG_BRISK_MUTE_CRIES};
         FlagToggle(flags[gTasks[taskId].tMenuSelection - 3]);
         RefreshBriskAudioMute();
+        DrawDebugOptions();
+    }
+    else if (gTasks[taskId].tMenuSelection == 6
+          && (JOY_NEW(A_BUTTON) || JOY_REPEAT(DPAD_LEFT | DPAD_RIGHT)))
+    {
+        u32 direction = JOY_REPEAT(DPAD_LEFT) ? BRISK_AUTOBATTLE_MODE_COUNT - 1 : 1;
+        SetBriskAutoBattleMode((GetBriskAutoBattleMode() + direction) % BRISK_AUTOBATTLE_MODE_COUNT);
         DrawDebugOptions();
     }
     else if (JOY_NEW(A_BUTTON) && gTasks[taskId].tMenuSelection == 0)
