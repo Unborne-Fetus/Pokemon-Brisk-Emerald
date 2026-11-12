@@ -118,6 +118,7 @@ static void Task_BattleOptions(u8 taskId);
 static void Task_OptionMenuProcessInput_Pg4(u8 taskId);
 static void Task_OptionMenuProcessInput_Help(u8 taskId);
 static void DrawHelpPage(void);
+static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style);
 static void DrawToggle(u8 disabled, u8 y);
 static void ShinyOdds_DrawChoices(u8 selection);
 static void Task_OptionMenuFadeOut(u8 taskId);
