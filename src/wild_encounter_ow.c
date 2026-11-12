@@ -1507,6 +1507,13 @@ static bool32 IsOWENextToObject(struct ObjectEvent *owe, struct ObjectEvent *obj
     return TRUE;
 }
 
+#if TESTING
+bool32 Test_IsOWENextToObject(struct ObjectEvent *owe, struct ObjectEvent *object)
+{
+    return IsOWENextToObject(owe, object);
+}
+#endif
+
 enum Direction DirectionOfOWEToPlayerFromCollision(struct ObjectEvent *owe)
 {
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
