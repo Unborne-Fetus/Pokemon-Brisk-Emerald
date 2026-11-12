@@ -49,6 +49,18 @@ TEST("Brisk overworld encounters toggle persists in Options 7 and restores rando
     VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, saved);
 }
 
+bool32 Test_BriskAutoBattleLevelAllowed(u32 followerLevel, u32 wildLevel);
+
+TEST("Brisk auto battle allows 7-level difference but prevents an 8-level knockout")
+{
+    EXPECT(Test_BriskAutoBattleLevelAllowed(10, 10));
+    EXPECT(Test_BriskAutoBattleLevelAllowed(10, 17));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(10, 18));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(10, 30));
+    EXPECT(Test_BriskAutoBattleLevelAllowed(93, 100));
+    EXPECT(!Test_BriskAutoBattleLevelAllowed(92, 100));
+}
+
 TEST("Brisk auto battle modes persist without altering the overworld encounter toggle")
 {
     u16 saved = VarGet(VAR_BRISK_OW_ENCOUNTERS_DISABLED);
