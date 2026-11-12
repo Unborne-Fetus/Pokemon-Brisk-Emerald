@@ -17,6 +17,7 @@
 #include "constants/trainer_types.h"
 
 u8 Test_OpenBriskWorldOptions(void);
+u8 Test_OpenBriskAutoBattleOptions(void);
 void Test_CloseBriskThemeOption(u8 taskId);
 bool32 Test_ShouldDisableRandomEncounters(void);
 
@@ -47,6 +48,34 @@ TEST("Brisk overworld encounters toggle persists in Options 7 and restores rando
     gMain.newKeys = 0;
     Test_CloseBriskThemeOption(task);
     VarSet(VAR_BRISK_OW_ENCOUNTERS_DISABLED, saved);
+}
+
+TEST("Brisk auto battle modes are opt-in and persist on Options 8")
+{
+    u16 saved = VarGet(VAR_BRISK_AUTO_BATTLE_MODE);
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, 0);
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+
+    u8 task = Test_OpenBriskAutoBattleOptions();
+    gMain.newAndRepeatedKeys = 0;
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_GO);
+
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_PASSIVE);
+
+    gMain.newKeys = A_BUTTON;
+    RunTasks();
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+
+    Test_CloseBriskThemeOption(task);
+    gMain.newKeys = 0;
+    gMain.newAndRepeatedKeys = 0;
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, 4);
+    EXPECT_EQ(BriskAutoBattleMode(), BRISK_AUTO_BATTLE_OFF);
+    VarSet(VAR_BRISK_AUTO_BATTLE_MODE, saved);
 }
 
 TEST("Brisk turning overworld encounters off preserves scripted Pokemon and followers and prevents generated contacts")
