@@ -24,6 +24,7 @@
 #include "follower_npc.h"
 #include "item_menu.h"
 #include "link.h"
+#include "main.h"
 #include "match_call.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -115,7 +116,10 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         {
             if (newKeys & START_BUTTON)
                 input->pressedStartButton = TRUE;
-            if (newKeys & SELECT_BUTTON)
+            // L+SELECT is reserved for Brisk GO battles, not the registered
+            // Key Item. Use the raw L state to respect L=A control mappings.
+            if ((newKeys & SELECT_BUTTON)
+             && !(BriskAutoBattleMode() == BRISK_AUTO_BATTLE_GO && (gMain.heldKeysRaw & L_BUTTON)))
                 input->pressedSelectButton = TRUE;
             if (newKeys & A_BUTTON)
                 input->pressedAButton = TRUE;
