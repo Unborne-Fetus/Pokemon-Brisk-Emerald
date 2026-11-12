@@ -83,3 +83,28 @@ healing, switching, and battle completion do not cancel a matching stone.
 Eggs never transform. Primal Reversion and Ultra Burst retain their existing
 rules. Rayquaza has no Mega Stone in this game, so its Dragon Ascent Mega
 Evolution is available with standard Mega rules (Mega Mode OFF).
+
+## Follower auto-battles (Options page 7)
+
+The **AUTO BATTLE** option cycles **OFF / SEND / PASSIVE** and starts OFF on
+existing saves. **SEND** uses **R+B** while in the field to turn auto-battling
+on or off; **PASSIVE** automatically fights while the player is standing still.
+The regular follower and visible overworld wild encounters must both be ON.
+Press **B** to leave Options page 7 (there is no separate CANCEL row on that
+page).
+
+The follower faces a nearby ordinary generated wild Pokémon, attacks after a
+brief windup, and earns approximately half the normal base wild-KO EXP
+(without EVs). No battle screen or catch happens. The system never touches
+scripted/story encounters, roaming Pokémon, mass outbreaks, non-despawning
+spawns, or shiny overworld Pokémon. It does not auto-win against wild Pokémon
+more than three levels above the follower. It also pauses during scripts,
+menus, map transitions, surfing, DexNav searches, and when the follower is
+hidden or at low HP. EXP respects Brisk's existing mode-dependent level caps.
+Moves are learned automatically when a free slot exists; existing moves are
+never replaced silently (use the move relearner for skipped moves).
+Evolution sequences are not forced by unattended training.
+
+The AUTO BATTLE mode is saved in the upper bits of the existing overworld
+encounter preference variable. The original OW ENCOUNTERS ON/OFF bit and all
+older save values remain compatible, without changing the save structure.
