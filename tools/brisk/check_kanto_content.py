@@ -20,6 +20,23 @@ def audit():
         for name,entry in manifest['maps'].items():
             subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
             emitted=(Path(temp)/'events.inc').read_text()
+            for line in emitted.splitlines():
+                if not line.strip().startswith('object_event '):
+                    continue
+                if 'OBJ_EVENT_GFX_ITEM_BALL' in line:
+                    assert ('FLAG_BRISK_KANTO_PICKUP_START' in line or
+                            (name == 'CeladonCity_Condominiums_RoofRoom_Frlg'
+                             and 'FLAG_HIDE_EEVEE_BALL' in line) or
+                            (name == 'PowerPlant_Frlg' and
+                             ('FLAG_BRISK_KANTO_ELECTRODE_1' in line or
+                              'FLAG_BRISK_KANTO_ELECTRODE_2' in line))), (name,'untracked item ball',line)
+                    assert 'BriskKanto_' not in line, (name,'talking item ball',line)
+                elif any(gfx in line for gfx in ('OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG',
+                                                  'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG',
+                                                  'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG')):
+                    assert 'BriskKanto_' not in line, (name,'speaking field obstacle',line)
+                elif 'OBJ_EVENT_GFX_FOSSIL_FRLG' in line:
+                    assert 'BriskKanto_' not in line, (name,'speaking Mt Moon fossil',line)
             assert 'OBJ_EVENT_GFX_VAR_' not in emitted,(name,'uninitialized sprite')
             assert 'OBJ_EVENT_GFX_SEAGALLOP' not in emitted,(name,'cutscene ferry')
             if name=='ViridianCity_Frlg':assert 'OBJ_EVENT_GFX_OLD_MAN_1' in emitted
@@ -33,6 +50,35 @@ def audit():
                     assert 'FLDEFF_POKECENTER_HEAL' in body
                     assert 'Movement_PkmnCenterNurse_Bow' in body
                     assert body.index('waitfieldeffect')<body.index('HealPlayerParty')
+    # Every genuine item ball must remain an item pickup, never a person.
+    # The Emerald map converter overrides the generated dialogue manifest for
+    # world props, so validate the imported source data and available scripts.
+    item_scripts=(ROOT/'data/scripts/item_ball_scripts_frlg.inc').read_text()
+    pickup_labels=set(re.findall(r'^(\w+)::\s*\n\s*finditem\s+ITEM_\w+',item_scripts,re.M))
+    # Celadon's visible Poké Ball is a one-time Eevee gift, not a bag pickup.
+    pickup_labels.add('CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall')
+    pickup_labels.update(('PowerPlant_EventScript_Electrode1',
+                          'PowerPlant_EventScript_Electrode2'))
+    map_ball_count=0
+    for name in manifest['maps']:
+        raw=json.loads((ROOT/'data/maps'/name/'map.json').read_text())
+        if raw.get('region')!='REGION_KANTO':continue
+        for obj in raw.get('object_events',[]):
+            if obj.get('graphics_id')=='OBJ_EVENT_GFX_ITEM_BALL':
+                if name=='PalletTown_ProfessorOaksLab_Frlg':
+                    assert obj['script'] in {
+                        'PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall',
+                        'PalletTown_ProfessorOaksLab_EventScript_SquirtleBall',
+                        'PalletTown_ProfessorOaksLab_EventScript_CharmanderBall'}
+                    continue
+                assert obj['script'] in pickup_labels, (name,obj['script'],'item ball without item')
+                map_ball_count+=1
+    converter=(ROOT/'tools/mapjson/mapjson.cpp').read_text()
+    for marker in ('kanto_item_script_indices()', 'FLAG_BRISK_KANTO_PICKUP_START',
+                   'OBJ_EVENT_GFX_ITEM_BALL', 'EventScript_CutTree',
+                   'EventScript_RockSmash', 'EventScript_StrengthBoulder'):
+        assert marker in converter,marker
+    assert map_ball_count > 50, ('Kanto item audit unexpectedly empty',map_ball_count)
     wild=json.loads((ROOT/'src/data/wild_encounters.json').read_text())['wild_encounter_groups'][0]
     entries=[e for e in wild['encounters'] if e['base_label'].startswith('sBriskKanto_')]
     bymap={e['map']:e for e in entries};assert len(bymap)==len(entries)

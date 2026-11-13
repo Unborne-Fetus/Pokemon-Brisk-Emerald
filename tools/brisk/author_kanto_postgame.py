@@ -165,6 +165,25 @@ def author_dialogue(metadata):
             label=f'BriskKanto_{name}_{i}'
             rec={'script':label,'trainer':metadata[tid]['id'] if tid else '', 'trainer_type':'TRAINER_TYPE_NORMAL' if tid else 'TRAINER_TYPE_NONE'}
             if obj is not raw:rec['object']=obj
+            # Objects with no original script (including zoo Pokémon) are
+            # decorative and must never be assigned person-like dialogue.
+            if script in ('0x0', '0'):
+                records[str(i)] = {'script':script, 'trainer':'',
+                                   'trainer_type':'TRAINER_TYPE_NONE', 'keep_flag':True}
+                continue
+            # Starter-selection balls are part of the retired FRLG introduction.
+            if name == 'PalletTown_ProfessorOaksLab_Frlg' and gfx == 'OBJ_EVENT_GFX_ITEM_BALL':
+                records[str(i)] = {'omit':True,'script':'','trainer':''}
+                continue
+            # Preserve physical world props. Never author spoken NPC dialogue
+            # for an item ball, field obstacle, or Mt Moon fossil.
+            if gfx == 'OBJ_EVENT_GFX_ITEM_BALL' or script in (
+                'EventScript_CutTree', 'EventScript_RockSmash',
+                'EventScript_StrengthBoulder') or (gfx == 'OBJ_EVENT_GFX_FOSSIL_FRLG'
+                and name == 'MtMoon_B2F_Frlg'):
+                records[str(i)] = {'script':script, 'trainer':'',
+                                   'trainer_type':'TRAINER_TYPE_NONE', 'keep_flag':True}
+                continue
             # Preserve explicit Brisk legendary encounters and their own flags.
             if script.startswith('BriskStatic_EventScript_'):
                 rec={'script':script,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}

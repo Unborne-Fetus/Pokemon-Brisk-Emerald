@@ -1715,7 +1715,7 @@
 #define FLAG_HIDE_ROUTE_12_SNORLAX                         0
 #define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0
 #define FLAG_HIDE_OLD_AMBER                                0
-#define FLAG_HIDE_EEVEE_BALL                               0
+#define FLAG_HIDE_EEVEE_BALL                               (FLAG_BRISK_KANTO_PICKUP_START + 168)
 #define FLAG_HIDE_VICTORY_ROAD_2F_BOULDER                  0
 #define FLAG_HIDE_VICTORY_ROAD_3F_BOULDER                  0
 #define FLAG_HIDE_OAK_IN_CHAMP_ROOM                        0
@@ -2025,7 +2025,10 @@
 #define FLAG_0x260                                       0
 #define FLAG_0x261                                       0
 #define FLAG_0x262                                       0
-#define FLAG_GOT_EEVEE                                   0
+#define FLAG_GOT_EEVEE                                   FLAG_HIDE_EEVEE_BALL
+// Power Plant's two deceptive Poké Balls are wild Electrode encounters.
+#define FLAG_BRISK_KANTO_ELECTRODE_1 (FLAG_BRISK_KANTO_PICKUP_START + 169)
+#define FLAG_BRISK_KANTO_ELECTRODE_2 (FLAG_BRISK_KANTO_PICKUP_START + 170)
 #define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0
 #define FLAG_CINNABAR_GYM_QUIZ_1                         0
 #define FLAG_CINNABAR_GYM_QUIZ_2                         0
@@ -2458,5 +2461,11 @@
 // Kanto defeated-trainer bits live in the save extension, outside Hoenn flags.
 #define FLAG_BRISK_KANTO_TRAINER_START 0x6000
 #define FLAG_BRISK_KANTO_TRAINER_END (FLAG_BRISK_KANTO_TRAINER_START + BRISK_KANTO_TRAINER_COUNT)
+
+// Isolated collectible flags: FRLG pickup flags must not overlap Hoenn.
+// Indices follow data/scripts/item_ball_scripts_frlg.inc in source order.
+#define BRISK_KANTO_PICKUP_COUNT 192
+#define FLAG_BRISK_KANTO_PICKUP_START 0x6300
+#define FLAG_BRISK_KANTO_PICKUP_END (FLAG_BRISK_KANTO_PICKUP_START + BRISK_KANTO_PICKUP_COUNT)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

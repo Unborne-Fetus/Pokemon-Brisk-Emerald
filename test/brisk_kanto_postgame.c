@@ -74,6 +74,31 @@ TEST("Brisk Kanto defeated-trainer flags are isolated from every Hoenn story and
     EXPECT_EQ(SYSTEM_FLAGS,0x861);
 }
 
+TEST("Kanto overworld item flags are persistent and cannot alter Hoenn badges or trainer records")
+{
+    u8 prior[sizeof(gSaveBlock3Ptr->kantoPickupFlags)];
+    u8 trainers[sizeof(gSaveBlock3Ptr->kantoTrainerFlags)];
+    u8 hoenn[NUM_FLAG_BYTES];
+    memcpy(prior, gSaveBlock3Ptr->kantoPickupFlags, sizeof(prior));
+    memcpy(trainers, gSaveBlock3Ptr->kantoTrainerFlags, sizeof(trainers));
+    memcpy(hoenn, gSaveBlock1Ptr->flags, sizeof(hoenn));
+
+    const u16 first = FLAG_BRISK_KANTO_PICKUP_START;
+    const u16 last = FLAG_BRISK_KANTO_PICKUP_END - 1;
+    FlagClear(first);
+    FlagClear(last);
+    EXPECT(!FlagGet(first));
+    EXPECT(!FlagGet(last));
+    FlagSet(first);
+    FlagSet(last);
+    EXPECT(FlagGet(first));
+    EXPECT(FlagGet(last));
+    EXPECT_EQ(memcmp(hoenn, gSaveBlock1Ptr->flags, sizeof(hoenn)), 0);
+    EXPECT_EQ(memcmp(trainers, gSaveBlock3Ptr->kantoTrainerFlags, sizeof(trainers)), 0);
+
+    memcpy(gSaveBlock3Ptr->kantoPickupFlags, prior, sizeof(prior));
+}
+
 TEST("Brisk Kanto defeat records round-trip through save extension sectors and old saves default clear")
 {
     EXPECT_EQ(sizeof(struct SaveBlock1),15572);

@@ -285,6 +285,8 @@ struct SaveBlock3
     u8 mikitariDexSeen[BRISK_EXTRA_DEX_BYTES];
     u8 mikitariDexCaught[BRISK_EXTRA_DEX_BYTES];
     u8 extraDexNavSearchLevels[BRISK_EXTRA_SEARCH_LEVEL_COUNT];
+    // Appended for save compatibility; older saves leave this reserved tail clear.
+    u8 kantoPickupFlags[24]; // 192 persistent flags, appended after existing save fields
 }; // Must fit the reserved per-slot chunks; enforced in save.c.
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

@@ -417,6 +417,26 @@ string file_parent(string filename){
     return filename.substr(0, dir_pos + 1);
 }
 
+// Kanto's original FRLG item scripts remain linked by event_scripts.s. Give
+// those pickups their own persistent flags rather than reusing Hoenn flags.
+// Maintain source order: changing it would change saved pickup identities.
+static const map<string, unsigned> &kanto_item_script_indices() {
+    static const map<string, unsigned> indices = [] {
+        map<string, unsigned> result;
+        const string text = read_text_file("data/scripts/item_ball_scripts_frlg.inc");
+        const std::regex itemPattern(R"((\w+)::\s*\n\s*finditem\s+ITEM_\w+)");
+        for (std::sregex_iterator it(text.begin(), text.end(), itemPattern), end; it != end; ++it) {
+            const string label = (*it)[1].str();
+            if (!result.emplace(label, result.size()).second)
+                FATAL_ERROR("Duplicate Kanto item script: %s\n", label.c_str());
+        }
+        if (result.size() > 192)
+            FATAL_ERROR("Kanto pickup flag bank exhausted (%zu items)\n", result.size());
+        return result;
+    }();
+    return indices;
+}
+
 void process_map(string map_filepath, string layouts_filepath, string output_dir) {
     string mapdata_err, layouts_err;
 
@@ -488,6 +508,81 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 || flag.find("ROCKET") != string::npos
                 || flag.find("CREDITS") != string::npos
                 || flag.find("OAK") != string::npos;
+            // Physical item balls must give the underlying item, never the
+            // postgame NPC's generic dialogue. A dedicated flag bank keeps
+            // collected items from reappearing or altering Hoenn story flags.
+            if (gfx == "OBJ_EVENT_GFX_ITEM_BALL") {
+                // Oak's three starter balls belong to the old FRLG campaign.
+                // This is a postgame visit, not a fresh Kanto starter selection.
+                if (mapName == "PalletTown_ProfessorOaksLab_Frlg")
+                    continue;
+                const auto &indices = kanto_item_script_indices();
+                const auto it = indices.find(script);
+                // Celadon's rooftop ball grants Eevee, not a bag item.
+                if (script == "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall") {
+                    Json::object gift = event.object_items();
+                    gift["script"] = script;
+                    gift["trainer_type"] = "TRAINER_TYPE_NONE";
+                    gift["trainer_sight_or_berry_tree_id"] = "0";
+                    gift["flag"] = "FLAG_HIDE_EEVEE_BALL";
+                    objects.push_back(gift);
+                    continue;
+                }
+                // Power Plant's deceptive Poké Balls are actual Electrode
+                // encounters. Retain their native battle scripts, but move
+                // their hide flags into Brisk's collision-free save bank.
+                if (mapName == "PowerPlant_Frlg"
+                    && (script == "PowerPlant_EventScript_Electrode1"
+                     || script == "PowerPlant_EventScript_Electrode2")) {
+                    Json::object encounter = event.object_items();
+                    encounter["script"] = script;
+                    encounter["trainer_type"] = "TRAINER_TYPE_NONE";
+                    encounter["trainer_sight_or_berry_tree_id"] = "0";
+                    encounter["flag"] = script == "PowerPlant_EventScript_Electrode1"
+                        ? "FLAG_BRISK_KANTO_ELECTRODE_1" : "FLAG_BRISK_KANTO_ELECTRODE_2";
+                    objects.push_back(encounter);
+                    continue;
+                }
+                if (it == indices.end())
+                    FATAL_ERROR("Unrecognized Kanto item ball on %s: %s\n", mapName.c_str(), script.c_str());
+                Json::object pickup = event.object_items();
+                pickup["script"] = script;
+                pickup["trainer_type"] = "TRAINER_TYPE_NONE";
+                pickup["trainer_sight_or_berry_tree_id"] = "0";
+                pickup["flag"] = "(FLAG_BRISK_KANTO_PICKUP_START + " + std::to_string(it->second) + ")";
+                objects.push_back(pickup);
+                continue;
+            }
+            // Trees, breakable rocks and Strength boulders are field props,
+            // not NPCs. Preserve their proper interaction scripts.
+            if (script == "EventScript_CutTree" || script == "EventScript_RockSmash"
+                || script == "EventScript_StrengthBoulder") {
+                Json::object obstacle = event.object_items();
+                obstacle["trainer_type"] = "TRAINER_TYPE_NONE";
+                obstacle["trainer_sight_or_berry_tree_id"] = "0";
+                obstacle["flag"] = "0";
+                objects.push_back(obstacle);
+                continue;
+            }
+            // FRLG fossils are usable objects, not townspeople. Their
+            // postgame pickup flow has separate Brisk-owned flags.
+            if (gfx == "OBJ_EVENT_GFX_FOSSIL_FRLG" && mapName == "MtMoon_B2F_Frlg") {
+                Json::object fossil = event.object_items();
+                fossil["trainer_type"] = "TRAINER_TYPE_NONE";
+                objects.push_back(fossil);
+                continue;
+            }
+            // A source object with no interaction script is scenery (for
+            // example Fuchsia's zoo Pokémon). Do not invent human dialogue.
+            if (script == "0x0" || script == "0") {
+                Json::object scenery = event.object_items();
+                scenery["script"] = "0x0";
+                scenery["trainer_type"] = "TRAINER_TYPE_NONE";
+                scenery["trainer_sight_or_berry_tree_id"] = "0";
+                scenery["flag"] = "0";
+                objects.push_back(scenery);
+                continue;
+            }
             if (storyActor)
                 continue;
             Json::object object = event.object_items();
