@@ -56,6 +56,55 @@ string read_text_file(string filepath) {
     return text;
 }
 
+
+static const map<string, string> &kanto_item_ball_items() {
+    static const map<string, string> items = [] {
+        map<string, string> result;
+        std::istringstream input(read_text_file("data/scripts/item_ball_scripts_frlg.inc"));
+        string line, label;
+        while (std::getline(input, line)) {
+            if (line.size() > 2 && line.compare(line.size() - 2, 2, "::") == 0)
+                label = line.substr(0, line.size() - 2);
+            const size_t start = line.find("finditem ITEM_");
+            if (start != string::npos && !label.empty()) {
+                std::istringstream args(line.substr(start + 9));
+                string item;
+                args >> item;
+                result[label] = item;
+            }
+        }
+        return result;
+    }();
+    return items;
+}
+
+static const map<string, unsigned> &kanto_original_hide_flags() {
+    static const map<string, unsigned> flags = [] {
+        map<string, unsigned> result;
+        std::istringstream input(read_text_file("include/constants/flags_frlg.h"));
+        string line;
+        while (std::getline(input, line)) {
+            std::istringstream parts(line);
+            string directive, name, value;
+            if (!(parts >> directive >> name >> value) || directive != "#define"
+                || name.find("FLAG_HIDE_") != 0 || value.find("0x") != 0)
+                continue;
+            result[name] = static_cast<unsigned>(std::stoul(value, nullptr, 0));
+        }
+        return result;
+    }();
+    return flags;
+}
+
+static string kanto_object_hide_flag(const string &oldFlag, const string &mapName) {
+    const auto &flags = kanto_original_hide_flags();
+    const auto it = flags.find(oldFlag);
+    if (it == flags.end() || it->second >= 511)
+        FATAL_ERROR("Kanto object in %s has no usable isolated hide flag: %s\n",
+                    mapName.c_str(), oldFlag.c_str());
+    return "(FLAG_BRISK_KANTO_OBJECT_START + " + std::to_string(it->second) + ")";
+}
+
 void write_text_file(string filepath, string text, bool only_if_changed = false) {
     // Preserve timestamps when revalidating generated map data. Otherwise an
     // unchanged constants header would cause a full rebuild on every make.
@@ -466,6 +515,151 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
             // flags used to spawn the ferry across Cinnabar's shoreline.
             if (record["omit"].bool_value())
                 continue;
+
+            // These Rocket-era quest props cannot be collected in the completed
+            // postgame; leave their rooms intact without obsolete key items.
+            if (script == "RocketHideout_B4F_EventScript_SilphScope"
+                || script == "RocketHideout_B4F_EventScript_LiftKey")
+                continue;
+
+            // Physical objects must retain their gameplay meaning. The FRLG
+            // postgame dialogue manifest was treating item balls like citizens:
+            // those balls spoke but never yielded their items. Derive pickups
+            // from the original FRLG item script and keep their hide flags in
+            // SaveBlock3, independent of Hoenn's overlapping flag IDs.
+            if (gfx == "OBJ_EVENT_GFX_ITEM_BALL" || gfx == "OBJ_EVENT_GFX_FOSSIL_FRLG") {
+                Json::object object = event.object_items();
+                string item;
+                const auto found = kanto_item_ball_items().find(script);
+                if (found != kanto_item_ball_items().end())
+                    item = found->second;
+                else if (gfx == "OBJ_EVENT_GFX_FOSSIL_FRLG" && script == "MtMoon_B2F_EventScript_DomeFossil")
+                    item = "ITEM_DOME_FOSSIL";
+                else if (gfx == "OBJ_EVENT_GFX_FOSSIL_FRLG" && script == "MtMoon_B2F_EventScript_HelixFossil")
+                    item = "ITEM_HELIX_FOSSIL";
+
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["movement_range_x"] = 0;
+                object["flag"] = kanto_object_hide_flag(flag, mapName);
+                if (!item.empty()) {
+                    object["script"] = "Common_EventScript_FindItem";
+                    object["trainer_sight_or_berry_tree_id"] = item;
+                } else if (script == "PowerPlant_EventScript_Electrode1"
+                        || script == "PowerPlant_EventScript_Electrode2") {
+                    // These two fake Poké Balls initiate a wild battle.
+                    object["script"] = "BriskKanto_EventScript_Electrode";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftBulbasaur";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_SquirtleBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftSquirtle";
+                } else if (script == "PalletTown_ProfessorOaksLab_EventScript_CharmanderBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftCharmander";
+                } else if (script == "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftEevee";
+                } else if (script == "SaffronCity_Dojo_EventScript_HitmonleeBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftHitmonlee";
+                } else if (script == "SaffronCity_Dojo_EventScript_HitmonchanBall") {
+                    object["script"] = "BriskKanto_EventScript_GiftHitmonchan";
+                } else {
+                    FATAL_ERROR("Unclassified Kanto Poké Ball/fossil in %s: %s\n",
+                                mapName.c_str(), script.c_str());
+                }
+                objects.push_back(object);
+                continue;
+            }
+
+            // Physical field-move obstacles never deliver resident dialogue.
+            if (gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG"
+                || gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER"
+                || gfx == "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG"
+                || gfx == "OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG"
+                || gfx == "OBJ_EVENT_GFX_BREAKABLE_ROCK") {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG" || gfx == "OBJ_EVENT_GFX_PUSHABLE_BOULDER"
+                    ? "EventScript_StrengthBoulder" : gfx == "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG"
+                    ? "EventScript_CutTree" : "EventScript_RockSmash";
+                // Keep event flags local to the map; never use FRLG story flags.
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            if (gfx == "OBJ_EVENT_GFX_POKEDEX") {
+                Json::object object = event.object_items();
+                object["script"] = "BriskKanto_EventScript_LabPokedex";
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            if (gfx == "OBJ_EVENT_GFX_OLD_AMBER") {
+                Json::object object = event.object_items();
+                object["script"] = "BriskKanto_EventScript_OldAmberExhibit";
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            // The Fuchsia zoo's Pokémon are inhabitants, not talking human NPCs.
+            static const map<string, string> zooScripts = {
+                {"OBJ_EVENT_GFX_SLOWPOKE", "BriskKanto_EventScript_ZooSlowpoke"},
+                {"OBJ_EVENT_GFX_VOLTORB", "BriskKanto_EventScript_ZooVoltorb"},
+                {"OBJ_EVENT_GFX_CHANSEY", "BriskKanto_EventScript_ZooChansey"},
+                {"OBJ_EVENT_GFX_LAPRAS", "BriskKanto_EventScript_ZooLapras"},
+                {"OBJ_EVENT_GFX_OMANYTE", "BriskKanto_EventScript_ZooOmanyte"},
+                {"OBJ_EVENT_GFX_KANGASKHAN", "BriskKanto_EventScript_ZooKangaskhan"},
+            };
+            const auto zoo = zooScripts.find(gfx);
+            if (mapName == "FuchsiaCity_Frlg" && zoo != zooScripts.end()) {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = zoo->second;
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
+
+            // Original Kanto static legendaries retain encounters, not human dialogue.
+            static const map<string, string> legendaryScripts = {
+                {"PowerPlant_EventScript_Zapdos", "BriskKanto_EventScript_Zapdos"},
+                {"MtEmber_Summit_EventScript_Moltres", "BriskKanto_EventScript_Moltres"},
+                {"CeruleanCave_B1F_EventScript_Mewtwo", "BriskKanto_EventScript_Mewtwo"},
+            };
+            const auto legendary = legendaryScripts.find(script);
+            if (legendary != legendaryScripts.end()) {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = legendary->second;
+                object["flag"] = kanto_object_hide_flag(flag, mapName);
+                objects.push_back(object);
+                continue;
+            }
+
+            // Lorelei's house contains plush figures, not Pokémon that talk.
+            // Ruby and Sapphire are inert remnants of the retired Sevii quest.
+            if (script == "FourIsland_LoreleisHouse_EventScript_Doll"
+                || gfx == "OBJ_EVENT_GFX_LAPRAS_DOLL"
+                || gfx == "OBJ_EVENT_GFX_RUBY"
+                || gfx == "OBJ_EVENT_GFX_SAPPHIRE") {
+                Json::object object = event.object_items();
+                object["trainer_type"] = "TRAINER_TYPE_NONE";
+                object["trainer_sight_or_berry_tree_id"] = "0";
+                object["script"] = gfx == "OBJ_EVENT_GFX_RUBY" || gfx == "OBJ_EVENT_GFX_SAPPHIRE"
+                    ? "BriskKanto_EventScript_GemDisplay"
+                    : "BriskKanto_EventScript_PokemonDoll";
+                object["flag"] = "0";
+                objects.push_back(object);
+                continue;
+            }
 
             const bool gymLeader = gym && (gfx == "OBJ_EVENT_GFX_GIOVANNI"
                 || gfx == "OBJ_EVENT_GFX_BROCK"

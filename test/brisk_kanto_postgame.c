@@ -74,6 +74,39 @@ TEST("Brisk Kanto defeated-trainer flags are isolated from every Hoenn story and
     EXPECT_EQ(SYSTEM_FLAGS,0x861);
 }
 
+TEST("Kanto collectible hide flags are independent, persistent, and save-compatible")
+{
+    struct SaveBlock3 original = *gSaveBlock3Ptr;
+    u8 hoennFlags[NUM_FLAG_BYTES];
+    memcpy(hoennFlags, gSaveBlock1Ptr->flags, sizeof(hoennFlags));
+    const u16 indices[] = {47, 48, 96, 97, 133, 134, 510, 511};
+
+    for (u32 i = 0; i < ARRAY_COUNT(indices); i++)
+    {
+        u16 id = FLAG_BRISK_KANTO_OBJECT_START + indices[i];
+        FlagClear(id);
+        EXPECT(!FlagGet(id));
+        FlagSet(id);
+        EXPECT(FlagGet(id));
+    }
+    EXPECT_EQ(memcmp(hoennFlags, gSaveBlock1Ptr->flags, sizeof(hoennFlags)), 0);
+    EXPECT_EQ(offsetof(struct SaveBlock3,kantoTrainerFlags), 120);
+
+    const u32 chunks = (sizeof(struct SaveBlock3) + SAVE_BLOCK_3_CHUNK_SIZE - 1) / SAVE_BLOCK_3_CHUNK_SIZE;
+    struct SaveSector *sectors = AllocZeroed(sizeof(struct SaveSector) * chunks);
+    EXPECT(sectors != NULL);
+    for (u32 i = 0; i < chunks; i++)
+        Test_CopyKantoSaveExtension(i, &sectors[i], TRUE);
+    memset(gSaveBlock3Ptr->kantoObjectFlags, 0, sizeof(gSaveBlock3Ptr->kantoObjectFlags));
+    for (u32 i = 0; i < chunks; i++)
+        Test_CopyKantoSaveExtension(i, &sectors[i], FALSE);
+    for (u32 i = 0; i < ARRAY_COUNT(indices); i++)
+        EXPECT(FlagGet(FLAG_BRISK_KANTO_OBJECT_START + indices[i]));
+
+    *gSaveBlock3Ptr = original;
+    Free(sectors);
+}
+
 TEST("Brisk Kanto defeat records round-trip through save extension sectors and old saves default clear")
 {
     EXPECT_EQ(sizeof(struct SaveBlock1),15572);

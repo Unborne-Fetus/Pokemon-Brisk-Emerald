@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Classify every Kanto pickup and special Poké Ball before building
+        run: python3 tools/brisk/audit_kanto_interactables.py
+
       # The legality database must match the *compiled* species rules.
       # Changing a Pokemon's abilities, learnset, or evolution tables makes
       # the checked-in snapshot stale, so reconstruct it before auditing.
