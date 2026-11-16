@@ -4,7 +4,7 @@ Rocket overworld/battle art is temporary. New Xiphos scripts avoid re-enabling h
 
 The authored trainer rosters are in `src/data/brisk_xiphos_teams.h` and `src/data/brisk_xiphos_extended_teams.h`; the five-mode loader is `src/data/brisk_xiphos_loader.h`.
 
-Director Jessie waits in Rocket Hideout B4F and requires defeat of all four specialist commanders. A first victory unlocks the Kanto Classic Red/Leaf outfits through the existing idempotent reward script. The intended synchronized Aegislash/Archaludon finale still requires a dedicated battle-engine sequence; roster ordering alone does not force it.
+Director Jessie waits in Rocket Hideout B4F and requires defeat of all four specialist commanders. Defeating them unlocks the Kanto Classic Red/Leaf outfit based on the player's selected character and awards a one-time level-70 Magearna (claimable later if storage is full). Their team opens with Aegislash and Archaludon in every mode and saves Mega Magearna as the final roster slot; Iron Valiant takes the fifth slot. Roster order guarantees the opening pair in a normal trainer doubles start, but the final slot does not guarantee Magearna will be the last surviving Pokémon.
 
 The mapjson sanitizer has a strictly scoped exception for `XiphosKanto_EventScript_` actors so old Team Rocket/Rival content stays disabled. Running the Kanto postgame dialogue authoring script retains those actors.
 
