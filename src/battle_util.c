@@ -2380,6 +2380,20 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
 
     switch (ctx->abilities[ctx->battlerDef])
     {
+    case ABILITY_WE_WILL_ROCK_YOU:
+        if (ctx->moveType == TYPE_GROUND || ctx->moveType == TYPE_ELECTRIC)
+            battleScript = BattleScript_AbilityProtectedTarget;
+        break;
+    case ABILITY_NERVE_TICKLE:
+        if (ctx->moveType == TYPE_FIGHTING)
+            battleScript = BattleScript_AbilityProtectedTarget;
+        break;
+    case ABILITY_LONELY_BOY:
+        if (ctx->battlerAtk != ctx->battlerDef
+         && (IsSpreadMove(GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move))
+          || GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move) == TARGET_ALL_BATTLERS))
+            battleScript = BattleScript_AbilityProtectedTarget;
+        break;
     case ABILITY_FLOATING_WISP:
         if (ctx->moveType == TYPE_GROUND)
             battleScript = BattleScript_AbilityProtectedTarget;
@@ -3974,6 +3988,25 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     effect++;
                 }
                 break;
+            case ABILITY_JADE_BLESSING:
+                if (RandomChance(RNG_MOODY_INCREASE, 3, 40))
+                {
+                    enum Stat available[5];
+                    u32 count = 0;
+                    for (enum Stat stat = STAT_ATK; stat <= STAT_SPEED; stat++)
+                    {
+                        if (CompareStat(battler, stat, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                            available[count++] = stat;
+                    }
+                    if (count != 0)
+                    {
+                        gEffectBattler = gBattlerAbility = battler;
+                        SetStatChange(battler, available[RandomUniform(RNG_MOODY_DECREASE, 0, count - 1)], 2);
+                        BattleScriptCall(BattleScript_AbilityStatChange);
+                        effect++;
+                    }
+                }
+                break;
             case ABILITY_MOMENTUM_BUILD:
                 if (!BattlerJustSwitchedIn(battler)
                  && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)
@@ -4305,6 +4338,38 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_CRETAN:
+            if (gBattlerAttacker != battler
+             && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && moveType == TYPE_WATER
+             && CanBeConfused(gBattlerAttacker, battler))
+            {
+                gEffectBattler = battler;
+                gBattleScripting.battler = battler;
+                gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_AbilityStatusEffect);
+                effect++;
+            }
+            break;
+        case ABILITY_THATS_GROSS:
+        case ABILITY_ADRENALINE_RAGE:
+        {
+            enum Stat stat = gLastUsedAbility == ABILITY_THATS_GROSS ? STAT_SPEED : STAT_SPATK;
+            enum Type triggerType = gLastUsedAbility == ABILITY_THATS_GROSS ? TYPE_WATER : TYPE_FIRE;
+            if (gBattlerAttacker != battler
+             && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBattlerAlive(battler)
+             && moveType == triggerType
+             && CompareStat(battler, stat, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+            {
+                gEffectBattler = gBattlerAbility = battler;
+                SetStatChange(battler, stat, 2);
+                BattleScriptCall(BattleScript_AbilityStatChange);
+                effect++;
+            }
+            break;
+        }
         case ABILITY_WATER_COMPACTION:
             if (IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
              && IsBattlerAlive(battler)
@@ -4901,6 +4966,35 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
         switch (gLastUsedAbility)
         {
+        case ABILITY_SEA_HUNTER:
+            if (!gBattleStruct->unableToUseMove
+             && IsBattlerAlive(gBattlerAttacker)
+             && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
+             && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER)
+             && !IsBattlerAtMaxHp(gBattlerAttacker)
+             && !gBattleMons[gBattlerAttacker].volatiles.healBlockTimer)
+            {
+                gEffectBattler = gBattlerAbility = gBattleScripting.battler = gBattlerAttacker;
+                SetHealAmount(gBattlerAttacker, max(1, GetNonDynamaxMaxHP(gBattlerAttacker) / 6));
+                BattleScriptCall(BattleScript_AbilityHpHeal);
+                effect++;
+            }
+            break;
+        case ABILITY_BURNING_LOVE:
+            if (!gBattleStruct->unableToUseMove
+             && IsBattlerAlive(gBattlerTarget)
+             && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
+             && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
+             && CanBeBurned(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerTarget)))
+            {
+                gEffectBattler = gBattlerTarget;
+                gBattleScripting.battler = gBattlerAttacker;
+                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_AbilityStatusEffect);
+                effect++;
+            }
+            break;
         case ABILITY_POISON_GUT:
             if (IsBattlerAlive(gBattlerTarget) && !gBattleStruct->unableToUseMove
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
@@ -7198,6 +7292,24 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case ABILITY_HOOD_FLARE:
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
+    case ABILITY_COLD_AS_ICE:
+        if (!IsDoubleBattle())
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        if (moveType == TYPE_ICE)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.15));
+        break;
+    case ABILITY_ELECTRIC_SLIDE:
+        if (moveType == TYPE_ELECTRIC)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.15));
+        break;
+    case ABILITY_BURNING_LOVE:
+        if (moveType == TYPE_FIRE)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.15));
+        break;
+    case ABILITY_LONELY_BOY:
+        if (!IsDoubleBattle())
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_OPERATIC_VOICE:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
@@ -7582,6 +7694,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
     case ABILITY_BRUCE_FORCE:
+    case ABILITY_CRETAN:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
@@ -7879,6 +7992,9 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
     // target's abilities
     switch (ctx->abilities[ctx->battlerDef])
     {
+    case ABILITY_CHITIN:
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
     case ABILITY_EVOLUTION_DENIAL:
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
@@ -9212,6 +9328,25 @@ uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
         if (ctx->abilities[ctx->battlerDef] == ABILITY_CHROMATOPHORES
          && modifier != UQ_4_12(0.0))
             modifier = UQ_4_12(0.5);
+        if (ctx->abilities[ctx->battlerAtk] == ABILITY_HERCULES
+         && (IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_NORMAL)
+          || IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_ICE)
+          || IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_ROCK)
+          || IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_DARK)
+          || IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_STEEL)))
+            modifier = max(modifier, UQ_4_12(2.0));
+        if (ctx->abilities[ctx->battlerAtk] == ABILITY_EXTINCTION_EVENT)
+        {
+            const enum EggGroup *groups = gSpeciesInfo[gBattleMons[ctx->battlerDef].species].eggGroups;
+            for (u32 i = 0; i < EGG_GROUPS_PER_MON; i++)
+            {
+                if (groups[i] == EGG_GROUP_MONSTER || groups[i] == EGG_GROUP_BUG || groups[i] == EGG_GROUP_DRAGON)
+                {
+                    modifier = max(modifier, UQ_4_12(2.0));
+                    break;
+                }
+            }
+        }
     }
 
     if (ctx->abilities[ctx->battlerAtk] == ABILITY_SPOON_BEND
