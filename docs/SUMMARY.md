@@ -204,4 +204,5 @@
     - [Team Xiphos Aegis blueprint](xiphos_aegis_implementation_blueprint.md)
     - [Wild encounter and trainer balance](brisk/wild_trainer_balance_2026_11_02.md)
     - [Jessie Red and Leaf outfit reward](brisk/kanto-classic-jessie-outfit.md)
+    - [Team Xiphos Kanto placements and battle events](brisk/xiphos-kanto-placements.md)
     - [Save-system modes](brisk/save-system-modes.md)
