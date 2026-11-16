@@ -186,6 +186,13 @@ def author_dialogue(metadata):
                 )
                 out.append(text(label+'_Obtained', f'Obtained the {fossil} FOSSIL!'))
                 continue
+            # Xiphos encounters are authored independently from old FRLG Rocket
+            # events. Preserve their scripts and trainer IDs across regeneration.
+            if script.startswith('XiphosKanto_EventScript_'):
+                xiphos_id = 'TRAINER_XIPHOS_' + script.removeprefix('XiphosKanto_EventScript_')
+                records[str(i)] = {'script': script, 'trainer': xiphos_id,
+                                   'trainer_type': 'TRAINER_TYPE_NORMAL'}
+                continue
             # Preserve explicit Brisk legendary encounters and their own flags.
             if script.startswith('BriskStatic_EventScript_'):
                 rec={'script':script,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
