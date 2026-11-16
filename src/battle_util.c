@@ -4213,6 +4213,70 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
     case ABILITYEFFECT_MOVE_END: // Think contact abilities.
         switch (gLastUsedAbility)
         {
+        case ABILITY_ADDUCTOR:
+            if (IsBattlerAlive(battler) && IsBattlerAlive(gBattlerAttacker)
+             && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsMoveMakingContact(gBattlerAttacker, battler, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move))
+            {
+                gBattleScripting.battler = gBattlerAbility = battler;
+                SetPassiveDamageAmount(gBattlerAttacker, max(1, gBattleStruct->moveDamage[battler] / 4));
+                BattleScriptCall(BattleScript_RoughSkinActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_TOXIC_COPRA:
+            if (IsBattlerAlive(gBattlerAttacker) && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBitingMove(move)
+             && CanBePoisoned(battler, gBattlerAttacker, gLastUsedAbility, GetBattlerAbility(gBattlerAttacker)))
+            {
+                gEffectBattler = gBattlerAttacker;
+                gBattleScripting.battler = battler;
+                gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_AbilityStatusEffect);
+                effect++;
+            }
+            break;
+        case ABILITY_CALCIFICATION:
+            if (IsBattlerAlive(gBattlerAttacker) && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && RandomPercentage(RNG_MOODY_DECREASE, 25)
+             && CompareStat(gBattlerAttacker, STAT_SPEED, MIN_STAT_STAGE, CMP_GREATER_THAN, GetBattlerAbility(gBattlerAttacker)))
+            {
+                gEffectBattler = gBattlerAbility = gBattlerAttacker;
+                SetStatChange(gBattlerAttacker, STAT_SPEED, -1);
+                BattleScriptCall(BattleScript_AbilityStatChange);
+                effect++;
+            }
+            break;
+        case ABILITY_JACKIE_OF_TRADES:
+            if (IsBattlerAlive(battler) && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && !gBattleMons[battler].volatiles.jackieTradesUsed
+             && (gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_SUPER_EFFECTIVE))
+            {
+                gBattleMons[battler].volatiles.jackieTradesUsed = TRUE;
+                gBattleMons[battler].attack = 105;
+                gBattleMons[battler].defense = 105;
+                gBattleMons[battler].spAttack = 105;
+                gBattleMons[battler].spDefense = 105;
+                gBattleMons[battler].speed = 105;
+                gBattlerAbility = battler;
+                BattleScriptCall(BattleScript_AbilityPopUp);
+                effect++;
+            }
+            break;
+        case ABILITY_MOTHERLY_LOVE:
+            if (IsBattlerAlive(battler) && IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBattleMovePhysical(move))
+            {
+                gBattleMons[battler].volatiles.motherlyLoveTurns = 3;
+                gBattleMons[battler].types[0] = TYPE_NORMAL;
+                gBattleMons[battler].types[1] = TYPE_FIGHTING;
+                gBattleMons[battler].types[2] = TYPE_MYSTERY;
+                gBattlerAbility = battler;
+                BattleScriptCall(BattleScript_AbilityPopUp);
+                effect++;
+            }
+            break;
         case ABILITY_JUSTIFIED:
             if (IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
              && IsBattlerAlive(battler)
