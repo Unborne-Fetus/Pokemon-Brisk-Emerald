@@ -5868,6 +5868,14 @@ static void Cmd_animatewildpokemonafterfailedpokeball(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+static bool32 BriskAttractOverridesGender(enum BattlerId attacker, enum BattlerId target)
+{
+    enum Ability atk = GetBattlerAbility(attacker);
+    enum Ability def = GetBattlerAbility(target);
+    return atk == ABILITY_COLD_AS_ICE || atk == ABILITY_ELECTRIC_SLIDE || atk == ABILITY_BURNING_LOVE
+        || def == ABILITY_COLD_AS_ICE || def == ABILITY_ELECTRIC_SLIDE || def == ABILITY_BURNING_LOVE;
+}
+
 static void Cmd_tryinfatuating(void)
 {
     CMD_ARGS(const u8 *failInstr);
@@ -5884,18 +5892,20 @@ static void Cmd_tryinfatuating(void)
         return;
     }
 
-    if (GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS)
+    if (GetBattlerAbility(gBattlerTarget) == ABILITY_OBLIVIOUS
+     || GetBattlerAbility(gBattlerTarget) == ABILITY_LONELY_BOY)
     {
         gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_DOESNT_AFFECT_FOE;
         gBattlerAbility = gBattlerTarget;
-        gLastUsedAbility = ABILITY_OBLIVIOUS;
-        RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
+        gLastUsedAbility = GetBattlerAbility(gBattlerTarget);
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else
     {
         if (gBattleMons[gBattlerTarget].volatiles.infatuation
-            || !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+            || (!AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget)
+             && !BriskAttractOverridesGender(gBattlerAttacker, gBattlerTarget)))
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
@@ -10286,9 +10296,11 @@ void BS_TrySetInfatuation(void)
     NATIVE_ARGS(const u8 *failInstr);
 
     if (!gBattleMons[gBattlerTarget].volatiles.infatuation
-        && gBattleMons[gBattlerTarget].ability != ABILITY_OBLIVIOUS
+        && GetBattlerAbility(gBattlerTarget) != ABILITY_OBLIVIOUS
+        && GetBattlerAbility(gBattlerTarget) != ABILITY_LONELY_BOY
         && !IsAbilityOnSide(gBattlerTarget, ABILITY_AROMA_VEIL)
-        && AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+        && (AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget)
+         || BriskAttractOverridesGender(gBattlerAttacker, gBattlerTarget)))
     {
         gBattleMons[gBattlerTarget].volatiles.infatuation = INFATUATED_WITH(gBattlerAttacker);
         gBattleCommunication[MULTIUSE_STATE] = 2;
