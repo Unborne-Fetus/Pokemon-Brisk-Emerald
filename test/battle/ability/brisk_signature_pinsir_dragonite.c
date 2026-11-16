@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Brisk signature Cretan confuses Tauros after a Water hit")
         PLAYER(SPECIES_TAUROS) { Ability(ABILITY_CRETAN); MaxHP(300); HP(300); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN { TURN { MOVE(opponent, MOVE_WATER_GUN); } }
-    THEN { EXPECT_GT(player->volatiles.confusionTimer, 0); }
+    THEN { EXPECT(player->volatiles.confusionTimer > 0); }
 }
 
 SINGLE_BATTLE_TEST("Brisk signature Jade Blessing occasionally raises one stat by two stages")
@@ -199,7 +199,7 @@ SINGLE_BATTLE_TEST("Brisk signature Lonely Boy ignores Attract")
         PLAYER(SPECIES_DRAGONITE) { Ability(ABILITY_LONELY_BOY); Gender(MON_MALE); }
         OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_FEMALE); }
     } WHEN { TURN { MOVE(opponent, MOVE_ATTRACT); } }
-    THEN { EXPECT_EQ(player->volatiles.infatuation, 0); }
+    THEN { EXPECT(player->volatiles.infatuation == 0); }
 }
 
 SINGLE_BATTLE_TEST("Brisk signature Lonely Boy raises singles damage 50 percent", s16 damage)
