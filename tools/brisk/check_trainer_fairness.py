@@ -39,8 +39,18 @@ def audit():
     if exempt_ids != policy['protected'].keys():
         errors.append('Runtime difficulty exemptions disagree with dedication/Easter egg policy')
     story_ids = set(re.findall(r'\[(TRAINER_\w+)\] = TRUE', (ROOT / 'src/data/brisk_story_trainers.h').read_text()))
-    if story_ids != set(policy['story']) or story_ids & (set(policy['reworked']) | policy['protected'].keys()):
-        errors.append('Runtime story-trainer classification disagrees with policy')
+    # Xiphos extension rosters live in a dedicated five-mode battle table,
+    # not the original Hoenn trainers.party fairness-policy snapshot. These
+    # are checked by the Xiphos full-roster validator.
+    xiphos_extended_ids = {
+        'TRAINER_XIPHOS_' + rank for rank in (
+            'AGENT_A', 'AGENT_B', 'AGENT_C', 'AGENT_D', 'AGENT_E',
+            'AGENT_F', 'AGENT_G', 'SCIENTIST_A', 'SCIENTIST_B',
+            'SENIOR_A', 'SENIOR_B', 'JESSIE')
+    }
+    expected_story_ids = set(policy['story']) | xiphos_extended_ids
+    if story_ids != expected_story_ids or story_ids & (set(policy['reworked']) | policy['protected'].keys()):
+        errors.append('Runtime story-trainer classification disagrees with policy or the Xiphos extension roster')
     for trainer_id, fingerprint in (policy['protected'] | policy['metadata_only']).items():
         actual = hashlib.sha256(teams.get(trainer_id, '').encode()).hexdigest()
         if actual != fingerprint:
