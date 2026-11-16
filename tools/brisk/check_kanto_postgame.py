@@ -36,7 +36,7 @@ def audit():
     # Original Kanto trainer bank and the new Xiphos 5-mode roster bank are
     # intentionally independent. Neither should be mistaken for missing
     # four-mode postgame trainer records.
-    xiphos=set(re.findall(r'^#define (TRAINER_XIPHOS_\\w+) \\(',
+    xiphos=set(re.findall(r'^#define (TRAINER_XIPHOS_\w+) \(',
                           (ROOT/'include/constants/brisk_kanto_trainers.h').read_text(),re.M))
     assert len(xiphos)==16,('Xiphos trainer ID count',len(xiphos))
     manifest=json.loads((ROOT/'data/brisk_kanto_postgame.json').read_text())
