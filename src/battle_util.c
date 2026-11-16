@@ -3993,7 +3993,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 {
                     enum Stat available[5];
                     u32 count = 0;
-                    for (enum Stat stat = STAT_ATK; stat <= STAT_SPEED; stat++)
+                    for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
                     {
                         if (CompareStat(battler, stat, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
                             available[count++] = stat;
