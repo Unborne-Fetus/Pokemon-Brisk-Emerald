@@ -491,6 +491,9 @@ static enum CancelerResult CancelerParalyzed(struct BattleCalcValues *cv)
 static enum CancelerResult CancelerInfatuation(struct BattleCalcValues *cv)
 {
     enum BattlerId charmSource = MAX_BATTLERS_COUNT;
+    // Lonely Boy ignores both ordinary Attract and passive infatuation auras.
+    if (GetBattlerAbility(cv->battlerAtk) == ABILITY_LONELY_BOY)
+        return CANCELER_RESULT_SUCCESS;
     if (gBattleMons[cv->battlerAtk].volatiles.infatuation)
         charmSource = gBattleMons[cv->battlerAtk].volatiles.infatuation - 1;
     else

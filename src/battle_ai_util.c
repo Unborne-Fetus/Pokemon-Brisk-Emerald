@@ -3748,8 +3748,14 @@ bool32 AI_CanBeInfatuated(enum BattlerId battlerAtk, enum BattlerId battlerDef, 
 {
     if (gBattleMons[battlerDef].volatiles.infatuation
       || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
-      || defAbility == ABILITY_OBLIVIOUS
-      || !AreBattlersOfOppositeGender(battlerAtk, battlerDef)
+      || defAbility == ABILITY_OBLIVIOUS || defAbility == ABILITY_LONELY_BOY
+      || (!AreBattlersOfOppositeGender(battlerAtk, battlerDef)
+       && gAiLogicData->abilities[battlerAtk] != ABILITY_COLD_AS_ICE
+       && gAiLogicData->abilities[battlerAtk] != ABILITY_ELECTRIC_SLIDE
+       && gAiLogicData->abilities[battlerAtk] != ABILITY_BURNING_LOVE
+       && defAbility != ABILITY_COLD_AS_ICE
+       && defAbility != ABILITY_ELECTRIC_SLIDE
+       && defAbility != ABILITY_BURNING_LOVE)
       || AI_IsAbilityOnSide(battlerDef, ABILITY_AROMA_VEIL))
         return FALSE;
     return TRUE;
