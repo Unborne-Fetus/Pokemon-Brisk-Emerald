@@ -53,7 +53,9 @@ jobs:
         run: python3 tools/brisk/author_mode_teams.py --check
 
       - name: Audit all five distinct Xiphos commander teams
-        run: python3 tools/brisk/validate_xiphos_commanders.py
+        run: |
+          python3 tools/brisk/validate_xiphos_commanders.py
+          python3 tools/brisk/validate_xiphos_full.py
 
       - name: Audit Mega Stone and mint distribution
         run: |
