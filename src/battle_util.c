@@ -2380,6 +2380,10 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
 
     switch (ctx->abilities[ctx->battlerDef])
     {
+    case ABILITY_FLOATING_WISP:
+        if (ctx->moveType == TYPE_GROUND)
+            battleScript = BattleScript_AbilityProtectedTarget;
+        break;
     case ABILITY_MEGATHERIUM:
         if (ctx->moveType == TYPE_GRASS)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
