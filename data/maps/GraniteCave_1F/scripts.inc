@@ -36,6 +36,6 @@ GraniteCave_1F_Text_ExplainFlash:
 	.string "of caves.\p"
 	.string "But, to use it, you need the GYM BADGE\n"
 	.string "from DEWFORD's POKéMON GYM.\p"
-	.string "Looking for STEVEN? Take a hard right\n"
+	.string "Looking for STEVEN? Take a hard left\n"
 	.string "and keep going all the way!$"
 
