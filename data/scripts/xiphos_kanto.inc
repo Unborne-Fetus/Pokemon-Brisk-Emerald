@@ -271,12 +271,12 @@ XiphosKanto_EventScript_JessieStorageFull::
 	end
 
 XiphosKanto_Text_JessieMagearnaGift:
-	.string "You've earned MAGEARNA's\\n"
+	.string "You've earned MAGEARNA's\n"
 	.string "trust. Take it with you.$"
 
 XiphosKanto_Text_JessieStorageFull:
-	.string "Your party and PC are full.\\n"
-	.string "Make room, then return for\\p"
+	.string "Your party and PC are full.\n"
+	.string "Make room, then return for\p"
 	.string "MAGEARNA.$"
 
 XiphosKanto_Text_JESSIE_Intro:
