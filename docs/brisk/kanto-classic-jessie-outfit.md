@@ -4,8 +4,8 @@ New outfit ID 3: Red for male player, Leaf for female player. Previous outfit ID
 
 Source: Team Aqua Asset Repo, Pawkkie FRLG-style player sets. Credit Pawkkie and Poffin_Case for underlying art and Pawkkie's conversion/recolor and dive art.
 
-Jessie battle scripts do not yet exist in-game. After awarding the PRIMARY Jessie prize, the future Jessie win script must execute:
+Jessie's Rocket Hideout B4F doubles script now awards this outfit and a level-70 Magearna after victory. The outfit uses the existing gender-dependent Kanto Classic visuals. The reward chain executes:
 
     call Common_EventScript_JessieKantoClassicReward
 
-This special unlocks the hidden Kanto Classic outfit (idempotent). Do not call it on a loss or mere interaction. Full end-to-end battle verification awaits Jessie's implementation.
+The outfit unlock is idempotent. Magearna is awarded once, tracked independently of the existing New Mauville static Magearna. When party and PC are full, the player can return to Jessie to collect the outstanding reward without another fight. The scripted rewards still require ROM build and emulator verification. The requested synchronized Aegislash/Archaludon final send-out is not yet guaranteed by ordinary trainer roster order.
