@@ -56,6 +56,7 @@ jobs:
         run: |
           python3 tools/brisk/validate_xiphos_commanders.py
           python3 tools/brisk/validate_xiphos_full.py
+          python3 tools/brisk/check_xiphos_kanto.py
 
       - name: Audit Mega Stone and mint distribution
         run: |
