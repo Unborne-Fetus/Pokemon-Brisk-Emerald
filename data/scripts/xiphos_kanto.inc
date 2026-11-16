@@ -193,7 +193,7 @@ XiphosKanto_Text_COMMANDER_FAIRY_Defeat:
 
 XiphosKanto_Text_COMMANDER_FAIRY_After:
 	.string "The Director awaits a true\n"
-	.string "challenger.$"
+	.string "challenger. They are ready.$"
 
 XiphosKanto_EventScript_COMMANDER_FIGHTING::
 	trainerbattle_double TRAINER_XIPHOS_COMMANDER_FIGHTING, XiphosKanto_Text_COMMANDER_FIGHTING_Intro, XiphosKanto_Text_COMMANDER_FIGHTING_Defeat, BriskKanto_Text_TwoPokemon
@@ -225,7 +225,7 @@ XiphosKanto_Text_COMMANDER_STEEL_Defeat:
 
 XiphosKanto_Text_COMMANDER_STEEL_After:
 	.string "Jessie will not accept this\n"
-	.string "result.$"
+	.string "result. They expect better.$"
 
 XiphosKanto_EventScript_COMMANDER_DRAGON::
 	trainerbattle_double TRAINER_XIPHOS_COMMANDER_DRAGON, XiphosKanto_Text_COMMANDER_DRAGON_Intro, XiphosKanto_Text_COMMANDER_DRAGON_Defeat, BriskKanto_Text_TwoPokemon
