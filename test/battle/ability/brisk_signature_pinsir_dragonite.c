@@ -49,7 +49,7 @@ SINGLE_BATTLE_TEST("Brisk signature Jade Blessing occasionally raises one stat b
     SCENE { ABILITY_POPUP(player, ABILITY_JADE_BLESSING); }
     THEN {
         u32 total = 0;
-        for (enum Stat stat = STAT_ATK; stat <= STAT_SPEED; stat++)
+        for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
             total += player->statStages[stat] - DEFAULT_STAT_STAGE;
         EXPECT_EQ(total, 2);
     }
