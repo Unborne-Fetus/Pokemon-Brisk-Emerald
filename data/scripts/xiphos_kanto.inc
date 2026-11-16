@@ -248,10 +248,36 @@ XiphosKanto_EventScript_JESSIE::
 	goto_if_unset FLAG_XIPHOS_COMMANDER_FIGHTING_DEFEATED, XiphosKanto_EventScript_JessieLocked
 	goto_if_unset FLAG_XIPHOS_COMMANDER_STEEL_DEFEATED, XiphosKanto_EventScript_JessieLocked
 	goto_if_unset FLAG_XIPHOS_COMMANDER_DRAGON_DEFEATED, XiphosKanto_EventScript_JessieLocked
+	@ A previously won fight may still have an unclaimed Magearna if storage was full.
+	checktrainerflag TRAINER_XIPHOS_JESSIE
+	goto_if TRUE, XiphosKanto_EventScript_JessieRewards
 	trainerbattle_double TRAINER_XIPHOS_JESSIE, XiphosKanto_Text_JESSIE_Intro, XiphosKanto_Text_JESSIE_Defeat, BriskKanto_Text_TwoPokemon
+XiphosKanto_EventScript_JessieRewards::
+	goto_if_set FLAG_XIPHOS_JESSIE_MAGEARNA_CLAIMED, XiphosKanto_EventScript_JessieAfterRewards
+	@ This is idempotent; the outfit is Red or Leaf based on the player's chosen sprite.
 	call Common_EventScript_JessieKantoClassicReward
+	msgbox XiphosKanto_Text_JessieMagearnaGift, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_MAGEARNA
+	givemon SPECIES_MAGEARNA, 70
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, XiphosKanto_EventScript_JessieStorageFull
+	setflag FLAG_XIPHOS_JESSIE_MAGEARNA_CLAIMED
+	call Common_EventScript_ReceivedGiftPokemon
+XiphosKanto_EventScript_JessieAfterRewards::
 	msgbox XiphosKanto_Text_JESSIE_After, MSGBOX_AUTOCLOSE
 	end
+
+XiphosKanto_EventScript_JessieStorageFull::
+	msgbox XiphosKanto_Text_JessieStorageFull, MSGBOX_DEFAULT
+	end
+
+XiphosKanto_Text_JessieMagearnaGift:
+	.string "You've earned MAGEARNA's\\n"
+	.string "trust. Take it with you.$"
+
+XiphosKanto_Text_JessieStorageFull:
+	.string "Your party and PC are full.\\n"
+	.string "Make room, then return for\\p"
+	.string "MAGEARNA.$"
 
 XiphosKanto_Text_JESSIE_Intro:
 	.string "I came from Averra with one\n"
