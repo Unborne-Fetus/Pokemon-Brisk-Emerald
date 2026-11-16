@@ -2389,9 +2389,12 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
             battleScript = BattleScript_AbilityProtectedTarget;
         break;
     case ABILITY_LONELY_BOY:
+        // Recognize a move's inherent spread targeting even in singles,
+        // where IsSpreadMove() intentionally returns FALSE.
         if (ctx->battlerAtk != ctx->battlerDef
-         && (IsSpreadMove(GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move))
-          || GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move) == TARGET_ALL_BATTLERS))
+         && (GetMoveTarget(ctx->move) == TARGET_BOTH
+          || GetMoveTarget(ctx->move) == TARGET_FOES_AND_ALLY
+          || GetMoveTarget(ctx->move) == TARGET_ALL_BATTLERS))
             battleScript = BattleScript_AbilityProtectedTarget;
         break;
     case ABILITY_FLOATING_WISP:
