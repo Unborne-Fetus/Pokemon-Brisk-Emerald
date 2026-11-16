@@ -3991,7 +3991,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             case ABILITY_JADE_BLESSING:
                 if (RandomChance(RNG_MOODY_INCREASE, 3, 40))
                 {
-                    enum Stat available[5];
+                    enum Stat available[NUM_BATTLE_STATS - STAT_ATK];
                     u32 count = 0;
                     for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
                     {
