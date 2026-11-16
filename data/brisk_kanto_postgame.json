@@ -473,6 +473,11 @@
           "script": "BriskKanto_CeladonCity_GameCorner_Frlg_11",
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_7",
           "trainer_type": "TRAINER_TYPE_NORMAL"
+        },
+        "12": {
+          "script": "XiphosKanto_EventScript_COMMANDER_FAIRY",
+          "trainer": "TRAINER_XIPHOS_COMMANDER_FAIRY",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -1225,6 +1230,11 @@
           "omit": true,
           "script": "",
           "trainer": ""
+        },
+        "5": {
+          "script": "XiphosKanto_EventScript_SENIOR_A",
+          "trainer": "TRAINER_XIPHOS_SENIOR_A",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -2370,6 +2380,11 @@
           "script": "BriskKanto_FuchsiaCity_Frlg_16",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "17": {
+          "script": "XiphosKanto_EventScript_SCIENTIST_B",
+          "trainer": "TRAINER_XIPHOS_SCIENTIST_B",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -2625,6 +2640,11 @@
           "script": "BriskKanto_IndigoPlateau_Exterior_Frlg_2",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "3": {
+          "script": "XiphosKanto_EventScript_SENIOR_B",
+          "trainer": "TRAINER_XIPHOS_SENIOR_B",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {}
@@ -5084,6 +5104,11 @@
           "script": "BriskKanto_RocketHideout_B4F_Frlg_9",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "10": {
+          "script": "XiphosKanto_EventScript_JESSIE",
+          "trainer": "TRAINER_XIPHOS_JESSIE",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {}
@@ -7601,6 +7626,11 @@
           "script": "BriskKanto_SaffronCity_Dojo_Frlg_7",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "8": {
+          "script": "XiphosKanto_EventScript_COMMANDER_FIGHTING",
+          "trainer": "TRAINER_XIPHOS_COMMANDER_FIGHTING",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -8579,6 +8609,11 @@
         "6": {
           "script": "BriskKanto_SilphCo_11F_Frlg_6",
           "trainer": "TRAINER_BRISK_KANTO_TEAM_ROCKET_GRUNT_41",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
+        },
+        "7": {
+          "script": "XiphosKanto_EventScript_COMMANDER_STEEL",
+          "trainer": "TRAINER_XIPHOS_COMMANDER_STEEL",
           "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
@@ -10803,6 +10838,11 @@
           "script": "BriskKanto_VictoryRoad_2F_Frlg_13",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "14": {
+          "script": "XiphosKanto_EventScript_COMMANDER_DRAGON",
+          "trainer": "TRAINER_XIPHOS_COMMANDER_DRAGON",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {},
