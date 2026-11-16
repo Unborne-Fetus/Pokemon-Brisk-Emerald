@@ -165,6 +165,27 @@ def author_dialogue(metadata):
             label=f'BriskKanto_{name}_{i}'
             rec={'script':label,'trainer':metadata[tid]['id'] if tid else '', 'trainer_type':'TRAINER_TYPE_NORMAL' if tid else 'TRAINER_TYPE_NONE'}
             if obj is not raw:rec['object']=obj
+            # These fossils are interactive pickups in the Emerald Kanto
+            # postgame. The original FRLG event scripts are not compiled here.
+            if name == 'MtMoon_B2F_Frlg' and i in (1, 2):
+                fossil = 'DOME' if i == 1 else 'HELIX'
+                rec['keep_flag'] = True
+                records[str(i)] = rec
+                out.append(
+                    f'{label}::\n'
+                    '\tlock\n\tfaceplayer\n'
+                    '\tgoto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken\n'
+                    f'\tcheckitemspace ITEM_{fossil}_FOSSIL, 1\n'
+                    '\tgoto_if_eq VAR_RESULT, FALSE, BriskKanto_MtMoon_B2F_Frlg_BagFull\n'
+                    f'\tgiveitem_msg {label}_Obtained, ITEM_{fossil}_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM\n'
+                    f'\tsetflag FLAG_GOT_{fossil}_FOSSIL\n'
+                    '\tsetflag FLAG_GOT_FOSSIL_FROM_MT_MOON\n'
+                    '\tsetflag FLAG_HIDE_DOME_FOSSIL\n\tsetflag FLAG_HIDE_HELIX_FOSSIL\n'
+                    '\tremoveobject LOCALID_DOME_FOSSIL\n\tremoveobject LOCALID_HELIX_FOSSIL\n'
+                    '\tclosemessage\n\trelease\n\tend\n\n'
+                )
+                out.append(text(label+'_Obtained', f'Obtained the {fossil} FOSSIL!'))
+                continue
             # Preserve explicit Brisk legendary encounters and their own flags.
             if script.startswith('BriskStatic_EventScript_'):
                 rec={'script':script,'trainer':'','trainer_type':'TRAINER_TYPE_NONE','keep_flag':True}
@@ -199,6 +220,17 @@ def author_dialogue(metadata):
                 words=dialogue.unique(words,name,gfx)
                 out.extend([label+'::\n\tmsgbox '+label+'_Text, MSGBOX_NPC\n\tend\n\n',text(label+'_Text',words)])
             records[str(i)]=rec
+        if name == 'MtMoon_B2F_Frlg':
+            out.extend([
+                'BriskKanto_MtMoon_B2F_Frlg_BagFull::\n'
+                '\tmsgbox BriskKanto_MtMoon_B2F_Frlg_BagFull_Text\n'
+                '\trelease\n\tend\n\n',
+                text('BriskKanto_MtMoon_B2F_Frlg_BagFull_Text', "There's no room in the BAG!"),
+                'BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken::\n'
+                '\tmsgbox BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken_Text\n'
+                '\trelease\n\tend\n\n',
+                text('BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken_Text', 'You already took a fossil.'),
+            ])
         geometry=[]
         if name=='CinnabarIsland_Gym_Frlg':
             geometry=[line.strip() for i in range(1,7) for line in scripts['CinnabarIsland_Gym_EventScript_OpenDoor'+str(i)].splitlines() if 'setmetatile' in line]

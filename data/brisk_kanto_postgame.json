@@ -3355,12 +3355,14 @@
         "1": {
           "script": "BriskKanto_MtMoon_B2F_Frlg_1",
           "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "trainer_type": "TRAINER_TYPE_NONE",
+          "keep_flag": true
         },
         "2": {
           "script": "BriskKanto_MtMoon_B2F_Frlg_2",
           "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "trainer_type": "TRAINER_TYPE_NONE",
+          "keep_flag": true
         },
         "3": {
           "script": "BriskKanto_MtMoon_B2F_Frlg_3",

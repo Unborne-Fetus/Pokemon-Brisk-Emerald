@@ -6501,18 +6501,44 @@ BriskKanto_MtMoon_1F_Frlg_Sign_1_Text:
 	.string "bloodsucker!$"
 
 BriskKanto_MtMoon_B2F_Frlg_1::
-	msgbox BriskKanto_MtMoon_B2F_Frlg_1_Text, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken
+	checkitemspace ITEM_DOME_FOSSIL, 1
+	goto_if_eq VAR_RESULT, FALSE, BriskKanto_MtMoon_B2F_Frlg_BagFull
+	giveitem_msg BriskKanto_MtMoon_B2F_Frlg_1_Obtained, ITEM_DOME_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_DOME_FOSSIL
+	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setflag FLAG_HIDE_DOME_FOSSIL
+	setflag FLAG_HIDE_HELIX_FOSSIL
+	removeobject LOCALID_DOME_FOSSIL
+	removeobject LOCALID_HELIX_FOSSIL
+	closemessage
+	release
 	end
 
-BriskKanto_MtMoon_B2F_Frlg_1_Text:
-	.string "Do you want the DOME FOSSIL?$"
+BriskKanto_MtMoon_B2F_Frlg_1_Obtained:
+	.string "Obtained the DOME FOSSIL!$"
 
 BriskKanto_MtMoon_B2F_Frlg_2::
-	msgbox BriskKanto_MtMoon_B2F_Frlg_2_Text, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken
+	checkitemspace ITEM_HELIX_FOSSIL, 1
+	goto_if_eq VAR_RESULT, FALSE, BriskKanto_MtMoon_B2F_Frlg_BagFull
+	giveitem_msg BriskKanto_MtMoon_B2F_Frlg_2_Obtained, ITEM_HELIX_FOSSIL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_HELIX_FOSSIL
+	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setflag FLAG_HIDE_DOME_FOSSIL
+	setflag FLAG_HIDE_HELIX_FOSSIL
+	removeobject LOCALID_DOME_FOSSIL
+	removeobject LOCALID_HELIX_FOSSIL
+	closemessage
+	release
 	end
 
-BriskKanto_MtMoon_B2F_Frlg_2_Text:
-	.string "Do you want the HELIX FOSSIL?$"
+BriskKanto_MtMoon_B2F_Frlg_2_Obtained:
+	.string "Obtained the HELIX FOSSIL!$"
 
 BriskKanto_MtMoon_B2F_Frlg_3::
 	msgbox BriskKanto_MtMoon_B2F_Frlg_3_Text, MSGBOX_NPC
@@ -6635,6 +6661,22 @@ BriskKanto_MtMoon_B2F_Frlg_11_Text:
 	.string "following a crowd. I brought\n"
 	.string "extra food today. My Pokemon\p"
 	.string "never forget snack time.$"
+
+BriskKanto_MtMoon_B2F_Frlg_BagFull::
+	msgbox BriskKanto_MtMoon_B2F_Frlg_BagFull_Text
+	release
+	end
+
+BriskKanto_MtMoon_B2F_Frlg_BagFull_Text:
+	.string "There's no room in the BAG!$"
+
+BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken::
+	msgbox BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken_Text
+	release
+	end
+
+BriskKanto_MtMoon_B2F_Frlg_AlreadyTaken_Text:
+	.string "You already took a fossil.$"
 
 BriskKanto_NavelRock_Base_Frlg_1::
 	msgbox BriskKanto_NavelRock_Base_Frlg_1_Text, MSGBOX_NPC

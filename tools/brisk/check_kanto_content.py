@@ -16,6 +16,39 @@ def audit():
     blocks=dict(re.findall(r'^(\w+)::?\s*\n(.*?)(?=^\w+::?|\Z)',scripts,re.M|re.S))
     speeches=Counter(''.join(re.findall(r'\.string "(.*)"',body)) for label,body in blocks.items() if '.string' in body and '_Sign_' not in label)
     assert all(n==1 for n in speeches.values()),'Duplicate NPC dialogue'
+    # Kanto on Emerald compiles generated Brisk scripts, not the FRLG originals.
+    # The fossils must be real one-time pickups, not ordinary dialogue NPCs.
+    fossils=manifest['maps']['MtMoon_B2F_Frlg']['objects']
+    for idx,item in (('1','DOME'),('2','HELIX')):
+        label=f'BriskKanto_MtMoon_B2F_Frlg_{idx}'
+        assert fossils[idx]['script']==label and fossils[idx].get('keep_flag') is True
+        body=blocks.get(label,'')
+        for command in (
+            f'checkitemspace ITEM_{item}_FOSSIL, 1',
+            f'giveitem_msg {label}_Obtained, ITEM_{item}_FOSSIL, 1',
+            f'setflag FLAG_GOT_{item}_FOSSIL',
+            'setflag FLAG_GOT_FOSSIL_FROM_MT_MOON',
+            'setflag FLAG_HIDE_DOME_FOSSIL',
+            'setflag FLAG_HIDE_HELIX_FOSSIL',
+            'removeobject LOCALID_DOME_FOSSIL',
+            'removeobject LOCALID_HELIX_FOSSIL',
+        ):
+            assert command in body,(label,command)
+    assert 'Do you want the DOME FOSSIL?' not in scripts
+    assert 'Do you want the HELIX FOSSIL?' not in scripts
+
+    # Check the actual distributed ROM, not just the source files. This
+    # catches stale generated Kanto scripts being linked into Emerald again.
+    rom_path=ROOT/'pokeemerald.gba'
+    if rom_path.is_file():
+        rom=rom_path.read_bytes()
+        def gba_text(s):
+            return bytes(0xBB+ord(c)-65 if 'A'<=c<='Z'
+                         else 0xD5+ord(c)-97 if 'a'<=c<='z'
+                         else 0 if c==' ' else 0xAC if c=='?'
+                         else 0xFF for c in s)
+        for item in ('DOME','HELIX'):
+            assert gba_text(f'Do you want the {item} FOSSIL?') not in rom, f'Stale {item} fossil text in compiled ROM'
     with tempfile.TemporaryDirectory() as temp:
         for name,entry in manifest['maps'].items():
             subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
@@ -23,6 +56,8 @@ def audit():
             assert 'OBJ_EVENT_GFX_VAR_' not in emitted,(name,'uninitialized sprite')
             assert 'OBJ_EVENT_GFX_SEAGALLOP' not in emitted,(name,'cutscene ferry')
             if name=='ViridianCity_Frlg':assert 'OBJ_EVENT_GFX_OLD_MAN_1' in emitted
+            if name=='MtMoon_B2F_Frlg':
+                assert 'FLAG_HIDE_DOME_FOSSIL' in emitted and 'FLAG_HIDE_HELIX_FOSSIL' in emitted
             if name=='CinnabarIsland_Frlg':assert 'OBJ_EVENT_GFX_BILL' in emitted
             for rec in entry['objects'].values():
                 if rec.get('omit'):continue
