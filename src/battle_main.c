@@ -6004,6 +6004,29 @@ void SetTypeBeforeUsingMove(enum Move move, enum BattlerId battler, enum Ability
      && RandomPercentage(RNG_POISON_POINT, 50))
         gBattleStruct->dynamicMoveType = TYPE_WATER;
 
+    // Electric Slide converts Normal moves, including status moves, into Electric.
+    if (ability == ABILITY_ELECTRIC_SLIDE && GetMoveType(move) == TYPE_NORMAL)
+        gBattleStruct->dynamicMoveType = TYPE_ELECTRIC;
+
+    // Plasma Discharge changes damaging Electric attacks to Water only if
+    // the complete target typing would take super-effective Water damage.
+    if (ability == ABILITY_PLASMA_DISCHARGE && GetMoveType(move) == TYPE_ELECTRIC
+     && !IsBattleMoveStatus(move)
+     && gBattleStruct->moveTarget[battler] < gBattlersCount
+     && IsBattlerAlive(gBattleStruct->moveTarget[battler]))
+    {
+        enum Type types[3];
+        uq4_12_t effectiveness = UQ_4_12(1.0);
+        GetBattlerTypes(gBattleStruct->moveTarget[battler], FALSE, types);
+        effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(TYPE_WATER, types[0]));
+        if (types[1] != types[0])
+            effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(TYPE_WATER, types[1]));
+        if (types[2] != TYPE_MYSTERY && types[2] != types[0] && types[2] != types[1])
+            effectiveness = uq4_12_multiply(effectiveness, GetTypeModifier(TYPE_WATER, types[2]));
+        if (effectiveness > UQ_4_12(1.0))
+            gBattleStruct->dynamicMoveType = TYPE_WATER;
+    }
+
     // Psychic Powers converts damaging Normal attacks into Psychic attacks.
     if (ability == ABILITY_PSYCHIC_POWERS && GetMoveType(move) == TYPE_NORMAL && !IsBattleMoveStatus(move))
         gBattleStruct->dynamicMoveType = TYPE_PSYCHIC;
