@@ -33,12 +33,18 @@ def audit():
     assert 'setflag FLAG_BADGE' not in script and 'setvar VAR_MAP_SCENE' not in script
     assert 'Hoenn' in script and 'Champion' in script and 'savior' in script
     labels=set(re.findall(r'^(\w+)::?',script,re.M))
+    # Original Kanto trainer bank and the new Xiphos 5-mode roster bank are
+    # intentionally independent. Neither should be mistaken for missing
+    # four-mode postgame trainer records.
+    xiphos=set(re.findall(r'^#define (TRAINER_XIPHOS_\\w+) \\(',
+                          (ROOT/'include/constants/brisk_kanto_trainers.h').read_text(),re.M))
+    assert len(xiphos)==16,('Xiphos trainer ID count',len(xiphos))
     manifest=json.loads((ROOT/'data/brisk_kanto_postgame.json').read_text())
     for mapname,entry in manifest['maps'].items():
         for obj in entry['objects'].values():
             label=obj['script']
             if label.startswith('BriskKanto_'):assert label in labels,(mapname,label)
-            if obj['trainer']:assert obj['trainer'] in trainers,(mapname,obj)
+            if obj['trainer']:assert obj['trainer'] in (trainers | xiphos),(mapname,obj)
     placements=json.loads((ROOT/'data/brisk_kanto_legendaries.json').read_text())
     assert len(placements)==6
     maps=[json.loads(p.read_text()) for p in (ROOT/'data/maps').glob('*/map.json')]
