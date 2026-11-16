@@ -605,7 +605,7 @@
     [DIFFICULTY_NORMAL][TRAINER_XIPHOS_SCIENTIST_A] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M_FRLG,
-        .trainerName = _("SCIENTIST A"),
+        .trainerName = _("SCI A"),
         .gender = TRAINER_GENDER_MALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -619,7 +619,7 @@
     [DIFFICULTY_EASY][TRAINER_XIPHOS_SCIENTIST_A] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M_FRLG,
-        .trainerName = _("SCIENTIST A"),
+        .trainerName = _("SCI A"),
         .gender = TRAINER_GENDER_MALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -633,7 +633,7 @@
     [DIFFICULTY_HARD][TRAINER_XIPHOS_SCIENTIST_A] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M_FRLG,
-        .trainerName = _("SCIENTIST A"),
+        .trainerName = _("SCI A"),
         .gender = TRAINER_GENDER_MALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -647,7 +647,7 @@
     [DIFFICULTY_KAIZO][TRAINER_XIPHOS_SCIENTIST_A] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M_FRLG,
-        .trainerName = _("SCIENTIST A"),
+        .trainerName = _("SCI A"),
         .gender = TRAINER_GENDER_MALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -661,7 +661,7 @@
     [DIFFICULTY_NORMAL][TRAINER_XIPHOS_SCIENTIST_B] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F_FRLG,
-        .trainerName = _("SCIENTIST B"),
+        .trainerName = _("SCI B"),
         .gender = TRAINER_GENDER_FEMALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -675,7 +675,7 @@
     [DIFFICULTY_EASY][TRAINER_XIPHOS_SCIENTIST_B] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F_FRLG,
-        .trainerName = _("SCIENTIST B"),
+        .trainerName = _("SCI B"),
         .gender = TRAINER_GENDER_FEMALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -689,7 +689,7 @@
     [DIFFICULTY_HARD][TRAINER_XIPHOS_SCIENTIST_B] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F_FRLG,
-        .trainerName = _("SCIENTIST B"),
+        .trainerName = _("SCI B"),
         .gender = TRAINER_GENDER_FEMALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
@@ -703,7 +703,7 @@
     [DIFFICULTY_KAIZO][TRAINER_XIPHOS_SCIENTIST_B] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET_FRLG,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F_FRLG,
-        .trainerName = _("SCIENTIST B"),
+        .trainerName = _("SCI B"),
         .gender = TRAINER_GENDER_FEMALE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
