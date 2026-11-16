@@ -718,7 +718,7 @@
 #define FLAG_DEFEATED_CELESTEELA                0x290
 #define FLAG_DEFEATED_GUZZLORD                  0x291
 #define FLAG_DEFEATED_NIHILEGO                  0x292
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
+#define FLAG_XIPHOS_JESSIE_MAGEARNA_CLAIMED 0x293 // One-time postgame gift; does not affect wild Magearna
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
