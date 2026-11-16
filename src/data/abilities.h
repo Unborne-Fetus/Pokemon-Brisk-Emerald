@@ -2830,4 +2830,151 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Fire hits both foes; deals 1.5x to Bug types."),
         .aiRating = 8,
     },
+
+    [ABILITY_SPOON_BEND] =
+    {
+        .name = _("Spoon Bend"),
+        .description = COMPOUND_STRING("Steel foes take super-effective damage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_KAYFABE] =
+    {
+        .name = _("Kayfabe"),
+        .description = COMPOUND_STRING("Moves have a 25% chance to crit."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_POISON_GUT] =
+    {
+        .name = _("Poison Gut"),
+        .description = COMPOUND_STRING("Water and Grass hits poison foes."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SEDIMENTARY_BUILDUP] =
+    {
+        .name = _("Sediment Buildup"),
+        .description = COMPOUND_STRING("Changes a third type each turn."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MISSING_RIDER] =
+    {
+        .name = _("Missing Rider"),
+        .description = COMPOUND_STRING("Doubles Speed in single battles."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MEGATHERIUM] =
+    {
+        .name = _("Megatherium"),
+        .description = COMPOUND_STRING("Grass attacks restore HP."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_LARGE_EYES] =
+    {
+        .name = _("Large Eyes"),
+        .description = COMPOUND_STRING("Always hits; foes miss 5% more."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SEA_COW] =
+    {
+        .name = _("Sea Cow"),
+        .description = COMPOUND_STRING("Grass moves are not super effective."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_WASTEWATER] =
+    {
+        .name = _("Wastewater"),
+        .description = COMPOUND_STRING("Poison may become Water vs Ground."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_ADDUCTOR] =
+    {
+        .name = _("Adductor"),
+        .description = COMPOUND_STRING("Contact attackers take 25% recoil."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FLOATING_WISP] =
+    {
+        .name = _("Floating Wisp"),
+        .description = COMPOUND_STRING("Immune to Ground-type moves."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_HYPNOSIS] =
+    {
+        .name = _("Hypnosis"),
+        .description = COMPOUND_STRING("Foes grow stronger but confused."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CALCIFICATION] =
+    {
+        .name = _("Calcification"),
+        .description = COMPOUND_STRING("Doubles defenses; lowers foe Speed."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FLIPPING_POLES] =
+    {
+        .name = _("Flipping Poles"),
+        .description = COMPOUND_STRING("Safe when acting; exposed at rest."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_TOXIC_COPRA] =
+    {
+        .name = _("Toxic Copra"),
+        .description = COMPOUND_STRING("Biting attacks poison attacker."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_BRUCE_FORCE] =
+    {
+        .name = _("Bruce Force"),
+        .description = COMPOUND_STRING("Double Attack; risky super hits."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_JACKIE_OF_TRADES] =
+    {
+        .name = _("Jackie of Trades"),
+        .description = COMPOUND_STRING("On a weakness hit, stats become 105."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MOTHERLY_LOVE] =
+    {
+        .name = _("Motherly Love"),
+        .description = COMPOUND_STRING("Physical hits spark a Fighting rage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_LONG_LEGS] =
+    {
+        .name = _("Long Legs"),
+        .description = COMPOUND_STRING("Faster in rain; raises Attack."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_HEY_DAD] =
+    {
+        .name = _("Hey Dad"),
+        .description = COMPOUND_STRING("Foes are infatuated while present."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_OPERATIC_VOICE] =
+    {
+        .name = _("Operatic Voice"),
+        .description = COMPOUND_STRING("Sound moves deal double damage."),
+        .aiRating = 8,
+    },
 };
