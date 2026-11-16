@@ -1,6 +1,6 @@
 # Xiphos Aegis — commanders and Containment Protocol
 
-This feature adds four battle-ready commander identities and five separately authored six-member Doubles rosters for each, taken from the existing Xiphos blueprint. **They have not yet been placed in the Kanto map or story.**
+This feature adds four battle-ready commander identities and five separately authored six-member Doubles rosters for each, taken from the existing Xiphos blueprint. **The commanders are now placed across Kanto.**
 
 ## Commander battle IDs
 - Fairy Commander Astra: TRAINER_XIPHOS_COMMANDER_FAIRY
@@ -19,7 +19,7 @@ The modifier is restricted to the opponent side of ordinary single-trainer NPC b
 - **Magearna and Mega Magearna keep Soul-Heart**, their normal innate ability. Neither gets the modifier. This has been checked against existing base and Mega Magearna species records.
 - **Aegislash keeps Stance Change**, with no modifier.
 
-Jessie's battle and storyline, which are not yet implemented, will need explicit registration as a qualifying Xiphos trainer for non-exempt members of her team. No Jessie encounter was added here.
+Jessie is encountered in Rocket Hideout B4F after all four commanders have been defeated. Their non-exempt Pokémon use the Xiphos battle modifier, while Aegislash and Magearna retain the listed exemptions.
 
 ## Validation
 Run: python tools/brisk/validate_xiphos_commanders.py
