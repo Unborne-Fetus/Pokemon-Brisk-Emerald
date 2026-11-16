@@ -476,6 +476,9 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 || gfx == "OBJ_EVENT_GFX_SABRINA"
                 || gfx == "OBJ_EVENT_GFX_BLAINE");
 
+            // Team Xiphos uses Team Rocket sprites temporarily. Only the
+            // newly authored Xiphos script identifiers bypass Rocket-era removal.
+            const bool xiphosActor = script.find("XiphosKanto_EventScript_") == 0;
             const bool storyActor = rocketBase || rivalFinale
                 || gfx.find("ROCKET") != string::npos
                 || gfx == "OBJ_EVENT_GFX_BLUE"
@@ -488,7 +491,7 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
                 || flag.find("ROCKET") != string::npos
                 || flag.find("CREDITS") != string::npos
                 || flag.find("OAK") != string::npos;
-            if (storyActor)
+            if (storyActor && !xiphosActor)
                 continue;
             Json::object object = event.object_items();
             const string trainer = json_to_string(record, "trainer", true);

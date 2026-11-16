@@ -231,6 +231,7 @@ const u8 gText_HoodedFigureTrainerName[] = _("Hooded Figure");
 // A single globally defined set of Xiphos commander teams is shared by the
 // trainer metadata and the battle-only Expert team selector.
 #include "data/brisk_xiphos_teams.h"
+#include "data/brisk_xiphos_extended_teams.h"
 
 #if !TESTING
 const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =

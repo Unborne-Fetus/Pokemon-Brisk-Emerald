@@ -34,12 +34,12 @@ for leader in leaders:
         assert (".party = "+key+",") in meta, (leader, mode, "missing engine trainer metadata")
         assert ("extern const struct TrainerMon "+key+"[PARTY_SIZE];") in loader
 assert len(re.findall(r"\[DIFFICULTY_(?:NORMAL|EASY|HARD|KAIZO)\]\[TRAINER_XIPHOS_COMMANDER_",meta))==16
-assert meta.count(".battleType = TRAINER_BATTLE_TYPE_DOUBLES") == 16
+assert meta.count(".battleType = TRAINER_BATTLE_TYPE_DOUBLES") == 64
 assert "species == SPECIES_MAGEARNA" in battle
 assert "species == SPECIES_MAGEARNA_MEGA" in battle
 assert "species == SPECIES_AEGISLASH" in battle
 assert "BATTLE_TYPE_INGAME_PARTNER" in battle
 assert "gBattleStruct->battlerState[battler].xiphosProtocolUsed" in battle
 print("PASS: 4 commanders x 5 independently-authored parties x 6 complete battle sets")
-print("PASS: 16 runtime trainer metadata rows and shared party pointers")
+print("PASS: 64 runtime trainer metadata rows and shared party pointers")
 print("PASS: no Magearna/Aegislash Containment modifier, NPC/side restrictions present")
