@@ -399,6 +399,11 @@
           "script": "BriskKanto_CeladonCity_Frlg_15",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "16": {
+          "script": "XiphosKanto_EventScript_AGENT_F",
+          "trainer": "TRAINER_XIPHOS_AGENT_F",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -1005,6 +1010,11 @@
           "script": "BriskKanto_CeruleanCity_Frlg_12",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "13": {
+          "script": "XiphosKanto_EventScript_AGENT_D",
+          "trainer": "TRAINER_XIPHOS_AGENT_D",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -2705,6 +2715,11 @@
           "script": "BriskKanto_LavenderTown_Frlg_3",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "4": {
+          "script": "XiphosKanto_EventScript_AGENT_G",
+          "trainer": "TRAINER_XIPHOS_AGENT_G",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -3340,6 +3355,11 @@
           "script": "BriskKanto_MtMoon_1F_Frlg_14",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "15": {
+          "script": "XiphosKanto_EventScript_AGENT_C",
+          "trainer": "TRAINER_XIPHOS_AGENT_C",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -4020,6 +4040,11 @@
           "script": "BriskKanto_PewterCity_Frlg_7",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "8": {
+          "script": "XiphosKanto_EventScript_AGENT_B",
+          "trainer": "TRAINER_XIPHOS_AGENT_B",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -7661,6 +7686,11 @@
           "script": "BriskKanto_SaffronCity_Frlg_15",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "16": {
+          "script": "XiphosKanto_EventScript_SCIENTIST_A",
+          "trainer": "TRAINER_XIPHOS_SCIENTIST_A",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -10433,6 +10463,11 @@
           "script": "BriskKanto_VermilionCity_Frlg_8",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "9": {
+          "script": "XiphosKanto_EventScript_AGENT_E",
+          "trainer": "TRAINER_XIPHOS_AGENT_E",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
@@ -10906,6 +10941,11 @@
           "script": "BriskKanto_ViridianCity_Frlg_9",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "10": {
+          "script": "XiphosKanto_EventScript_AGENT_A",
+          "trainer": "TRAINER_XIPHOS_AGENT_A",
+          "trainer_type": "TRAINER_TYPE_NORMAL"
         }
       },
       "signs": {
