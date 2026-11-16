@@ -2977,4 +2977,94 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Sound moves deal double damage."),
         .aiRating = 8,
     },
+    [ABILITY_HERCULES] =
+    {
+        .name = _("Hercules"),
+        .description = COMPOUND_STRING("Moves hit Normal, Ice, Rock, Dark and Steel super effectively."),
+        .aiRating = 8,
+    },
+    [ABILITY_CRETAN] =
+    {
+        .name = _("Cretan"),
+        .description = COMPOUND_STRING("Doubles Attack; Water hits always confuse."),
+        .aiRating = 8,
+    },
+    [ABILITY_JADE_BLESSING] =
+    {
+        .name = _("Jade Blessing"),
+        .description = COMPOUND_STRING("7.5% chance each turn to sharply raise a random stat."),
+        .aiRating = 8,
+    },
+    [ABILITY_WE_WILL_ROCK_YOU] =
+    {
+        .name = _("We Will Rock You"),
+        .description = COMPOUND_STRING("Immune to Ground and Electric attacks."),
+        .aiRating = 8,
+    },
+    [ABILITY_THATS_GROSS] =
+    {
+        .name = _("That's Gross"),
+        .description = COMPOUND_STRING("Water hits raise Speed by two stages."),
+        .aiRating = 8,
+    },
+    [ABILITY_PLASMA_DISCHARGE] =
+    {
+        .name = _("Plasma Discharge"),
+        .description = COMPOUND_STRING("Electric attacks become Water if Water is super effective."),
+        .aiRating = 8,
+    },
+    [ABILITY_ADRENALINE_RAGE] =
+    {
+        .name = _("Adrenaline Rage"),
+        .description = COMPOUND_STRING("Fire hits raise Sp. Atk by two stages."),
+        .aiRating = 8,
+    },
+    [ABILITY_EXTINCTION_EVENT] =
+    {
+        .name = _("Extinction Event"),
+        .description = COMPOUND_STRING("Super effective against Monster, Bug and Dragon egg groups."),
+        .aiRating = 8,
+    },
+    [ABILITY_CHITIN] =
+    {
+        .name = _("Chitin"),
+        .description = COMPOUND_STRING("Doubles Defense and Sp. Def."),
+        .aiRating = 8,
+    },
+    [ABILITY_SEA_HUNTER] =
+    {
+        .name = _("Sea Hunter"),
+        .description = COMPOUND_STRING("Hitting Water foes restores 1/6 max HP."),
+        .aiRating = 8,
+    },
+    [ABILITY_NERVE_TICKLE] =
+    {
+        .name = _("Nerve Tickle"),
+        .description = COMPOUND_STRING("Immune to Fighting attacks."),
+        .aiRating = 8,
+    },
+    [ABILITY_COLD_AS_ICE] =
+    {
+        .name = _("Cold as Ice"),
+        .description = COMPOUND_STRING("Attract ignores gender; 2x singles damage; Ice 1.15x."),
+        .aiRating = 8,
+    },
+    [ABILITY_ELECTRIC_SLIDE] =
+    {
+        .name = _("Electric Slide"),
+        .description = COMPOUND_STRING("Normal becomes Electric; Attract ignores gender; Electric 1.15x."),
+        .aiRating = 8,
+    },
+    [ABILITY_BURNING_LOVE] =
+    {
+        .name = _("Burning Love"),
+        .description = COMPOUND_STRING("Contact burns foes; Attract ignores gender; Fire 1.15x."),
+        .aiRating = 8,
+    },
+    [ABILITY_LONELY_BOY] =
+    {
+        .name = _("Lonely Boy"),
+        .description = COMPOUND_STRING("Immune to Attract and spread moves; 1.5x singles damage."),
+        .aiRating = 8,
+    },
 };
