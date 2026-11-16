@@ -68,7 +68,7 @@ introduced, their individual five-team sets must be added and verified.
 
 ## Five-mode roster matrix — planning targets, not yet inserted in game
 
-Every roster is postgame, with optimized legal moves/items/EVs and deliberate overlapping counters. Levels progress across Kanto, generally Easy 90–94, Normal 93–96, Hard 95–98, Expert 97–100, Kaizo 98–100. Jessie is Lv100 on every mode. Species listed in lead-to-ace order, but actual battle leads and doubles strategies should be authored.
+Every roster is postgame, with optimized legal moves/items/EVs and deliberate overlapping counters. Levels progress across Kanto, generally Easy 90–94, Normal 93–96, Hard 95–98, Expert 97–100, Kaizo 98–100. Jessie is Lv100 on every mode. Their current playable five-mode team opens with Aegislash and Archaludon, includes Iron Valiant, and closes with Magearna holding Magearnite. The matrix is a historical planning reference rather than the current live roster.
 
 | Trainer archetype | Easy | Normal | Hard | Expert | Kaizo |
 |---|---|---|---|---|---|
