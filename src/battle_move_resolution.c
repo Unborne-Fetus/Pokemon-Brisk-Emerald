@@ -267,7 +267,9 @@ static enum CancelerResult CancelerPowerPoints(struct BattleCalcValues *cv)
 
 static enum CancelerResult CancelerTruant(struct BattleCalcValues *cv)
 {
-    if (GetBattlerAbility(cv->battlerAtk) == ABILITY_TRUANT && gBattleMons[cv->battlerAtk].volatiles.truantCounter)
+    if ((GetBattlerAbility(cv->battlerAtk) == ABILITY_TRUANT
+      || GetBattlerAbility(cv->battlerAtk) == ABILITY_FLIPPING_POLES)
+     && gBattleMons[cv->battlerAtk].volatiles.truantCounter)
     {
         CancelMultiTurnMoves(cv->battlerAtk);
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LOAFING;
@@ -399,6 +401,22 @@ static enum CancelerResult CancelerImprisoned(struct BattleCalcValues *cv)
 static enum CancelerResult CancelerConfused(struct BattleCalcValues *cv)
 {
     struct Volatiles *vol = &gBattleMons[cv->battlerAtk].volatiles;
+    bool32 hypnoPresent = FALSE;
+
+    // Hypnosis grants confusion only while an opposing user is on the field.
+    for (enum BattlerId foe = 0; foe < gBattlersCount; foe++)
+    {
+        if (IsBattlerAlive(foe) && !IsBattlerAlly(cv->battlerAtk, foe)
+         && GetBattlerAbility(foe) == ABILITY_HYPNOSIS)
+        {
+            hypnoPresent = TRUE;
+            break;
+        }
+    }
+    if (hypnoPresent && vol->confusionTimer == 0)
+        vol->confusionTimer = PERMANENT_VOLATILE;
+    else if (!hypnoPresent && vol->confusionTimer == PERMANENT_VOLATILE)
+        vol->confusionTimer = 0;
 
     if (vol->confusionTimer)
     {
@@ -472,9 +490,24 @@ static enum CancelerResult CancelerParalyzed(struct BattleCalcValues *cv)
 
 static enum CancelerResult CancelerInfatuation(struct BattleCalcValues *cv)
 {
+    enum BattlerId charmSource = MAX_BATTLERS_COUNT;
     if (gBattleMons[cv->battlerAtk].volatiles.infatuation)
+        charmSource = gBattleMons[cv->battlerAtk].volatiles.infatuation - 1;
+    else
     {
-        gBattleScripting.battler = gBattleMons[cv->battlerAtk].volatiles.infatuation - 1;
+        for (enum BattlerId foe = 0; foe < gBattlersCount; foe++)
+        {
+            if (IsBattlerAlive(foe) && !IsBattlerAlly(cv->battlerAtk, foe)
+             && GetBattlerAbility(foe) == ABILITY_HEY_DAD)
+            {
+                charmSource = foe;
+                break;
+            }
+        }
+    }
+    if (charmSource < gBattlersCount)
+    {
+        gBattleScripting.battler = charmSource;
         if (!RandomPercentage(RNG_INFATUATION, 50))
         {
             BattleScriptCall(BattleScript_MoveUsedIsInLove);

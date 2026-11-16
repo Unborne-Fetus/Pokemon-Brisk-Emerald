@@ -4508,10 +4508,15 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
     speed *= gStatStageRatios[speedStage][0];
     speed /= gStatStageRatios[speedStage][1];
 
+    if (ability == ABILITY_MISSING_RIDER && !IsDoubleBattle())
+        speed *= 2;
+
     // weather abilities
     if (ability == ABILITY_SWIFT_SWIM       && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && weather  & B_WEATHER_RAIN)
         speed *= 2;
     else if (ability == ABILITY_CHLOROPHYLL && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && weather  & B_WEATHER_SUN)
+        speed *= 2;
+    else if (ability == ABILITY_LONG_LEGS && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && weather & B_WEATHER_RAIN)
         speed *= 2;
     else if (ability == ABILITY_SAND_RUSH   && weather & B_WEATHER_SANDSTORM)
         speed *= 2;
@@ -5989,6 +5994,15 @@ void SetTypeBeforeUsingMove(enum Move move, enum BattlerId battler, enum Ability
     if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_NORMAL)
      || gBattleMons[battler].volatiles.electrified)
         gBattleStruct->dynamicMoveType = TYPE_ELECTRIC;
+
+    // Wastewater makes some Poison hits Water-type against Ground targets.
+    if (ability == ABILITY_WASTEWATER && GetMoveType(move) == TYPE_POISON
+     && !IsBattleMoveStatus(move)
+     && gBattleStruct->moveTarget[battler] < gBattlersCount
+     && IsBattlerAlive(gBattleStruct->moveTarget[battler])
+     && IS_BATTLER_OF_TYPE(gBattleStruct->moveTarget[battler], TYPE_GROUND)
+     && RandomPercentage(RNG_POISON_POINT, 50))
+        gBattleStruct->dynamicMoveType = TYPE_WATER;
 
     // Psychic Powers converts damaging Normal attacks into Psychic attacks.
     if (ability == ABILITY_PSYCHIC_POWERS && GetMoveType(move) == TYPE_NORMAL && !IsBattleMoveStatus(move))

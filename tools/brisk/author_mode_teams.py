@@ -69,6 +69,7 @@ def info(sp):
     abilities = re.search(r'\.abilities\s*=\s*\{([^}]+)', raw)
     abilities = re.findall(r'ABILITY_\w+', abilities[1]) if abilities else []
     abilities = [a for a in abilities if a != 'ABILITY_NONE']
+    abilities += sorted(legality.LEGACY_SIGNATURE_ABILITIES.get(sp, set()))
     return dict(stats=stats, types=types, abilities=abilities,
         minimum=max(legality.minimum_level(sp), SETS.get(sp, {}).get('minimum', POLICY['species'].get(sp, {}).get('minimum_level',1))))
 

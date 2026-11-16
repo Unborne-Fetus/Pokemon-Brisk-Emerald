@@ -38,7 +38,7 @@ def audit():
                 if lv<rules.minimum_level(sp):errors.append(key+f': level {lv} is below evolution minimum {rules.minimum_level(sp)}')
                 data=rules.SPECIES[rules.canonical(sp)]
                 ability=re.search(r'^Ability:\s*(.+)',block,re.M)
-                if ability and normalize(ability[1],'ABILITY_') not in data['abilities']:errors.append(key+': incompatible ability '+ability[1])
+                if ability and normalize(ability[1],'ABILITY_') not in rules.allowed_abilities(sp):errors.append(key+': incompatible ability '+ability[1])
                 moves=[rules.canonical_move(normalize(m,'MOVE_')) for m in re.findall(r'^-\s*(.+)',block,re.M)]
                 if not moves:
                     moves=list(dict.fromkeys(move for learn_level,move in data['level_moves'] if learn_level<=lv))[-4:]
