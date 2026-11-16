@@ -17,6 +17,37 @@ MOVE_ALIASES=SNAPSHOT.get('move_aliases',{})
 def canonical(sp):return ALIASES.get(sp,sp)
 def canonical_move(move):return MOVE_ALIASES.get(move,move)
 
+# Preserve the original hidden abilities on already-authored trainer teams.
+# Those fixed teams are grandfathered; newly encountered wild Pokemon use
+# their replacement signature hidden abilities defined in species_info.
+LEGACY_SIGNATURE_ABILITIES = {
+    "SPECIES_ALAKAZAM": {"ABILITY_MAGIC_GUARD"},
+    "SPECIES_MACHAMP": {"ABILITY_STEADFAST"},
+    "SPECIES_VICTREEBEL": {"ABILITY_GLUTTONY"},
+    "SPECIES_GOLEM": {"ABILITY_SAND_VEIL"},
+    "SPECIES_RAPIDASH": {"ABILITY_FLAME_BODY"},
+    "SPECIES_SLOWBRO": {"ABILITY_REGENERATOR"},
+    "SPECIES_DODRIO": {"ABILITY_TANGLED_FEET"},
+    "SPECIES_DEWGONG": {"ABILITY_ICE_BODY"},
+    "SPECIES_MUK": {"ABILITY_MERCILESS"},
+    "SPECIES_CLOYSTER": {"ABILITY_OVERCOAT"},
+    "SPECIES_HYPNO": {"ABILITY_INNER_FOCUS"},
+    "SPECIES_KINGLER": {"ABILITY_SHEER_FORCE"},
+    "SPECIES_ELECTRODE": {"ABILITY_AFTERMATH"},
+    "SPECIES_EXEGGUTOR": {"ABILITY_HARVEST"},
+    "SPECIES_HITMONLEE": {"ABILITY_UNBURDEN"},
+    "SPECIES_HITMONCHAN": {"ABILITY_INNER_FOCUS"},
+    "SPECIES_KANGASKHAN": {"ABILITY_INNER_FOCUS"},
+    "SPECIES_STARMIE": {"ABILITY_ANALYTIC"},
+    "SPECIES_MR_MIME": {"ABILITY_TECHNICIAN"},
+    "SPECIES_JYNX": {"ABILITY_DRY_SKIN"},
+}
+
+def allowed_abilities(sp):
+    canonical_sp = canonical(sp)
+    return set(SPECIES[canonical_sp]["abilities"]) | LEGACY_SIGNATURE_ABILITIES.get(canonical_sp, set())
+
+
 PARENTS={sp:[] for sp in SPECIES}
 EDGES=[]
 for source,data in SPECIES.items():
