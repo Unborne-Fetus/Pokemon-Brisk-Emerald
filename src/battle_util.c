@@ -11081,6 +11081,14 @@ bool32 CanMoveSkipAccuracyCalc(struct BattleCalcValues *cv, u32 weather, enum Re
     {
         effect = TRUE;
     }
+    else if (cv->abilities[battlerAtk] == ABILITY_LARGE_EYES
+          && gBattleMons[battlerDef].volatiles.semiInvulnerable != STATE_COMMANDER
+          && !shouldAvoidSkyDropBattlers)
+    {
+        effect = TRUE;
+        ability = ABILITY_LARGE_EYES;
+        abilityBattler = battlerAtk;
+    }
     else if (cv->abilities[battlerAtk] == ABILITY_NO_GUARD
           && gBattleMons[battlerDef].volatiles.semiInvulnerable != STATE_COMMANDER
           && !shouldAvoidSkyDropBattlers)
@@ -11273,6 +11281,23 @@ u32 GetTotalAccuracy(struct BattleCalcValues *cv, u32 weather)
 
     if (weather & B_WEATHER_FOG)
         calc = (calc * 60) / 100; // modified by 3/5
+
+    if (cv->abilities[battlerDef] == ABILITY_LARGE_EYES)
+        calc = (calc * 95) / 100;
+
+    if (cv->abilities[battlerAtk] == ABILITY_BRUCE_FORCE && !IsBattleMoveStatus(cv->move))
+    {
+        enum Type types[3];
+        uq4_12_t eff = UQ_4_12(1.0);
+        GetBattlerTypes(battlerDef, FALSE, types);
+        eff = uq4_12_multiply(eff, GetTypeModifier(GetBattleMoveType(cv->move), types[0]));
+        if (types[1] != types[0])
+            eff = uq4_12_multiply(eff, GetTypeModifier(GetBattleMoveType(cv->move), types[1]));
+        if (types[2] != TYPE_MYSTERY && types[2] != types[0] && types[2] != types[1])
+            eff = uq4_12_multiply(eff, GetTypeModifier(GetBattleMoveType(cv->move), types[2]));
+        if (eff > UQ_4_12(1.0))
+            calc /= 2;
+    }
 
     return calc;
 }
