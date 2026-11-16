@@ -169,8 +169,8 @@ SINGLE_BATTLE_TEST("Brisk signature Electric Slide turns Normal moves into Elect
 SINGLE_BATTLE_TEST("Brisk signature bird Attract succeeds even with genderless targets")
 {
     GIVEN {
-        PLAYER(SPECIES_ARTICUNO) { Ability(ABILITY_COLD_AS_ICE); Gender(MON_GENDERLESS); }
-        OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_GENDERLESS); }
+        PLAYER(SPECIES_ARTICUNO) { Ability(ABILITY_COLD_AS_ICE); }
+        OPPONENT(SPECIES_MAGNEMITE) { MaxHP(900); HP(900); }
     } WHEN { TURN { MOVE(player, MOVE_ATTRACT); } }
     THEN { EXPECT(opponent->volatiles.infatuation); }
 }
