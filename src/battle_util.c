@@ -89,6 +89,8 @@ static bool32 BriskBoostFiveStats(enum BattlerId battler, s8 stages)
     return changed;
 }
 
+static const enum Type sBriskSedimentaryTypes[] = { TYPE_FIRE, TYPE_GRASS, TYPE_STEEL };
+
 // Brisk catalogue: damaging moves that explicitly use the tail.
 static bool32 IsBriskTailMove(enum Move move)
 {
@@ -3181,6 +3183,31 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         gBattleScripting.battler = battler;
         switch (gLastUsedAbility)
         {
+        case ABILITY_SEDIMENTARY_BUILDUP:
+            if (shouldAbilityTrigger)
+            {
+                gBattleMons[battler].types[2] = sBriskSedimentaryTypes[RandomUniform(RNG_MOODY_INCREASE, 0, 2)];
+                gBattlerAbility = battler;
+                BattleScriptCall(BattleScript_AbilityPopUp);
+                effect++;
+            }
+            break;
+        case ABILITY_HYPNOSIS:
+            if (shouldAbilityTrigger)
+            {
+                for (enum BattlerId foe = 0; foe < gBattlersCount; foe++)
+                {
+                    if (IsBattlerAlive(foe) && !IsBattlerAlly(battler, foe))
+                    {
+                        gBattleMons[foe].statStages[STAT_ATK] = min(MAX_STAT_STAGE, gBattleMons[foe].statStages[STAT_ATK] + 1);
+                        gBattleMons[foe].statStages[STAT_SPATK] = min(MAX_STAT_STAGE, gBattleMons[foe].statStages[STAT_SPATK] + 1);
+                    }
+                }
+                gBattlerAbility = battler;
+                BattleScriptCall(BattleScript_AbilityPopUp);
+                effect++;
+            }
+            break;
         case ABILITY_QUEENS_GAMBIT:
             if (shouldAbilityTrigger
              && !gBattleMons[battler].volatiles.queensGambitUsed
@@ -3835,6 +3862,30 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             gBattlerAttacker = battler;
             switch (gLastUsedAbility)
             {
+            case ABILITY_SEDIMENTARY_BUILDUP:
+            {
+                u32 index = RandomUniform(RNG_MOODY_INCREASE, 0, 2);
+                enum Type next = sBriskSedimentaryTypes[index];
+                if (next == gBattleMons[battler].types[2])
+                    next = sBriskSedimentaryTypes[(index + 1) % 3];
+                gBattleMons[battler].types[2] = next;
+                gBattlerAbility = battler;
+                BattleScriptCall(BattleScript_AbilityPopUp);
+                effect++;
+                break;
+            }
+            case ABILITY_FLIPPING_POLES:
+                gBattleMons[battler].volatiles.truantCounter ^= 1;
+                break;
+            case ABILITY_MOTHERLY_LOVE:
+                if (gBattleMons[battler].volatiles.motherlyLoveTurns > 0
+                 && --gBattleMons[battler].volatiles.motherlyLoveTurns == 0)
+                {
+                    gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
+                    gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
+                    gBattleMons[battler].types[2] = TYPE_MYSTERY;
+                }
+                break;
             case ABILITY_PICKUP:
                 if (gBattleMons[battler].item == ITEM_NONE
                  && PickupHasValidTarget(battler))
