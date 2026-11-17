@@ -52,15 +52,16 @@ rival_stages = {
 jessie_source = get("src/data/brisk_xiphos_extended_teams.h")
 jessie_species = set()
 for mode in ("Normal", "Easy", "Hard", "Expert", "Kaizo"):
-    jessie = re.search(
-        rf"const struct TrainerMon sXiphosJessie{mode}\\[PARTY_SIZE\\] = \\{{(.*?)\\n\\}};",
-        jessie_source, re.S)
-    assert jessie, ("Jessie missing", mode)
-    jessie_species.update(re.findall(r"\\.species=(SPECIES_[A-Z0-9_]+)", jessie.group(1)))
+    start_marker = f"const struct TrainerMon sXiphosJessie{mode}[PARTY_SIZE] = " + "{"
+    assert start_marker in jessie_source, ("Jessie missing", mode)
+    begin = jessie_source.index(start_marker)
+    end = jessie_source.index("\n};", begin)
+    jessie_body = jessie_source[begin:end]
+    jessie_species.update(re.findall(r"[.]species=(SPECIES_[A-Z0-9_]+)", jessie_body))
 for stage, species in rival_stages.items():
     roster = dict(teams)["sKantoRival_" + stage]
     roster_species = tuple(x.removeprefix("SPECIES_")
-                           for x in re.findall(r"\\.species=(SPECIES_[A-Z0-9_]+)", roster))
+                           for x in re.findall(r"[.]species=(SPECIES_[A-Z0-9_]+)", roster))
     assert roster_species == species, (stage, roster_species)
     assert not {"SPECIES_" + x for x in species} & jessie_species, (stage, "Jessie overlap")
     assert "SPECIES_METAGROSS" in {"SPECIES_" + x for x in species}
