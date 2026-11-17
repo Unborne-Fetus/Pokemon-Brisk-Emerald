@@ -13,6 +13,7 @@ static bool32 BriskLoadKantoRivalParty(struct Pokemon *party, u16 trainerNum)
     struct Trainer trainer;
     u32 mode = GetBriskDifficulty();
     u8 level;
+    u8 bonus = 0;
     u32 i;
     bool32 finalRound = FALSE, isWally = FALSE;
     switch (trainerNum)
@@ -20,27 +21,25 @@ static bool32 BriskLoadKantoRivalParty(struct Pokemon *party, u16 trainerNum)
     case TRAINER_KANTO_MAY_ROUTE22:
     case TRAINER_KANTO_BRENDAN_ROUTE22: source = sKantoRival_RIVAL_ROUTE22; break;
     case TRAINER_KANTO_MAY_SS_ANNE:
-    case TRAINER_KANTO_BRENDAN_SS_ANNE: source = sKantoRival_RIVAL_SS_ANNE; break;
+    case TRAINER_KANTO_BRENDAN_SS_ANNE: source = sKantoRival_RIVAL_SS_ANNE; bonus = 2; break;
     case TRAINER_KANTO_MAY_SILPH:
-    case TRAINER_KANTO_BRENDAN_SILPH: source = sKantoRival_RIVAL_SILPH; break;
+    case TRAINER_KANTO_BRENDAN_SILPH: source = sKantoRival_RIVAL_SILPH; bonus = 4; break;
     case TRAINER_KANTO_MAY_ROUTE22_LATE:
-    case TRAINER_KANTO_BRENDAN_ROUTE22_LATE: source = sKantoRival_RIVAL_ROUTE22_LATE; break;
+    case TRAINER_KANTO_BRENDAN_ROUTE22_LATE: source = sKantoRival_RIVAL_ROUTE22_LATE; bonus = 5; break;
     case TRAINER_KANTO_MAY_CHAMPION:
-    case TRAINER_KANTO_BRENDAN_CHAMPION: source = sKantoRival_RIVAL_CHAMPION; finalRound = TRUE; break;
+    case TRAINER_KANTO_BRENDAN_CHAMPION: source = sKantoRival_RIVAL_CHAMPION; finalRound = TRUE; bonus = 6; break;
     case TRAINER_KANTO_MAY_CHAMPION_REMATCH:
-    case TRAINER_KANTO_BRENDAN_CHAMPION_REMATCH: source = sKantoRival_RIVAL_CHAMPION_REMATCH; finalRound = TRUE; break;
-    case TRAINER_KANTO_WALLY_CERULEAN: source = sKantoRival_WALLY_CERULEAN; isWally = TRUE; break;
-    case TRAINER_KANTO_WALLY_LAVENDER: source = sKantoRival_WALLY_LAVENDER; isWally = TRUE; break;
-    case TRAINER_KANTO_WALLY_VICTORY_ROAD: source = sKantoRival_WALLY_VICTORY; isWally = TRUE; finalRound = TRUE; break;
+    case TRAINER_KANTO_BRENDAN_CHAMPION_REMATCH: source = sKantoRival_RIVAL_CHAMPION_REMATCH; finalRound = TRUE; bonus = 6; break;
+    case TRAINER_KANTO_WALLY_CERULEAN: source = sKantoRival_WALLY_CERULEAN; isWally = TRUE; bonus = 1; break;
+    case TRAINER_KANTO_WALLY_LAVENDER: source = sKantoRival_WALLY_LAVENDER; isWally = TRUE; bonus = 3; break;
+    case TRAINER_KANTO_WALLY_VICTORY_ROAD: source = sKantoRival_WALLY_VICTORY; isWally = TRUE; finalRound = TRUE; bonus = 5; break;
     default: return FALSE;
     }
     // Mode IDs are Normal=0 Easy=1 Hard=2 Kaizo=3 Expert=4.
     static const u8 levels[] = {94, 90, 97, 100, 99};
     if (mode >= ARRAY_COUNT(levels))
         mode = BRISK_MODE_NORMAL;
-    level = levels[mode];
-    if (finalRound && level < 96)
-        level = 96;
+    level = min(100, levels[mode] + bonus);
     memcpy(mons, source, sizeof(mons));
     for (i = 0; i < PARTY_SIZE; i++)
     {
