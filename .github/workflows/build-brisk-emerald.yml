@@ -63,6 +63,9 @@ jobs:
           python3 tools/brisk/check_item_distribution.py
           python3 tools/brisk/check_custom_mega_stones.py
 
+      - name: Audit May and Brendan's Hoenn-to-Kanto team progression
+        run: python3 tools/brisk/check_hoenn_rivals.py
+
       - name: Audit Kanto postgame teams, dialogue, and legendary relocations
         run: python3 tools/brisk/check_kanto_postgame.py
       - name: Audit Orange Islands to Kanto passage
