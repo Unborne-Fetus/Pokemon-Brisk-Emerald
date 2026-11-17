@@ -8905,7 +8905,7 @@
     "SilphCo_7F_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SilphCo_7F_Frlg_1",
+          "script": "BriskKantoRival_EventScript_Silph",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         },
@@ -8974,7 +8974,8 @@
         "11": "BriskKanto_SilphCo_7F_Frlg_Sign_11",
         "12": "BriskKanto_SilphCo_7F_Frlg_Sign_12",
         "14": "BriskKanto_SilphCo_7F_Frlg_Sign_14"
-      }
+      },
+      "map_scripts": "BriskKantoRival_GfxMapScripts"
     },
     "SilphCo_8F_Frlg": {
       "objects": {
