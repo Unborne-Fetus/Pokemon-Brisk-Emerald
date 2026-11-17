@@ -1,5 +1,7 @@
 # Kanto's visiting Hoenn rivals
 
+Their original Hoenn battles are now developed into the same team identity; see [the Hoenn rival progression](hoenn-rivals.md).
+
 The FireRed/LeafGreen Blue, Oak and Rocket plot scenes remain **disabled**. In their place, the Hoenn rival (May for a male player, Brendan for a female player) and Wally offer high-level, **talk-to-battle** challenges. They do not demand badges, reset Hoenn rival story flags, force map cutscenes, or interfere with Team Xiphos. The Champion encounter is located after Lance, but the original Oak/Blue ending does not play.
 
 ## Encounters
