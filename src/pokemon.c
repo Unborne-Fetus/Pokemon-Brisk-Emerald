@@ -3407,7 +3407,7 @@ bool32 SpeciesHasEggMove(enum Species species, enum Move move)
 
 const struct Evolution *GetSpeciesEvolutions(enum Species species)
 {
-    const struct Evolution *evolutions = gSpeciesInfo[BriskTraitSpecies(species, 5)].evolutions;
+    const struct Evolution *evolutions = gSpeciesInfo[SanitizeSpeciesId(species)].evolutions;
     if (evolutions == NULL)
         return gSpeciesInfo[SPECIES_NONE].evolutions;
     return evolutions;
@@ -4686,6 +4686,11 @@ enum Species GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode m
         }
         break;
     }
+
+    // Randomize only the destination after this species' real evolution
+    // conditions pass. Borrowing a donor's table lets unrelated Pokemon
+    // evolve into the same species (for example, Floragato) via Exp. Candy.
+    targetSpecies = BriskRandomEvolutionTarget(species, targetSpecies);
 
     // Pikachu, Meowth, Eevee and Duraludon cannot evolve if they have the
     // Gigantamax Factor. We assume that is because their evolutions
