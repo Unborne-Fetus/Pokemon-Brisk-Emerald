@@ -64,6 +64,12 @@ static bool32 BriskLoadKantoRivalParty(struct Pokemon *party, u16 trainerNum)
     trainer = *GetTrainerStructFromId(trainerNum);
     trainer.party = mons;
     trainer.partySize = PARTY_SIZE;
+    trainer.trainerClass = finalRound && !isWally ? TRAINER_CLASS_CHAMPION : TRAINER_CLASS_RIVAL;
+    trainer.trainerPic = GetTrainerPicFromId(trainerNum);
+    trainer.gender = trainer.trainerPic == TRAINER_PIC_MAY ? TRAINER_GENDER_FEMALE : TRAINER_GENDER_MALE;
+    StringCopy(trainer.trainerName, GetTrainerNameFromId(trainerNum));
+    if (mode != BRISK_MODE_EASY)
+        trainer.aiFlags |= AI_FLAG_BASIC_TRAINER | AI_FLAG_SMART_SWITCHING | AI_FLAG_HP_AWARE | AI_FLAG_TRY_TO_2HKO;
     trainer.authoredParty = TRUE;
     CreateNPCTrainerPartyFromTrainer(party, &trainer);
     return TRUE;
