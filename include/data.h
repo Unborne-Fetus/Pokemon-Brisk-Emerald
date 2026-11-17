@@ -334,6 +334,9 @@ static inline const u8 *GetTrainerClassNameFromId(u16 trainerId)
 
 static inline const u8 *GetTrainerNameFromId(u16 trainerId)
 {
+    static const u8 sKantoMayName[] = _("MAY");
+    static const u8 sKantoBrendanName[] = _("BRENDAN");
+    static const u8 sKantoWallyName[] = _("WALLY");
     if (!gIsDebugBattle)
     {
         switch (trainerId)
@@ -343,16 +346,16 @@ static inline const u8 *GetTrainerNameFromId(u16 trainerId)
         case TRAINER_KANTO_MAY_SILPH:
         case TRAINER_KANTO_MAY_SS_ANNE:
         case TRAINER_KANTO_MAY_CHAMPION:
-        case TRAINER_KANTO_MAY_CHAMPION_REMATCH: return _("MAY");
+        case TRAINER_KANTO_MAY_CHAMPION_REMATCH: return sKantoMayName;
         case TRAINER_KANTO_BRENDAN_ROUTE22:
         case TRAINER_KANTO_BRENDAN_ROUTE22_LATE:
         case TRAINER_KANTO_BRENDAN_SILPH:
         case TRAINER_KANTO_BRENDAN_SS_ANNE:
         case TRAINER_KANTO_BRENDAN_CHAMPION:
-        case TRAINER_KANTO_BRENDAN_CHAMPION_REMATCH: return _("BRENDAN");
+        case TRAINER_KANTO_BRENDAN_CHAMPION_REMATCH: return sKantoBrendanName;
         case TRAINER_KANTO_WALLY_CERULEAN:
         case TRAINER_KANTO_WALLY_LAVENDER:
-        case TRAINER_KANTO_WALLY_VICTORY_ROAD: return _("WALLY");
+        case TRAINER_KANTO_WALLY_VICTORY_ROAD: return sKantoWallyName;
         }
     }
     if (trainerId == TRAINER_HOODED_FIGURE && !gIsDebugBattle)
