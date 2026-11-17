@@ -114,74 +114,74 @@ BriskKantoRival_EventScript_WallyAfter::
     end
 
 BriskKantoRival_Text_EarlyMay:
-    .string "MAY: You found KANTO, too!\\n"
+    .string "MAY: You found KANTO, too!\n"
     .string "Ready for another battle?$"
 BriskKantoRival_Text_EarlyBrendan:
-    .string "BRENDAN: Let's see how your\\n"
+    .string "BRENDAN: Let's see how your\n"
     .string "team handles KANTO!$"
 BriskKantoRival_Text_SSAnneMay:
-    .string "MAY: New region, new teams!\\n"
+    .string "MAY: New region, new teams!\n"
     .string "Try to keep up!$"
 BriskKantoRival_Text_SSAnneBrendan:
-    .string "BRENDAN: I have been training\\n"
+    .string "BRENDAN: I have been training\n"
     .string "for this rematch!$"
 BriskKantoRival_Text_LateMay:
-    .string "MAY: I've kept training!\\n"
+    .string "MAY: I've kept training!\n"
     .string "How far have you come?$"
 BriskKantoRival_Text_LateBrendan:
-    .string "BRENDAN: Back for another\\n"
+    .string "BRENDAN: Back for another\n"
     .string "round? I am ready!$"
 BriskKantoRival_Text_ChampionMay:
-    .string "MAY: One last challenge.\\n"
+    .string "MAY: One last challenge.\n"
     .string "Let's battle, Champion!$"
 BriskKantoRival_Text_ChampionBrendan:
-    .string "BRENDAN: This is the top.\\n"
+    .string "BRENDAN: This is the top.\n"
     .string "Show me everything!$"
 BriskKantoRival_Text_RematchMay:
-    .string "MAY: I've improved my team.\\n"
+    .string "MAY: I've improved my team.\n"
     .string "Here's our rematch!$"
 BriskKantoRival_Text_RematchBrendan:
-    .string "BRENDAN: Time for a tougher\\n"
+    .string "BRENDAN: Time for a tougher\n"
     .string "rematch!$"
 BriskKantoRival_Text_RivalDefeated:
     .string "You keep getting stronger!$"
 BriskKantoRival_Text_ChampionDefeated:
     .string "You truly are the Champion!$"
 BriskKantoRival_Text_AfterEarly:
-    .string "KANTO is full of challenges.\\n"
+    .string "KANTO is full of challenges.\n"
     .string "I'll see you on the road!$"
 BriskKantoRival_Text_AfterSSAnne:
-    .string "There is so much more to\\n"
+    .string "There is so much more to\n"
     .string "explore here!$"
 BriskKantoRival_Text_AfterLate:
-    .string "You've earned your place at\\n"
+    .string "You've earned your place at\n"
     .string "the LEAGUE.$"
 BriskKantoRival_Text_AfterChampion:
-    .string "Great battle! The path to\\n"
+    .string "Great battle! The path to\n"
     .string "the HALL OF FAME is open.$"
 BriskKantoRival_Text_RivalAfter:
-    .string "Keep exploring KANTO.\\n"
+    .string "Keep exploring KANTO.\n"
     .string "Our journey isn't over.$"
 BriskKantoRival_Text_WallyCerulean:
-    .string "WALLY: The air here feels\\n"
+    .string "WALLY: The air here feels\n"
     .string "fresh! Want to battle?$"
 BriskKantoRival_Text_WallyLavender:
-    .string "WALLY: I trained every day.\\n"
+    .string "WALLY: I trained every day.\n"
     .string "Please battle with me!$"
 BriskKantoRival_Text_WallyVictory:
-    .string "WALLY: This is my best team.\\n"
+    .string "WALLY: This is my best team.\n"
     .string "I won't hold back!$"
 BriskKantoRival_Text_WallyDefeated:
     .string "I still have so much to learn!$"
 BriskKantoRival_Text_WallyCeruleanAfter:
-    .string "Thanks! I'll keep exploring\\n"
+    .string "Thanks! I'll keep exploring\n"
     .string "and training around KANTO.$"
 BriskKantoRival_Text_WallyLavenderAfter:
-    .string "I think I'm getting better\\n"
+    .string "I think I'm getting better\n"
     .string "each time we battle!$"
 BriskKantoRival_Text_WallyVictoryAfter:
-    .string "That was a great battle!\\n"
+    .string "That was a great battle!\n"
     .string "Good luck at the LEAGUE.$"
 BriskKantoRival_Text_WallyAfter:
-    .string "Thank you! I'll keep on\\n"
+    .string "Thank you! I'll keep on\n"
     .string "training.$"
