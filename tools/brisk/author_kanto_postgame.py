@@ -276,7 +276,7 @@ def author_dialogue(metadata):
             out.append(prefix+'_MapScripts::\n\tmap_script MAP_SCRIPT_ON_LOAD, '+prefix+'_OnLoad\n\t.byte 0\n\n'+prefix+'_OnLoad::\n'+''.join('\t'+g+'\n' for g in geometry)+'\tend\n\n')
         # Gender-switched Hoenn rival graphics must be initialized before
         # object events spawn. The Champion room retains the open door.
-        if name in ('Route22_Frlg', 'SSAnne_2F_Corridor_Frlg'):
+        if name in ('Route22_Frlg', 'SSAnne_2F_Corridor_Frlg', 'SilphCo_7F_Frlg'):
             entry['map_scripts'] = 'BriskKantoRival_GfxMapScripts'
         elif name == 'PokemonLeague_ChampionsRoom_Frlg':
             entry['map_scripts'] = 'BriskKantoRival_ChampionGfxMapScripts'
