@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_KANTO_CHAMPIONS_ROOM_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 6,
       "y": 8,
       "elevation": 3,
@@ -25,7 +25,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "BriskKantoRival_EventScript_Champion",
       "flag": "0"
     },
     {
