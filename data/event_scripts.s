@@ -1820,3 +1820,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/xiphos_jessie_outfit.inc"
 
 	.include "data/scripts/xiphos_kanto.inc"
+
+	.include "data/scripts/brisk_kanto_rivals.inc"
