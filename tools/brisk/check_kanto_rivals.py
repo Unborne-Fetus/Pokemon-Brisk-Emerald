@@ -38,6 +38,35 @@ for name,body in teams:
     assert len(species)==6 and len(set(species))==6,(name,species)
     assert body.count(".moves={")==6
 assert "ITEM_GALLADITE" in dict(teams)["sKantoRival_WALLY_VICTORY"]
+# Distinguish the Hoenn Champion from Jessie on all five difficulties.
+# Each rival battle keeps a recognizable Metagross + counter-starter core,
+# but its support changes as the Kanto challenge progresses.
+rival_stages = {
+    "RIVAL_ROUTE22": ("FLYGON", "AZUMARILL", "CROBAT", "LUCARIO", "METAGROSS", "SCEPTILE"),
+    "RIVAL_SS_ANNE": ("METAGROSS", "MILOTIC", "GARCHOMP", "MANECTRIC", "BRELOOM", "SCEPTILE"),
+    "RIVAL_SILPH": ("METAGROSS", "GARCHOMP", "SALAMENCE", "MILOTIC", "BRELOOM", "SCEPTILE"),
+    "RIVAL_ROUTE22_LATE": ("MILOTIC", "TYRANITAR", "GARCHOMP", "METAGROSS", "SALAMENCE", "SCEPTILE"),
+    "RIVAL_CHAMPION": ("METAGROSS", "MILOTIC", "SALAMENCE", "VOLCARONA", "BRELOOM", "SCEPTILE"),
+    "RIVAL_CHAMPION_REMATCH": ("GARCHOMP", "TYRANITAR", "METAGROSS", "VOLCARONA", "MILOTIC", "SCEPTILE"),
+}
+jessie_source = get("src/data/brisk_xiphos_extended_teams.h")
+jessie_species = set()
+for mode in ("Normal", "Easy", "Hard", "Expert", "Kaizo"):
+    jessie = re.search(
+        rf"const struct TrainerMon sXiphosJessie{mode}\\[PARTY_SIZE\\] = \\{{(.*?)\\n\\}};",
+        jessie_source, re.S)
+    assert jessie, ("Jessie missing", mode)
+    jessie_species.update(re.findall(r"\\.species=(SPECIES_[A-Z0-9_]+)", jessie.group(1)))
+for stage, species in rival_stages.items():
+    roster = dict(teams)["sKantoRival_" + stage]
+    roster_species = tuple(x.removeprefix("SPECIES_")
+                           for x in re.findall(r"\\.species=(SPECIES_[A-Z0-9_]+)", roster))
+    assert roster_species == species, (stage, roster_species)
+    assert not {"SPECIES_" + x for x in species} & jessie_species, (stage, "Jessie overlap")
+    assert "SPECIES_METAGROSS" in {"SPECIES_" + x for x in species}
+    assert species[-1] == "SCEPTILE"  # Dynamic loader changes this to a counter-starter
+assert "sKantoRivalEvsBulky" in team_bank
+
 ids = re.findall(r"^#define (TRAINER_KANTO_[A-Z_0-9]+) (TRAINER_BRISK_KANTO_[A-Z_0-9]+)",get("include/constants/brisk_kanto_rival_ids.h"),re.M)
 assert len(ids)==15 and len({x[1] for x in ids})==15, ids
 loader = get("src/data/brisk_kanto_rivals_loader.h")
