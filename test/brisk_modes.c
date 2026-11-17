@@ -130,6 +130,59 @@ TEST("Brisk modes randomization never chooses disabled species or temporary form
     VarSet(VAR_BRISK_RANDOMIZER, 0);
 }
 
+TEST("Brisk randomized evolutions preserve native conditions and have varied destinations")
+{
+    u16 previousRandomizer = VarGet(VAR_BRISK_RANDOMIZER);
+    struct Pokemon mon;
+    bool32 canStopEvo = TRUE;
+    const enum Species starters[] = {
+        SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE, SPECIES_CHIKORITA,
+        SPECIES_CYNDAQUIL, SPECIES_TREECKO, SPECIES_TORCHIC, SPECIES_MUDKIP,
+        SPECIES_FENNEKIN, SPECIES_SPRIGATITO,
+    };
+    enum Species firstTarget = SPECIES_NONE;
+    bool32 hasDifferentTarget = FALSE;
+
+    VarSet(VAR_BRISK_RANDOMIZER, 0);
+    CreateMonWithIVs(&mon, SPECIES_FENNEKIN, 16, 0, OTID_STRUCT_PRESET(0), 31);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_BRAIXEN);
+    VarSet(VAR_BRISK_RANDOMIZER, BRISK_RAND_WILD);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_BRAIXEN);
+
+    VarSet(VAR_BRISK_RANDOMIZER, BRISK_RAND_ALL);
+    EXPECT_EQ(GetSpeciesEvolutions(SPECIES_FENNEKIN)[0].targetSpecies, SPECIES_BRAIXEN);
+    EXPECT_EQ(GetSpeciesEvolutions(SPECIES_SPRIGATITO)[0].targetSpecies, SPECIES_FLORAGATO);
+
+    // Experience candies, Rare Candies and battle level-ups share this logic.
+    // Randomization must not invent evolutions for unevolved-ineligible species.
+    CreateMonWithIVs(&mon, SPECIES_FENNEKIN, 15, 0, OTID_STRUCT_PRESET(0), 31);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    CreateMonWithIVs(&mon, SPECIES_MANTINE, 100, 0, OTID_STRUCT_PRESET(0), 31);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+
+    for (u32 i = 0; i < ARRAY_COUNT(starters); i++)
+    {
+        enum Species source = starters[i];
+        CreateMonWithIVs(&mon, source, 100, 0, OTID_STRUCT_PRESET(0), 31);
+        enum Species normalTarget = GetSpeciesEvolutions(source)[0].targetSpecies;
+        enum Species target = GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO);
+        EXPECT_NE(target, SPECIES_NONE);
+        EXPECT_NE(target, source);
+        EXPECT_NE(target, normalTarget);
+        EXPECT(IsSpeciesEnabled(target));
+        EXPECT(!gSpeciesInfo[target].isMegaEvolution);
+        EXPECT(!gSpeciesInfo[target].isGigantamax);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, DO_EVO), target);
+
+        if (firstTarget == SPECIES_NONE)
+            firstTarget = target;
+        else if (target != firstTarget)
+            hasDifferentTarget = TRUE;
+    }
+    EXPECT(hasDifferentTarget);
+    VarSet(VAR_BRISK_RANDOMIZER, previousRandomizer);
+}
+
 TEST("Brisk modes items preserve progression items and the actual gift matches its name")
 {
     VarSet(VAR_BRISK_RANDOMIZER, BRISK_RAND_ITEMS);
