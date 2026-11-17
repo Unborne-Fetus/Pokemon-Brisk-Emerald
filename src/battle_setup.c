@@ -72,6 +72,7 @@ static void DoTrainerBattle(void);
 #include "fishing.h"
 #include "data/brisk_expert_patch.h"
 #include "data/brisk_xiphos_loader.h"
+#include "data/brisk_kanto_rivals_loader.h"
 
 enum TransitionType
 {
@@ -1512,6 +1513,8 @@ static void BriskApplyKantoFakemonShowcase(struct Pokemon *party, u16 trainerNum
 
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
+    if (BriskLoadKantoRivalParty(party, trainerNum))
+        return; // Dedicated five-mode Kanto rival and Wally encounters.
     if (BriskLoadXiphosCommanderParty(party, trainerNum))
         return; // No generic roster rewriting for these five-mode commanders.
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
