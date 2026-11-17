@@ -73,6 +73,7 @@ static void DoTrainerBattle(void);
 #include "data/brisk_expert_patch.h"
 #include "data/brisk_xiphos_loader.h"
 #include "data/brisk_kanto_rivals_loader.h"
+#include "data/brisk_hoenn_rivals_loader.h"
 
 enum TransitionType
 {
@@ -1513,6 +1514,8 @@ static void BriskApplyKantoFakemonShowcase(struct Pokemon *party, u16 trainerNum
 
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
+    if (BriskLoadHoennRivalParty(party, trainerNum))
+        return; // Evolves May and Brendan’s teams from Hoenn into the Kanto postgame.
     if (BriskLoadKantoRivalParty(party, trainerNum))
         return; // Dedicated five-mode Kanto rival and Wally encounters.
     if (BriskLoadXiphosCommanderParty(party, trainerNum))
