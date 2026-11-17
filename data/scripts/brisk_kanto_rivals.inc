@@ -65,6 +65,21 @@ BriskKantoRival_EventScript_SSAnneBrendan::
     msgbox BriskKantoRival_Text_AfterSSAnne, MSGBOX_AUTOCLOSE
     end
 
+BriskKantoRival_EventScript_Silph::
+    checkplayergender
+    goto_if_eq VAR_RESULT, MALE, BriskKantoRival_EventScript_SilphMay
+    goto BriskKantoRival_EventScript_SilphBrendan
+BriskKantoRival_EventScript_SilphMay::
+    goto_if_defeated TRAINER_KANTO_MAY_SILPH, BriskKantoRival_EventScript_RivalAfter
+    trainerbattle_single TRAINER_KANTO_MAY_SILPH, BriskKantoRival_Text_SilphMay, BriskKantoRival_Text_RivalDefeated
+    msgbox BriskKantoRival_Text_AfterSilph, MSGBOX_AUTOCLOSE
+    end
+BriskKantoRival_EventScript_SilphBrendan::
+    goto_if_defeated TRAINER_KANTO_BRENDAN_SILPH, BriskKantoRival_EventScript_RivalAfter
+    trainerbattle_single TRAINER_KANTO_BRENDAN_SILPH, BriskKantoRival_Text_SilphBrendan, BriskKantoRival_Text_RivalDefeated
+    msgbox BriskKantoRival_Text_AfterSilph, MSGBOX_AUTOCLOSE
+    end
+
 BriskKantoRival_EventScript_WallyCerulean::
     goto_if_defeated TRAINER_KANTO_WALLY_CERULEAN, BriskKantoRival_EventScript_WallyAfter
     trainerbattle_single TRAINER_KANTO_WALLY_CERULEAN, BriskKantoRival_Text_WallyCerulean, BriskKantoRival_Text_WallyDefeated
@@ -125,6 +140,15 @@ BriskKantoRival_Text_SSAnneMay:
 BriskKantoRival_Text_SSAnneBrendan:
     .string "BRENDAN: I have been training\n"
     .string "for this rematch!$"
+BriskKantoRival_Text_SilphMay:
+    .string "MAY: Even Silph's trainers\n"
+    .string "couldn't stop me. Your turn!$"
+BriskKantoRival_Text_SilphBrendan:
+    .string "BRENDAN: We meet again!\n"
+    .string "Time to see who's stronger!$"
+BriskKantoRival_Text_AfterSilph:
+    .string "The LEAGUE is waiting!\n"
+    .string "Keep training!$"
 BriskKantoRival_Text_LateMay:
     .string "MAY: I've kept training!\n"
     .string "How far have you come?$"
