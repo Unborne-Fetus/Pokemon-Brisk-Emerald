@@ -19,6 +19,21 @@ All opponents have six fully evolved Pokémon and custom competitive sets. The v
 
 Kanto's original rival opponent IDs are reused under new aliases in `include/constants/brisk_kanto_rival_ids.h`. These are saved in the **Kanto** trainer-defeat extension, separately from existing Hoenn rival and Wally victories. The custom combat teams are in `src/data/brisk_kanto_rivals_teams.h`, loaded by `src/data/brisk_kanto_rivals_loader.h`; they override the legacy generated Blue battle parties at the moment battle starts, without changing other Kanto teams.
 
+## May and Brendan's updated Hoenn-centered rosters
+
+These teams deliberately **do not reuse any species from Jessie's five final-boss rosters**. May and Brendan share the same stage-specific team composition; their names, sprites and battle dialogue change based on the player character. Their sixth slot remains the rival's appropriate Hoenn starter (Sceptile, Blaziken or Swampert).
+
+| Encounter | Pokémon 1–5, followed by their starter ace |
+| --- | --- |
+| First Route 22 | Flygon, Azumarill, Crobat, Lucario, Metagross |
+| S.S. Anne | Metagross, Milotic, Garchomp, Manectric, Breloom |
+| Silph Co. 7F | Metagross, Garchomp, Salamence, Milotic, Breloom |
+| Route 22 revisited | Milotic, Tyranitar, Garchomp, Metagross, Salamence |
+| Champion | Metagross, Milotic, Salamence, Volcarona, Breloom |
+| Champion rematch | Garchomp, Tyranitar, Metagross, Volcarona, Milotic |
+
+Milotic uses Marvel Scale, Leftovers, Recover and Haze for defensive stability; Breloom applies Spore and Technician-boosted attacks; Salamence can sweep with Dragon Dance; Volcarona uses Quiver Dance; and Tyranitar threatens with Sand Stream and Dragon Dance. Metagross remains the rival's recurring bulky attacker, and the Mega-capable starter is reserved for the Champion fight. This creates a more recognizable Hoenn rivalry without diluting Jessie's distinctive Xiphos lineup.
+
 ### Levels
 
 | Stage | Easy | Normal | Hard | Expert | Kaizo |
