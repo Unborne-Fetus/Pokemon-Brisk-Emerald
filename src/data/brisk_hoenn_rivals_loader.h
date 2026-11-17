@@ -174,7 +174,7 @@ static bool32 BriskLoadHoennRivalParty(struct Pokemon *party, u16 trainerNum)
         }
         else if (mode == BRISK_MODE_NORMAL)
         {
-            mons[i].iv = level < 50 ? 24 * 0x2108421 : 0x3FFFFFFF;
+            mons[i].iv = level < 50 ? TRAINER_PARTY_IVS(24,24,24,24,24,24) : 0x3FFFFFFF;
             if (level < 50)
                 mons[i].ev = sBriskHoennRivalNormalEvs;
             if (stage == HOENN_RIVAL_RUSTBORO)
