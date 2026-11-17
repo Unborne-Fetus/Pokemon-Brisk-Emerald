@@ -139,7 +139,7 @@ def author_dialogue(metadata):
                         obj={**target_obj,'type':'object','x':raw['x'],'y':raw['y']}
             # Original map-load scripts no longer run, so their graphics
             # variables must not inherit a Hoenn rival's sprite from the save.
-            if obj.get('graphics_id','').startswith('OBJ_EVENT_GFX_VAR_'):
+            if obj.get('graphics_id','').startswith('OBJ_EVENT_GFX_VAR_') and not obj.get('script','').startswith('BriskKantoRival_EventScript_'):
                 fixed=('OBJ_EVENT_GFX_OLD_MAN_1' if name=='ViridianCity_Frlg' else
                        'OBJ_EVENT_GFX_OMANYTE' if name=='FuchsiaCity_Frlg' else None)
                 if fixed:
@@ -192,6 +192,13 @@ def author_dialogue(metadata):
                 xiphos_id = 'TRAINER_XIPHOS_' + script.removeprefix('XiphosKanto_EventScript_')
                 records[str(i)] = {'script': script, 'trainer': xiphos_id,
                                    'trainer_type': 'TRAINER_TYPE_NORMAL'}
+                continue
+            # Brisk Hoenn rivals are optional postgame encounters with their
+            # own direct battle scripts. Do not convert them into FRLG plot
+            # events or omit the gender-switched object graphics.
+            if script.startswith('BriskKantoRival_EventScript_'):
+                records[str(i)] = {'script':script, 'trainer':'',
+                                   'trainer_type':'TRAINER_TYPE_NONE'}
                 continue
             # Preserve explicit Brisk legendary encounters and their own flags.
             if script.startswith('BriskStatic_EventScript_'):
@@ -267,6 +274,12 @@ def author_dialogue(metadata):
             prefix='BriskKanto_'+name
             entry['map_scripts']=prefix
             out.append(prefix+'_MapScripts::\n\tmap_script MAP_SCRIPT_ON_LOAD, '+prefix+'_OnLoad\n\t.byte 0\n\n'+prefix+'_OnLoad::\n'+''.join('\t'+g+'\n' for g in geometry)+'\tend\n\n')
+        # Gender-switched Hoenn rival graphics must be initialized before
+        # object events spawn. The Champion room retains the open door.
+        if name in ('Route22_Frlg', 'SSAnne_2F_Corridor_Frlg'):
+            entry['map_scripts'] = 'BriskKantoRival_GfxMapScripts'
+        elif name == 'PokemonLeague_ChampionsRoom_Frlg':
+            entry['map_scripts'] = 'BriskKantoRival_ChampionGfxMapScripts'
         manifest['maps'][name]=entry
     for label,words in {
         'BriskKanto_Text_TwoPokemon':'Bring at least two Pokemon for our double battle, Champion!',
