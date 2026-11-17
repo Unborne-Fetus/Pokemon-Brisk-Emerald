@@ -31,10 +31,10 @@ assert r"\\n" not in scripts and r"\\p" not in scripts, "doubled dialogue escape
 assert "call Common_EventScript_SetupRivalGfxId" in scripts
 
 team_bank = get("src/data/brisk_kanto_rivals_teams.h")
-teams = re.findall(r"const struct TrainerMon (sKantoRival_[A-Z_]+)\\[PARTY_SIZE\\] = \\{(.*?)\\n\\};",team_bank,re.S)
+teams = re.findall(r"const struct TrainerMon (sKantoRival_[A-Z_]+)\[PARTY_SIZE\] = \{(.*?)\n\};",team_bank,re.S)
 assert len(teams) == 9, ("team definitions", len(teams))
 for name,body in teams:
-    species = re.findall(r"\\.species=(SPECIES_[A-Z_]+)",body)
+    species = re.findall(r"\.species=(SPECIES_[A-Z_]+)",body)
     assert len(species)==6 and len(set(species))==6,(name,species)
     assert body.count(".moves={")==6
 assert "ITEM_GALLADITE" in dict(teams)["sKantoRival_WALLY_VICTORY"]
