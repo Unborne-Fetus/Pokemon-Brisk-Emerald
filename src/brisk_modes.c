@@ -354,6 +354,24 @@ enum Species BriskTraitSpecies(enum Species species, u32 salt)
     return PickSpecies(species, salt + 0x300);
 }
 
+// EVERYTHING randomizes evolution destinations, not another species' entire
+// evolution table. Keep each Pokemon's own evolution methods/conditions and
+// choose a stable, source-and-target-specific destination for each valid edge.
+enum Species BriskRandomEvolutionTarget(enum Species species, enum Species target)
+{
+    if (target == SPECIES_NONE || target == SPECIES_EGG || !BriskRandomizerEnabled(BRISK_RAND_ALL))
+        return target;
+
+    u32 start = 1 + ModeHash(species, (u32)target + 0x500) % (NUM_SPECIES - 1);
+    for (u32 i = 0; i < NUM_SPECIES - 1; i++)
+    {
+        enum Species candidate = 1 + (start - 1 + i) % (NUM_SPECIES - 1);
+        if (candidate != species && candidate != target && IsRandomSpecies(candidate))
+            return candidate;
+    }
+    return target;
+}
+
 static bool32 CanRandomizeItem(enum Item item)
 {
     return item > ITEM_NONE && item < ITEMS_COUNT && gItemsInfo[item].price > 0
