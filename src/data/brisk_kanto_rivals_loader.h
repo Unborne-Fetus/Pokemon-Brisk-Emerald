@@ -1,7 +1,7 @@
 // Rivals are rendered using existing Kanto trainer IDs and saved defeat bits.
 // These are optional, single battles, independent of the FRLG story and Hoenn saves.
 extern const struct TrainerMon sKantoRival_RIVAL_ROUTE22[PARTY_SIZE], sKantoRival_RIVAL_SS_ANNE[PARTY_SIZE];
-extern const struct TrainerMon sKantoRival_RIVAL_ROUTE22_LATE[PARTY_SIZE], sKantoRival_RIVAL_CHAMPION[PARTY_SIZE];
+extern const struct TrainerMon sKantoRival_RIVAL_ROUTE22_LATE[PARTY_SIZE], sKantoRival_RIVAL_SILPH[PARTY_SIZE], sKantoRival_RIVAL_CHAMPION[PARTY_SIZE];
 extern const struct TrainerMon sKantoRival_RIVAL_CHAMPION_REMATCH[PARTY_SIZE];
 extern const struct TrainerMon sKantoRival_WALLY_CERULEAN[PARTY_SIZE], sKantoRival_WALLY_LAVENDER[PARTY_SIZE], sKantoRival_WALLY_VICTORY[PARTY_SIZE];
 extern const struct TrainerMon sKantoRival_BLAZIKEN, sKantoRival_SWAMPERT;
@@ -21,6 +21,8 @@ static bool32 BriskLoadKantoRivalParty(struct Pokemon *party, u16 trainerNum)
     case TRAINER_KANTO_BRENDAN_ROUTE22: source = sKantoRival_RIVAL_ROUTE22; break;
     case TRAINER_KANTO_MAY_SS_ANNE:
     case TRAINER_KANTO_BRENDAN_SS_ANNE: source = sKantoRival_RIVAL_SS_ANNE; break;
+    case TRAINER_KANTO_MAY_SILPH:
+    case TRAINER_KANTO_BRENDAN_SILPH: source = sKantoRival_RIVAL_SILPH; break;
     case TRAINER_KANTO_MAY_ROUTE22_LATE:
     case TRAINER_KANTO_BRENDAN_ROUTE22_LATE: source = sKantoRival_RIVAL_ROUTE22_LATE; break;
     case TRAINER_KANTO_MAY_CHAMPION:
