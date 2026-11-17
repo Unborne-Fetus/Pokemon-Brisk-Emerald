@@ -977,7 +977,7 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "8": {
-          "script": "BriskKanto_CeruleanCity_Frlg_8",
+          "script": "BriskKantoRival_EventScript_WallyCerulean",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         },
@@ -4322,7 +4322,7 @@
     "PokemonLeague_ChampionsRoom_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_PokemonLeague_ChampionsRoom_Frlg_1",
+          "script": "BriskKantoRival_EventScript_Champion",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         },
@@ -4333,7 +4333,7 @@
         }
       },
       "signs": {},
-      "map_scripts": "BriskKanto_PokemonLeague_ChampionsRoom_Frlg"
+      "map_scripts": "BriskKantoRival_ChampionGfxMapScripts"
     },
     "PokemonLeague_HallOfFame_Frlg": {
       "objects": {
@@ -4529,6 +4529,11 @@
         },
         "5": {
           "script": "BriskKanto_PokemonTower_1F_Frlg_5",
+          "trainer": "",
+          "trainer_type": "TRAINER_TYPE_NONE"
+        },
+        "6": {
+          "script": "BriskKantoRival_EventScript_WallyLavender",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
@@ -6165,14 +6170,15 @@
     "Route22_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_Route22_Frlg_1",
+          "script": "BriskKantoRival_EventScript_Route22",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
       "signs": {
         "1": "BriskKanto_Route22_Frlg_Sign_1"
-      }
+      },
+      "map_scripts": "BriskKantoRival_GfxMapScripts"
     },
     "Route22_NorthEntrance_Frlg": {
       "objects": {
@@ -7049,7 +7055,7 @@
     "SSAnne_2F_Corridor_Frlg": {
       "objects": {
         "1": {
-          "script": "BriskKanto_SSAnne_2F_Corridor_Frlg_1",
+          "script": "BriskKantoRival_EventScript_SSAnne",
           "trainer": "",
           "trainer_type": "TRAINER_TYPE_NONE"
         },
@@ -7059,7 +7065,8 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
-      "signs": {}
+      "signs": {},
+      "map_scripts": "BriskKantoRival_GfxMapScripts"
     },
     "SSAnne_2F_Room1_Frlg": {
       "objects": {
@@ -10843,6 +10850,11 @@
           "script": "XiphosKanto_EventScript_COMMANDER_DRAGON",
           "trainer": "TRAINER_XIPHOS_COMMANDER_DRAGON",
           "trainer_type": "TRAINER_TYPE_NORMAL"
+        },
+        "15": {
+          "script": "BriskKantoRival_EventScript_WallyVictory",
+          "trainer": "",
+          "trainer_type": "TRAINER_TYPE_NONE"
         }
       },
       "signs": {},
