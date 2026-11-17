@@ -298,8 +298,30 @@ static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 
 static inline const enum TrainerClassID GetTrainerClassFromId(u16 trainerId)
 {
+    // These Kanto encounters are May/Brendan and Wally, not FRLG Blue.
+    // Do not use the FRLG dynamic "rival" name placeholder in battle text.
+    if (!gIsDebugBattle)
+    {
+        switch (trainerId)
+        {
+        case TRAINER_KANTO_MAY_CHAMPION:
+        case TRAINER_KANTO_BRENDAN_CHAMPION:
+        case TRAINER_KANTO_MAY_CHAMPION_REMATCH:
+        case TRAINER_KANTO_BRENDAN_CHAMPION_REMATCH:
+            return TRAINER_CLASS_CHAMPION;
+        case TRAINER_KANTO_MAY_ROUTE22:
+        case TRAINER_KANTO_BRENDAN_ROUTE22:
+        case TRAINER_KANTO_MAY_ROUTE22_LATE:
+        case TRAINER_KANTO_BRENDAN_ROUTE22_LATE:
+        case TRAINER_KANTO_MAY_SS_ANNE:
+        case TRAINER_KANTO_BRENDAN_SS_ANNE:
+        case TRAINER_KANTO_WALLY_CERULEAN:
+        case TRAINER_KANTO_WALLY_LAVENDER:
+        case TRAINER_KANTO_WALLY_VICTORY_ROAD:
+            return TRAINER_CLASS_RIVAL;
+        }
+    }
     const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
-
     return trainer->trainerClass;
 }
 
