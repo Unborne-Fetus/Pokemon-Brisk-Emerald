@@ -53,14 +53,18 @@ Kanto without altering wild shiny odds, species, moves, levels, or rewards.
 Kanto welcomes the player as Hoenn's Champion and savior. Residents, trainers,
 Gym Leaders and the Elite Four acknowledge that achievement. Pokemon Centers
 heal the party and update the local return point; marts sell postgame supplies.
-Giovanni appears as Viridian's Gym Leader. Rocket, rival and Oak plot scenes
-remain excluded. This is a postgame challenge region rather than the original
-FRLG badge campaign: original badge rewards, forced scenes and colliding quest
-variables stay inactive. Gym and League passage doors are opened by independent
-map-load scripts.
+Giovanni appears as Viridian's Gym Leader. The **original FRLG Blue/Oak plot**
+remains excluded, but May/Brendan and Wally now offer separate high-level
+battle encounters across the region. May/Brendan replace Blue as the League
+Champion, without forced FRLG cutscenes. See [Kanto's visiting Hoenn rivals](kanto-rivals.md).
+This remains a postgame challenge rather than the original FRLG badge
+campaign: original badge rewards, forced scenes and colliding quest variables
+stay inactive. Gym and League passage doors use independent map-load scripts.
 
-Every Kanto trainer identity has four explicit parties of six Pokemon, with
-different species lineups in each mode. See [the complete teams](kanto-trainer-teams.md).
+Ordinary Kanto trainer identities retain four explicitly authored six-Pokemon
+parties, while visiting May/Brendan and Wally use a separate five-mode
+competitive team loader. See [the original Kanto teams](kanto-trainer-teams.md)
+and the [replacement rival teams](kanto-rivals.md).
 
 | Mode | Ordinary trainers | Gym Leaders and Elite Four |
 | --- | --- | --- |
