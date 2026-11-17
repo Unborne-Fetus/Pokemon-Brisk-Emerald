@@ -129,7 +129,13 @@ static bool32 BriskLoadHoennRivalParty(struct Pokemon *party, u16 trainerNum)
         if (i == count - 1)
         {
             choice = ace;
-            if (level < 36)
+            if (level < 16)
+            {
+                if (ace == HOENN_RIVAL_MON_SCEPTILE) choice = HOENN_RIVAL_MON_TREECKO;
+                if (ace == HOENN_RIVAL_MON_BLAZIKEN) choice = HOENN_RIVAL_MON_TORCHIC;
+                if (ace == HOENN_RIVAL_MON_SWAMPERT) choice = HOENN_RIVAL_MON_MUDKIP;
+            }
+            else if (level < 36)
             {
                 if (ace == HOENN_RIVAL_MON_SCEPTILE) choice = HOENN_RIVAL_MON_GROVYLE;
                 if (ace == HOENN_RIVAL_MON_BLAZIKEN) choice = HOENN_RIVAL_MON_COMBUSKEN;
