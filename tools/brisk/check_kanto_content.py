@@ -68,15 +68,15 @@ def audit():
         for name,entry in manifest['maps'].items():
             subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
             emitted=(Path(temp)/'events.inc').read_text()
-            dynamic_ids=re.findall(r'OBJ_EVENT_GFX_VAR_\\d+',emitted)
+            dynamic_ids=re.findall(r'OBJ_EVENT_GFX_VAR_\d+',emitted)
             if name in rival_map_scripts:
                 assert dynamic_ids==['OBJ_EVENT_GFX_VAR_0'],(name,'rival graphic missing or extra dynamic actors',dynamic_ids)
                 map_script=rival_map_scripts[name]
                 assert entry.get('map_scripts')==map_script,(name,'rival map script disconnected')
-                loader=re.search(rf'(?m)^{re.escape(map_script)}::\\s*\\n\\s*map_script MAP_SCRIPT_ON_LOAD, (\\w+)',rival_scripts)
+                loader=re.search(rf'(?m)^{re.escape(map_script)}::\s*\n\s*map_script MAP_SCRIPT_ON_LOAD, (\w+)',rival_scripts)
                 assert loader,(name,'rival graphic not initialized on map load')
                 load_label=loader.group(1)
-                assert re.search(rf'(?m)^{re.escape(load_label)}::\\s*\\n\\s*call Common_EventScript_SetupRivalGfxId',rival_scripts),(name,'missing rival graphics setup')
+                assert re.search(rf'(?m)^{re.escape(load_label)}::\s*\n\s*call Common_EventScript_SetupRivalGfxId',rival_scripts),(name,'missing rival graphics setup')
             else:
                 assert not dynamic_ids,(name,'uninitialized sprite',dynamic_ids)
             assert 'OBJ_EVENT_GFX_SEAGALLOP' not in emitted,(name,'cutscene ferry')
