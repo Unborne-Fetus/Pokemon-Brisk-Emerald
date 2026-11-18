@@ -2,6 +2,7 @@
 @ (except the Champion, at the end of the League), and never trigger FRLG quests.
 @ Uses the Kanto save-extension defeat flags, not the Hoenn rival's victories.
 
+BriskKantoRival_GfxMapScripts_MapScripts::
 BriskKantoRival_GfxMapScripts::
     map_script MAP_SCRIPT_ON_LOAD, BriskKantoRival_GfxMapLoad
     .byte 0
@@ -10,6 +11,7 @@ BriskKantoRival_GfxMapLoad::
     call Common_EventScript_SetupRivalGfxId
     end
 
+BriskKantoRival_ChampionGfxMapScripts_MapScripts::
 BriskKantoRival_ChampionGfxMapScripts::
     map_script MAP_SCRIPT_ON_LOAD, BriskKantoRival_ChampionGfxMapLoad
     .byte 0

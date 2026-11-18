@@ -147,9 +147,9 @@ static bool32 BriskLoadHoennRivalParty(struct Pokemon *party, u16 trainerNum)
             choice = sBriskHoennRivalSupports[who][stage][i];
             // Show May's Salamence developing in the toughest late Hoenn battles.
             if (who == HOENN_RIVAL_MAY
-             && (stage == HOENN_RIVAL_ROUTE119 && mode == BRISK_MODE_KAIZO
-                 || stage == HOENN_RIVAL_LILYCOVE
-                    && (mode == BRISK_MODE_HARD || mode == BRISK_MODE_KAIZO || mode == BRISK_MODE_EXPERT))
+             && ((stage == HOENN_RIVAL_ROUTE119 && mode == BRISK_MODE_KAIZO)
+                 || (stage == HOENN_RIVAL_LILYCOVE
+                    && (mode == BRISK_MODE_HARD || mode == BRISK_MODE_KAIZO || mode == BRISK_MODE_EXPERT)))
              && i == 0)
                 choice = HOENN_RIVAL_MON_SALAMENCE;
             // Easy Brendan's Lilycove Vibrava has evolved naturally at Lv36.

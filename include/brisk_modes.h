@@ -34,6 +34,7 @@ bool32 BriskRandomizerEnabled(u32 category);
 bool32 BriskIsImportantTrainer(u32 trainerClass);
 enum Species BriskRandomSpecies(enum Species species, u32 category);
 enum Species BriskTraitSpecies(enum Species species, u32 salt);
+enum Species BriskRandomEvolutionTarget(enum Species species, enum Species target);
 enum Item BriskRandomItem(enum Item item);
 void BriskRandomizeScriptItem(void);
 

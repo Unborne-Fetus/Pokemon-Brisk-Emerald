@@ -60,6 +60,7 @@ static void DoTrainerBattle(void);
 #include "field_name_box.h"
 #include "wild_encounter_ow.h"
 #include "constants/battle_frontier.h"
+#include "constants/battle_ai.h"
 #include "battle_setup.h"
 #include "constants/battle_special.h"
 #include "constants/event_objects.h"
