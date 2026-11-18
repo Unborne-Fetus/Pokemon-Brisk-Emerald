@@ -138,6 +138,7 @@ jobs:
         run: |
           make -j$(nproc) check TESTS='Brisk signature'
           make -j$(nproc) check TESTS='Brisk randomized evolutions'
+          make -j$(nproc) check TESTS='Brisk Auto Battle text labels'
 
   # Gate job: satisfies the "build" branch protection rule.
   # Passes only when all parallel build/test jobs succeed.

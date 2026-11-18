@@ -94,6 +94,9 @@ enum
 #define YPOS_BATTLESPEED      (MENUITEM_BATTLESPEED * 16)
 #define YPOS_OVERWORLDSPEED   (MENUITEM_OVERWORLDSPEED * 16)
 #define YPOS_AUTORUN          (MENUITEM_AUTORUN * 16)
+#define XPOS_AUTOBATTLE_OFF       104
+#define XPOS_AUTOBATTLE_SEND      131
+#define XPOS_AUTOBATTLE_PASSIVE   160
 
 #define PAGE_COUNT 7
 
@@ -152,6 +155,11 @@ static const u8 gText_TextSpeedMid[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_TextSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FAST");
 static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
 static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+// AUTO BATTLE labels must include the same style control codes as other
+// DrawOptionMenuChoice inputs; that helper recolors bytes 2 and 5.
+static const u8 gText_AutoBattleOff[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+static const u8 gText_AutoBattleSend[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SEND");
+static const u8 gText_AutoBattlePassive[]  = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}PASSIVE");
 static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SHIFT");
 static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SET");
 static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MONO");
@@ -817,6 +825,46 @@ static void CB2_ReturnToFieldDebug(void)
     CB2_ReturnToField();
 }
 
+
+#if TESTING
+// Regression for plain AUTO BATTLE choices rendering as corrupted letters.
+// DrawOptionMenuChoice edits encoded color and shadow bytes at offsets 2/5.
+bool32 Test_BriskAutoBattleOptionTextLayout(void)
+{
+    static const u8 *const choices[] =
+    {
+        gText_AutoBattleOff,
+        gText_AutoBattleSend,
+        gText_AutoBattlePassive,
+    };
+    static const u8 positions[] =
+    {
+        XPOS_AUTOBATTLE_OFF,
+        XPOS_AUTOBATTLE_SEND,
+        XPOS_AUTOBATTLE_PASSIVE,
+    };
+    u32 previousEnd = 0;
+
+    for (u32 i = 0; i < ARRAY_COUNT(choices); i++)
+    {
+        const u8 *text = choices[i];
+        u32 length = 0;
+        while (length < 16 && text[length] != EOS)
+            length++;
+        if (length >= 16
+         || text[0] != EXT_CTRL_CODE_BEGIN || text[1] != EXT_CTRL_CODE_COLOR
+         || text[3] != EXT_CTRL_CODE_BEGIN || text[4] != EXT_CTRL_CODE_SHADOW)
+            return FALSE;
+        if (i > 0 && positions[i] <= previousEnd)
+            return FALSE;
+        previousEnd = positions[i] + GetStringWidth(FONT_NORMAL, text, 0);
+        if (previousEnd > sOptionMenuWinTemplates[WIN_OPTIONS].width * 8)
+            return FALSE;
+    }
+    return TRUE;
+}
+#endif
+
 static void DrawDebugOptions(void)
 {
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
@@ -832,9 +880,9 @@ static void DrawDebugOptions(void)
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE CRIES"), 8, 81, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskCriesMuted(), 80);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("AUTO BATTLE"), 8, 97, TEXT_SKIP_DRAW, NULL);
-    DrawOptionMenuChoice(COMPOUND_STRING("OFF"), 104, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
-    DrawOptionMenuChoice(COMPOUND_STRING("SEND"), 131, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
-    DrawOptionMenuChoice(COMPOUND_STRING("PASSIVE"), 160, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
+    DrawOptionMenuChoice(gText_AutoBattleOff, XPOS_AUTOBATTLE_OFF, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
+    DrawOptionMenuChoice(gText_AutoBattleSend, XPOS_AUTOBATTLE_SEND, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
+    DrawOptionMenuChoice(gText_AutoBattlePassive, XPOS_AUTOBATTLE_PASSIVE, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 

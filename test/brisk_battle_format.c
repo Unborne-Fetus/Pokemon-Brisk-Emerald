@@ -12,6 +12,12 @@
 
 u8 Test_OpenBriskBattleOptions(void);
 void Test_CloseBriskThemeOption(u8 taskId);
+bool32 Test_BriskAutoBattleOptionTextLayout(void);
+
+TEST("Brisk Auto Battle text labels have valid styles and nonoverlapping positions")
+{
+    EXPECT(Test_BriskAutoBattleOptionTextLayout());
+}
 
 TEST("Brisk Options cycles all battle formats and follower ON/OFF without losing selection")
 {
