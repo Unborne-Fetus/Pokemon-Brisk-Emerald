@@ -152,6 +152,12 @@ static const u8 gText_TextSpeedMid[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_TextSpeedFast[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FAST");
 static const u8 gText_BattleSceneOn[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
 static const u8 gText_BattleSceneOff[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+ 
+// AUTO BATTLE labels must include the same style control codes as other
+ // DrawOptionMenuChoice inputs; that helper recolors bytes 2 and 5.
+static const u8 gText_AutoBattleOff[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+static const u8 gText_AutoBattleSend[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SEND");
+static const u8 gText_AutoBattlePassive[]  = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}PASSIVE");
 static const u8 gText_BattleStyleShift[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SHIFT");
 static const u8 gText_BattleStyleSet[]     = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SET");
 static const u8 gText_SoundMono[]          = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MONO");
@@ -832,9 +838,9 @@ static void DrawDebugOptions(void)
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("MUTE CRIES"), 8, 81, TEXT_SKIP_DRAW, NULL);
     DrawToggle(!BriskCriesMuted(), 80);
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, COMPOUND_STRING("AUTO BATTLE"), 8, 97, TEXT_SKIP_DRAW, NULL);
-    DrawOptionMenuChoice(COMPOUND_STRING("OFF"), 104, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
-    DrawOptionMenuChoice(COMPOUND_STRING("SEND"), 131, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
-    DrawOptionMenuChoice(COMPOUND_STRING("PASSIVE"), 160, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
+    DrawOptionMenuChoice(gText_AutoBattleOff, 104, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_OFF);
+    DrawOptionMenuChoice(gText_AutoBattleSend, 131, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_SEND);
+    DrawOptionMenuChoice(gText_AutoBattlePassive, 160, 96, GetBriskAutoBattleMode() == BRISK_AUTOBATTLE_PASSIVE);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 
