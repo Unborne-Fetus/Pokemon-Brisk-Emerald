@@ -932,7 +932,7 @@ LittlerootTown_Text_WearTheseRunningShoes:
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
 	.string "adventure, take these items.\p"
-	.string "They're from your fathers journey!$"
+	.string "They're from your father's journey!$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
 	.string "{PLAYER} switched shoes with the\n"
@@ -1008,7 +1008,7 @@ LittlerootTown_Text_ProfBirchsHouse:
 	.string "PROF. BIRCH'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "PROF. BIRCH: Well, well, {PLAYER}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
 	.string "about you when I first saw you,\l"
@@ -1025,7 +1025,7 @@ LittlerootTown_EventScript_BRISK::
 
 LittlerootTown_Text_BRISK:
 	.string "Pokemon Brisk Emerald\n"
-	.string "“Enjoy yourself, and keep going!.”$"
+	.string "“Enjoy yourself, and keep going!”$"
 
 LittlerootTown_EventScript_LeagueCheckpoint::
 	lock
