@@ -360,7 +360,7 @@ Route120_EventScript_Callie::
 	end
 
 Route120_Text_StevenGreeting:
-	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
+	.string "STEVEN: Hm? {PLAYER}, hi.\n"
 	.string "It's been a while.\p"
 	.string "There's something here that you can't\n"
 	.string "see, right?\p"
@@ -369,7 +369,7 @@ Route120_Text_StevenGreeting:
 	.string "No, no. Rather than describing it,\n"
 	.string "I should just show you.\l"
 	.string "That would be more fun.\p"
-	.string "{PLAYER}{KUN}, are your POKéMON ready for\n"
+	.string "{PLAYER}, are your POKéMON ready for\n"
 	.string "battle?$"
 
 Route120_Text_StevenIllWaitHere:
@@ -377,11 +377,11 @@ Route120_Text_StevenIllWaitHere:
 	.string "I'll wait here, so you can get ready.$"
 
 Route120_Text_StevenReadyForBattle:
-	.string "STEVEN: {PLAYER}{KUN}, are your POKéMON\n"
+	.string "STEVEN: {PLAYER}, are your POKéMON\n"
 	.string "ready for battle?$"
 
 Route120_Text_StevenShowMeYourPower:
-	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
+	.string "STEVEN: {PLAYER}, show me your true\n"
 	.string "power as a TRAINER!$"
 
 Route120_Text_StevenUsedDevonScope:
@@ -401,7 +401,7 @@ Route120_Text_StevenGiveDevonScope:
 	.string "concealed POKéMON.$"
 
 Route120_Text_StevenGoodbye:
-	.string "STEVEN: {PLAYER}{KUN}.\p"
+	.string "STEVEN: {PLAYER}.\p"
 	.string "I enjoy seeing POKéMON and TRAINERS\n"
 	.string "who strive together.\p"
 	.string "I think you're doing great.\p"
