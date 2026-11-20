@@ -991,6 +991,6 @@ Route110_Text_KeepAnEyeOutForRival:
 	msgbox Route110_Text_POKE, MSGBOX_SIGN
 	end
 	Route110_Text_POKE:
-	.string "WOW! The highway sure is amazing\p"
+	.string "WOW! The highway sure is amazing!\p"
 	.string "The Tauros and Bouffalant\n"
-	.string "are sick dude!.$"
+	.string "are sick, dude!$"
