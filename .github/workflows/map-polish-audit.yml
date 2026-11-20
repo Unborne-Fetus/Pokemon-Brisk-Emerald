@@ -1,0 +1,63 @@
+name: Brisk Emerald Map and Dialogue Polish Audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  map-polish-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit all maps, overworld objects, and dialogue
+        run: python3 tools/brisk/audit_map_polish.py --output polish-audit.json
+      - name: Audit all map metatile IDs against their tilesets
+        run: python3 tools/brisk/audit_tile_integrity.py --output tile-integrity-audit.json
+      - name: Publish audit summary
+        if: always()
+        run: |
+          if [ -f polish-audit.json ]; then
+            python3 - <<'PY'
+          import json
+          import os
+
+          with open("polish-audit.json", encoding="utf-8") as file:
+              data = json.load(file)
+          stats = data.get("stats", {})
+          counts = data.get("counts", {})
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as file:
+              file.write("## Full-game polish audit\n\n")
+              file.write(f"- Maps inspected: {stats.get('maps', 0)}\n")
+              file.write(f"- Layouts inspected: {stats.get('layouts', 0)}\n")
+              file.write(f"- Overworld objects: {stats.get('object_events', 0)}\n")
+              file.write(f"- Structural errors: {counts.get('error', 0)}\n")
+              file.write(f"- Manual review candidates: {counts.get('review', 0)}\n")
+              file.write("\nThe JSON artifact lists map and dialogue issues with coordinates/paths. ")
+              file.write("Rendered tile appearance and collision still require emulator testing.\n")
+          PY
+          fi
+      - name: Install Pillow for rendered map previews
+        run: python3 -m pip install --user Pillow
+      - name: Render Hoenn opening and early-route tile layouts
+        run: python3 tools/brisk/render_map_previews.py
+      - name: Upload map preview images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brisk-map-visual-previews
+          path: map-previews/
+          if-no-files-found: warn
+      - name: Upload metatile integrity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brisk-tile-integrity-audit
+          path: tile-integrity-audit.json
+          if-no-files-found: warn
+      - name: Upload full audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brisk-map-polish-audit
+          path: polish-audit.json
+          if-no-files-found: warn

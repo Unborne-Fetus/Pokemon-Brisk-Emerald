@@ -73,7 +73,7 @@ EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
 	.string "go all out against you!$"
 
 EverGrandeCity_GlaciasRoom_Text_Defeat:
-	.string "Could you beat Wallace?.$"
+	.string "Could you beat WALLACE?$"
 
 EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
 	.string "The overwhelming tidal wave...$"

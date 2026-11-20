@@ -37,7 +37,7 @@ OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
-	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
+	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_GivePotion
 	setflag FLAG_TEMP_1
 	playbgm MUS_FOLLOW_ME, FALSE
 	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
@@ -46,6 +46,7 @@ OldaleTown_EventScript_MartEmployee::
 	case DIR_SOUTH, OldaleTown_EventScript_GoToMartSouth
 	case DIR_NORTH, OldaleTown_EventScript_GoToMartNorth
 	case DIR_EAST, OldaleTown_EventScript_GoToMartEast
+	case DIR_WEST, OldaleTown_EventScript_GoToMartWest
 	end
 
 OldaleTown_EventScript_GoToMartSouth::
@@ -69,8 +70,19 @@ OldaleTown_EventScript_GoToMartEast::
 	goto OldaleTown_EventScript_ExplainPokemonMart
 	end
 
+OldaleTown_EventScript_GoToMartWest::
+	@ The player stands east of the employee and faces west.
+	@ Use parallel northbound paths so neither actor walks through the other.
+	applymovement LOCALID_OLDALE_MART_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
+	applymovement LOCALID_PLAYER, OldaleTown_Movement_PlayerNorth
+	waitmovement 0
+	goto OldaleTown_EventScript_ExplainPokemonMart
+	end
+
 OldaleTown_EventScript_ExplainPokemonMart::
 	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
+
+OldaleTown_EventScript_GivePotion::
 	giveitem ITEM_POTION
 	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
@@ -382,7 +394,7 @@ OldaleTown_Text_FinishedSketchingFootprints:
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "MAY: {PLAYER}!\n"
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 

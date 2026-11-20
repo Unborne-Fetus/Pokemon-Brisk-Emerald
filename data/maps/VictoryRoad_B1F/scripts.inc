@@ -70,12 +70,12 @@ VictoryRoad_B1F_Text_MitchellIntro:
 	.string "I SWEAR!!!!!!!!!$"
 
 VictoryRoad_B1F_Text_MitchellDefeat:
-	.string "Are your Pokemon legal?.$"
+	.string "Are your POKéMON legal?$"
 
 VictoryRoad_B1F_Text_MitchellPostBattle:
 	.string "It's an egg move, crunch.\n"
 	.string "So is milk drink.\l"
-	.string "Take this LEGAL Pokemon!$"
+	.string "Take this LEGAL POKéMON!$"
 
 VictoryRoad_B1F_Text_HalleIntro:
 	.string "Okay, no need to get your back up!\n"

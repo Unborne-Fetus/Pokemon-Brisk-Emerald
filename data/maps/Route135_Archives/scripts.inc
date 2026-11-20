@@ -211,7 +211,7 @@ Route135_Archives_Text_WallaceDefeat:
 	.string "... You were brilliant,\p"
 	.string "reminiscent of my younger\n"
 	.string "self Congratulations\p"
-	.string "{PLAYER}{KUN}! Your strength\n"
+	.string "{PLAYER}! Your strength\n"
 	.string "is brilliant Like a Brisk\p"
 	.string "Emerald!$"
 

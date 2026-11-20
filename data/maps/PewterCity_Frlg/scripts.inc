@@ -940,7 +940,7 @@ PewterCity_Text_CitySign::
 	.string "A Stone Gray City$"
 
 PewterCity_Text_OhPlayer::
-	.string "Oh, {PLAYER}{KUN}!$"
+	.string "Oh, {PLAYER}!$"
 
 PewterCity_Text_AskedToDeliverThis::
 	.string "I'm glad I caught up to you.\n"
