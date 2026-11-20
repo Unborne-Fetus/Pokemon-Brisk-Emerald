@@ -932,7 +932,8 @@ LittlerootTown_Text_WearTheseRunningShoes:
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
 	.string "adventure, take these items.\p"
-	.string "They're from your father's journey!$"
+	.string "They're from your father's\n"
+	.string "journey!$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
 	.string "{PLAYER} switched shoes with the\n"
