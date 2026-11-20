@@ -394,7 +394,7 @@ OldaleTown_Text_FinishedSketchingFootprints:
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "MAY: {PLAYER}!\n"
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 
