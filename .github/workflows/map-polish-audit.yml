@@ -34,6 +34,17 @@ jobs:
               file.write("Rendered tile appearance and collision still require emulator testing.\n")
           PY
           fi
+      - name: Install Pillow for rendered map previews
+        run: python3 -m pip install --user Pillow
+      - name: Render Hoenn opening and early-route tile layouts
+        run: python3 tools/brisk/render_map_previews.py
+      - name: Upload map preview images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brisk-map-visual-previews
+          path: map-previews/
+          if-no-files-found: warn
       - name: Upload full audit report
         if: always()
         uses: actions/upload-artifact@v4
