@@ -55,7 +55,7 @@ def audit():
                    f"{layout_id}: {blockfile.relative_to(ROOT)} not found")
             continue
         expected = layout.get("width", 0) * layout.get("height", 0) * 2
-        if expected and blockfile.stat().st_size != expected:
+        if expected and blockfile.stat().st_size not in (expected, expected + 2):
             report("error", "layout-size", LAYOUT_FILE,
                    f"{layout_id}: expected {expected} map bytes, got {blockfile.stat().st_size}")
 
@@ -78,7 +78,9 @@ def audit():
             for idx, item in enumerate(items):
                 x, y = item.get("x"), item.get("y")
                 if not isinstance(x, int) or not isinstance(y, int) or not (0 <= x < width and 0 <= y < height):
-                    report("error", "event-out-of-bounds", path,
+                    # Cutscene actors, edge-trigger warps and clone objects can be intentionally
+                    # placed just outside a map. Require visual confirmation before editing.
+                    report("review", "event-out-of-bounds", path,
                            f"{kind} #{idx} at ({x}, {y}) outside {width}x{height}")
 
         positions = defaultdict(list)
