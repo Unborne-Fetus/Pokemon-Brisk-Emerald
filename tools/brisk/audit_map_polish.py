@@ -120,7 +120,7 @@ def audit():
                     report("review", "out-of-range-warp", path,
                            f"Warp #{idx} targets {destination} warp {raw_id}, "
                            f"but destination has {len(target_warps)}")
-        for idx, connection in enumerate(data.get("connections", [])):
+        for idx, connection in enumerate((data.get("connections") or [])):
             target = str(connection.get("map", ""))
             if target.startswith("MAP_") and target not in maps and target != "MAP_UNDEFINED":
                 report("review", "unknown-map-connection", path,
