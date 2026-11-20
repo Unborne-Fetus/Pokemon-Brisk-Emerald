@@ -1304,13 +1304,13 @@ PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "happy and a little sad. It's odd…$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
-	.string "Ah, there you are, {PLAYER}{KUN}!\p"
+	.string "Ah, there you are, {PLAYER}!\p"
 	.string "Please come with me.\n"
 	.string "I have something I want you to have.$"
 
 PetalburgCity_Gym_Text_LetMeBorrowPlayer:
 	.string "NORMAN, you don't mind, do you?\p"
-	.string "Let me borrow your {PLAYER}{KUN} for\n"
+	.string "Let me borrow your {PLAYER} for\n"
 	.string "a minute or two.$"
 
 PetalburgCity_Gym_Text_DadGoingToKeepTraining:
