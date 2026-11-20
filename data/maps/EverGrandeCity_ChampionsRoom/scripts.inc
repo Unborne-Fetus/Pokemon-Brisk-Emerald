@@ -224,7 +224,7 @@ EverGrandeCity_ChampionsRoom_Movement_BirchArrives:
 	step_end
 
 EverGrandeCity_ChampionsRoom_Text_IntroSpeech:
-	.string "WALLACE: Welcome, {PLAYER}{KUN}.\p"
+	.string "WALLACE: Welcome, {PLAYER}.\p"
 	.string "That incident in SOOTOPOLIS CITY…\n"
 	.string "That was superb work, putting an end\l"
 	.string "to that crisis all by yourself.\p"
@@ -240,9 +240,9 @@ EverGrandeCity_ChampionsRoom_Text_IntroSpeech:
 	.string "Geeta, Kieran, Drayton, even\p"
 	.string "the ancient champion Volo.\n"
 	.string "are all ants compared to me.\l"
-	.string "I've watched you {PLAYER}{KUN}\p"
+	.string "I've watched you {PLAYER}\p"
 	.string "I know you and your pokemon well.\p"
-	.string "It's nothing personal {PLAYER}{KUN}\n"
+	.string "It's nothing personal {PLAYER}\n"
 	.string "However I cannot allow\p"
 	.string "a child to beat me!$"
 
@@ -257,7 +257,7 @@ EverGrandeCity_ChampionsRoom_Text_Defeat:
 	.string "...\n"
 	.string "You were brilliant, reminiscent\l"
 	.string "of my younger self\p"
-	.string "Congratulations {PLAYER}{KUN}!\p"
+	.string "Congratulations {PLAYER}!\p"
 	.string "Your strength is brilliant\n"
 	.string "Like a Brisk Emerald!$"
 
@@ -277,14 +277,14 @@ EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech:
 	.string "HOENN region…$"
 
 EverGrandeCity_ChampionsRoom_Text_MayAdvice:
-	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "MAY: {PLAYER}!\p"
 	.string "Here's some advice before you challenge\n"
 	.string "the CHAMPION…$"
 
 EverGrandeCity_ChampionsRoom_Text_MayItsAlreadyOver:
 	.string "MAY: Huh?\n"
 	.string "What, what, what?\p"
-	.string "{PLAYER}{KUN}…\n"
+	.string "{PLAYER}…\n"
 	.string "Could it be that…\l"
 	.string "It's already over?$"
 
@@ -302,9 +302,9 @@ EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex:
 	.string "PROF. BIRCH: See?\n"
 	.string "What did I tell you, {RIVAL}?\p"
 	.string "Didn't I tell you that you don't need\n"
-	.string "to worry about {PLAYER}{KUN}?\p"
+	.string "to worry about {PLAYER}?\p"
 	.string "… … … … … … … …\n"
-	.string "{PLAYER}{KUN}, you've finally done it.\p"
+	.string "{PLAYER}, you've finally done it.\p"
 	.string "When I heard that you defeated your\n"
 	.string "own father at the PETALBURG GYM,\l"
 	.string "I thought perhaps you had a chance…\p"
@@ -320,7 +320,7 @@ EverGrandeCity_ChampionsRoom_Text_BirchCongratulations:
 	.string "Now, go proudly into the final room!$"
 
 EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe:
-	.string "WALLACE: {PLAYER}{KUN}…\p"
+	.string "WALLACE: {PLAYER}…\p"
 	.string "No, let me rephrase that properly.\p"
 	.string "The new CHAMPION!\p"
 	.string "Come with me.$"
@@ -338,7 +338,7 @@ EverGrandeCity_ChampionsRoom_Text_MayCongratulations:
 	.string "… … … … … … … …\p"
 	.string "I'm just joking! That's okay!\n"
 	.string "That's the rule!\p"
-	.string "{PLAYER}{KUN}!\n"
+	.string "{PLAYER}!\n"
 	.string "Honestly, congratulations!$"
 
 EverGrandeCity_ChampionsRoom_Text_BrendanCongratulations:
