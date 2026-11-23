@@ -12,9 +12,15 @@ with tempfile.TemporaryDirectory() as directory:
     for name in ('brisk_mode_teams.party','brisk_kanto_teams.party'):
         shutil.copy2(ROOT/'src/data'/name,data/name)
     makefile=temp/'check.mk'
-    makefile.write_text('TRAINERPROC := '+str(ROOT/'tools/trainerproc/trainerproc')+'\nCPP := cpp\nCPPFLAGS := -DMODERN=1 -DTESTING=0 -DEMERALD\ninclude '+str(ROOT/'trainer_rules.mk')+'\n.PHONY: FORCE\nFORCE:\n')
+    trainerproc = ROOT / ('tools/trainerproc/trainerproc.exe' if os.name == 'nt' else 'tools/trainerproc/trainerproc')
+    shutil.copy2(trainerproc, temp/trainerproc.name)
+    shutil.copy2(ROOT/'trainer_rules.mk', temp/'trainer_rules.mk')
+    makefile.write_text('TRAINERPROC := ./'+trainerproc.name+'\nCPP := cpp\nCPPFLAGS := -DMODERN=1 -DTESTING=0 -DEMERALD\ninclude trainer_rules.mk\n.PHONY: FORCE\nFORCE:\n')
     def build():
-        subprocess.run(['make','-f',str(makefile),'src/data/brisk_mode_teams.h'],cwd=temp,check=True,capture_output=True)
+        result = subprocess.run(['make','-f',str(makefile),'src/data/brisk_mode_teams.h'],
+                                cwd=temp,capture_output=True,text=True)
+        if result.returncode:
+            raise RuntimeError(f'Trainer header regeneration failed:\n{result.stdout}\n{result.stderr}')
     build();header=data/'brisk_mode_teams.h';expected=header.read_bytes()
     header.write_text('/* stale trainer table from an older build */\n')
     newest=max((data/'brisk_mode_teams.party').stat().st_mtime,(data/'brisk_kanto_teams.party').stat().st_mtime)+600

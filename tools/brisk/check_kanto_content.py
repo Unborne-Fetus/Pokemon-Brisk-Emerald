@@ -2,6 +2,7 @@
 """Check emitted Emerald maps, dialogue and real wild encounter records."""
 from collections import Counter
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -65,8 +66,9 @@ def audit():
         for item in ('DOME','HELIX'):
             assert gba_text(f'Do you want the {item} FOSSIL?') not in rom, f'Stale {item} fossil text in compiled ROM'
     with tempfile.TemporaryDirectory() as temp:
+        mapjson = ROOT / ('tools/mapjson/mapjson.exe' if os.name == 'nt' else 'tools/mapjson/mapjson')
         for name,entry in manifest['maps'].items():
-            subprocess.run([str(ROOT/'tools/mapjson/mapjson'),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
+            subprocess.run([str(mapjson),'map','emerald',str(ROOT/'data/maps'/name/'map.json'),str(ROOT/'data/layouts/layouts.json'),temp],cwd=ROOT,check=True,capture_output=True)
             emitted=(Path(temp)/'events.inc').read_text()
             dynamic_ids=re.findall(r'OBJ_EVENT_GFX_VAR_\d+',emitted)
             if name in rival_map_scripts:

@@ -58,7 +58,7 @@ def levels(team):
 
 
 def rematch_chains():
-    source = (ROOT / "src/battle_setup.c").read_text()
+    source = (ROOT / "src/battle_setup.c").read_text(encoding="utf-8")
     return [re.findall(r"TRAINER_\w+", match) for match in
             re.findall(r"\[REMATCH_\w+\] = REMATCH\(([^)]+)\)", source)]
 
@@ -78,15 +78,15 @@ def encounter_bands(teams):
                     6: (66, 70), 7: (76, 82), 8: (90, 95)}[int(name[-1])]
         if band is None:
             continue
-        for trainer_id in sorted(set(re.findall(r"\bTRAINER_\w+", path.read_text())) & teams.keys()):
+        for trainer_id in sorted(set(re.findall(r"\bTRAINER_\w+", path.read_text(encoding="utf-8"))) & teams.keys()):
             # Leaders and rival variants have explicit encounter targets below.
             if trainer_id in GYMS or re.match(r"TRAINER_(?:BRENDAN|MAY|WALLY)_", trainer_id):
                 continue
             bands[trainer_id] = band
         # Swimmers on the southern sea are only reachable after Norman.
-        for obj in json.loads((path.parent / "map.json").read_text())["object_events"]:
+        for obj in json.loads((path.parent / "map.json").read_text(encoding="utf-8"))["object_events"]:
             label = obj.get("script", "")
-            match = re.search(r"^" + re.escape(label) + r"::?\s*\n(.*?)(?=\n\w+::|\Z)", path.read_text(), re.M | re.S)
+            match = re.search(r"^" + re.escape(label) + r"::?\s*\n(.*?)(?=\n\w+::|\Z)", path.read_text(encoding="utf-8"), re.M | re.S)
             ids = re.findall(r"\bTRAINER_\w+", match[1]) if match else []
             for trainer_id in ids[:1]:
                 if trainer_id not in bands:
@@ -122,7 +122,7 @@ def authored_progression_errors(teams, bands, protected):
     """Audit the four-mode records actually compiled into the Emerald ROM."""
     records = {}
     errors = []
-    for tid, body in TEAM_RE.findall((ROOT / 'src/data/brisk_mode_teams.party').read_text()):
+    for tid, body in TEAM_RE.findall((ROOT / 'src/data/brisk_mode_teams.party').read_text(encoding="utf-8")):
         mode = re.search(r'^Difficulty: (\w+)$', body, re.M)
         if mode:
             records[tid, mode[1]] = levels(body)
@@ -159,10 +159,10 @@ def authored_progression_errors(teams, bands, protected):
 
 
 def audit():
-    teams = dict(TEAM_RE.findall((ROOT / "src/data/trainers.party").read_text()))
+    teams = dict(TEAM_RE.findall((ROOT / "src/data/trainers.party").read_text(encoding="utf-8")))
     errors = []
     bands = encounter_bands(teams)
-    protected = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text())['protected']
+    protected = json.loads((ROOT / 'tools/brisk/trainer_fairness_policy.json').read_text(encoding="utf-8"))['protected']
     errors.extend(authored_progression_errors(teams, bands, protected))
     for trainer_id, (low, high) in bands.items():
         if trainer_id in protected or trainer_id in STORY_ACES:

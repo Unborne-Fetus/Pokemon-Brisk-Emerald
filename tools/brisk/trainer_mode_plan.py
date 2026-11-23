@@ -111,9 +111,9 @@ def render():
 if __name__ == '__main__':
     content = render()
     if '--check' in sys.argv:
-        if not OUTPUT.exists() or OUTPUT.read_text() != content:
+        if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != content:
             raise SystemExit('Trainer mode plan is stale. Run python tools/brisk/trainer_mode_plan.py')
         print('Complete trainer mode plan matches the authored teams.')
     else:
-        OUTPUT.write_text(content)
+        OUTPUT.write_text(content, encoding="utf-8")
         print('Wrote', OUTPUT.relative_to(ROOT))

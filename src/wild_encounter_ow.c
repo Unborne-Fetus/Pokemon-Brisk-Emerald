@@ -410,6 +410,11 @@ void BriskAutoBattle_Update(void)
 
     if (sBriskAutoBattlePending)
     {
+        if (sBriskAutoBattleObjectId >= OBJECT_EVENTS_COUNT)
+        {
+            sBriskAutoBattlePending = FALSE;
+            return;
+        }
         struct ObjectEvent *owe = &gObjectEvents[sBriskAutoBattleObjectId];
         if (sBriskAutoBattleWindup != 0)
         {
@@ -676,14 +681,15 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
 {
     u32 varId = ScriptReadHalfword(ctx);
     u32 localId = VarGet(ScriptReadHalfword(ctx));
-    struct ObjectEvent *object = &gObjectEvents[GetObjectEventIdByLocalId(localId)];
+    u32 objectEventId = GetObjectEventIdByLocalId(localId);
     enum Species speciesId = SPECIES_NONE;
 
     Script_RequestEffects(SCREFF_V1);
     Script_RequestWriteVar(varId);
 
-    if (IS_OW_MON_OBJ(object))
-        speciesId = OW_SPECIES(object);
+    if (objectEventId < OBJECT_EVENTS_COUNT
+     && IS_OW_MON_OBJ(&gObjectEvents[objectEventId]))
+        speciesId = OW_SPECIES(&gObjectEvents[objectEventId]);
 
     assertf(speciesId != SPECIES_NONE, "species was not found for specified object. localid: %d", localId);
     VarSet(varId, speciesId);
@@ -956,6 +962,9 @@ void TryTriggerOverworldWildEncounter(struct ObjectEvent *obstacle, struct Objec
 const u8 *GetOverworlWildEncounterScript(u32 objectEventId)
 {
     const u8 *script;
+    // Stale or despawned event IDs must not index outside the event array.
+    if (objectEventId >= OBJECT_EVENTS_COUNT)
+        return InteractWithOverworldWildEncounter;
     if (GetOverworldWildEncounterType(&gObjectEvents[objectEventId]) == OWE_MANUAL
      && (script = GetObjectEventScriptPointerByObjectEventId(objectEventId)) != NULL)
         return script;
@@ -997,30 +1006,38 @@ static bool32 CheckCurrentWildMonHeaderForOWE(bool32 shouldSpawnWaterMons)
 
 static u32 GetOldestActiveOWESlot(bool32 forceRemove)
 {
-    struct ObjectEvent *slotMon, *oldest = &gObjectEvents[GetObjectEventIdByLocalId(LOCALID_OW_ENCOUNTER_END)];
-    u32 spawnSlot;
+    struct ObjectEvent *slotMon, *oldest = NULL;
+    u32 spawnSlot, eventId;
 
     for (spawnSlot = 0; spawnSlot < OWE_SPAWNS_MAX; spawnSlot++)
     {
-        slotMon = &gObjectEvents[GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(spawnSlot))];
-        if (OW_SPECIES(slotMon) != SPECIES_NONE && (!HasOWENoDespawnFlag(slotMon) || forceRemove == TRUE))
+        eventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(spawnSlot));
+        if (eventId >= OBJECT_EVENTS_COUNT)
+            continue;
+        slotMon = &gObjectEvents[eventId];
+        if (IsOverworldWildEncounter(slotMon, OWE_GENERATED)
+         && OW_SPECIES(slotMon) != SPECIES_NONE
+         && (!HasOWENoDespawnFlag(slotMon) || forceRemove == TRUE))
         {
             oldest = slotMon;
             break;
         }
     }
 
-    if (spawnSlot >= OWE_SPAWNS_MAX)
+    if (oldest == NULL)
         return OWE_INVALID_SPAWN_SLOT;
 
-    for (u32 i = spawnSlot; i < OWE_SPAWNS_MAX; i++)
+    for (u32 i = spawnSlot + 1; i < OWE_SPAWNS_MAX; i++)
     {
-        slotMon = &gObjectEvents[GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(i))];
-        if (OW_SPECIES(slotMon) != SPECIES_NONE && (!HasOWENoDespawnFlag(slotMon) || forceRemove == TRUE))
-        {
-            if (slotMon->sOverworldEncounterAge > oldest->sOverworldEncounterAge)
-                oldest = slotMon;
-        }
+        eventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(i));
+        if (eventId >= OBJECT_EVENTS_COUNT)
+            continue;
+        slotMon = &gObjectEvents[eventId];
+        if (IsOverworldWildEncounter(slotMon, OWE_GENERATED)
+         && OW_SPECIES(slotMon) != SPECIES_NONE
+         && (!HasOWENoDespawnFlag(slotMon) || forceRemove == TRUE)
+         && slotMon->sOverworldEncounterAge > oldest->sOverworldEncounterAge)
+            oldest = slotMon;
     }
 
     return GetSpawnSlotByOWELocalId(oldest->localId);
@@ -1052,12 +1069,11 @@ static u32 GetNextOWESpawnSlot(void)
 static enum Species GetSpeciesByOWESpawnSlot(u32 spawnSlot)
 {
     u32 objEventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(spawnSlot));
-    struct ObjectEvent *owe = &gObjectEvents[objEventId];
 
     if (objEventId >= OBJECT_EVENTS_COUNT)
         return SPECIES_NONE;
 
-    return OW_SPECIES(owe);
+    return OW_SPECIES(&gObjectEvents[objEventId]);
 }
 
 static bool32 TrySelectTileForOWE(s32* outX, s32* outY)
@@ -1250,26 +1266,30 @@ static void SortOWEAges(void)
     struct AgeSort current;
     u32 numActive = GetNumberOfActiveOWEs(OWE_GENERATED);
     u32 count = 0;
+    u32 eventId;
     s32 i, j;
 
-    if (OWE_SPAWNS_MAX <= 1)
+    if (OWE_SPAWNS_MAX <= 1 || numActive == 0)
         return;
 
     for (i = 0; i < OWE_SPAWNS_MAX; i++)
     {
-        slotMon = &gObjectEvents[GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(i))];
-        // OWE_ANY can be used here as localId is guarenteed to be in the OWE_GENERATED range by GetLocalIdByOWESpawnSlot.
-        if (IsOverworldWildEncounter(slotMon, OWE_ANY) && OW_SPECIES(slotMon) != SPECIES_NONE)
+        eventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(i));
+        if (eventId >= OBJECT_EVENTS_COUNT)
+            continue;
+        slotMon = &gObjectEvents[eventId];
+        if (IsOverworldWildEncounter(slotMon, OWE_GENERATED)
+         && OW_SPECIES(slotMon) != SPECIES_NONE)
         {
             array[count].slot = i;
             array[count].age = slotMon->sOverworldEncounterAge;
             count++;
         }
-        if (count == numActive)
+        if (count >= numActive)
             break;
     }
 
-    for (i = 1; i < numActive; i++)
+    for (i = 1; i < count; i++)
     {
         current = array[i];
         j = i - 1;
@@ -1279,17 +1299,18 @@ static void SortOWEAges(void)
             array[j + 1] = array[j];
             j--;
         }
-
         array[j + 1] = current;
     }
-    
-    for (i = 0; i < numActive; i++)
+
+    for (i = 0; i < count; i++)
     {
-        slotMon = &gObjectEvents[GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(array[i].slot))];
-        slotMon->sOverworldEncounterAge = numActive - i;
+        eventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(array[i].slot));
+        if (eventId >= OBJECT_EVENTS_COUNT)
+            continue;
+        slotMon = &gObjectEvents[eventId];
+        slotMon->sOverworldEncounterAge = count - i;
     }
 }
-
 void OnOverworldWildEncounterSpawn(struct ObjectEvent *owe)
 {
     enum TypeOWE type = GetOverworldWildEncounterType(owe);
@@ -1385,7 +1406,12 @@ u32 TryAndDespawnOldestGeneratedOWE_ToFreeObject(void)
 
 void DespawnOWEOnBattleStart(void)
 {
-    struct ObjectEvent *owe = &gObjectEvents[GetObjectEventIdByLocalId(gSpecialVar_LastTalked)];
+    u32 objectEventId = GetObjectEventIdByLocalId(gSpecialVar_LastTalked);
+    struct ObjectEvent *owe;
+
+    if (objectEventId >= OBJECT_EVENTS_COUNT)
+        return;
+    owe = &gObjectEvents[objectEventId];
     if (!IsOverworldWildEncounter(owe, OWE_ANY))
         return;
 
@@ -1419,6 +1445,8 @@ u32 RemoveOldestGeneratedOWE(void)
         return OBJECT_EVENTS_COUNT;
 
     u32 objectEventId = GetObjectEventIdByLocalId(GetLocalIdByOWESpawnSlot(oldestSlot));
+    if (objectEventId >= OBJECT_EVENTS_COUNT)
+        return OBJECT_EVENTS_COUNT;
     RemoveObjectEvent(&gObjectEvents[objectEventId]);
     return objectEventId;
 }
@@ -2000,6 +2028,7 @@ const struct ObjectEventTemplate TryGetObjectEventTemplateForOWE(const struct Ob
     u32 levelTemplate = templateOWE.sOverworldEncounterLevel;
     u32 x = template->x;
     u32 y = template->y;
+    u32 existingObjectId = GetObjectEventIdByLocalId(template->localId);
 
     SetSpeciesInfoForOWE(&info, x, y);
     if (speciesTemplate)
@@ -2011,7 +2040,7 @@ const struct ObjectEventTemplate TryGetObjectEventTemplateForOWE(const struct Ob
     assertf((CheckValidOWESpecies(info.speciesId)
         && info.level >= MIN_LEVEL
         && info.level <= MAX_LEVEL)
-        || gObjectEvents[GetObjectEventIdByLocalId(template->localId)].active,
+        || (existingObjectId < OBJECT_EVENTS_COUNT && gObjectEvents[existingObjectId].active),
         "invalid manual overworld encounter template\nspecies: %d\nlevel: %d\ntemplate x: %d\ntemplate y: %d\ncheck if valid wild mon header exists", info.speciesId, info.level, x, y)
     {
         if (!CheckValidOWESpecies(info.speciesId))

@@ -68,7 +68,7 @@ for stage, species in rival_stages.items():
     assert species[-1] == "SCEPTILE"  # Dynamic loader changes this to a counter-starter
 assert "sKantoRivalEvsBulky" in team_bank
 
-ids = re.findall(r"^#define (TRAINER_KANTO_[A-Z_0-9]+) (TRAINER_BRISK_KANTO_[A-Z_0-9]+)",get("include/constants/brisk_kanto_rival_ids.h"),re.M)
+ids = re.findall(r"^#define[ \t]+(TRAINER_KANTO_[A-Z_0-9]+)[ \t]+(TRAINER_BRISK_KANTO_[A-Z_0-9]+)",get("include/constants/brisk_kanto_rival_ids.h"),re.M)
 assert len(ids)==15 and len({x[1] for x in ids})==15, ids
 loader = get("src/data/brisk_kanto_rivals_loader.h")
 for alias,_ in ids:
