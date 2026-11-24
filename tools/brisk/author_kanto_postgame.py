@@ -148,6 +148,14 @@ def author_dialogue(metadata):
                     records[str(i)]={'omit':True,'script':'','trainer':''}
                     continue
             script=obj.get('script','');gfx=obj.get('graphics_id','')
+            # These inactive FRLG cutscene actors stand on real exit warps.
+            # Never resurrect them as permanently visible postgame NPCs.
+            if (name, obj.get('local_id')) in {
+                ('TwoIsland_JoyfulGameCorner_Frlg', 'LOCALID_JOYFUL_GAME_CORNER_BIKER'),
+                ('SixIsland_DottedHole_SapphireRoom_Frlg', 'LOCALID_DOTTED_HOLE_THIEF'),
+            }:
+                records[str(i)]={'omit':True,'script':'','trainer':''}
+                continue
             # Ferries, sleeping roadblocks and duplicate traveling cutscene
             # actors have no safe postgame event controller.
             if gfx in ('OBJ_EVENT_GFX_SEAGALLOP','OBJ_EVENT_GFX_SS_ANNE','OBJ_EVENT_GFX_SNORLAX') or (gfx=='OBJ_EVENT_GFX_BILL' and name!='CinnabarIsland_Frlg'):

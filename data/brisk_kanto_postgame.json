@@ -9107,9 +9107,9 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_SixIsland_DottedHole_SapphireRoom_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         }
       },
       "signs": {
@@ -10302,9 +10302,9 @@
           "trainer_type": "TRAINER_TYPE_NONE"
         },
         "2": {
-          "script": "BriskKanto_TwoIsland_JoyfulGameCorner_Frlg_2",
-          "trainer": "",
-          "trainer_type": "TRAINER_TYPE_NONE"
+          "omit": true,
+          "script": "",
+          "trainer": ""
         },
         "3": {
           "script": "BriskKanto_TwoIsland_JoyfulGameCorner_Frlg_3",

@@ -514,8 +514,16 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
         Json::array signs;
         unsigned signIndex = 0;
         for (const auto &event : map_data["bg_events"].array_items()) {
-            const string authoredSign = json_to_string(postgame["maps"][mapName]["signs"], std::to_string(++signIndex), true);
+            string authoredSign = json_to_string(postgame["maps"][mapName]["signs"], std::to_string(++signIndex), true);
             if (json_to_string(event, "type") != "sign") continue;
+            // Preserve working elevator panels in battle-only Kanto without FRLG quest flags.
+            const string originalSign = json_to_string(event, "script", true);
+            if (mapName == "RocketHideout_Elevator_Frlg" && originalSign == "RocketHideout_Elevator_EventScript_FloorSelect")
+                authoredSign = "BriskKantoAccessOnly_EventScript_RocketLift";
+            else if (mapName == "CeladonCity_DepartmentStore_Elevator_Frlg" && originalSign == "CeladonCity_DepartmentStore_Elevator_EventScript_FloorSelect")
+                authoredSign = "BriskKantoAccessOnly_EventScript_CeladonLift";
+            else if (mapName == "SilphCo_Elevator_Frlg" && originalSign == "SilphCo_Elevator_EventScript_FloorSelect")
+                authoredSign = "BriskKantoAccessOnly_EventScript_SilphLift";
             Json::object sign = event.object_items();
             sign["script"] = authoredSign.empty() ? "BriskKantoAccessOnly_EventScript_NotReady" : authoredSign;
             signs.push_back(sign);

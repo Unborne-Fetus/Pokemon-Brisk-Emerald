@@ -17,7 +17,7 @@
   "connections": [
     {
       "map": "MAP_SAFFRON_CITY_CONNECTION",
-      "offset": 0,
+      "offset": -12,
       "direction": "up"
     },
     {
