@@ -58,7 +58,7 @@ def repair_mon(block,mode,tid,index):
     info=rules.SPECIES[rules.canonical(new)]
     ability=re.search(r'^Ability:\s*(.+)',block,re.M)
     ability_name=(ability[1] if ability and ability[1].startswith('ABILITY_') else 'ABILITY_'+re.sub(r'\W+','_',ability[1].upper()).strip('_') if ability else None)
-    if ability and ability_name not in rules.allowed_abilities(sp):
+    if ability and ability_name not in rules.allowed_abilities(new):
         block=block[:ability.start(1)]+info['abilities'][0]+block[ability.end(1):]
     legal=rules.legal_moves(new,level)
     old=[]

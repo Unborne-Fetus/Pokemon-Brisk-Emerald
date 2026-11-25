@@ -1048,7 +1048,33 @@ void process_layouts(string layouts_filepath, string output_asm, string output_c
     write_text_file(output_c + "layouts.h", layouts_constants_text);
 }
 
+// Expand newline-delimited response files before parsing positional arguments.
 int main(int argc, char *argv[]) {
+    vector<string> expanded;
+    for (int i = 0; i < argc; ++i) {
+        string arg(argv[i]);
+        if (i > 0 && arg.size() > 1 && arg[0] == '@') {
+            ifstream response(arg.substr(1));
+            if (!response.is_open())
+                FATAL_ERROR("Cannot open mapjson response file %s.\n", arg.c_str());
+            string line;
+            while (std::getline(response, line)) {
+                if (!line.empty() && line.back() == '\r')
+                    line.pop_back();
+                if (!line.empty())
+                    expanded.push_back(line);
+            }
+        } else {
+            expanded.push_back(arg);
+        }
+    }
+    vector<char *> expanded_argv;
+    for (auto &arg : expanded)
+        expanded_argv.push_back(&arg[0]);
+    expanded_argv.push_back(nullptr);
+    argc = static_cast<int>(expanded.size());
+    argv = expanded_argv.data();
+
     if (argc < 3)
         FATAL_ERROR("USAGE: mapjson <mode> <game-version> [options]\n");
 

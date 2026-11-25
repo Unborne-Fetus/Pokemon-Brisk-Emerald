@@ -975,7 +975,11 @@ u8 TrySavingData(u8 saveType)
         return SAVE_STATUS_ERROR;
     }
 
-    HandleSavingData(saveType);
+    if (HandleSavingData(saveType) == SAVE_STATUS_ERROR)
+    {
+        gSaveAttemptStatus = SAVE_STATUS_ERROR;
+        return SAVE_STATUS_ERROR;
+    }
     if (!gDamagedSaveSectors)
     {
         gSaveAttemptStatus = SAVE_STATUS_OK;
@@ -1331,6 +1335,16 @@ static void CopyFromSaveBlock3(u32 sectorId, struct SaveSector *sector)
 }
 
 #if TESTING
+void Test_MigrateLegacyPokemonStorage(void)
+{
+    MigrateLegacyPokemonStorage();
+}
+
+u16 Test_GetPokemonStorageExtensionChunkSize(u32 chunk)
+{
+    return GetPokemonStorageExtensionChunkSize(chunk);
+}
+
 void Test_CopyKantoSaveExtension(u32 sectorId, struct SaveSector *sector, bool32 saving)
 {
     if (saving) CopyFromSaveBlock3(sectorId, sector);

@@ -157,7 +157,7 @@ TEST("Brisk Kanto Town Map switches regions at the Orange Strait without enablin
     gMapHeader = savedHeader;
 }
 
-TEST("Brisk Kanto removes Rocket and rival story but retains gym and Elite Four encounters")
+TEST("Brisk Kanto removes original FRLG story triggers while retaining authored encounters")
 {
     const u16 storyMaps[] = {MAP_ROUTE22, MAP_ROCKET_HIDEOUT_B1F,
         MAP_ROCKET_HIDEOUT_B4F, MAP_SILPH_CO_1F,
@@ -166,7 +166,14 @@ TEST("Brisk Kanto removes Rocket and rival story but retains gym and Elite Four 
     {
         const struct MapHeader *h = Header(storyMaps[i]);
         EXPECT_EQ(h->events->coordEventCount, 0);
-        EXPECT_EQ(h->events->objectEventCount, 0);
+        for (u32 j = 0; j < h->events->objectEventCount; j++)
+        {
+            const struct ObjectEventTemplate *obj = &h->events->objectEvents[j];
+            if (obj->kind == OBJ_KIND_CLONE)
+                continue;
+            EXPECT(obj->script != NULL);
+            EXPECT(obj->script != BriskKantoAccessOnly_EventScript_ChallengePending);
+        }
     }
     const u16 challenges[] = {MAP_PEWTER_CITY_GYM, MAP_CERULEAN_CITY_GYM,
         MAP_SAFFRON_CITY_GYM, MAP_VIRIDIAN_CITY_GYM,

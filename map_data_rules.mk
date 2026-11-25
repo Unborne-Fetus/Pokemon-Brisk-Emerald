@@ -19,6 +19,15 @@ MAP_CONNECTIONS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/connections.inc,$(MAP
 MAP_EVENTS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/events.inc,$(MAP_DIRS))
 MAP_HEADERS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/header.inc,$(MAP_DIRS))
 MAP_JSONS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/map.json,$(MAP_DIRS))
+# One path per line, avoiding Windows/MSYS command-line length limits.
+mapjson_empty :=
+mapjson_space := $(mapjson_empty) $(mapjson_empty)
+define mapjson_newline
+
+
+endef
+MAPJSON_RESPONSE := $(DATA_ASM_SUBDIR)/maps/.mapjson-inputs.rsp
+
 
 $(DATA_ASM_BUILDDIR)/maps.o: $(DATA_ASM_SUBDIR)/maps.s $(LAYOUTS_DIR)/layouts.inc $(LAYOUTS_DIR)/layouts_table.inc $(MAPS_DIR)/headers.inc $(MAPS_DIR)/groups.inc $(MAPS_DIR)/connections.inc $(MAP_CONNECTIONS) $(MAP_HEADERS)
 	$(PREPROC) -s $< charmap.txt | $(CPP) $(CPPFLAGS) -I include - | $(PREPROC) -ie $< charmap.txt | $(AS) $(ASFLAGS) -o $@
@@ -34,7 +43,8 @@ $(MAPS_OUTDIR)/%/header.inc $(MAPS_OUTDIR)/%/events.inc $(MAPS_OUTDIR)/%/connect
 $(INCLUDECONSTS_OUTDIR)/map_groups.h: FORCE
 
 $(MAPS_OUTDIR)/connections.inc $(MAPS_OUTDIR)/groups.inc $(MAPS_OUTDIR)/events.inc $(MAPS_OUTDIR)/headers.inc $(INCLUDECONSTS_OUTDIR)/map_groups.h $(DATA_SRC_SUBDIR)/map_group_count.h: $(MAPS_DIR)/map_groups.json $(MAP_JSONS) .map_version $(MAPJSON)
-	@$(MAPJSON) groups $(MAP_VERSION) $(filter %.json,$^) $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)
+	$(file >$(MAPJSON_RESPONSE).groups,$(subst $(mapjson_space),$(mapjson_newline),$(filter %.json,$^)))
+	@$(MAPJSON) groups $(MAP_VERSION) @$(MAPJSON_RESPONSE).groups $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)
 	@echo "$(MAPJSON) groups $(MAP_VERSION) $(MAPS_DIR)/map_groups.json <MAP_JSONS> $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)"
 
 $(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONSTS_OUTDIR)/layouts.h: $(LAYOUTS_DIR)/layouts.json .map_version $(MAPJSON)
@@ -43,7 +53,8 @@ $(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONST
 # Generate constants for map events, which depend on data that's distributed across the map.json files.
 # There's a lot of map.json files, so we print an abbreviated output with echo.
 $(INCLUDECONSTS_OUTDIR)/map_event_ids.h: $(MAP_JSONS) $(MAPJSON)
-	@$(MAPJSON) event_constants emerald $(MAP_JSONS) $(INCLUDECONSTS_OUTDIR)/map_event_ids.h
+	$(file >$(MAPJSON_RESPONSE).events,$(subst $(mapjson_space),$(mapjson_newline),$(MAP_JSONS)))
+	@$(MAPJSON) event_constants emerald @$(MAPJSON_RESPONSE).events $(INCLUDECONSTS_OUTDIR)/map_event_ids.h
 	@echo "$(MAPJSON) event_constants emerald <MAP_JSONS> $(INCLUDECONSTS_OUTDIR)/map_event_ids.h"
 
 .map_version : FORCE

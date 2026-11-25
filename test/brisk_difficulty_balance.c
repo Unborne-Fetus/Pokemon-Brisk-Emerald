@@ -14,7 +14,7 @@ TEST("Brisk ordinary trainers and rivals both receive difficulty when their part
     const u8 classes[] = {TRAINER_CLASS_YOUNGSTER, TRAINER_CLASS_RIVAL};
     const u8 expectedLevels[] = {
         [BRISK_MODE_NORMAL] = 20, [BRISK_MODE_EASY] = 10,
-        [BRISK_MODE_HARD] = 22, [BRISK_MODE_EXTREME] = 24,
+        [BRISK_MODE_HARD] = 24, [BRISK_MODE_EXTREME] = 26,
     };
     u16 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
     u16 savedRandomizer = VarGet(VAR_BRISK_RANDOMIZER);
@@ -34,8 +34,11 @@ TEST("Brisk ordinary trainers and rivals both receive difficulty when their part
             VarSet(VAR_BRISK_DIFFICULTY, mode);
             MakeTrainerGenerator(&generator, &trainer);
             GenerateMonFromTrainerMon(&mon, &entry, &generator);
-            EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), expectedLevels[mode]);
-            EXPECT_EQ(GetLevelFromMonExp(&mon), expectedLevels[mode]);
+            u32 expectedLevel = expectedLevels[mode];
+            if (mode == BRISK_MODE_HARD || mode == BRISK_MODE_EXTREME)
+                expectedLevel = min(expectedLevel, GetProgressionLevelCap());
+            EXPECT_EQ(GetMonData(&mon, MON_DATA_LEVEL), expectedLevel);
+            EXPECT_EQ(GetLevelFromMonExp(&mon), expectedLevel);
             EXPECT_EQ(GetMonData(&mon, MON_DATA_IVS), mode >= BRISK_MODE_HARD ? 0x3FFFFFFF : 0);
             if (mode == BRISK_MODE_EXTREME)
             {
@@ -113,7 +116,8 @@ TEST("Hard and Extreme use small early boosts and scale mandatory trainers withi
             {
                 EXPECT_LE(ScaleBriskTrainerLevel(level, level), cap);
                 EXPECT_GE(ScaleBriskTrainerLevel(level, level), 1);
-                EXPECT_EQ(ScaleBriskTrainerLevel(level, level), min(ScaleBriskLevel(level, level), cap));
+                u32 boost = mode == BRISK_MODE_HARD ? max(3, level / 5) : max(4, level * 3 / 10);
+                EXPECT_EQ(ScaleBriskTrainerLevel(level, level), min(min(level + boost, MAX_LEVEL), cap));
             }
         }
         if (stage < ARRAY_COUNT(flags)) FlagSet(flags[stage]);

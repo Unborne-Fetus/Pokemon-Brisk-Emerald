@@ -774,8 +774,8 @@ TEST("Adventure: six-cell rental grid preserves full native icons across pages a
 
 TEST("Adventure: difficulty scales both rental HP totals without changing the real party or catch stats")
 {
-    u32 modes[] = {BRISK_MODE_EASY, BRISK_MODE_NORMAL, BRISK_MODE_HARD, BRISK_MODE_EXTREME};
-    u32 numerator[] = {4, 2, 1, 1}, denominator[] = {1, 1, 1, 2};
+    u32 modes[] = {BRISK_MODE_EASY, BRISK_MODE_NORMAL, BRISK_MODE_EXPERT, BRISK_MODE_HARD, BRISK_MODE_EXTREME};
+    u32 numerator[] = {4, 2, 1, 1, 1}, denominator[] = {1, 1, 1, 1, 2};
     u32 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
     for (u32 i = 0; i < ARRAY_COUNT(modes); i++)
     {
@@ -922,8 +922,10 @@ TEST("Adventure: rental forms abilities and consumed held items reset between en
 TEST("Adventure: both teammates recover HP and PP according to the starting difficulty")
 {
     u32 savedMode = VarGet(VAR_BRISK_DIFFICULTY);
-    for (u32 mode = BRISK_MODE_EASY; mode <= BRISK_MODE_EXTREME; mode++)
+    const u32 modes[] = {BRISK_MODE_NORMAL, BRISK_MODE_EASY, BRISK_MODE_EXPERT, BRISK_MODE_HARD, BRISK_MODE_EXTREME};
+    for (u32 m = 0; m < ARRAY_COUNT(modes); m++)
     {
+        u32 mode = modes[m];
         VarSet(VAR_BRISK_DIFFICULTY, mode);
         StartRental();
         EXPECT(DynamaxAdventure_ChoosePath(0));
@@ -957,7 +959,9 @@ TEST("Adventure: both teammates recover HP and PP according to the starting diff
             u32 old = i;
             struct Pokemon *mon = i == 0 ? &gParties[B_TRAINER_PLAYER][0] : &gParties[B_TRAINER_PARTNER][i - 1];
             u32 maxHP = maxima[old];
-            u32 heal = mode <= BRISK_MODE_NORMAL ? maxHP : maxHP / (mode == BRISK_MODE_HARD ? 2 : 4);
+            u32 heal = (mode == BRISK_MODE_NORMAL || mode == BRISK_MODE_EASY) ? maxHP
+                     : mode == BRISK_MODE_EXPERT ? max(1, maxHP * 3 / 4)
+                     : max(1, maxHP / (mode == BRISK_MODE_HARD ? 2 : 4));
             EXPECT_EQ(GetMonData(mon, MON_DATA_HP), min(maxHP, 1 + heal));
             EXPECT_EQ(GetMonData(mon, MON_DATA_STATUS), mode == BRISK_MODE_EASY ? 0 : STATUS1_POISON);
             EXPECT_GT(GetMonData(mon, MON_DATA_PP1), 0);

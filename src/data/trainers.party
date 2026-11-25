@@ -7383,7 +7383,7 @@ Mugshot: Blue
 
 SPECIES_DRAGONITE @ Heavy-Duty Boots
 Level: 100
-Ability: Multiscale
+Ability: ABILITY_LONELY_BOY
 Nature: Adamant
 EVs: 252 Atk / 4 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe

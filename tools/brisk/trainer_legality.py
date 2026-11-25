@@ -60,7 +60,7 @@ LEGACY_SIGNATURE_ABILITIES = {
 
 def allowed_abilities(sp):
     canonical_sp = canonical(sp)
-    return set(SPECIES[canonical_sp]["abilities"]) | LEGACY_SIGNATURE_ABILITIES.get(canonical_sp, set())
+    return set(SPECIES[canonical_sp]["abilities"])
 
 
 PARENTS={sp:[] for sp in SPECIES}

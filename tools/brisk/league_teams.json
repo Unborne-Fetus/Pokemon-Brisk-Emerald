@@ -266,7 +266,7 @@
     {
       "species": "SPECIES_DRAGONITE",
       "item": "Heavy-Duty Boots",
-      "ability": "Multiscale",
+      "ability": "ABILITY_LONELY_BOY",
       "nature": "Adamant",
       "evs": "252 Atk / 4 SpD / 252 Spe",
       "moves": [
