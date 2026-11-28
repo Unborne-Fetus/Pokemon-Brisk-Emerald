@@ -440,16 +440,15 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "walking.$"
 
 PetalburgWoods_Text_TryUsingThisItem:
-	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
+	.string "Oh, hey!\n"
 	.string "You must be a TRAINER.\n"
 	.string "You should try using this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
 	.string "It's a MIRACLE SEED.\n"
-	.string "If a POKéMON holds that item, its\l"
-	.string "GRASS-type moves become stronger.\p"
-	.string "Besides MIRACLE SEED, I think there are\n"
+	.string "If a POKéMON holds that item\l"
+	.string "GRASS moves become stronger.\p"
+	.string "Besides MIRACLE SEED, I there are\n"
 	.string "other convenient items for POKéMON\l"
 	.string "to hold.$"
 
